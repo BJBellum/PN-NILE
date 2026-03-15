@@ -197,26 +197,6 @@
   .spec-value { font-size: 18px; font-weight: 500; color: #fff; line-height: 1.2; }
   .spec-unit  { font-family: var(--mono); font-size: 11px; color: var(--text2); margin-top: 3px; }
 
-  /* ── DESCRIPTION CARDS ── */
-  .desc-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-  .desc-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-    border-left: 3px solid transparent;
-    transition: border-color .2s;
-  }
-  .desc-card:hover { border-color: var(--teal); }
-  .desc-card-icon { font-size: 20px; margin-bottom: 10px; }
-  .desc-card-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-  .desc-card-body  { font-size: 13px; color: var(--text2); line-height: 1.65; }
-
   /* ── FOOTER ── */
   .footer {
     margin-top: 48px;
@@ -293,7 +273,7 @@
       <div class="company-name">Pharos Energy</div>
       <div class="company-arabic">طاقة فاروس</div>
       <div class="company-sub">Division Énergie Nucléaire · Le Caire</div>
-      <div class="company-year">~1958</div>
+      <div class="company-year">2306</div>
     </div>
   </header>
 
@@ -307,7 +287,7 @@
     <div class="scroll-hint">← défiler pour voir le schéma complet →</div>
 
     <div class="diagram-card-body">
-      <svg class="diagram-svg" viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
+      <svg class="diagram-svg" viewBox="-20 0 1120 620" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -634,34 +614,34 @@
         <!--  ANNOTATIONS GAUCHE                          -->
         <!-- ══════════════════════════════════════════════ -->
         <!-- Barres contrôle -->
-        <line x1="116" y1="95" x2="50" y2="50" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <line x1="116" y1="95" x2="72" y2="50" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
         <circle cx="116" cy="95" r="2" fill="#e84848" opacity="0.7"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="46" y="44" text-anchor="end">Barres de contrôle</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="46" y="57" text-anchor="end">Cadmium / acier boré</text>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="68" y="44" text-anchor="end">Barres de contrôle</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="68" y="57" text-anchor="end">Cadmium / acier boré</text>
 
         <!-- Tube de force / caloporteur -->
-        <line x1="140" y1="250" x2="50" y2="210" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <line x1="140" y1="250" x2="72" y2="210" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
         <circle cx="140" cy="250" r="2" fill="#4a9eff" opacity="0.7"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="46" y="204" text-anchor="end">Tubes de force</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="46" y="217" text-anchor="end">Zircaloy-2 · ⌀ 83mm</text>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="68" y="204" text-anchor="end">Tubes de force</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="68" y="217" text-anchor="end">Zircaloy-2 · ⌀ 83mm</text>
 
         <!-- Combustible -->
-        <line x1="140" y1="280" x2="50" y2="300" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <line x1="140" y1="280" x2="72" y2="300" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
         <circle cx="140" cy="280" r="2" fill="#c07818" opacity="0.7"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="46" y="294" text-anchor="end">Faisceaux UO₂</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="46" y="307" text-anchor="end">U naturel · 37 crayons/faisceau</text>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="68" y="294" text-anchor="end">Faisceaux UO₂</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="68" y="307" text-anchor="end">U naturel · 37 crayons/faisceau</text>
 
         <!-- Blindage -->
-        <line x1="116" y1="400" x2="50" y2="380" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <line x1="116" y1="400" x2="72" y2="380" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
         <circle cx="116" cy="400" r="2" fill="#4a5168" opacity="0.7"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="46" y="374" text-anchor="end">Blindage biologique</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="46" y="387" text-anchor="end">Béton lourd + plomb</text>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="68" y="374" text-anchor="end">Blindage biologique</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="68" y="387" text-anchor="end">Béton lourd + plomb</text>
 
         <!-- Modérateur -->
-        <line x1="140" y1="400" x2="50" y2="430" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <line x1="140" y1="400" x2="72" y2="430" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
         <circle cx="140" cy="400" r="2" fill="#1bbd8a" opacity="0.7"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="46" y="424" text-anchor="end">Calandria D₂O</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="46" y="437" text-anchor="end">Modérateur basse temp.</text>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" fill="#8b93a8" x="68" y="424" text-anchor="end">Calandria D₂O</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="68" y="437" text-anchor="end">Modérateur basse temp.</text>
 
         <!-- Indicateur de flux neutronique (centre du réacteur) -->
         <circle cx="320" cy="250" r="6" fill="none" stroke="#f0a030" stroke-width="1" opacity="0.6"/>
@@ -770,58 +750,27 @@
       <div class="spec-value">~230</div>
       <div class="spec-unit">kV · transformateur élévateur</div>
     </div>
-  </div>
-
-  <!-- DESCRIPTION CARDS -->
-  <div class="desc-grid">
-    <div class="desc-card">
-      <div class="desc-card-icon">⚛</div>
-      <div class="desc-card-title">Principe CANDU : pression dans les tubes</div>
-      <div class="desc-card-body">
-        Contrairement aux réacteurs à cuve sous pression (PWR), le NILDU utilise des tubes de force individuels en Zircaloy qui contiennent le caloporteur D₂O sous haute pression (~87 bars), tandis que la calandria entourant les tubes reste à basse pression. Cela permet de séparer les fonctions modération et caloportage.
-      </div>
+    <div class="spec-cell">
+      <div class="spec-label">Durée de vie prévue</div>
+      <div class="spec-value">40 ans</div>
+      <div class="spec-unit">Maintenance décennale · remplacement tubes</div>
     </div>
-    <div class="desc-card">
-      <div class="desc-card-icon">💧</div>
-      <div class="desc-card-title">Double rôle de l'eau lourde</div>
-      <div class="desc-card-body">
-        Le D₂O joue deux rôles distincts : modérateur (dans la calandria, basse pression, basse température) et caloporteur primaire (dans les tubes de force, haute pression, haute température). La faible absorption neutronique du D₂O permet l'utilisation d'uranium naturel sans enrichissement.
-      </div>
+    <div class="spec-cell">
+      <div class="spec-label">Débit caloporteur primaire</div>
+      <div class="spec-value">~7 500</div>
+      <div class="spec-unit">t/h · circulation forcée D₂O</div>
     </div>
-    <div class="desc-card">
-      <div class="desc-card-icon">🔄</div>
-      <div class="desc-card-title">Rechargement en marche (on-power refuelling)</div>
-      <div class="desc-card-body">
-        Innovation clé du design CANDU : deux machines de chargement placées à chaque extrémité des tubes permettent de remplacer les faisceaux de combustible usé pendant que le réacteur tourne à pleine puissance. Cela améliore le facteur de charge et évite les arrêts coûteux.
-      </div>
-    </div>
-    <div class="desc-card">
-      <div class="desc-card-icon">🎮</div>
-      <div class="desc-card-title">Système de contrôle de la réactivité</div>
-      <div class="desc-card-body">
-        Les barres de contrôle en cadmium et acier boré pénètrent verticalement dans la calandria, perpendiculairement aux tubes de force horizontaux. Leur insertion partielle ou totale absorbe les neutrons et régule la puissance. Un système d'injection de poison liquide (gadolinium) assure l'arrêt d'urgence.
-      </div>
-    </div>
-    <div class="desc-card">
-      <div class="desc-card-icon">♨</div>
-      <div class="desc-card-title">Circuit thermique secondaire</div>
-      <div class="desc-card-body">
-        La chaleur du circuit primaire D₂O est transférée via un générateur de vapeur à faisceau tubulaire au circuit secondaire (eau légère). La vapeur produite (~275 °C, ~55 bars) actionne la turbine puis est condensée et recyclée. Les deux circuits restent entièrement séparés pour éviter la contamination.
-      </div>
-    </div>
-    <div class="desc-card">
-      <div class="desc-card-icon">🏗</div>
-      <div class="desc-card-title">Contexte historique NILDU</div>
-      <div class="desc-card-body">
-        Conçu par Pharos Energy (طاقة فاروس) vers 1958, le NILDU s'inscrit dans les premières déclinaisons de la filière CANDU développée au Canada (NRX, ZEEP). Sa conception vise l'autonomie en combustible : l'Égypte disposant de ressources en uranium naturel, aucun enrichissement extérieur n'est nécessaire.
-      </div>
+    <div class="spec-cell">
+      <div class="spec-label">Nombre de tubes de force</div>
+      <div class="spec-value">380</div>
+      <div class="spec-unit">Canaux combustibles · réseau 28,6 cm</div>
     </div>
   </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-left">
-      NILDU · Nile Deuterium Uranium · Schéma ref. NILDU-REF-001 · Pharos Energy © 1958<br>
+      NILDU · Nile Deuterium Uranium · Schéma ref. NILDU-REF-001 · Pharos Energy © 2306<br>
       Document technique — usage interne — Division Énergie Nucléaire
     </div>
     <div class="footer-right">طاقة فاروس · قسم الطاقة النووية · شماتيك هندسي</div>
