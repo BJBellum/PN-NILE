@@ -39,7 +39,7 @@ window.PharosMap = (function () {
   const SITES = [
     { lat: 29.34013, lon: 30.94513, label: 'NILDU', sub: 'Centrale nucléaire · Médinet El-Fayoum', ref: 'NILDU-REF-001', status: 'En construction', color: '#1bbd8a' },
     { lat: 30.21796, lon: 31.25895, label: 'MEMPHIS', sub: 'Pile atomique · Le Caire', ref: 'MEMPHIS-PILE-001', status: 'En service', color: '#8b6fd4' },
-    { lat: 23.96933, lon: 32.87741, label: 'Barrage d'Assouan', sub: 'Centrale hydroélectrique · Nil', ref: 'ASSOUAN-HDA-001', status: 'En service', color: '#3b82f6' }
+    { lat: 23.96933, lon: 32.87741, label: "Barrage d'Assouan", sub: 'Centrale hydroélectrique · Nil', ref: 'ASSOUAN-HDA-001', status: 'En service', color: '#3b82f6' }
   ];
 
   function makeIcon(color, active) {
