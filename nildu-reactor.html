@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NILDU-REF-001 · Pharos Energy</title>
+<title>NILDU · Centrale nucléaire de Médinet El-Fayoum</title>
 
 <meta property="og:type"         content="website">
 <meta property="og:title"        content="NILDU — Réacteur CANDU · Pharos Energy · 2306">
@@ -205,8 +205,8 @@
           <line x1="19.78" y1="4.22" x2="17.66" y2="6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <line x1="6.34" y1="17.66" x2="4.22" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </g>
-        <g class="icon-moon" style="display:none">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+        <g class="icon-moon">
+          <path d="M12 3a9 9 0 1 0 0 18A7 7 0 0 1 12 3z" fill="currentColor"/>
         </g>
       </svg>
       <span id="toggle-lbl" style="font-size:10px;letter-spacing:0.06em">NUIT</span>
@@ -636,7 +636,13 @@
     const lbl = document.getElementById('toggle-lbl');
     const icon = document.querySelector('.toggle-icon');
     if (lbl) lbl.textContent = theme === 'dark' ? 'NUIT' : 'JOUR';
-    if (icon) icon.setAttribute('data-mode', theme);
+    if (icon) {
+      icon.setAttribute('data-mode', theme);
+      const sun  = icon.querySelector('.icon-sun');
+      const moon = icon.querySelector('.icon-moon');
+      if (sun)  sun.style.display  = theme === 'dark'  ? 'block' : 'none';
+      if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+    }
     localStorage.setItem('pharos-theme', theme);
   }
 

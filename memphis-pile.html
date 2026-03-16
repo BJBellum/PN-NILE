@@ -3,17 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MEMPHIS-PILE-001 · Pharos Energy</title>
+<title>MEMPHIS · Pile atomique de recherche · Le Caire</title>
 
 <meta property="og:type"         content="website">
 <meta property="og:title"        content="MEMPHIS — Pile Atomique · Pharos Energy · 2305">
-<meta property="og:description"  content="Pile atomique de recherche MEMPHIS — Premier réacteur nucléaire du Royaume-Uni du Nil. Procédé Girdler, production D₂O, Le Caire, 2305.">
+<meta property="og:description"  content="Pile atomique de recherche MEMPHIS — Premier réacteur nucléaire du Royaume-Uni du Nil. Procédé Girdler, production D₂O, 2305.">
 <meta property="og:url"          content="">
 <meta property="og:image"        content="">
 <meta property="og:site_name"    content="Pharos Energy · Division Nucléaire">
 <meta name="theme-color"         content="#8b6fd4">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBhMGMxMCIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUwIiByeD0iMTMiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBjMDIwIiBzdHJva2Utd2lkdGg9IjQuOCIgdHJhbnNmb3JtPSJyb3RhdGUoMCA1MCA1MCkiLz48ZWxsaXBzZSBjeD0iNTAiIGN5PSI1MCIgcng9IjEzIiByeT0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwYzAyMCIgc3Ryb2tlLXdpZHRoPSI0LjgiIHRyYW5zZm9ybT0icm90YXRlKDYwIDUwIDUwKSIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUwIiByeD0iMTMiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBjMDIwIiBzdHJva2Utd2lkdGg9IjQuOCIgdHJhbnNmb3JtPSJyb3RhdGUoLTYwIDUwIDUwKSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEwLjUiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjEwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjkwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjMwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjMwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjcwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjcwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48L3N2Zz4=">
+<!-- Favicon dynamique : atome (nuit) / lune (jour) — switché par JS -->
+<link id="favicon" rel="icon" type="image/svg+xml"
+      href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBhMGMxMCIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUwIiByeD0iMTMiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBjMDIwIiBzdHJva2Utd2lkdGg9IjQuOCIgdHJhbnNmb3JtPSJyb3RhdGUoMCA1MCA1MCkiLz48ZWxsaXBzZSBjeD0iNTAiIGN5PSI1MCIgcng9IjEzIiByeT0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwYzAyMCIgc3Ryb2tlLXdpZHRoPSI0LjgiIHRyYW5zZm9ybT0icm90YXRlKDYwIDUwIDUwKSIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUwIiByeD0iMTMiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBjMDIwIiBzdHJva2Utd2lkdGg9IjQuOCIgdHJhbnNmb3JtPSJyb3RhdGUoLTYwIDUwIDUwKSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEwLjUiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjEwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjkwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjMwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjMwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjcwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjcwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48L3N2Zz4=">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -31,7 +34,6 @@
     --acc:       #8b6fd4;
     --acc2:      #6b4fb4;
     --acc-dim:   rgba(139,111,212,0.1);
-    --acc-glow:  rgba(139,111,212,0.06);
   }
   :root[data-theme="light"] {
     --bg:        #f5f4fa;
@@ -47,14 +49,12 @@
     --acc:       #6b4fb4;
     --acc2:      #4e39a0;
     --acc-dim:   rgba(107,79,180,0.1);
-    --acc-glow:  rgba(107,79,180,0.04);
   }
 
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body { background:var(--bg); color:var(--text); font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; min-height:100vh; transition:background .25s,color .25s; }
 
-  /* NAV */
   .topnav { position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 28px; height:54px; background:var(--bg2); border-bottom:1px solid var(--border2); flex-wrap:nowrap; gap:12px; transition:background .25s; }
   .nav-left { display:flex; align-items:center; gap:12px; flex-shrink:0; }
   .nav-back { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); text-decoration:none; padding:4px 10px; border:1px solid var(--border2); border-radius:4px; transition:color .15s,border-color .15s; }
@@ -68,16 +68,14 @@
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
   .theme-toggle { display:flex; align-items:center; gap:6px; background:var(--toggle-bg); border:1px solid var(--border2); border-radius:20px; padding:4px 10px; cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text2); transition:all .2s; user-select:none; }
   .theme-toggle:hover { border-color:var(--border3); color:var(--text); }
-  .toggle-icon { font-size:13px; transition:transform .3s; }
+  .toggle-icon { transition:transform .3s; }
   .toggle-icon[data-mode="dark"] .icon-sun  { display:block; }
   .toggle-icon[data-mode="dark"] .icon-moon { display:none; }
   .toggle-icon[data-mode="light"] .icon-sun  { display:none; }
   .toggle-icon[data-mode="light"] .icon-moon { display:block; }
 
-  /* PAGE */
   .page { max-width:1260px; margin:0 auto; padding:28px 28px 64px; }
 
-  /* HEADER */
   .header { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:start; margin-bottom:20px; }
   .reactor-name { font-size:48px; font-weight:600; letter-spacing:0.12em; color:var(--text); line-height:1; margin-bottom:6px; }
   .reactor-full { font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--acc); letter-spacing:0.04em; margin-bottom:14px; }
@@ -93,14 +91,12 @@
   .company-sub { font-size:12px; color:var(--text3); margin-top:4px; font-family:'IBM Plex Mono',monospace; }
   .company-year { display:inline-block; margin-top:8px; font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:500; color:var(--acc); letter-spacing:0.08em; }
 
-  /* RESTRICTED BANNER */
   .restricted-banner { display:flex; align-items:center; gap:14px; padding:12px 18px; background:rgba(139,111,212,0.06); border:1px solid rgba(139,111,212,0.22); border-left:3px solid var(--acc); border-radius:8px; margin-bottom:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--acc2); flex-wrap:wrap; }
   .rb-icon { flex-shrink:0; }
   .rb-text strong { color:var(--acc); }
 
-  /* LOCATION */
   .location-strip { display:flex; align-items:center; gap:20px; padding:11px 18px; background:var(--bg2); border:1px solid var(--border2); border-radius:8px; margin-bottom:22px; flex-wrap:wrap; }
-  .loc-pin { color:#e84848; font-size:15px; flex-shrink:0; }
+  .loc-pin { flex-shrink:0; }
   .loc-main { font-size:13px; font-weight:500; color:var(--text); }
   .loc-sub  { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); margin-top:1px; }
   .loc-coords { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--acc); margin-left:auto; letter-spacing:0.04em; }
@@ -109,42 +105,37 @@
   .loc-map-link { margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--acc); text-decoration:none; padding:4px 10px; border:1px solid rgba(139,111,212,0.3); border-radius:4px; white-space:nowrap; transition:background .15s,border-color .15s; display:flex; align-items:center; }
   .loc-map-link:hover { background:var(--acc-dim); border-color:rgba(139,111,212,0.6); }
 
-  /* DIAGRAM */
   .diagram-card { background:var(--bg2); border:1px solid var(--border2); border-radius:12px; overflow:hidden; margin-bottom:24px; }
   .diagram-card-header { display:flex; align-items:center; justify-content:space-between; padding:11px 18px; border-bottom:1px solid var(--border); background:var(--bg3); flex-wrap:wrap; gap:8px; }
   .diagram-card-title { font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text2); letter-spacing:0.06em; text-transform:uppercase; }
   .diagram-card-body { padding:18px; overflow-x:auto; }
-  .diagram-svg { width:100%; min-width:900px; display:block; }
+  .diagram-svg { width:100%; min-width:980px; display:block; }
 
-  /* LEGEND */
   .legend { display:flex; flex-wrap:wrap; gap:10px 22px; padding:12px 18px; border-top:1px solid var(--border); background:var(--bg3); }
   .leg-item { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text2); font-family:'IBM Plex Mono',monospace; }
   .leg-swatch { width:16px; height:10px; border-radius:2px; flex-shrink:0; opacity:0.85; }
 
-  /* SPECS */
   .specs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(195px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border2); border-radius:10px; overflow:hidden; margin-bottom:24px; }
   .spec-cell { background:var(--bg2); padding:15px 17px; transition:background .25s; }
   .spec-label { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:5px; }
   .spec-value { font-size:17px; font-weight:500; color:var(--text); line-height:1.2; }
   .spec-unit  { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text2); margin-top:3px; }
 
-  /* FOOTER */
   .footer { margin-top:36px; padding-top:20px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px; }
   .footer-left { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); line-height:1.8; }
   .footer-right { font-family:'Noto Kufi Arabic',sans-serif; font-size:13px; color:#f0a030; direction:rtl; }
   .footer-credit { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text3); opacity:0.55; margin-top:5px; }
 
   .scroll-hint { display:none; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); text-align:right; padding:4px 18px 5px; }
-  @media(max-width:960px){ .scroll-hint{display:block} }
+  @media(max-width:1020px){ .scroll-hint{display:block} }
   @media(max-width:600px){ .reactor-name{font-size:32px} .header{grid-template-columns:1fr} .company-block{text-align:left} }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="topnav">
   <div class="nav-left">
-    <a href="index.html" class="nav-back">← Pharos Energy</a>
+    <a href="index" class="nav-back">← Pharos Energy</a>
     <div class="nav-logo">
       <svg viewBox="0 0 20 20" fill="none">
         <circle cx="10" cy="10" r="3" fill="#8b6fd4"/>
@@ -169,8 +160,8 @@
           <line x1="19.78" y1="4.22" x2="17.66" y2="6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <line x1="6.34" y1="17.66" x2="4.22" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </g>
-        <g class="icon-moon" style="display:none">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+        <g class="icon-moon">
+          <path d="M12 3a9 9 0 1 0 0 18A7 7 0 0 1 12 3z" fill="currentColor"/>
         </g>
       </svg>
       <span id="toggle-lbl" style="font-size:10px;letter-spacing:0.06em">NUIT</span>
@@ -180,7 +171,6 @@
 
 <div class="page">
 
-  <!-- HEADER -->
   <header class="header">
     <div>
       <div class="reactor-name">MEMPHIS</div>
@@ -195,12 +185,11 @@
     <div class="company-block">
       <div class="company-name">Pharos Energy</div>
       <div class="company-arabic">طاقة فاروس</div>
-      <div class="company-sub">Division Énergie Nucléaire · Le Caire</div>
+      <div class="company-sub">Division Énergie Nucléaire · Siège Le Caire</div>
       <div class="company-year">2305</div>
     </div>
   </header>
 
-  <!-- RESTRICTED BANNER -->
   <div class="restricted-banner">
     <span class="rb-icon">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -215,20 +204,19 @@
     </div>
   </div>
 
-  <!-- LOCALISATION -->
   <div class="location-strip">
     <span class="loc-pin"><svg width="13" height="16" viewBox="0 0 12 16" fill="none"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z" fill="#e84848" opacity="0.85"/><circle cx="6" cy="5" r="2.2" fill="var(--bg2)"/></svg></span>
     <div>
-      <div class="loc-main">Site nucléaire de recherche · Le Caire</div>
-      <div class="loc-sub">Campus de recherche Pharos Energy · Enceinte sécurisée</div>
+      <div class="loc-main">Site nucléaire de recherche MEMPHIS</div>
+      <div class="loc-sub">Campus Pharos Energy · Enceinte sécurisée</div>
     </div>
     <div class="loc-sep"></div>
     <div>
       <div class="loc-country">Royaume-Uni du Nil</div>
-      <div class="loc-sub">Région fédérale du Caire · District de Giza-Nord</div>
+      <div class="loc-sub">Région fédérale du Delta · District du Caire-Nord</div>
     </div>
     <div class="loc-coords">30°13′05″ N · 31°15′32″ E<br>30.21796, 31.25895</div>
-    <a href="https://map.projet-resurgence.fr/?region=42" target="_blank" rel="noopener" class="loc-map-link">
+    <a href="https://map.projet-resurgence.fr/?region=39" target="_blank" rel="noopener" class="loc-map-link">
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="vertical-align:-2px;margin-right:4px"><rect x="1" y="4" width="4" height="11" rx="1" fill="currentColor" opacity="0.7"/><rect x="6" y="1" width="4" height="14" rx="1" fill="currentColor"/><rect x="11" y="3" width="4" height="10" rx="1" fill="currentColor" opacity="0.7"/><polyline points="1,4 6,1 11,3 15,1" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.5"/></svg>Voir sur la carte
     </a>
   </div>
@@ -241,267 +229,258 @@
     </div>
     <div class="scroll-hint">← défiler pour voir le schéma complet →</div>
     <div class="diagram-card-body">
-
       <!--
-        La pile MEMPHIS est une pile de recherche à eau lourde, type piscine/tank.
-        Elle est couplée à une unité de production D₂O par procédé Girdler-Sulfure
-        (échange isotopique H₂S / H₂O à deux températures).
-
-        Layout SVG 1100×560 :
-        x=0..200    : annotations gauche
-        x=200..620  : cœur de la pile (tank + modérateur + combustible)
-        x=620..760  : circuit de refroidissement
-        x=760..900  : unité Girdler (colonnes d'échange H₂S/H₂O)
-        x=900..1100 : annotations droite + sortie D₂O
+        Layout SVG 1200×600
+        x=0..180    annotations gauche (text-anchor=start)
+        x=190..490  cœur pile (tank H₂O + calandria D₂O + combustible)
+        x=500..660  circuit refroidissement + échangeur
+        x=660..660  espace
+        x=680..980  unité Girdler (2 colonnes larges, bien espacées)
+        x=980..1200 sortie D₂O + annotations droite
       -->
-      <svg class="diagram-svg" viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg">
+      <svg class="diagram-svg" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </marker>
           <linearGradient id="water-grad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#4a9eff" stop-opacity="0.18"/>
-            <stop offset="100%" stop-color="#1c6fcc" stop-opacity="0.06"/>
+            <stop offset="0%" stop-color="#4a9eff" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#1c6fcc" stop-opacity="0.05"/>
           </linearGradient>
           <linearGradient id="d2o-grad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1bbd8a" stop-opacity="0.25"/>
-            <stop offset="100%" stop-color="#0d9e74" stop-opacity="0.07"/>
+            <stop offset="0%" stop-color="#1bbd8a" stop-opacity="0.28"/>
+            <stop offset="100%" stop-color="#0d9e74" stop-opacity="0.06"/>
           </linearGradient>
-          <linearGradient id="girdler-grad" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="hot-col" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f0a030" stop-opacity="0.32"/>
+            <stop offset="100%" stop-color="#f0a030" stop-opacity="0.06"/>
+          </linearGradient>
+          <linearGradient id="cold-col" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#8b6fd4" stop-opacity="0.28"/>
-            <stop offset="100%" stop-color="#6b4fb4" stop-opacity="0.08"/>
+            <stop offset="100%" stop-color="#6b4fb4" stop-opacity="0.06"/>
           </linearGradient>
-          <linearGradient id="hot-h2s" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#f0a030" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#f0a030" stop-opacity="0.08"/>
-          </linearGradient>
-          <clipPath id="tank-clip"><rect x="220" y="60" width="240" height="360" rx="8"/></clipPath>
-          <clipPath id="g1-clip"><rect x="780" y="80" width="60" height="320" rx="6"/></clipPath>
-          <clipPath id="g2-clip"><rect x="856" y="80" width="60" height="320" rx="6"/></clipPath>
+          <clipPath id="tank-clip"><rect x="192" y="56" width="270" height="390" rx="10"/></clipPath>
+          <clipPath id="d2o-clip"><rect x="226" y="140" width="202" height="230" rx="10"/></clipPath>
+          <clipPath id="hcol-clip"><rect x="694" y="76" width="90" height="344" rx="8"/></clipPath>
+          <clipPath id="ccol-clip"><rect x="806" y="76" width="90" height="344" rx="8"/></clipPath>
         </defs>
 
-        <!-- ══ ENCEINTE BLINDAGE EXTERNE ══ -->
-        <rect x="196" y="44" width="400" height="396" rx="16"
+        <!-- ══ BLINDAGE BIOLOGIQUE ══ -->
+        <rect x="180" y="44" width="294" height="414" rx="18"
               fill="none" stroke="#3a3258" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.5"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#3a3258"
-              x="396" y="38" text-anchor="middle" letter-spacing="0.08em">BLINDAGE BIOLOGIQUE · béton lourd + plomb</text>
+        <rect x="192" y="34" width="270" height="14" rx="0" fill="var(--bg)" opacity="0.85"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#4a4060"
+              x="327" y="43" text-anchor="middle" letter-spacing="0.08em">BLINDAGE BIOLOGIQUE · béton lourd + plomb</text>
 
-        <!-- ══ TANK PRINCIPAL (pile en piscine) ══ -->
-        <!-- Eau légère de refroidissement -->
+        <!-- ══ TANK H₂O (piscine) ══ -->
         <g clip-path="url(#tank-clip)">
-          <rect x="220" y="60" width="240" height="360" fill="url(#water-grad)"/>
+          <rect x="192" y="56" width="270" height="390" fill="url(#water-grad)"/>
         </g>
-        <rect x="220" y="60" width="240" height="360" rx="8"
-              fill="none" stroke="#4a9eff" stroke-width="1.5" opacity="0.6"/>
-        <rect x="220" y="60" width="240" height="360" rx="8"
-              fill="none" stroke="#4a9eff" stroke-width="0.5" opacity="0.25"/>
+        <rect x="192" y="56" width="270" height="390" rx="10"
+              fill="none" stroke="#4a9eff" stroke-width="1.5" opacity="0.55"/>
+        <!-- Label tank — haut du tank, fond opaque -->
+        <rect x="228" y="60" width="198" height="20" rx="3" fill="var(--bg2)" opacity="0.88"/>
         <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500"
-              fill="#4a9eff" x="340" y="86" text-anchor="middle" letter-spacing="0.05em">TANK PRINCIPAL</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9"
-              fill="#1c6fcc" x="340" y="100" text-anchor="middle">Eau légère H₂O · refroidissement</text>
+              fill="#4a9eff" x="327" y="74" text-anchor="middle">Tank principal · H₂O · refroidissement</text>
 
-        <!-- Calandria interne (modérateur D₂O) -->
-        <rect x="248" y="138" width="184" height="220" rx="10"
-              fill="url(#d2o-grad)" stroke="#1bbd8a" stroke-width="1.4" opacity="0.85"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="10" font-weight="500"
-              fill="#1bbd8a" x="340" y="162" text-anchor="middle">Calandria</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9"
-              fill="#0d9e74" x="340" y="175" text-anchor="middle">Modérateur D₂O</text>
-
-        <!-- Barres de combustible (verticales, 7 barres) -->
-        <g fill="#c07818" stroke="#854f0b" stroke-width="0.6">
-          <rect x="273" y="188" width="10" height="150" rx="2" opacity="0.85"/>
-          <rect x="294" y="188" width="10" height="150" rx="2" opacity="0.85"/>
-          <rect x="315" y="188" width="10" height="150" rx="2" opacity="0.85"/>
-          <rect x="335" y="188" width="10" height="150" rx="2" fill="#d4882a" opacity="0.9"/><!-- central -->
-          <rect x="355" y="188" width="10" height="150" rx="2" opacity="0.85"/>
-          <rect x="376" y="188" width="10" height="150" rx="2" opacity="0.85"/>
-          <rect x="397" y="188" width="10" height="150" rx="2" opacity="0.85"/>
-        </g>
-        <!-- Grille de maintien haut/bas -->
-        <line x1="264" y1="192" x2="416" y2="192" stroke="#c07818" stroke-width="1.5" opacity="0.5"/>
-        <line x1="264" y1="334" x2="416" y2="334" stroke="#c07818" stroke-width="1.5" opacity="0.5"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c07818"
-              x="340" y="185" text-anchor="middle">Réseau combustible UO₂ nat.</text>
-
-        <!-- Barres de contrôle (descendant dans le cœur) -->
-        <g fill="#e84848" stroke="#a83030" stroke-width="0.5">
-          <rect x="284" y="130" width="6" height="72" rx="1" opacity="0.8"/>
-          <rect x="350" y="130" width="6" height="52" rx="1" opacity="0.8"/>
-          <rect x="400" y="130" width="6" height="80" rx="1" opacity="0.8"/>
-          <rect x="281" y="124" width="12" height="8" rx="2" opacity="0.9"/>
-          <rect x="347" y="124" width="12" height="8" rx="2" opacity="0.9"/>
-          <rect x="397" y="124" width="12" height="8" rx="2" opacity="0.9"/>
-          <line x1="287" y1="124" x2="287" y2="100" stroke="#e84848" stroke-width="1.5" fill="none"/>
-          <line x1="353" y1="124" x2="353" y2="100" stroke="#e84848" stroke-width="1.5" fill="none"/>
-          <line x1="403" y1="124" x2="403" y2="100" stroke="#e84848" stroke-width="1.5" fill="none"/>
-        </g>
-        <!-- Bandeau commande -->
-        <rect x="254" y="70" width="172" height="24" rx="5" fill="#1a0808" stroke="#a83030" stroke-width="0.8" opacity="0.9"/>
+        <!-- ══ BANDEAU COMMANDE Cd — déplacé AU-DESSUS du tank (hors cœur) ══ -->
+        <rect x="218" y="22" width="218" height="20" rx="4" fill="#1a0808" opacity="0.55" stroke="#a83030" stroke-width="0.8"/>
         <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#e84848"
-              x="340" y="85" text-anchor="middle" letter-spacing="0.04em">COMMANDE · barres Cd</text>
+              x="327" y="35" text-anchor="middle" letter-spacing="0.04em">COMMANDE · barres Cd · insertion verticale</text>
 
-        <!-- Réflecteur graphite (anneau autour calandria) -->
-        <rect x="240" y="130" width="200" height="236" rx="12"
-              fill="none" stroke="#5a5270" stroke-width="2" stroke-dasharray="3 2" opacity="0.5"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#5a5270"
-              x="244" y="128" text-anchor="start" opacity="0.7">Réflecteur graphite</text>
-
-        <!-- Flux neutronique indicateur -->
-        <circle cx="340" cy="263" r="8" fill="none" stroke="#f0a030" stroke-width="1" opacity="0.5"/>
-        <circle cx="340" cy="263" r="4" fill="#f0a030" opacity="0.3"/>
-        <g stroke="#f0a030" stroke-width="0.5" opacity="0.3">
-          <line x1="340" y1="255" x2="340" y2="248"/>
-          <line x1="346" y1="257" x2="350" y2="252"/>
-          <line x1="334" y1="257" x2="330" y2="252"/>
+        <!-- ══ CALANDRIA D₂O ══ -->
+        <g clip-path="url(#d2o-clip)">
+          <rect x="226" y="140" width="202" height="230" fill="url(#d2o-grad)"/>
         </g>
-
-        <!-- ══ CIRCUIT DE REFROIDISSEMENT PRIMAIRE ══ -->
-        <!-- Sortie eau chaude (droite, haut) -->
-        <path d="M460 180 L540 180 L540 140 L600 140"
-              fill="none" stroke="#f0a030" stroke-width="3.5" marker-end="url(#arrow)" opacity="0.85"/>
-        <rect x="472" y="156" width="78" height="16" rx="3" fill="#1e0e00" stroke="#c07818" stroke-width="0.5" opacity="0.95"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#f0a030"
-              x="511" y="167" text-anchor="middle">H₂O chaud ~65°C</text>
-
-        <!-- Retour eau froide (droite, bas) -->
-        <path d="M600 280 L540 280 L540 320 L460 320"
-              fill="none" stroke="#4a9eff" stroke-width="3.5" marker-end="url(#arrow)" opacity="0.85"/>
-        <rect x="472" y="296" width="78" height="16" rx="3" fill="#001018" stroke="#1c6fcc" stroke-width="0.5" opacity="0.95"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#4a9eff"
-              x="511" y="307" text-anchor="middle">H₂O froid ~40°C</text>
-
-        <!-- Échangeur thermique secondaire -->
-        <rect x="600" y="100" width="80" height="260" rx="12"
-              fill="var(--bg3)" stroke="#4a5168" stroke-width="1.2" opacity="0.9"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="10" font-weight="500"
-              fill="var(--text2)" x="640" y="126" text-anchor="middle">Échangeur</text>
+        <rect x="226" y="140" width="202" height="230" rx="10"
+              fill="none" stroke="#1bbd8a" stroke-width="1.4" opacity="0.85"/>
+        <!-- Label calandria — fond opaque, espacé -->
+        <rect x="248" y="144" width="158" height="26" rx="4" fill="var(--bg2)" opacity="0.85"/>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500"
+              fill="#1bbd8a" x="327" y="156" text-anchor="middle">Calandria</text>
         <text font-family="'IBM Plex Mono',monospace" font-size="9"
-              fill="var(--text3)" x="640" y="139" text-anchor="middle">thermique</text>
-        <!-- Serpentin -->
-        <g fill="none" stroke="#4a9eff" stroke-width="1" opacity="0.35">
-          <path d="M614 168 Q640 178 666 178 Q676 178 676 190 Q676 202 666 202 Q640 202 614 202 Q614 214 640 214 Q666 214 676 214 Q676 226 666 226 Q640 226 614 226 Q614 238 640 238 Q666 238 676 238 Q676 250 666 250 Q640 250 614 250 Q614 262 640 262 Q666 262 676 262 Q676 274 666 274 Q640 274 614 274 Q614 286 640 286 Q666 286 676 286 Q676 298 666 298 Q640 298 614 298 Q614 310 640 310 Q666 310 676 310"/>
+              fill="#0d9e74" x="327" y="168" text-anchor="middle">Modérateur D₂O · 99,75 %</text>
+
+        <!-- Réflecteur graphite contour -->
+        <rect x="214" y="130" width="226" height="250" rx="14"
+              fill="none" stroke="#5a5270" stroke-width="1.5" stroke-dasharray="4 2" opacity="0.45"/>
+        <rect x="215" y="375" width="104" height="13" rx="3" fill="var(--bg2)" opacity="0.8"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#5a5270"
+              x="217" y="385" text-anchor="start" opacity="0.9">Réflecteur graphite</text>
+
+        <!-- ══ BARRES COMBUSTIBLE UO₂ ══ -->
+        <g fill="#c07818" stroke="#854f0b" stroke-width="0.6">
+          <rect x="250" y="192" width="12" height="142" rx="2" opacity="0.85"/>
+          <rect x="270" y="192" width="12" height="142" rx="2" opacity="0.85"/>
+          <rect x="290" y="192" width="12" height="142" rx="2" opacity="0.85"/>
+          <rect x="313" y="192" width="12" height="142" rx="2" fill="#d4882a" opacity="0.95"/>
+          <rect x="336" y="192" width="12" height="142" rx="2" opacity="0.85"/>
+          <rect x="356" y="192" width="12" height="142" rx="2" opacity="0.85"/>
+          <rect x="376" y="192" width="12" height="142" rx="2" opacity="0.85"/>
         </g>
-        <!-- Rejet thermique (vers tour) -->
-        <path d="M680 200 L730 200 L730 120 L760 120"
-              fill="none" stroke="#8b93a8" stroke-width="1.5" stroke-dasharray="4 2" marker-end="url(#arrow)" opacity="0.5"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#545d72"
-              x="744" y="115" text-anchor="middle">Rejet thermique</text>
+        <line x1="240" y1="196" x2="398" y2="196" stroke="#c07818" stroke-width="1.5" opacity="0.5"/>
+        <line x1="240" y1="330" x2="398" y2="330" stroke="#c07818" stroke-width="1.5" opacity="0.5"/>
+        <!-- Label combustible — fond opaque, bien au-dessus de la grille -->
+        <rect x="236" y="178" width="164" height="13" rx="3" fill="var(--bg2)" opacity="0.88"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c07818"
+              x="240" y="188" text-anchor="start">Réseau combustible UO₂ naturel</text>
+
+        <!-- ══ BARRES DE CONTRÔLE Cd ══ -->
+        <g fill="#e84848" stroke="#a83030" stroke-width="0.5">
+          <rect x="260" y="132" width="7" height="68" rx="1" opacity="0.8"/>
+          <rect x="318" y="132" width="7" height="50" rx="1" opacity="0.8"/>
+          <rect x="374" y="132" width="7" height="76" rx="1" opacity="0.8"/>
+          <rect x="257" y="125" width="13" height="8" rx="2" opacity="0.9"/>
+          <rect x="315" y="125" width="13" height="8" rx="2" opacity="0.9"/>
+          <rect x="371" y="125" width="13" height="8" rx="2" opacity="0.9"/>
+          <line x1="263" y1="125" x2="263" y2="58" stroke="#e84848" stroke-width="1.2" fill="none" opacity="0.7"/>
+          <line x1="321" y1="125" x2="321" y2="58" stroke="#e84848" stroke-width="1.2" fill="none" opacity="0.7"/>
+          <line x1="377" y1="125" x2="377" y2="58" stroke="#e84848" stroke-width="1.2" fill="none" opacity="0.7"/>
+        </g>
+
+        <!-- Flux neutronique -->
+        <circle cx="319" cy="268" r="8" fill="none" stroke="#f0a030" stroke-width="1" opacity="0.5"/>
+        <circle cx="319" cy="268" r="4" fill="#f0a030" opacity="0.3"/>
+        <g stroke="#f0a030" stroke-width="0.5" opacity="0.3">
+          <line x1="319" y1="260" x2="319" y2="252"/>
+          <line x1="325" y1="262" x2="330" y2="256"/>
+          <line x1="313" y1="262" x2="308" y2="256"/>
+        </g>
+
+        <!-- ══ CIRCUIT REFROIDISSEMENT ══ -->
+        <path d="M462 196 L530 196 L530 154 L574 154"
+              fill="none" stroke="#f0a030" stroke-width="3.5" marker-end="url(#arrow)" opacity="0.85"/>
+        <rect x="470" y="174" width="82" height="16" rx="3" fill="var(--bg2)" opacity="0.9"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#f0a030"
+              x="511" y="185" text-anchor="middle">H₂O chaud ~65°C</text>
+
+        <path d="M574 284 L530 284 L530 322 L462 322"
+              fill="none" stroke="#4a9eff" stroke-width="3.5" marker-end="url(#arrow)" opacity="0.85"/>
+        <rect x="470" y="290" width="82" height="16" rx="3" fill="var(--bg2)" opacity="0.9"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#4a9eff"
+              x="511" y="301" text-anchor="middle">H₂O froid ~40°C</text>
+
+        <rect x="574" y="112" width="86" height="216" rx="10" fill="var(--bg3)" stroke="#4a5168" stroke-width="1.2" opacity="0.9"/>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="10" font-weight="500"
+              fill="var(--text2)" x="617" y="136" text-anchor="middle">Échangeur</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9"
+              fill="var(--text3)" x="617" y="149" text-anchor="middle">thermique</text>
+        <g fill="none" stroke="#4a9eff" stroke-width="1" opacity="0.3">
+          <path d="M588 170 Q617 180 646 180 Q656 180 656 192 Q656 204 646 204 Q617 204 588 204 Q588 216 617 216 Q646 216 656 216 Q656 228 646 228 Q617 228 588 228 Q588 240 617 240 Q646 240 656 240 Q656 252 646 252 Q617 252 588 252 Q588 264 617 264 Q646 264 656 264 Q656 276 646 276 Q617 276 588 276 Q588 288 617 288 Q646 288 656 288 Q656 300 646 300 Q617 300 588 300"/>
+        </g>
+        <path d="M660 212 L680 212" fill="none" stroke="#8b93a8" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arrow)" opacity="0.5"/>
 
         <!-- ══ UNITÉ GIRDLER-SULFURE ══ -->
-        <!-- Colonnes d'échange H₂S / H₂O chaude (tour chaude) -->
-        <g clip-path="url(#g1-clip)">
-          <rect x="780" y="80" width="60" height="320" fill="url(#hot-h2s)"/>
+        <rect x="680" y="52" width="224" height="26" rx="5" fill="var(--bg3)" stroke="#8b6fd4" stroke-width="0.9" opacity="0.95"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="10" font-weight="500" fill="#8b6fd4"
+              x="792" y="69" text-anchor="middle" letter-spacing="0.04em">Unité Girdler-Sulfure</text>
+
+        <!-- Colonne chaude -->
+        <rect x="694" y="82" width="90" height="320" rx="8" fill="url(#hot-col)" stroke="#f0a030" stroke-width="1.3" opacity="0.85"/>
+        <g stroke="#f0a030" stroke-width="0.6" opacity="0.35">
+          <line x1="700" y1="122" x2="778" y2="122"/><line x1="700" y1="154" x2="778" y2="154"/>
+          <line x1="700" y1="186" x2="778" y2="186"/><line x1="700" y1="218" x2="778" y2="218"/>
+          <line x1="700" y1="250" x2="778" y2="250"/><line x1="700" y1="282" x2="778" y2="282"/>
+          <line x1="700" y1="314" x2="778" y2="314"/><line x1="700" y1="346" x2="778" y2="346"/>
         </g>
-        <rect x="780" y="80" width="60" height="320" rx="6"
-              fill="none" stroke="#f0a030" stroke-width="1.3" opacity="0.8"/>
-        <!-- Plateaux de contact -->
-        <g stroke="#f0a030" stroke-width="0.6" opacity="0.4">
-          <line x1="784" y1="120" x2="836" y2="120"/>
-          <line x1="784" y1="152" x2="836" y2="152"/>
-          <line x1="784" y1="184" x2="836" y2="184"/>
-          <line x1="784" y1="216" x2="836" y2="216"/>
-          <line x1="784" y1="248" x2="836" y2="248"/>
-          <line x1="784" y1="280" x2="836" y2="280"/>
-          <line x1="784" y1="312" x2="836" y2="312"/>
-          <line x1="784" y1="344" x2="836" y2="344"/>
-        </g>
+        <rect x="697" y="86" width="84" height="30" rx="4" fill="#1e0e00" opacity="0.88"/>
         <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#f0a030"
-              x="810" y="100" text-anchor="middle">Tour</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c07818"
-              x="810" y="113" text-anchor="middle">chaude</text>
+              x="739" y="99" text-anchor="middle" font-weight="500">Tour chaude</text>
         <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#c07818"
-              x="810" y="416" text-anchor="middle">~130 °C</text>
+              x="739" y="111" text-anchor="middle">H₂S / H₂O · ~130°C</text>
+        <!-- Label bas colonne chaude — SOUS la colonne (y=402+) -->
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c07818"
+              x="739" y="418" text-anchor="middle">Sortie H₂S recyclé</text>
 
-        <!-- Colonne H₂S/H₂O froide (tour froide) -->
-        <g clip-path="url(#g2-clip)">
-          <rect x="856" y="80" width="60" height="320" fill="url(#girdler-grad)"/>
+        <!-- Colonne froide -->
+        <rect x="806" y="82" width="90" height="320" rx="8" fill="url(#cold-col)" stroke="#8b6fd4" stroke-width="1.3" opacity="0.85"/>
+        <g stroke="#8b6fd4" stroke-width="0.6" opacity="0.35">
+          <line x1="812" y1="122" x2="890" y2="122"/><line x1="812" y1="154" x2="890" y2="154"/>
+          <line x1="812" y1="186" x2="890" y2="186"/><line x1="812" y1="218" x2="890" y2="218"/>
+          <line x1="812" y1="250" x2="890" y2="250"/><line x1="812" y1="282" x2="890" y2="282"/>
+          <line x1="812" y1="314" x2="890" y2="314"/><line x1="812" y1="346" x2="890" y2="346"/>
         </g>
-        <rect x="856" y="80" width="60" height="320" rx="6"
-              fill="none" stroke="#8b6fd4" stroke-width="1.3" opacity="0.8"/>
-        <g stroke="#8b6fd4" stroke-width="0.6" opacity="0.4">
-          <line x1="860" y1="120" x2="912" y2="120"/>
-          <line x1="860" y1="152" x2="912" y2="152"/>
-          <line x1="860" y1="184" x2="912" y2="184"/>
-          <line x1="860" y1="216" x2="912" y2="216"/>
-          <line x1="860" y1="248" x2="912" y2="248"/>
-          <line x1="860" y1="280" x2="912" y2="280"/>
-          <line x1="860" y1="312" x2="912" y2="312"/>
-          <line x1="860" y1="344" x2="912" y2="344"/>
-        </g>
+        <rect x="809" y="86" width="84" height="30" rx="4" fill="#0d0820" opacity="0.88"/>
         <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#8b6fd4"
-              x="886" y="100" text-anchor="middle">Tour</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b4fb4"
-              x="886" y="113" text-anchor="middle">froide</text>
+              x="851" y="99" text-anchor="middle" font-weight="500">Tour froide</text>
         <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#6b4fb4"
-              x="886" y="416" text-anchor="middle">~30 °C</text>
-
-        <!-- Label Girdler ensemble -->
-        <rect x="760" y="60" width="176" height="22" rx="5" fill="var(--bg3)" stroke="#8b6fd4" stroke-width="0.8" opacity="0.9"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="10" fill="#8b6fd4"
-              x="848" y="75" text-anchor="middle" letter-spacing="0.05em">UNITÉ GIRDLER-SULFURE · H₂S / H₂O</text>
-
-        <!-- Connexion échangeur → Girdler (flux H₂O) -->
-        <path d="M730 240 L760 240" fill="none" stroke="#4a9eff" stroke-width="2" stroke-dasharray="3 2" marker-end="url(#arrow)" opacity="0.55"/>
+              x="851" y="111" text-anchor="middle">H₂S / H₂O · ~30°C</text>
+        <!-- Label bas colonne froide — SOUS la colonne -->
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b4fb4"
+              x="851" y="418" text-anchor="middle">Eau appauvrie recyclée</text>
 
         <!-- Flux H₂S inter-colonnes -->
-        <path d="M840 240 L856 240" fill="none" stroke="#f0a030" stroke-width="2" marker-end="url(#arrow)" opacity="0.7"/>
+        <path d="M784 212 L806 212" fill="none" stroke="#f0a030" stroke-width="2.5" marker-end="url(#arrow)" opacity="0.75"/>
+        <rect x="784" y="196" width="22" height="13" rx="2" fill="var(--bg2)" opacity="0.85"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="7" fill="#c07818" x="795" y="206" text-anchor="middle">H₂S</text>
 
-        <!-- Sortie D₂O enrichi -->
-        <path d="M916 200 L960 200" fill="none" stroke="#1bbd8a" stroke-width="3" marker-end="url(#arrow)" opacity="0.9"/>
-        <rect x="924" y="183" width="66" height="14" rx="3" fill="#001810" stroke="#0d9e74" stroke-width="0.5" opacity="0.95"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#1bbd8a"
-              x="957" y="193" text-anchor="middle">D₂O enrichi</text>
+        <!-- Connexion échangeur → tour froide -->
+        <path d="M680 260 L694 260" fill="none" stroke="#4a9eff" stroke-width="2" stroke-dasharray="3 2" marker-end="url(#arrow)" opacity="0.5"/>
 
-        <!-- Réservoir D₂O -->
-        <rect x="960" y="170" width="70" height="60" rx="8" fill="var(--bg2)" stroke="#1bbd8a" stroke-width="1.2" opacity="0.9"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="10" font-weight="500"
-              fill="#1bbd8a" x="995" y="197" text-anchor="middle">Réservoir</text>
+        <!-- Entrée H₂S naturel (bas, flèche partant de plus bas) -->
+        <path d="M739 450 L739 406" fill="none" stroke="#f0a030" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arrow)" opacity="0.6"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#c07818"
+              x="739" y="465" text-anchor="middle">H₂S alimentaire</text>
+
+        <!-- Entrée eau bas colonne froide -->
+        <path d="M851 450 L851 406" fill="none" stroke="#8b6fd4" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arrow)" opacity="0.5"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b4fb4"
+              x="851" y="465" text-anchor="middle">H₂O d'alimentation</text>
+
+        <!-- ══ SORTIE D₂O ENRICHI ══ -->
+        <path d="M896 220 L950 220" fill="none" stroke="#1bbd8a" stroke-width="3.5" marker-end="url(#arrow)" opacity="0.9"/>
+        <rect x="904" y="205" width="66" height="13" rx="3" fill="var(--bg2)" opacity="0.9"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#1bbd8a"
+              x="937" y="215" text-anchor="middle">D₂O enrichi</text>
+
+        <!-- Réservoir D₂O — élargi pour contenir le texte -->
+        <rect x="950" y="192" width="106" height="62" rx="8" fill="var(--bg2)" stroke="#1bbd8a" stroke-width="1.2" opacity="0.9"/>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500"
+              fill="#1bbd8a" x="1003" y="218" text-anchor="middle">Réservoir D₂O</text>
         <text font-family="'IBM Plex Mono',monospace" font-size="9"
-              fill="#0d9e74" x="995" y="210" text-anchor="middle">D₂O stock</text>
+              fill="#0d9e74" x="1003" y="232" text-anchor="middle">Stock filière NILDU</text>
 
-        <!-- Entrée H₂S (bas des colonnes) -->
-        <path d="M848 430 L848 400" fill="none" stroke="#f0a030" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arrow)" opacity="0.6"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#c07818"
-              x="848" y="444" text-anchor="middle">H₂S alimentaire</text>
+        <!-- Flèche D₂O vers NILDU -->
+        <path d="M1056 222 L1100 222" fill="none" stroke="#1bbd8a" stroke-width="2" stroke-dasharray="4 2" marker-end="url(#arrow)" opacity="0.65"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#0d9e74"
+              x="1130" y="218" text-anchor="start">→ NILDU</text>
 
-        <!-- ══ ANNOTATIONS GAUCHE (text-anchor=start, x=8) ══ -->
-        <line x1="220" y1="190" x2="170" y2="156" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="220" cy="190" r="2.5" fill="#4a9eff" opacity="0.8"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="152" text-anchor="start">Tank H₂O</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="165" text-anchor="start">Eau légère · refroidissement</text>
+        <!-- ══ ANNOTATIONS GAUCHE ══ -->
+        <line x1="192" y1="196" x2="152" y2="162" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <circle cx="192" cy="196" r="2.5" fill="#4a9eff" opacity="0.8"/>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="158" text-anchor="start">Tank H₂O</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="171" text-anchor="start">Eau légère · refroidissement</text>
 
-        <line x1="248" y1="263" x2="170" y2="230" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="248" cy="263" r="2.5" fill="#1bbd8a" opacity="0.8"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="226" text-anchor="start">Calandria D₂O</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="239" text-anchor="start">Modérateur · 99,75 % D₂O</text>
+        <line x1="226" y1="268" x2="152" y2="234" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <circle cx="226" cy="268" r="2.5" fill="#1bbd8a" opacity="0.8"/>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="230" text-anchor="start">Calandria D₂O</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="243" text-anchor="start">Modérateur · eau lourde</text>
 
-        <line x1="270" y1="300" x2="170" y2="300" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="270" cy="300" r="2.5" fill="#c07818" opacity="0.8"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="296" text-anchor="start">Combustible UO₂</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="309" text-anchor="start">U naturel · barres verticales</text>
+        <line x1="250" y1="310" x2="152" y2="302" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <circle cx="250" cy="310" r="2.5" fill="#c07818" opacity="0.8"/>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="298" text-anchor="start">Combustible UO₂</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="311" text-anchor="start">Uranium naturel · barres vert.</text>
 
-        <line x1="225" y1="155" x2="170" y2="370" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="225" cy="155" r="2.5" fill="#e84848" opacity="0.8"/>
+        <line x1="192" y1="156" x2="152" y2="370" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <circle cx="192" cy="156" r="2.5" fill="#e84848" opacity="0.8"/>
         <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="366" text-anchor="start">Barres de contrôle</text>
         <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="379" text-anchor="start">Cadmium · insertion verticale</text>
 
-        <line x1="196" y1="400" x2="170" y2="420" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="196" cy="400" r="2.5" fill="#4a5168" opacity="0.8"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="416" text-anchor="start">Blindage biologique</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="429" text-anchor="start">Béton lourd + plomb</text>
+        <line x1="180" y1="420" x2="152" y2="432" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <circle cx="180" cy="420" r="2.5" fill="#4a5168" opacity="0.8"/>
+        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="428" text-anchor="start">Blindage biologique</text>
+        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="441" text-anchor="start">Béton lourd + plomb</text>
 
         <!-- Filigrane -->
         <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#191424"
-              x="540" y="310" text-anchor="middle" transform="rotate(-22 540 310)"
+              x="560" y="320" text-anchor="middle" transform="rotate(-20 560 320)"
               letter-spacing="0.22em">CONFIDENTIEL · PHAROS ENERGY · MEMPHIS-001 · 2305</text>
 
-        <line x1="8" y1="534" x2="1092" y2="534" stroke="#161428" stroke-width="1"/>
+        <line x1="8" y1="580" x2="1192" y2="580" stroke="#161428" stroke-width="1"/>
 
       </svg>
     </div>
 
-    <!-- LÉGENDE -->
     <div class="legend">
       <div class="leg-item"><div class="leg-swatch" style="background:#4a9eff;opacity:.7"></div>Tank eau légère H₂O</div>
       <div class="leg-item"><div class="leg-swatch" style="background:#1bbd8a"></div>Calandria D₂O (modérateur)</div>
@@ -516,94 +495,29 @@
 
   <!-- SPECS -->
   <div class="specs-grid">
-    <div class="spec-cell">
-      <div class="spec-label">Type</div>
-      <div class="spec-value">Pile tank</div>
-      <div class="spec-unit">Cœur immergé · tank eau légère</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Puissance thermique</div>
-      <div class="spec-value">~10</div>
-      <div class="spec-unit">MWth · réacteur de recherche</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Mise en service</div>
-      <div class="spec-value">2305</div>
-      <div class="spec-unit">Première criticité · campus Le Caire</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Statut</div>
-      <div class="spec-value" style="font-size:14px;color:#20c060">En service</div>
-      <div class="spec-unit">Opérationnel · accès restreint</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Modérateur</div>
-      <div class="spec-value">D₂O</div>
-      <div class="spec-unit">Eau lourde · 99,75 % pureté isotopique</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Caloporteur tank</div>
-      <div class="spec-value">H₂O</div>
-      <div class="spec-unit">Eau légère · circulation naturelle</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Combustible</div>
-      <div class="spec-value">U nat.</div>
-      <div class="spec-unit">Uranium naturel · barres verticales</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Flux neutronique max</div>
-      <div class="spec-value">~2×10¹³</div>
-      <div class="spec-unit">n/cm²/s · cœur central</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Procédé D₂O</div>
-      <div class="spec-value">Girdler</div>
-      <div class="spec-unit">Échange isotopique H₂S / H₂O</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Températures Girdler</div>
-      <div class="spec-value">30 / 130</div>
-      <div class="spec-unit">°C · tour froide / tour chaude</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Production D₂O</div>
-      <div class="spec-value">~4</div>
-      <div class="spec-unit">t D₂O/an · alimentation filière NILDU</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Barres de contrôle</div>
-      <div class="spec-value">Cd</div>
-      <div class="spec-unit">Cadmium · insertion verticale</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Réflecteur</div>
-      <div class="spec-value">Graphite</div>
-      <div class="spec-unit">Anneau périphérique · économie neutrons</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Blindage</div>
-      <div class="spec-value">Béton + Pb</div>
-      <div class="spec-unit">Béton lourd + plomb · enceinte complète</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Objectif principal</div>
-      <div class="spec-value" style="font-size:13px">R&amp;D · D₂O</div>
-      <div class="spec-unit">Validation filière · production eau lourde</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Localisation</div>
-      <div class="spec-value" style="font-size:13px">Le Caire</div>
-      <div class="spec-unit">30.21796, 31.25895 · campus sécurisé</div>
-    </div>
+    <div class="spec-cell"><div class="spec-label">Type</div><div class="spec-value">Pile tank</div><div class="spec-unit">Cœur immergé · piscine H₂O</div></div>
+    <div class="spec-cell"><div class="spec-label">Puissance thermique</div><div class="spec-value">~10</div><div class="spec-unit">MWth · réacteur de recherche</div></div>
+    <div class="spec-cell"><div class="spec-label">Mise en service</div><div class="spec-value">2305</div><div class="spec-unit">Première criticité · campus sécurisé</div></div>
+    <div class="spec-cell"><div class="spec-label">Statut</div><div class="spec-value" style="font-size:14px;color:#20c060">En service</div><div class="spec-unit">Opérationnel · accès restreint</div></div>
+    <div class="spec-cell"><div class="spec-label">Modérateur</div><div class="spec-value">D₂O</div><div class="spec-unit">Eau lourde · 99,75 % pureté isotopique</div></div>
+    <div class="spec-cell"><div class="spec-label">Caloporteur tank</div><div class="spec-value">H₂O</div><div class="spec-unit">Eau légère · circulation naturelle</div></div>
+    <div class="spec-cell"><div class="spec-label">Combustible</div><div class="spec-value">U nat.</div><div class="spec-unit">Uranium naturel · barres verticales</div></div>
+    <div class="spec-cell"><div class="spec-label">Flux neutronique max</div><div class="spec-value">~2×10¹³</div><div class="spec-unit">n/cm²/s · cœur central</div></div>
+    <div class="spec-cell"><div class="spec-label">Procédé D₂O</div><div class="spec-value">Girdler</div><div class="spec-unit">Échange isotopique H₂S / H₂O</div></div>
+    <div class="spec-cell"><div class="spec-label">Températures Girdler</div><div class="spec-value">30 / 130</div><div class="spec-unit">°C · tour froide / tour chaude</div></div>
+    <div class="spec-cell"><div class="spec-label">Production D₂O</div><div class="spec-value">~4</div><div class="spec-unit">t D₂O/an · alimentation filière NILDU</div></div>
+    <div class="spec-cell"><div class="spec-label">Barres de contrôle</div><div class="spec-value">Cd</div><div class="spec-unit">Cadmium · insertion verticale</div></div>
+    <div class="spec-cell"><div class="spec-label">Réflecteur</div><div class="spec-value">Graphite</div><div class="spec-unit">Anneau périphérique · économie neutrons</div></div>
+    <div class="spec-cell"><div class="spec-label">Blindage</div><div class="spec-value">Béton + Pb</div><div class="spec-unit">Béton lourd + plomb · enceinte complète</div></div>
+    <div class="spec-cell"><div class="spec-label">Objectif principal</div><div class="spec-value" style="font-size:13px">R&amp;D · D₂O</div><div class="spec-unit">Validation filière · production eau lourde</div></div>
+    <div class="spec-cell"><div class="spec-label">Localisation</div><div class="spec-value" style="font-size:13px">Delta</div><div class="spec-unit">30.21796, 31.25895 · campus sécurisé</div></div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div>
       <div class="footer-left">
         MEMPHIS · Pile Atomique de Recherche · Schéma ref. MEMPHIS-PILE-001 · Pharos Energy © 2305<br>
-        Site du Caire · 30.21796, 31.25895 · Région fédérale du Caire · Royaume-Uni du Nil<br>
+        Site 30.21796, 31.25895 · Région fédérale du Delta · Royaume-Uni du Nil<br>
         Document technique confidentiel — accès restreint — Division Énergie Nucléaire
       </div>
       <div class="footer-credit">Projet Résurgence © 2026</div>
@@ -614,25 +528,31 @@
 </div>
 
 <script>
+  const FAVICON_ATOM = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBhMGMxMCIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUwIiByeD0iMTMiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBjMDIwIiBzdHJva2Utd2lkdGg9IjQuOCIgdHJhbnNmb3JtPSJyb3RhdGUoMCA1MCA1MCkiLz48ZWxsaXBzZSBjeD0iNTAiIGN5PSI1MCIgcng9IjEzIiByeT0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwYzAyMCIgc3Ryb2tlLXdpZHRoPSI0LjgiIHRyYW5zZm9ybT0icm90YXRlKDYwIDUwIDUwKSIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUwIiByeD0iMTMiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBjMDIwIiBzdHJva2Utd2lkdGg9IjQuOCIgdHJhbnNmb3JtPSJyb3RhdGUoLTYwIDUwIDUwKSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEwLjUiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjEwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjkwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjMwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjMwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjcwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjcwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48L3N2Zz4=';
+  const FAVICON_MOON = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2Y0ZjVmNyIvPjxwYXRoIGQ9Ik02MCAxNSBBMzUgMzUgMCAxIDAgNjAgODUgQTI1IDI1IDAgMSAxIDYwIDE1WiIgZmlsbD0iIzZiNGZiNCIvPjwvc3ZnPg==';
+
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     const lbl = document.getElementById('toggle-lbl');
     const icon = document.querySelector('.toggle-icon');
     if (lbl) lbl.textContent = theme === 'dark' ? 'NUIT' : 'JOUR';
-    if (icon) icon.setAttribute('data-mode', theme);
+    if (icon) {
+      icon.setAttribute('data-mode', theme);
+      const sun  = icon.querySelector('.icon-sun');
+      const moon = icon.querySelector('.icon-moon');
+      if (sun)  sun.style.display  = theme === 'dark'  ? 'block' : 'none';
+      if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+    }
     localStorage.setItem('pharos-theme', theme);
   }
   function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
+    applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   }
   (function() {
     const saved = localStorage.getItem('pharos-theme');
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     applyTheme(saved || (mq.matches ? 'dark' : 'light'));
-    mq.addEventListener('change', e => {
-      if (!localStorage.getItem('pharos-theme')) applyTheme(e.matches ? 'dark' : 'light');
-    });
+    mq.addEventListener('change', e => { if (!localStorage.getItem('pharos-theme')) applyTheme(e.matches ? 'dark' : 'light'); });
   })();
 </script>
 </body>
