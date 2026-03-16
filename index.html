@@ -3,161 +3,346 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haut-Barrage d'Assouan · Division Hydroélectrique</title>
+<title>Pharos Energy · Accueil</title>
 
-<meta property="og:type"         content="website">
-<meta property="og:title"        content="Haut-Barrage d'Assouan · Pharos Energy · 2304">
-<meta property="og:description"  content="Haut-Barrage d'Assouan — Installation hydroélectrique majeure du Royaume-Uni du Nil. En service depuis 2304. Production : 1 500 000 MWh/an. Division Hydroélectrique · Pharos Energy.">
-<meta property="og:site_name"    content="Pharos Energy · Division Hydroélectrique">
-<meta name="theme-color"         content="#3b82f6">
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Pharos Energy · Division Énergie Nucléaire">
+<meta property="og:description" content="Pharos Energy (طاقة فاروس) — Division Énergie Nucléaire du Royaume-Uni du Nil. Projets nucléaires civils, recherche et développement énergétique.">
+<meta name="theme-color"        content="#1bbd8a">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBhMGMxMCIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUwIiByeD0iMTMiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBjMDIwIiBzdHJva2Utd2lkdGg9IjQuOCIgdHJhbnNmb3JtPSJyb3RhdGUoMCA1MCA1MCkiLz48ZWxsaXBzZSBjeD0iNTAiIGN5PSI1MCIgcng9IjEzIiByeT0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwYzAyMCIgc3Ryb2tlLXdpZHRoPSI0LjgiIHRyYW5zZm9ybT0icm90YXRlKDYwIDUwIDUwKSIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUwIiByeD0iMTMiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBjMDIwIiBzdHJva2Utd2lkdGg9IjQuOCIgdHJhbnNmb3JtPSJyb3RhdGUoLTYwIDUwIDUwKSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEwLjUiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjEwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjkwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjMwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjMwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjcwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjcwIiByPSI0LjgiIGZpbGw9IiNmMGMwMjAiLz48L3N2Zz4=">
 <style>
-:root[data-theme="dark"] {
-    --bg:       #090c12;
-    --bg2:      #0f1520;
-    --bg3:      #141c2a;
-    --border:   rgba(59,130,246,0.1);
-    --border2:  rgba(59,130,246,0.18);
-    --border3:  rgba(59,130,246,0.32);
-    --text:     #dce8f8;
-    --text2:    #7a9ac0;
-    --text3:    #4a6080;
-    --toggle-bg:#141c2a;
-    --acc:      #3b82f6;
-    --acc2:     #1d4ed8;
-    --acc-dim:  rgba(59,130,246,0.1);
+  /* ── THEME VARIABLES ── */
+  :root[data-theme="dark"] {
+    --bg:          #0a0c10;
+    --bg2:         #111520;
+    --bg3:         #161b26;
+    --bg4:         #1c2232;
+    --border:      rgba(255,255,255,0.07);
+    --border2:     rgba(255,255,255,0.13);
+    --border3:     rgba(255,255,255,0.2);
+    --text:        #e2e6f0;
+    --text2:       #8b93a8;
+    --text3:       #545d72;
+    --card-bg:     #111520;
+    --card-hover:  #161b28;
+    --toggle-bg:   #1c2232;
+    --toggle-icon: "☀";
   }
-:root[data-theme="light"] {
-    --bg:       #f0f4fb;
-    --bg2:      #ffffff;
-    --bg3:      #e6eef8;
-    --border:   rgba(29,78,216,0.08);
-    --border2:  rgba(29,78,216,0.15);
-    --border3:  rgba(29,78,216,0.28);
-    --text:     #0f1e36;
-    --text2:    #2a4a6e;
-    --text3:    #7a9ac0;
-    --toggle-bg:#e6eef8;
-    --acc:      #1d4ed8;
-    --acc2:     #1e3a8a;
-    --acc-dim:  rgba(29,78,216,0.08);
+  :root[data-theme="light"] {
+    --bg:          #f4f5f7;
+    --bg2:         #ffffff;
+    --bg3:         #eef0f4;
+    --bg4:         #e4e7ef;
+    --border:      rgba(0,0,0,0.07);
+    --border2:     rgba(0,0,0,0.12);
+    --border3:     rgba(0,0,0,0.2);
+    --text:        #1a1e2a;
+    --text2:       #4a5168;
+    --text3:       #8b93a8;
+    --card-bg:     #ffffff;
+    --card-hover:  #f0f3fa;
+    --toggle-bg:   #e4e7ef;
+    --toggle-icon: "☽";
   }
-*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-  
-  
 
-  
-  
-  
-  .nav-back:hover { color:var(--text); border-color:var(--border3); }
-  
-  .nav-logo svg { width:17px; height:17px; }
-  
-  
-  
-  
-   50%{opacity:.3} }
-  
-  
-  
-  
-  
-  
-  
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body {
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:14px;
+    line-height:1.6;
+    min-height:100vh;
+    transition: background .25s, color .25s;
+  }
 
-  
+  /* ── FIXED NAV ── */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 56px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border2);
+    flex-wrap: nowrap;
+    gap: 16px;
+    transition: background .25s;
+  }
+  .nav-left { display:flex; align-items:center; gap:14px; flex-shrink:0; }
+  .nav-logo {
+    width:34px; height:34px;
+    border:1px solid #1bbd8a;
+    border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(27,189,138,0.1);
+    flex-shrink:0;
+  }
+  .nav-logo svg { width:18px; height:18px; }
+  .nav-brand { font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:var(--text2); letter-spacing:0.06em; text-transform:uppercase; white-space:nowrap; }
+  .nav-center { display:flex; align-items:center; gap:4px; flex:1; justify-content:center; flex-wrap:wrap; }
+  .nav-link { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); padding:4px 10px; border-radius:4px; text-decoration:none; transition:color .15s, background .15s; white-space:nowrap; }
+  .nav-link:hover { color:var(--text); background:var(--border); }
+  .nav-right { display:flex; align-items:center; gap:10px; flex-shrink:0; }
 
-  .header { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:start; margin-bottom:20px; }
-  .dam-name { font-size:42px; font-weight:600; letter-spacing:0.06em; color:var(--text); line-height:1; margin-bottom:6px; }
-  .dam-full { font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--acc); letter-spacing:0.04em; margin-bottom:14px; }
-  
-  
-  
-  
-  
-  
-  .company-block { text-align:right; }
-  .company-name { font-size:18px; font-weight:500; color:var(--text); }
-  .company-arabic { font-family:'Noto Kufi Arabic',sans-serif; font-size:15px; color:#f59e0b; direction:rtl; margin-top:2px; }
-  .company-sub { font-size:12px; color:var(--text3); margin-top:4px; font-family:'IBM Plex Mono',monospace; }
-  .company-year { display:inline-block; margin-top:8px; font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:500; color:var(--acc); letter-spacing:0.08em; }
+  /* TOGGLE DAY/NIGHT */
+  .theme-toggle {
+    display:flex; align-items:center; gap:6px;
+    background:var(--toggle-bg);
+    border:1px solid var(--border2);
+    border-radius:20px;
+    padding:4px 10px;
+    cursor:pointer;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    color:var(--text2);
+    transition:all .2s;
+    user-select:none;
+  }
+  .theme-toggle:hover { border-color:var(--border3); color:var(--text); }
+  .theme-toggle .toggle-icon { font-size:13px; transition:transform .3s; }
+  [data-theme="light"] .toggle-icon { transform:rotate(180deg); }
+  .theme-toggle .toggle-label { letter-spacing:0.06em; }
 
-  .active-banner { display:flex; align-items:center; gap:14px; padding:12px 18px; background:rgba(34,197,94,0.06); border:1px solid rgba(34,197,94,0.22); border-left:3px solid #22c55e; border-radius:8px; margin-bottom:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#16a34a; flex-wrap:wrap; }
-  [data-theme="light"] .active-banner { color:#166534; }
-  .ab-dot { width:8px; height:8px; border-radius:50%; background:#22c55e; flex-shrink:0; animation:pulse 1.5s ease-in-out infinite; }
-  .ab-text strong { color:#22c55e; }
+  /* ── HERO ── */
+  .hero {
+    position:relative;
+    overflow:hidden;
+    padding:80px 40px 72px;
+    text-align:center;
+    border-bottom:1px solid var(--border);
+  }
+  .hero-bg {
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(27,189,138,0.06) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  /* grille subtile */
+  .hero-bg::after {
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity:.35;
+  }
+  .hero-content { position:relative; z-index:1; max-width:720px; margin:0 auto; }
+  .hero-eyebrow {
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:#1bbd8a;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content:''; display:block; height:1px; width:32px;
+    background:rgba(27,189,138,0.4);
+  }
+  .hero-title {
+    font-size:52px;
+    font-weight:600;
+    color:var(--text);
+    letter-spacing:0.01em;
+    line-height:1.1;
+    margin-bottom:8px;
+  }
+  .hero-title-ar {
+    font-family:'Noto Kufi Arabic',sans-serif;
+    font-size:28px;
+    font-weight:500;
+    color:#f0a030;
+    direction:rtl;
+    margin-bottom:20px;
+    line-height:1.3;
+  }
+  .hero-sub {
+    font-size:15px;
+    color:var(--text2);
+    max-width:520px;
+    margin:0 auto 32px;
+    line-height:1.7;
+  }
+  .hero-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:36px; }
+  .htag {
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    padding:3px 10px;
+    border-radius:4px;
+    border:1px solid;
+    letter-spacing:0.03em;
+  }
+  .htag-teal  { background:rgba(27,189,138,0.1);  color:#1bbd8a; border-color:#0d9e74; }
+  .htag-amber { background:rgba(240,160,48,0.1);  color:#f0a030; border-color:#c07818; }
+  .htag-blue  { background:rgba(74,158,255,0.1);  color:#4a9eff; border-color:#1c6fcc; }
+  .htag-gray  { background:var(--bg3); color:var(--text2); border-color:var(--border2); }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  /* STAT ROW */
+  .hero-stats {
+    display:inline-flex; gap:0;
+    background:var(--bg2);
+    border:1px solid var(--border2);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .hstat { padding:14px 28px; text-align:center; border-right:1px solid var(--border); }
+  .hstat:last-child { border-right:none; }
+  .hstat-val { font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:500; color:var(--text); }
+  .hstat-lbl { font-size:11px; color:var(--text3); margin-top:2px; font-family:'IBM Plex Mono',monospace; }
 
-  /* MAP */
-  
-  
-  
-  #pharos-map-assouan { height:280px; width:100%; background:var(--bg); }
-  .pharos-popup .leaflet-popup-content-wrapper { background:var(--bg2,#0f1520); border:1px solid rgba(59,130,246,0.3); border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.5); padding:0; }
-  .pharos-popup .leaflet-popup-content { margin:12px 14px; }
-  .pharos-popup .leaflet-popup-tip-container { display:none; }
-  .leaflet-control-zoom { border:1px solid var(--border2) !important; }
-  .leaflet-control-zoom a { background:var(--bg2) !important; color:var(--text2) !important; border-color:var(--border) !important; }
-  .leaflet-control-zoom a:hover { background:var(--bg3) !important; }
-  .leaflet-attribution-flag { display:none !important; }
-  .leaflet-control-attribution { background:transparent !important; font-size:9px !important; color:var(--text3) !important; }
+  /* ── PAGE BODY ── */
+  .page { max-width:1200px; margin:0 auto; padding:48px 28px 80px; }
 
-  /* DIAGRAM */
-  
-  
-  
-  
-  
-  
-  
+  /* SECTION HEADER */
+  .section-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:20px; gap:16px; flex-wrap:wrap; }
+  .section-title { font-size:11px; font-family:'IBM Plex Mono',monospace; color:var(--text3); letter-spacing:0.1em; text-transform:uppercase; }
+  .section-line { flex:1; height:1px; background:var(--border); min-width:20px; }
 
-  /* SPECS */
-  
-  
-  
-  
-  
+  /* ── PROJETS GRID ── */
+  .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:16px; margin-bottom:56px; }
 
-  
-  
-  
-  
+  .proj-card {
+    background:var(--card-bg);
+    border:1px solid var(--border2);
+    border-radius:12px;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    transition: border-color .2s, background .2s, transform .15s;
+    position:relative;
+  }
+  .proj-card:hover { background:var(--card-hover); border-color:var(--border3); transform:translateY(-2px); }
+  .proj-card.active-link { cursor:pointer; }
+  .proj-card.inactive { cursor:default; opacity:0.72; }
+  .proj-card.inactive:hover { transform:none; }
 
-  
-  @media(max-width:960px){  }
-   .header{grid-template-columns:1fr} .company-block{text-align:left} }
+  .proj-card-accent {
+    height:3px;
+    width:100%;
+    flex-shrink:0;
+  }
+  .accent-teal  { background:#1bbd8a; }
+  .accent-amber { background:#f0a030; }
+  .accent-blue  { background:#4a9eff; }
+  .accent-red   { background:#e84848; }
+  .accent-gray  { background:#4a5168; }
+  .accent-purple{ background:#8b6fd4; }
+  .accent-green { background:#22c55e; }
+
+  .proj-card-body { padding:20px; flex:1; }
+  .proj-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:12px; }
+  .proj-ref { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text3); letter-spacing:0.08em; }
+  .proj-status {
+    font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:500;
+    padding:2px 8px; border-radius:3px; border:1px solid; white-space:nowrap; flex-shrink:0;
+  }
+  .status-construction { color:#f0a030; border-color:#c07818; background:rgba(240,160,48,0.08); }
+  .status-conception   { color:#4a9eff; border-color:#1c6fcc; background:rgba(74,158,255,0.08); }
+  .status-etude        { color:#8b93a8; border-color:#4a5168; background:rgba(74,81,104,0.12); }
+  .status-actif        { color:#1bbd8a; border-color:#0d9e74; background:rgba(27,189,138,0.08); }
+
+  .proj-name { font-size:17px; font-weight:500; color:var(--text); margin-bottom:4px; letter-spacing:0.01em; }
+  .proj-full { font-family:'IBM Plex Mono',monospace; font-size:10px; color:#1bbd8a; margin-bottom:10px; }
+  .proj-desc { font-size:13px; color:var(--text2); line-height:1.65; margin-bottom:14px; }
+  .proj-tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .ptag { font-family:'IBM Plex Mono',monospace; font-size:10px; padding:2px 7px; border-radius:3px; background:var(--bg3); color:var(--text3); border:1px solid var(--border); }
+
+  .proj-card-footer {
+    padding:12px 20px;
+    border-top:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    color:var(--text3);
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .toggle-icon[data-mode="dark"] .icon-sun  { display:block; }
+  .toggle-icon[data-mode="dark"] .icon-moon { display:none;  }
+  .toggle-icon[data-mode="light"] .icon-sun  { display:none;  }
+  .toggle-icon[data-mode="light"] .icon-moon { display:block; }
+  .proj-loc { display:flex; align-items:center; }
+  .proj-arrow { color:var(--text3); font-size:14px; transition:transform .15s, color .15s; }
+  .proj-card.active-link:hover .proj-arrow { transform:translateX(4px); color:var(--text2); }
+  .proj-locked { font-size:11px; opacity:0.5; }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:56px;
+  }
+  .about-card {
+    background:var(--card-bg);
+    border:1px solid var(--border2);
+    border-radius:10px;
+    padding:22px 24px;
+  }
+  .about-card-title { font-size:12px; font-family:'IBM Plex Mono',monospace; color:var(--text3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px; }
+  .about-card-body  { font-size:13px; color:var(--text2); line-height:1.7; }
+  .about-card-body strong { color:var(--text); font-weight:500; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top:64px;
+    padding-top:24px;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-left { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); line-height:1.8; }
+  .footer-right { font-family:'Noto Kufi Arabic',sans-serif; font-size:13px; color:#f0a030; direction:rtl; }
+  .footer-credit { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text3); opacity:0.6; margin-top:6px; }
+
+  @media(max-width:700px) {
+    .hero-title { font-size:34px; }
+    .hero-stats { flex-direction:column; }
+    .hstat { border-right:none; border-bottom:1px solid var(--border); }
+    .hstat:last-child { border-bottom:none; }
+    .about-strip { grid-template-columns:1fr; }
+    .topnav { padding:0 16px; }
+    .nav-center { display:none; }
+  }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400;500&display=swap">
-<link rel="stylesheet" href="../pharos.css">
+<link rel="stylesheet" href="pharos.css">
 </head>
 <body>
-
 <nav class="topnav">
   <div class="nav-left">
-    <a href="../" class="nav-back">← Pharos Energy</a>
     <div class="nav-logo">
       <svg viewBox="0 0 20 20" fill="none">
-        <path d="M2 14 Q10 6 18 14" stroke="#3b82f6" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-        <path d="M2 14 L2 18 L18 18 L18 14" stroke="#3b82f6" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <rect x="8" y="14" width="4" height="4" fill="#3b82f6" opacity="0.7"/>
+        <circle cx="10" cy="10" r="3" fill="#1bbd8a"/>
+        <circle cx="10" cy="10" r="7" stroke="#1bbd8a" stroke-width="1" fill="none" stroke-dasharray="2 1.5"/>
+        <circle cx="10" cy="10" r="9.5" stroke="#1bbd8a" stroke-width="0.5" fill="none" opacity="0.4"/>
       </svg>
     </div>
-    <span class="nav-brand">Division Hydroélectrique</span>
+    <span class="nav-brand">Pharos Energy</span>
+  </div>
+  <div class="nav-center">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="#projets" class="nav-link">Projets</a>
+    <a href="#hydro" class="nav-link">Hydroélectrique</a>
+    <a href="#apropos" class="nav-link">À propos</a>
   </div>
   <div class="nav-right">
-    <span class="nav-ref"><span class="nav-dot"></span>ASSOUAN-HDA-001</span>
     <div class="theme-toggle" onclick="toggleTheme()" title="Basculer jour / nuit">
-      <svg class="toggle-icon" data-mode="dark" width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0">
+      <svg class="toggle-icon" data-mode="dark" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;transition:transform .3s">
         <g class="icon-sun">
           <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
           <line x1="12" y1="2" x2="12" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -177,360 +362,174 @@
     </div>
   </div>
 </nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Énergie Nucléaire &amp; Hydroélectrique</div>
+    <div class="hero-title">Pharos Energy</div>
+    <div class="hero-title-ar">طاقة فاروس · تاقات فاروس</div>
+    <p class="hero-sub">
+      Développement de l'énergie nucléaire et hydroélectrique au service du Royaume-Uni du Nil.
+      Conception, construction et exploitation d'installations de puissance et de recherche.
+    </p>
+    <div class="hero-tags">
+      <span class="htag htag-teal">Énergie nucléaire civile</span>
+      <span class="htag htag-blue">Hydroélectricité</span>
+      <span class="htag htag-amber">Royaume-Uni du Nil</span>
+      <span class="htag htag-gray">Filière NILDU</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-val">1</div><div class="hstat-lbl">Réacteur en construction</div></div>
+      <div class="hstat"><div class="hstat-val">1</div><div class="hstat-lbl">Pile prototype en service</div></div>
+      <div class="hstat"><div class="hstat-val">1</div><div class="hstat-lbl">Barrage en service</div></div>
+      <div class="hstat"><div class="hstat-val">3,9M MWh</div><div class="hstat-lbl">Production totale prévue</div></div>
+      <div class="hstat"><div class="hstat-val">2304</div><div class="hstat-lbl">1ère installation en service</div></div>
+    </div>
+  </div>
+</section>
 
 <div class="page">
+  <section id="projets">
+    <div class="section-header">
+      <span class="section-title">Division Énergie Nucléaire</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
 
-  <header class="header">
-    <div>
-      <div class="dam-name">Haut-Barrage d'Assouan</div>
-      <div class="dam-full">السد العالي · Al-Sadd al-Aali · Barrage hydroélectrique à enrochement</div>
-      <div class="badge-row">
-        <span class="badge badge-blue">Hydroélectrique</span>
-        <span class="badge badge-green">En service depuis 2304</span>
-        <span class="badge badge-teal">Fleuve Nil</span>
-        <span class="badge badge-amber">1 500 000 MWh/an</span>
+      <a href="memphis/" class="proj-card active-link">
+        <div class="proj-card-accent accent-purple"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <span class="proj-ref">MEMPHIS-PILE-001</span>
+            <span class="proj-status status-actif">En service</span>
+          </div>
+          <div class="proj-name">MEMPHIS</div>
+          <div class="proj-full">Pile Atomique de Recherche · Le Caire</div>
+          <p class="proj-desc">Premier réacteur nucléaire du Royaume-Uni du Nil, mis en service en 2305. Pile de recherche utilisant le procédé Girdler pour la production d'eau lourde D₂O. Fondement expérimental de la filière NILDU.</p>
+          <div class="proj-tags"><span class="ptag">Prototype</span><span class="ptag">Procédé Girdler</span><span class="ptag">D₂O</span><span class="ptag">Recherche</span><span class="ptag">2305</span></div>
+        </div>
+        <div class="proj-card-footer">
+          <span class="proj-loc"><svg width="11" height="14" viewBox="0 0 12 16" fill="none" style="flex-shrink:0;margin-right:4px;vertical-align:-2px"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z" fill="currentColor" opacity="0.7"/><circle cx="6" cy="5" r="2" fill="var(--bg2)"/></svg>Le Caire · 30.21796, 31.25895</span>
+          <span class="proj-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="nildu/" class="proj-card active-link">
+        <div class="proj-card-accent accent-teal"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <span class="proj-ref">NILDU-REF-001</span>
+            <span class="proj-status status-construction">En construction</span>
+          </div>
+          <div class="proj-name">NILDU</div>
+          <div class="proj-full">Nile Deuterium Uranium Reactor</div>
+          <p class="proj-desc">Premier réacteur de puissance à eau lourde développé par Pharos Energy. Modération et caloportage D₂O, combustible uranium naturel, rechargement en marche. Production annuelle prévue : 2,4 millions de MWh.</p>
+          <div class="proj-tags"><span class="ptag">Filière NILDU</span><span class="ptag">D₂O</span><span class="ptag">1 060 MWth</span><span class="ptag">~320 MWe</span><span class="ptag">On-power</span></div>
+        </div>
+        <div class="proj-card-footer">
+          <span class="proj-loc"><svg width="11" height="14" viewBox="0 0 12 16" fill="none" style="flex-shrink:0;margin-right:4px;vertical-align:-2px"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z" fill="currentColor" opacity="0.7"/><circle cx="6" cy="5" r="2" fill="var(--bg2)"/></svg>Médinet El-Fayoum · 29.34013, 30.94513</span>
+          <span class="proj-arrow">→</span>
+        </div>
+      </a>
+
+      <div class="proj-card inactive">
+        <div class="proj-card-accent accent-green"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-top"><span class="proj-ref">NILDU-REF-002</span><span class="proj-status status-conception">Conception</span></div>
+          <div class="proj-name">NILDU-II</div>
+          <div class="proj-full">Nile Deuterium Uranium Reactor II</div>
+          <p class="proj-desc">Deuxième réacteur de puissance de la filière NILDU. Implantation à Assouan, Région fédérale d'Assouan.</p>
+          <div class="proj-tags"><span class="ptag">Filière NILDU</span><span class="ptag">D₂O</span><span class="ptag">Puissance</span><span class="ptag">On-power</span></div>
+        </div>
+        <div class="proj-card-footer">
+          <span class="proj-loc"><svg width="11" height="14" viewBox="0 0 12 16" fill="none" style="flex-shrink:0;margin-right:4px;vertical-align:-2px"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z" fill="currentColor" opacity="0.7"/><circle cx="6" cy="5" r="2" fill="var(--bg2)"/></svg>Assouan · 24.12212, 32.91429</span>
+          <span class="proj-locked">Dossier non disponible</span>
+        </div>
+      </div>
+
+      <div class="proj-card inactive">
+        <div class="proj-card-accent accent-green"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-top"><span class="proj-ref">NILDU-REF-003</span><span class="proj-status status-etude">Étude</span></div>
+          <div class="proj-name">NILDU-III</div>
+          <div class="proj-full">Nile Deuterium Uranium Reactor III</div>
+          <p class="proj-desc">Troisième unité de la filière NILDU, en phase d'étude de faisabilité. Localisation non encore définie.</p>
+          <div class="proj-tags"><span class="ptag">Filière NILDU</span><span class="ptag">D₂O</span><span class="ptag">Étude</span></div>
+        </div>
+        <div class="proj-card-footer">
+          <span class="proj-loc"><svg width="11" height="14" viewBox="0 0 12 16" fill="none" style="flex-shrink:0;margin-right:4px;vertical-align:-2px"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z" fill="currentColor" opacity="0.5"/><circle cx="6" cy="5" r="2" fill="var(--bg2)"/></svg>Localisation non définie</span>
+          <span class="proj-locked">Dossier non disponible</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section id="hydro">
+    <div class="section-header">
+      <span class="section-title">Division Hydroélectrique</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <a href="barrage-assouan/" class="proj-card active-link">
+        <div class="proj-card-accent accent-blue"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <span class="proj-ref">ASSOUAN-HDA-001</span>
+            <span class="proj-status status-actif">En service</span>
+          </div>
+          <div class="proj-name">Barrage d'Assouan</div>
+          <div class="proj-full">Haut-Barrage · السد العالي · Hydroélectrique</div>
+          <p class="proj-desc">Haut-Barrage d'Assouan sur le Nil, mis en service en 2304. Barrage à enrochement 111 m, 3 830 m de longueur. 12 turbines Francis · 2 100 MWe installés · 1 500 000 MWh/an.</p>
+          <div class="proj-tags"><span class="ptag">Hydroélectrique</span><span class="ptag">Turbines Francis</span><span class="ptag">2 100 MWe</span><span class="ptag">Nil</span><span class="ptag">2304</span></div>
+        </div>
+        <div class="proj-card-footer">
+          <span class="proj-loc"><svg width="11" height="14" viewBox="0 0 12 16" fill="none" style="flex-shrink:0;margin-right:4px;vertical-align:-2px"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z" fill="currentColor" opacity="0.7"/><circle cx="6" cy="5" r="2" fill="var(--bg2)"/></svg>Assouan · 23.96694, 32.87972</span>
+          <span class="proj-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="apropos">
+    <div class="section-header">
+      <span class="section-title">À propos</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-strip">
+      <div class="about-card">
+        <div class="about-card-title">Pharos Energy · طاقة فاروس</div>
+        <div class="about-card-body">
+          Pharos Energy est l'opérateur énergétique du <strong>Royaume-Uni du Nil</strong>.
+          Elle pilote deux divisions : l'<strong>Énergie Nucléaire</strong> (filière NILDU, pile MEMPHIS)
+          et l'<strong>Hydroélectrique</strong> (Haut-Barrage d'Assouan). Siège au <strong>Caire</strong>.
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">Filières technologiques</div>
+        <div class="about-card-body">
+          La Division Nucléaire a développé la filière <strong>NILDU</strong> (eau lourde D₂O, uranium naturel).
+          La Division Hydroélectrique exploite le <strong>Haut-Barrage d'Assouan</strong>
+          (enrochement, 12 turbines Francis, 2 100 MWe), en service depuis <strong>2304</strong>.
+        </div>
       </div>
     </div>
-    <div class="company-block">
-      <div class="company-name">Pharos Energy</div>
-      <div class="company-arabic">طاقة فاروس</div>
-      <div class="company-sub">Division Hydroélectrique · Assouan</div>
-      <div class="company-year">2304</div>
-    </div>
-  </header>
-
-  <div class="active-banner">
-    <div class="ab-dot"></div>
-    <div class="ab-text">
-      <strong>Installation en service</strong> — Mise en service en 2304.
-      Production annuelle : <strong>1 500 000 MWh</strong> · 12 groupes turbine-alternateur opérationnels.
-    </div>
-  </div>
-
-  <div class="location-strip">
-    <span class="loc-pin"><svg width="13" height="16" viewBox="0 0 12 16" fill="none"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z" fill="#e84848" opacity="0.85"/><circle cx="6" cy="5" r="2.2" fill="var(--bg2)"/></svg></span>
-    <div>
-      <div class="loc-main">Haut-Barrage d'Assouan · Nil</div>
-      <div class="loc-sub">Rive gauche du Nil · Amont d'Assouan</div>
-    </div>
-    <div class="loc-sep"></div>
-    <div>
-      <div class="loc-country">Royaume-Uni du Nil</div>
-      <div class="loc-sub">Région fédérale d'Assouan</div>
-    </div>
-    <div class="loc-coords">23°58′09″ N · 32°52′38″ E<br>23.96933, 32.87741</div>
-    <a href="https://map.projet-resurgence.fr/?region=43" target="_blank" rel="noopener" class="loc-map-link">
-      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="vertical-align:-2px;margin-right:4px"><rect x="1" y="4" width="4" height="11" rx="1" fill="currentColor" opacity="0.7"/><rect x="6" y="1" width="4" height="14" rx="1" fill="currentColor"/><rect x="11" y="3" width="4" height="10" rx="1" fill="currentColor" opacity="0.7"/><polyline points="1,4 6,1 11,3 15,1" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.5"/></svg>Voir sur la carte
-    </a>
-  </div>
-<div class="map-card">
-    <div class="map-card-header">
-      <span>Localisation · Assouan · Nil</span>
-      <span class="coord">23.96933, 32.87741</span>
-    </div>
-    <div id="pharos-map-assouan"></div>
-  </div>
-<div class="diagram-card">
-    <div class="diagram-card-header">
-      <span class="diagram-card-title">Schéma d'architecture — Vue en coupe transversale et longitudinale</span>
-      <span class="badge badge-blue" style="font-size:10px">Barrage à enrochement · Fil d'eau</span>
-    </div>
-    <div class="scroll-hint">← défiler pour voir le schéma complet →</div>
-    <div class="diagram-card-body">
-
-      
-      <svg class="diagram-svg" viewBox="0 0 1200 460" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-          <linearGradient id="water-deep" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.55"/>
-            <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.2"/>
-          </linearGradient>
-          <linearGradient id="water-tail" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.1"/>
-          </linearGradient>
-          <linearGradient id="rock-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#78716c" stop-opacity="0.9"/>
-            <stop offset="100%" stop-color="#44403c" stop-opacity="1"/>
-          </linearGradient>
-          <linearGradient id="core-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#57534e" stop-opacity="1"/>
-            <stop offset="100%" stop-color="#292524" stop-opacity="1"/>
-          </linearGradient>
-          <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#0f172a" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
-          </linearGradient>
-          <clipPath id="dam-clip"><polygon points="480,120 720,120 750,420 450,420"/></clipPath>
-        </defs>
-        <rect x="0" y="0" width="1200" height="420" fill="var(--bg)" opacity="0.5"/>
-<rect x="0" y="420" width="1200" height="160" fill="var(--bg2)" opacity="0.5"/>
-        <line x1="0" y1="420" x2="1200" y2="420" stroke="#4a5568" stroke-width="1" opacity="0.4"/>
-        <rect x="60" y="180" width="420" height="240" fill="url(#water-deep)" rx="4"/>
-        <g stroke="#3b82f6" stroke-width="0.8" fill="none" opacity="0.35">
-          <path d="M80 200 Q130 194 180 200 Q230 206 280 200 Q330 194 380 200 Q430 206 460 200"/>
-          <path d="M80 222 Q130 216 180 222 Q230 228 280 222 Q330 216 380 222 Q430 228 460 222"/>
-          <path d="M80 244 Q130 238 180 244 Q230 250 280 244 Q330 238 380 244 Q430 250 460 244"/>
-        </g>
-        <rect x="130" y="265" width="200" height="34" rx="6" fill="var(--bg2)" fill-opacity="0.82"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="13" font-weight="500"
-              fill="#3b82f6" x="230" y="282" text-anchor="middle">Lac Nasser</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9"
-              fill="#1d4ed8" x="230" y="294" text-anchor="middle">Retenue amont · ~169 km³</text>
-        <line x1="60" y1="180" x2="480" y2="180" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6"/>
-        <rect x="62" y="164" width="90" height="13" rx="3" fill="var(--bg2)" fill-opacity="0.8"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#3b82f6"
-              x="66" y="174">Cote normale +183 m</text>
-        <line x1="60" y1="155" x2="480" y2="155" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#f59e0b"
-              x="66" y="151">Crue max +182 m (sécurité)</text>
-        <polygon points="450,180 480,180 480,420 430,420"
-                 fill="url(#rock-fill)" opacity="0.9"/>
-        <polygon points="480,120 560,120 590,420 450,420"
-                 fill="url(#core-fill)" opacity="0.95"/>
-        <g stroke="#292524" stroke-width="1.5" opacity="0.3">
-          <line x1="488" y1="130" x2="468" y2="410"/>
-          <line x1="504" y1="130" x2="482" y2="410"/>
-          <line x1="520" y1="130" x2="496" y2="410"/>
-          <line x1="536" y1="130" x2="510" y2="410"/>
-          <line x1="552" y1="130" x2="524" y2="410"/>
-        </g>
-        <polygon points="560,120 720,120 760,420 590,420"
-                 fill="url(#rock-fill)" opacity="0.85"/>
-        <polygon points="720,120 760,120 800,420 760,420"
-                 fill="url(#rock-fill)" opacity="0.9"/>
-        <rect x="480" y="108" width="280" height="24" rx="4" fill="#6b7280" opacity="0.9"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#d1d5db"
-              x="620" y="123" text-anchor="middle" letter-spacing="0.05em">CRÊTE · Cote +188 m · L=3 830 m</text>
-        <line x1="720" y1="120" x2="800" y2="420" stroke="#9ca3af" stroke-width="1" opacity="0.4"/>
-<ellipse cx="530" cy="350" rx="12" ry="8" fill="#0f172a" stroke="#475569" stroke-width="1" opacity="0.8"/>
-        <line x1="530" y1="350" x2="400" y2="350" stroke="#475569" stroke-width="1" stroke-dasharray="3 2" opacity="0.5" marker-end="url(#arrow)"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#64748b"
-              x="398" y="347" text-anchor="end">Galerie drainage</text>
-<rect x="400" y="108" width="80" height="72" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2" opacity="0.9"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="9" font-weight="500"
-              fill="#f59e0b" x="440" y="136" text-anchor="middle">Évacuateur</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8"
-              fill="#d97706" x="440" y="148" text-anchor="middle">de crues</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8"
-              fill="#d97706" x="440" y="160" text-anchor="middle">Q=11 000 m³/s</text>
-        <rect x="422" y="178" width="36" height="14" rx="2" fill="#f59e0b" opacity="0.6"/>
-        <path d="M440 192 L440 240 L380 300" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 2" marker-end="url(#arrow)" opacity="0.6"/>
-        <g fill="none" stroke="#3b82f6" stroke-width="3" opacity="0.7">
-          <line x1="480" y1="240" x2="800" y2="240"/>
-          <line x1="480" y1="262" x2="800" y2="262"/>
-          <line x1="480" y1="284" x2="800" y2="284"/>
-          <line x1="480" y1="306" x2="800" y2="306"/>
-          <line x1="480" y1="328" x2="800" y2="328"/>
-          <line x1="480" y1="350" x2="800" y2="350"/>
-        </g>
-        <rect x="474" y="228" width="14" height="134" rx="2" fill="#1d4ed8" opacity="0.8"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#3b82f6"
-              x="472" y="223" text-anchor="middle">Vannes</text>
-        <rect x="555" y="314" width="90" height="13" rx="3" fill="var(--bg2)" fill-opacity="0.82"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#3b82f6"
-              x="600" y="323" text-anchor="middle">6 conduites forcées</text>
-<rect x="800" y="200" width="160" height="220" rx="10"
-              fill="var(--bg3)" stroke="#3b82f6" stroke-width="1.5" opacity="0.95"/>
-        <rect x="800" y="200" width="160" height="36" rx="10" fill="var(--acc2)" opacity="0.7"/>
-        <rect x="800" y="218" width="160" height="18" fill="var(--acc2)" opacity="0.7"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500"
-              fill="#dce8f8" x="880" y="218" text-anchor="middle">Centrale</text>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500"
-              fill="#dce8f8" x="880" y="232" text-anchor="middle">hydroélectrique</text>
-
-        <!-- 12 groupes turbines (représentés par 6) -->
-        <g fill="var(--bg2)" stroke="#3b82f6" stroke-width="1.2">
-          <circle cx="832" cy="272" r="14"/>
-          <circle cx="868" cy="272" r="14"/>
-          <circle cx="904" cy="272" r="14"/>
-          <circle cx="832" cy="312" r="14"/>
-          <circle cx="868" cy="312" r="14"/>
-          <circle cx="904" cy="312" r="14"/>
-        </g>
-        <g fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.6">
-          <path d="M822 266 Q832 260 842 266 Q832 272 822 266z"/>
-          <path d="M858 266 Q868 260 878 266 Q868 272 858 266z"/>
-          <path d="M894 266 Q904 260 914 266 Q904 272 894 266z"/>
-          <path d="M822 306 Q832 300 842 306 Q832 312 822 306z"/>
-          <path d="M858 306 Q868 300 878 306 Q868 312 858 306z"/>
-          <path d="M894 306 Q904 300 914 306 Q904 312 894 306z"/>
-        </g>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#64748b"
-              x="880" y="345" text-anchor="middle">12 groupes turbine-altern.</text>
-        <rect x="816" y="352" width="128" height="28" rx="4" fill="var(--bg)" fill-opacity="0.6"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="10" font-weight="500"
-              fill="#3b82f6" x="880" y="363" text-anchor="middle">~175 MWe / groupe</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9"
-              fill="#1d4ed8" x="880" y="375" text-anchor="middle">Total : 2 100 MWe installés</text>
-<rect x="960" y="360" width="200" height="60" fill="url(#water-tail)" rx="4"/>
-        <g stroke="#3b82f6" stroke-width="0.6" fill="none" opacity="0.3">
-          <path d="M970 370 Q1020 364 1070 370 Q1120 376 1150 370"/>
-          <path d="M970 384 Q1020 378 1070 384 Q1120 390 1150 384"/>
-        </g>
-        <path d="M960 390 L960 380" fill="none" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrow)" opacity="0.8"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#1d4ed8"
-              x="1060" y="397" text-anchor="middle">Canal de fuite → Nil aval</text>
-<line x1="960" y1="290" x2="1060" y2="290" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow)" opacity="0.9"/>
-        <rect x="970" y="274" width="76" height="13" rx="3" fill="var(--bg2)" fill-opacity="0.88"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#f59e0b"
-              x="1008" y="284" text-anchor="middle">Puissance produite</text>
-        <rect x="1060" y="260" width="80" height="60" rx="6" fill="var(--bg2)" stroke="#f59e0b" stroke-width="1.2" opacity="0.9"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="10" font-weight="500"
-              fill="#f59e0b" x="1100" y="286" text-anchor="middle">Poste</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9"
-              fill="#d97706" x="1100" y="299" text-anchor="middle">élévateur</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8"
-              fill="#d97706" x="1100" y="312" text-anchor="middle">220 kV</text>
-        <line x1="1140" y1="290" x2="1192" y2="290" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow)" opacity="0.8"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#f59e0b"
-              x="1198" y="287" text-anchor="start">⚡ Réseau</text>
-        <line x1="790" y1="108" x2="790" y2="420" stroke="#6b7280" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.5"/>
-        <line x1="786" y1="108" x2="794" y2="108" stroke="#6b7280" stroke-width="1.2"/>
-        <line x1="786" y1="420" x2="794" y2="420" stroke="#6b7280" stroke-width="1.2"/>
-        <rect x="760" y="248" width="52" height="26" rx="3" fill="var(--bg2)" fill-opacity="0.85"/>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#9ca3af"
-              x="786" y="259" text-anchor="middle">H = 111 m</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="8" fill="#6b7280"
-              x="786" y="270" text-anchor="middle">au-dessus fond</text>
-<line x1="60" y1="180" x2="28" y2="160" stroke="#4a5568" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="60" cy="180" r="2.5" fill="#3b82f6" opacity="0.8"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="156" text-anchor="start">Surface lac Nasser</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="169" text-anchor="start">Cote normale +183 m NGN</text>
-
-        <line x1="60" y1="300" x2="28" y2="280" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="60" cy="300" r="2.5" fill="#1d4ed8" opacity="0.8"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="276" text-anchor="start">Retenue amont</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="289" text-anchor="start">Vol. utile ~74 km³</text>
-
-        <line x1="510" y1="240" x2="28" y2="370" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="510" cy="240" r="2.5" fill="#3b82f6" opacity="0.8"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="366" text-anchor="start">Conduites forcées</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="379" text-anchor="start">⌀ 15 m · acier · 6 unités</text>
-
-        <line x1="520" y1="140" x2="28" y2="412" stroke="#4a5168" stroke-width="0.5" stroke-dasharray="2 2"/>
-        <circle cx="520" cy="140" r="2.5" fill="#78716c" opacity="0.8"/>
-        <text font-family="'IBM Plex Sans',sans-serif" font-size="11" font-weight="500" fill="#9ba3b8" x="8" y="408" text-anchor="start">Noyau argileux</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#545d72" x="8" y="421" text-anchor="start">Étanchéité · l=75 m à la base</text>
-        <text font-family="'IBM Plex Mono',monospace" font-size="9" fill="#1e293b"
-              x="580" y="340" text-anchor="middle" transform="rotate(-18 580 340)"
-              letter-spacing="0.2em">PHAROS ENERGY · ASSOUAN-HDA-001 · 2304</text>
-
-        <line x1="8" y1="453" x2="1192" y2="453" stroke="#1e293b" stroke-width="1"/>
-      </svg>
-    </div>
-
-    <div class="legend">
-      <div class="leg-item"><div class="leg-swatch" style="background:#1d4ed8;opacity:.7"></div>Retenue Lac Nasser</div>
-      <div class="leg-item"><div class="leg-swatch" style="background:#78716c"></div>Corps barrage (enrochement)</div>
-      <div class="leg-item"><div class="leg-swatch" style="background:#44403c"></div>Noyau étanche (argile)</div>
-      <div class="leg-item"><div class="leg-swatch" style="background:#3b82f6"></div>Conduites forcées / canal de fuite</div>
-      <div class="leg-item"><div class="leg-swatch" style="background:#f59e0b"></div>Évacuateur de crues / sortie électrique</div>
-      <div class="leg-item"><div class="leg-swatch" style="background:#3b82f6;opacity:.5"></div>Centrale hydroélectrique</div>
-    </div>
-  </div>
-<div class="specs-grid">
-    <div class="spec-cell">
-      <div class="spec-label">Type</div>
-      <div class="spec-value" style="font-size:14px">Enrochement</div>
-      <div class="spec-unit">Noyau argileux étanche · zone interne</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Statut</div>
-      <div class="spec-value" style="font-size:14px;color:#22c55e">En service</div>
-      <div class="spec-unit">Depuis 2304 · opérationnel</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Production annuelle</div>
-      <div class="spec-value">1 500 000</div>
-      <div class="spec-unit">MWh/an · facteur charge ~82 %</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Puissance installée</div>
-      <div class="spec-value">2 100</div>
-      <div class="spec-unit">MWe · 12 groupes × 175 MWe</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Hauteur barrage</div>
-      <div class="spec-value">111 m</div>
-      <div class="spec-unit">Au-dessus du fond du lit</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Longueur en crête</div>
-      <div class="spec-value">3 830 m</div>
-      <div class="spec-unit">Largeur crête : 40 m</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Volume barrage</div>
-      <div class="spec-value">43 Mm³</div>
-      <div class="spec-unit">Enrochement + noyau argile</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Capacité totale lac</div>
-      <div class="spec-value">169 km³</div>
-      <div class="spec-unit">Volume utile ~74 km³</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Cote normale retenue</div>
-      <div class="spec-value">+183 m</div>
-      <div class="spec-unit">NGN · crue max. +182 m</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Turbines</div>
-      <div class="spec-value">Francis</div>
-      <div class="spec-unit">12 unités · axe vertical</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Débit nominal</div>
-      <div class="spec-value">11 000</div>
-      <div class="spec-unit">m³/s · évacuateur de crues</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Tension de sortie</div>
-      <div class="spec-value">220 kV</div>
-      <div class="spec-unit">Poste élévateur · réseau national</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Conduites forcées</div>
-      <div class="spec-value">6</div>
-      <div class="spec-unit">⌀ 15 m · acier · 2 groupes/conduite</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Superficie lac</div>
-      <div class="spec-value">~5 250 km²</div>
-      <div class="spec-unit">Lac Nasser · 550 km de long</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Durée de vie prévue</div>
-      <div class="spec-value">100 ans</div>
-      <div class="spec-unit">Maintenance décennale turbines</div>
-    </div>
-    <div class="spec-cell">
-      <div class="spec-label">Fleuve</div>
-      <div class="spec-value">Nil</div>
-      <div class="spec-unit">Débit moyen ~2 830 m³/s</div>
-    </div>
-  </div>
-
+  </section>
   <footer class="footer">
     <div>
       <div class="footer-left">
-        Haut-Barrage d'Assouan · Réf. ASSOUAN-HDA-001 · Pharos Energy © 2304<br>
-        Site d'Assouan · 23.96933, 32.87741 · Région fédérale d'Assouan · Royaume-Uni du Nil<br>
-        Document technique — Division Hydroélectrique
+        Pharos Energy · Division Énergie Nucléaire · Royaume-Uni du Nil · 2306<br>
+        Région fédérale d'Assiout · Le Caire · Document officiel
       </div>
       <div class="footer-credit">Projet Résurgence © 2026</div>
     </div>
-    <div class="footer-right">طاقة فاروس · قسم الطاقة الكهرومائية · سد أسوان العالي</div>
+    <div class="footer-right">طاقة فاروس · قسم الطاقة النووية · المملكة المتحدة للنيل</div>
   </footer>
 
 </div>
 
-
-<script src="../pharos.js"></script>
-<script>initPharosMap("pharos-map-assouan","ASSOUAN-HDA-001",23.9693,32.877,7);</script>
+<script src="pharos.js"></script>
 </body>
 </html>
