@@ -6,7 +6,7 @@
 (function() {
   // ══ CONFIGURATION ══════════════════════════════════════════════
   const DISCORD_CLIENT_ID = '1483200078092042300';
-  const REDIRECT_URI      = 'https://BJBellum.github.io/PN-NILE/auth/callback/';
+  const REDIRECT_URI      = 'https://BJBellum.github.io/PharosEnergy/auth/callback/';
   const ALLOWED_IDS       = ['772821169664426025'];
 
   // Scopes demandés à Discord (identify = profil de base, guilds.members.read = rôles serveur)
