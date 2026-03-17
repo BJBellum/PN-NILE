@@ -7,20 +7,25 @@
   // ══ CONFIGURATION ══════════════════════════════════════════════
   const DISCORD_CLIENT_ID = '1483200078092042300';
   const REDIRECT_URI      = 'https://BJBellum.github.io/PharosEnergy/auth/callback/';
-  const ALLOWED_IDS       = ['772821169664426025'];
+  const ALLOWED_IDS       = [
+    '772821169664426025',
+    '1014832884764393523',
+    '293869524091142144',
+    '928291843958014014',
+    '1302403450566610944',
+    '660762879741526026',
+    '172750036982038529',
+    '1113422056525144104'
+  ];
 
-  // Scopes demandés à Discord (identify = profil de base, guilds.members.read = rôles serveur)
+  // Scopes demandés à Discord (identify = profil de base)
   const SCOPES = 'identify';
 
-  // Profondeur relative depuis la page courante vers la racine
-  // Déterminé automatiquement via le chemin
   // ═══════════════════════════════════════════════════════════════
 
   /* ── Calcul du chemin relatif vers la racine ── */
   function getRootPath() {
     const depth = window.location.pathname.split('/').filter(Boolean).length;
-    // Sur GitHub Pages: /repo/ = depth 1, /repo/nildu/ = depth 2, etc.
-    // On enlève 1 car le dernier segment est le fichier ou dossier de la page
     const levels = Math.max(0, depth - 1);
     return levels === 0 ? './' : '../'.repeat(levels);
   }
@@ -48,9 +53,7 @@
 
   /* ── Lancer OAuth2 ── */
   function login() {
-    // Sauvegarder la page actuelle pour y revenir après auth
     localStorage.setItem('pharos_return', window.location.href);
-    // Générer un state anti-CSRF
     const state = Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
     sessionStorage.setItem('discord_oauth_state', state);
 
@@ -81,7 +84,6 @@
     btn.style.cssText = 'display:flex;align-items:center;gap:6px;cursor:pointer;padding:4px 10px;border-radius:4px;border:1px solid;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:0.05em;transition:all .2s;user-select:none;text-decoration:none;';
 
     if (!session) {
-      // Non connecté
       btn.style.borderColor = 'rgba(88,101,242,0.5)';
       btn.style.background  = 'rgba(88,101,242,0.08)';
       btn.style.color       = '#7983f5';
@@ -90,7 +92,6 @@
       btn.onmouseenter = function() { this.style.borderColor='rgba(88,101,242,0.9)'; this.style.background='rgba(88,101,242,0.15)'; };
       btn.onmouseleave = function() { this.style.borderColor='rgba(88,101,242,0.5)'; this.style.background='rgba(88,101,242,0.08)'; };
     } else {
-      // Connecté
       const color  = isAuthorized() ? '#22c55e' : '#7a9ac0';
       const border = isAuthorized() ? 'rgba(34,197,94,0.4)' : 'rgba(122,154,192,0.3)';
       const bg     = isAuthorized() ? 'rgba(34,197,94,0.07)' : 'rgba(122,154,192,0.07)';
@@ -98,7 +99,6 @@
       btn.style.background  = bg;
       btn.style.color       = color;
 
-      // Avatar ou initiale
       const avatarUrl = getAvatarUrl(session);
       const avatarHtml = avatarUrl
         ? `<img src="${avatarUrl}" width="16" height="16" style="border-radius:50%;vertical-align:middle" onerror="this.style.display='none'">`
@@ -107,7 +107,6 @@
       btn.innerHTML = `${avatarHtml}<span style="max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${session.username}</span>`;
       btn.title = isAuthorized() ? 'Accès complet — cliquer pour déconnecter' : 'Accès standard — cliquer pour déconnecter';
 
-      // Dropdown déconnexion au clic
       btn.onclick = function(e) {
         e.stopPropagation();
         const existing = document.getElementById('pharos-auth-dropdown');
@@ -127,15 +126,42 @@
       };
     }
 
-    // Insérer avant le toggle thème
     const themeToggle = navRight.querySelector('.theme-toggle');
     if (themeToggle) navRight.insertBefore(btn, themeToggle);
     else navRight.appendChild(btn);
   }
 
+  /* ── Injecter le lien "Nucléaire" dans le nav-center si autorisé ── */
+  function injectNuclearNavLink() {
+    if (!isAuthorized()) return;
+    const navCenter = document.querySelector('.nav-center');
+    if (!navCenter) return;
+
+    // Ne pas injecter deux fois
+    if (document.getElementById('pharos-nav-nuclear')) return;
+
+    const link = document.createElement('a');
+    link.id = 'pharos-nav-nuclear';
+    link.href = '#projets';
+    link.className = 'nav-link nav-link-nuclear';
+    link.style.cssText = 'color:#8b6fd4;position:relative;';
+    link.innerHTML = `<svg width="12" height="12" viewBox="0 0 20 20" fill="none" style="vertical-align:-1px;margin-right:4px;opacity:0.85"><circle cx="10" cy="10" r="3" fill="#8b6fd4"/><circle cx="10" cy="10" r="7" stroke="#8b6fd4" stroke-width="1" fill="none" stroke-dasharray="2 1.5"/><circle cx="10" cy="10" r="9.5" stroke="#8b6fd4" stroke-width="0.5" fill="none" opacity="0.4"/></svg>Nucléaire`;
+
+    // Insérer après "Hydroélectrique" (avant "À propos")
+    const links = navCenter.querySelectorAll('a.nav-link');
+    let inserted = false;
+    links.forEach(l => {
+      if (l.textContent.includes('Hydroélectrique') && !inserted) {
+        l.insertAdjacentElement('afterend', link);
+        inserted = true;
+      }
+    });
+    if (!inserted) navCenter.appendChild(link);
+  }
+
   /* ── Contrôle d'accès aux sections réservées ── */
   function applyAccessControl() {
-    // Les éléments avec data-auth="required" sont masqués si non autorisé
+    // Éléments avec data-auth="required" masqués si non autorisé
     document.querySelectorAll('[data-auth="required"]').forEach(el => {
       if (!isAuthorized()) {
         el.style.display = 'none';
@@ -158,6 +184,31 @@
         el.appendChild(overlay);
       }
     });
+
+    // Injecter la carte "À propos — Programme nucléaire civil" si autorisé
+    injectNuclearAboutCard();
+  }
+
+  /* ── Injecter la carte nucléaire dans le À propos si autorisé ── */
+  function injectNuclearAboutCard() {
+    if (!isAuthorized()) return;
+    const aboutStrip = document.querySelector('.about-strip');
+    if (!aboutStrip) return;
+    if (document.getElementById('pharos-about-nuclear')) return;
+
+    const card = document.createElement('div');
+    card.id = 'pharos-about-nuclear';
+    card.className = 'about-card';
+    card.innerHTML = `
+      <div class="about-card-title" style="color:#8b6fd4">Division Énergie Nucléaire</div>
+      <div class="about-card-body">
+        Pharos Energy conduit le <strong>programme nucléaire civil du Royaume-Uni du Nil</strong>,
+        articulé autour de la filière <strong>NILDU</strong> (eau lourde D₂O, uranium naturel) et de la pile de recherche
+        <strong>MEMPHIS</strong> (procédé Girdler, production de D₂O). Objectif : atteindre
+        <strong>2 400 000 MWh/an</strong> à horizon 2310, en complément de la production hydroélectrique,
+        pour assurer l'indépendance énergétique du Nil.
+      </div>`;
+    aboutStrip.appendChild(card);
   }
 
   /* ── Export global ── */
@@ -170,10 +221,12 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       injectAuthButton();
+      injectNuclearNavLink();
       applyAccessControl();
     });
   } else {
     injectAuthButton();
+    injectNuclearNavLink();
     applyAccessControl();
   }
 
