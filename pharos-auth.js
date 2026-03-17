@@ -36,6 +36,15 @@
       const s = JSON.parse(localStorage.getItem('pharos_session') || 'null');
       if (!s) return null;
       if (s.expires && Date.now() > s.expires) { localStorage.removeItem('pharos_session'); return null; }
+
+      // Re-vérifier l'autorisation en direct contre la liste ALLOWED_IDS à jour.
+      // Corrige les sessions en cache créées avec une ancienne liste d'IDs.
+      const shouldBeAuthorized = ALLOWED_IDS.includes(s.id);
+      if (s.authorized !== shouldBeAuthorized) {
+        s.authorized = shouldBeAuthorized;
+        localStorage.setItem('pharos_session', JSON.stringify(s));
+      }
+
       return s;
     } catch { return null; }
   }
