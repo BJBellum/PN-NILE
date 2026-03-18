@@ -1,1 +1,663 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilan Énergétique National · Pharos Energy</title>
 
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Bilan Énergétique · Pharos Energy · Royaume-Uni du Nil">
+<meta property="og:description" content="Bilan énergétique national du Royaume-Uni du Nil — Production, consommation, déficit 2303–2305. Pharos Energy.">
+<meta property="og:site_name"   content="Pharos Energy · Bilan Énergétique">
+<meta name="theme-color"        content="#1bbd8a">
+
+<link rel="icon" type="image/png" href="https://BJBellum.github.io/PharosEnergy/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;500&display=swap">
+
+<style>
+  /* ── THEME ── */
+  :root[data-theme="dark"] {
+    --bg:#0a0c10; --bg2:#111520; --bg3:#161b26; --bg4:#1c2232;
+    --border:rgba(255,255,255,0.07); --border2:rgba(255,255,255,0.13); --border3:rgba(255,255,255,0.2);
+    --text:#e2e6f0; --text2:#8b93a8; --text3:#545d72;
+    --card-bg:#111520; --card-hover:#161b28; --toggle-bg:#1c2232;
+  }
+  :root[data-theme="light"] {
+    --bg:#f4f5f7; --bg2:#ffffff; --bg3:#eef0f4; --bg4:#e4e7ef;
+    --border:rgba(0,0,0,0.07); --border2:rgba(0,0,0,0.12); --border3:rgba(0,0,0,0.2);
+    --text:#1a1e2a; --text2:#4a5168; --text3:#8b93a8;
+    --card-bg:#ffffff; --card-hover:#f0f3fa; --toggle-bg:#e4e7ef;
+  }
+
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; min-height:100vh; transition:background .25s,color .25s; }
+
+  /* ── NAV ── */
+  .topnav { position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 32px; height:54px; background:var(--bg2); border-bottom:1px solid var(--border2); gap:16px; transition:background .25s; }
+  .nav-left { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+  .nav-back { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); text-decoration:none; padding:4px 10px; border:1px solid var(--border2); border-radius:4px; transition:color .15s,border-color .15s; white-space:nowrap; }
+  .nav-back:hover { color:var(--text); border-color:var(--border3); }
+  .nav-logo { width:32px; height:32px; border:1px solid #1bbd8a; border-radius:6px; display:flex; align-items:center; justify-content:center; background:rgba(27,189,138,0.1); flex-shrink:0; }
+  .nav-logo svg { width:17px; height:17px; }
+  .nav-brand { font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:var(--text2); letter-spacing:0.06em; text-transform:uppercase; white-space:nowrap; }
+  .nav-right { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+  .theme-toggle { display:flex; align-items:center; gap:6px; background:var(--toggle-bg); border:1px solid var(--border2); border-radius:20px; padding:4px 10px; cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text2); transition:all .2s; user-select:none; }
+  .theme-toggle:hover { border-color:var(--border3); color:var(--text); }
+  .theme-toggle .toggle-icon { flex-shrink:0; }
+  .toggle-icon[data-mode="dark"]  .icon-sun  { display:block; }
+  .toggle-icon[data-mode="dark"]  .icon-moon { display:none;  }
+  .toggle-icon[data-mode="light"] .icon-sun  { display:none;  }
+  .toggle-icon[data-mode="light"] .icon-moon { display:block; }
+
+  /* ── PAGE ── */
+  .page { max-width:1200px; margin:0 auto; padding:40px 28px 80px; }
+
+  /* ── HEADER ── */
+  .page-header { margin-bottom:40px; padding-bottom:24px; border-bottom:1px solid var(--border); }
+  .page-header-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#1bbd8a; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:10px; }
+  .page-header-title { font-size:32px; font-weight:600; color:var(--text); margin-bottom:6px; }
+  .page-header-sub { font-size:13px; color:var(--text2); font-family:'IBM Plex Mono',monospace; }
+
+  /* ── SECTION ── */
+  .section-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:20px; gap:16px; flex-wrap:wrap; }
+  .section-title { font-size:11px; font-family:'IBM Plex Mono',monospace; color:var(--text3); letter-spacing:0.1em; text-transform:uppercase; }
+  .section-line { flex:1; height:1px; background:var(--border); min-width:20px; }
+  .section-label { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text3); white-space:nowrap; }
+
+  .bilan-section { margin-bottom:64px; }
+
+  /* ── YEAR BADGE ── */
+  .year-badge { display:inline-flex; align-items:center; gap:10px; margin-bottom:20px; }
+  .year-num { font-family:'IBM Plex Mono',monospace; font-size:28px; font-weight:500; color:var(--text); }
+  .year-hab { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); padding:3px 10px; background:var(--bg3); border:1px solid var(--border2); border-radius:4px; }
+
+  /* ── KPI ── */
+  .bilan-kpi-row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:20px; }
+  .bilan-kpi { background:var(--card-bg); border:1px solid var(--border2); border-radius:10px; padding:20px 22px; }
+  .bilan-kpi-label { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; }
+  .bilan-kpi-value { font-family:'IBM Plex Mono',monospace; font-size:28px; font-weight:500; line-height:1.1; margin-bottom:4px; }
+  .bilan-kpi-value.val-conso   { color:#4a9eff; }
+  .bilan-kpi-value.val-prod    { color:#1bbd8a; }
+  .bilan-kpi-value.val-deficit { color:#e84848; }
+  .bilan-kpi-unit { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); }
+
+  /* ── CHARTS ROW ── */
+  .bilan-charts-row { display:grid; grid-template-columns:1fr 1.6fr; gap:16px; }
+  .bilan-card { background:var(--card-bg); border:1px solid var(--border2); border-radius:10px; padding:20px 22px; }
+  .bilan-card-title { font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:500; color:var(--text2); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:18px; }
+
+  /* ── DONUT ── */
+  .donut-wrap { display:flex; flex-direction:column; gap:0; height:100%; }
+  .donut-canvas-wrap { position:relative; width:100%; flex:1; min-height:180px; display:flex; align-items:center; justify-content:center; }
+  #donut-hydro, #donut-geo, [id^="donut-hydro-"], [id^="donut-geo-"] { transition:transform .25s cubic-bezier(.4,0,.2,1),filter .25s; }
+  .donut-legend { width:100%; display:flex; flex-direction:column; gap:10px; padding-top:16px; border-top:1px solid var(--border); margin-top:4px; }
+  .donut-leg-item { display:flex; align-items:center; justify-content:space-between; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text2); cursor:default; padding:4px 0; transition:color .15s; }
+  .donut-leg-item:hover { color:var(--text); }
+  .donut-leg-left { display:flex; align-items:center; gap:8px; }
+  .donut-leg-swatch { width:12px; height:12px; border-radius:3px; flex-shrink:0; }
+  .donut-leg-pct { color:var(--text3); font-size:11px; }
+
+  /* ── BARRES ── */
+  .barchart-rows { display:flex; flex-direction:column; gap:20px; }
+  .barchart-row-label { font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text2); display:flex; justify-content:space-between; margin-bottom:6px; }
+  .barchart-row-label span:last-child { color:var(--text3); }
+  .barchart-track { height:16px; background:var(--bg3); border-radius:4px; overflow:hidden; }
+  .barchart-fill { height:100%; border-radius:4px; transition:width 1.2s cubic-bezier(.4,0,.2,1); }
+  .fill-prod    { background:#1bbd8a; }
+  .fill-deficit { background:#e84848; }
+  .fill-conso-prod    { background:#1bbd8a; }
+  .fill-conso-deficit { background:rgba(232,72,72,0.7); }
+  .barchart-composite { height:16px; background:var(--bg3); border-radius:4px; overflow:hidden; display:flex; }
+  .bilan-note { margin-top:18px; padding:12px 16px; background:rgba(232,72,72,0.05); border-left:3px solid rgba(232,72,72,0.4); border-radius:0 6px 6px 0; font-size:13px; color:var(--text2); line-height:1.6; }
+  .bilan-note strong { color:var(--text); }
+
+  /* ── SÉPARATEUR D'ANNÉE ── */
+  .year-sep { display:flex; align-items:center; gap:16px; margin:48px 0 32px; }
+  .year-sep-line { flex:1; height:1px; background:var(--border2); }
+  .year-sep-label { font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:500; color:var(--text); opacity:0.35; white-space:nowrap; }
+
+  /* ── GRAPHIQUE ÉVOLUTION ── */
+  .evol-card { background:var(--card-bg); border:1px solid var(--border2); border-radius:10px; padding:24px 28px 20px; margin-bottom:64px; }
+
+  /* ── FOOTER ── */
+  .footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  .footer-left { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text3); line-height:1.8; }
+  .footer-right { font-family:'Noto Kufi Arabic',sans-serif; font-size:13px; color:#f0a030; direction:rtl; }
+  .footer-credit { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text3); opacity:0.6; margin-top:6px; }
+
+  @media(max-width:900px) {
+    .bilan-kpi-row { grid-template-columns:1fr 1fr; }
+    .bilan-kpi-row .bilan-kpi:last-child { grid-column:1/-1; }
+    .bilan-charts-row { grid-template-columns:1fr; }
+  }
+  @media(max-width:600px) {
+    .bilan-kpi-row { grid-template-columns:1fr; }
+    .bilan-kpi-row .bilan-kpi:last-child { grid-column:auto; }
+    .topnav { padding:0 16px; }
+    .page { padding:24px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <a href="../" class="nav-back">← Pharos Energy</a>
+    <div class="nav-logo">
+      <svg viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="3" fill="#1bbd8a"/>
+        <circle cx="10" cy="10" r="7" stroke="#1bbd8a" stroke-width="1" fill="none" stroke-dasharray="2 1.5"/>
+        <line x1="10" y1="1" x2="10" y2="4" stroke="#1bbd8a" stroke-width="1.2"/>
+        <line x1="10" y1="16" x2="10" y2="19" stroke="#1bbd8a" stroke-width="1.2"/>
+        <line x1="1" y1="10" x2="4" y2="10" stroke="#1bbd8a" stroke-width="1.2"/>
+        <line x1="16" y1="10" x2="19" y2="10" stroke="#1bbd8a" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <span class="nav-brand">Bilan Énergétique</span>
+  </div>
+  <div class="nav-right">
+    <div class="theme-toggle" onclick="toggleTheme()" title="Basculer jour / nuit">
+      <svg class="toggle-icon" data-mode="dark" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;transition:transform .3s">
+        <g class="icon-sun">
+          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+          <line x1="12" y1="2" x2="12" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="19" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="2" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="19" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="19.78" y1="4.22" x2="17.66" y2="6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="6.34" y1="17.66" x2="4.22" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <g class="icon-moon">
+          <path d="M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z" fill="currentColor"/>
+        </g>
+      </svg>
+      <span id="toggle-lbl" style="font-size:10px;letter-spacing:0.06em">NUIT</span>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="page-header">
+    <div class="page-header-eyebrow">Pharos Energy · Royaume-Uni du Nil</div>
+    <div class="page-header-title">Bilan Énergétique National</div>
+    <div class="page-header-sub">Production · Consommation · Déficit · 2303 → 2305</div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       GRAPHIQUE D'ÉVOLUTION — EN PREMIER
+  ══════════════════════════════════════ -->
+  <section class="bilan-section">
+    <div class="section-header">
+      <span class="section-title">Évolution énergétique nationale</span>
+      <div class="section-line"></div>
+      <span class="section-label">2303 → 2305</span>
+    </div>
+
+    <div class="evol-card">
+      <div class="bilan-card-title">Production · Consommation · Déficit (MWh / an)</div>
+      <div style="position:relative;width:100%;overflow-x:auto;">
+        <svg id="evol-svg" viewBox="0 0 820 340" style="width:100%;min-width:480px;display:block;" xmlns="http://www.w3.org/2000/svg">
+          <g id="evol-grid"></g>
+          <polygon id="evol-area-conso" fill="rgba(74,158,255,0.07)"  points=""/>
+          <polygon id="evol-area-prod"  fill="rgba(27,189,138,0.12)" points=""/>
+          <polyline id="evol-line-conso"   fill="none" stroke="#4a9eff" stroke-width="2.5" stroke-linejoin="round" points=""/>
+          <polyline id="evol-line-prod"    fill="none" stroke="#1bbd8a" stroke-width="2.5" stroke-linejoin="round" points=""/>
+          <polyline id="evol-line-deficit" fill="none" stroke="#e84848" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="5 3" points=""/>
+          <g id="evol-dots-conso"></g>
+          <g id="evol-dots-prod"></g>
+          <g id="evol-dots-deficit"></g>
+          <g id="evol-xlabels"></g>
+        </svg>
+      </div>
+      <!-- Légende -->
+      <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text2);">
+          <svg width="24" height="4"><line x1="0" y1="2" x2="24" y2="2" stroke="#4a9eff" stroke-width="2.5"/></svg>Consommation
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text2);">
+          <svg width="24" height="4"><line x1="0" y1="2" x2="24" y2="2" stroke="#1bbd8a" stroke-width="2.5"/></svg>Production
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text2);">
+          <svg width="24" height="4"><line x1="0" y1="2" x2="24" y2="2" stroke="#e84848" stroke-width="2" stroke-dasharray="5 3"/></svg>Déficit
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text3);margin-left:auto;">
+          <svg width="10" height="10"><circle cx="5" cy="5" r="4" fill="none" stroke="var(--text3)" stroke-width="1"/></svg>Survoler les points pour les valeurs
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BILAN 2305 — LE PLUS RÉCENT
+  ══════════════════════════════════════ -->
+  <section id="bilan-2305" class="bilan-section">
+    <div class="section-header">
+      <span class="section-title">Bilan annuel</span>
+      <div class="section-line"></div>
+      <span class="section-label">17 954 603 habitants · Exercice 2305</span>
+    </div>
+    <div class="year-badge">
+      <span class="year-num">2305</span>
+      <span class="year-hab">0,78 MWh / hab.</span>
+    </div>
+    <div class="bilan-kpi-row">
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Consommation totale</div>
+        <div class="bilan-kpi-value val-conso">14 004 590</div>
+        <div class="bilan-kpi-unit">MWh / an</div>
+      </div>
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Production totale</div>
+        <div class="bilan-kpi-value val-prod">2 945 000</div>
+        <div class="bilan-kpi-unit">MWh / an · Hydro + Géothermie</div>
+      </div>
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Déficit énergétique</div>
+        <div class="bilan-kpi-value val-deficit">−11 059 590</div>
+        <div class="bilan-kpi-unit">MWh / an · −79,0 %</div>
+      </div>
+    </div>
+    <div class="bilan-charts-row">
+      <div class="bilan-card" style="display:flex;flex-direction:column;">
+        <div class="bilan-card-title">Répartition de la production</div>
+        <div class="donut-wrap">
+          <div class="donut-canvas-wrap">
+            <svg id="donutSVG-2305" viewBox="0 0 200 200" width="180" height="180" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">
+              <circle cx="100" cy="100" r="66" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="26"/>
+              <path id="donut-geo-2305"          fill="none" stroke="#f07820" stroke-width="26" stroke-linecap="butt" d=""/>
+              <path id="donut-hydro-2305"         fill="none" stroke="#4a9eff" stroke-width="26" stroke-linecap="butt" d=""/>
+              <path id="donut-hover-hydro-2305" fill="transparent" stroke="transparent" stroke-width="44" d="" style="cursor:pointer;" data-label="Hydroélectricité" data-mwh="2 000 000" data-pct="67,9" data-color="#4a9eff"/>
+              <path id="donut-hover-geo-2305"   fill="transparent" stroke="transparent" stroke-width="44" d="" style="cursor:pointer;" data-label="Géothermie" data-mwh="945 000" data-pct="32,1" data-color="#f07820"/>
+            </svg>
+            <div id="donut-tooltip-2305" style="display:none;position:fixed;pointer-events:none;background:var(--bg4,#1c2232);border:1px solid var(--border2);border-radius:7px;padding:9px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.5);z-index:999;transform:translate(-50%,-120%);">
+              <div id="tt-label-2305" style="font-size:12px;font-weight:500;margin-bottom:4px;"></div>
+              <div id="tt-mwh-2305"   style="color:var(--text2);margin-bottom:1px;"></div>
+              <div id="tt-pct-2305"   style="color:var(--text2);"></div>
+            </div>
+          </div>
+          <div class="donut-legend">
+            <div class="donut-leg-item" data-arc="hydro-2305"><div class="donut-leg-left"><div class="donut-leg-swatch" style="background:#4a9eff;"></div><span>Hydroélectricité</span></div><div style="text-align:right"><span>2 000 000 MWh</span><span class="donut-leg-pct"> · 67,9 %</span></div></div>
+            <div class="donut-leg-item" data-arc="geo-2305"><div class="donut-leg-left"><div class="donut-leg-swatch" style="background:#f07820;"></div><span>Géothermie</span></div><div style="text-align:right"><span>945 000 MWh</span><span class="donut-leg-pct"> · 32,1 %</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bilan-card">
+        <div class="bilan-card-title">Production vs consommation</div>
+        <div class="barchart-rows">
+          <div>
+            <div class="barchart-row-label"><span>Production</span><span>2 945 000 MWh</span></div>
+            <div class="barchart-track"><div class="barchart-fill fill-prod" id="bar-prod-2305" style="width:0%"></div></div>
+          </div>
+          <div>
+            <div class="barchart-row-label"><span>Déficit</span><span>11 059 590 MWh</span></div>
+            <div class="barchart-track"><div class="barchart-fill fill-deficit" id="bar-deficit-2305" style="width:0%"></div></div>
+          </div>
+          <div>
+            <div class="barchart-row-label"><span>Consommation totale</span><span>14 004 590 MWh</span></div>
+            <div class="barchart-composite">
+              <div class="barchart-fill fill-conso-prod"    id="bar-conso-prod-2305"    style="width:0%;flex-shrink:0"></div>
+              <div class="barchart-fill fill-conso-deficit" id="bar-conso-deficit-2305" style="width:0%;flex-shrink:0"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bilan-note">La production couvre <strong>21,0 %</strong> des besoins — déficit de <strong>11 059 590 MWh</strong>, soit 79,0 % de la consommation totale.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BILAN 2304
+  ══════════════════════════════════════ -->
+  <div class="year-sep"><div class="year-sep-line"></div><span class="year-sep-label">2304</span><div class="year-sep-line"></div></div>
+
+  <section id="bilan-2304" class="bilan-section">
+    <div class="section-header">
+      <span class="section-title">Bilan annuel</span>
+      <div class="section-line"></div>
+      <span class="section-label">16 797 991 habitants · Exercice 2304</span>
+    </div>
+    <div class="year-badge">
+      <span class="year-num">2304</span>
+      <span class="year-hab">0,58 MWh / hab.</span>
+    </div>
+    <div class="bilan-kpi-row">
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Consommation totale</div>
+        <div class="bilan-kpi-value val-conso">9 742 835</div>
+        <div class="bilan-kpi-unit">MWh / an</div>
+      </div>
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Production totale</div>
+        <div class="bilan-kpi-value val-prod">2 945 000</div>
+        <div class="bilan-kpi-unit">MWh / an · Hydro + Géothermie</div>
+      </div>
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Déficit énergétique</div>
+        <div class="bilan-kpi-value val-deficit">−6 797 835</div>
+        <div class="bilan-kpi-unit">MWh / an · −69,8 %</div>
+      </div>
+    </div>
+    <div class="bilan-charts-row">
+      <div class="bilan-card" style="display:flex;flex-direction:column;">
+        <div class="bilan-card-title">Répartition de la production</div>
+        <div class="donut-wrap">
+          <div class="donut-canvas-wrap">
+            <svg id="donutSVG-2304" viewBox="0 0 200 200" width="180" height="180" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">
+              <circle cx="100" cy="100" r="66" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="26"/>
+              <path id="donut-geo-2304"          fill="none" stroke="#f07820" stroke-width="26" stroke-linecap="butt" d=""/>
+              <path id="donut-hydro-2304"         fill="none" stroke="#4a9eff" stroke-width="26" stroke-linecap="butt" d=""/>
+              <path id="donut-hover-hydro-2304" fill="transparent" stroke="transparent" stroke-width="44" d="" style="cursor:pointer;" data-label="Hydroélectricité" data-mwh="2 000 000" data-pct="67,9" data-color="#4a9eff"/>
+              <path id="donut-hover-geo-2304"   fill="transparent" stroke="transparent" stroke-width="44" d="" style="cursor:pointer;" data-label="Géothermie" data-mwh="945 000" data-pct="32,1" data-color="#f07820"/>
+            </svg>
+            <div id="donut-tooltip-2304" style="display:none;position:fixed;pointer-events:none;background:var(--bg4,#1c2232);border:1px solid var(--border2);border-radius:7px;padding:9px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.5);z-index:999;transform:translate(-50%,-120%);">
+              <div id="tt-label-2304" style="font-size:12px;font-weight:500;margin-bottom:4px;"></div>
+              <div id="tt-mwh-2304"   style="color:var(--text2);margin-bottom:1px;"></div>
+              <div id="tt-pct-2304"   style="color:var(--text2);"></div>
+            </div>
+          </div>
+          <div class="donut-legend">
+            <div class="donut-leg-item" data-arc="hydro-2304"><div class="donut-leg-left"><div class="donut-leg-swatch" style="background:#4a9eff;"></div><span>Hydroélectricité</span></div><div style="text-align:right"><span>2 000 000 MWh</span><span class="donut-leg-pct"> · 67,9 %</span></div></div>
+            <div class="donut-leg-item" data-arc="geo-2304"><div class="donut-leg-left"><div class="donut-leg-swatch" style="background:#f07820;"></div><span>Géothermie</span></div><div style="text-align:right"><span>945 000 MWh</span><span class="donut-leg-pct"> · 32,1 %</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bilan-card">
+        <div class="bilan-card-title">Production vs consommation</div>
+        <div class="barchart-rows">
+          <div>
+            <div class="barchart-row-label"><span>Production</span><span>2 945 000 MWh</span></div>
+            <div class="barchart-track"><div class="barchart-fill fill-prod" id="bar-prod-2304" style="width:0%"></div></div>
+          </div>
+          <div>
+            <div class="barchart-row-label"><span>Déficit</span><span>6 797 835 MWh</span></div>
+            <div class="barchart-track"><div class="barchart-fill fill-deficit" id="bar-deficit-2304" style="width:0%"></div></div>
+          </div>
+          <div>
+            <div class="barchart-row-label"><span>Consommation totale</span><span>9 742 835 MWh</span></div>
+            <div class="barchart-composite">
+              <div class="barchart-fill fill-conso-prod"    id="bar-conso-prod-2304"    style="width:0%;flex-shrink:0"></div>
+              <div class="barchart-fill fill-conso-deficit" id="bar-conso-deficit-2304" style="width:0%;flex-shrink:0"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bilan-note">La production couvre <strong>30,2 %</strong> des besoins — déficit de <strong>6 797 835 MWh</strong>, soit 69,8 % de la consommation totale.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BILAN 2303
+  ══════════════════════════════════════ -->
+  <div class="year-sep"><div class="year-sep-line"></div><span class="year-sep-label">2303</span><div class="year-sep-line"></div></div>
+
+  <section id="bilan-2303" class="bilan-section">
+    <div class="section-header">
+      <span class="section-title">Bilan annuel</span>
+      <div class="section-line"></div>
+      <span class="section-label">11 588 920 habitants · Exercice 2303</span>
+    </div>
+    <div class="year-badge">
+      <span class="year-num">2303</span>
+      <span class="year-hab">0,50 MWh / hab.</span>
+    </div>
+    <div class="bilan-kpi-row">
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Consommation totale</div>
+        <div class="bilan-kpi-value val-conso">5 794 460</div>
+        <div class="bilan-kpi-unit">MWh / an</div>
+      </div>
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Production totale</div>
+        <div class="bilan-kpi-value val-prod">500 000</div>
+        <div class="bilan-kpi-unit">MWh / an · Hydroélectrique uniquement</div>
+      </div>
+      <div class="bilan-kpi">
+        <div class="bilan-kpi-label">Déficit énergétique</div>
+        <div class="bilan-kpi-value val-deficit">−5 294 460</div>
+        <div class="bilan-kpi-unit">MWh / an · −91,4 %</div>
+      </div>
+    </div>
+    <div class="bilan-charts-row">
+      <div class="bilan-card" style="display:flex;flex-direction:column;">
+        <div class="bilan-card-title">Répartition de la production</div>
+        <div class="donut-wrap">
+          <div class="donut-canvas-wrap">
+            <svg viewBox="0 0 200 200" width="180" height="180" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">
+              <circle cx="100" cy="100" r="66" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="26"/>
+              <circle cx="100" cy="100" r="66" fill="none" stroke="#4a9eff" stroke-width="26" stroke-linecap="butt"/>
+            </svg>
+          </div>
+          <div class="donut-legend">
+            <div class="donut-leg-item"><div class="donut-leg-left"><div class="donut-leg-swatch" style="background:#4a9eff;"></div><span>Hydroélectricité</span></div><div style="text-align:right"><span>500 000 MWh</span><span class="donut-leg-pct"> · 100 %</span></div></div>
+            <div class="donut-leg-item" style="opacity:0.35;"><div class="donut-leg-left"><div class="donut-leg-swatch" style="background:#f07820;opacity:0.3;"></div><span>Géothermie</span></div><div style="text-align:right"><span>—</span><span class="donut-leg-pct"> · non opérationnelle</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bilan-card">
+        <div class="bilan-card-title">Production vs consommation</div>
+        <div class="barchart-rows">
+          <div>
+            <div class="barchart-row-label"><span>Production</span><span>500 000 MWh</span></div>
+            <div class="barchart-track"><div class="barchart-fill fill-prod" id="bar-prod-2303" style="width:0%"></div></div>
+          </div>
+          <div>
+            <div class="barchart-row-label"><span>Déficit</span><span>5 294 460 MWh</span></div>
+            <div class="barchart-track"><div class="barchart-fill fill-deficit" id="bar-deficit-2303" style="width:0%"></div></div>
+          </div>
+          <div>
+            <div class="barchart-row-label"><span>Consommation totale</span><span>5 794 460 MWh</span></div>
+            <div class="barchart-composite">
+              <div class="barchart-fill fill-conso-prod"    id="bar-conso-prod-2303"    style="width:0%;flex-shrink:0"></div>
+              <div class="barchart-fill fill-conso-deficit" id="bar-conso-deficit-2303" style="width:0%;flex-shrink:0"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bilan-note">La production couvre <strong>8,6 %</strong> des besoins — déficit de <strong>5 294 460 MWh</strong>, soit 91,4 % de la consommation totale. Géothermie non encore opérationnelle à cette date.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <div class="footer-left">
+        Pharos Energy · طاقة فاروس · Royaume-Uni du Nil<br>
+        Bilan Énergétique National · Projet Résurgence
+      </div>
+      <div class="footer-credit">Projet Résurgence © 2026</div>
+    </div>
+    <div class="footer-right">طاقة فاروس · الميزانية الطاقوية · مملكة النيل</div>
+  </footer>
+
+</div>
+
+<script>
+  /* ── Thème ── */
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    const lbl  = document.getElementById('toggle-lbl');
+    const icon = document.querySelector('.toggle-icon');
+    if (lbl)  lbl.textContent = theme === 'dark' ? 'NUIT' : 'JOUR';
+    if (icon) {
+      icon.setAttribute('data-mode', theme);
+      const sun  = icon.querySelector('.icon-sun');
+      const moon = icon.querySelector('.icon-moon');
+      if (sun)  sun.style.display  = theme === 'dark'  ? 'block' : 'none';
+      if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+    }
+    localStorage.setItem('pharos-theme', theme);
+  }
+  function toggleTheme() {
+    applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  }
+  (function() {
+    const saved = localStorage.getItem('pharos-theme');
+    const mq    = window.matchMedia('(prefers-color-scheme: dark)');
+    applyTheme(saved || (mq.matches ? 'dark' : 'light'));
+    mq.addEventListener('change', e => { if (!localStorage.getItem('pharos-theme')) applyTheme(e.matches ? 'dark' : 'light'); });
+  })();
+
+  /* ── Utilitaires donut ── */
+  function polarToXY(cx, cy, r, deg) {
+    var rad = (deg - 90) * Math.PI / 180;
+    return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+  }
+  function arcPath(cx, cy, r, s, e) {
+    var a = polarToXY(cx, cy, r, s), b = polarToXY(cx, cy, r, e);
+    return 'M '+a.x+' '+a.y+' A '+r+' '+r+' 0 '+(e-s>180?1:0)+' 1 '+b.x+' '+b.y;
+  }
+
+  /* ── Init bilan (barres + donut) ── */
+  function initBilan(cfg) {
+    var conso = cfg.conso, prod = cfg.prod, deficit = cfg.deficit, sfx = cfg.suffix;
+
+    function animBars() {
+      var bp = document.getElementById('bar-prod'+sfx),
+          bd = document.getElementById('bar-deficit'+sfx),
+          bcp= document.getElementById('bar-conso-prod'+sfx),
+          bcd= document.getElementById('bar-conso-deficit'+sfx);
+      if (bp)  bp.style.width  = (prod   /conso*100).toFixed(2)+'%';
+      if (bd)  bd.style.width  = (deficit/conso*100).toFixed(2)+'%';
+      if (bcp) bcp.style.width = (prod   /conso*100).toFixed(2)+'%';
+      if (bcd) bcd.style.width = (deficit/conso*100).toFixed(2)+'%';
+    }
+
+    function animDonut() {
+      if (!cfg.hydro || !cfg.geo) return;
+      var R=66, cx=100, cy=100, gap=2.5;
+      var hDeg = cfg.hydro/prod*360;
+      var hPath = arcPath(cx,cy,R, gap/2, hDeg-gap/2);
+      var gPath = arcPath(cx,cy,R, hDeg+gap/2, 360-gap/2);
+      ['hydro','geo'].forEach(function(k) {
+        var path = k==='hydro' ? hPath : gPath;
+        var el   = document.getElementById('donut-'+k+sfx);
+        var hov  = document.getElementById('donut-hover-'+k+sfx);
+        if (el)  el.setAttribute('d', path);
+        if (hov) hov.setAttribute('d', path);
+      });
+    }
+
+    function setupTooltip() {
+      var tt = document.getElementById('donut-tooltip'+sfx);
+      if (!tt) return;
+      var tl = document.getElementById('tt-label'+sfx),
+          tm = document.getElementById('tt-mwh'+sfx),
+          tp = document.getElementById('tt-pct'+sfx);
+      var liftMap = { hydro:{dx:8,dy:-8}, geo:{dx:-8,dy:8} };
+
+      function liftArc(k,on) {
+        var el = document.getElementById('donut-'+k+sfx);
+        if (!el) return;
+        if (on) { var v=liftMap[k]; el.style.transform='translate('+v.dx+'px,'+v.dy+'px)'; el.style.filter='brightness(1.25)'; }
+        else    { el.style.transform=''; el.style.filter=''; }
+      }
+      function show(lbl,mwh,pct,color,e) {
+        tl.textContent=lbl; tl.style.color=color;
+        tm.textContent=mwh+' MWh'; tp.textContent=pct+' %';
+        tt.style.display='block'; tt.style.left=e.clientX+'px'; tt.style.top=e.clientY+'px';
+      }
+      ['hydro','geo'].forEach(function(k) {
+        var el = document.getElementById('donut-hover-'+k+sfx);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e){ liftArc(k,true); show(el.getAttribute('data-label'),el.getAttribute('data-mwh'),el.getAttribute('data-pct'),el.getAttribute('data-color'),e); });
+        el.addEventListener('mousemove', function(e){ tt.style.left=e.clientX+'px'; tt.style.top=e.clientY+'px'; });
+        el.addEventListener('mouseleave', function(){ liftArc(k,false); tt.style.display='none'; });
+      });
+    }
+
+    var section = document.getElementById('bilan'+sfx);
+    if (section && 'IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ animBars(); animDonut(); obs.disconnect(); } }); }, {threshold:0.1});
+      obs.observe(section);
+    } else { animBars(); animDonut(); }
+    setupTooltip();
+  }
+
+  /* ── Graphique d'évolution ── */
+  function initEvolGraph() {
+    var YEARS   = [2303, 2304, 2305];
+    var CONSO   = [5794460, 9742835, 14004590];
+    var PROD    = [500000,  2945000, 2945000];
+    var DEFICIT = [5294460, 6797835, 11059590];
+
+    var svg  = document.getElementById('evol-svg');
+    var grid = document.getElementById('evol-grid');
+    if (!svg || !grid) return;
+
+    var W=820, H=340, padL=95, padR=50, padT=32, padB=48;
+    var pW = W-padL-padR, pH = H-padT-padB;
+    var maxVal = Math.max.apply(null, CONSO.concat(DEFICIT)) * 1.08;
+
+    function xP(i) { return padL + (i/(YEARS.length-1))*pW; }
+    function yP(v) { return padT + pH - (v/maxVal)*pH; }
+
+    var gridVals = [0,3000000,6000000,9000000,12000000];
+    var gHtml='';
+    gridVals.forEach(function(v){
+      var y=yP(v);
+      gHtml += '<line x1="'+padL+'" y1="'+y+'" x2="'+(W-padR)+'" y2="'+y+'" stroke="rgba(255,255,255,0.055)" stroke-width="1"/>';
+      var lbl = v===0?'0':(v/1000000).toFixed(0)+'M';
+      gHtml += '<text x="'+(padL-10)+'" y="'+(y+4)+'" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="10" fill="rgba(255,255,255,0.22)">'+lbl+'</text>';
+    });
+    grid.innerHTML = gHtml;
+
+    var xlHtml='';
+    YEARS.forEach(function(yr,i){
+      xlHtml += '<text x="'+xP(i)+'" y="'+(H-padB+20)+'" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="12" fill="rgba(255,255,255,0.4)">'+yr+'</text>';
+    });
+    document.getElementById('evol-xlabels').innerHTML = xlHtml;
+
+    var ax = document.createElementNS('http://www.w3.org/2000/svg','line');
+    ax.setAttribute('x1',padL); ax.setAttribute('y1',padT+pH); ax.setAttribute('x2',W-padR); ax.setAttribute('y2',padT+pH);
+    ax.setAttribute('stroke','rgba(255,255,255,0.1)'); ax.setAttribute('stroke-width','1');
+    svg.appendChild(ax);
+
+    function buildArea(data) {
+      var pts = data.map(function(v,i){ return xP(i)+','+yP(v); });
+      for(var i=data.length-1;i>=0;i--) pts.push(xP(i)+','+yP(0));
+      return pts.join(' ');
+    }
+    document.getElementById('evol-area-conso').setAttribute('points', buildArea(CONSO));
+    document.getElementById('evol-area-prod').setAttribute('points',  buildArea(PROD));
+
+    function buildPts(data){ return data.map(function(v,i){ return xP(i)+','+yP(v); }).join(' '); }
+    document.getElementById('evol-line-conso').setAttribute('points',   buildPts(CONSO));
+    document.getElementById('evol-line-prod').setAttribute('points',    buildPts(PROD));
+    document.getElementById('evol-line-deficit').setAttribute('points', buildPts(DEFICIT));
+
+    var colors={conso:'#4a9eff',prod:'#1bbd8a',deficit:'#e84848'};
+    var dsets ={conso:CONSO,   prod:PROD,    deficit:DEFICIT};
+    var lbls  ={conso:'Consommation',prod:'Production',deficit:'Déficit'};
+
+    Object.keys(dsets).forEach(function(key){
+      var g = document.getElementById('evol-dots-'+key);
+      var h='';
+      dsets[key].forEach(function(v,i){
+        var cx=xP(i), cy=yP(v);
+        var fmt = v.toLocaleString('fr-FR');
+        var anchor = i===0?'start':i===YEARS.length-1?'end':'middle';
+        var dy = key==='deficit'?18:-12;
+        h += '<circle cx="'+cx+'" cy="'+cy+'" r="6" fill="'+colors[key]+'" stroke="var(--bg,#0a0c10)" stroke-width="2.5" style="cursor:default;">';
+        h += '<title>'+YEARS[i]+' · '+lbls[key]+' : '+fmt+' MWh</title></circle>';
+        h += '<text x="'+cx+'" y="'+(cy+dy)+'" text-anchor="'+anchor+'" font-family="IBM Plex Mono,monospace" font-size="10" fill="'+colors[key]+'" opacity="0.9">'+fmt+'</text>';
+      });
+      g.innerHTML=h;
+    });
+  }
+
+  /* ── Init ── */
+  document.addEventListener('DOMContentLoaded', function(){
+    initEvolGraph();
+    initBilan({ suffix:'-2305', conso:14004590, prod:2945000, deficit:11059590, hydro:2000000, geo:945000 });
+    initBilan({ suffix:'-2304', conso:9742835,  prod:2945000, deficit:6797835,  hydro:2000000, geo:945000 });
+    initBilan({ suffix:'-2303', conso:5794460,  prod:500000,  deficit:5294460,  hydro:null,    geo:null   });
+  });
+</script>
+<script src="../pharos-auth.js"></script>
+</body>
+</html>
