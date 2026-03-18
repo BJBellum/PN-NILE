@@ -70,8 +70,11 @@
   /* TOGGLE */
   .theme-toggle { display:flex; align-items:center; gap:6px; background:var(--toggle-bg); border:1px solid var(--border2); border-radius:20px; padding:4px 10px; cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text2); transition:all .2s; user-select:none; }
   .theme-toggle:hover { border-color:var(--border3); color:var(--text); }
-  .toggle-icon { font-size:13px; transition:transform .3s; }
-  [data-theme="light"] .toggle-icon { transform:rotate(180deg); }
+  .toggle-icon { flex-shrink:0; }
+  .toggle-icon[data-mode="dark"]  .icon-sun  { display:block; }
+  .toggle-icon[data-mode="dark"]  .icon-moon { display:none;  }
+  .toggle-icon[data-mode="light"] .icon-sun  { display:none;  }
+  .toggle-icon[data-mode="light"] .icon-moon { display:block; }
 
   /* PAGE */
   .page { max-width:1260px; margin:0 auto; padding:28px 28px 64px; }
