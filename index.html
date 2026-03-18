@@ -111,7 +111,7 @@
     user-select:none;
   }
   .theme-toggle:hover { border-color:var(--border3); color:var(--text); }
-  .theme-toggle .toggle-icon { flex-shrink:0; transition:transform .3s; }
+  .theme-toggle .toggle-icon { flex-shrink:0; }
   .toggle-icon[data-mode="dark"]  .icon-sun  { display:block; }
   .toggle-icon[data-mode="dark"]  .icon-moon { display:none;  }
   .toggle-icon[data-mode="light"] .icon-sun  { display:none;  }
@@ -200,10 +200,10 @@
     border-radius:10px;
     overflow:hidden;
   }
-  .hstat { padding:14px 28px; text-align:center; border-right:1px solid var(--border); }
+  .hstat { padding:16px 32px; text-align:center; border-right:1px solid var(--border); display:flex; flex-direction:column; align-items:center; gap:4px; }
   .hstat:last-child { border-right:none; }
-  .hstat-val { font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:500; color:var(--text); }
-  .hstat-lbl { font-size:11px; color:var(--text3); margin-top:2px; font-family:'IBM Plex Mono',monospace; }
+  .hstat-lbl { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text3); letter-spacing:0.07em; text-transform:uppercase; }
+  .hstat-val { font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:500; color:var(--text); }
 
   /* ── PAGE BODY ── */
   .page { max-width:1200px; margin:0 auto; padding:48px 28px 80px; }
@@ -330,6 +330,7 @@
 
   /* ── Bilan CTA hover ── */
   .bilan-cta-card:hover .bilan-cta-arrow { color:var(--text2) !important; transform:translateX(4px); }
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400;500&display=swap">
 </head>
@@ -349,6 +350,7 @@
     <span class="nav-brand">Pharos Energy</span>
   </div>
   <div class="nav-center">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="nav-link">Accueil</a>
     <a href="#projets" class="nav-link">Nucléaire</a>
     <a href="#hydro" class="nav-link">Hydroélectrique</a>
     <a href="#geothermie" class="nav-link">Géothermie</a>
@@ -395,10 +397,10 @@
       <span class="htag htag-orange">Géothermie</span>
     </div>
     <div class="hero-stats">
-      <div class="hstat"><div class="hstat-val">4</div><div class="hstat-lbl">Installations électriques</div></div>
-      <div class="hstat"><div class="hstat-val">2 100 MWe</div><div class="hstat-lbl">Puissance installée</div></div>
-      <div class="hstat"><div class="hstat-val">2,945M MWh</div><div class="hstat-lbl">Production annuelle</div></div>
-      <div class="hstat"><div class="hstat-val" style="color:#1bbd8a">2303</div><div class="hstat-lbl">En service depuis</div></div>
+      <div class="hstat"><div class="hstat-lbl">Installations électriques</div><div class="hstat-val">4</div></div>
+      <div class="hstat"><div class="hstat-lbl">Puissance installée</div><div class="hstat-val">2 100 MWe</div></div>
+      <div class="hstat"><div class="hstat-lbl">Production annuelle</div><div class="hstat-val">2,945M MWh</div></div>
+      <div class="hstat"><div class="hstat-lbl">En service depuis</div><div class="hstat-val">2303</div></div>
     </div>
   </div>
 </section>
@@ -423,7 +425,7 @@
             <span class="proj-status status-actif">En service</span>
           </div>
           <div class="proj-name">MEMPHIS</div>
-          <div class="proj-full">Pile Atomique de Recherche · Le Caire</div>
+          <div class="proj-full">Pile Atomique · <span style="font-family:'Noto Kufi Arabic',sans-serif;direction:rtl">مفاعل ممفيس</span> · D₂O · ~10 MWth · 2305</div>
           <p class="proj-desc">Premier réacteur nucléaire du Royaume-Uni du Nil, mis en service en 2305. Pile de recherche utilisant le procédé Girdler pour la production d'eau lourde D₂O. Fondement expérimental de la filière NILDU.</p>
           <div class="proj-tags"><span class="ptag">Prototype</span><span class="ptag">Procédé Girdler</span><span class="ptag">D₂O</span><span class="ptag">Recherche</span><span class="ptag">2305</span></div>
         </div>
@@ -441,7 +443,7 @@
             <span class="proj-status status-construction">En construction</span>
           </div>
           <div class="proj-name">NILDU</div>
-          <div class="proj-full">Nile Deuterium Uranium Reactor</div>
+          <div class="proj-full">Réacteur CANDU · <span style="font-family:'Noto Kufi Arabic',sans-serif;direction:rtl">مفاعل نيلدو</span> · D₂O · ~320 MWe</div>
           <p class="proj-desc">Premier réacteur de puissance à eau lourde développé par Pharos Energy. Modération et caloportage D₂O, combustible uranium naturel, rechargement en marche. Production annuelle prévue : 2,4 millions de MWh.</p>
           <div class="proj-tags"><span class="ptag">Filière NILDU</span><span class="ptag">D₂O</span><span class="ptag">1 060 MWth</span><span class="ptag">~320 MWe</span><span class="ptag">On-power</span></div>
         </div>
@@ -456,7 +458,7 @@
         <div class="proj-card-body">
           <div class="proj-card-top"><span class="proj-ref">NILDU-REF-002</span><span class="proj-status status-conception">Conception</span></div>
           <div class="proj-name">NILDU-II</div>
-          <div class="proj-full">Nile Deuterium Uranium Reactor II</div>
+          <div class="proj-full">Réacteur CANDU II · <span style="font-family:'Noto Kufi Arabic',sans-serif;direction:rtl">نيلدو-٢</span> · D₂O · Conception</div>
           <p class="proj-desc">Deuxième réacteur de puissance de la filière NILDU. Implantation à Assouan, Région fédérale d'Assouan.</p>
           <div class="proj-tags"><span class="ptag">Filière NILDU</span><span class="ptag">D₂O</span><span class="ptag">Puissance</span><span class="ptag">On-power</span></div>
         </div>
@@ -471,7 +473,7 @@
         <div class="proj-card-body">
           <div class="proj-card-top"><span class="proj-ref">NILDU-REF-003</span><span class="proj-status status-etude">Étude</span></div>
           <div class="proj-name">NILDU-III</div>
-          <div class="proj-full">Nile Deuterium Uranium Reactor III</div>
+          <div class="proj-full">Réacteur CANDU III · <span style="font-family:'Noto Kufi Arabic',sans-serif;direction:rtl">نيلدو-٣</span> · D₂O · Étude</div>
           <p class="proj-desc">Troisième unité de la filière NILDU, en phase d'étude de faisabilité. Localisation non encore définie.</p>
           <div class="proj-tags"><span class="ptag">Filière NILDU</span><span class="ptag">D₂O</span><span class="ptag">Étude</span></div>
         </div>
@@ -598,7 +600,6 @@
     <a href="bilan-energie/" class="proj-card active-link bilan-cta-card">
       <div class="proj-card-accent" style="background:linear-gradient(90deg,#4a9eff,#1bbd8a,#f07820);height:3px;"></div>
       <div class="proj-card-body" style="padding:28px 28px 24px;">
-
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap;">
           <div>
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:0.08em;margin-bottom:8px;">BEN-NAT-001 · Exercice 2303–2305</div>
@@ -607,7 +608,6 @@
           </div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;padding:3px 10px;border-radius:3px;border:1px solid rgba(27,189,138,0.5);color:#1bbd8a;background:rgba(27,189,138,0.07);white-space:nowrap;flex-shrink:0;">Données publiques</span>
         </div>
-
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);border:1px solid var(--border2);border-radius:8px;overflow:hidden;margin-bottom:20px;">
           <div style="background:var(--bg3);padding:12px 16px;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Production 2305</div>
@@ -630,7 +630,6 @@
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);">hab. · 0,78 MWh/hab</div>
           </div>
         </div>
-
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
             <span class="ptag">Hydroélectricité</span>
@@ -640,7 +639,6 @@
           </div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--text3);transition:color .15s,transform .15s;" class="bilan-cta-arrow">Consulter le bilan →</span>
         </div>
-
       </div>
     </a>
   </section>
