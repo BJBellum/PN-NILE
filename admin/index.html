@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin · Bourse du Caire</title>
+<title>Admin · Bourse du Caire · UKN</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,21 +13,18 @@
     --bg:#0a0c10;--bg2:#111520;--bg3:#161b26;--bg4:#1c2232;
     --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--border3:rgba(255,255,255,0.22);
     --text:#e2e6f0;--text2:#8b93a8;--text3:#545d72;
-    --card-bg:#111520;--card-hover:#161b28;--toggle-bg:#1c2232;
-    --input-bg:#0d1018;
+    --card-bg:#111520;--card-hover:#161b28;--toggle-bg:#1c2232;--input-bg:#0d1018;
   }
   :root[data-theme="light"] {
     --bg:#f0f2f6;--bg2:#ffffff;--bg3:#eaecf2;--bg4:#dde0ea;
     --border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.12);--border3:rgba(0,0,0,0.2);
     --text:#1a1e2a;--text2:#4a5168;--text3:#8b93a8;
-    --card-bg:#ffffff;--card-hover:#f5f7fc;--toggle-bg:#dde0ea;
-    --input-bg:#f8f9fc;
+    --card-bg:#ffffff;--card-hover:#f5f7fc;--toggle-bg:#dde0ea;--input-bg:#f8f9fc;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.6;min-height:100vh;transition:background .25s,color .25s;}
 
-  /* ── NAV ── */
   .topnav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:56px;background:var(--bg2);border-bottom:1px solid var(--border2);gap:12px;transition:background .25s;}
   .nav-left{display:flex;align-items:center;gap:12px;flex-shrink:0;}
   .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
@@ -42,79 +39,51 @@
   .toggle-icon[data-mode="light"] .icon-sun{display:none;}
   .toggle-icon[data-mode="light"] .icon-moon{display:block;}
 
-  /* ── LAYOUT ── */
   .page{max-width:1360px;margin:0 auto;padding:32px 24px 80px;}
-  .page-header{margin-bottom:32px;}
+  .page-header{margin-bottom:28px;}
   .page-header-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f0a030;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
-  .page-header-title{font-size:32px;font-weight:600;color:var(--text);margin-bottom:4px;}
+  .page-header-title{font-size:28px;font-weight:600;color:var(--text);margin-bottom:4px;}
   .page-header-desc{font-size:13px;color:var(--text2);line-height:1.7;}
 
-  /* ── PAT PANEL ── */
-  .pat-panel{
-    background:var(--bg2);border:1px solid var(--border2);border-left:3px solid #f0a030;
-    border-radius:8px;padding:16px 20px;margin-bottom:24px;
-    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
-  }
-  .pat-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text2);letter-spacing:0.05em;flex-shrink:0;}
-  .pat-input{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;
-    background:var(--input-bg);border:1px solid var(--border2);
-    color:var(--text);border-radius:6px;padding:7px 12px;
-    flex:1;min-width:200px;max-width:360px;outline:none;
-    transition:border-color .15s;
-  }
+  /* PAT */
+  .pat-panel{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid #f0a030;border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .pat-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text2);flex-shrink:0;}
+  .pat-input{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--input-bg);border:1px solid var(--border2);color:var(--text);border-radius:6px;padding:7px 12px;flex:1;min-width:180px;max-width:340px;outline:none;transition:border-color .15s;}
   .pat-input:focus{border-color:rgba(240,160,48,0.5);}
   .pat-input::placeholder{color:var(--text3);}
-  .pat-save-btn{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;
-    padding:7px 14px;border-radius:6px;border:1px solid rgba(27,189,138,0.4);
-    background:rgba(27,189,138,0.08);color:#1bbd8a;cursor:pointer;
-    transition:background .15s;flex-shrink:0;
-  }
-  .pat-save-btn:hover{background:rgba(27,189,138,0.16);}
-  .pat-status{font-family:'IBM Plex Mono',monospace;font-size:10px;flex-shrink:0;}
-  .pat-ok{color:#1bbd8a;}
-  .pat-missing{color:#e84848;}
+  .pat-ok{color:#1bbd8a;font-family:'IBM Plex Mono',monospace;font-size:10px;}
+  .pat-missing{color:#e84848;font-family:'IBM Plex Mono',monospace;font-size:10px;}
 
-  /* ── KPI ROW ── */
-  .kpi-row{display:flex;gap:1px;background:var(--border);border:1px solid var(--border2);border-radius:10px;overflow:hidden;margin-bottom:24px;}
-  .kpi{background:var(--bg2);padding:14px 20px;text-align:center;flex:1;}
+  /* KPI */
+  .kpi-row{display:flex;gap:1px;background:var(--border);border:1px solid var(--border2);border-radius:10px;overflow:hidden;margin-bottom:20px;flex-wrap:wrap;}
+  .kpi{background:var(--bg2);padding:12px 18px;text-align:center;flex:1;min-width:90px;}
   .kpi-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
-  .kpi-val{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;}
+  .kpi-val{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:500;}
 
-  /* ── TOOLBAR ── */
-  .toolbar{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center;}
-  .btn{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;
-    padding:8px 16px;border-radius:6px;border:1px solid;
-    cursor:pointer;transition:all .15s;letter-spacing:0.04em;
-    display:inline-flex;align-items:center;gap:7px;
-  }
+  /* TOOLBAR */
+  .toolbar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;align-items:center;}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:7px 14px;border-radius:6px;border:1px solid;cursor:pointer;transition:all .15s;letter-spacing:0.03em;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn-primary{color:#1bbd8a;border-color:rgba(27,189,138,0.4);background:rgba(27,189,138,0.08);}
-  .btn-primary:hover{background:rgba(27,189,138,0.15);}
+  .btn-primary:hover{background:rgba(27,189,138,0.16);}
   .btn-amber{color:#f0a030;border-color:rgba(240,160,48,0.4);background:rgba(240,160,48,0.08);}
-  .btn-amber:hover{background:rgba(240,160,48,0.15);}
-  .btn-danger{color:#e84848;border-color:rgba(232,72,72,0.4);background:rgba(232,72,72,0.08);}
-  .btn-danger:hover{background:rgba(232,72,72,0.15);}
+  .btn-amber:hover{background:rgba(240,160,48,0.16);}
   .btn-gray{color:var(--text2);border-color:var(--border2);background:var(--bg2);}
   .btn-gray:hover{background:var(--bg3);}
-  .btn:disabled{opacity:0.4;cursor:not-allowed;}
+  .btn:disabled{opacity:.4;cursor:not-allowed;}
   .ml-auto{margin-left:auto;}
 
-  /* ── TABLE ── */
-  .table-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:12px;overflow:hidden;margin-bottom:28px;}
-  table{width:100%;border-collapse:collapse;}
+  /* TABLE */
+  .table-card{background:var(--card-bg);border:1px solid var(--border2);border-radius:12px;overflow:hidden;margin-bottom:24px;overflow-x:auto;}
+  table{width:100%;border-collapse:collapse;min-width:760px;}
   thead tr{background:var(--bg3);border-bottom:2px solid var(--border2);}
   th{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;padding:11px 12px;text-align:left;white-space:nowrap;}
   th.center{text-align:center;}
   tbody tr{border-bottom:1px solid var(--border);transition:background .1s;}
   tbody tr:last-child{border-bottom:none;}
   tbody tr:hover{background:rgba(255,255,255,0.02);}
-  tbody tr.editing{background:rgba(240,160,48,0.04)!important;border-color:rgba(240,160,48,0.2);}
   td{padding:10px 12px;font-size:13px;color:var(--text2);}
-  td.td-nom{color:var(--text);font-weight:500;max-width:200px;min-width:140px;}
+  td.td-nom{color:var(--text);font-weight:500;}
   td.td-score{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;text-align:right;}
-  td.td-cls{text-align:center;}
   td.td-actions{text-align:right;white-space:nowrap;}
 
   .cls-badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;padding:2px 8px;border-radius:4px;border:1px solid;letter-spacing:0.05em;}
@@ -122,112 +91,58 @@
   .cls-B{color:#4a9eff;border-color:#1c6fcc;background:rgba(74,158,255,0.08);}
   .cls-C{color:#f0a030;border-color:#c07818;background:rgba(240,160,48,0.08);}
   .cls-D{color:#e84848;border-color:#a83030;background:rgba(232,72,72,0.08);}
-  .cls-F{color:#8b93a8;border-color:#4a5168;background:rgba(74,81,104,0.1);}
+  .cls-E,.cls-F{color:#8b93a8;border-color:#4a5168;background:rgba(74,81,104,0.1);}
 
-  .inline-btn{
-    font-family:'IBM Plex Mono',monospace;font-size:10px;
-    padding:3px 9px;border-radius:4px;border:1px solid;cursor:pointer;
-    background:none;transition:background .12s;margin-left:4px;
-  }
+  .ibtn{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 9px;border-radius:4px;border:1px solid;cursor:pointer;background:none;transition:background .12s;margin-left:4px;}
   .ibtn-edit{color:#4a9eff;border-color:rgba(74,158,255,0.3);}
   .ibtn-edit:hover{background:rgba(74,158,255,0.1);}
   .ibtn-del{color:#e84848;border-color:rgba(232,72,72,0.3);}
   .ibtn-del:hover{background:rgba(232,72,72,0.1);}
-  .ibtn-save{color:#1bbd8a;border-color:rgba(27,189,138,0.4);}
-  .ibtn-save:hover{background:rgba(27,189,138,0.1);}
-  .ibtn-cancel{color:var(--text3);border-color:var(--border2);}
-  .ibtn-cancel:hover{background:var(--bg3);}
 
-  /* Inline editable number input */
-  .score-input{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;
-    background:var(--input-bg);border:1px solid var(--border2);
-    color:var(--text);border-radius:4px;
-    padding:3px 6px;width:48px;text-align:center;outline:none;
-  }
-  .score-input:focus{border-color:rgba(240,160,48,0.5);}
-  .text-input{
-    font-family:'IBM Plex Sans',sans-serif;font-size:12px;
-    background:var(--input-bg);border:1px solid var(--border2);
-    color:var(--text);border-radius:4px;padding:4px 8px;
-    width:100%;outline:none;
-  }
-  .text-input:focus{border-color:rgba(240,160,48,0.5);}
-
-  /* ── MODAL (Add/Edit) ── */
-  .modal-overlay{
-    position:fixed;inset:0;background:rgba(0,0,0,0.7);
-    display:flex;align-items:center;justify-content:center;
-    z-index:500;backdrop-filter:blur(4px);
-    animation:fadeIn .15s ease;
-  }
-  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-  .modal{
-    background:var(--bg2);border:1px solid var(--border2);border-radius:14px;
-    padding:32px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
-    animation:slideUp .2s ease;
-    box-shadow:0 24px 80px rgba(0,0,0,0.4);
-  }
-  @keyframes slideUp{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
-  .modal-title{font-size:20px;font-weight:600;color:var(--text);margin-bottom:24px;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-  .form-row.single{grid-template-columns:1fr;}
-  .form-group{display:flex;flex-direction:column;gap:6px;}
-  .form-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:0.09em;text-transform:uppercase;}
-  .form-input{
-    font-family:'IBM Plex Sans',sans-serif;font-size:13px;
-    background:var(--input-bg);border:1px solid var(--border2);
-    color:var(--text);border-radius:6px;padding:8px 12px;outline:none;
-    transition:border-color .15s;
-  }
+  /* MODAL */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.72);display:flex;align-items:center;justify-content:center;z-index:500;backdrop-filter:blur(4px);}
+  .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:28px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.45);}
+  .modal-title{font-size:20px;font-weight:600;color:var(--text);margin-bottom:22px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .form-grid.full{grid-template-columns:1fr;}
+  .form-group{display:flex;flex-direction:column;gap:5px;}
+  .form-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;}
+  .form-input{font-family:'IBM Plex Sans',sans-serif;font-size:13px;background:var(--input-bg);border:1px solid var(--border2);color:var(--text);border-radius:6px;padding:8px 12px;outline:none;transition:border-color .15s;width:100%;}
   .form-input:focus{border-color:rgba(240,160,48,0.5);}
-  .form-input-num{
-    font-family:'IBM Plex Mono',monospace;font-size:14px;text-align:center;
-  }
-  .score-preview{
-    background:var(--bg3);border:1px solid var(--border2);border-radius:8px;
-    padding:16px;margin-top:16px;margin-bottom:20px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  }
-  .score-preview-val{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:500;}
-  .modal-actions{display:flex;justify-content:flex-end;gap:10px;padding-top:16px;border-top:1px solid var(--border);}
+  .form-num{font-family:'IBM Plex Mono',monospace;text-align:center;}
+  .score-preview{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:14px 18px;margin:16px 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .preview-val{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;}
+  .modal-actions{display:flex;justify-content:flex-end;gap:10px;padding-top:14px;border-top:1px solid var(--border);}
 
-  /* ── TOAST ── */
-  .toast{
-    position:fixed;bottom:24px;right:24px;z-index:999;
-    font-family:'IBM Plex Mono',monospace;font-size:12px;
-    padding:12px 18px;border-radius:8px;border:1px solid;
-    background:var(--bg2);animation:toastIn .2s ease;
-    max-width:360px;line-height:1.5;
-  }
-  @keyframes toastIn{from{transform:translateY(12px);opacity:0}to{transform:translateY(0);opacity:1}}
+  /* TOAST */
+  .toast{position:fixed;bottom:20px;right:20px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:12px 18px;border-radius:8px;border:1px solid;background:var(--bg2);max-width:360px;line-height:1.5;animation:tin .2s ease;}
+  @keyframes tin{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}
   .toast-ok{color:#1bbd8a;border-color:rgba(27,189,138,0.4);}
   .toast-err{color:#e84848;border-color:rgba(232,72,72,0.4);}
   .toast-info{color:#4a9eff;border-color:rgba(74,158,255,0.3);}
 
-  /* ── ACCESS DENIED ── */
-  .denied{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;text-align:center;}
-  .denied-title{font-size:24px;font-weight:600;color:#e84848;}
+  /* DENIED */
+  .denied{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;text-align:center;padding:24px;}
+  .denied-icon{font-size:48px;}
+  .denied-title{font-size:22px;font-weight:600;color:#e84848;}
   .denied-desc{font-size:13px;color:var(--text2);max-width:400px;line-height:1.7;}
 
-  @media(max-width:900px){.form-row{grid-template-columns:1fr;}}
-  @media(max-width:600px){.topnav{padding:0 14px;}.page{padding:20px 14px 60px;}}
+  @media(max-width:700px){.form-grid{grid-template-columns:1fr;}.topnav{padding:0 14px;}.page{padding:20px 14px 60px;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="topnav">
   <div class="nav-left">
     <a href="https://BJBellum.github.io/UKN/" class="nav-back">← Portail</a>
     <span class="nav-brand">Admin · Bourse du Caire</span>
     <span class="admin-badge">★ Admin</span>
   </div>
-  <div class="nav-right">
-    <div id="admin-user-info" style="display:flex;align-items:center;gap:8px;"></div>
+  <div class="nav-right" id="nav-right">
     <div class="theme-toggle" onclick="toggleTheme()">
       <svg class="toggle-icon" data-mode="dark" width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;">
-        <g class="icon-sun"><circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+        <g class="icon-sun">
+          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
           <line x1="12" y1="2" x2="12" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <line x1="12" y1="19" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <line x1="2" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -237,72 +152,70 @@
           <line x1="19.78" y1="4.22" x2="17.66" y2="6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <line x1="6.34" y1="17.66" x2="4.22" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </g>
-        <g class="icon-moon"><path d="M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z" fill="currentColor"/></g>
+        <g class="icon-moon">
+          <path d="M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z" fill="currentColor"/>
+        </g>
       </svg>
       <span id="toggle-lbl" style="font-size:10px;letter-spacing:0.06em">NUIT</span>
     </div>
   </div>
 </nav>
 
-<!-- MAIN -->
-<div class="page" id="main-page">
-  <div class="denied" id="access-denied" style="display:none;">
-    <div style="font-size:48px;">🔒</div>
+<div class="page">
+  <!-- ACCESS DENIED -->
+  <div class="denied" id="denied" style="display:none;">
+    <div class="denied-icon">🔒</div>
     <div class="denied-title">Accès non autorisé</div>
     <div class="denied-desc">
-      Cette page est réservée aux administrateurs du Royaume-Uni du Nil.
-      Connecte-toi avec le compte Discord autorisé.
+      Cette page est réservée aux administrateurs du Royaume-Uni du Nil.<br>
+      Connecte-toi avec le compte Discord autorisé depuis le portail.
     </div>
-    <a href="https://BJBellum.github.io/UKN/" class="btn btn-gray" style="margin-top:8px;">← Retour au portail</a>
+    <a href="https://BJBellum.github.io/UKN/" class="btn btn-gray" style="margin-top:8px;text-decoration:none;">← Retour au portail</a>
   </div>
 
-  <div id="admin-content" style="display:none;">
+  <!-- LOADING -->
+  <div id="loading" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:12px;">
+    <div style="width:32px;height:32px;border:2px solid rgba(240,160,48,0.2);border-top-color:#f0a030;border-radius:50%;animation:spin .8s linear infinite;"></div>
+    <span>Vérification des droits…</span>
+  </div>
+  <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+
+  <!-- CONTENT -->
+  <div id="content" style="display:none;">
     <div class="page-header">
       <div class="page-header-eyebrow">★ Dashboard Admin · Bourse du Caire</div>
       <div class="page-header-title">Gestion des Sociétés</div>
-      <div class="page-header-desc">
-        Ajouter, modifier, supprimer des sociétés. Les données sont sauvegardées sur GitHub
-        et visibles en temps réel par tous les visiteurs.
-      </div>
+      <div class="page-header-desc">Ajouter, modifier, supprimer des sociétés cotées. Les modifications sont poussées sur GitHub et visibles par tous les visiteurs.</div>
     </div>
 
-    <!-- PAT Panel -->
+    <!-- PAT -->
     <div class="pat-panel">
-      <span class="pat-label">GitHub PAT</span>
-      <input type="password" class="pat-input" id="pat-input"
-             placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
-             title="Personal Access Token GitHub avec permission contents:write">
-      <button class="pat-save-btn" onclick="savePAT()">Enregistrer</button>
-      <span class="pat-status" id="pat-status"></span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);margin-left:4px;">
-        (Créer sur github.com → Settings → Developer settings → Tokens → Fine-grained → permission Contents: Write)
+      <span class="pat-label">GitHub PAT (Classic)</span>
+      <input type="password" class="pat-input" id="pat-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+      <button class="btn btn-primary" onclick="savePAT()" style="flex-shrink:0;">Enregistrer</button>
+      <span id="pat-status"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);">
+        github.com → Settings → Developer settings → Tokens (classic) → scope: repo
       </span>
     </div>
 
     <!-- KPIs -->
-    <div class="kpi-row" id="kpi-row">
+    <div class="kpi-row">
       <div class="kpi"><div class="kpi-lbl">Total</div><div class="kpi-val" id="k-total" style="color:#f0a030;">—</div></div>
       <div class="kpi"><div class="kpi-lbl">Classe A</div><div class="kpi-val" id="k-a" style="color:#1bbd8a;">—</div></div>
       <div class="kpi"><div class="kpi-lbl">Classe B</div><div class="kpi-val" id="k-b" style="color:#4a9eff;">—</div></div>
-      <div class="kpi"><div class="kpi-lbl">Classe C</div><div class="kpi-val" id="k-c" style="color:#f0a030;">—</div></div>
+      <div class="kpi"><div class="kpi-lbl">Classe C+</div><div class="kpi-val" id="k-c" style="color:#f0a030;">—</div></div>
       <div class="kpi"><div class="kpi-lbl">Nationales</div><div class="kpi-val" id="k-nat" style="color:#1bbd8a;">—</div></div>
       <div class="kpi"><div class="kpi-lbl">Étrangères</div><div class="kpi-val" id="k-for" style="color:#4a9eff;">—</div></div>
-      <div class="kpi"><div class="kpi-lbl">Mise à jour</div><div class="kpi-val" id="k-date" style="font-size:13px;color:var(--text2);">—</div></div>
+      <div class="kpi"><div class="kpi-lbl">MAJ</div><div class="kpi-val" id="k-date" style="font-size:11px;color:var(--text2);">—</div></div>
     </div>
 
     <!-- Toolbar -->
     <div class="toolbar">
-      <button class="btn btn-primary" onclick="openModal()">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-        Ajouter une société
-      </button>
-      <button class="btn btn-gray" onclick="loadData()">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M23 4v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 20v-6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Actualiser
-      </button>
+      <button class="btn btn-primary" onclick="openModal()">+ Ajouter une société</button>
+      <button class="btn btn-gray" onclick="loadData()">↺ Actualiser</button>
       <button class="btn btn-amber ml-auto" id="save-btn" onclick="saveToGitHub()" disabled>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17 21 17 13 7 13 7 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 3 7 8 15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Sauvegarder sur GitHub
+        ↑ Sauvegarder sur GitHub
       </button>
     </div>
 
@@ -326,35 +239,34 @@
             <th style="text-align:right;">Actions</th>
           </tr>
         </thead>
-        <tbody id="admin-tbody"></tbody>
+        <tbody id="tbody"></tbody>
       </table>
     </div>
   </div>
 </div>
 
-<!-- ADD/EDIT MODAL -->
-<div class="modal-overlay" id="modal" style="display:none;" onclick="closeModalOutside(event)">
-  <div class="modal" onclick="event.stopPropagation()">
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" style="display:none;" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
     <div class="modal-title" id="modal-title">Ajouter une société</div>
-
-    <div class="form-row single">
+    <div class="form-grid full">
       <div class="form-group">
-        <label class="form-label">Nom de la société / coopérative</label>
+        <label class="form-label">Nom de la société</label>
         <input type="text" class="form-input" id="f-nom" placeholder="Nom officiel" oninput="updatePreview()">
       </div>
     </div>
-    <div class="form-row">
+    <div class="form-grid">
       <div class="form-group">
         <label class="form-label">Nationalité</label>
-        <select class="form-input" id="f-nat" oninput="updatePreview()">
+        <select class="form-input" id="f-nat" onchange="updatePreview()">
           <option value="Royaume-Uni du Nil">Royaume-Uni du Nil</option>
           <option value="Union Démocratique d'Asie">Union Démocratique d'Asie</option>
-          <option value="Autre">Autre…</option>
+          <option value="Autre">Autre</option>
         </select>
       </div>
       <div class="form-group">
-        <label class="form-label">Secteur d'activité</label>
-        <select class="form-input" id="f-cat" oninput="updatePreview()">
+        <label class="form-label">Secteur</label>
+        <select class="form-input" id="f-cat" onchange="updatePreview()">
           <option>Agriculture & Agroalimentaire</option>
           <option>BTP & Infrastructures</option>
           <option>Commerce</option>
@@ -377,52 +289,26 @@
         </select>
       </div>
     </div>
-
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;margin-top:8px;">
-      Notes ESS · de 0 à 10
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 10px;">Notes ESS · 0 à 10</div>
+    <div class="form-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="form-group"><label class="form-label">Équité ×5</label><input type="number" class="form-input form-num" id="f-eq" min="0" max="10" step="0.5" value="5" oninput="updatePreview()"></div>
+      <div class="form-group"><label class="form-label">Santé ×4</label><input type="number" class="form-input form-num" id="f-sa" min="0" max="10" step="0.5" value="5" oninput="updatePreview()"></div>
+      <div class="form-group"><label class="form-label">Transparence ×7</label><input type="number" class="form-input form-num" id="f-tr" min="0" max="10" step="0.5" value="5" oninput="updatePreview()"></div>
+      <div class="form-group"><label class="form-label">Innovation ×8</label><input type="number" class="form-input form-num" id="f-inn" min="0" max="10" step="0.5" value="5" oninput="updatePreview()"></div>
+      <div class="form-group"><label class="form-label">Écologie ×6</label><input type="number" class="form-input form-num" id="f-ec" min="0" max="10" step="0.5" value="5" oninput="updatePreview()"></div>
+      <div class="form-group"><label class="form-label">Fiabilité ×8</label><input type="number" class="form-input form-num" id="f-fi" min="0" max="10" step="0.5" value="5" oninput="updatePreview()"></div>
     </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Équité ×5</label>
-        <input type="number" class="form-input form-input-num" id="f-eq" min="0" max="10" step="0.5" value="5" oninput="updatePreview()">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Santé ×4</label>
-        <input type="number" class="form-input form-input-num" id="f-sa" min="0" max="10" step="0.5" value="5" oninput="updatePreview()">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Transparence ×7</label>
-        <input type="number" class="form-input form-input-num" id="f-tr" min="0" max="10" step="0.5" value="5" oninput="updatePreview()">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Innovation ×8</label>
-        <input type="number" class="form-input form-input-num" id="f-inn" min="0" max="10" step="0.5" value="5" oninput="updatePreview()">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Écologie ×6</label>
-        <input type="number" class="form-input form-input-num" id="f-ec" min="0" max="10" step="0.5" value="5" oninput="updatePreview()">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Fiabilité ×8</label>
-        <input type="number" class="form-input form-input-num" id="f-fi" min="0" max="10" step="0.5" value="5" oninput="updatePreview()">
-      </div>
-    </div>
-
-    <!-- Score preview -->
     <div class="score-preview">
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Score calculé</div>
-        <div class="score-preview-val" id="preview-score">—</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Score calculé</div>
+        <div class="preview-val" id="prev-score">—</div>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Classe</div>
-        <div id="preview-cls"></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">Classe</div>
+        <div id="prev-cls"></div>
       </div>
-      <div style="font-size:12px;color:var(--text2);max-width:200px;line-height:1.6;">
-        <span id="preview-effects">Entrez les notes pour voir les effets ESS.</span>
-      </div>
+      <div style="font-size:12px;color:var(--text2);max-width:200px;line-height:1.6;" id="prev-fx">—</div>
     </div>
-
     <div class="modal-actions">
       <button class="btn btn-gray" onclick="closeModal()">Annuler</button>
       <button class="btn btn-primary" onclick="submitForm()">Enregistrer</button>
@@ -431,375 +317,285 @@
 </div>
 
 <script>
-/* ════════════════════════════════════════════════════
-   ADMIN DASHBOARD LOGIC
-═══════════════════════════════════════════════════ */
-
-const BASE_URL  = 'https://BJBellum.github.io/UKN/';
-const ADMIN_ID  = '772821169664426025';
-const RAW_URL   = 'https://raw.githubusercontent.com/BJBellum/UKN/main/data/bourse.json';
-const API_URL   = 'https://api.github.com/repos/BJBellum/UKN/contents/data/bourse.json';
-const PAT_KEY   = 'pharos_gh_pat';
-const THEME_KEY = 'run-theme';
-
+/* ── CONSTANTES ── */
+const ADMIN_ID = '772821169664426025';
+const BASE     = 'https://BJBellum.github.io/UKN/';
+const RAW      = 'https://raw.githubusercontent.com/BJBellum/UKN/main/data/bourse.json';
+const API      = 'https://api.github.com/repos/BJBellum/UKN/contents/data/bourse.json';
+const PAT_KEY  = 'pharos_gh_pat';
 const W = {eq:5,sa:4,tr:7,inn:8,ec:6,fi:8,total:38};
-const CLS_COLORS = {A:'#1bbd8a',B:'#4a9eff',C:'#f0a030',D:'#e84848',F:'#8b93a8'};
-const CLS_LABELS = {A:'Exemplaire',B:'Engagée',C:'En transition',D:'Vulnérable',E:'Critique',F:'Défaillante'};
-const CLS_EFFECTS = {
-  A:'Fiscalité −10% · Marchés publics prioritaires · Taux réduit',
-  B:'Fiscalité normale · Accès standard · Taux normal',
-  C:'Fiscalité +5% · Marchés conditionnés · Taux majoré',
-  D:'Fiscalité +10% · Accès restreint · Taux majoré',
-  E:'Fiscalité +15% · Marchés suspendus · Taux fortement majoré',
-  F:'Fiscalité +25% · Exclusion marchés · Pas d\'accès crédit',
-};
+const CLS_COL  = {A:'#1bbd8a',B:'#4a9eff',C:'#f0a030',D:'#e84848',E:'#e84848',F:'#8b93a8'};
+const CLS_LBL  = {A:'Exemplaire · −10% fiscal · Marchés prioritaires',B:'Engagée · Fiscal normal · Accès standard',C:'En transition · +5% fiscal · Conditionné',D:'Vulnérable · +10% fiscal · Restreint',E:'Critique · +15% fiscal · Suspendu',F:'Défaillante · +25% fiscal · Exclu'};
 
-let DB = null;          // loaded from GitHub
-let dirtyFlag = false;  // has unsaved changes
-let editingId = null;   // id of row being edited inline
+let DB = null, dirty = false, editId = null;
 
-/* ── SCORE UTILS ─────────────────────────────────── */
-function computeScore(c) {
-  return Math.round(((c.eq*W.eq)+(c.sa*W.sa)+(c.tr*W.tr)+(c.inn*W.inn)+(c.ec*W.ec)+(c.fi*W.fi))/W.total * 100) / 100;
-}
-function getClass(s) {
-  if (s >= 8.5) return 'A'; if (s >= 7) return 'B'; if (s >= 5.5) return 'C';
-  if (s >= 4)   return 'D'; if (s >= 2.5) return 'E'; return 'F';
-}
-function clsBadge(c) {
-  return `<span class="cls-badge cls-${c}">${c}</span>`;
-}
-function numColor(c) { return CLS_COLORS[c] || '#8b93a8'; }
+/* ── SCORE ── */
+function score(c){ return Math.round(((c.eq*W.eq)+(c.sa*W.sa)+(c.tr*W.tr)+(c.inn*W.inn)+(c.ec*W.ec)+(c.fi*W.fi))/W.total*100)/100; }
+function cls(s){ if(s>=8.5)return'A'; if(s>=7)return'B'; if(s>=5.5)return'C'; if(s>=4)return'D'; if(s>=2.5)return'E'; return'F'; }
+function clsBadge(c){ return `<span class="cls-badge cls-${c}">${c}</span>`; }
 
-/* ── THEME ───────────────────────────────────────── */
-function applyTheme(t) {
-  document.documentElement.setAttribute('data-theme', t);
-  const lbl  = document.getElementById('toggle-lbl');
-  const icon = document.querySelector('.toggle-icon');
-  if (lbl)  lbl.textContent = t === 'dark' ? 'NUIT' : 'JOUR';
-  if (icon) {
-    icon.setAttribute('data-mode', t);
-    icon.querySelector('.icon-sun').style.display  = t === 'dark'  ? 'block' : 'none';
-    icon.querySelector('.icon-moon').style.display = t === 'light' ? 'block' : 'none';
+/* ── THEME ── */
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  const lbl=document.getElementById('toggle-lbl'), icon=document.querySelector('.toggle-icon');
+  if(lbl) lbl.textContent=t==='dark'?'NUIT':'JOUR';
+  if(icon){
+    icon.setAttribute('data-mode',t);
+    icon.querySelector('.icon-sun').style.display=t==='dark'?'block':'none';
+    icon.querySelector('.icon-moon').style.display=t==='light'?'block':'none';
   }
-  localStorage.setItem(THEME_KEY, t);
+  localStorage.setItem('run-theme',t);
 }
-function toggleTheme() {
-  applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-}
+function toggleTheme(){ applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'); }
 
-/* ── PAT MANAGEMENT ──────────────────────────────── */
-function savePAT() {
-  const v = document.getElementById('pat-input').value.trim();
-  if (!v) { updatePATStatus(false); return; }
-  localStorage.setItem(PAT_KEY, v);
-  document.getElementById('pat-input').value = '●'.repeat(v.length);
+/* ── PAT ── */
+function savePAT(){
+  const v=document.getElementById('pat-input').value.trim();
+  if(!v){updatePATStatus(false);return;}
+  localStorage.setItem(PAT_KEY,v);
+  document.getElementById('pat-input').value='●'.repeat(Math.min(v.length,24));
   updatePATStatus(true);
-  document.getElementById('save-btn').disabled = false;
-  showToast('PAT GitHub enregistré localement.', 'ok');
+  if(dirty) document.getElementById('save-btn').disabled=false;
+  toast('PAT enregistré localement.','ok');
 }
-function getPAT() { return localStorage.getItem(PAT_KEY); }
-function updatePATStatus(ok) {
-  const el = document.getElementById('pat-status');
-  if (ok) { el.textContent = '● Enregistré'; el.className = 'pat-status pat-ok'; }
-  else     { el.textContent = '○ Non configuré'; el.className = 'pat-status pat-missing'; }
-}
-
-/* ── LOAD DATA ───────────────────────────────────── */
-async function loadData() {
-  try {
-    const r = await fetch(RAW_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    DB = await r.json();
-    // Recompute scores from raw notes
-    DB.companies.forEach(c => { c.score = computeScore(c); c.cls = getClass(c.score); });
-    renderTable();
-    updateKPIs();
-    dirtyFlag = false;
-    document.getElementById('save-btn').textContent = 'Sauvegarder sur GitHub';
-    showToast('Données chargées (' + DB.companies.length + ' sociétés)', 'ok');
-  } catch(e) {
-    showToast('Erreur chargement : ' + e.message, 'err');
-  }
+function getPAT(){ return localStorage.getItem(PAT_KEY); }
+function updatePATStatus(ok){
+  const el=document.getElementById('pat-status');
+  el.textContent=ok?'● Configuré':'○ Manquant';
+  el.className=ok?'pat-ok':'pat-missing';
 }
 
-/* ── RENDER TABLE ────────────────────────────────── */
-function renderTable() {
-  if (!DB) return;
-  const sorted = [...DB.companies].sort((a,b) => b.score - a.score);
-  let rank = 1;
-  const tbody = document.getElementById('admin-tbody');
-  tbody.innerHTML = sorted.map((c, i) => {
-    const r = i > 0 && sorted[i-1].score === c.score ? rank : (rank = i+1, i+1);
-    const col = numColor(c.cls);
-    return `
-      <tr id="row-${c.id}" data-id="${c.id}">
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text3);width:36px;">${r}</td>
-        <td class="td-nom">${c.nom}</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:10px;">
-          <span style="padding:1px 6px;border-radius:3px;${c.nat==='Royaume-Uni du Nil'?'background:rgba(27,189,138,0.08);color:#1bbd8a;border:1px solid rgba(27,189,138,0.2);':'background:rgba(74,158,255,0.08);color:#4a9eff;border:1px solid rgba(74,158,255,0.2);'}">
-            ${c.nat === "Royaume-Uni du Nil" ? 'RUN' : 'UDA'}
-          </span>
-        </td>
-        <td style="font-size:12px;color:var(--text3);max-width:150px;">${c.cat}</td>
-        <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.eq}</td>
-        <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.sa}</td>
-        <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.tr}</td>
-        <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.inn}</td>
-        <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.ec}</td>
-        <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.fi}</td>
-        <td class="td-score" style="color:${col};">${c.score.toFixed(2)}</td>
-        <td class="td-cls">${clsBadge(c.cls)}</td>
-        <td class="td-actions">
-          <button class="inline-btn ibtn-edit" onclick="editCompany(${c.id})">Modifier</button>
-          <button class="inline-btn ibtn-del"  onclick="deleteCompany(${c.id})">Suppr.</button>
-        </td>
-      </tr>`;
+/* ── LOAD ── */
+async function loadData(){
+  document.getElementById('tbody').innerHTML=`<tr><td colspan="13" style="text-align:center;padding:28px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text3);">Chargement…</td></tr>`;
+  try{
+    const r=await fetch(RAW+'?nocache='+Date.now());
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    DB=await r.json();
+    DB.companies.forEach(c=>{c.score=score(c);c.cls=cls(c.score);});
+    render(); updateKPIs();
+    dirty=false;
+    document.getElementById('save-btn').textContent='↑ Sauvegarder sur GitHub';
+    toast('Données chargées ('+DB.companies.length+' sociétés)','ok');
+  }catch(e){ toast('Erreur chargement : '+e.message,'err'); }
+}
+
+/* ── RENDER ── */
+function render(){
+  if(!DB) return;
+  const sorted=[...DB.companies].sort((a,b)=>b.score-a.score);
+  let rank=0,prev=null;
+  document.getElementById('tbody').innerHTML=sorted.map((c,i)=>{
+    if(c.score!==prev){rank=i+1;prev=c.score;}
+    const col=CLS_COL[c.cls]||'#8b93a8';
+    const natStyle=c.nat==='Royaume-Uni du Nil'
+      ?'background:rgba(27,189,138,0.08);color:#1bbd8a;border:1px solid rgba(27,189,138,0.2);'
+      :'background:rgba(74,158,255,0.08);color:#4a9eff;border:1px solid rgba(74,158,255,0.2);';
+    const natLabel=c.nat==='Royaume-Uni du Nil'?'RUN':'UDA';
+    return `<tr>
+      <td style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text3);width:36px;">${rank}</td>
+      <td class="td-nom">${c.nom}</td>
+      <td><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:1px 6px;border-radius:3px;${natStyle}">${natLabel}</span></td>
+      <td style="font-size:11px;color:var(--text3);">${c.cat}</td>
+      <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.eq}</td>
+      <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.sa}</td>
+      <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.tr}</td>
+      <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.inn}</td>
+      <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.ec}</td>
+      <td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.fi}</td>
+      <td class="td-score" style="color:${col};">${c.score.toFixed(2)}</td>
+      <td style="text-align:center;">${clsBadge(c.cls)}</td>
+      <td class="td-actions">
+        <button class="ibtn ibtn-edit" onclick="openModal(${c.id})">Modifier</button>
+        <button class="ibtn ibtn-del"  onclick="del(${c.id})">Suppr.</button>
+      </td>
+    </tr>`;
   }).join('');
 }
 
-/* ── UPDATE KPIS ─────────────────────────────────── */
-function updateKPIs() {
-  if (!DB) return;
-  const cs = DB.companies;
-  document.getElementById('k-total').textContent = cs.length;
-  document.getElementById('k-a').textContent = cs.filter(c=>c.cls==='A').length;
-  document.getElementById('k-b').textContent = cs.filter(c=>c.cls==='B').length;
-  document.getElementById('k-c').textContent = cs.filter(c=>c.cls==='C').length;
-  document.getElementById('k-nat').textContent = cs.filter(c=>c.nat==='Royaume-Uni du Nil').length;
-  document.getElementById('k-for').textContent = cs.filter(c=>c.nat!=='Royaume-Uni du Nil').length;
-  document.getElementById('k-date').textContent = DB.updated || '—';
+/* ── KPIS ── */
+function updateKPIs(){
+  if(!DB) return;
+  const cs=DB.companies;
+  const s=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  s('k-total',cs.length);
+  s('k-a',cs.filter(c=>c.cls==='A').length);
+  s('k-b',cs.filter(c=>c.cls==='B').length);
+  s('k-c',cs.filter(c=>!['A','B'].includes(c.cls)).length);
+  s('k-nat',cs.filter(c=>c.nat==='Royaume-Uni du Nil').length);
+  s('k-for',cs.filter(c=>c.nat!=='Royaume-Uni du Nil').length);
+  s('k-date',DB.updated||'—');
 }
 
-/* ── MARK DIRTY ──────────────────────────────────── */
-function markDirty() {
-  dirtyFlag = true;
-  const btn = document.getElementById('save-btn');
-  btn.disabled = !getPAT();
-  btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> ★ Sauvegarder sur GitHub`;
+/* ── DIRTY ── */
+function markDirty(){
+  dirty=true;
+  const btn=document.getElementById('save-btn');
+  btn.disabled=!getPAT();
+  btn.textContent='★ Sauvegarder sur GitHub';
 }
 
-/* ── ADD / EDIT MODAL ─────────────────────────────── */
-let _editingId = null;
-
-function openModal(id) {
-  _editingId = id || null;
-  document.getElementById('modal-title').textContent = id ? 'Modifier une société' : 'Ajouter une société';
-
-  if (id) {
-    const c = DB.companies.find(x => x.id === id);
-    if (!c) return;
-    document.getElementById('f-nom').value = c.nom;
-    document.getElementById('f-nat').value = c.nat;
-    document.getElementById('f-cat').value = c.cat;
-    document.getElementById('f-eq').value  = c.eq;
-    document.getElementById('f-sa').value  = c.sa;
-    document.getElementById('f-tr').value  = c.tr;
-    document.getElementById('f-inn').value = c.inn;
-    document.getElementById('f-ec').value  = c.ec;
-    document.getElementById('f-fi').value  = c.fi;
+/* ── MODAL ── */
+function fv(id){ return parseFloat(document.getElementById(id).value)||0; }
+function openModal(id){
+  editId=id||null;
+  document.getElementById('modal-title').textContent=id?'Modifier une société':'Ajouter une société';
+  if(id){
+    const c=DB.companies.find(x=>x.id===id);
+    if(!c) return;
+    document.getElementById('f-nom').value=c.nom;
+    document.getElementById('f-nat').value=c.nat;
+    document.getElementById('f-cat').value=c.cat;
+    ['eq','sa','tr','inn','ec','fi'].forEach(k=>document.getElementById('f-'+k).value=c[k]);
   } else {
-    ['f-nom'].forEach(id => document.getElementById(id).value = '');
-    ['f-eq','f-sa','f-tr','f-inn','f-ec','f-fi'].forEach(id => document.getElementById(id).value = 5);
-    document.getElementById('f-nat').value = 'Royaume-Uni du Nil';
-    document.getElementById('f-cat').selectedIndex = 0;
+    document.getElementById('f-nom').value='';
+    document.getElementById('f-nat').value='Royaume-Uni du Nil';
+    document.getElementById('f-cat').selectedIndex=0;
+    ['eq','sa','tr','inn','ec','fi'].forEach(k=>document.getElementById('f-'+k).value=5);
   }
-
   updatePreview();
-  document.getElementById('modal').style.display = 'flex';
-  document.getElementById('f-nom').focus();
+  document.getElementById('modal').style.display='flex';
+  setTimeout(()=>document.getElementById('f-nom').focus(),100);
+}
+function closeModal(){ document.getElementById('modal').style.display='none'; }
+
+function updatePreview(){
+  const c={eq:fv('f-eq'),sa:fv('f-sa'),tr:fv('f-tr'),inn:fv('f-inn'),ec:fv('f-ec'),fi:fv('f-fi')};
+  const s=score(c), cl=cls(s), col=CLS_COL[cl]||'#8b93a8';
+  document.getElementById('prev-score').textContent=s.toFixed(2);
+  document.getElementById('prev-score').style.color=col;
+  document.getElementById('prev-cls').innerHTML=clsBadge(cl);
+  document.getElementById('prev-fx').textContent=CLS_LBL[cl]||'';
 }
 
-function closeModal() { document.getElementById('modal').style.display = 'none'; }
-function closeModalOutside(e) { if (e.target === document.getElementById('modal')) closeModal(); }
-
-function v(id) { return parseFloat(document.getElementById(id).value) || 0; }
-
-function updatePreview() {
-  const c = {eq:v('f-eq'),sa:v('f-sa'),tr:v('f-tr'),inn:v('f-inn'),ec:v('f-ec'),fi:v('f-fi')};
-  const score = computeScore(c);
-  const cls   = getClass(score);
-  const col   = numColor(cls);
-
-  document.getElementById('preview-score').textContent = score.toFixed(2);
-  document.getElementById('preview-score').style.color = col;
-  document.getElementById('preview-cls').innerHTML = clsBadge(cls);
-  document.getElementById('preview-effects').textContent = CLS_LABELS[cls] + ' · ' + (CLS_EFFECTS[cls] || '');
-}
-
-function submitForm() {
-  const nom = document.getElementById('f-nom').value.trim();
-  if (!nom) { showToast('Le nom est requis.', 'err'); return; }
-
-  const vals = {
-    nom, nat : document.getElementById('f-nat').value,
-    cat : document.getElementById('f-cat').value,
-    eq  : v('f-eq'), sa:v('f-sa'), tr:v('f-tr'), inn:v('f-inn'), ec:v('f-ec'), fi:v('f-fi'),
+function submitForm(){
+  const nom=document.getElementById('f-nom').value.trim();
+  if(!nom){toast('Le nom est requis.','err');return;}
+  const vals={
+    nom, nat:document.getElementById('f-nat').value,
+    cat:document.getElementById('f-cat').value,
+    eq:fv('f-eq'),sa:fv('f-sa'),tr:fv('f-tr'),inn:fv('f-inn'),ec:fv('f-ec'),fi:fv('f-fi'),
   };
-
-  if (_editingId) {
-    const idx = DB.companies.findIndex(x => x.id === _editingId);
-    if (idx !== -1) {
-      Object.assign(DB.companies[idx], vals);
-      DB.companies[idx].score = computeScore(DB.companies[idx]);
-      DB.companies[idx].cls   = getClass(DB.companies[idx].score);
-    }
+  if(editId){
+    const idx=DB.companies.findIndex(x=>x.id===editId);
+    if(idx!==-1){ Object.assign(DB.companies[idx],vals); const c=DB.companies[idx]; c.score=score(c); c.cls=cls(c.score); }
   } else {
-    const newId = Math.max(0, ...DB.companies.map(x=>x.id)) + 1;
-    const nc = { id: newId, ...vals };
-    nc.score = computeScore(nc);
-    nc.cls   = getClass(nc.score);
+    const newId=Math.max(0,...DB.companies.map(x=>x.id))+1;
+    const nc={id:newId,...vals};nc.score=score(nc);nc.cls=cls(nc.score);
     DB.companies.push(nc);
   }
-
-  closeModal();
-  renderTable();
-  updateKPIs();
-  markDirty();
-  showToast(_editingId ? 'Société modifiée.' : 'Société ajoutée.', 'ok');
+  closeModal(); render(); updateKPIs(); markDirty();
+  toast(editId?'Société modifiée.':'Société ajoutée.','ok');
 }
 
-/* ── EDIT SHORTCUT ───────────────────────────────── */
-function editCompany(id) { openModal(id); }
-
-/* ── DELETE ──────────────────────────────────────── */
-function deleteCompany(id) {
-  const c = DB.companies.find(x => x.id === id);
-  if (!c) return;
-  if (!confirm(`Supprimer "${c.nom}" ? Cette action sera prise en compte après sauvegarde.`)) return;
-  DB.companies = DB.companies.filter(x => x.id !== id);
-  renderTable();
-  updateKPIs();
-  markDirty();
-  showToast('Société supprimée (non encore sauvegardée sur GitHub).', 'info');
+function del(id){
+  const c=DB.companies.find(x=>x.id===id);
+  if(!c||!confirm(`Supprimer "${c.nom}" ?`)) return;
+  DB.companies=DB.companies.filter(x=>x.id!==id);
+  render(); updateKPIs(); markDirty();
+  toast('Société supprimée (pas encore sur GitHub).','info');
 }
 
-/* ── SAVE TO GITHUB ──────────────────────────────── */
-async function saveToGitHub() {
-  const pat = getPAT();
-  if (!pat) { showToast('Configure d\'abord ton GitHub PAT.', 'err'); return; }
-
-  const btn = document.getElementById('save-btn');
-  btn.disabled = true;
-  btn.textContent = 'Sauvegarde en cours…';
-
-  DB.updated = new Date().toISOString().slice(0, 10);
-
-  // Strip computed fields before saving (recomputed on load)
-  const toSave = {
-    ...DB,
-    companies: DB.companies.map(({id,nom,nat,cat,eq,sa,tr,inn,ec,fi}) => ({id,nom,nat,cat,eq,sa,tr,inn,ec,fi}))
-  };
-
-  try {
-    // Get current SHA
-    const meta = await fetch(API_URL, {
-      headers: { Authorization: 'token ' + pat, Accept: 'application/vnd.github.v3+json' }
-    });
-    let sha = null;
-    if (meta.ok) { const j = await meta.json(); sha = j.sha; }
-
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify(toSave, null, 2))));
-    const body = {
-      message: `Admin: Mise à jour Bourse du Caire ${DB.updated}`,
-      content,
-    };
-    if (sha) body.sha = sha;
-
-    const r = await fetch(API_URL, {
-      method: 'PUT',
-      headers: {
-        Authorization : 'token ' + pat,
-        Accept        : 'application/vnd.github.v3+json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
-
-    if (!r.ok) {
-      const err = await r.json();
-      throw new Error(err.message || 'GitHub API ' + r.status);
-    }
-
-    dirtyFlag = false;
-    btn.disabled = false;
-    btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Sauvegardé`;
-    showToast('✓ Données sauvegardées sur GitHub ! La Bourse du Caire se mettra à jour dans ~1 minute.', 'ok');
-    // Re-render from local DB (don't re-fetch — CDN cache peut mettre 1-2min à se rafraîchir)
-    renderTable();
-    updateKPIs();
-
-  } catch(e) {
-    btn.disabled = false;
-    markDirty();
-    showToast('Erreur GitHub : ' + e.message, 'err');
+/* ── SAVE ── */
+async function saveToGitHub(){
+  const pat=getPAT();
+  if(!pat){toast('Configure d\'abord le GitHub PAT.','err');return;}
+  const btn=document.getElementById('save-btn');
+  btn.disabled=true; btn.textContent='Sauvegarde…';
+  DB.updated=new Date().toISOString().slice(0,10);
+  const toSave={...DB,companies:DB.companies.map(({id,nom,nat,cat,eq,sa,tr,inn,ec,fi})=>({id,nom,nat,cat,eq,sa,tr,inn,ec,fi}))};
+  try{
+    const meta=await fetch(API,{headers:{Authorization:'token '+pat,Accept:'application/vnd.github.v3+json'}});
+    let sha=null;
+    if(meta.ok){const j=await meta.json();sha=j.sha;}
+    const content=btoa(unescape(encodeURIComponent(JSON.stringify(toSave,null,2))));
+    const body={message:`Admin: Bourse du Caire ${DB.updated}`,content};
+    if(sha) body.sha=sha;
+    const r=await fetch(API,{method:'PUT',headers:{Authorization:'token '+pat,Accept:'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify(body)});
+    if(!r.ok){const e=await r.json();throw new Error(e.message||'GitHub '+r.status);}
+    dirty=false;
+    btn.disabled=false; btn.textContent='✓ Sauvegardé';
+    render(); updateKPIs();
+    toast('✓ Sauvegardé sur GitHub ! La bourse se met à jour dans ~1 min.','ok');
+  }catch(e){
+    btn.disabled=false; markDirty();
+    toast('Erreur GitHub : '+e.message,'err');
   }
 }
 
-/* ── TOAST ───────────────────────────────────────── */
-let _toastTimer = null;
-function showToast(msg, type='info') {
-  const existing = document.getElementById('toast');
-  if (existing) existing.remove();
-  const t = document.createElement('div');
-  t.id = 'toast';
-  t.className = `toast toast-${type}`;
-  t.textContent = msg;
+/* ── TOAST ── */
+let _tt=null;
+function toast(msg,type='info'){
+  const old=document.getElementById('_toast');if(old)old.remove();
+  const t=document.createElement('div');t.id='_toast';
+  t.className=`toast toast-${type}`;t.textContent=msg;
   document.body.appendChild(t);
-  if (_toastTimer) clearTimeout(_toastTimer);
-  _toastTimer = setTimeout(() => { t.style.opacity='0'; t.style.transition='opacity .4s'; setTimeout(() => t.remove(), 400); }, 4000);
+  if(_tt)clearTimeout(_tt);
+  _tt=setTimeout(()=>{t.style.opacity='0';t.style.transition='opacity .4s';setTimeout(()=>t.remove(),400);},4500);
 }
 
-/* ── ACCESS CHECK ────────────────────────────────── */
-function checkAccess() {
-  // Wait for pharos-auth.js to load
-  const check = () => {
-    if (!window.PharosAuth) { setTimeout(check, 100); return; }
-
-    const user = window.PharosAuth.getUser();
-    const admin = user && String(user.id) === ADMIN_ID;
-
-    if (!admin) {
-      document.getElementById('access-denied').style.display = 'flex';
-      document.getElementById('admin-content').style.display = 'none';
+/* ── ACCESS CHECK ── */
+function checkAccess(){
+  // Attend que pharos-auth.js soit chargé et init terminé
+  let attempts=0;
+  const check=()=>{
+    attempts++;
+    if(!window.PharosAuth){
+      if(attempts<50) setTimeout(check,100);
+      else showDenied('pharos-auth.js non chargé.');
       return;
     }
-
-    document.getElementById('access-denied').style.display = 'none';
-    document.getElementById('admin-content').style.display = 'block';
-
-    // Show user info in nav
-    const u = user;
-    const avatarURL = u.avatar
-      ? `https://cdn.discordapp.com/avatars/${u.id}/${u.avatar}.png?size=32`
-      : `https://cdn.discordapp.com/embed/avatars/0.png`;
-    document.getElementById('admin-user-info').innerHTML = `
-      <img src="${avatarURL}" alt="${u.username}" style="width:26px;height:26px;border-radius:50%;border:1.5px solid #f0a030;">
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f0a030;">★ ${u.global_name || u.username}</span>
-      <button onclick="window.PharosAuth.logout()" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);background:none;border:none;cursor:pointer;" title="Déconnexion">✕</button>`;
-
-    // PAT check
-    const pat = getPAT();
-    updatePATStatus(!!pat);
-    if (pat) document.getElementById('save-btn').disabled = false;
-
-    // Load data
-    loadData();
+    const user=window.PharosAuth.getUser();
+    if(!user){
+      // Pas encore authentifié → redirige vers login
+      window.location.replace(window.PharosAuth.CFG.BASE_URL);
+      return;
+    }
+    if(!window.PharosAuth.isAdmin(user)){
+      showDenied();
+      return;
+    }
+    // Admin confirmé
+    showContent(user);
   };
   check();
 }
 
-/* ── BOOT ────────────────────────────────────────── */
-(function() {
-  const saved = localStorage.getItem(THEME_KEY) || localStorage.getItem('pharos-theme');
-  const mq    = window.matchMedia('(prefers-color-scheme: dark)');
-  applyTheme(saved || (mq.matches ? 'dark' : 'light'));
+function showDenied(msg){
+  document.getElementById('loading').style.display='none';
+  document.getElementById('denied').style.display='flex';
+  if(msg) console.warn('[Admin]',msg);
+}
 
+function showContent(user){
+  document.getElementById('loading').style.display='none';
+  document.getElementById('content').style.display='block';
+  // User badge dans nav
+  const av=window.PharosAuth.avatarURL(user);
+  const extra=document.createElement('div');
+  extra.style.cssText='display:flex;align-items:center;gap:8px;margin-right:8px;';
+  extra.innerHTML=`
+    <img src="${av}" onerror="this.style.display='none'" style="width:26px;height:26px;border-radius:50%;border:1.5px solid #f0a030;">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f0a030;">★ ${user.global_name||user.username}</span>
+    <button onclick="window.PharosAuth.logout()" title="Déconnexion"
+            style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text3);background:none;border:none;cursor:pointer;">✕</button>`;
+  document.getElementById('nav-right').prepend(extra);
+  // PAT check
+  updatePATStatus(!!getPAT());
+  if(getPAT()) document.getElementById('save-btn').disabled=false;
+  loadData();
+}
+
+/* ── BOOT ── */
+(function(){
+  const saved=localStorage.getItem('run-theme')||localStorage.getItem('pharos-theme');
+  const mq=window.matchMedia('(prefers-color-scheme: dark)');
+  applyTheme(saved||(mq.matches?'dark':'light'));
+  mq.addEventListener('change',e=>{if(!localStorage.getItem('run-theme'))applyTheme(e.matches?'dark':'light');});
   document.addEventListener('DOMContentLoaded', checkAccess);
 })();
 </script>
 
-<!-- Load auth module -->
 <script src="https://BJBellum.github.io/UKN/pharos-auth.js"></script>
 </body>
 </html>
