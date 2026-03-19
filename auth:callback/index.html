@@ -84,9 +84,10 @@
 
     // Store token for pharos-auth.js to pick up
     try {
-      sessionStorage.setItem(SESSION_TOKEN_KEY, data.access_token);
+      const _expires = Date.now() + (parseInt(data.expires_in, 10) || 604800) * 1000;
+      localStorage.setItem(SESSION_TOKEN_KEY, JSON.stringify({ token: data.access_token, expires: _expires }));
       // Clear any stale user cache so pharos-auth.js re-fetches
-      sessionStorage.removeItem(SESSION_USER_KEY);
+      localStorage.removeItem(SESSION_USER_KEY);
     } catch (e) {
       showError('Impossible d\'accéder au stockage de session. Vérifie les paramètres de ton navigateur.');
       return;

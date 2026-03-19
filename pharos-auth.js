@@ -27,18 +27,39 @@
     PAT_LS_KEY        : 'pharos_gh_pat',   // GitHub PAT (localStorage admin uniquement)
   };
 
-  /* ── SESSION ───────────────────────────────────────────────── */
-  function getUser()  {
-    try { return JSON.parse(sessionStorage.getItem(CFG.SESSION_USER_KEY)); } catch { return null; }
+  /* ── SESSION (localStorage pour persistance inter-sessions) ── */
+  function getUser() {
+    try {
+      const raw = localStorage.getItem(CFG.SESSION_USER_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch { return null; }
   }
   function setUser(u) {
-    try { sessionStorage.setItem(CFG.SESSION_USER_KEY, JSON.stringify(u)); } catch {}
+    try { localStorage.setItem(CFG.SESSION_USER_KEY, JSON.stringify(u)); } catch {}
   }
-  function getToken() { return sessionStorage.getItem(CFG.SESSION_TOKEN_KEY); }
+  function getToken() {
+    try {
+      const raw = localStorage.getItem(CFG.SESSION_TOKEN_KEY);
+      if (!raw) return null;
+      const { token, expires } = JSON.parse(raw);
+      // Token expiré ?
+      if (expires && Date.now() > expires) {
+        localStorage.removeItem(CFG.SESSION_TOKEN_KEY);
+        return null;
+      }
+      return token;
+    } catch { return null; }
+  }
+  function setToken(token, expiresIn) {
+    try {
+      const expires = Date.now() + (parseInt(expiresIn, 10) || 604800) * 1000;
+      localStorage.setItem(CFG.SESSION_TOKEN_KEY, JSON.stringify({ token, expires }));
+    } catch {}
+  }
 
   function logout() {
-    sessionStorage.removeItem(CFG.SESSION_USER_KEY);
-    sessionStorage.removeItem(CFG.SESSION_TOKEN_KEY);
+    localStorage.removeItem(CFG.SESSION_USER_KEY);
+    localStorage.removeItem(CFG.SESSION_TOKEN_KEY);
     window.location.reload();
   }
 
@@ -174,7 +195,7 @@
         setUser(user);
       } catch (e) {
         console.warn('[PharosAuth] Discord token invalid, clearing.', e.message);
-        sessionStorage.removeItem(CFG.SESSION_TOKEN_KEY);
+        localStorage.removeItem(CFG.SESSION_TOKEN_KEY);
       }
     }
 
