@@ -384,6 +384,18 @@
       "inn": 9,
       "ec": 8,
       "fi": 10
+    },
+    {
+      "id": 32,
+      "nom": "X",
+      "nat": "Royaume-Uni du Nil",
+      "cat": "Agriculture & Agroalimentaire",
+      "eq": 5,
+      "sa": 5,
+      "tr": 5,
+      "inn": 5,
+      "ec": 5,
+      "fi": 5
     }
   ]
 }
