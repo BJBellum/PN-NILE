@@ -317,7 +317,7 @@
       </div>
       <div class="hstat">
         <span class="hstat-lbl">Entités listées</span>
-        <span class="hstat-val teal">30</span>
+        <span class="hstat-val teal" id="root-stat-total">30</span>
       </div>
     </div>
 
@@ -369,7 +369,7 @@
           <div class="portal-card-title">Économie & Finances</div>
           <div class="portal-card-sub" style="color:#f0a030;">بورصة القاهرة · Bourse du Caire</div>
           <p class="portal-card-desc">
-            Système de Notation ESS, Bourse du Caire — 30 entreprises cotées dont 27 nationales.
+            Système de Notation ESS, Bourse du Caire — <span id="root-stat-desc">30 entreprises cotées dont 27 nationales</span>.
             Notation éthique et économie sociale et solidaire.
           </p>
         </div>
@@ -444,6 +444,25 @@
     mq.addEventListener('change', e => {
       if (!localStorage.getItem('run-theme')) applyTheme(e.matches ? 'dark' : 'light');
     });
+  })();
+</script>
+<script>
+  /* ── Stats dynamiques bourse.json ── */
+  (async function() {
+    try {
+      var r = await fetch('https://api.github.com/repos/BJBellum/UKN/contents/data/bourse.json', {
+        headers: {'Accept':'application/vnd.github.v3.raw'}, cache:'no-store'
+      });
+      if (!r.ok) return;
+      var db = await r.json();
+      var cs = db.companies || [];
+      var total = cs.length;
+      var nat = cs.filter(function(x){return x.nat==='Royaume-Uni du Nil';}).length;
+      var el = document.getElementById('root-stat-total');
+      if (el) el.textContent = total;
+      var d = document.getElementById('root-stat-desc');
+      if (d) d.textContent = total + ' entreprises cotées dont ' + nat + ' nationales';
+    } catch(e) {}
   })();
 </script>
 <script src="./pharos-auth.js"></script>
