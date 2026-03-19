@@ -14,7 +14,7 @@
 
   /* ── CONFIGURATION ─────────────────────────────────────────── */
   const CFG = {
-    DISCORD_CLIENT_ID : 'VOTRE_CLIENT_ID_DISCORD', // ← à remplir
+    DISCORD_CLIENT_ID : '1483200078092042300', // ← à remplir
     REDIRECT_URI      : 'https://BJBellum.github.io/UKN/auth/callback/',
     DISCORD_SCOPE     : 'identify',
     ADMIN_IDS         : ['772821169664426025'],
