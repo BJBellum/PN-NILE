@@ -3,111 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connexion Discord · Pharos</title>
+<title>Connexion · UKN</title>
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    background:#0a0c10;color:#e2e6f0;
-    font-family:'IBM Plex Mono',monospace;
-    display:flex;align-items:center;justify-content:center;
-    min-height:100vh;flex-direction:column;gap:16px;text-align:center;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0c10; color: #e2e6f0;
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; flex-direction: column; gap: 16px; text-align: center;
+    padding: 24px;
   }
-  .spinner{
-    width:36px;height:36px;border:2px solid rgba(27,189,138,0.2);
-    border-top-color:#1bbd8a;border-radius:50%;
-    animation:spin .8s linear infinite;
+  .spinner {
+    width: 36px; height: 36px;
+    border: 2px solid rgba(27,189,138,0.2); border-top-color: #1bbd8a;
+    border-radius: 50%; animation: spin .8s linear infinite;
   }
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .msg{font-size:13px;color:#8b93a8;letter-spacing:0.06em;margin-top:8px;}
-  .error{color:#e84848;font-size:12px;max-width:400px;line-height:1.6;margin-top:16px;}
-  .btn{
-    display:inline-block;margin-top:20px;
-    font-family:'IBM Plex Mono',monospace;font-size:12px;
-    color:#1bbd8a;text-decoration:none;
-    border:1px solid rgba(27,189,138,0.4);
-    border-radius:6px;padding:8px 18px;
-    transition:background .2s;
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .msg  { font-size: 13px; color: #8b93a8; letter-spacing: 0.06em; margin-top: 8px; }
+  .err  { color: #e84848; font-size: 12px; max-width: 420px; line-height: 1.7; margin-top: 16px; }
+  .back {
+    display: inline-block; margin-top: 20px;
+    font-size: 12px; color: #1bbd8a; text-decoration: none;
+    border: 1px solid rgba(27,189,138,0.4); border-radius: 6px; padding: 8px 18px;
+    transition: background .2s;
   }
-  .btn:hover{background:rgba(27,189,138,0.08);}
+  .back:hover { background: rgba(27,189,138,0.08); }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="spinner" id="spinner"></div>
-<div class="msg" id="msg">Vérification Discord…</div>
-<div class="error" id="error" style="display:none;"></div>
-<a href="https://BJBellum.github.io/UKN/" class="btn" id="back-btn" style="display:none;">← Retour au portail</a>
+<div class="msg"  id="msg">Connexion Discord en cours…</div>
+<div class="err"  id="err"  style="display:none;"></div>
+<a   class="back" id="back" href="https://BJBellum.github.io/UKN/" style="display:none;">
+  ← Retour au portail
+</a>
 
 <script>
-(function() {
-  const SESSION_TOKEN_KEY = 'pharos_token';
-  const SESSION_USER_KEY  = 'pharos_user';
+(function () {
+  const KEY_TOKEN = 'ukn_token';
+  const KEY_USER  = 'ukn_user';
+  const BASE      = 'https://BJBellum.github.io/UKN/';
 
-  function showError(msg) {
+  function fail(msg) {
     document.getElementById('spinner').style.display = 'none';
     document.getElementById('msg').textContent = 'Échec de la connexion';
-    const err = document.getElementById('error');
-    err.textContent = msg;
-    err.style.display = 'block';
-    document.getElementById('back-btn').style.display = 'inline-block';
+    const e = document.getElementById('err');
+    e.textContent = msg; e.style.display = 'block';
+    document.getElementById('back').style.display = 'inline-block';
   }
 
   function parseHash() {
-    const hash = window.location.hash.slice(1);
-    if (!hash) return null;
-    const params = new URLSearchParams(hash);
-    return {
-      access_token: params.get('access_token'),
-      token_type  : params.get('token_type'),
-      expires_in  : params.get('expires_in'),
-      state       : params.get('state'),
-      error       : params.get('error'),
-      error_description: params.get('error_description'),
-    };
+    const h = window.location.hash.replace(/^#/, '');
+    if (!h) return {};
+    return Object.fromEntries(new URLSearchParams(h));
+  }
+
+  function decodeState(state) {
+    if (!state || state === 'home') return BASE;
+    try {
+      const url = decodeURIComponent(atob(state));
+      if (url.startsWith(BASE) && !url.includes('/admin/')) return url;
+    } catch {}
+    // fallback: essaie l'ancien encodage sans encodeURIComponent
+    try {
+      const url = atob(state);
+      if (url.startsWith(BASE) && !url.includes('/admin/')) return url;
+    } catch {}
+    return BASE;
   }
 
   async function run() {
-    const data = parseHash();
+    const p = parseHash();
 
-    // Handle Discord error
-    if (!data || data.error) {
-      const desc = (data && data.error_description) || 'Autorisation refusée ou annulée.';
-      showError('Discord : ' + desc);
+    if (p.error) {
+      fail('Discord : ' + (p.error_description || p.error).replace(/\+/g, ' '));
       return;
     }
 
-    if (!data.access_token) {
-      showError('Aucun token reçu de Discord. Vérifie que le Client ID et l\'URI de redirection sont bien configurés dans le Discord Developer Portal.');
+    if (!p.access_token) {
+      fail('Aucun token reçu. Vérifie que le Client ID et l\'URI de redirection sont corrects dans le Discord Developer Portal.');
       return;
     }
 
-    // Store token for pharos-auth.js to pick up
+    // Sauvegarder le token en localStorage avec son expiry
     try {
-      sessionStorage.setItem(SESSION_TOKEN_KEY, data.access_token);
-      // Clear any stale user cache so pharos-auth.js re-fetches
-      sessionStorage.removeItem(SESSION_USER_KEY);
+      const expires = Date.now() + (parseInt(p.expires_in, 10) || 604800) * 1000;
+      localStorage.setItem(KEY_TOKEN, JSON.stringify({ token: p.access_token, expires }));
+      localStorage.removeItem(KEY_USER); // forcer re-fetch du profil
     } catch (e) {
-      showError('Impossible d\'accéder au stockage de session. Vérifie les paramètres de ton navigateur.');
+      fail('Impossible d\'accéder au stockage local (mode privé ?).');
       return;
     }
 
-    // Determine return URL from state
-    let returnURL = 'https://BJBellum.github.io/UKN/';
-    if (data.state) {
-      try {
-        const decoded = decodeURIComponent(atob(data.state + '=='.slice((data.state.length * 3) % 4)));
-        if (decoded.startsWith('https://BJBellum.github.io/UKN/')) {
-          returnURL = decoded;
-        }
-      } catch {}
-    }
+    document.getElementById('msg').textContent = 'Connecté ! Redirection…';
+    document.getElementById('spinner').style.borderTopColor = '#1bbd8a';
 
-    document.getElementById('msg').textContent = 'Connexion réussie, redirection…';
-    setTimeout(() => { window.location.replace(returnURL); }, 800);
+    const returnURL = decodeState(p.state);
+    setTimeout(() => window.location.replace(returnURL), 600);
   }
 
-  run().catch(e => showError('Erreur inattendue : ' + e.message));
+  run().catch(e => fail('Erreur inattendue : ' + e.message));
 })();
 </script>
 </body>
