@@ -4,529 +4,662 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bourse du Caire · بورصة القاهرة</title>
-<meta name="theme-color" content="#f0a030">
-
+<meta property="og:title" content="Bourse du Caire · Système ESS">
+<meta property="og:description" content="Bourse du Caire — Notation ESS. 31 sociétés cotées. Royaume-Uni du Nil.">
+<meta name="theme-color" content="#C8960C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/dune.css">
 <style>
-  :root[data-theme="dark"] {
-    --bg:#0a0c10;--bg2:#111520;--bg3:#161b26;--bg4:#1c2232;
-    --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--border3:rgba(255,255,255,0.22);
-    --text:#e2e6f0;--text2:#8b93a8;--text3:#545d72;
-    --card-bg:#111520;--card-hover:#161b28;--toggle-bg:#1c2232;
-    --row-hover:rgba(255,255,255,0.025);
-  }
-  :root[data-theme="light"] {
-    --bg:#f0f2f6;--bg2:#ffffff;--bg3:#eaecf2;--bg4:#dde0ea;
-    --border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.12);--border3:rgba(0,0,0,0.2);
-    --text:#1a1e2a;--text2:#4a5168;--text3:#8b93a8;
-    --card-bg:#ffffff;--card-hover:#f5f7fc;--toggle-bg:#dde0ea;
-    --row-hover:rgba(0,0,0,0.025);
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.6;min-height:100vh;transition:background .25s,color .25s;}
+/* ── BOURSE SPECIFIC ── */
+.hero-bourse {
+  min-height: 56vh;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(200,150,12,0.10) 0%, transparent 55%);
+}
 
-  /* NAV */
-  .topnav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:56px;background:var(--bg2);border-bottom:1px solid var(--border2);gap:16px;transition:background .25s;}
-  .nav-left{display:flex;align-items:center;gap:12px;flex-shrink:0;}
-  .nav-back{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text3);text-decoration:none;letter-spacing:0.04em;transition:color .15s;padding:4px 8px;border-radius:4px;}
-  .nav-back:hover{color:var(--text);background:var(--bg3);}
-  .nav-logo{width:34px;height:34px;border:1px solid #f0a030;border-radius:6px;display:flex;align-items:center;justify-content:center;background:rgba(240,160,48,0.1);flex-shrink:0;}
-  .nav-logo svg{width:18px;height:18px;}
-  .nav-brand{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:var(--text2);letter-spacing:0.06em;text-transform:uppercase;}
-  .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-  .theme-toggle{display:flex;align-items:center;gap:6px;background:var(--toggle-bg);border:1px solid var(--border2);border-radius:20px;padding:4px 10px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text2);transition:all .2s;user-select:none;}
-  .theme-toggle:hover{border-color:var(--border3);color:var(--text);}
-  .toggle-icon[data-mode="dark"] .icon-sun{display:block;}
-  .toggle-icon[data-mode="dark"] .icon-moon{display:none;}
-  .toggle-icon[data-mode="light"] .icon-sun{display:none;}
-  .toggle-icon[data-mode="light"] .icon-moon{display:block;}
+/* ── FILTERS BAR ── */
+.filters-bar {
+  background: var(--card-bg);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+}
 
-  /* HEADER */
-  .page-header{background:var(--bg);padding:48px 36px 40px;border-bottom:1px solid var(--border2);position:relative;overflow:hidden;}
-  .page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% -10%,rgba(240,160,48,0.09) 0%,transparent 65%);pointer-events:none;}
-  .page-header-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f0a030;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
-  .page-header-title{font-size:42px;font-weight:600;color:var(--text);letter-spacing:0.01em;margin-bottom:4px;}
-  .page-header-arabic{font-family:'Noto Kufi Arabic',sans-serif;font-size:22px;color:#f0a030;direction:rtl;margin-bottom:14px;}
-  .page-header-desc{font-size:13px;color:var(--text2);max-width:680px;line-height:1.75;margin-bottom:24px;}
+.filter-input {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 7px 12px;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color .2s;
+  min-width: 220px;
+}
+.filter-input:focus { border-color: var(--gold-mid); }
+.filter-input::placeholder { color: var(--text3); }
 
-  /* KPI ROW */
-  .kpi-row{display:inline-flex;gap:0;background:var(--bg2);border:1px solid var(--border2);border-radius:10px;overflow:hidden;}
-  .kpi{padding:12px 22px;text-align:center;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:3px;}
-  .kpi:last-child{border-right:none;}
-  .kpi-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:0.07em;text-transform:uppercase;}
-  .kpi-val{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:500;}
+.filter-select {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 7px 10px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color .2s;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238B6914'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+.filter-select:focus { border-color: var(--gold-mid); }
+.filter-select option { background: #1E1810; color: var(--text); }
 
-  /* PAGE */
-  .page{max-width:1260px;margin:0 auto;padding:36px 28px 80px;}
-  .section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;flex-wrap:wrap;}
-  .section-title{font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;}
-  .section-line{flex:1;height:1px;background:var(--border);min-width:20px;}
+.filter-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  margin-left: auto;
+}
+.filter-count span { color: var(--gold-mid); }
 
-  /* FILTERS */
-  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center;}
-  .filter-input{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;
-    background:var(--bg2);border:1px solid var(--border2);
-    color:var(--text);border-radius:6px;padding:7px 12px;
-    outline:none;transition:border-color .15s;
-    min-width:180px;
-  }
-  .filter-input:focus{border-color:rgba(240,160,48,0.5);}
-  .filter-select{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;
-    background:var(--bg2);border:1px solid var(--border2);
-    color:var(--text);border-radius:6px;padding:7px 12px;
-    outline:none;cursor:pointer;transition:border-color .15s;
-  }
-  .filter-select:focus{border-color:rgba(240,160,48,0.5);}
-  .filter-count{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3);margin-left:auto;}
+/* ── TABLE ── */
+.bourse-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+}
 
-  /* TABLE */
-  .table-wrap{background:var(--card-bg);border:1px solid var(--border2);border-radius:12px;overflow:hidden;margin-bottom:40px;}
-  .table-wrap table{width:100%;border-collapse:collapse;}
-  thead tr{background:var(--bg3);border-bottom:2px solid var(--border2);}
-  th{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;padding:12px 14px;text-align:left;white-space:nowrap;cursor:pointer;user-select:none;transition:color .15s;}
-  th:hover{color:var(--text2);}
-  th.sorted-asc::after{content:' ↑';color:#f0a030;}
-  th.sorted-desc::after{content:' ↓';color:#f0a030;}
-  tbody tr{border-bottom:1px solid var(--border);transition:background .12s;}
-  tbody tr:last-child{border-bottom:none;}
-  tbody tr:hover{background:var(--row-hover);}
-  td{padding:11px 14px;font-size:13px;color:var(--text2);}
-  td.td-rang{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text3);text-align:center;width:44px;}
-  td.td-nom{color:var(--text);font-weight:500;max-width:220px;}
-  td.td-nat{font-size:12px;}
-  td.td-cat{font-size:12px;color:var(--text3);}
-  td.td-score{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;text-align:right;white-space:nowrap;}
-  td.td-class{text-align:center;font-family:'IBM Plex Mono',monospace;font-weight:500;}
-  td.td-bar{width:100px;min-width:80px;}
+.bourse-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+}
 
-  /* SCORE BAR */
-  .score-bar-wrap{background:var(--bg3);border-radius:3px;height:5px;width:100%;overflow:hidden;}
-  .score-bar-fill{height:100%;border-radius:3px;transition:width .4s ease;}
+.bourse-table thead tr {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border2);
+}
 
-  /* CLASS BADGE */
-  .cls-badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;padding:2px 9px;border-radius:4px;border:1px solid;letter-spacing:0.05em;}
-  .cls-A{color:#1bbd8a;border-color:#0d9e74;background:rgba(27,189,138,0.1);}
-  .cls-B{color:#4a9eff;border-color:#1c6fcc;background:rgba(74,158,255,0.08);}
-  .cls-C{color:#f0a030;border-color:#c07818;background:rgba(240,160,48,0.08);}
-  .cls-D{color:#e84848;border-color:#a83030;background:rgba(232,72,72,0.08);}
-  .cls-E{color:#c03030;border-color:#801818;background:rgba(192,48,48,0.08);}
-  .cls-F{color:#8b93a8;border-color:#4a5168;background:rgba(74,81,104,0.12);}
+.bourse-table th {
+  padding: 11px 14px;
+  text-align: left;
+  color: var(--text3);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-size: 9px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: color .2s;
+  position: relative;
+}
+.bourse-table th:hover { color: var(--gold-mid); }
+.bourse-table th.sorted { color: var(--gold); }
+.bourse-table th.sorted::after { content: ' ↑'; }
+.bourse-table th.sorted.desc::after { content: ' ↓'; }
 
-  /* NAT BADGE */
-  .nat-nat{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:1px 6px;border-radius:3px;background:rgba(27,189,138,0.08);color:#1bbd8a;border:1px solid rgba(27,189,138,0.2);}
-  .nat-for{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:1px 6px;border-radius:3px;background:rgba(74,158,255,0.08);color:#4a9eff;border:1px solid rgba(74,158,255,0.2);}
+.bourse-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  white-space: nowrap;
+  transition: background .15s;
+}
 
-  /* SCORE COLOR HELPERS */
-  .s-A{color:#1bbd8a;}
-  .s-B{color:#4a9eff;}
-  .s-C{color:#f0a030;}
+.bourse-table tbody tr:hover td { background: rgba(200,150,12,0.04); }
+.bourse-table tbody tr:last-child td { border-bottom: none; }
 
-  /* BARÈMES */
-  .baremes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border2);border-radius:10px;overflow:hidden;margin-bottom:40px;}
-  @media(max-width:700px){.baremes-grid{grid-template-columns:1fr 1fr;}}
-  @media(max-width:420px){.baremes-grid{grid-template-columns:1fr;}}
-  .bareme-cell{background:var(--bg2);padding:16px 18px;}
-  .bareme-cls{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;margin-bottom:4px;}
-  .bareme-range{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:6px;}
-  .bareme-label{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px;}
-  .bareme-items{font-size:11px;color:var(--text3);line-height:1.7;}
+.td-rank { color: var(--text3); font-size: 9px; }
+.td-name { color: var(--text); font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; font-weight: 400; max-width: 220px; white-space: normal; line-height: 1.3; }
+.td-nat {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 9px; padding: 2px 8px;
+  border-radius: 2px; letter-spacing: 0.08em;
+}
+.td-nat.run { background: rgba(26,143,122,0.12); border: 1px solid rgba(26,143,122,0.3); color: var(--teal-bright); }
+.td-nat.uda { background: rgba(240,160,48,0.12); border: 1px solid rgba(240,160,48,0.3); color: var(--amber); }
 
-  /* FOOTER */
-  .footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-  .footer-left{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3);line-height:1.8;}
-  .footer-right{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;color:#f0a030;direction:rtl;}
-  .footer-credit{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);opacity:0.6;margin-top:6px;}
+.td-sector { color: var(--text3); font-size: 10px; max-width: 180px; white-space: normal; line-height: 1.3; }
 
-  /* MOBILE */
-  @media(max-width:900px){
-    .page-header{padding:32px 20px 28px;}
-    .page-header-title{font-size:28px;}
-    .page{padding:24px 14px 60px;}
-    td{padding:9px 10px;}
-    .hide-mobile{display:none;}
-  }
-  @media(max-width:600px){
-    .topnav{padding:0 16px;}
-    .kpi-row{flex-wrap:wrap;width:100%;}
-    .kpi{flex:1 1 auto;min-width:100px;}
-  }
+.td-score-cell { text-align: center; font-size: 10px; }
+.td-score-val { font-size: 11px; font-weight: 500; }
+.td-score-bar-wrap { height: 2px; background: var(--border); margin-top: 3px; border-radius: 1px; min-width: 28px; }
+.td-score-bar { height: 100%; border-radius: 1px; }
+
+.class-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px;
+  font-family: 'Dune Rise', serif;
+  font-size: 13px; letter-spacing: 0.04em;
+  border-radius: 2px; border: 1px solid;
+}
+.class-A { background: rgba(26,143,122,0.15); border-color: rgba(26,143,122,0.4); color: #22B89A; }
+.class-B { background: rgba(212,168,67,0.12); border-color: rgba(212,168,67,0.35); color: #D4A843; }
+.class-C { background: rgba(240,160,48,0.10); border-color: rgba(240,160,48,0.3); color: #F0A030; }
+.class-D { background: rgba(200,112,32,0.10); border-color: rgba(200,112,32,0.3); color: #C87020; }
+.class-E { background: rgba(232,72,72,0.10); border-color: rgba(232,72,72,0.3); color: #E84848; }
+.class-F { background: rgba(139,26,26,0.10); border-color: rgba(139,26,26,0.3); color: #B02020; }
+
+.td-indice { font-size: 10px; color: var(--text3); }
+
+/* Score cell colors */
+.sc-10 { color: #22B89A; } .sc-9  { color: #4ACB9A; } .sc-8  { color: #8ACA60; }
+.sc-7  { color: #D4A843; } .sc-6  { color: #F0A030; } .sc-5  { color: #E07028; }
+.sc-4  { color: #D04828; } .sc-3  { color: #C04040; } .sc-2  { color: #A03030; }
+.sc-1  { color: #882020; }
+
+/* ESS Scale section */
+.ess-scale {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 32px;
+}
+@media(max-width:900px) { .ess-scale { grid-template-columns: repeat(3,1fr); } }
+@media(max-width:500px) { .ess-scale { grid-template-columns: repeat(2,1fr); } }
+
+.ess-scale-card {
+  border: 1px solid var(--border);
+  border-top: 2px solid;
+  padding: 14px 12px;
+  text-align: center;
+  background: var(--card-bg);
+  transition: border-color .2s;
+}
+.ess-scale-card:hover { border-color: var(--border2); }
+.ess-scale-letter {
+  font-family: 'Dune Rise', serif;
+  font-size: 28px; letter-spacing: 0.04em; margin-bottom: 2px; line-height: 1;
+}
+.ess-scale-range {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px; color: var(--text3); letter-spacing: 0.1em; margin-bottom: 8px;
+}
+.ess-scale-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px; color: var(--text3); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.ess-scale-effects {
+  font-size: 10px; color: var(--text2); line-height: 1.7; text-align: left;
+}
+
+/* Formule */
+.formula-box {
+  background: var(--card-bg); border: 1px solid var(--border2);
+  padding: 20px 24px; margin-top: 12px; border-left: 2px solid var(--gold-dim);
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  color: var(--text2); line-height: 1.9; letter-spacing: 0.04em;
+}
+.formula-box strong { color: var(--gold-mid); }
+
+/* Hero stat mini */
+.hero-stats-sm {
+  display: inline-flex; gap: 0;
+  background: rgba(30,24,16,0.85);
+  border: 1px solid var(--border2);
+  border-radius: 2px; overflow: hidden; margin-bottom: 48px;
+  backdrop-filter: blur(8px);
+}
+[data-theme="light"] .hero-stats-sm { background: rgba(232,217,186,0.9); }
+.hstat-sm {
+  padding: 12px 24px; text-align: center;
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.hstat-sm:last-child { border-right: none; }
+.hstat-sm-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--text3); letter-spacing: 0.12em; text-transform: uppercase; }
+.hstat-sm-val { font-family: 'Dune Rise', serif; font-size: 16px; color: var(--text); letter-spacing: 0.04em; }
 </style>
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav class="topnav">
   <div class="nav-left">
-    <a href="../" class="nav-back">← Économie & Finances</a>
     <div class="nav-logo">
       <svg viewBox="0 0 20 20" fill="none">
-        <polyline points="2,15 6,9 10,12 14,5 18,8" stroke="#f0a030" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="14" cy="5" r="2" fill="#f0a030"/>
+        <rect x="3" y="5" width="14" height="10" rx="1" stroke="#C8960C" stroke-width="1" fill="none"/>
+        <line x1="3" y1="9" x2="17" y2="9" stroke="#C8960C" stroke-width="0.8" opacity="0.5"/>
+        <rect x="5" y="11" width="2" height="2" rx="0.3" fill="#C8960C" opacity="0.6"/>
+        <rect x="8.5" y="10.5" width="2" height="2.5" rx="0.3" fill="#C8960C" opacity="0.8"/>
+        <rect x="12" y="10" width="2" height="3" rx="0.3" fill="#C8960C"/>
       </svg>
     </div>
     <span class="nav-brand">Bourse du Caire</span>
+    <span class="nav-sub">بورصة القاهرة</span>
   </div>
   <div class="nav-right">
-    <div class="theme-toggle" onclick="toggleTheme()" title="Basculer jour / nuit">
-      <svg class="toggle-icon" data-mode="dark" width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;">
-        <g class="icon-sun">
-          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
-          <line x1="12" y1="2" x2="12" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="12" y1="19" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="2" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="19" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="19.78" y1="4.22" x2="17.66" y2="6.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="6.34" y1="17.66" x2="4.22" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </g>
-        <g class="icon-moon">
-          <path d="M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z" fill="currentColor"/>
-        </g>
+    <a href="../" class="nav-back">← Économie & Finances</a>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <svg id="toggle-icon" width="12" height="12" viewBox="0 0 24 24" fill="none">
+        <path id="icon-path" d="M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z" fill="currentColor"/>
       </svg>
-      <span id="toggle-lbl" style="font-size:10px;letter-spacing:0.06em">NUIT</span>
-    </div>
+      <span id="toggle-lbl">NUIT</span>
+    </button>
   </div>
 </nav>
 
-<!-- HEADER -->
-<div class="page-header">
-  <div class="page-header-eyebrow">BRS-CAI-001 · Exercice 2305 · Système ESS</div>
-  <div class="page-header-title">Bourse du Caire</div>
-  <div class="page-header-arabic">بورصة القاهرة · مملكة النيل</div>
-  <p class="page-header-desc">
-    La Bourse du Caire utilise un système de notation unique basé sur l'<strong>Économie Sociale et Solidaire (ESS)</strong>,
-    qui privilégie l'éthique et l'efficacité réelle sur la spéculation et la valeur monétaire.
-    Notation pondérée sur 6 critères : Équité (×5), Santé (×4), Transparence (×7), Innovation (×8), Écologie (×6), Fiabilité (×8).
-  </p>
-  <div class="kpi-row">
-    <div class="kpi"><span class="kpi-lbl">Total cotées</span><span class="kpi-val" id="kpi-total" style="color:#f0a030;">…</span></div>
-    <div class="kpi"><span class="kpi-lbl">Nationales</span><span class="kpi-val" id="kpi-nat" style="color:#1bbd8a;">…</span></div>
-    <div class="kpi"><span class="kpi-lbl">Étrangères</span><span class="kpi-val" id="kpi-for" style="color:#4a9eff;">…</span></div>
-    <div class="kpi"><span class="kpi-lbl">Classe A</span><span class="kpi-val" id="kpi-a" style="color:#1bbd8a;">…</span></div>
-    <div class="kpi"><span class="kpi-lbl">Classe B</span><span class="kpi-val" id="kpi-b" style="color:#4a9eff;">…</span></div>
-    <div class="kpi"><span class="kpi-lbl">Classe C</span><span class="kpi-val" id="kpi-c" style="color:#f0a030;">…</span></div>
-  </div>
-</div>
+<!-- ── HERO ── -->
+<section class="hero hero-bourse">
+  <div class="hero-desert"></div>
+  <div class="hero-content" style="padding-top:52px;padding-bottom:60px;">
 
+    <div class="hero-eyebrow">BRS-CAI-001 · Exercice 2305 · Système ESS</div>
+    <h1 class="hero-title">Bourse du Caire</h1>
+    <div class="hero-arabic">بورصة القاهرة · مملكة النيل</div>
+
+    <div class="hero-ornament">
+      <div class="hero-ornament-line"></div>
+      <div class="hero-ornament-diamond"></div>
+      <div class="hero-ornament-line" style="transform:scaleX(-1);background:linear-gradient(90deg,transparent,var(--gold-mid));"></div>
+    </div>
+
+    <p class="hero-desc">
+      La Bourse du Caire utilise un système de notation unique basé sur l'<strong>Économie Sociale et Solidaire (ESS)</strong>,
+      qui privilégie l'éthique et l'efficacité réelle sur la spéculation et la valeur monétaire.
+      Notation pondérée sur 6 critères : Équité (×5), Santé (×4), Transparence (×7), Innovation (×8), Écologie (×6), Fiabilité (×8).
+    </p>
+
+    <div class="hero-stats-sm">
+      <div class="hstat-sm">
+        <span class="hstat-sm-lbl">Total cotées</span>
+        <span class="hstat-sm-val gold" id="stat-total" style="color:var(--gold)">—</span>
+      </div>
+      <div class="hstat-sm">
+        <span class="hstat-sm-lbl">Nationales</span>
+        <span class="hstat-sm-val" id="stat-nat" style="color:var(--teal-bright)">—</span>
+      </div>
+      <div class="hstat-sm">
+        <span class="hstat-sm-lbl">Étrangères</span>
+        <span class="hstat-sm-val" id="stat-for" style="color:var(--amber)">—</span>
+      </div>
+      <div class="hstat-sm">
+        <span class="hstat-sm-lbl">Classe A</span>
+        <span class="hstat-sm-val" id="stat-a" style="color:#22B89A">—</span>
+      </div>
+      <div class="hstat-sm">
+        <span class="hstat-sm-lbl">Classe B</span>
+        <span class="hstat-sm-val" id="stat-b" style="color:var(--gold)">—</span>
+      </div>
+      <div class="hstat-sm">
+        <span class="hstat-sm-lbl">Classe C</span>
+        <span class="hstat-sm-val" id="stat-c" style="color:var(--amber)">—</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PAGE ── -->
 <div class="page">
 
-  <!-- LISTE DES SOCIÉTÉS -->
-  <section style="margin-bottom:56px;">
-    <div class="section-header">
-      <span class="section-title">Liste des sociétés cotées</span>
-      <div class="section-line"></div>
-    </div>
+  <!-- FILTERS -->
+  <div class="section-header" style="margin-bottom:16px;">
+    <span class="section-eyebrow">Liste des sociétés cotées</span>
+    <div class="section-line"></div>
+  </div>
 
-    <!-- Filters -->
-    <div class="filters">
-      <input type="text" class="filter-input" id="search" placeholder="Rechercher une société…" oninput="filterTable()">
-      <select class="filter-select" id="filterCls" onchange="filterTable()">
-        <option value="">Toutes les classes</option>
-        <option value="A">Classe A — Exemplaire</option>
-        <option value="B">Classe B — Engagée</option>
-        <option value="C">Classe C — En transition</option>
-      </select>
-      <select class="filter-select" id="filterNat" onchange="filterTable()">
-        <option value="">Toutes nationalités</option>
-        <option value="Royaume-Uni du Nil">Royaume-Uni du Nil</option>
-        <option value="Union Démocratique d'Asie">Union Démocratique d'Asie</option>
-      </select>
-      <select class="filter-select" id="filterCat" onchange="filterTable()">
-        <option value="">Tous secteurs</option>
-        <option>Agriculture & Agroalimentaire</option>
-        <option>Industrie Aéronautique</option>
-        <option>Industrie Automobile</option>
-        <option>Industrie lourde</option>
-        <option>Industrie de Défense</option>
-        <option>Industrie Naval & Portuaire</option>
-        <option>BTP & Infrastructures</option>
-        <option>Énergie</option>
-        <option>Finance</option>
-        <option>Commerce</option>
-        <option>Médias</option>
-        <option>Santé & Pharmacie</option>
-        <option>Secteur Minier</option>
-        <option>Services d'Eau</option>
-        <option>Télécommunications</option>
-        <option>Textile</option>
-        <option>Transport & Logistique</option>
-        <option>Transport aérien & Tourisme</option>
-      </select>
-      <span class="filter-count" id="count-lbl">30 sociétés</span>
-    </div>
+  <div class="filters-bar">
+    <input type="text" class="filter-input" id="search" placeholder="Rechercher une société…" oninput="applyFilters()">
+    <select class="filter-select" id="filt-class" onchange="applyFilters()">
+      <option value="">Toutes les classes</option>
+      <option value="A">Classe A — Exemplaire</option>
+      <option value="B">Classe B — Engagée</option>
+      <option value="C">Classe C — En transition</option>
+      <option value="D">Classe D — Vulnérable</option>
+      <option value="E">Classe E — Critique</option>
+      <option value="F">Classe F — Défaillante</option>
+    </select>
+    <select class="filter-select" id="filt-nat" onchange="applyFilters()">
+      <option value="">Toutes nationalités</option>
+      <option value="RUN">Royaume-Uni du Nil</option>
+      <option value="UDA">Union Démocratique d'Asie</option>
+    </select>
+    <select class="filter-select" id="filt-sector" onchange="applyFilters()">
+      <option value="">Tous secteurs</option>
+      <option>Agriculture & Agroalimentaire</option>
+      <option>Industrie Aéronautique</option>
+      <option>Industrie Automobile</option>
+      <option>Industrie lourde</option>
+      <option>Industrie de Défense</option>
+      <option>Industrie Naval & Portuaire</option>
+      <option>BTP & Infrastructures</option>
+      <option>Énergie</option>
+      <option>Finance</option>
+      <option>Commerce</option>
+      <option>Médias</option>
+      <option>Santé & Pharmacie</option>
+      <option>Secteur Minier</option>
+      <option>Services d'Eau</option>
+      <option>Télécommunications</option>
+      <option>Textile</option>
+      <option>Transport & Logistique</option>
+      <option>Transport aérien & Tourisme</option>
+    </select>
+    <div class="filter-count"><span id="count-label">—</span> sociétés</div>
+  </div>
 
-    <div class="table-wrap">
-      <table id="bourse-table">
-        <thead>
-          <tr>
-            <th onclick="sortTable('rang')" id="th-rang">#</th>
-            <th onclick="sortTable('nom')" id="th-nom">Société</th>
-            <th onclick="sortTable('nat')" id="th-nat" class="hide-mobile">Nationalité</th>
-            <th onclick="sortTable('cat')" id="th-cat" class="hide-mobile">Secteur</th>
-            <th onclick="sortTable('eq')" id="th-eq" class="hide-mobile" title="Équité">Éq.</th>
-            <th onclick="sortTable('sa')" id="th-sa" class="hide-mobile" title="Santé">Sa.</th>
-            <th onclick="sortTable('tr')" id="th-tr" class="hide-mobile" title="Transparence">Tr.</th>
-            <th onclick="sortTable('inn')" id="th-inn" class="hide-mobile" title="Innovation">In.</th>
-            <th onclick="sortTable('ec')" id="th-ec" class="hide-mobile" title="Écologie">Éc.</th>
-            <th onclick="sortTable('fi')" id="th-fi" class="hide-mobile" title="Fiabilité">Fi.</th>
-            <th onclick="sortTable('score')" id="th-score">Score</th>
-            <th onclick="sortTable('cls')" id="th-cls">Classe</th>
-            <th class="hide-mobile">Indice</th>
-          </tr>
-        </thead>
-        <tbody id="tbody">
-          <!-- Filled by JS -->
-        </tbody>
-      </table>
-    </div>
-  </section>
+  <!-- TABLE -->
+  <div class="bourse-table-wrap">
+    <table class="bourse-table" id="bourse-table">
+      <thead>
+        <tr>
+          <th onclick="sortBy('rank')" id="th-rank">#</th>
+          <th onclick="sortBy('nom')" id="th-nom">Société</th>
+          <th onclick="sortBy('nat')" id="th-nat">Nat.</th>
+          <th onclick="sortBy('secteur')" id="th-secteur">Secteur</th>
+          <th onclick="sortBy('eq')"  id="th-eq"  title="Équité ×5">Éq.</th>
+          <th onclick="sortBy('sa')"  id="th-sa"  title="Santé ×4">Sa.</th>
+          <th onclick="sortBy('tr')"  id="th-tr"  title="Transparence ×7">Tr.</th>
+          <th onclick="sortBy('inn')" id="th-inn" title="Innovation ×8">In.</th>
+          <th onclick="sortBy('ec')"  id="th-ec"  title="Écologie ×6">Éc.</th>
+          <th onclick="sortBy('fi')"  id="th-fi"  title="Fiabilité ×8">Fi.</th>
+          <th onclick="sortBy('score')" id="th-score">Score</th>
+          <th onclick="sortBy('classe')" id="th-classe">Classe</th>
+          <th id="th-indice">Indice</th>
+        </tr>
+      </thead>
+      <tbody id="bourse-tbody"></tbody>
+    </table>
+  </div>
 
-  <!-- BARÈMES -->
-  <section style="margin-bottom:56px;">
-    <div class="section-header">
-      <span class="section-title">Barème & Effets ESS</span>
-      <div class="section-line"></div>
+  <!-- ESS SCALE -->
+  <div class="section-header" style="margin-top:56px;margin-bottom:16px;">
+    <span class="section-eyebrow">Barème & Effets ESS</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="ess-scale">
+    <div class="ess-scale-card" style="border-top-color:#22B89A;">
+      <div class="ess-scale-letter" style="color:#22B89A;">A</div>
+      <div class="ess-scale-range">≥ 8,50 / 10</div>
+      <div class="ess-scale-label">Exemplaire</div>
+      <div class="ess-scale-effects">Fiscalité −10%<br>Marchés publics : prioritaire<br>Taux d'emprunt : réduit</div>
     </div>
-    <div class="baremes-grid">
-      <div class="bareme-cell">
-        <div class="bareme-cls cls-A">A</div>
-        <div class="bareme-range">≥ 8,50 / 10</div>
-        <div class="bareme-label">Exemplaire</div>
-        <div class="bareme-items">Fiscalité −10%<br>Marchés publics : prioritaire<br>Taux d'emprunt : réduit</div>
-      </div>
-      <div class="bareme-cell">
-        <div class="bareme-cls cls-B">B</div>
-        <div class="bareme-range">7,00 – 8,49</div>
-        <div class="bareme-label">Engagée</div>
-        <div class="bareme-items">Fiscalité normale<br>Marchés publics : accès standard<br>Taux d'emprunt : normal</div>
-      </div>
-      <div class="bareme-cell">
-        <div class="bareme-cls cls-C">C</div>
-        <div class="bareme-range">5,50 – 6,99</div>
-        <div class="bareme-label">En transition</div>
-        <div class="bareme-items">Fiscalité +5%<br>Marchés publics : conditionné<br>Taux d'emprunt : légèrement majoré</div>
-      </div>
-      <div class="bareme-cell">
-        <div class="bareme-cls cls-D">D</div>
-        <div class="bareme-range">4,00 – 5,49</div>
-        <div class="bareme-label">Vulnérable</div>
-        <div class="bareme-items">Fiscalité +10%<br>Marchés publics : restreint<br>Taux d'emprunt : majoré</div>
-      </div>
-      <div class="bareme-cell">
-        <div class="bareme-cls cls-E">E</div>
-        <div class="bareme-range">2,50 – 3,99</div>
-        <div class="bareme-label">Critique</div>
-        <div class="bareme-items">Fiscalité +15%<br>Marchés publics : suspendu<br>Taux d'emprunt : fortement majoré</div>
-      </div>
-      <div class="bareme-cell">
-        <div class="bareme-cls cls-F">F</div>
-        <div class="bareme-range">0 – 2,49</div>
-        <div class="bareme-label">Défaillante</div>
-        <div class="bareme-items">Fiscalité +25%<br>Marchés publics : exclu<br>Taux d'emprunt : pas d'accès</div>
-      </div>
+    <div class="ess-scale-card" style="border-top-color:#D4A843;">
+      <div class="ess-scale-letter" style="color:#D4A843;">B</div>
+      <div class="ess-scale-range">7,00 – 8,49</div>
+      <div class="ess-scale-label">Engagée</div>
+      <div class="ess-scale-effects">Fiscalité normale<br>Marchés publics : standard<br>Taux d'emprunt : normal</div>
     </div>
-    <div style="background:var(--bg2);border:1px solid var(--border2);border-left:3px solid #f0a030;border-radius:8px;padding:14px 18px;font-size:13px;color:var(--text2);line-height:1.7;">
-      <strong style="color:var(--text);">Formule de notation :</strong>
-      Score = <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;">[( Équité×5 ) + ( Santé×4 ) + ( Transparence×7 ) + ( Innovation×8 ) + ( Écologie×6 ) + ( Fiabilité×8 )] / 38</span>
+    <div class="ess-scale-card" style="border-top-color:#F0A030;">
+      <div class="ess-scale-letter" style="color:#F0A030;">C</div>
+      <div class="ess-scale-range">5,50 – 6,99</div>
+      <div class="ess-scale-label">En transition</div>
+      <div class="ess-scale-effects">Fiscalité +5%<br>Marchés publics : conditionné<br>Taux d'emprunt : majoré</div>
     </div>
-  </section>
+    <div class="ess-scale-card" style="border-top-color:#C87020;opacity:0.85;">
+      <div class="ess-scale-letter" style="color:#C87020;">D</div>
+      <div class="ess-scale-range">4,00 – 5,49</div>
+      <div class="ess-scale-label">Vulnérable</div>
+      <div class="ess-scale-effects">Fiscalité +10%<br>Marchés publics : restreint<br>Taux d'emprunt : majoré</div>
+    </div>
+    <div class="ess-scale-card" style="border-top-color:#E84848;opacity:0.75;">
+      <div class="ess-scale-letter" style="color:#E84848;">E</div>
+      <div class="ess-scale-range">2,50 – 3,99</div>
+      <div class="ess-scale-label">Critique</div>
+      <div class="ess-scale-effects">Fiscalité +15%<br>Marchés publics : suspendu<br>Taux : fortement majoré</div>
+    </div>
+    <div class="ess-scale-card" style="border-top-color:#8B1A1A;opacity:0.65;">
+      <div class="ess-scale-letter" style="color:#B02020;">F</div>
+      <div class="ess-scale-range">0 – 2,49</div>
+      <div class="ess-scale-label">Défaillante</div>
+      <div class="ess-scale-effects">Fiscalité +25%<br>Marchés publics : exclu<br>Pas d'accès au crédit</div>
+    </div>
+  </div>
+
+  <div class="formula-box">
+    <strong>Formule de notation :</strong><br>
+    Score = [( Équité×5 ) + ( Santé×4 ) + ( Transparence×7 ) + ( Innovation×8 ) + ( Écologie×6 ) + ( Fiabilité×8 )] / 38
+  </div>
 
   <footer class="footer">
-    <div>
-      <div class="footer-left">Bourse du Caire · بورصة القاهرة · Royaume-Uni du Nil<br>Système ESS · 30 sociétés cotées · Exercice 2305</div>
-      <div class="footer-credit">Projet Résurgence © 2026</div>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-left">
+          BOURSE DU CAIRE · بورصة القاهرة · ROYAUME-UNI DU NIL<br>
+          SYSTÈME ESS · <span id="footer-count">—</span> SOCIÉTÉS COTÉES · EXERCICE 2305
+        </div>
+        <div class="footer-credit">Projet Résurgence © 2026 · Police: Dune Rise — Fontswan (SIL OFL 1.1)</div>
+      </div>
+      <div class="footer-right">بورصة القاهرة · الاقتصاد الاجتماعي والتضامني</div>
     </div>
-    <div class="footer-right">بورصة القاهرة · الاقتصاد الاجتماعي والتضامني</div>
   </footer>
+
 </div>
 
 <script>
-/* ══════════════════════════════════════════════════════
-   BOURSE DU CAIRE — chargement dynamique depuis GitHub
-═══════════════════════════════════════════════════════ */
+// ── DATA ──
+const COMPANIES_STATIC = [
+  {rank:1,  nom:"Coopérative Agricole de Matruh",      nat:"RUN", secteur:"Agriculture & Agroalimentaire", eq:10,sa:10,tr:9, inn:7, ec:10,fi:8, score:8.76, classe:"A"},
+  {rank:2,  nom:"Coopérative Agricole d'Assouan",      nat:"RUN", secteur:"Agriculture & Agroalimentaire", eq:10,sa:9, tr:10,inn:7, ec:9, fi:8, score:8.68, classe:"A"},
+  {rank:3,  nom:"Nile Desalination PLC",                nat:"RUN", secteur:"Services d'Eau",               eq:8, sa:9, tr:10,inn:7, ec:8, fi:9, score:8.47, classe:"B"},
+  {rank:4,  nom:"Nile Broadcasting and Television",    nat:"RUN", secteur:"Télécommunications",            eq:9, sa:9, tr:8, inn:10,ec:6, fi:8, score:8.34, classe:"B"},
+  {rank:4,  nom:"Royal Hydro-Electric Group",          nat:"RUN", secteur:"Énergie",                       eq:9, sa:8, tr:8, inn:7, ec:8, fi:10,score:8.34, classe:"B"},
+  {rank:6,  nom:"Imhotep Medical PLC",                 nat:"RUN", secteur:"Santé & Pharmacie",             eq:9, sa:10,tr:10,inn:8, ec:5, fi:8, score:8.24, classe:"B"},
+  {rank:7,  nom:"Coopérative Agricole de Mansourah",   nat:"RUN", secteur:"Agriculture & Agroalimentaire", eq:6, sa:10,tr:10,inn:6, ec:10,fi:8, score:8.21, classe:"B"},
+  {rank:8,  nom:"Pharos Energy",                       nat:"RUN", secteur:"Énergie",                       eq:8, sa:8, tr:10,inn:8, ec:8, fi:7, score:8.16, classe:"B"},
+  {rank:9,  nom:"Union Air & Defense Systems",         nat:"RUN", secteur:"Industrie Aéronautique",        eq:9, sa:6, tr:6, inn:10,ec:4, fi:10,score:7.76, classe:"B"},
+  {rank:10, nom:"Obelisk Construction Group",          nat:"RUN", secteur:"BTP & Infrastructures",         eq:7, sa:6, tr:9, inn:6, ec:7, fi:10,score:7.68, classe:"B"},
+  {rank:11, nom:"Sphinx Motors",                       nat:"RUN", secteur:"Industrie Automobile",          eq:8, sa:7, tr:7, inn:9, ec:3, fi:10,score:7.55, classe:"B"},
+  {rank:12, nom:"Royal Crown Aviation & Defense",      nat:"RUN", secteur:"Industrie Aéronautique",        eq:8, sa:7, tr:5, inn:10,ec:5, fi:9, score:7.50, classe:"B"},
+  {rank:12, nom:"Coopérative Agricole du Caire",       nat:"RUN", secteur:"Agriculture & Agroalimentaire", eq:7, sa:10,tr:10,inn:5, ec:6, fi:8, score:7.50, classe:"B"},
+  {rank:14, nom:"The Delta Times",                     nat:"RUN", secteur:"Médias",                        eq:10,sa:7, tr:6, inn:8, ec:6, fi:8, score:7.47, classe:"B"},
+  {rank:15, nom:"Alexandria Naval Company",            nat:"RUN", secteur:"Industrie Naval & Portuaire",   eq:8, sa:7, tr:8, inn:7, ec:4, fi:9, score:7.26, classe:"B"},
+  {rank:16, nom:"MISRAIR Company",                     nat:"RUN", secteur:"Transport aérien & Tourisme",   eq:8, sa:8, tr:7, inn:9, ec:3, fi:8, score:7.24, classe:"B"},
+  {rank:17, nom:"Nubian Mining PLC",                   nat:"RUN", secteur:"Secteur Minier",                eq:6, sa:5, tr:10,inn:7, ec:3, fi:10,score:7.21, classe:"B"},
+  {rank:18, nom:"Sun Corridor Roadways",               nat:"RUN", secteur:"Transport & Logistique",        eq:9, sa:7, tr:8, inn:6, ec:4, fi:9, score:7.18, classe:"B"},
+  {rank:19, nom:"Nile Stream Railways",                nat:"RUN", secteur:"Transport & Logistique",        eq:6, sa:7, tr:8, inn:9, ec:5, fi:7, score:7.16, classe:"B"},
+  {rank:20, nom:"Delta Port & Hub",                    nat:"RUN", secteur:"Industrie Naval & Portuaire",   eq:9, sa:7, tr:8, inn:7, ec:5, fi:7, score:7.13, classe:"B"},
+  {rank:21, nom:"The Sun's Stores",                    nat:"RUN", secteur:"Commerce",                      eq:7, sa:9, tr:8, inn:5, ec:5, fi:9, score:7.08, classe:"B"},
+  {rank:22, nom:"Bank of Thebes",                      nat:"RUN", secteur:"Finance",                       eq:8, sa:7, tr:8, inn:7, ec:4, fi:8, score:7.05, classe:"B"},
+  {rank:22, nom:"Kushite Cotton",                      nat:"RUN", secteur:"Textile",                       eq:6, sa:6, tr:8, inn:7, ec:5, fi:9, score:7.05, classe:"B"},
+  {rank:24, nom:"Yassin Heavy Industries",             nat:"RUN", secteur:"Industrie de Défense",          eq:8, sa:8, tr:3, inn:8, ec:5, fi:10,score:7.03, classe:"B"},
+  {rank:25, nom:"Nile Helicopters & Vertical Systems", nat:"RUN", secteur:"Industrie Aéronautique",        eq:9, sa:6, tr:8, inn:9, ec:3, fi:6, score:6.92, classe:"C"},
+  {rank:26, nom:"Theban Heavy Forges",                 nat:"RUN", secteur:"Industrie lourde",              eq:5, sa:7, tr:9, inn:5, ec:3, fi:10,score:6.68, classe:"C"},
+  {rank:27, nom:"Nile Petroleum & Refining Corp",      nat:"RUN", secteur:"Énergie",                       eq:7, sa:5, tr:9, inn:6, ec:1, fi:9, score:6.42, classe:"C"},
+  {rank:28, nom:"Union Auto Motor",                    nat:"UDA", secteur:"Industrie Automobile",          eq:8, sa:7, tr:6, inn:6, ec:3, fi:7, score:6.11, classe:"C"},
+  {rank:29, nom:"Memphis Steel & Iron Works",          nat:"RUN", secteur:"Industrie lourde",              eq:6, sa:5, tr:8, inn:5, ec:3, fi:8, score:6.00, classe:"C"},
+  {rank:30, nom:"SHEIN",                               nat:"UDA", secteur:"Textile",                       eq:5, sa:7, tr:4, inn:6, ec:4, fi:9, score:5.92, classe:"C"},
+  {rank:31, nom:"UDA Textile",                         nat:"UDA", secteur:"Textile",                       eq:7, sa:7, tr:5, inn:6, ec:3, fi:7, score:5.79, classe:"C"},
+];
 
-const API_JSON = 'https://api.github.com/repos/BJBellum/UKN/contents/data/bourse.json';
-const W = {eq:5,sa:4,tr:7,inn:8,ec:6,fi:8,total:38};
-const CLS_COLORS = {A:'#1bbd8a',B:'#4a9eff',C:'#f0a030',D:'#e84848',E:'#c03030',F:'#8b93a8'};
+let companies = [...COMPANIES_STATIC];
+let sortKey = 'rank';
+let sortDir = 1;
+let filtered = [...companies];
 
-let COMPANIES = [];
-let sortKey = 'score';
-let sortDir = -1;
-
-/* ── Score utils ── */
-function computeScore(c) {
-  return Math.round(((c.eq*W.eq)+(c.sa*W.sa)+(c.tr*W.tr)+(c.inn*W.inn)+(c.ec*W.ec)+(c.fi*W.fi))/W.total * 100) / 100;
+// ── UTILS ──
+function scoreColor(v) {
+  if (v >= 9) return '#22B89A';
+  if (v >= 8) return '#4ACB9A';
+  if (v >= 7) return '#D4A843';
+  if (v >= 6) return '#F0A030';
+  if (v >= 5) return '#E07028';
+  return '#C04040';
 }
-function getClass(s) {
-  if (s >= 8.5) return 'A'; if (s >= 7) return 'B'; if (s >= 5.5) return 'C';
-  if (s >= 4)   return 'D'; if (s >= 2.5) return 'E'; return 'F';
-}
-function scoreColor(c) { return CLS_COLORS[c] || '#8b93a8'; }
-function barFill(score) {
-  const pct = (score / 10 * 100).toFixed(1);
-  const col = score >= 8.5 ? '#1bbd8a' : score >= 7 ? '#4a9eff' : score >= 5.5 ? '#f0a030' : '#e84848';
-  return `<div class="score-bar-wrap"><div class="score-bar-fill" style="width:${pct}%;background:${col};"></div></div>`;
+function scClass(v) { return 'sc-' + Math.max(1, Math.min(10, v)); }
+
+function classColor(cl) {
+  return {A:'#22B89A',B:'#D4A843',C:'#F0A030',D:'#C87020',E:'#E84848',F:'#B02020'}[cl] || '#888';
 }
 
-/* ── Load from GitHub API (toujours frais, pas de cache CDN) ── */
-async function loadData() {
-  const tbody = document.getElementById('tbody');
-  tbody.innerHTML = `<tr><td colspan="13" style="text-align:center;padding:32px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text3);">Chargement…</td></tr>`;
+function natLabel(nat) {
+  return nat === 'RUN' ? 'RUN' : nat === 'UDA' ? 'UDA' : nat;
+}
+function natClass(nat) {
+  return nat === 'RUN' ? 'run' : 'uda';
+}
 
-  try {
-    const r = await fetch(API_JSON, {
-      headers: { 'Accept': 'application/vnd.github.v3.raw' },
-      cache: 'no-store'
-    });
-    if (!r.ok) throw new Error('GitHub API ' + r.status);
-    const db = await r.json();
+function indexVal(c) {
+  const base = 1000;
+  return (base * c.score / 10).toFixed(0);
+}
 
-    // Compute scores & classes from raw notes
-    COMPANIES = db.companies.map(c => ({
-      ...c,
-      score: computeScore(c),
-      cls  : getClass(computeScore(c)),
-    }));
-
-    // Update KPIs
-    updateKPIs(db.updated);
-    // Render
-    document.getElementById('th-score').classList.add('sorted-desc');
-    filterTable();
-
-  } catch(e) {
-    tbody.innerHTML = `<tr><td colspan="13" style="text-align:center;padding:32px;color:#e84848;font-family:'IBM Plex Mono',monospace;font-size:12px;">
-      Erreur chargement : ${e.message}<br>
-      <span style="color:var(--text3);font-size:11px;margin-top:6px;display:block;">Actualise la page dans quelques secondes.</span>
-    </td></tr>`;
+// ── RENDER ──
+function renderTable() {
+  const tbody = document.getElementById('bourse-tbody');
+  if (!filtered.length) {
+    tbody.innerHTML = '<tr><td colspan="13" style="text-align:center;padding:32px;color:var(--text3);font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:0.1em">AUCUNE SOCIÉTÉ NE CORRESPOND AUX FILTRES</td></tr>';
+    return;
   }
-}
 
-/* ── Update header KPIs ── */
-function updateKPIs(updated) {
-  const total = COMPANIES.length;
-  const nat   = COMPANIES.filter(c => c.nat === 'Royaume-Uni du Nil').length;
-  const fore  = total - nat;
-  const clsA  = COMPANIES.filter(c => c.cls === 'A').length;
-  const clsB  = COMPANIES.filter(c => c.cls === 'B').length;
-  const clsC  = COMPANIES.filter(c => c.cls === 'C').length;
-
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set('kpi-total', total);
-  set('kpi-nat', nat);
-  set('kpi-for', fore);
-  set('kpi-a', clsA);
-  set('kpi-b', clsB);
-  set('kpi-c', clsC);
-  if (updated) set('kpi-date', updated);
-
-  // Also update footer text
-  const fl = document.querySelector('.footer-left');
-  if (fl) fl.innerHTML = `Bourse du Caire · بورصة القاهرة · Royaume-Uni du Nil<br>Système ESS · ${total} société${total>1?'s':''} cotée${total>1?'s':''} · Exercice 2305`;
-}
-
-/* ── Render table ── */
-function renderTable(rows) {
-  const tbody = document.getElementById('tbody');
-  // Assign ranks
-  const sorted = [...rows].sort((a,b) => b.score - a.score);
-  let rank = 0, prevScore = null;
-  sorted.forEach((c, i) => {
-    if (c.score !== prevScore) { rank = i + 1; prevScore = c.score; }
-    c._rang = rank;
-  });
-
-  tbody.innerHTML = rows.map(c => {
-    const natShort = c.nat === 'Royaume-Uni du Nil' ? 'RUN' : 'UDA';
-    const natStyle = c.nat === 'Royaume-Uni du Nil'
-      ? 'background:rgba(27,189,138,0.08);color:#1bbd8a;border:1px solid rgba(27,189,138,0.2);'
-      : 'background:rgba(74,158,255,0.08);color:#4a9eff;border:1px solid rgba(74,158,255,0.2);';
-    const col = scoreColor(c.cls);
+  tbody.innerHTML = filtered.map((c, i) => {
+    const sc = scoreColor(c.score);
+    const cc = classColor(c.classe);
+    const pct = (c.score / 10 * 100).toFixed(0);
     return `<tr>
-      <td class="td-rang">${c._rang}</td>
-      <td class="td-nom">${c.nom}</td>
-      <td class="td-nat hide-mobile"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:1px 6px;border-radius:3px;${natStyle}">${natShort}</span></td>
-      <td class="td-cat hide-mobile">${c.cat}</td>
-      <td class="hide-mobile" style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.eq}</td>
-      <td class="hide-mobile" style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.sa}</td>
-      <td class="hide-mobile" style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.tr}</td>
-      <td class="hide-mobile" style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.inn}</td>
-      <td class="hide-mobile" style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.ec}</td>
-      <td class="hide-mobile" style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:${col};">${c.fi}</td>
-      <td class="td-score" style="color:${col};">${c.score.toFixed(2)}</td>
-      <td class="td-class"><span class="cls-badge cls-${c.cls}">${c.cls}</span></td>
-      <td class="td-bar hide-mobile">${barFill(c.score)}</td>
+      <td class="td-rank">${c.rank}</td>
+      <td class="td-name">${c.nom}</td>
+      <td><span class="td-nat ${natClass(c.nat)}">${natLabel(c.nat)}</span></td>
+      <td class="td-sector">${c.secteur}</td>
+      <td class="td-score-cell"><span class="${scClass(c.eq)}">${c.eq}</span></td>
+      <td class="td-score-cell"><span class="${scClass(c.sa)}">${c.sa}</span></td>
+      <td class="td-score-cell"><span class="${scClass(c.tr)}">${c.tr}</span></td>
+      <td class="td-score-cell"><span class="${scClass(c.inn)}">${c.inn}</span></td>
+      <td class="td-score-cell"><span class="${scClass(c.ec)}">${c.ec}</span></td>
+      <td class="td-score-cell"><span class="${scClass(c.fi)}">${c.fi}</span></td>
+      <td>
+        <div style="color:${sc};font-size:12px;font-weight:500">${c.score}</div>
+        <div class="td-score-bar-wrap"><div class="td-score-bar" style="width:${pct}%;background:${sc};"></div></div>
+      </td>
+      <td><span class="class-badge class-${c.classe}">${c.classe}</span></td>
+      <td class="td-indice">${indexVal(c)}</td>
     </tr>`;
   }).join('');
-  document.getElementById('count-lbl').textContent = rows.length + ' société' + (rows.length > 1 ? 's' : '');
 }
 
-/* ── Filter ── */
-function filterTable() {
-  const q   = document.getElementById('search').value.toLowerCase();
-  const cls = document.getElementById('filterCls').value;
-  const nat = document.getElementById('filterNat').value;
-  const cat = document.getElementById('filterCat').value;
-  let rows = COMPANIES.filter(c => {
-    if (q   && !c.nom.toLowerCase().includes(q) && !c.cat.toLowerCase().includes(q)) return false;
-    if (cls && c.cls !== cls) return false;
-    if (nat && c.nat !== nat) return false;
-    if (cat && cat !== '' && !c.cat.includes(cat.split(' ')[0])) return false;
-    return true;
+function updateStats() {
+  const total = companies.length;
+  const nat   = companies.filter(c => c.nat === 'RUN').length;
+  const forN  = companies.filter(c => c.nat !== 'RUN').length;
+  const clA   = companies.filter(c => c.classe === 'A').length;
+  const clB   = companies.filter(c => c.classe === 'B').length;
+  const clC   = companies.filter(c => c.classe === 'C').length;
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-nat').textContent   = nat;
+  document.getElementById('stat-for').textContent   = forN;
+  document.getElementById('stat-a').textContent     = clA;
+  document.getElementById('stat-b').textContent     = clB;
+  document.getElementById('stat-c').textContent     = clC;
+  document.getElementById('footer-count').textContent = total;
+}
+
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const cl = document.getElementById('filt-class').value;
+  const nat = document.getElementById('filt-nat').value;
+  const sec = document.getElementById('filt-sector').value;
+
+  filtered = companies.filter(c => {
+    const matchQ = !q || c.nom.toLowerCase().includes(q) || c.secteur.toLowerCase().includes(q);
+    const matchCl = !cl || c.classe === cl;
+    const matchNat = !nat || c.nat === nat;
+    const matchSec = !sec || c.secteur === sec;
+    return matchQ && matchCl && matchNat && matchSec;
   });
-  sortRows(rows);
+
+  document.getElementById('count-label').textContent = filtered.length;
+  renderTable();
 }
 
-/* ── Sort ── */
-function sortRows(rows) {
-  rows.sort((a, b) => {
-    let va = a[sortKey], vb = b[sortKey];
-    if (typeof va === 'string') { va = va.toLowerCase(); vb = vb.toLowerCase(); }
-    if (va < vb) return -sortDir;
-    if (va > vb) return  sortDir;
-    return 0;
+function sortBy(key) {
+  if (sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = 1; }
+
+  // Update header classes
+  document.querySelectorAll('.bourse-table th').forEach(th => {
+    th.classList.remove('sorted','desc');
   });
-  renderTable(rows);
-}
-
-function sortTable(key) {
-  if (sortKey === key) { sortDir *= -1; } else { sortKey = key; sortDir = key === 'score' ? -1 : 1; }
-  document.querySelectorAll('th').forEach(th => th.classList.remove('sorted-asc','sorted-desc'));
   const th = document.getElementById('th-' + key);
-  if (th) th.classList.add(sortDir === 1 ? 'sorted-asc' : 'sorted-desc');
-  filterTable();
+  if (th) {
+    th.classList.add('sorted');
+    if (sortDir === -1) th.classList.add('desc');
+  }
+
+  const numKeys = ['rank','eq','sa','tr','inn','ec','fi','score'];
+  companies.sort((a,b) => {
+    const av = a[key], bv = b[key];
+    if (numKeys.includes(key)) return sortDir * (av - bv);
+    return sortDir * String(av).localeCompare(String(bv), 'fr');
+  });
+
+  applyFilters();
 }
 
-/* ── Theme ── */
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  const lbl  = document.getElementById('toggle-lbl');
-  const icon = document.querySelector('.toggle-icon');
-  if (lbl)  lbl.textContent = theme === 'dark' ? 'NUIT' : 'JOUR';
-  if (icon) {
-    icon.setAttribute('data-mode', theme);
-    icon.querySelector('.icon-sun').style.display  = theme === 'dark'  ? 'block' : 'none';
-    icon.querySelector('.icon-moon').style.display = theme === 'light' ? 'block' : 'none';
+// ── LIVE DATA ──
+(async function() {
+  try {
+    const r = await fetch('https://api.github.com/repos/BJBellum/UKN/contents/data/bourse.json', {
+      headers: {'Accept':'application/vnd.github.v3.raw'}, cache: 'no-store'
+    });
+    if (!r.ok) return;
+    const db = await r.json();
+    const cs = db.companies || db;
+    if (!cs || !cs.length) return;
+    companies = cs.map((c, i) => ({
+      rank:   c.rank || (i + 1),
+      nom:    c.nom || c.name || '?',
+      nat:    c.nat || 'RUN',
+      secteur:c.secteur || c.sector || '?',
+      eq:     Number(c.eq  || c.equite     || 0),
+      sa:     Number(c.sa  || c.sante      || 0),
+      tr:     Number(c.tr  || c.transparence|| 0),
+      inn:    Number(c.inn || c.innovation  || 0),
+      ec:     Number(c.ec  || c.ecologie   || 0),
+      fi:     Number(c.fi  || c.fiabilite  || 0),
+      score:  Number(c.score || c.ess_score || 0),
+      classe: c.classe || c.class || 'C',
+    }));
+    updateStats();
+    applyFilters();
+  } catch(e) {
+    // use static data
   }
-  localStorage.setItem('run-theme', theme);
+})();
+
+// ── INIT ──
+updateStats();
+applyFilters();
+document.getElementById('th-rank').classList.add('sorted');
+
+// ── THEME ──
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  const lbl = document.getElementById('toggle-lbl');
+  const path = document.getElementById('icon-path');
+  if (lbl) lbl.textContent = t === 'dark' ? 'NUIT' : 'JOUR';
+  if (path) path.setAttribute('d', t === 'dark'
+    ? 'M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z'
+    : 'M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 2a8 8 0 1 1 0 16A8 8 0 0 1 12 4z');
+  localStorage.setItem('run-theme', t);
 }
 function toggleTheme() {
   applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 }
-
-/* ── Boot ── */
 (function() {
   const saved = localStorage.getItem('run-theme') || localStorage.getItem('pharos-theme');
   const mq = window.matchMedia('(prefers-color-scheme: dark)');
   applyTheme(saved || (mq.matches ? 'dark' : 'light'));
-  mq.addEventListener('change', e => { if (!localStorage.getItem('run-theme')) applyTheme(e.matches ? 'dark' : 'light'); });
-  document.addEventListener('DOMContentLoaded', loadData);
 })();
 </script>
 <script src="../../pharos-auth.js"></script>
