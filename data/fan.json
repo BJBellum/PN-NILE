@@ -1,0 +1,444 @@
+{
+  "version": "1.0",
+  "updated": "2026-03-21",
+  "bataillons": [
+    {
+      "id": "bat_01",
+      "nom": "Bataillon de Fusiliers",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 900,
+        "Fusils": 900,
+        "Fusils (Rechange)": 450,
+        "Pistolets": 900,
+        "Pistolets (Rechange)": 450,
+        "Mit. Moyennes": 500,
+        "Mit. Moy. (Rechange)": 250,
+        "Mit. Lourdes": 250,
+        "Mit. Lourdes (Rechange)": 125,
+        "Grenades Fragmentation": 1800,
+        "Grenades Fumigène": 1800,
+        "Véh. Blindés": 25,
+        "Camions (Transport)": 50
+      }
+    },
+    {
+      "id": "bat_02",
+      "nom": "Compagnie Blindée",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 250,
+        "Fusils": 250,
+        "Fusils (Rechange)": 125,
+        "Pistolets": 250,
+        "Pistolets (Rechange)": 125,
+        "Mit. Lourdes": 50,
+        "Mit. Lourdes (Rechange)": 25,
+        "Grenades Fragmentation": 500,
+        "Grenades Fumigène": 500,
+        "Chars Légers": 12,
+        "Camions (Transport)": 20
+      }
+    },
+    {
+      "id": "bat_03",
+      "nom": "Bataillon de Logistique",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 500,
+        "Fusils": 500,
+        "Fusils (Rechange)": 250,
+        "Pistolets": 500,
+        "Pistolets (Rechange)": 250,
+        "Camions (Transport)": 30,
+        "Camions (Logistique)": 100
+      }
+    },
+    {
+      "id": "bat_04",
+      "nom": "Bataillon de Reconnaissance",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 500,
+        "Fusils": 500,
+        "Fusils (Rechange)": 250,
+        "Pistolets": 500,
+        "Pistolets (Rechange)": 250,
+        "Mit. Moyennes": 100,
+        "Mit. Moy. (Rechange)": 50,
+        "Grenades Fragmentation": 500,
+        "Grenades Fumigène": 500,
+        "Motos": 100,
+        "Camions (Transport)": 30
+      }
+    },
+    {
+      "id": "bat_05",
+      "nom": "Bataillon de Fusiliers Alpins",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 1200,
+        "Fusils": 1200,
+        "Fusils (Rechange)": 600,
+        "Pistolets": 1200,
+        "Pistolets (Rechange)": 600,
+        "Mit. Moyennes": 600,
+        "Mit. Moy. (Rechange)": 300,
+        "Mit. Lourdes": 300,
+        "Mit. Lourdes (Rechange)": 150,
+        "Grenades Fragmentation": 2400,
+        "Grenades Fumigène": 2400,
+        "Camions (Transport)": 70
+      }
+    },
+    {
+      "id": "bat_06",
+      "nom": "Bataillon de Reconnaissance Alpine",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 500,
+        "Fusils": 500,
+        "Fusils (Rechange)": 250,
+        "Pistolets": 500,
+        "Pistolets (Rechange)": 250,
+        "Mit. Moyennes": 100,
+        "Mit. Moy. (Rechange)": 50,
+        "Grenades Fragmentation": 500,
+        "Grenades Fumigène": 500,
+        "Camions (Transport)": 30
+      }
+    },
+    {
+      "id": "bat_07",
+      "nom": "Bataillon de Logistique Alpin",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 500,
+        "Fusils": 500,
+        "Fusils (Rechange)": 250,
+        "Pistolets": 500,
+        "Pistolets (Rechange)": 250,
+        "Camions (Transport)": 30,
+        "Camions (Logistique)": 100
+      }
+    },
+    {
+      "id": "bat_08",
+      "nom": "Bataillon du Génie Alpin",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 525,
+        "Fusils": 525,
+        "Fusils (Rechange)": 263,
+        "Pistolets": 525,
+        "Pistolets (Rechange)": 263,
+        "Camions (Transport)": 30
+      }
+    },
+    {
+      "id": "bat_09",
+      "nom": "Bataillon d'Artillerie",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 600,
+        "Fusils": 600,
+        "Fusils (Rechange)": 300,
+        "Pistolets": 600,
+        "Pistolets (Rechange)": 300,
+        "Camions (Transport)": 35,
+        "Camions (Utilitaires)": 32,
+        "Canons (Campagne)": 32
+      }
+    },
+    {
+      "id": "bat_10",
+      "nom": "Bataillon d'Obusier",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 550,
+        "Fusils": 550,
+        "Fusils (Rechange)": 275,
+        "Pistolets": 550,
+        "Pistolets (Rechange)": 275,
+        "Camions (Transport)": 35,
+        "Camions (Utilitaires)": 24,
+        "Canons (Obusier)": 24
+      }
+    },
+    {
+      "id": "bat_11",
+      "nom": "Bataillon Antiaérien",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 450,
+        "Fusils": 450,
+        "Fusils (Rechange)": 225,
+        "Pistolets": 450,
+        "Pistolets (Rechange)": 225,
+        "Camions (Transport)": 30,
+        "Camions (Utilitaires)": 24,
+        "Canons (AA)": 24
+      }
+    },
+    {
+      "id": "bat_12",
+      "nom": "Compagnie de Transmission",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 200,
+        "Pistolets": 200,
+        "Camions (Transport)": 10
+      }
+    },
+    {
+      "id": "bat_13",
+      "nom": "Bataillon Médical",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 1000,
+        "Camions (Transport)": 100
+      }
+    },
+    {
+      "id": "bat_14",
+      "nom": "Bataillon de Fusiliers Marins",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 1200,
+        "Fusils": 1200,
+        "Fusils (Rechange)": 600,
+        "Pistolets": 1200,
+        "Pistolets (Rechange)": 600,
+        "Mit. Moyennes": 700,
+        "Mit. Moy. (Rechange)": 350,
+        "Mit. Lourdes": 350,
+        "Mit. Lourdes (Rechange)": 175,
+        "Grenades Fragmentation": 2400,
+        "Grenades Fumigène": 2400,
+        "Camions (Transport)": 70
+      }
+    },
+    {
+      "id": "bat_15",
+      "nom": "Bataillon du Génie",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 525,
+        "Fusils": 525,
+        "Fusils (Rechange)": 263,
+        "Pistolets": 525,
+        "Pistolets (Rechange)": 263,
+        "Camions (Transport)": 30
+      }
+    },
+    {
+      "id": "bat_16",
+      "nom": "Bataillon Antichar",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 500,
+        "Fusils": 500,
+        "Fusils (Rechange)": 250,
+        "Pistolets": 500,
+        "Pistolets (Rechange)": 250,
+        "Camions (Transport)": 30,
+        "Camions (Utilitaires)": 32,
+        "Canons Antichar": 32
+      }
+    },
+    {
+      "id": "bat_17",
+      "nom": "Bataillon de Fusiliers Légers",
+      "quantite": 0,
+      "equip": {
+        "Hommes": 600,
+        "Fusils": 600,
+        "Fusils (Rechange)": 300,
+        "Pistolets": 600,
+        "Pistolets (Rechange)": 300,
+        "Mit. Moyennes": 50,
+        "Mit. Moy. (Rechange)": 25,
+        "Grenades Fragmentation": 600,
+        "Grenades Fumigène": 600,
+        "Camions (Transport)": 30
+      }
+    }
+  ],
+  "production": {
+    "usines": [
+      {
+        "id": "terrestre",
+        "nom": "Usine Terrestre",
+        "categorie": "Terrestre",
+        "niveau": 7
+      },
+      {
+        "id": "maritime",
+        "nom": "Chantier Naval",
+        "categorie": "Maritime",
+        "niveau": 7
+      },
+      {
+        "id": "aerospatiale",
+        "nom": "Usine Aérospatiale",
+        "categorie": "Aerospatiale",
+        "niveau": 7
+      }
+    ],
+    "equipements": [
+      {
+        "id": "eq_01",
+        "nom": "BN-05",
+        "categorie": "Terrestre",
+        "niveau_requis": 3,
+        "cout_slots": 2,
+        "cout_prod": 460,
+        "cout_vente": 999
+      },
+      {
+        "id": "eq_02",
+        "nom": "SM-04",
+        "categorie": "Terrestre",
+        "niveau_requis": 2,
+        "cout_slots": 1,
+        "cout_prod": 124,
+        "cout_vente": 249
+      },
+      {
+        "id": "eq_03",
+        "nom": "RK-01",
+        "categorie": "Terrestre",
+        "niveau_requis": 3,
+        "cout_slots": 4,
+        "cout_prod": 764,
+        "cout_vente": 1549
+      },
+      {
+        "id": "eq_04",
+        "nom": "RD-04",
+        "categorie": "Terrestre",
+        "niveau_requis": 2,
+        "cout_slots": 4,
+        "cout_prod": 647,
+        "cout_vente": 1799
+      },
+      {
+        "id": "eq_05",
+        "nom": "GR-1",
+        "categorie": "Terrestre",
+        "niveau_requis": 1,
+        "cout_slots": 1,
+        "cout_prod": 1,
+        "cout_vente": 10
+      },
+      {
+        "id": "eq_06",
+        "nom": "MD-114",
+        "categorie": "Terrestre",
+        "niveau_requis": 3,
+        "cout_slots": 20,
+        "cout_prod": 13088,
+        "cout_vente": 26999
+      },
+      {
+        "id": "eq_07",
+        "nom": "MD-D-47",
+        "categorie": "Terrestre",
+        "niveau_requis": 3,
+        "cout_slots": 10,
+        "cout_prod": 9288,
+        "cout_vente": 20000
+      },
+      {
+        "id": "eq_08",
+        "nom": "MD-O-122",
+        "categorie": "Terrestre",
+        "niveau_requis": 3,
+        "cout_slots": 20,
+        "cout_prod": 12666,
+        "cout_vente": 24999
+      },
+      {
+        "id": "eq_09",
+        "nom": "MD-T-88",
+        "categorie": "Terrestre",
+        "niveau_requis": 3,
+        "cout_slots": 20,
+        "cout_prod": 12244,
+        "cout_vente": 24999
+      },
+      {
+        "id": "eq_10",
+        "nom": "NM-20 \"Sobek\"",
+        "categorie": "Terrestre",
+        "niveau_requis": 3,
+        "cout_slots": 5000,
+        "cout_prod": 90355,
+        "cout_vente": 199999
+      },
+      {
+        "id": "eq_11",
+        "nom": "DB-01 \"Saqr\"",
+        "categorie": "Terrestre",
+        "niveau_requis": 3,
+        "cout_slots": 6000,
+        "cout_prod": 116533,
+        "cout_vente": 229999
+      },
+      {
+        "id": "eq_12",
+        "nom": "Classe \"Barq\"",
+        "categorie": "Maritime",
+        "niveau_requis": 2,
+        "cout_slots": 20000,
+        "cout_prod": 936888,
+        "cout_vente": 2000000
+      },
+      {
+        "id": "eq_13",
+        "nom": "Classe \"Aqrab\"",
+        "categorie": "Maritime",
+        "niveau_requis": 2,
+        "cout_slots": 20000,
+        "cout_prod": 4753332,
+        "cout_vente": 10000000
+      },
+      {
+        "id": "eq_14",
+        "nom": "Classe \"Qahir\"",
+        "categorie": "Maritime",
+        "niveau_requis": 2,
+        "cout_slots": 35000,
+        "cout_prod": 12400000,
+        "cout_vente": 25000000
+      },
+      {
+        "id": "eq_15",
+        "nom": "Classe \"Al-Temsah\"",
+        "categorie": "Maritime",
+        "niveau_requis": 2,
+        "cout_slots": 20000,
+        "cout_prod": 1047111,
+        "cout_vente": 2099999
+      },
+      {
+        "id": "eq_16",
+        "nom": "MQ-05",
+        "categorie": "Aerospatiale",
+        "niveau_requis": 4,
+        "cout_slots": 3000,
+        "cout_prod": 329000,
+        "cout_vente": 999999
+      },
+      {
+        "id": "eq_17",
+        "nom": "MQ-33 \"Cobra\"",
+        "categorie": "Aerospatiale",
+        "niveau_requis": 4,
+        "cout_slots": 3000,
+        "cout_prod": 329000,
+        "cout_vente": 1499999
+      }
+    ]
+  }
+}
