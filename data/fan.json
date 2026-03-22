@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated": "2026-03-21",
+  "updated": "2026-03-22",
   "bataillons": [
     {
       "id": "bat_01",
@@ -440,5 +440,6 @@
         "cout_vente": 1499999
       }
     ]
-  }
+  },
+  "custom_equip_fields": []
 }
