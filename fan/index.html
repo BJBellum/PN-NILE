@@ -46,9 +46,7 @@
 .fan-card:hover .fan-card-cta{background:rgba(232,92,13,.05);}
 
 /* USER PILL IN NAV */
-.user-pill{display:flex;align-items:center;gap:8px;background:rgba(232,92,13,.08);border:1px solid rgba(232,92,13,.2);padding:4px 12px 4px 4px;border-radius:2px;}
-.user-avatar{width:24px;height:24px;border-radius:2px;border:1px solid rgba(232,92,13,.3);object-fit:cover;}
-.user-name-nav{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--spice);letter-spacing:.06em;}
+/* user badge handled by pharos-auth.js */
 </style>
 </head>
 <body>
@@ -85,10 +83,7 @@
     <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.1em;border:1px solid rgba(232,92,13,.2);padding:2px 8px;border-radius:2px;">FAN-SYS-001</span>
   </div>
   <div class="nav-right">
-    <div class="user-pill">
-      <img id="user-avatar" src="" alt="" class="user-avatar" style="display:none;" onerror="this.style.display='none'">
-      <span class="user-name-nav" id="user-name">—</span>
-    </div>
+    <!-- user badge injected by pharos-auth.js -->
     <a href="../" class="nav-back">← Portail National</a>
     <button class="theme-toggle" onclick="toggleTheme()">
       <svg id="toggle-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"><path id="icon-path" d="M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z" fill="currentColor"/></svg>
@@ -225,13 +220,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   if(user&&FAN_IDS.includes(user.id)){
     document.getElementById('access-wall').style.display='none';
     document.getElementById('main-content').style.display='block';
-    const av=document.getElementById('user-avatar'),nm=document.getElementById('user-name');
-    if(av&&user.avatar){
-      av.src=`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=32`;
-      av.onload=()=>{av.style.display='block';};
-      av.onerror=()=>{av.style.display='none';};
-    }
-    if(nm)nm.textContent=user.global_name||user.username||'—';
+    // pharos-auth.js handles user display in nav
   }
 });
 </script>

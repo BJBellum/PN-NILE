@@ -1105,16 +1105,17 @@ function renderCustomFieldsList(){
 
   if(standardFields.length){
     html+=`<div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.16em;color:var(--text3);text-transform:uppercase;padding:5px 0;border-bottom:1px solid var(--border);margin-bottom:6px;margin-top:4px;">▸ Champs standards</div>`;
-    html+=standardFields.map(f=>`
-      <div class="cf-item">
+    html+=standardFields.map((f,fi)=>{
+      const enc=encodeURIComponent(f);
+      return `<div class="cf-item" data-enc="${enc}">
         <span class="cf-nom">${f}</span>
         <span class="cf-groupe-badge" style="border-color:rgba(200,150,12,.3);color:var(--gold-mid);background:rgba(200,150,12,.06);">Standard</span>
         <div style="display:flex;gap:5px;flex-shrink:0;">
-          <button class="btn btn-ghost btn-xs" onclick="openRenameModal('${f.replace(/\'/g,\"\\\'\")}', '')">Modifier</button>
-          <button class="btn btn-danger btn-xs" onclick="deleteStandardField('${f.replace(/\'/g,\"\\\'\")}')">✕ Suppr.</button>
+          <button class="btn btn-ghost btn-xs" onclick="openRenameModal(decodeURIComponent(this.closest('[data-enc]').dataset.enc),'')">Modifier</button>
+          <button class="btn btn-danger btn-xs" onclick="deleteStandardField(decodeURIComponent(this.closest('[data-enc]').dataset.enc))">✕ Suppr.</button>
         </div>
-      </div>
-    `).join('');
+      </div>`;
+    }).join('');
   }
 
   if(customItems.length){

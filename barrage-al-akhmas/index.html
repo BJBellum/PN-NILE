@@ -228,26 +228,29 @@ function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-th
 (function(){const s=localStorage.getItem('run-theme'),mq=window.matchMedia('(prefers-color-scheme: dark)');applyTheme(s||(mq.matches?'dark':'light'));mq.addEventListener('change',e=>{if(!localStorage.getItem('run-theme'))applyTheme(e.matches?'dark':'light');});}
 )();
 </script>
+
 <script>
-(function(){
-  function initMap(){
-    var el=document.getElementById('map-al-akhmas');
-    if(!el||el._leaflet_id)return;
-    var m=L.map('map-al-akhmas',{zoomControl:true,attributionControl:true}).setView([30.40322,30.84016],13);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
-      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors &copy; <a href="https://carto.com">CARTO</a>',
-      subdomains:'abcd',maxZoom:19
+window.addEventListener('load', function() {
+  function tryInit() {
+    var el = document.getElementById('map-al-akhmas');
+    if (!el) { setTimeout(tryInit, 200); return; }
+    if (el._leaflet_id) return;
+    if (typeof L === 'undefined') { setTimeout(tryInit, 200); return; }
+    var m = L.map('map-al-akhmas', {zoomControl:true, attributionControl:true}).setView([30.40322,30.84016],13);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors &copy; <a href="https://carto.com">CARTO</a>',
+      subdomains: 'abcd', maxZoom: 19
     }).addTo(m);
-    var ic=L.divIcon({html:'<div style="width:16px;height:16px;border-radius:50%;background:#E85C0D;border:2px solid #F0A030;box-shadow:0 0 14px rgba(232,92,13,.8);"></div>',className:'',iconAnchor:[8,8]});
-    L.marker([30.40322,30.84016],{icon:ic}).addTo(m)
-     .bindPopup('<div style="font-family:monospace;font-size:10px;padding:8px 12px;background:#0E0B06;color:#C8960C;min-width:160px;"><strong>Barrage de Al-Akhmas</strong><br><span style="color:#666;font-size:9px;">30.40322, 30.84016</span></div>',{offset:[0,-4]});
-    m.invalidateSize();
+    var ic = L.divIcon({
+      html: '<div style="width:16px;height:16px;border-radius:50%;background:#E85C0D;border:2px solid #F0A030;box-shadow:0 0 14px rgba(232,92,13,.8);"></div>',
+      className: '', iconAnchor: [8,8]
+    });
+    L.marker([30.40322,30.84016], {icon:ic}).addTo(m)
+      .bindPopup('<div style="font-family:monospace;font-size:10px;padding:8px 12px;background:#0E0B06;color:#C8960C;min-width:160px;"><strong>Barrage de Al-Akhmas</strong><br><span style="color:#666;font-size:9px;">30.40322, 30.84016</span></div>', {offset:[0,-4]});
+    setTimeout(function() { m.invalidateSize(); }, 300);
   }
-  if(typeof L!=='undefined'){initMap();}
-  else{
-    var t=setInterval(function(){if(typeof L!=='undefined'){clearInterval(t);initMap();}},100);
-  }
-})();
+  tryInit();
+});
 </script>
 </body>
 </html>
