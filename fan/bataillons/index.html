@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculateur de Bataillons · FAN</title>
 <meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="../../assets/images/UKNSite.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -82,6 +83,8 @@
 .access-inner{text-align:center;padding:48px 36px;border:1px solid rgba(232,92,13,.4);background:var(--card-bg);max-width:400px;width:90%;position:relative;}
 .access-inner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--spice),transparent);}
 </style>
+<meta property="og:image" content="https://BJBellum.github.io/UKN/assets/images/UKNSite.png">
+<meta property="og:image:alt" content="Portail National — Royaume-Uni du Nil">
 </head>
 <body>
 
@@ -204,24 +207,68 @@ const DEFAULT_BATS=[
 ];
 
 // Equipment categories for display
-const EQUIP_CATS=[
-  {label:'Personnel',color:'#E85C0D',fields:['Hommes']},
-  {label:'Armement léger',color:'#D4A843',fields:['Fusils','Fusils (Rechange)','Pistolets','Pistolets (Rechange)']},
-  {label:'Mitrailleuses',color:'#F0A030',fields:['Mit. Moyennes','Mit. Moy. (Rechange)','Mit. Lourdes','Mit. Lourdes (Rechange)']},
-  {label:'Grenades',color:'#22B89A',fields:['Grenades Fragmentation','Grenades Fumigène']},
-  {label:'Véhicules',color:'#C8960C',fields:['Véh. Blindés','Chars Légers','Motos','Camions (Transport)','Camions (Logistique)','Camions (Utilitaires)']},
-  {label:'Artillerie',color:'#8B5A20',fields:['Canons (Campagne)','Canons (Obusier)','Canons (AA)','Canons Antichar']},
-];
+// ── EQUIP CATEGORIES ──
+// Catégories visuelles pour les champs standard (mapping statique)
+const STATIC_GROUP_MAP={
+  'Hommes':'Personnel',
+  'Fusils':'Armement léger','Fusils (Rechange)':'Armement léger',
+  'Pistolets':'Armement léger','Pistolets (Rechange)':'Armement léger',
+  'Mit. Moyennes':'Mitrailleuses','Mit. Moy. (Rechange)':'Mitrailleuses',
+  'Mit. Lourdes':'Mitrailleuses','Mit. Lourdes (Rechange)':'Mitrailleuses',
+  'Grenades Fragmentation':'Grenades','Grenades Fumigène':'Grenades',
+  'Véh. Blindés':'Véhicules','Chars Légers':'Véhicules','Motos':'Véhicules',
+  'Camions (Transport)':'Véhicules','Camions (Logistique)':'Véhicules','Camions (Utilitaires)':'Véhicules',
+  'Canons (Campagne)':'Artillerie','Canons (Obusier)':'Artillerie',
+  'Canons (AA)':'Artillerie','Canons Antichar':'Artillerie',
+};
+const GROUP_COLORS={
+  'Personnel':'#E85C0D','Armement léger':'#D4A843','Mitrailleuses':'#F0A030',
+  'Grenades':'#22B89A','Véhicules':'#C8960C','Artillerie':'#8B5A20',
+  'Blindés':'#C8960C','Missile':'#E84848','Aviation':'#4A9EFF',
+  'Marine':'#1A8F7A','Infanterie':'#D4A843','Soutien':'#888888','Autre':'#9B59B6',
+};
+
+// Construit les catégories d'affichage à partir de TOUS les champs actifs (base + custom)
+function getEquipCats(){
+  // 1. Lire la base de champs depuis localStorage (synced avec admin)
+  let baseFields;
+  try{const ef=localStorage.getItem('fan_equip_fields_base');baseFields=ef?JSON.parse(ef):null;}
+  catch(_){baseFields=null;}
+  if(!baseFields)baseFields=['Hommes','Fusils','Fusils (Rechange)','Pistolets','Pistolets (Rechange)','Mit. Moyennes','Mit. Moy. (Rechange)','Mit. Lourdes','Mit. Lourdes (Rechange)','Grenades Fragmentation','Grenades Fumigène','Véh. Blindés','Chars Légers','Motos','Camions (Transport)','Camions (Logistique)','Camions (Utilitaires)','Canons (Campagne)','Canons (Obusier)','Canons (AA)','Canons Antichar'];
+  // 2. Tous les champs = base + custom noms
+  const allFields=[...baseFields,...customEquipFields.map(f=>f.nom)];
+  // 3. Regrouper: champs connus → STATIC_GROUP_MAP, custom → leur groupe
+  const groups={};
+  allFields.forEach(f=>{
+    const cf=customEquipFields.find(c=>c.nom===f);
+    const g=cf?cf.groupe:(STATIC_GROUP_MAP[f]||'Autre');
+    if(!groups[g])groups[g]=[];
+    groups[g].push(f);
+  });
+  // 4. Construire les catégories dans un ordre défini
+  const ORDER=['Personnel','Armement léger','Mitrailleuses','Grenades','Véhicules','Artillerie','Blindés','Missile','Infanterie','Aviation','Marine','Soutien','Autre'];
+  const cats=[];
+  ORDER.forEach(g=>{if(groups[g])cats.push({label:g,color:GROUP_COLORS[g]||'#9B59B6',fields:groups[g]});});
+  // Tout groupe non listé dans ORDER (custom) à la fin
+  Object.entries(groups).forEach(([g,fields])=>{
+    if(!ORDER.includes(g))cats.push({label:g,color:GROUP_COLORS[g]||'#9B59B6',fields});
+  });
+  return cats;
+}
 
 // ── STATE ──
 let battalions=[];
+let customEquipFields=[];
 
 function loadState(){
   try{
     const s=localStorage.getItem('fan_battalions');
     if(s)battalions=JSON.parse(s);
     else battalions=DEFAULT_BATS.map(b=>({...b,equip:{...b.equip}}));
-  }catch(_){battalions=DEFAULT_BATS.map(b=>({...b,equip:{...b.equip}}));}
+    const cs=localStorage.getItem('fan_custom_fields');
+    customEquipFields=cs?JSON.parse(cs):[];
+    // fan_equip_fields_base lu directement dans getEquipCats() depuis localStorage
+  }catch(_){battalions=DEFAULT_BATS.map(b=>({...b,equip:{...b.equip}}));customEquipFields=[];}
 }
 function saveState(){localStorage.setItem('fan_battalions',JSON.stringify(battalions));}
 
@@ -289,7 +336,7 @@ function renderBilan(){
   // Equipment by category
   const bilanDiv=document.getElementById('bilan-equip');
   if(!bilanDiv)return;
-  bilanDiv.innerHTML=EQUIP_CATS.map(cat=>{
+  bilanDiv.innerHTML=getEquipCats().map(cat=>{
     const items=cat.fields.filter(f=>totals[f]!==undefined||true);
     if(!items.some(f=>totals[f]>0))return'';
     return`<div class="equip-section">
@@ -342,6 +389,13 @@ async function syncFromGH(){
     const r=await fetch('https://api.github.com/repos/BJBellum/UKN/contents/data/fan.json',{headers:{'Accept':'application/vnd.github.v3.raw'},cache:'no-store'});
     if(!r.ok)return;
     const d=await r.json();
+    if(d.equip_fields_base?.length){
+      localStorage.setItem('fan_equip_fields_base',JSON.stringify(d.equip_fields_base));
+    }
+    if(d.custom_equip_fields?.length){
+      customEquipFields=d.custom_equip_fields;
+      localStorage.setItem('fan_custom_fields',JSON.stringify(customEquipFields));
+    }
     if(d.bataillons?.length){
       // Merge quantities from GitHub into local battalion list
       d.bataillons.forEach(gb=>{
