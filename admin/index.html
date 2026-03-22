@@ -173,7 +173,17 @@
 .cat-M{background:rgba(74,158,255,.1);border-color:rgba(74,158,255,.3);color:#4A9EFF;}
 .cat-A{background:rgba(232,92,13,.1);border-color:rgba(232,92,13,.3);color:var(--spice);}
 /* NEW BAT */
-.nb-equip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-bottom:18px;}
+.nb-equip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-bottom:8px;}
+/* SUB-TABS */
+.sub-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);}
+.sub-tab{background:transparent;border:none;border-bottom:2px solid transparent;color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;padding:8px 18px;cursor:pointer;transition:all .2s;margin-bottom:-1px;}
+.sub-tab:hover{color:var(--spice);}
+.sub-tab.active{color:var(--spice);border-bottom-color:var(--spice);}
+/* CUSTOM FIELD ITEMS */
+.cf-item{display:flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--border);border-left:2px solid rgba(232,92,13,.3);background:var(--card-bg);margin-bottom:5px;transition:border-color .2s;}
+.cf-item:hover{border-left-color:var(--spice);}
+.cf-nom{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);flex:1;letter-spacing:.04em;}
+.cf-groupe-badge{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:2px 7px;border-radius:2px;border:1px solid rgba(232,92,13,.3);color:rgba(232,92,13,.8);background:rgba(232,92,13,.06);letter-spacing:.08em;}
 /* SYNC PANEL */
 .sync-card{background:var(--bg2);border:1px solid var(--border2);border-top:2px solid var(--teal);max-width:500px;}
 </style>
@@ -349,18 +359,73 @@
   ══════════════════════════════════ -->
   <div class="sec-pane" id="sec-fan-new">
     <div class="dash-hdr">
-      <div class="dash-title">⚔ Nouveau Type de Bataillon</div>
-      <div class="dash-sub">Créer un nouveau type de bataillon avec son équipement de base par unité.</div>
+      <div class="dash-title">⚔ Bataillons & Équipements</div>
+      <div class="dash-sub">Créer un bataillon · Gérer les catégories d'équipement personnalisées.</div>
     </div>
-    <div style="max-width:660px;">
+
+    <!-- SUB-TABS -->
+    <div class="sub-tabs" style="margin-bottom:20px;">
+      <button class="sub-tab active" id="stab-bat" onclick="switchSubTab('bat')">✚ Nouveau Bataillon</button>
+      <button class="sub-tab" id="stab-cat" onclick="switchSubTab('cat')">⚙ Catégories d'Équipement</button>
+    </div>
+
+    <!-- SUBTAB: NOUVEAU BATAILLON -->
+    <div id="sub-bat" style="max-width:700px;">
       <div class="form-grid" style="margin-bottom:16px;">
         <div class="fg fg-full"><label class="fl">Nom du bataillon</label><input type="text" class="fi fan" id="nb-nom" placeholder="Ex : Bataillon de Fusiliers Spéciaux…"></div>
       </div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--spice);text-transform:uppercase;margin-bottom:10px;">Équipement de base par unité</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--spice);text-transform:uppercase;">Équipement de base par unité</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.06em;" id="nb-field-count">— champs</span>
+      </div>
+      <!-- STANDARD FIELDS -->
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.16em;color:var(--text3);text-transform:uppercase;padding:5px 0;border-bottom:1px solid var(--border);margin-bottom:8px;">▸ Équipements standard</div>
       <div class="nb-equip-grid" id="nb-equip-grid"></div>
-      <div style="display:flex;gap:8px;">
-        <button class="btn btn-fan" onclick="createNewBat()">✓ Créer</button>
+      <!-- CUSTOM FIELDS -->
+      <div id="nb-custom-section" style="margin-top:14px;display:none;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.16em;color:var(--spice);text-transform:uppercase;padding:5px 0;border-bottom:1px solid rgba(232,92,13,.2);margin-bottom:8px;">▸ Équipements personnalisés</div>
+        <div class="nb-equip-grid" id="nb-custom-grid"></div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:16px;">
+        <button class="btn btn-fan" onclick="createNewBat()">✓ Créer ce bataillon</button>
         <button class="btn btn-ghost" onclick="clearNewBat()">✕ Effacer</button>
+      </div>
+    </div>
+
+    <!-- SUBTAB: CATÉGORIES D'ÉQUIPEMENT -->
+    <div id="sub-cat" style="display:none;max-width:700px;">
+      <div style="background:rgba(232,92,13,.04);border:1px solid rgba(232,92,13,.2);border-left:2px solid var(--spice);padding:10px 14px;margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.06em;line-height:1.8;">
+        Ces catégories s'ajoutent aux équipements standard dans tous les formulaires de bataillon.
+        Exemples : <span style="color:var(--spice)">Chars Moyens · Chars Lourds · Mortiers · Drones · Lance-Roquettes · Hélicoptères…</span>
+      </div>
+
+      <!-- ADD FORM -->
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-top:2px solid var(--spice);padding:16px;margin-bottom:16px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--spice);text-transform:uppercase;margin-bottom:12px;" id="cat-form-title">+ Ajouter une catégorie</div>
+        <div style="display:grid;grid-template-columns:1fr 180px auto;gap:10px;align-items:end;">
+          <div class="fg"><label class="fl">Nom du champ</label><input type="text" class="fi fan" id="cf-nom" placeholder="Ex : Chars Moyens…"></div>
+          <div class="fg"><label class="fl">Groupe</label><select class="fs" id="cf-groupe">
+            <option value="Blindés">Blindés & Véhicules</option>
+            <option value="Artillerie">Artillerie</option>
+            <option value="Infanterie">Infanterie</option>
+            <option value="Aviation">Aviation</option>
+            <option value="Marine">Marine</option>
+            <option value="Soutien">Soutien</option>
+            <option value="Autre">Autre</option>
+          </select></div>
+          <div style="display:flex;gap:6px;padding-bottom:1px;">
+            <button class="btn btn-fan btn-sm" onclick="saveCustomField()">✓ Sauvegarder</button>
+            <button class="btn btn-ghost btn-sm" onclick="cancelEditField()" id="cf-cancel" style="display:none;">Annuler</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CUSTOM FIELDS LIST -->
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--text3);text-transform:uppercase;margin-bottom:8px;" id="cf-count-lbl">Aucune catégorie personnalisée</div>
+      <div id="custom-fields-list"></div>
+
+      <div style="margin-top:16px;display:flex;gap:8px;">
+        <button class="btn btn-fan btn-sm" onclick="fanSaveToGH()">⬆ Sauvegarder sur GitHub</button>
       </div>
     </div>
   </div>
@@ -664,25 +729,33 @@ const DEFAULT_FACTORIES=[
 const SLOT_CAP={1:15000,2:22500,3:33000,4:48000,5:69000,6:102000,7:150000};
 const CAT_COL={Terrestre:'#22B89A',Maritime:'#4A9EFF',Aerospatiale:'#E85C0D'};
 let fanBats=[], fanEquip=[], fanFactories=[], editEquipIdx=null;
+let customEquipFields=[], editCfIdx=null;
+
+// allEquipFields = standard + custom
+function allEquipFields(){return [...EQUIP_FIELDS,...customEquipFields.map(f=>f.nom)];}
 
 function loadFanState(){
   try{
     const bs=localStorage.getItem('fan_battalions');
     const es=localStorage.getItem('fan_equipements');
     const fs=localStorage.getItem('fan_factories');
+    const cs=localStorage.getItem('fan_custom_fields');
     fanBats=bs?JSON.parse(bs):DEFAULT_BATS.map(b=>({...b,equip:{...b.equip}}));
     fanEquip=es?JSON.parse(es):DEFAULT_EQUIP.map(e=>({...e}));
     fanFactories=fs?JSON.parse(fs):DEFAULT_FACTORIES.map(f=>({...f}));
+    customEquipFields=cs?JSON.parse(cs):[];
   }catch(_){
     fanBats=DEFAULT_BATS.map(b=>({...b,equip:{...b.equip}}));
     fanEquip=DEFAULT_EQUIP.map(e=>({...e}));
     fanFactories=DEFAULT_FACTORIES.map(f=>({...f}));
+    customEquipFields=[];
   }
 }
 function saveFanState(){
   localStorage.setItem('fan_battalions',JSON.stringify(fanBats));
   localStorage.setItem('fan_equipements',JSON.stringify(fanEquip));
   localStorage.setItem('fan_factories',JSON.stringify(fanFactories));
+  localStorage.setItem('fan_custom_fields',JSON.stringify(customEquipFields));
 }
 
 // ════════════════════════════════════════════════
@@ -705,6 +778,7 @@ function renderBatAdmin(){
         <button class="btn btn-danger btn-xs" onclick="event.stopPropagation();deleteBat('${b.id}')">✕ Suppr.</button>
       </div>
       <div class="equip-panel" id="ep-${b.id}">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.14em;color:var(--text3);text-transform:uppercase;margin-bottom:8px;">▸ Standard</div>
         <div class="equip-grid-edit">
           ${EQUIP_FIELDS.map(f=>`
             <div class="ef">
@@ -714,6 +788,17 @@ function renderBatAdmin(){
             </div>
           `).join('')}
         </div>
+        ${customEquipFields.length?`
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.14em;color:var(--spice);text-transform:uppercase;margin:10px 0 8px;">▸ Personnalisés</div>
+        <div class="equip-grid-edit">
+          ${customEquipFields.map(cf=>`
+            <div class="ef">
+              <span class="ef-lbl" style="color:rgba(232,92,13,.8)">${cf.nom}</span>
+              <input class="ef-in" style="border-color:rgba(232,92,13,.2)" type="number" min="0" value="${b.equip[cf.nom]||0}"
+                onchange="updateEquip('${b.id}','${cf.nom}',this.value)">
+            </div>
+          `).join('')}
+        </div>`:''}
       </div>
     </div>
   `).join('');
@@ -815,12 +900,28 @@ function renderNewBatForm(){
       <input class="ef-in" type="number" min="0" value="0" id="nb-${f.replace(/[^a-zA-Z0-9]/g,'_')}">
     </div>
   `).join('');
+  // Custom fields
+  const cg=document.getElementById('nb-custom-grid');
+  const cs=document.getElementById('nb-custom-section');
+  if(cg&&cs){
+    if(customEquipFields.length){
+      cs.style.display='block';
+      cg.innerHTML=customEquipFields.map(cf=>`
+        <div class="ef">
+          <span class="ef-lbl" style="color:rgba(232,92,13,.8)">${cf.nom}</span>
+          <input class="ef-in" style="border-color:rgba(232,92,13,.2)" type="number" min="0" value="0" id="nb-${cf.nom.replace(/[^a-zA-Z0-9]/g,'_')}">
+        </div>
+      `).join('');
+    } else { cs.style.display='none'; }
+  }
+  const cnt=document.getElementById('nb-field-count');
+  if(cnt)cnt.textContent=(EQUIP_FIELDS.length+customEquipFields.length)+' champs';
 }
 function createNewBat(){
   const nom=document.getElementById('nb-nom')?.value.trim();
   if(!nom){toast('Nom obligatoire.','err');return;}
   const equip={};
-  EQUIP_FIELDS.forEach(f=>{const id='nb-'+f.replace(/[^a-zA-Z0-9]/g,'_');const el=document.getElementById(id);const v=parseInt(el?.value)||0;if(v>0)equip[f]=v;});
+  allEquipFields().forEach(f=>{const id='nb-'+f.replace(/[^a-zA-Z0-9]/g,'_');const el=document.getElementById(id);const v=parseInt(el?.value)||0;if(v>0)equip[f]=v;});
   fanBats.push({id:'bat_'+Date.now(),nom,quantite:0,equip});
   saveFanState();
   document.getElementById('nb-nom').value='';
@@ -829,6 +930,79 @@ function createNewBat(){
   showSection('fan-bat');
 }
 function clearNewBat(){document.getElementById('nb-nom').value='';renderNewBatForm();}
+
+// ────────────────────────────────────────────
+//  SUB-TABS (Nouveau Bataillon section)
+// ────────────────────────────────────────────
+function switchSubTab(tab){
+  ['bat','cat'].forEach(t=>{
+    const btn=document.getElementById('stab-'+t);
+    const pane=document.getElementById('sub-'+t);
+    if(btn)btn.classList.toggle('active',t===tab);
+    if(pane)pane.style.display=t===tab?'block':'none';
+  });
+  if(tab==='cat')renderCustomFieldsList();
+  if(tab==='bat')renderNewBatForm();
+}
+
+// ────────────────────────────────────────────
+//  CUSTOM EQUIP FIELDS CRUD
+// ────────────────────────────────────────────
+function renderCustomFieldsList(){
+  const el=document.getElementById('custom-fields-list');
+  const lbl=document.getElementById('cf-count-lbl');
+  if(lbl)lbl.textContent=customEquipFields.length
+    ?customEquipFields.length+' catégorie'+(customEquipFields.length>1?'s':'')+ ' personnalisée'+(customEquipFields.length>1?'s':'')
+    :'Aucune catégorie personnalisée';
+  if(!el)return;
+  if(!customEquipFields.length){el.innerHTML='<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);padding:20px;text-align:center;border:1px solid var(--border);">Aucune catégorie personnalisée. Utilisez le formulaire ci-dessus pour en ajouter.</div>';return;}
+  el.innerHTML=customEquipFields.map((cf,i)=>`
+    <div class="cf-item">
+      <span class="cf-nom">${cf.nom}</span>
+      <span class="cf-groupe-badge">${cf.groupe||'Autre'}</span>
+      <div style="display:flex;gap:5px;flex-shrink:0;">
+        <button class="btn btn-ghost btn-xs" onclick="editCustomField(${i})">Modifier</button>
+        <button class="btn btn-danger btn-xs" onclick="deleteCustomField(${i})">✕</button>
+      </div>
+    </div>
+  `).join('');
+}
+function saveCustomField(){
+  const nom=document.getElementById('cf-nom')?.value.trim();
+  if(!nom){toast('Nom obligatoire.','err');return;}
+  // Check duplicate
+  const isDup=customEquipFields.some((cf,i)=>cf.nom===nom&&i!==editCfIdx);
+  if(isDup){toast('Ce nom existe déjà.','err');return;}
+  const obj={nom,groupe:document.getElementById('cf-groupe')?.value||'Autre'};
+  if(editCfIdx!==null){customEquipFields[editCfIdx]=obj;}
+  else{customEquipFields.push(obj);}
+  editCfIdx=null;
+  document.getElementById('cf-nom').value='';
+  document.getElementById('cf-form-title').textContent='+ Ajouter une catégorie';
+  const cc=document.getElementById('cf-cancel');if(cc)cc.style.display='none';
+  saveFanState();renderCustomFieldsList();
+  toast(editCfIdx!==null?'Catégorie modifiée.':'Catégorie ajoutée.');
+}
+function editCustomField(i){
+  editCfIdx=i;
+  const cf=customEquipFields[i];
+  document.getElementById('cf-nom').value=cf.nom;
+  document.getElementById('cf-groupe').value=cf.groupe||'Autre';
+  document.getElementById('cf-form-title').textContent='✎ Modifier : '+cf.nom;
+  const cc=document.getElementById('cf-cancel');if(cc)cc.style.display='';
+  document.getElementById('cf-nom').focus();
+}
+function cancelEditField(){
+  editCfIdx=null;
+  document.getElementById('cf-nom').value='';
+  document.getElementById('cf-form-title').textContent='+ Ajouter une catégorie';
+  const cc=document.getElementById('cf-cancel');if(cc)cc.style.display='none';
+}
+function deleteCustomField(i){
+  if(!confirm('Supprimer la catégorie « '+customEquipFields[i].nom+' » ?'))return;
+  customEquipFields.splice(i,1);
+  saveFanState();renderCustomFieldsList();toast('Catégorie supprimée.');
+}
 
 // ════════════════════════════════════════════════
 //  FAN GITHUB SYNC
@@ -843,7 +1017,7 @@ async function fanSaveToGH(){
     if(sr.ok){const sd=await sr.json();sha=sd.sha||null;logFan(`✓ SHA: ${sha?sha.substring(0,10):'—'}…`,'ok');}
     else if(sr.status===404)logFan('✓ Nouveau fichier.','ok');
     else{logFan(`✗ Erreur SHA: ${sr.status}`,'err');return;}
-    const payload={version:'1.0',updated:new Date().toISOString().slice(0,10),bataillons:fanBats.map(b=>({id:b.id,nom:b.nom,quantite:b.quantite,equip:b.equip})),production:{usines:fanFactories,equipements:fanEquip}};
+    const payload={version:'1.0',updated:new Date().toISOString().slice(0,10),bataillons:fanBats.map(b=>({id:b.id,nom:b.nom,quantite:b.quantite,equip:b.equip})),production:{usines:fanFactories,equipements:fanEquip},custom_equip_fields:customEquipFields};
     const encoded=btoa(unescape(encodeURIComponent(JSON.stringify(payload,null,2))));
     const body={message:`update fan.json — ${fanBats.length} bat. · ${fanEquip.length} équip.`,content:encoded};if(sha)body.sha=sha;
     const pr=await fetch(`https://api.github.com/repos/${REPO}/contents/${FAN_FILE}`,{method:'PUT',headers:{'Authorization':`token ${pat}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify(body)});
@@ -860,6 +1034,7 @@ async function fanLoadFromGH(){
     if(d.bataillons?.length){d.bataillons.forEach(gb=>{const local=fanBats.find(x=>x.id===gb.id);if(local){local.quantite=gb.quantite||0;if(gb.equip)local.equip={...local.equip,...gb.equip};}else fanBats.push(gb);});}
     if(d.production?.usines)d.production.usines.forEach(u=>{const f=fanFactories.find(x=>x.id===u.id);if(f&&u.niveau)f.niveau=u.niveau;});
     if(d.production?.equipements?.length)d.production.equipements.forEach(ge=>{const local=fanEquip.find(x=>x.id===ge.id);if(local)Object.assign(local,ge);else fanEquip.push(ge);});
+    if(d.custom_equip_fields?.length)customEquipFields=d.custom_equip_fields;
     saveFanState();logFan('✓ Données FAN chargées.','ok');toast('FAN synchronisé.');
   }catch(e){logFan(`✗ Erreur: ${e.message}`,'err');toast('Erreur chargement.','err');}
 }
