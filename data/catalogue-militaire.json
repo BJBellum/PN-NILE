@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": "cat_1774289801529",
+    "nom": "RD-04",
+    "categorie": "armes-feu",
+    "niveau": 2,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "1799",
+    "inspiration": "Browning M2",
+    "disponibilite": "En service",
+    "specs": {
+      "Calibre": "12,7 × 99 mm",
+      "Masse (non chargé)": "38–55 kg",
+      "Longueur": "165 cm",
+      "Longueur du canon": "114 cm",
+      "Cadence de tir": "450–600 coups/minute",
+      "Vitesse initiale": "820–890 m/s",
+      "Portée pratique": "1 200–1 800 m",
+      "Portée maximale": "7 400 m (non efficace)",
+      "Capacité": "Bande de 50–105 coups",
+      "Type de munitions": ".50 BMG",
+      "Équipements possibles": "Trépied M3 (ou M2), montages anti-aériens (naval/AA), viseur optique basique, montages véhicules ou fixes"
+    },
+    "image_path": "assets/images/catalogue/armes-feu-1.png"
+  }
+]
