@@ -354,7 +354,7 @@ Les images sont nommées `{categorie}-{N}.{ext}` avec N = max global + 1 pour é
 - **Royaume-Uni du Nil** — État fédéral fictif couvrant la vallée du Nil (Égypte + Soudan du Nord fictifs)
 - **Capitale** : Le Caire
 - **Calendrier** : Exercice 2305–2306 (futur proche fictif)
-- **Monnaie** : Livre Nilotique (N£)
+- **Monnaie** : Livre Nilienne (N£)
 - **Langue** : Français + Arabe (bilingue officiel)
 - **Pharos Energy** — Opérateur énergétique d'État (hydroélectrique + géothermique + nucléaire NILDU)
 - **FAN** — Forces Armées du Nil
