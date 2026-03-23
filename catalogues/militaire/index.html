@@ -14,7 +14,7 @@
 *{box-sizing:border-box;}
 html,body{height:100%;overflow:hidden;}
 
-/* NAV */
+/* ── NAV ── */
 .cat-nav{
   position:fixed;top:0;left:0;right:0;height:54px;z-index:200;
   display:flex;align-items:center;justify-content:space-between;padding:0 20px;
@@ -22,50 +22,47 @@ html,body{height:100%;overflow:hidden;}
 }
 [data-theme="light"] .cat-nav{background:rgba(222,198,152,.97);}
 
-/* SHELL = full height minus nav */
-.cat-shell{
-  position:fixed;top:54px;left:0;right:0;bottom:0;
-  display:flex;overflow:hidden;
-}
+/* ── SHELL ── */
+.cat-shell{position:fixed;top:54px;left:0;right:0;bottom:0;display:flex;overflow:hidden;}
 
-/* SIDEBAR */
+/* ── SIDEBAR ── */
 .cat-sidebar{
-  width:240px;flex-shrink:0;
-  background:#0A0701;border-right:1px solid var(--border);
+  width:236px;flex-shrink:0;
+  background:#090601;border-right:1px solid var(--border);
   display:flex;flex-direction:column;overflow:hidden;
 }
-[data-theme="light"] .cat-sidebar{background:#C8A96E;}
+[data-theme="light"] .cat-sidebar{background:#C4A468;}
 
 .sb-top{flex-shrink:0;}
 .sb-hdr{padding:13px 16px 9px;border-bottom:1px solid var(--border);}
 .sb-hdr-name{font-family:'Dune Rise',serif;font-size:9px;letter-spacing:.2em;color:var(--spice);}
 .sb-hdr-sub{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--text3);letter-spacing:.1em;margin-top:2px;}
 .sb-total{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.06em;padding:5px 16px;border-bottom:1px solid var(--border);}
-.sb-search-wrap{padding:7px 12px;border-bottom:1px solid var(--border);}
-.sb-search-in{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:5px 8px;border-radius:2px;outline:none;}
-.sb-search-in:focus{border-color:var(--spice);}
-
+.sb-srch-wrap{padding:7px 12px;border-bottom:1px solid var(--border);}
+.sb-srch{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:5px 8px;border-radius:2px;outline:none;}
+.sb-srch:focus{border-color:var(--spice);}
 .sb-scroll{flex:1;overflow-y:auto;}
 
 /* Groups */
 .sb-group{border-bottom:1px solid var(--border);}
-.sb-group-hdr{
-  display:flex;align-items:center;gap:7px;padding:9px 14px;
+.sb-grp-hdr{
+  display:flex;align-items:center;gap:8px;padding:10px 14px;
   font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text2);
   letter-spacing:.05em;cursor:pointer;user-select:none;transition:background .15s;
 }
-.sb-group-hdr:hover{background:rgba(232,92,13,.06);}
-.sb-arr{font-size:13px;color:var(--text3);transition:transform .2s;flex-shrink:0;line-height:1;}
+.sb-grp-hdr:hover{background:rgba(232,92,13,.06);}
+.sb-arr{color:var(--text3);transition:transform .22s;flex-shrink:0;line-height:1;display:flex;align-items:center;}
 .sb-arr.open{transform:rotate(90deg);}
-.sb-grp-icon{font-size:14px;flex-shrink:0;}
+.sb-grp-ico{flex-shrink:0;display:flex;align-items:center;color:var(--spice);opacity:.7;}
 .sb-grp-lbl{flex:1;line-height:1.3;}
 .sb-grp-cnt{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);background:var(--card-bg);border:1px solid var(--border);padding:1px 5px;border-radius:10px;flex-shrink:0;}
-
-.sb-children{background:rgba(0,0,0,.15);}
+.sb-children{background:rgba(0,0,0,.14);}
 [data-theme="light"] .sb-children{background:rgba(0,0,0,.05);}
+
+/* Sub items */
 .sb-sub{
   display:flex;align-items:center;justify-content:space-between;
-  padding:7px 14px 7px 30px;
+  padding:7px 14px 7px 32px;
   font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);
   letter-spacing:.05em;cursor:pointer;user-select:none;
   transition:all .15s;border-left:2px solid transparent;
@@ -75,66 +72,105 @@ html,body{height:100%;overflow:hidden;}
 .sb-sub-cnt{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);background:var(--card-bg);border:1px solid var(--border);padding:1px 5px;border-radius:10px;flex-shrink:0;}
 .sb-sub.active .sb-sub-cnt{color:var(--spice);border-color:rgba(232,92,13,.35);}
 
-/* MAIN */
+/* ── MAIN ── */
 .cat-main{flex:1;overflow-y:auto;background:var(--bg);}
-.cat-content{padding:22px 26px 60px;}
+.cat-content{padding:22px 28px 60px;}
 @media(max-width:760px){.cat-sidebar{display:none;}.cat-content{padding:14px;}}
 
-/* Section header */
-.cat-sec-hdr{margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border);}
-.cat-sec-title{font-family:'Dune Rise',serif;font-size:clamp(13px,1.6vw,17px);color:var(--spice);letter-spacing:.1em;}
-.cat-sec-sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.08em;margin-top:4px;}
-
-/* Grid */
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
-@media(max-width:560px){.cat-grid{grid-template-columns:1fr;}}
-
-/* Card */
-.cat-card{
-  background:var(--card-bg);
-  border:1px solid var(--border);border-top:2px solid rgba(232,92,13,.5);
-  display:flex;flex-direction:column;overflow:hidden;
-  transition:border-color .2s,box-shadow .2s;
+/* ── SECTION anchor ── */
+.cat-section{margin-bottom:44px;}
+.cat-sec-anchor{scroll-margin-top:8px;}
+.cat-sec-hdr{
+  display:flex;align-items:baseline;gap:12px;
+  margin-bottom:14px;padding-bottom:8px;
+  border-bottom:1px solid var(--border);
 }
-.cat-card:hover{border-color:var(--spice);box-shadow:0 4px 18px rgba(232,92,13,.07);}
+.cat-sec-title{font-family:'Dune Rise',serif;font-size:clamp(12px,1.5vw,16px);color:var(--spice);letter-spacing:.1em;}
+.cat-sec-count{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.08em;}
 
-/* Image */
-.card-img-wrap{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg2);cursor:pointer;position:relative;}
-.card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
-.cat-card:hover .card-img-wrap img{transform:scale(1.04);}
-.card-img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;}
-.card-img-ph-ico{font-size:30px;opacity:.18;}
-.card-img-ph-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.12em;}
+/* ── SLIDE (full-width item) ── */
+.cat-slide{
+  background:var(--card-bg);
+  border:1px solid var(--border);border-left:3px solid rgba(232,92,13,.4);
+  margin-bottom:10px;overflow:hidden;
+  transition:border-left-color .2s;
+}
+.cat-slide:hover{border-left-color:var(--spice);}
 
-/* 3 badges */
-.card-badges{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--border);}
-.card-badge{padding:8px 8px;text-align:center;border-right:1px solid var(--border);}
-.card-badge:last-child{border-right:none;}
-.badge-lbl{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
-.badge-val{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.badge-val.spice{color:var(--spice);}
-.badge-val.gold{color:var(--gold);font-family:'Dune Rise',serif;font-size:11px;}
-.badge-val.bold{font-weight:500;}
+/* Slide header row */
+.slide-hdr{
+  display:flex;align-items:stretch;min-height:120px;cursor:pointer;
+}
+.slide-img-zone{
+  width:200px;flex-shrink:0;overflow:hidden;
+  background:var(--bg2);position:relative;
+}
+.slide-img-zone img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.cat-slide:hover .slide-img-zone img{transform:scale(1.05);}
+.slide-img-ph{
+  width:100%;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;
+  background:var(--bg2);
+}
+.slide-img-ph-ico{opacity:.2;display:flex;}
+.slide-img-ph-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.12em;}
 
-/* Toggle */
-.card-toggle{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;cursor:pointer;user-select:none;transition:background .15s;}
-.card-toggle:hover{background:rgba(232,92,13,.04);}
-.card-niv{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:2px 7px;border-radius:2px;border:1px solid;display:inline-block;}
-.card-fab{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);margin-left:8px;}
-.card-toggle-arrow{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);display:flex;align-items:center;gap:4px;transition:color .15s;}
-.card-toggle-tri{font-size:11px;transition:transform .2s;display:inline-block;}
-.cat-card.open .card-toggle-arrow{color:var(--spice);}
-.cat-card.open .card-toggle-tri{transform:rotate(90deg);}
+/* Slide info zone */
+.slide-info{flex:1;display:flex;flex-direction:column;padding:0;}
 
-/* Specs */
-.card-specs{display:none;border-top:1px solid var(--border);background:rgba(0,0,0,.09);}
-[data-theme="light"] .card-specs{background:rgba(0,0,0,.03);}
-.cat-card.open .card-specs{display:block;}
-.spec-hdr{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.18em;color:var(--spice);text-transform:uppercase;padding:8px 12px 5px;border-bottom:1px solid rgba(232,92,13,.15);}
+/* Top info bar: name + badges */
+.slide-info-top{
+  display:flex;align-items:stretch;flex:1;border-bottom:1px solid var(--border);
+}
+.slide-name-block{
+  flex:1;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--border);
+}
+.slide-name{
+  font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--text);
+  font-weight:500;letter-spacing:.04em;margin-bottom:4px;
+}
+.slide-fab{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.06em;margin-bottom:8px;}
+.slide-niv{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:2px 7px;border-radius:2px;border:1px solid;display:inline-block;}
+
+/* Badges column */
+.slide-badges{
+  display:flex;flex-direction:column;width:160px;flex-shrink:0;
+}
+.slide-badge{
+  flex:1;padding:0 12px;display:flex;flex-direction:column;justify-content:center;text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.slide-badge:last-child{border-bottom:none;}
+.bdg-lbl{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;}
+.bdg-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.bdg-val.spice{color:var(--spice);}
+.bdg-val.gold{color:var(--gold);font-family:'Dune Rise',serif;}
+.bdg-val.green{color:var(--teal-bright);font-size:10px;}
+
+/* Slide bottom toggle bar */
+.slide-toggle{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:6px 14px;cursor:pointer;user-select:none;
+  background:rgba(0,0,0,.08);transition:background .15s;
+  border-top:1px solid var(--border);
+}
+[data-theme="light"] .slide-toggle{background:rgba(0,0,0,.04);}
+.slide-toggle:hover{background:rgba(232,92,13,.05);}
+.slide-toggle-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.08em;display:flex;align-items:center;gap:6px;transition:color .15s;}
+.slide-toggle-tri{font-size:12px;transition:transform .2s;display:inline-block;}
+.cat-slide.open .slide-toggle-lbl{color:var(--spice);}
+.cat-slide.open .slide-toggle-tri{transform:rotate(90deg);}
+
+/* Spec panel */
+.slide-specs{display:none;border-top:1px solid rgba(232,92,13,.15);background:rgba(0,0,0,.1);}
+[data-theme="light"] .slide-specs{background:rgba(0,0,0,.03);}
+.cat-slide.open .slide-specs{display:block;}
+.spec-hdr{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.18em;color:var(--spice);text-transform:uppercase;padding:8px 14px 6px;border-bottom:1px solid rgba(232,92,13,.12);}
 .spec-tbl{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:10px;}
 .spec-tbl tr:hover td{background:rgba(232,92,13,.02);}
-.spec-tbl td{padding:5px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
-.spec-tbl td:first-child{color:var(--text3);font-size:9px;width:45%;letter-spacing:.05em;}
+.spec-tbl td{padding:5px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.spec-tbl td:first-child{color:var(--text3);font-size:9px;width:38%;letter-spacing:.05em;}
 .spec-tbl td:last-child{color:var(--text);}
 .spec-tbl tr:last-child td{border-bottom:none;}
 
@@ -148,7 +184,15 @@ html,body{height:100%;overflow:hidden;}
 
 /* Empty */
 .cat-empty{text-align:center;padding:72px 24px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3);letter-spacing:.1em;line-height:2;}
-.cat-empty-ico{font-size:40px;margin-bottom:12px;opacity:.18;}
+.cat-empty-ico{margin-bottom:16px;opacity:.2;display:flex;justify-content:center;}
+
+@media(max-width:640px){
+  .slide-hdr{flex-direction:column;}
+  .slide-img-zone{width:100%;height:160px;}
+  .slide-badges{width:100%;flex-direction:row;}
+  .slide-badge{border-bottom:none;border-right:1px solid var(--border);}
+  .slide-badge:last-child{border-right:none;}
+}
 </style>
 </head>
 <body>
@@ -160,7 +204,7 @@ html,body{height:100%;overflow:hidden;}
     <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.1em;border:1px solid rgba(232,92,13,.2);padding:2px 7px;border-radius:2px;">CAT-MIL-001</span>
   </div>
   <div style="display:flex;align-items:center;gap:10px;">
-    <a href="../" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:2px;">← Catalogues</a>
+    <a href="../" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-decoration:none;border:1px solid var(--border);padding:5px 10px;border-radius:2px;">&#8592; Catalogues</a>
     <button onclick="toggleTheme()" style="background:transparent;border:1px solid var(--border);color:var(--text3);padding:5px 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;cursor:pointer;border-radius:2px;"><span id="tlbl">NUIT</span></button>
   </div>
 </nav>
@@ -176,18 +220,23 @@ html,body{height:100%;overflow:hidden;}
         <div class="sb-hdr-sub">Forces Armees du Nil · 2305</div>
       </div>
       <div class="sb-total" id="sb-total">— equipements</div>
-      <div class="sb-search-wrap">
-        <input type="text" class="sb-search-in" id="cat-search" placeholder="Rechercher…" oninput="onSearch()">
+      <div class="sb-srch-wrap">
+        <input type="text" class="sb-srch" id="cat-search" placeholder="Rechercher…" oninput="onSearch()">
       </div>
     </div>
     <div class="sb-scroll" id="sb-list"></div>
   </aside>
 
   <!-- MAIN -->
-  <main class="cat-main">
+  <main class="cat-main" id="cat-main">
     <div class="cat-content" id="cat-content">
       <div class="cat-empty">
-        <div class="cat-empty-ico">🛡</div>
+        <div class="cat-empty-ico">
+          <svg viewBox="0 0 48 48" fill="none" width="48" height="48">
+            <path d="M24 6L6 13V24C6 34 14 42 24 45C34 42 42 34 42 24V13L24 6Z" stroke="#4A3C28" stroke-width="1.5" fill="none"/>
+            <path d="M18 24h12M24 18v12" stroke="#4A3C28" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
         Selectionnez une categorie dans la barre laterale.
       </div>
     </div>
@@ -196,25 +245,33 @@ html,body{height:100%;overflow:hidden;}
 </div>
 
 <script>
+// ── SVG ICONS (no emojis) ──────────────────
+var ICONS={
+  terrestre:'<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M8 2L2 5v4c0 3.5 2.5 6 6 7 3.5-1 6-3.5 6-7V5L8 2Z" stroke="currentColor" stroke-width="1.1" fill="none"/><line x1="5" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><line x1="8" y1="5" x2="8" y2="11" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>',
+  missiles:'<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M10 2L14 6l-8 8-4-1-1-4 9-8Z" stroke="currentColor" stroke-width="1.1" fill="none" stroke-linejoin="round"/><path d="M7 9l2-2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M2 14l3-1" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".5"/></svg>',
+  naval:'<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M3 10L8 4l5 6H3Z" stroke="currentColor" stroke-width="1.1" fill="none" stroke-linejoin="round"/><line x1="8" y1="4" x2="8" y2="2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M2 12c1.5 1.5 10 1.5 12 0" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" fill="none"/></svg>',
+  shield:'<svg viewBox="0 0 48 48" fill="none" width="40" height="40"><path d="M24 6L6 13V24C6 34 14 42 24 45C34 42 42 34 42 24V13L24 6Z" stroke="#3A2E1E" stroke-width="1.5" fill="none"/></svg>'
+};
+
 // ── DATA ──────────────────────────────────
 var GROUPS=[
-  {id:'terrestre',label:'Armement & Forces Terrestres',icon:'⚔',sub:[
-    {id:'armes-feu',label:'Armes a Feu'},
-    {id:'explosifs',label:'Explosifs & Grenades'},
-    {id:'vehicules-terrestres',label:'Vehicules Terrestres'},
-    {id:'artillerie',label:'Artillerie Placee'}
+  {id:'terrestre',label:'Armement & Forces Terrestres',icon:'terrestre',sub:[
+    {id:'armes-feu',    label:'Armes a Feu'},
+    {id:'explosifs',    label:'Explosifs & Grenades'},
+    {id:'vehicules-terrestres', label:'Vehicules Terrestres'},
+    {id:'artillerie',   label:'Artillerie Placee'}
   ]},
-  {id:'missiles',label:'Missiles & Systemes Balistiques',icon:'🚀',sub:[
-    {id:'missiles',label:'Missiles & Roquettes'},
+  {id:'missiles',label:'Missiles & Systemes Balistiques',icon:'missiles',sub:[
+    {id:'missiles',             label:'Missiles & Roquettes'},
     {id:'missiles-strategiques',label:'Missiles Strategiques'}
   ]},
-  {id:'naval',label:'Forces Navales & Aeriennes',icon:'⚓',sub:[
-    {id:'aeronefs',label:'Vehicules Aeriens Militaires'},
-    {id:'navires',label:'Navires de Surface'},
+  {id:'naval',label:'Forces Navales & Aeriennes',icon:'naval',sub:[
+    {id:'aeronefs',   label:'Vehicules Aeriens Militaires'},
+    {id:'navires',    label:'Navires de Surface'},
     {id:'sous-marins',label:'Sous-marins'}
   ]}
 ];
-var TECH={1:'1910-1919',2:'1920-1929',3:'1930-1939',4:'1940-1949',5:'1950-1959',6:'1960-1969',7:'1970-1979',8:'1980-1989',9:'1990-1999',10:'2000-2009',11:'2010-2019',12:'2020-inf'};
+var TECH={1:'1910-1919',2:'1920-1929',3:'1930-1939',4:'1940-1949',5:'1950-1959',6:'1960-1969',7:'1970-1979',8:'1980-1989',9:'1990-1999',10:'2000-2009',11:'2010-2019',12:'2020+'};
 
 // ── STATE ─────────────────────────────────
 var catalogue=[];
@@ -230,14 +287,12 @@ function loadLocal(){
 function syncGH(){
   fetch('https://api.github.com/repos/BJBellum/UKN/contents/data/catalogue-militaire.json',{
     headers:{'Accept':'application/vnd.github.v3.raw'},cache:'no-store'
-  }).then(function(r){
-    if(!r.ok)return;
-    return r.json();
-  }).then(function(d){
+  }).then(function(r){return r.ok?r.json():null;})
+  .then(function(d){
     if(!d||!Array.isArray(d))return;
     d.forEach(function(remote){
-      var local=catalogue.find(function(x){return x.id===remote.id;});
-      if(local&&local.image_data&&!remote.image_data)remote.image_data=local.image_data;
+      var loc=catalogue.find(function(x){return x.id===remote.id;});
+      if(loc&&loc.image_data&&!remote.image_data)remote.image_data=loc.image_data;
     });
     catalogue=d;
     localStorage.setItem('cat_militaire',JSON.stringify(catalogue));
@@ -258,9 +313,9 @@ function renderSidebar(){
     var gTot=catalogue.filter(function(i){return g.sub.some(function(s){return s.id===i.categorie;});}).length;
     var isOpen=!!openG[g.id];
     html+='<div class="sb-group">';
-    html+='<div class="sb-group-hdr" onclick="toggleG(\''+g.id+'\')">';
-    html+='<span class="sb-arr'+(isOpen?' open':'')+'">&#8250;</span>';
-    html+='<span class="sb-grp-icon">'+g.icon+'</span>';
+    html+='<div class="sb-grp-hdr" onclick="toggleG(\''+g.id+'\')">';
+    html+='<span class="sb-arr'+(isOpen?' open':'')+'"><svg viewBox="0 0 8 12" fill="none" width="8" height="12"><path d="M2 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+    html+='<span class="sb-grp-ico">'+ICONS[g.icon]+'</span>';
     html+='<span class="sb-grp-lbl">'+g.label+'</span>';
     html+='<span class="sb-grp-cnt">'+gTot+'</span>';
     html+='</div>';
@@ -269,7 +324,7 @@ function renderSidebar(){
       g.sub.forEach(function(sub){
         var cnt=catalogue.filter(function(i){return i.categorie===sub.id;}).length;
         var isAct=sub.id===activeCat;
-        html+='<div class="sb-sub'+(isAct?' active':'')+'" onclick="selectCat(\''+sub.id+'\')">';
+        html+='<div class="sb-sub'+(isAct?' active':'')+'\" onclick="selectCat(\''+sub.id+'\')">';
         html+='<span>'+sub.label+'</span>';
         html+='<span class="sb-sub-cnt">'+cnt+'</span>';
         html+='</div>';
@@ -282,46 +337,87 @@ function renderSidebar(){
 }
 
 function toggleG(id){openG[id]=!openG[id];renderSidebar();}
+
 function selectCat(id){
   activeCat=id;searchQ='';
   var si=document.getElementById('cat-search');if(si)si.value='';
-  renderSidebar();renderContent();
+  renderSidebar();
+  renderContent();
+  // Scroll to section anchor
+  setTimeout(function(){
+    var anchor=document.getElementById('sec-'+id);
+    if(anchor){
+      var main=document.getElementById('cat-main');
+      if(main)main.scrollTo({top:anchor.offsetTop-8,behavior:'smooth'});
+    }
+  },60);
 }
+
 function onSearch(){
   searchQ=(document.getElementById('cat-search').value||'').toLowerCase();
   if(searchQ)activeCat='';
-  renderSidebar();renderContent();
+  renderSidebar();
+  renderContent();
 }
 
-// ── CONTENT ───────────────────────────────
+// ── CONTENT ── slides layout ──────────────
 function renderContent(){
   var el=document.getElementById('cat-content');
   if(!el)return;
-  var items=catalogue.slice();
-  if(activeCat)items=items.filter(function(i){return i.categorie===activeCat;});
-  if(searchQ)items=items.filter(function(i){
-    return (i.nom||'').toLowerCase().indexOf(searchQ)>=0||
-           (i.fabricant||'').toLowerCase().indexOf(searchQ)>=0||
-           (i.inspiration||'').toLowerCase().indexOf(searchQ)>=0;
-  });
-  if(!items.length){
-    var msg=activeCat?'Aucun equipement dans cette categorie.'
-           :searchQ?'Aucun resultat pour "'+searchQ+'".'
-           :'Selectionnez une categorie dans la barre laterale.';
-    el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico">🛡</div>'+msg+'</div>';
+
+  var allSub=[];
+  GROUPS.forEach(function(g){g.sub.forEach(function(s){allSub.push(s);});});
+
+  // Search mode: flat list
+  if(searchQ){
+    var items=catalogue.filter(function(i){
+      return (i.nom||'').toLowerCase().indexOf(searchQ)>=0||
+             (i.fabricant||'').toLowerCase().indexOf(searchQ)>=0||
+             (i.inspiration||'').toLowerCase().indexOf(searchQ)>=0;
+    });
+    if(!items.length){
+      el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico">'+ICONS.shield+'</div>Aucun resultat pour "'+searchQ+'".</div>';
+      return;
+    }
+    el.innerHTML='<div class="cat-sec-hdr"><span class="cat-sec-title">RESULTATS DE RECHERCHE</span><span class="cat-sec-count">'+items.length+' resultat'+(items.length!==1?'s':'')+'</span></div>'+buildSlides(items);
     return;
   }
-  // Find label
-  var allSub=[];GROUPS.forEach(function(g){g.sub.forEach(function(s){allSub.push(s);});});
-  var catInfo=allSub.find(function(s){return s.id===activeCat;});
-  var html='';
-  if(catInfo||searchQ){
-    html+='<div class="cat-sec-hdr">';
-    html+='<div class="cat-sec-title">'+(catInfo?catInfo.label.toUpperCase():'RESULTATS DE RECHERCHE')+'</div>';
-    html+='<div class="cat-sec-sub">'+items.length+' equipement'+(items.length!==1?'s':'')+' · Forces Armees du Nil · 2305</div>';
-    html+='</div>';
+
+  // Category selected: single section
+  if(activeCat){
+    var items=catalogue.filter(function(i){return i.categorie===activeCat;});
+    var catInfo=allSub.find(function(s){return s.id===activeCat;})||{label:activeCat};
+    if(!items.length){
+      el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico">'+ICONS.shield+'</div>Aucun equipement dans cette categorie.</div>';
+      return;
+    }
+    el.innerHTML='<div id="sec-'+activeCat+'" class="cat-section cat-sec-anchor"><div class="cat-sec-hdr"><span class="cat-sec-title">'+catInfo.label.toUpperCase()+'</span><span class="cat-sec-count">'+items.length+' equipement'+(items.length!==1?'s':'')+' · FAN · 2305</span></div>'+buildSlides(items)+'</div>';
+    return;
   }
-  html+='<div class="cat-grid">';
+
+  // Default: show ALL sections
+  var html='';
+  var totalShown=0;
+  GROUPS.forEach(function(g){
+    g.sub.forEach(function(sub){
+      var items=catalogue.filter(function(i){return i.categorie===sub.id;});
+      if(!items.length)return;
+      totalShown+=items.length;
+      html+='<div id="sec-'+sub.id+'" class="cat-section cat-sec-anchor">';
+      html+='<div class="cat-sec-hdr"><span class="cat-sec-title">'+sub.label.toUpperCase()+'</span><span class="cat-sec-count">'+items.length+' equipement'+(items.length!==1?'s':'')+'</span></div>';
+      html+=buildSlides(items);
+      html+='</div>';
+    });
+  });
+  if(!totalShown){
+    el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico">'+ICONS.shield+'</div>Selectionnez une categorie dans la barre laterale.</div>';
+    return;
+  }
+  el.innerHTML=html;
+}
+
+function buildSlides(items){
+  var html='';
   items.forEach(function(item){
     var niv=item.niveau||1;
     var nivLbl='NIV '+niv+' · '+(TECH[niv]||'');
@@ -330,44 +426,61 @@ function renderContent(){
     var specRows=Object.keys(specs).filter(function(k){return specs[k];}).map(function(k){
       return '<tr><td>'+k+'</td><td>'+specs[k]+'</td></tr>';
     }).join('');
-    var coutFmt=item.cout_unite?Number(item.cout_unite).toLocaleString('fr'):'—';
-    html+='<div class="cat-card" id="card-'+item.id+'">';
+    var coutFmt=item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' N\u00a3':'—';
+    var dispo=item.disponibilite||'';
+
+    html+='<div class="cat-slide" id="slide-'+item.id+'">';
+
+    // Header row (image + info + badges)
+    html+='<div class="slide-hdr" onclick="toggleSlide(\''+item.id+'\')">';
+
     // Image
-    html+='<div class="card-img-wrap" onclick="toggleCard(\''+item.id+'\')">';
+    html+='<div class="slide-img-zone">';
     if(imgSrc){
       html+='<img src="'+imgSrc+'" alt="'+(item.nom||'')+'" loading="lazy">';
     } else {
-      html+='<div class="card-img-ph"><div class="card-img-ph-ico">🛡</div><span class="card-img-ph-lbl">AUCUNE IMAGE</span></div>';
+      html+='<div class="slide-img-ph"><div class="slide-img-ph-ico"><svg viewBox="0 0 40 40" fill="none" width="40" height="40"><rect x="4" y="6" width="32" height="26" rx="2" stroke="#3A2E1E" stroke-width="1.2" fill="none"/><circle cx="13" cy="16" r="4" stroke="#3A2E1E" stroke-width="1" fill="none"/><path d="M4 28l8-7 6 5 5-4 11 9" stroke="#3A2E1E" stroke-width="1" fill="none"/></svg></div><span class="slide-img-ph-lbl">AUCUNE IMAGE</span></div>';
     }
     html+='</div>';
-    // Badges
-    html+='<div class="card-badges">';
-    html+='<div class="card-badge"><div class="badge-lbl">Inspiration</div><div class="badge-val spice" title="'+(item.inspiration||'—')+'">'+(item.inspiration||'—')+'</div></div>';
-    html+='<div class="card-badge"><div class="badge-lbl">Designation</div><div class="badge-val bold" title="'+(item.nom||'—')+'">'+(item.nom||'—')+'</div></div>';
-    html+='<div class="card-badge"><div class="badge-lbl">Cout (N\u00a3)</div><div class="badge-val gold">'+coutFmt+'</div></div>';
+
+    // Info
+    html+='<div class="slide-info">';
+    html+='<div class="slide-info-top">';
+    html+='<div class="slide-name-block">';
+    html+='<div class="slide-name">'+(item.nom||'—')+'</div>';
+    html+='<div class="slide-fab">'+(item.fabricant||'—')+'</div>';
+    html+='<span class="slide-niv niv-'+niv+'">'+nivLbl+'</span>';
     html+='</div>';
-    // Toggle
-    html+='<div class="card-toggle" onclick="toggleCard(\''+item.id+'\')">';
-    html+='<div><span class="card-niv niv-'+niv+'">'+nivLbl+'</span><span class="card-fab">'+(item.fabricant||'')+'</span></div>';
-    html+='<div class="card-toggle-arrow"><span>Fiche technique</span><span class="card-toggle-tri">&#8250;</span></div>';
+    // Badges column: Inspiration | Coût | Disponibilité
+    html+='<div class="slide-badges">';
+    html+='<div class="slide-badge"><div class="bdg-lbl">Inspiration</div><div class="bdg-val spice" title="'+(item.inspiration||'—')+'">'+(item.inspiration||'—')+'</div></div>';
+    html+='<div class="slide-badge"><div class="bdg-lbl">Cout unitaire</div><div class="bdg-val gold">'+coutFmt+'</div></div>';
+    html+='<div class="slide-badge"><div class="bdg-lbl">Disponibilite</div><div class="bdg-val green" title="'+dispo+'">'+(dispo||'—')+'</div></div>';
     html+='</div>';
+    html+='</div></div></div>'; // /slide-info-top /slide-info /slide-hdr
+
+    // Toggle bar
+    html+='<div class="slide-toggle" onclick="toggleSlide(\''+item.id+'\')">';
+    html+='<div class="slide-toggle-lbl"><svg viewBox="0 0 12 12" fill="none" width="10" height="10"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><line x1="3" y1="4" x2="9" y2="4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="3" y1="6.5" x2="9" y2="6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="3" y1="9" x2="7" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg> Fiche technique<span class="slide-toggle-tri">&#8250;</span></div>';
+    html+='</div>';
+
     // Specs
-    html+='<div class="card-specs">';
+    html+='<div class="slide-specs">';
     html+='<div class="spec-hdr">Caracteristiques techniques</div>';
     if(specRows){
       html+='<table class="spec-tbl"><tbody>'+specRows+'</tbody></table>';
     } else {
-      html+='<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--text3);padding:12px;">Aucune specification renseignee.</div>';
+      html+='<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--text3);padding:12px 14px;">Aucune specification renseignee.</div>';
     }
     html+='</div>';
-    html+='</div>';
+
+    html+='</div>'; // /cat-slide
   });
-  html+='</div>';
-  el.innerHTML=html;
+  return html;
 }
 
-function toggleCard(id){
-  var el=document.getElementById('card-'+id);
+function toggleSlide(id){
+  var el=document.getElementById('slide-'+id);
   if(el)el.classList.toggle('open');
 }
 
@@ -380,7 +493,7 @@ function applyTheme(t){
 function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
 (function(){var s=localStorage.getItem('run-theme'),mq=window.matchMedia('(prefers-color-scheme: dark)');applyTheme(s||(mq.matches?'dark':'light'));})();
 
-// ── INIT (public, no auth) ─────────────────
+// ── INIT ──────────────────────────────────
 document.addEventListener('DOMContentLoaded',function(){
   loadLocal();
   renderSidebar();

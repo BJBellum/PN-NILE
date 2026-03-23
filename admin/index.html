@@ -539,6 +539,7 @@
         <div class="fg"><label class="fl">Fabricant</label><input type="text" class="fi fan" id="cat-f-fabricant" placeholder="Ex : YASSIN Heavy Industries…"></div>
         <div class="fg"><label class="fl">Coût unitaire (Crédits)</label><input type="number" class="fi fan" id="cat-f-cout" min="0" placeholder="0"></div>
         <div class="fg"><label class="fl">Inspiration (réel)</label><input type="text" class="fi fan" id="cat-f-inspiration" placeholder="Ex : AK-47, T-72, F-16…"></div>
+        <div class="fg"><label class="fl">Disponibilité</label><input type="text" class="fi fan" id="cat-f-disponibilite" placeholder="Ex : En service · 200 unités · Retraité…"></div>
       </div>
 
       <!-- IMAGE UPLOAD -->
@@ -1474,6 +1475,7 @@ function saveCatalogueItem(){
     fabricant:document.getElementById('cat-f-fabricant')?.value?.trim()||'',
     cout_unite:document.getElementById('cat-f-cout')?.value||'',
     inspiration:document.getElementById('cat-f-inspiration')?.value?.trim()||'',
+    disponibilite:document.getElementById('cat-f-disponibilite')?.value?.trim()||'',
     specs,
     image_data:document.getElementById('cat-img-data')?.value||'',
     image_path:document.getElementById('cat-img-path')?.value||'',
@@ -1496,6 +1498,7 @@ function editCatalogueItem(id){
   document.getElementById('cat-f-fabricant').value=item.fabricant||'';
   document.getElementById('cat-f-cout').value=item.cout_unite||'';
   document.getElementById('cat-f-inspiration').value=item.inspiration||'';
+  document.getElementById('cat-f-disponibilite').value=item.disponibilite||'';
   document.getElementById('cat-img-data').value=item.image_data||'';
   document.getElementById('cat-img-path').value=item.image_path||'';
   // Show image preview
@@ -1516,7 +1519,7 @@ function editCatalogueItem(id){
 function cancelCatalogueEdit(){
   catEditId=null;catImgFile=null;
   const ft=document.getElementById('cat-form-title');if(ft)ft.textContent='+ Ajouter un équipement';
-  ['cat-f-nom','cat-f-fabricant','cat-f-cout','cat-f-inspiration','cat-img-data','cat-img-path'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  ['cat-f-nom','cat-f-fabricant','cat-f-cout','cat-f-inspiration','cat-f-disponibilite','cat-img-data','cat-img-path'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   document.getElementById('cat-f-categorie').value='armes-feu';
   document.getElementById('cat-f-niveau').value='1';
   const preview=document.getElementById('cat-img-preview');
