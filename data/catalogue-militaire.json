@@ -21,5 +21,42 @@
       "Équipements possibles": "Test"
     },
     "image_path": "assets/images/catalogue/image.png"
+  },
+  {
+    "id": "cat_1774229468089",
+    "nom": "Test",
+    "categorie": "vehicules-terrestres",
+    "niveau": 1,
+    "fabricant": "Test",
+    "cout_unite": "0",
+    "inspiration": "Test",
+    "specs": {
+      "Moteur": "Test",
+      "Carburant": "Test",
+      "Transmission": "Test",
+      "Poids à vide": "Test",
+      "Vitesse max. (Route)": "Test",
+      "Vitesse max. (Tout-terrain)": "Test",
+      "Autonomie (Route)": "Test",
+      "Autonomie (Tout-terrain)": "Test",
+      "Type de suspensions": "Test",
+      "Longueur": "Test",
+      "Largeur": "Test",
+      "Hauteur": "Test",
+      "Membres d'équipage": "Test",
+      "Passagers": "Test",
+      "Cargaison": "Test",
+      "Blindage Caisse : Arrière": "Test",
+      "Blindage Caisse : Côté": "Test",
+      "Blindage Caisse : Front": "Test",
+      "Blindage Caisse : Plancher": "Test",
+      "Blindage Caisse : Toit": "Test",
+      "Blindage Tourelle : Arrière": "Test",
+      "Blindage Tourelle : Côté": "Test",
+      "Blindage Tourelle : Toit": "Test",
+      "Armement": "Test",
+      "Munitions": "Test"
+    },
+    "image_path": "assets/images/catalogue/image.png"
   }
 ]
