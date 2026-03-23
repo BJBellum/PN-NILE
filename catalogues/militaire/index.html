@@ -27,42 +27,38 @@ html,body{height:100%;overflow:hidden;}
 
 /* ── SIDEBAR ── */
 .cat-sidebar{
-  width:236px;flex-shrink:0;
+  width:220px;flex-shrink:0;
   background:#090601;border-right:1px solid var(--border);
   display:flex;flex-direction:column;overflow:hidden;
 }
 [data-theme="light"] .cat-sidebar{background:#C4A468;}
-
 .sb-top{flex-shrink:0;}
-.sb-hdr{padding:13px 16px 9px;border-bottom:1px solid var(--border);}
+.sb-hdr{padding:12px 16px 8px;border-bottom:1px solid var(--border);}
 .sb-hdr-name{font-family:'Dune Rise',serif;font-size:9px;letter-spacing:.2em;color:var(--spice);}
 .sb-hdr-sub{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--text3);letter-spacing:.1em;margin-top:2px;}
 .sb-total{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.06em;padding:5px 16px;border-bottom:1px solid var(--border);}
-.sb-srch-wrap{padding:7px 12px;border-bottom:1px solid var(--border);}
+.sb-srch-wrap{padding:6px 10px;border-bottom:1px solid var(--border);}
 .sb-srch{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:5px 8px;border-radius:2px;outline:none;}
 .sb-srch:focus{border-color:var(--spice);}
 .sb-scroll{flex:1;overflow-y:auto;}
 
-/* Groups */
 .sb-group{border-bottom:1px solid var(--border);}
 .sb-grp-hdr{
-  display:flex;align-items:center;gap:8px;padding:10px 14px;
+  display:flex;align-items:center;gap:7px;padding:9px 12px;
   font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text2);
   letter-spacing:.05em;cursor:pointer;user-select:none;transition:background .15s;
 }
 .sb-grp-hdr:hover{background:rgba(232,92,13,.06);}
 .sb-arr{color:var(--text3);transition:transform .22s;flex-shrink:0;line-height:1;display:flex;align-items:center;}
 .sb-arr.open{transform:rotate(90deg);}
-.sb-grp-ico{flex-shrink:0;display:flex;align-items:center;color:var(--spice);opacity:.7;}
+.sb-grp-ico{flex-shrink:0;display:flex;align-items:center;color:var(--spice);opacity:.75;}
 .sb-grp-lbl{flex:1;line-height:1.3;}
 .sb-grp-cnt{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);background:var(--card-bg);border:1px solid var(--border);padding:1px 5px;border-radius:10px;flex-shrink:0;}
 .sb-children{background:rgba(0,0,0,.14);}
 [data-theme="light"] .sb-children{background:rgba(0,0,0,.05);}
-
-/* Sub items */
 .sb-sub{
   display:flex;align-items:center;justify-content:space-between;
-  padding:7px 14px 7px 32px;
+  padding:6px 12px 6px 28px;
   font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);
   letter-spacing:.05em;cursor:pointer;user-select:none;
   transition:all .15s;border-left:2px solid transparent;
@@ -74,105 +70,95 @@ html,body{height:100%;overflow:hidden;}
 
 /* ── MAIN ── */
 .cat-main{flex:1;overflow-y:auto;background:var(--bg);}
-.cat-content{padding:22px 28px 60px;}
-@media(max-width:760px){.cat-sidebar{display:none;}.cat-content{padding:14px;}}
+.cat-content{padding:20px 24px 60px;}
+@media(max-width:760px){.cat-sidebar{display:none;}.cat-content{padding:12px;}}
 
-/* ── SECTION anchor ── */
-.cat-section{margin-bottom:44px;}
-.cat-sec-anchor{scroll-margin-top:8px;}
-.cat-sec-hdr{
-  display:flex;align-items:baseline;gap:12px;
-  margin-bottom:14px;padding-bottom:8px;
-  border-bottom:1px solid var(--border);
-}
+/* Section header */
+.cat-sec-hdr{margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);}
 .cat-sec-title{font-family:'Dune Rise',serif;font-size:clamp(12px,1.5vw,16px);color:var(--spice);letter-spacing:.1em;}
-.cat-sec-count{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.08em;}
+.cat-sec-count{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.08em;margin-left:12px;}
+.cat-section{margin-bottom:48px;}
+.cat-sec-anchor{scroll-margin-top:6px;}
 
-/* ── SLIDE (full-width item) ── */
-.cat-slide{
+/* ── ITEM CARD — full layout inline ── */
+.cat-item{
   background:var(--card-bg);
-  border:1px solid var(--border);border-left:3px solid rgba(232,92,13,.4);
-  margin-bottom:10px;overflow:hidden;
-  transition:border-left-color .2s;
+  border:1px solid var(--border);
+  border-top:2px solid rgba(232,92,13,.5);
+  margin-bottom:20px;
+  overflow:hidden;
 }
-.cat-slide:hover{border-left-color:var(--spice);}
+.cat-item:hover{border-top-color:var(--spice);}
 
-/* Slide header row */
-.slide-hdr{
-  display:flex;align-items:stretch;min-height:120px;cursor:pointer;
+/* Image hero — 2:1 ratio (designed for 2000×1000px) */
+.item-img{
+  width:100%;aspect-ratio:2/1;
+  overflow:hidden;background:var(--bg2);
+  position:relative;
 }
-.slide-img-zone{
-  width:200px;flex-shrink:0;overflow:hidden;
-  background:var(--bg2);position:relative;
+.item-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.item-img-ph{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
 }
-.slide-img-zone img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
-.cat-slide:hover .slide-img-zone img{transform:scale(1.05);}
-.slide-img-ph{
-  width:100%;height:100%;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:8px;
-  background:var(--bg2);
-}
-.slide-img-ph-ico{opacity:.2;display:flex;}
-.slide-img-ph-lbl{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.12em;}
+.item-img-ph-ico{opacity:.14;display:flex;}
+.item-img-ph-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.14em;}
 
-/* Slide info zone */
-.slide-info{flex:1;display:flex;flex-direction:column;padding:0;}
-
-/* Top info bar: name + badges */
-.slide-info-top{
-  display:flex;align-items:stretch;flex:1;border-bottom:1px solid var(--border);
+/* 3 key characteristics */
+.item-keys{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
 }
-.slide-name-block{
-  flex:1;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;
+.item-key{
+  padding:16px 20px;text-align:center;
   border-right:1px solid var(--border);
 }
-.slide-name{
-  font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--text);
-  font-weight:500;letter-spacing:.04em;margin-bottom:4px;
+.item-key:last-child{border-right:none;}
+.ik-lbl{
+  font-family:'IBM Plex Mono',monospace;font-size:7px;
+  color:var(--text3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;
 }
-.slide-fab{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.06em;margin-bottom:8px;}
-.slide-niv{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:2px 7px;border-radius:2px;border:1px solid;display:inline-block;}
+.ik-val{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--text);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ik-val.spice{color:var(--spice);}
+.ik-val.gold{color:var(--gold);font-family:'Dune Rise',serif;font-size:14px;}
+.ik-val.bold{font-weight:500;font-size:14px;}
 
-/* Badges column */
-.slide-badges{
-  display:flex;flex-direction:column;width:160px;flex-shrink:0;
-}
-.slide-badge{
-  flex:1;padding:0 12px;display:flex;flex-direction:column;justify-content:center;text-align:center;
-  border-bottom:1px solid var(--border);
-}
-.slide-badge:last-child{border-bottom:none;}
-.bdg-lbl{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;}
-.bdg-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.bdg-val.spice{color:var(--spice);}
-.bdg-val.gold{color:var(--gold);font-family:'Dune Rise',serif;}
-.bdg-val.green{color:var(--teal-bright);font-size:10px;}
-
-/* Slide bottom toggle bar */
-.slide-toggle{
+/* Meta bar */
+.item-meta{
   display:flex;align-items:center;justify-content:space-between;
-  padding:6px 14px;cursor:pointer;user-select:none;
-  background:rgba(0,0,0,.08);transition:background .15s;
-  border-top:1px solid var(--border);
+  padding:8px 18px;border-bottom:1px solid var(--border);
+  background:rgba(0,0,0,.07);flex-wrap:wrap;gap:8px;
 }
-[data-theme="light"] .slide-toggle{background:rgba(0,0,0,.04);}
-.slide-toggle:hover{background:rgba(232,92,13,.05);}
-.slide-toggle-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.08em;display:flex;align-items:center;gap:6px;transition:color .15s;}
-.slide-toggle-tri{font-size:12px;transition:transform .2s;display:inline-block;}
-.cat-slide.open .slide-toggle-lbl{color:var(--spice);}
-.cat-slide.open .slide-toggle-tri{transform:rotate(90deg);}
+[data-theme="light"] .item-meta{background:rgba(0,0,0,.03);}
+.item-niv{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:2px 7px;border-radius:2px;border:1px solid;display:inline-block;}
+.item-fab{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text2);}
+.item-dispo{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--teal-bright);}
 
-/* Spec panel */
-.slide-specs{display:none;border-top:1px solid rgba(232,92,13,.15);background:rgba(0,0,0,.1);}
-[data-theme="light"] .slide-specs{background:rgba(0,0,0,.03);}
-.cat-slide.open .slide-specs{display:block;}
-.spec-hdr{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.18em;color:var(--spice);text-transform:uppercase;padding:8px 14px 6px;border-bottom:1px solid rgba(232,92,13,.12);}
-.spec-tbl{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:10px;}
-.spec-tbl tr:hover td{background:rgba(232,92,13,.02);}
-.spec-tbl td{padding:5px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
-.spec-tbl td:first-child{color:var(--text3);font-size:9px;width:38%;letter-spacing:.05em;}
-.spec-tbl td:last-child{color:var(--text);}
-.spec-tbl tr:last-child td{border-bottom:none;}
+/* Specs grid — 3 cols */
+.item-specs-hdr{
+  font-family:'IBM Plex Mono',monospace;font-size:7px;
+  letter-spacing:.18em;color:var(--spice);text-transform:uppercase;
+  padding:10px 18px 7px;border-bottom:1px solid rgba(232,92,13,.15);
+}
+.item-specs-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+}
+@media(max-width:860px){.item-specs-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.item-specs-grid{grid-template-columns:1fr;}}
+.isg-item{
+  padding:9px 18px;
+  border-bottom:1px solid var(--border);
+  border-right:1px solid var(--border);
+}
+.isg-item:nth-child(3n){border-right:none;}
+@media(max-width:860px){
+  .isg-item:nth-child(3n){border-right:1px solid var(--border);}
+  .isg-item:nth-child(2n){border-right:none;}
+}
+@media(max-width:520px){.isg-item{border-right:none;}}
+.isg-key{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.07em;margin-bottom:3px;}
+.isg-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);}
+.item-specs-empty{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);padding:14px 18px;}
 
 /* NIV colors */
 .niv-1,.niv-2{color:#9B8060;border-color:rgba(155,128,96,.35);}
@@ -184,128 +170,11 @@ html,body{height:100%;overflow:hidden;}
 
 /* Empty */
 .cat-empty{text-align:center;padding:72px 24px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3);letter-spacing:.1em;line-height:2;}
-.cat-empty-ico{margin-bottom:16px;opacity:.2;display:flex;justify-content:center;}
-
-@media(max-width:640px){
-  .slide-hdr{flex-direction:column;}
-  .slide-img-zone{width:100%;height:160px;}
-  .slide-badges{width:100%;flex-direction:row;}
-  .slide-badge{border-bottom:none;border-right:1px solid var(--border);}
-  .slide-badge:last-child{border-right:none;}
-}
-
-/* ── DETAIL OVERLAY ── */
-.detail-ov{
-  position:fixed;inset:0;z-index:500;
-  background:rgba(4,2,0,.96);
-  display:none;flex-direction:column;overflow:hidden;
-}
-.detail-ov.open{display:flex;}
-
-/* Nav bar inside overlay */
-.detail-nav{
-  flex-shrink:0;height:50px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 24px;
-  background:rgba(8,5,0,.98);border-bottom:1px solid rgba(232,92,13,.2);
-  z-index:10;
-}
-.detail-nav-back{
-  display:flex;align-items:center;gap:8px;cursor:pointer;
-  font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);
-  text-decoration:none;border:1px solid var(--border);padding:5px 12px;border-radius:2px;
-  transition:all .15s;background:transparent;
-}
-.detail-nav-back:hover{border-color:var(--spice);color:var(--spice);}
-.detail-nav-ref{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.12em;}
-
-/* Scroll body */
-.detail-body{flex:1;overflow-y:auto;}
-
-/* ── IMAGE HERO (2000x1000 ratio = 2:1) ── */
-.detail-img-hero{
-  width:100%;aspect-ratio:2/1;
-  background:var(--bg2);overflow:hidden;
-  position:relative;border-bottom:1px solid var(--border);
-  max-height:55vh;
-}
-.detail-img-hero img{width:100%;height:100%;object-fit:cover;display:block;}
-.detail-img-ph{
-  width:100%;height:100%;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:12px;
-  background:var(--bg2);
-}
-.detail-img-ph-ico{opacity:.15;display:flex;}
-.detail-img-ph-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.14em;}
-
-/* ── 3 KEY CHARACTERISTICS ── */
-.detail-keys{
-  display:grid;grid-template-columns:1fr 1fr 1fr;
-  border-bottom:1px solid var(--border);
-}
-.detail-key{
-  padding:18px 22px;text-align:center;
-  border-right:1px solid var(--border);
-}
-.detail-key:last-child{border-right:none;}
-.dk-lbl{
-  font-family:'IBM Plex Mono',monospace;font-size:8px;
-  color:var(--text3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;
-}
-.dk-val{
-  font-family:'IBM Plex Mono',monospace;font-size:14px;
-  color:var(--text);letter-spacing:.04em;
-}
-.dk-val.spice{color:var(--spice);font-size:13px;}
-.dk-val.gold{color:var(--gold);font-family:'Dune Rise',serif;font-size:15px;}
-.dk-val.green{color:var(--teal-bright);font-size:12px;}
-
-/* ── SPECS SECTION ── */
-.detail-specs-wrap{padding:24px 28px 48px;}
-.detail-specs-hdr{
-  font-family:'IBM Plex Mono',monospace;font-size:8px;
-  letter-spacing:.18em;color:var(--spice);text-transform:uppercase;
-  padding-bottom:8px;border-bottom:1px solid rgba(232,92,13,.2);margin-bottom:16px;
-}
-
-/* 3-column specs grid */
-.detail-specs-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-  border:1px solid var(--border);
-}
-@media(max-width:800px){.detail-specs-grid{grid-template-columns:1fr;}}
-@media(max-width:1100px) and (min-width:801px){.detail-specs-grid{grid-template-columns:1fr 1fr;}}
-
-.detail-spec-item{
-  padding:9px 14px;border-bottom:1px solid var(--border);
-  border-right:1px solid var(--border);
-  display:flex;flex-direction:column;gap:3px;
-}
-.detail-spec-item:nth-child(3n){border-right:none;}
-@media(max-width:1100px) and (min-width:801px){
-  .detail-spec-item:nth-child(2n){border-right:none;}
-  .detail-spec-item:nth-child(3n){border-right:1px solid var(--border);}
-}
-@media(max-width:800px){
-  .detail-spec-item{border-right:none;}
-  .detail-spec-item:nth-child(3n){border-right:none;}
-}
-.dsi-key{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.08em;}
-.dsi-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);letter-spacing:.03em;}
-
-/* Info bar: fabricant + niv */
-.detail-info-bar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px 28px;border-bottom:1px solid var(--border);
-  background:rgba(0,0,0,.08);flex-wrap:wrap;gap:8px;
-}
-[data-theme="light"] .detail-info-bar{background:rgba(0,0,0,.03);}
-.detail-fab{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text2);letter-spacing:.06em;}
+.cat-empty-ico{margin-bottom:16px;opacity:.18;display:flex;justify-content:center;}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="cat-nav">
   <div style="display:flex;align-items:center;gap:12px;">
     <span style="font-family:'Dune Rise',serif;font-size:10px;letter-spacing:.18em;color:var(--spice);">Catalogue Militaire</span>
@@ -317,10 +186,7 @@ html,body{height:100%;overflow:hidden;}
   </div>
 </nav>
 
-<!-- SHELL -->
 <div class="cat-shell">
-
-  <!-- SIDEBAR -->
   <aside class="cat-sidebar">
     <div class="sb-top">
       <div class="sb-hdr">
@@ -335,7 +201,6 @@ html,body{height:100%;overflow:hidden;}
     <div class="sb-scroll" id="sb-list"></div>
   </aside>
 
-  <!-- MAIN -->
   <main class="cat-main" id="cat-main">
     <div class="cat-content" id="cat-content">
       <div class="cat-empty">
@@ -349,20 +214,16 @@ html,body{height:100%;overflow:hidden;}
       </div>
     </div>
   </main>
-
 </div>
 
 <script>
-// ── SVG ICONS (no emojis) ──────────────────
 var ICONS={
   terrestre:'<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M8 2L2 5v4c0 3.5 2.5 6 6 7 3.5-1 6-3.5 6-7V5L8 2Z" stroke="currentColor" stroke-width="1.1" fill="none"/><line x1="5" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><line x1="8" y1="5" x2="8" y2="11" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>',
   aerien:'<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M9 3c0 0 2 1 2 3L14 8l-3 1-2-2H7L5 9H3L2 8l3-2c0-2 1-3 1-3H9Z" stroke="currentColor" stroke-width="1" fill="none" stroke-linejoin="round"/><path d="M7 11l1 2h1l1-2" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   naval:'<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M3 10L8 4l5 6H3Z" stroke="currentColor" stroke-width="1.1" fill="none" stroke-linejoin="round"/><line x1="8" y1="4" x2="8" y2="2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M2 12c1.5 1.5 10 1.5 12 0" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" fill="none"/></svg>',
-  missiles:'<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M10 2L14 6l-8 8-4-1-1-4 9-8Z" stroke="currentColor" stroke-width="1.1" fill="none" stroke-linejoin="round"/><path d="M7 9l2-2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M2 14l3-1" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".5"/></svg>',
-  shield:'<svg viewBox="0 0 48 48" fill="none" width="40" height="40"><path d="M24 6L6 13V24C6 34 14 42 24 45C34 42 42 34 42 24V13L24 6Z" stroke="#3A2E1E" stroke-width="1.5" fill="none"/></svg>'
+  missiles:'<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M10 2L14 6l-8 8-4-1-1-4 9-8Z" stroke="currentColor" stroke-width="1.1" fill="none" stroke-linejoin="round"/><path d="M7 9l2-2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M2 14l3-1" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".5"/></svg>'
 };
 
-// ── DATA ──────────────────────────────────
 var GROUPS=[
   {id:'terrestre',label:'Terrestre',icon:'terrestre',sub:[
     {id:'armes-feu',            label:'Armes a Feu'},
@@ -382,15 +243,14 @@ var GROUPS=[
     {id:'missiles-strategiques',label:'Missiles Strategiques'}
   ]}
 ];
+
 var TECH={1:'1910-1919',2:'1920-1929',3:'1930-1939',4:'1940-1949',5:'1950-1959',6:'1960-1969',7:'1970-1979',8:'1980-1989',9:'1990-1999',10:'2000-2009',11:'2010-2019',12:'2020+'};
 
-// ── STATE ─────────────────────────────────
 var catalogue=[];
 var openG={terrestre:true,aerien:true,naval:true,balistique:true};
 var activeCat='';
 var searchQ='';
 
-// ── LOAD ──────────────────────────────────
 function loadLocal(){
   try{var s=localStorage.getItem('cat_militaire');catalogue=s?JSON.parse(s):[];}
   catch(e){catalogue=[];}
@@ -407,18 +267,16 @@ function syncGH(){
     });
     catalogue=d;
     localStorage.setItem('cat_militaire',JSON.stringify(catalogue));
-    renderSidebar();
-    renderContent();
+    renderSidebar();renderContent();
   }).catch(function(){});
 }
 
-// ── SIDEBAR ───────────────────────────────
+/* ── SIDEBAR ── */
 function renderSidebar(){
   var tot=catalogue.length;
   var el=document.getElementById('sb-total');
   if(el)el.textContent=tot+' equipement'+(tot!==1?'s':'');
-  var list=document.getElementById('sb-list');
-  if(!list)return;
+  var list=document.getElementById('sb-list');if(!list)return;
   var html='';
   GROUPS.forEach(function(g){
     var gTot=catalogue.filter(function(i){return g.sub.some(function(s){return s.id===i.categorie;});}).length;
@@ -436,8 +294,7 @@ function renderSidebar(){
         var cnt=catalogue.filter(function(i){return i.categorie===sub.id;}).length;
         var isAct=sub.id===activeCat;
         html+='<div class="sb-sub'+(isAct?' active':'')+'\" onclick="selectCat(\''+sub.id+'\')">';
-        html+='<span>'+sub.label+'</span>';
-        html+='<span class="sb-sub-cnt">'+cnt+'</span>';
+        html+='<span>'+sub.label+'</span><span class="sb-sub-cnt">'+cnt+'</span>';
         html+='</div>';
       });
       html+='</div>';
@@ -446,265 +303,133 @@ function renderSidebar(){
   });
   list.innerHTML=html;
 }
-
 function toggleG(id){openG[id]=!openG[id];renderSidebar();}
-
 function selectCat(id){
   activeCat=id;searchQ='';
   var si=document.getElementById('cat-search');if(si)si.value='';
-  renderSidebar();
-  renderContent();
-  // Scroll to section anchor
+  renderSidebar();renderContent();
   setTimeout(function(){
     var anchor=document.getElementById('sec-'+id);
-    if(anchor){
-      var main=document.getElementById('cat-main');
-      if(main)main.scrollTo({top:anchor.offsetTop-8,behavior:'smooth'});
-    }
+    if(anchor){var m=document.getElementById('cat-main');if(m)m.scrollTo({top:anchor.offsetTop-6,behavior:'smooth'});}
   },60);
 }
-
 function onSearch(){
   searchQ=(document.getElementById('cat-search').value||'').toLowerCase();
   if(searchQ)activeCat='';
-  renderSidebar();
-  renderContent();
+  renderSidebar();renderContent();
 }
 
-// ── CONTENT ── slides layout ──────────────
+/* ── ITEM CARD builder ── */
+function buildItemHTML(item){
+  var niv=item.niveau||1;
+  var nivLbl='NIV '+niv+' · '+(TECH[niv]||'');
+  var imgSrc=item.image_data||(item.image_path?'https://bjbellum.github.io/UKN/'+item.image_path:'');
+  var specs=item.specs||{};
+  var specKeys=Object.keys(specs).filter(function(k){return specs[k];});
+  var coutFmt=item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' N\u00a3':'—';
+  var dispo=item.disponibilite||'—';
+
+  var html='<div class="cat-item" id="item-'+item.id+'">';
+
+  // ── Image hero (2:1 — designed for 2000×1000px) ──
+  html+='<div class="item-img">';
+  if(imgSrc){
+    html+='<img src="'+imgSrc+'" alt="'+(item.nom||'')+'" loading="lazy">';
+  } else {
+    html+='<div class="item-img-ph"><div class="item-img-ph-ico"><svg viewBox="0 0 80 40" fill="none" width="80" height="40"><rect x="3" y="3" width="74" height="34" rx="2" stroke="#3A2E1E" stroke-width="1.2" fill="none"/><circle cx="18" cy="14" r="6" stroke="#3A2E1E" stroke-width="1" fill="none"/><path d="M3 30l14-10 12 8 9-6 24 12" stroke="#3A2E1E" stroke-width="1" fill="none"/></svg></div><span class="item-img-ph-lbl">AUCUNE IMAGE · FORMAT RECOMMANDE 2000x1000px</span></div>';
+  }
+  html+='</div>';
+
+  // ── 3 key characteristics ──
+  html+='<div class="item-keys">';
+  html+='<div class="item-key"><div class="ik-lbl">Inspiration / Modele reel</div><div class="ik-val spice" title="'+(item.inspiration||'—')+'">'+(item.inspiration||'—')+'</div></div>';
+  html+='<div class="item-key"><div class="ik-lbl">Designation officielle</div><div class="ik-val bold" title="'+(item.nom||'—')+'">'+(item.nom||'—')+'</div></div>';
+  html+='<div class="item-key"><div class="ik-lbl">Cout unitaire</div><div class="ik-val gold">'+coutFmt+'</div></div>';
+  html+='</div>';
+
+  // ── Meta bar ──
+  html+='<div class="item-meta">';
+  html+='<span class="item-fab">'+( item.fabricant||'—' )+'</span>';
+  html+='<span class="item-niv niv-'+niv+'">'+nivLbl+'</span>';
+  html+='<span class="item-dispo">'+dispo+'</span>';
+  html+='</div>';
+
+  // ── All specs ──
+  if(specKeys.length){
+    html+='<div class="item-specs-hdr">Caracteristiques techniques</div>';
+    html+='<div class="item-specs-grid">';
+    specKeys.forEach(function(k){
+      html+='<div class="isg-item"><div class="isg-key">'+k+'</div><div class="isg-val">'+specs[k]+'</div></div>';
+    });
+    // Pad to multiple of 3
+    var rem=specKeys.length%3;
+    if(rem===1){html+='<div class="isg-item"></div><div class="isg-item"></div>';}
+    if(rem===2){html+='<div class="isg-item"></div>';}
+    html+='</div>';
+  } else {
+    html+='<div class="item-specs-empty">Aucune caracteristique renseignee.</div>';
+  }
+
+  html+='</div>'; // /cat-item
+  return html;
+}
+
+/* ── CONTENT ── */
 function renderContent(){
-  var el=document.getElementById('cat-content');
-  if(!el)return;
+  var el=document.getElementById('cat-content');if(!el)return;
+  var allSub=[];GROUPS.forEach(function(g){g.sub.forEach(function(s){allSub.push(s);});});
 
-  var allSub=[];
-  GROUPS.forEach(function(g){g.sub.forEach(function(s){allSub.push(s);});});
-
-  // Search mode: flat list
+  // Search
   if(searchQ){
     var items=catalogue.filter(function(i){
       return (i.nom||'').toLowerCase().indexOf(searchQ)>=0||
              (i.fabricant||'').toLowerCase().indexOf(searchQ)>=0||
              (i.inspiration||'').toLowerCase().indexOf(searchQ)>=0;
     });
-    if(!items.length){
-      el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico">'+ICONS.shield+'</div>Aucun resultat pour "'+searchQ+'".</div>';
-      return;
-    }
-    el.innerHTML='<div class="cat-sec-hdr"><span class="cat-sec-title">RESULTATS DE RECHERCHE</span><span class="cat-sec-count">'+items.length+' resultat'+(items.length!==1?'s':'')+'</span></div>'+buildSlides(items);
-    return;
+    if(!items.length){el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico"><svg viewBox="0 0 48 48" fill="none" width="48" height="48"><path d="M24 6L6 13V24C6 34 14 42 24 45C34 42 42 34 42 24V13L24 6Z" stroke="#4A3C28" stroke-width="1.5" fill="none"/></svg></div>Aucun resultat pour "'+searchQ+'".</div>';return;}
+    var html='<div class="cat-sec-hdr"><span class="cat-sec-title">RESULTATS DE RECHERCHE</span><span class="cat-sec-count">'+items.length+' resultat'+(items.length!==1?'s':'')+'</span></div>';
+    items.forEach(function(i){html+=buildItemHTML(i);});
+    el.innerHTML=html;return;
   }
 
-  // Category selected: single section
+  // Single category
   if(activeCat){
     var items=catalogue.filter(function(i){return i.categorie===activeCat;});
     var catInfo=allSub.find(function(s){return s.id===activeCat;})||{label:activeCat};
-    if(!items.length){
-      el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico">'+ICONS.shield+'</div>Aucun equipement dans cette categorie.</div>';
-      return;
-    }
-    el.innerHTML='<div id="sec-'+activeCat+'" class="cat-section cat-sec-anchor"><div class="cat-sec-hdr"><span class="cat-sec-title">'+catInfo.label.toUpperCase()+'</span><span class="cat-sec-count">'+items.length+' equipement'+(items.length!==1?'s':'')+' · FAN · 2305</span></div>'+buildSlides(items)+'</div>';
-    return;
+    if(!items.length){el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico"><svg viewBox="0 0 48 48" fill="none" width="48" height="48"><path d="M24 6L6 13V24C6 34 14 42 24 45C34 42 42 34 42 24V13L24 6Z" stroke="#4A3C28" stroke-width="1.5" fill="none"/></svg></div>Aucun equipement dans cette categorie.</div>';return;}
+    var html='<div id="sec-'+activeCat+'" class="cat-section cat-sec-anchor"><div class="cat-sec-hdr"><span class="cat-sec-title">'+catInfo.label.toUpperCase()+'</span><span class="cat-sec-count">'+items.length+' equipement'+(items.length!==1?'s':'')+' · FAN · 2305</span></div>';
+    items.forEach(function(i){html+=buildItemHTML(i);});
+    html+='</div>';
+    el.innerHTML=html;return;
   }
 
-  // Default: show ALL sections
-  var html='';
-  var totalShown=0;
+  // All sections
+  var html='';var total=0;
   GROUPS.forEach(function(g){
     g.sub.forEach(function(sub){
       var items=catalogue.filter(function(i){return i.categorie===sub.id;});
       if(!items.length)return;
-      totalShown+=items.length;
+      total+=items.length;
       html+='<div id="sec-'+sub.id+'" class="cat-section cat-sec-anchor">';
       html+='<div class="cat-sec-hdr"><span class="cat-sec-title">'+sub.label.toUpperCase()+'</span><span class="cat-sec-count">'+items.length+' equipement'+(items.length!==1?'s':'')+'</span></div>';
-      html+=buildSlides(items);
+      items.forEach(function(i){html+=buildItemHTML(i);});
       html+='</div>';
     });
   });
-  if(!totalShown){
-    el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico">'+ICONS.shield+'</div>Selectionnez une categorie dans la barre laterale.</div>';
-    return;
-  }
+  if(!total){el.innerHTML='<div class="cat-empty"><div class="cat-empty-ico"><svg viewBox="0 0 48 48" fill="none" width="48" height="48"><path d="M24 6L6 13V24C6 34 14 42 24 45C34 42 42 34 42 24V13L24 6Z" stroke="#4A3C28" stroke-width="1.5" fill="none"/></svg></div>Selectionnez une categorie dans la barre laterale.</div>';return;}
   el.innerHTML=html;
 }
 
-function buildSlides(items){
-  var html='';
-  items.forEach(function(item){
-    var niv=item.niveau||1;
-    var nivLbl='NIV '+niv+' · '+(TECH[niv]||'');
-    var imgSrc=item.image_data||(item.image_path?'https://bjbellum.github.io/UKN/'+item.image_path:'');
-    var specs=item.specs||{};
-    var specRows=Object.keys(specs).filter(function(k){return specs[k];}).map(function(k){
-      return '<tr><td>'+k+'</td><td>'+specs[k]+'</td></tr>';
-    }).join('');
-    var coutFmt=item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' N\u00a3':'—';
-    var dispo=item.disponibilite||'';
-
-    html+='<div class="cat-slide" id="slide-'+item.id+'">';
-
-    // Header row (image + info + badges)
-    html+='<div class="slide-hdr" onclick="openDetail(\''+item.id+'\')" style="cursor:pointer;" title="Voir la fiche complète">';
-
-    // Image
-    html+='<div class="slide-img-zone">';
-    if(imgSrc){
-      html+='<img src="'+imgSrc+'" alt="'+(item.nom||'')+'" loading="lazy">';
-    } else {
-      html+='<div class="slide-img-ph"><div class="slide-img-ph-ico"><svg viewBox="0 0 40 40" fill="none" width="40" height="40"><rect x="4" y="6" width="32" height="26" rx="2" stroke="#3A2E1E" stroke-width="1.2" fill="none"/><circle cx="13" cy="16" r="4" stroke="#3A2E1E" stroke-width="1" fill="none"/><path d="M4 28l8-7 6 5 5-4 11 9" stroke="#3A2E1E" stroke-width="1" fill="none"/></svg></div><span class="slide-img-ph-lbl">AUCUNE IMAGE</span></div>';
-    }
-    html+='</div>';
-
-    // Info
-    html+='<div class="slide-info">';
-    html+='<div class="slide-info-top">';
-    html+='<div class="slide-name-block">';
-    html+='<div class="slide-name">'+(item.nom||'—')+'</div>';
-    html+='<div class="slide-fab">'+(item.fabricant||'—')+'</div>';
-    html+='<span class="slide-niv niv-'+niv+'">'+nivLbl+'</span>';
-    html+='</div>';
-    // Badges column: Inspiration | Coût | Disponibilité
-    html+='<div class="slide-badges">';
-    html+='<div class="slide-badge"><div class="bdg-lbl">Inspiration</div><div class="bdg-val spice" title="'+(item.inspiration||'—')+'">'+(item.inspiration||'—')+'</div></div>';
-    html+='<div class="slide-badge"><div class="bdg-lbl">Cout unitaire</div><div class="bdg-val gold">'+coutFmt+'</div></div>';
-    html+='<div class="slide-badge"><div class="bdg-lbl">Disponibilite</div><div class="bdg-val green" title="'+dispo+'">'+(dispo||'—')+'</div></div>';
-    html+='</div>';
-    html+='</div></div></div>'; // /slide-info-top /slide-info /slide-hdr
-
-    // Toggle bar
-    html+='<div class="slide-toggle" onclick="toggleSlide(\''+item.id+'\')">';
-    html+='<div class="slide-toggle-lbl"><svg viewBox="0 0 12 12" fill="none" width="10" height="10"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><line x1="3" y1="4" x2="9" y2="4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="3" y1="6.5" x2="9" y2="6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="3" y1="9" x2="7" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg> Fiche technique<span class="slide-toggle-tri">&#8250;</span></div>';
-    html+='</div>';
-
-    // Specs
-    html+='<div class="slide-specs">';
-    html+='<div class="spec-hdr">Caracteristiques techniques</div>';
-    if(specRows){
-      html+='<table class="spec-tbl"><tbody>'+specRows+'</tbody></table>';
-    } else {
-      html+='<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--text3);padding:12px 14px;">Aucune specification renseignee.</div>';
-    }
-    html+='</div>';
-
-    html+='</div>'; // /cat-slide
-  });
-  return html;
-}
-
-function toggleSlide(id){
-  var el=document.getElementById('slide-'+id);
-  if(el)el.classList.toggle('open');
-}
-
-function openDetail(id){
-  var item=catalogue.find(function(x){return x.id===id;});
-  if(!item)return;
-  var niv=item.niveau||1;
-  var nivLbl='NIV '+niv+' · '+(TECH[niv]||'');
-  var imgSrc=item.image_data||(item.image_path?'https://bjbellum.github.io/UKN/'+item.image_path:'');
-  var specs=item.specs||{};
-  var specKeys=Object.keys(specs).filter(function(k){return specs[k];});
-  var coutFmt=item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' N£':'—';
-  var dispo=item.disponibilite||'—';
-
-  // Build spec items for 3-col grid
-  var specItemsHTML='';
-  specKeys.forEach(function(k){
-    specItemsHTML+='<div class="detail-spec-item"><div class="dsi-key">'+k+'</div><div class="dsi-val">'+specs[k]+'</div></div>';
-  });
-  // Pad to multiple of 3
-  var rem=specKeys.length%3;
-  if(rem===1){specItemsHTML+='<div class="detail-spec-item"></div><div class="detail-spec-item"></div>';}
-  if(rem===2){specItemsHTML+='<div class="detail-spec-item"></div>';}
-
-  var html='';
-  // Image hero (2:1 ratio)
-  html+='<div class="detail-img-hero">';
-  if(imgSrc){
-    html+='<img src="'+imgSrc+'" alt="'+(item.nom||'')+'" loading="eager">';
-  } else {
-    html+='<div class="detail-img-ph"><div class="detail-img-ph-ico"><svg viewBox="0 0 80 60" fill="none" width="80" height="60"><rect x="4" y="4" width="72" height="52" rx="3" stroke="#3A2E1E" stroke-width="1.5" fill="none"/><circle cx="20" cy="22" r="8" stroke="#3A2E1E" stroke-width="1.2" fill="none"/><path d="M4 44l18-14 14 10 10-8 30 18" stroke="#3A2E1E" stroke-width="1.2" fill="none"/></svg></div><span class="detail-img-ph-lbl">AUCUNE IMAGE DISPONIBLE</span></div>';
-  }
-  html+='</div>';
-
-  // 3 key characteristics
-  html+='<div class="detail-keys">';
-  html+='<div class="detail-key"><div class="dk-lbl">Inspiration / Modele reel</div><div class="dk-val spice">'+(item.inspiration||'—')+'</div></div>';
-  html+='<div class="detail-key"><div class="dk-lbl">Designation officielle</div><div class="dk-val" style="font-size:16px;font-weight:500;">'+(item.nom||'—')+'</div></div>';
-  html+='<div class="detail-key"><div class="dk-lbl">Cout unitaire</div><div class="dk-val gold">'+coutFmt+'</div></div>';
-  html+='</div>';
-
-  // Info bar
-  html+='<div class="detail-info-bar">';
-  html+='<span class="detail-fab">Fabricant : <strong>'+(item.fabricant||'—')+'</strong></span>';
-  html+='<span class="slide-niv niv-'+niv+'" style="font-family:monospace;font-size:8px;padding:2px 8px;border-radius:2px;border:1px solid;display:inline-block;">'+nivLbl+'</span>';
-  html+='<span style="font-family:monospace;font-size:10px;color:var(--teal-bright);">Disponibilite : '+dispo+'</span>';
-  html+='</div>';
-
-  // Specs section
-  html+='<div class="detail-specs-wrap">';
-  if(specKeys.length){
-    html+='<div class="detail-specs-hdr">Caracteristiques techniques</div>';
-    html+='<div class="detail-specs-grid">'+specItemsHTML+'</div>';
-  } else {
-    html+='<div style="font-family:monospace;font-size:10px;color:var(--text3);padding:12px 0;">Aucune caracteristique renseignee.</div>';
-  }
-  html+='</div>';
-
-  document.getElementById('detail-body').innerHTML=html;
-  document.getElementById('det-ref').textContent=(item.categorie||'').toUpperCase()+' · '+item.nom;
-  var ov=document.getElementById('detail-ov');
-  ov.classList.add('open');
-  ov.querySelector('.detail-body').scrollTop=0;
-  // Prevent main scroll
-  document.getElementById('cat-main').style.overflow='hidden';
-}
-
-function closeDetail(){
-  document.getElementById('detail-ov').classList.remove('open');
-  document.getElementById('cat-main').style.overflow='auto';
-}
-
-// Close on Escape key
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape')closeDetail();
-});
-
-// ── THEME ─────────────────────────────────
-function applyTheme(t){
-  document.documentElement.setAttribute('data-theme',t);
-  var lbl=document.getElementById('tlbl');if(lbl)lbl.textContent=t==='dark'?'NUIT':'JOUR';
-  localStorage.setItem('run-theme',t);
-}
+/* ── THEME ── */
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);var lbl=document.getElementById('tlbl');if(lbl)lbl.textContent=t==='dark'?'NUIT':'JOUR';localStorage.setItem('run-theme',t);}
 function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
 (function(){var s=localStorage.getItem('run-theme'),mq=window.matchMedia('(prefers-color-scheme: dark)');applyTheme(s||(mq.matches?'dark':'light'));})();
 
-// ── INIT ──────────────────────────────────
+/* ── INIT ── */
 document.addEventListener('DOMContentLoaded',function(){
-  loadLocal();
-  renderSidebar();
-  renderContent();
-  syncGH();
+  loadLocal();renderSidebar();renderContent();syncGH();
 });
 </script>
 <script src="../../pharos-auth.js"></script>
-
-<!-- ── DETAIL OVERLAY ── -->
-<div class="detail-ov" id="detail-ov">
-  <nav class="detail-nav">
-    <button class="detail-nav-back" onclick="closeDetail()">
-      <svg viewBox="0 0 10 16" fill="none" width="8" height="12">
-        <path d="M8 2L2 8l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      Retour au catalogue
-    </button>
-    <div>
-      <span class="detail-nav-ref" id="det-ref"></span>
-    </div>
-  </nav>
-  <div class="detail-body" id="detail-body">
-    <!-- populated by openDetail() -->
-  </div>
-</div>
-
 </body>
 </html>
