@@ -193,6 +193,114 @@ html,body{height:100%;overflow:hidden;}
   .slide-badge{border-bottom:none;border-right:1px solid var(--border);}
   .slide-badge:last-child{border-right:none;}
 }
+
+/* ── DETAIL OVERLAY ── */
+.detail-ov{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(4,2,0,.96);
+  display:none;flex-direction:column;overflow:hidden;
+}
+.detail-ov.open{display:flex;}
+
+/* Nav bar inside overlay */
+.detail-nav{
+  flex-shrink:0;height:50px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;
+  background:rgba(8,5,0,.98);border-bottom:1px solid rgba(232,92,13,.2);
+  z-index:10;
+}
+.detail-nav-back{
+  display:flex;align-items:center;gap:8px;cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);
+  text-decoration:none;border:1px solid var(--border);padding:5px 12px;border-radius:2px;
+  transition:all .15s;background:transparent;
+}
+.detail-nav-back:hover{border-color:var(--spice);color:var(--spice);}
+.detail-nav-ref{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.12em;}
+
+/* Scroll body */
+.detail-body{flex:1;overflow-y:auto;}
+
+/* ── IMAGE HERO (2000x1000 ratio = 2:1) ── */
+.detail-img-hero{
+  width:100%;aspect-ratio:2/1;
+  background:var(--bg2);overflow:hidden;
+  position:relative;border-bottom:1px solid var(--border);
+  max-height:55vh;
+}
+.detail-img-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.detail-img-ph{
+  width:100%;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;
+  background:var(--bg2);
+}
+.detail-img-ph-ico{opacity:.15;display:flex;}
+.detail-img-ph-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.14em;}
+
+/* ── 3 KEY CHARACTERISTICS ── */
+.detail-keys{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  border-bottom:1px solid var(--border);
+}
+.detail-key{
+  padding:18px 22px;text-align:center;
+  border-right:1px solid var(--border);
+}
+.detail-key:last-child{border-right:none;}
+.dk-lbl{
+  font-family:'IBM Plex Mono',monospace;font-size:8px;
+  color:var(--text3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;
+}
+.dk-val{
+  font-family:'IBM Plex Mono',monospace;font-size:14px;
+  color:var(--text);letter-spacing:.04em;
+}
+.dk-val.spice{color:var(--spice);font-size:13px;}
+.dk-val.gold{color:var(--gold);font-family:'Dune Rise',serif;font-size:15px;}
+.dk-val.green{color:var(--teal-bright);font-size:12px;}
+
+/* ── SPECS SECTION ── */
+.detail-specs-wrap{padding:24px 28px 48px;}
+.detail-specs-hdr{
+  font-family:'IBM Plex Mono',monospace;font-size:8px;
+  letter-spacing:.18em;color:var(--spice);text-transform:uppercase;
+  padding-bottom:8px;border-bottom:1px solid rgba(232,92,13,.2);margin-bottom:16px;
+}
+
+/* 3-column specs grid */
+.detail-specs-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:1px solid var(--border);
+}
+@media(max-width:800px){.detail-specs-grid{grid-template-columns:1fr;}}
+@media(max-width:1100px) and (min-width:801px){.detail-specs-grid{grid-template-columns:1fr 1fr;}}
+
+.detail-spec-item{
+  padding:9px 14px;border-bottom:1px solid var(--border);
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;gap:3px;
+}
+.detail-spec-item:nth-child(3n){border-right:none;}
+@media(max-width:1100px) and (min-width:801px){
+  .detail-spec-item:nth-child(2n){border-right:none;}
+  .detail-spec-item:nth-child(3n){border-right:1px solid var(--border);}
+}
+@media(max-width:800px){
+  .detail-spec-item{border-right:none;}
+  .detail-spec-item:nth-child(3n){border-right:none;}
+}
+.dsi-key{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.08em;}
+.dsi-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);letter-spacing:.03em;}
+
+/* Info bar: fabricant + niv */
+.detail-info-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 28px;border-bottom:1px solid var(--border);
+  background:rgba(0,0,0,.08);flex-wrap:wrap;gap:8px;
+}
+[data-theme="light"] .detail-info-bar{background:rgba(0,0,0,.03);}
+.detail-fab{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text2);letter-spacing:.06em;}
 </style>
 </head>
 <body>
@@ -435,7 +543,7 @@ function buildSlides(items){
     html+='<div class="cat-slide" id="slide-'+item.id+'">';
 
     // Header row (image + info + badges)
-    html+='<div class="slide-hdr" onclick="toggleSlide(\''+item.id+'\')">';
+    html+='<div class="slide-hdr" onclick="openDetail(\''+item.id+'\')" style="cursor:pointer;" title="Voir la fiche complète">';
 
     // Image
     html+='<div class="slide-img-zone">';
@@ -487,6 +595,80 @@ function toggleSlide(id){
   if(el)el.classList.toggle('open');
 }
 
+function openDetail(id){
+  var item=catalogue.find(function(x){return x.id===id;});
+  if(!item)return;
+  var niv=item.niveau||1;
+  var nivLbl='NIV '+niv+' · '+(TECH[niv]||'');
+  var imgSrc=item.image_data||(item.image_path?'https://bjbellum.github.io/UKN/'+item.image_path:'');
+  var specs=item.specs||{};
+  var specKeys=Object.keys(specs).filter(function(k){return specs[k];});
+  var coutFmt=item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' N£':'—';
+  var dispo=item.disponibilite||'—';
+
+  // Build spec items for 3-col grid
+  var specItemsHTML='';
+  specKeys.forEach(function(k){
+    specItemsHTML+='<div class="detail-spec-item"><div class="dsi-key">'+k+'</div><div class="dsi-val">'+specs[k]+'</div></div>';
+  });
+  // Pad to multiple of 3
+  var rem=specKeys.length%3;
+  if(rem===1){specItemsHTML+='<div class="detail-spec-item"></div><div class="detail-spec-item"></div>';}
+  if(rem===2){specItemsHTML+='<div class="detail-spec-item"></div>';}
+
+  var html='';
+  // Image hero (2:1 ratio)
+  html+='<div class="detail-img-hero">';
+  if(imgSrc){
+    html+='<img src="'+imgSrc+'" alt="'+(item.nom||'')+'" loading="eager">';
+  } else {
+    html+='<div class="detail-img-ph"><div class="detail-img-ph-ico"><svg viewBox="0 0 80 60" fill="none" width="80" height="60"><rect x="4" y="4" width="72" height="52" rx="3" stroke="#3A2E1E" stroke-width="1.5" fill="none"/><circle cx="20" cy="22" r="8" stroke="#3A2E1E" stroke-width="1.2" fill="none"/><path d="M4 44l18-14 14 10 10-8 30 18" stroke="#3A2E1E" stroke-width="1.2" fill="none"/></svg></div><span class="detail-img-ph-lbl">AUCUNE IMAGE DISPONIBLE</span></div>';
+  }
+  html+='</div>';
+
+  // 3 key characteristics
+  html+='<div class="detail-keys">';
+  html+='<div class="detail-key"><div class="dk-lbl">Inspiration / Modele reel</div><div class="dk-val spice">'+(item.inspiration||'—')+'</div></div>';
+  html+='<div class="detail-key"><div class="dk-lbl">Designation officielle</div><div class="dk-val" style="font-size:16px;font-weight:500;">'+(item.nom||'—')+'</div></div>';
+  html+='<div class="detail-key"><div class="dk-lbl">Cout unitaire</div><div class="dk-val gold">'+coutFmt+'</div></div>';
+  html+='</div>';
+
+  // Info bar
+  html+='<div class="detail-info-bar">';
+  html+='<span class="detail-fab">Fabricant : <strong>'+(item.fabricant||'—')+'</strong></span>';
+  html+='<span class="slide-niv niv-'+niv+'" style="font-family:monospace;font-size:8px;padding:2px 8px;border-radius:2px;border:1px solid;display:inline-block;">'+nivLbl+'</span>';
+  html+='<span style="font-family:monospace;font-size:10px;color:var(--teal-bright);">Disponibilite : '+dispo+'</span>';
+  html+='</div>';
+
+  // Specs section
+  html+='<div class="detail-specs-wrap">';
+  if(specKeys.length){
+    html+='<div class="detail-specs-hdr">Caracteristiques techniques</div>';
+    html+='<div class="detail-specs-grid">'+specItemsHTML+'</div>';
+  } else {
+    html+='<div style="font-family:monospace;font-size:10px;color:var(--text3);padding:12px 0;">Aucune caracteristique renseignee.</div>';
+  }
+  html+='</div>';
+
+  document.getElementById('detail-body').innerHTML=html;
+  document.getElementById('det-ref').textContent=(item.categorie||'').toUpperCase()+' · '+item.nom;
+  var ov=document.getElementById('detail-ov');
+  ov.classList.add('open');
+  ov.querySelector('.detail-body').scrollTop=0;
+  // Prevent main scroll
+  document.getElementById('cat-main').style.overflow='hidden';
+}
+
+function closeDetail(){
+  document.getElementById('detail-ov').classList.remove('open');
+  document.getElementById('cat-main').style.overflow='auto';
+}
+
+// Close on Escape key
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')closeDetail();
+});
+
 // ── THEME ─────────────────────────────────
 function applyTheme(t){
   document.documentElement.setAttribute('data-theme',t);
@@ -505,5 +687,24 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 <script src="../../pharos-auth.js"></script>
+
+<!-- ── DETAIL OVERLAY ── -->
+<div class="detail-ov" id="detail-ov">
+  <nav class="detail-nav">
+    <button class="detail-nav-back" onclick="closeDetail()">
+      <svg viewBox="0 0 10 16" fill="none" width="8" height="12">
+        <path d="M8 2L2 8l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Retour au catalogue
+    </button>
+    <div>
+      <span class="detail-nav-ref" id="det-ref"></span>
+    </div>
+  </nav>
+  <div class="detail-body" id="detail-body">
+    <!-- populated by openDetail() -->
+  </div>
+</div>
+
 </body>
 </html>

@@ -582,10 +582,11 @@
       <input type="hidden" id="cat-img-data">
       <input type="hidden" id="cat-img-path">
 
-      <div style="display:flex;gap:8px;margin-top:16px;">
+      <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;">
         <button class="btn btn-fan" onclick="saveCatalogueItem()">✓ Enregistrer</button>
         <button class="btn btn-ghost" onclick="cancelCatalogueEdit()">✕ Annuler</button>
-        <button class="btn btn-gh btn-sm" onclick="pushCatalogueToGH()" style="margin-left:auto;">⬆ Sauvegarder sur GitHub</button>
+        <button class="btn btn-ghost btn-sm" onclick="previewCatalogueItem()" style="border-color:rgba(26,143,122,.4);color:var(--teal-bright);">&#128065; Apercu</button>
+        <button class="btn btn-gh btn-sm" onclick="pushCatalogueToGH()" style="margin-left:auto;">&#8593; Sauvegarder sur GitHub</button>
       </div>
     </div>
 
@@ -618,6 +619,20 @@
     </div>
     <div id="cat-admin-list"></div>
   </div>
+
+<!-- ── CATALOGUE ITEM PREVIEW ── -->
+<div class="cat-preview-ov" id="cat-preview-ov">
+  <nav class="prev-nav">
+    <button class="prev-nav-back" onclick="closeCatPreview()">
+      <svg viewBox="0 0 10 16" fill="none" width="8" height="12">
+        <path d="M8 2L2 8l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      ← Retour au formulaire
+    </button>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);letter-spacing:.1em;">APERCU · Catalogue Militaire</span>
+  </nav>
+  <div class="prev-body" id="prev-body"></div>
+</div>
 </div><!-- /admin-main -->
 
 <!-- ═══════════ MODALS ═══════════ -->
@@ -789,7 +804,7 @@ function natCode(nat){return(!nat||nat==='Royaume-Uni du Nil')?'RUN':'UDA';}
 function natCls(nat){return natCode(nat)==='RUN'?'nat-run':'nat-uda';}
 function renderAdminTable(){
   const tbody=document.getElementById('admin-tbody');if(!tbody)return;
-  if(!companies.length){tbody.innerHTML=`<tr><td colspan="13" style="text-align:center;padding:24px;color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:11px;">AUCUNE SOCIETE</td></tr>`;return;}
+  if(!companies.length){tbody.innerHTML=`<tr><td colspan="13" style="text-align:center;padding:24px;color:var(--text3);font-family:monospace;font-size:11px;">AUCUNE SOCIETE</td></tr>`;return;}
   const el=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
   el('s-total',companies.length);el('s-a',companies.filter(c=>c.classe==='A').length);el('s-b',companies.filter(c=>c.classe==='B').length);el('s-c',companies.filter(c=>c.classe==='C').length);el('s-nat',companies.filter(c=>c.nat==='Royaume-Uni du Nil').length);el('s-for',companies.filter(c=>c.nat!=='Royaume-Uni du Nil').length);el('s-date',new Date().toISOString().slice(0,10));el('ccount',companies.length+' sociétés');
   tbody.innerHTML=companies.map((c,i)=>{const sc=scoreColor(c.score);return`<tr><td style="color:var(--text3);font-size:9px">${c.rank||i+1}</td><td style="color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:11px;max-width:180px;white-space:normal;line-height:1.3">${c.nom}</td><td><span class="nat-b ${natCls(c.nat)}">${natCode(c.nat)}</span></td><td style="color:var(--text3);font-size:10px;max-width:140px;white-space:normal;line-height:1.3">${c.cat||'—'}</td><td style="color:${colorFor(c.eq)};text-align:center">${c.eq}</td><td style="color:${colorFor(c.sa)};text-align:center">${c.sa}</td><td style="color:${colorFor(c.tr)};text-align:center">${c.tr}</td><td style="color:${colorFor(c.inn)};text-align:center">${c.inn}</td><td style="color:${colorFor(c.ec)};text-align:center">${c.ec}</td><td style="color:${colorFor(c.fi)};text-align:center">${c.fi}</td><td style="color:${sc};font-weight:500">${c.score.toFixed(2)}</td><td><span class="cls-dot cd-${c.classe}">${c.classe}</span></td><td style="display:flex;gap:5px;padding:6px 10px;"><button class="btn btn-ghost btn-sm" onclick="openModal(${i})">Modifier</button><button class="btn btn-danger btn-xs" onclick="openConfirm(${i})">✕</button></td></tr>`;}).join('');
@@ -1060,7 +1075,7 @@ function renderProdAdmin(){
           ${[1,2,3,4,5,6,7].map(n=>`<option value="${n}"${f.niveau===n?' selected':''}>${n}</option>`).join('')}
         </select>
         <span class="fact-slots" style="color:${col};">${cap.toLocaleString('fr')}</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);">slots</span>
+        <span style="font-family:monospace;font-size:8px;color:var(--text3);">slots</span>
       </div>
     </div>`;
   }).join('');
@@ -1255,7 +1270,7 @@ function renderCustomFieldsList(){
   let html='';
 
   if(standardFields.length){
-    html+=`<div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.16em;color:var(--text3);text-transform:uppercase;padding:5px 0;border-bottom:1px solid var(--border);margin-bottom:6px;margin-top:4px;">▸ Champs standards</div>`;
+    html+=`<div style="font-family:monospace;font-size:7px;letter-spacing:.16em;color:var(--text3);text-transform:uppercase;padding:5px 0;border-bottom:1px solid var(--border);margin-bottom:6px;margin-top:4px;">▸ Champs standards</div>`;
     html+=standardFields.map((f,fi)=>{
       const enc=encodeURIComponent(f);
       return `<div class="cf-item" data-enc="${enc}">
@@ -1270,7 +1285,7 @@ function renderCustomFieldsList(){
   }
 
   if(customItems.length){
-    html+=`<div style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:.16em;color:var(--spice);text-transform:uppercase;padding:5px 0;border-bottom:1px solid rgba(232,92,13,.2);margin-bottom:6px;margin-top:12px;">▸ Équipements ajoutés</div>`;
+    html+=`<div style="font-family:monospace;font-size:7px;letter-spacing:.16em;color:var(--spice);text-transform:uppercase;padding:5px 0;border-bottom:1px solid rgba(232,92,13,.2);margin-bottom:6px;margin-top:12px;">▸ Équipements ajoutés</div>`;
     html+=customItems.map((cf,i)=>`
       <div class="cf-item">
         <span class="cf-nom">${cf.nom}</span>
@@ -1283,7 +1298,7 @@ function renderCustomFieldsList(){
     `).join('');
   }
 
-  if(!html)html=`<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);padding:20px;text-align:center;border:1px solid var(--border);">Aucun équipement défini.</div>`;
+  if(!html)html=`<div style="font-family:monospace;font-size:10px;color:var(--text3);padding:20px;text-align:center;border:1px solid var(--border);">Aucun équipement défini.</div>`;
   el.innerHTML=html;
 }
 
@@ -1408,6 +1423,84 @@ const CAT_IMAGES_PATH='assets/images/catalogue/';
 let catItems=[], catEditId=null, catImgFile=null;
 const TECH_MAP_ADM={1:'1910-1919',2:'1920-1929',3:'1930-1939',4:'1940-1949',5:'1950-1959',6:'1960-1969',7:'1970-1979',8:'1980-1989',9:'1990-1999',10:'2000-2009',11:'2010-2019',12:'2020-∞'};
 
+var TECH_PREV={1:'1910-1919',2:'1920-1929',3:'1930-1939',4:'1940-1949',5:'1950-1959',6:'1960-1969',7:'1970-1979',8:'1980-1989',9:'1990-1999',10:'2000-2009',11:'2010-2019',12:'2020-inf'};
+
+function buildPreviewHTML(item){
+  if(!item)return '<p style="padding:24px;color:var(--text3)">Aucun element</p>';
+  var niv=item.niveau||1;
+  var nivLbl='NIV '+niv+' · '+(TECH_PREV[niv]||'');
+  var imgSrc=item.image_data||(item.image_path?'https://bjbellum.github.io/UKN/'+item.image_path:'');
+  var specs=item.specs||{};
+  var specKeys=Object.keys(specs).filter(function(k){return specs[k];});
+  var coutFmt=item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' N£':'—';
+  var dispo=item.disponibilite||'—';
+  var html='';
+  // Image hero
+  html+='<div class="prev-img-hero">';
+  if(imgSrc){html+='<img src="'+imgSrc+'" alt="'+(item.nom||'')+'" loading="eager">';}
+  else{html+='<div class="prev-img-ph"><svg viewBox="0 0 80 60" fill="none" width="80" height="60"><rect x="4" y="4" width="72" height="52" rx="3" stroke="#3A2E1E" stroke-width="1.5" fill="none"/><circle cx="20" cy="22" r="8" stroke="#3A2E1E" stroke-width="1.2" fill="none"/><path d="M4 44l18-14 14 10 10-8 30 18" stroke="#3A2E1E" stroke-width="1.2" fill="none"/></svg><span class="prev-img-ph-lbl">AUCUNE IMAGE</span></div>';}
+  html+='</div>';
+  // 3 keys
+  html+='<div class="prev-keys">';
+  html+='<div class="prev-key"><div class="pk-lbl">Inspiration / Modele reel</div><div class="pk-val spice">'+(item.inspiration||'—')+'</div></div>';
+  html+='<div class="prev-key"><div class="pk-lbl">Designation officielle</div><div class="pk-val" style="font-size:16px;font-weight:500;">'+(item.nom||'—')+'</div></div>';
+  html+='<div class="prev-key"><div class="pk-lbl">Cout unitaire</div><div class="pk-val gold">'+coutFmt+'</div></div>';
+  html+='</div>';
+  // Info bar
+  html+='<div class="prev-info-bar"><span style="font-family:monospace;font-size:10px;color:var(--text2);">Fabricant : <strong>'+(item.fabricant||'—')+'</strong></span>';
+  html+='<span class="niv-prev niv-'+niv+'">'+nivLbl+'</span>';
+  html+='<span style="font-family:monospace;font-size:10px;color:var(--teal-bright);">Disponibilite : '+dispo+'</span></div>';
+  // Specs
+  html+='<div class="prev-specs-wrap">';
+  if(specKeys.length){
+    html+='<div class="prev-specs-hdr">Caracteristiques techniques</div><div class="prev-specs-grid">';
+    specKeys.forEach(function(k){html+='<div class="prev-spec-item"><div class="psi-key">'+k+'</div><div class="psi-val">'+specs[k]+'</div></div>';});
+    var rem=specKeys.length%3;
+    if(rem===1){html+='<div class="prev-spec-item"></div><div class="prev-spec-item"></div>';}
+    if(rem===2){html+='<div class="prev-spec-item"></div>';}
+    html+='</div>';
+  } else {
+    html+='<div style="font-family:monospace;font-size:10px;color:var(--text3);">Aucune caracteristique renseignee.</div>';
+  }
+  html+='</div>';
+  return html;
+}
+
+function previewCatalogueItem(){
+  // Build item from current form values
+  var cat=document.getElementById('cat-f-categorie')?.value||'';
+  var fields=CAT_PRESETS[cat]||[];
+  var specs={};
+  fields.forEach(function(f){
+    var fid='cat-spec-'+f.replace(/[^a-zA-Z0-9]/g,'_');
+    var el=document.getElementById(fid);
+    var v=el?el.value.trim():'';
+    if(v)specs[f]=v;
+  });
+  var item={
+    id:'preview',
+    nom:document.getElementById('cat-f-nom')?.value||'',
+    categorie:cat,
+    niveau:parseInt(document.getElementById('cat-f-niveau')?.value)||1,
+    fabricant:document.getElementById('cat-f-fabricant')?.value||'',
+    cout_unite:document.getElementById('cat-f-cout')?.value||'',
+    inspiration:document.getElementById('cat-f-inspiration')?.value||'',
+    disponibilite:document.getElementById('cat-f-disponibilite')?.value||'',
+    image_data:document.getElementById('cat-img-data')?.value||'',
+    image_path:document.getElementById('cat-img-path')?.value||'',
+    specs:specs,
+  };
+  document.getElementById('prev-body').innerHTML=buildPreviewHTML(item);
+  document.getElementById('cat-preview-ov').classList.add('open');
+}
+function previewCatalogueItemById(id){
+  var item=catItems.find(function(x){return x.id===id;});
+  if(!item)return;
+  document.getElementById('prev-body').innerHTML=buildPreviewHTML(item);
+  document.getElementById('cat-preview-ov').classList.add('open');
+}
+function closeCatPreview(){document.getElementById('cat-preview-ov').classList.remove('open');}
+
 function loadCatState(){
   try{const s=localStorage.getItem('cat_militaire');catItems=s?JSON.parse(s):[];}
   catch(_){catItems=[];}
@@ -1445,7 +1538,7 @@ function renderCatalogueList(){
   if(cnt)cnt.textContent=`${items.length} équipement${items.length!==1?'s':''}`;
   if(!el)return;
   if(!items.length){
-    el.innerHTML=`<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);padding:24px;text-align:center;border:1px solid var(--border);">Aucun équipement. Utilisez le formulaire ci-dessus pour en ajouter.</div>`;
+    el.innerHTML=`<div style="font-family:monospace;font-size:10px;color:var(--text3);padding:24px;text-align:center;border:1px solid var(--border);">Aucun équipement. Utilisez le formulaire ci-dessus pour en ajouter.</div>`;
     return;
   }
   const catLabels={'armes-feu':'Armes à Feu','explosifs':'Explosifs & Grenades','vehicules-terrestres':'Véhicules Terrestres','artillerie':'Artillerie Placée','missiles':'Missiles & Roquettes','missiles-strategiques':'Missiles Stratégiques','aeronefs':'Véhicules Aériens','navires':'Navires de Surface','sous-marins':'Sous-marins'};
@@ -1458,12 +1551,13 @@ function renderCatalogueList(){
         :`<div style="width:80px;height:60px;border:1px solid var(--border2);border-radius:2px;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;">📦</div>`
       }
       <div style="flex:1;min-width:0;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);font-weight:500;">${item.nom}</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);margin-top:2px;">${catLabels[item.categorie]||item.categorie} · ${item.fabricant||'—'}</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--spice);margin-top:3px;">NIV ${niv} · ${TECH_MAP_ADM[niv]||''}</div>
+        <div style="font-family:monospace;font-size:11px;color:var(--text);font-weight:500;">${item.nom}</div>
+        <div style="font-family:monospace;font-size:9px;color:var(--text3);margin-top:2px;">${catLabels[item.categorie]||item.categorie} · ${item.fabricant||'—'}</div>
+        <div style="font-family:monospace;font-size:8px;color:var(--spice);margin-top:3px;">NIV ${niv} · ${TECH_MAP_ADM[niv]||''}</div>
       </div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);white-space:nowrap;padding:0 10px;">${item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' Cr.':''}</div>
+      <div style="font-family:monospace;font-size:10px;color:var(--gold);white-space:nowrap;padding:0 10px;">${item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' Cr.':''}</div>
       <div style="display:flex;gap:5px;flex-shrink:0;">
+        <button class="btn btn-ghost btn-sm" onclick="previewCatalogueItemById('${item.id}')">&#128065;</button>
         <button class="btn btn-ghost btn-sm" onclick="editCatalogueItem('${item.id}')">Modifier</button>
         <button class="btn btn-danger btn-xs" onclick="deleteCatalogueItem('${item.id}')">✕</button>
       </div>
