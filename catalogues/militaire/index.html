@@ -25,7 +25,16 @@
 .sb-search{padding:8px 12px;border-bottom:1px solid var(--border);}
 .sb-search-in{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:5px 8px;border-radius:2px;outline:none;transition:border-color .2s;}
 .sb-search-in:focus{border-color:var(--spice);}
-.sb-cat-item{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.06em;cursor:pointer;transition:all .15s;border-left:2px solid transparent;user-select:none;}
+.sb-group{border-bottom:1px solid var(--border);}
+.sb-group-hdr{display:flex;align-items:center;gap:7px;padding:10px 14px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text2);letter-spacing:.06em;cursor:pointer;transition:background .15s;user-select:none;}
+.sb-group-hdr:hover{background:rgba(232,92,13,.04);}
+.sb-group-icon{font-size:13px;flex-shrink:0;}
+.sb-group-arrow{color:var(--text3);font-size:14px;transition:transform .2s;line-height:1;flex-shrink:0;}
+.sb-group-arrow.open{transform:rotate(90deg);}
+.sb-group-children{background:rgba(0,0,0,.12);}
+[data-theme="light"] .sb-group-children{background:rgba(0,0,0,.04);}
+.sb-cat-item{display:flex;align-items:center;justify-content:space-between;padding:7px 16px 7px 28px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.06em;cursor:pointer;transition:all .15s;border-left:2px solid transparent;user-select:none;}
+.sb-sub-item{padding-left:28px;}
 .sb-cat-item:hover{background:rgba(232,92,13,.05);color:var(--text2);}
 .sb-cat-item.active{background:rgba(232,92,13,.1);color:var(--spice);border-left-color:var(--spice);}
 .sb-cat-count{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text3);background:var(--card-bg);border:1px solid var(--border);padding:1px 5px;border-radius:10px;flex-shrink:0;}
@@ -41,35 +50,39 @@
 .cat-section-icon{width:44px;height:44px;border:1px solid rgba(232,92,13,.35);border-radius:2px;display:flex;align-items:center;justify-content:center;background:rgba(232,92,13,.06);flex-shrink:0;}
 .cat-section-title{font-family:'Dune Rise',serif;font-size:clamp(13px,1.8vw,18px);color:var(--spice);letter-spacing:.1em;}
 .cat-section-sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.08em;margin-top:3px;}
-/* ── ITEM CARDS ── */
-.cat-items{display:flex;flex-direction:column;gap:8px;margin-bottom:32px;}
-.cat-item{background:var(--card-bg);border:1px solid var(--border);border-left:3px solid rgba(232,92,13,.3);transition:border-color .2s;}
-.cat-item:hover{border-left-color:var(--spice);}
-.cat-item-hdr{display:flex;align-items:center;gap:14px;padding:12px 16px;cursor:pointer;user-select:none;}
-.cat-item-img{width:56px;height:42px;object-fit:cover;border-radius:1px;border:1px solid var(--border2);background:var(--bg2);flex-shrink:0;}
-.cat-item-img-ph{width:56px;height:42px;flex-shrink:0;border:1px solid var(--border2);background:var(--bg2);border-radius:1px;display:flex;align-items:center;justify-content:center;}
-.cat-item-meta{flex:1;min-width:0;}
-.cat-item-name{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text);letter-spacing:.04em;font-weight:500;}
-.cat-item-fab{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.06em;margin-top:2px;}
-.cat-item-tags{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;}
-.cat-item-niv{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:2px 6px;border-radius:2px;border:1px solid rgba(232,92,13,.3);color:var(--spice);background:rgba(232,92,13,.06);}
-.cat-item-inspi{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:2px 6px;border-radius:2px;border:1px solid var(--border2);color:var(--text3);background:var(--bg2);}
-.cat-item-cout{font-family:'Dune Rise',serif;font-size:11px;color:var(--gold);letter-spacing:.04em;white-space:nowrap;flex-shrink:0;padding:0 8px;}
-.cat-item-arrow{font-size:14px;color:var(--text3);transition:transform .2s;flex-shrink:0;}
+/* ── ITEM GRID ── */
+.cat-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:32px;}
+@media(max-width:600px){.cat-items{grid-template-columns:1fr;}}
+.cat-item{background:var(--card-bg);border:1px solid var(--border);border-top:2px solid rgba(232,92,13,.4);transition:border-color .25s;display:flex;flex-direction:column;overflow:hidden;}
+.cat-item:hover{border-color:var(--spice);border-top-color:var(--spice);}
+/* Image zone */
+.cat-item-img-zone{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg2);cursor:pointer;position:relative;}
+.cat-item-img-zone img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.cat-item:hover .cat-item-img-zone img{transform:scale(1.03);}
+.cat-item-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;cursor:pointer;}
+.cat-item-img-ph-icon{font-size:28px;opacity:.25;}
+/* Key badges */
+.cat-item-badges{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--border);}
+.cat-item-badge{padding:8px 10px;text-align:center;border-right:1px solid var(--border);}
+.cat-item-badge:last-child{border-right:none;}
+.cat-badge-lbl{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;}
+.cat-badge-val{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.cat-badge-val.gold{color:var(--gold);font-family:'Dune Rise',serif;font-size:11px;}
+.cat-badge-val.spice{color:var(--spice);}
+/* Toggle header */
+.cat-item-hdr{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;cursor:pointer;user-select:none;transition:background .15s;}
+.cat-item-hdr:hover{background:rgba(232,92,13,.04);}
+.cat-item-niv{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:2px 6px;border-radius:2px;border:1px solid;display:inline-block;}
+.cat-item-arrow{font-size:12px;color:var(--text3);transition:transform .2s;flex-shrink:0;}
 .cat-item.open .cat-item-arrow{transform:rotate(90deg);color:var(--spice);}
-/* ── SPEC PANEL ── */
-.cat-spec-panel{display:none;padding:14px 16px 16px 16px;border-top:1px solid var(--border);background:rgba(0,0,0,.1);}
-[data-theme="light"] .cat-spec-panel{background:rgba(0,0,0,.04);}
+/* Spec panel */
+.cat-spec-panel{display:none;padding:0 14px 14px;border-top:1px solid var(--border);background:rgba(0,0,0,.08);}
+[data-theme="light"] .cat-spec-panel{background:rgba(0,0,0,.03);}
 .cat-item.open .cat-spec-panel{display:block;}
-.spec-layout{display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start;}
-@media(max-width:700px){.spec-layout{grid-template-columns:1fr;}}
-.spec-img-box{border:1px solid var(--border2);border-radius:2px;overflow:hidden;background:var(--bg2);}
-.spec-img-full{width:100%;display:block;}
-.spec-img-ph{height:180px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:9px;}
-.spec-table{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:10px;}
-.spec-table tr:hover td{background:rgba(232,92,13,.025);}
+.spec-table{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:10px;margin-top:12px;}
+.spec-table tr:hover td{background:rgba(232,92,13,.02);}
 .spec-table td{padding:5px 8px;border-bottom:1px solid var(--border);vertical-align:top;}
-.spec-table td:first-child{color:var(--text3);letter-spacing:.08em;width:48%;white-space:nowrap;font-size:9px;}
+.spec-table td:first-child{color:var(--text3);letter-spacing:.08em;width:45%;font-size:9px;}
 .spec-table td:last-child{color:var(--text);letter-spacing:.04em;}
 .spec-table tr:last-child td{border-bottom:none;}
 /* ── EMPTY STATE ── */
@@ -89,23 +102,6 @@
 </head>
 <body>
 
-<!-- ACCESS WALL -->
-<div id="access-wall" class="access-wall">
-  <div class="aw-inner">
-    <div style="width:48px;height:48px;border:1px solid rgba(232,92,13,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;background:rgba(232,92,13,.06);">
-      <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M12 3L3 7V12C3 17 7 21 12 22.5C17 21 21 17 21 12V7L12 3Z" stroke="#E85C0D" stroke-width="1.2" fill="none"/><path d="M9 12L11 14L15 10" stroke="#E85C0D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-    <div style="font-family:'Dune Rise',serif;font-size:14px;color:var(--gold-pale);letter-spacing:.08em;margin-bottom:4px;">Acces Restreint</div>
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.12em;margin-bottom:18px;">CAT-MIL-001 · FORCES ARMÉES DU NIL</div>
-    <p style="font-size:12px;color:var(--text2);line-height:1.75;margin-bottom:22px;">Catalogue classifié réservé au personnel habilité des Forces Armées du Nil.</p>
-    <a id="auth-btn" href="#" style="display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(232,92,13,.5);color:var(--spice);padding:10px 24px;font-family:'Dune Rise',serif;font-size:10px;letter-spacing:.14em;text-decoration:none;border-radius:2px;width:100%;justify-content:center;transition:background .2s;">
-      <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M20.3 4.4C18.8 3.7 17.2 3.2 15.5 3c-.2.3-.4.8-.6 1.1a16 16 0 0 0-4.8 0C9.9 3.8 9.7 3.3 9.5 3 7.8 3.2 6.2 3.7 4.7 4.4A19.8 19.8 0 0 0 1.5 17.8a20.2 20.2 0 0 0 6.2 3.2c.5-.7.9-1.5 1.3-2.2-.7-.3-1.4-.6-2-1 .2-.1.4-.3.5-.4a14.4 14.4 0 0 0 12.5 0c.2.1.4-.3.5.4-.6.4-1.3.7-2 1 .4.8.8 1.5 1.3 2.2a20 20 0 0 0 6.2-3.2A19.7 19.7 0 0 0 20.3 4.4z" fill="#E85C0D"/></svg>
-      Se connecter avec Discord
-    </a>
-    <div style="margin-top:12px;"><a href="../" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);text-decoration:none;">← Catalogues du Nil</a></div>
-  </div>
-</div>
-
 <!-- NAV -->
 <nav class="cat-topbar">
   <div style="display:flex;align-items:center;gap:12px;">
@@ -119,7 +115,7 @@
   </div>
 </nav>
 
-<div id="main-content" style="display:none;" class="cat-shell">
+<div id="main-content" class="cat-shell">
   <!-- SIDEBAR -->
   <aside class="cat-sidebar">
     <div class="sb-hdr">
@@ -148,7 +144,6 @@
 
 <script>
 // ── CONFIG ──
-const FAN_IDS=['772821169664426025','928291843958014014','1014832884764393523','1113422056525144104','293869524091142144','1302403450566610944'];
 const TECH_MAP={1:'1910-1919',2:'1920-1929',3:'1930-1939',4:'1940-1949',5:'1950-1959',6:'1960-1969',7:'1970-1979',8:'1980-1989',9:'1990-1999',10:'2000-2009',11:'2010-2019',12:'2020-∞'};
 
 const CATEGORIES=[
@@ -196,6 +191,8 @@ async function syncFromGH(){
 }
 
 // ── RENDER ──
+// Track open groups
+let openGroups=new Set(['terrestre','missile-spatial','naval-aerien']);
 function renderSidebar(){
   const el=document.getElementById('cat-sidebar-list');
   if(!el)return;
@@ -203,14 +200,33 @@ function renderSidebar(){
   const tc=document.getElementById('sb-total-count');
   if(tc)tc.textContent=`${total} équipement${total!==1?'s':''}`;
 
-  el.innerHTML=CATEGORIES.map(cat=>{
-    const count=catalogue.filter(i=>i.categorie===cat.id).length;
-    const isActive=cat.id===activeCategory;
-    return`<div class="sb-cat-item${isActive?' active':''}" onclick="selectCategory('${cat.id}')">
-      <span>${cat.label}</span>
-      <span class="sb-cat-count">${count}</span>
+  el.innerHTML=CAT_GROUPS.map(g=>{
+    const groupTotal=catalogue.filter(i=>g.sub.some(s=>s.id===i.categorie)).length;
+    const isOpen=openGroups.has(g.id);
+    return`<div class="sb-group">
+      <div class="sb-group-hdr" onclick="toggleGroup('${g.id}')">
+        <span class="sb-group-arrow${isOpen?' open':''}">›</span>
+        <span class="sb-group-icon">${g.icon}</span>
+        <span style="flex:1;">${g.label}</span>
+        <span class="sb-cat-count">${groupTotal}</span>
+      </div>
+      ${isOpen?`<div class="sb-group-children">
+        ${g.sub.map(cat=>{
+          const count=catalogue.filter(i=>i.categorie===cat.id).length;
+          const isActive=cat.id===activeCategory;
+          return`<div class="sb-cat-item sb-sub-item${isActive?' active':''}" onclick="selectCategory('${cat.id}')">
+            <span>${cat.label}</span>
+            <span class="sb-cat-count">${count}</span>
+          </div>`;
+        }).join('')}
+      </div>`:''}
     </div>`;
   }).join('');
+}
+function toggleGroup(id){
+  if(openGroups.has(id))openGroups.delete(id);
+  else openGroups.add(id);
+  renderSidebar();
 }
 
 function selectCategory(id){
@@ -338,13 +354,8 @@ function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-th
 })();
 
 window.addEventListener('DOMContentLoaded',()=>{
-  const pa=window.PharosAuth,user=pa?.getUser();
-  if(user&&FAN_IDS.includes(user.id)){
-    document.getElementById('access-wall').style.display='none';
-    document.getElementById('main-content').style.display='flex';
-    loadCatalogue();
-    syncFromGH().finally(()=>{renderSidebar();renderContent();});
-  }
+  loadCatalogue();
+  syncFromGH().finally(()=>{renderSidebar();renderContent();});
 });
 </script>
 <script src="../../pharos-auth.js"></script>
