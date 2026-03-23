@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "id": "cat_1774228660145",
+    "nom": "Test",
+    "categorie": "armes-feu",
+    "niveau": 1,
+    "fabricant": "Test",
+    "cout_unite": "0",
+    "inspiration": "Test",
+    "specs": {
+      "Calibre": "Test",
+      "Masse (non chargé)": "Test",
+      "Longueur": "Test",
+      "Longueur du canon": "Test",
+      "Cadence de tir": "Test",
+      "Vitesse initiale": "Test",
+      "Portée pratique": "Test",
+      "Portée maximale": "Test",
+      "Capacité": "Test",
+      "Type de munitions": "Test",
+      "Équipements possibles": "Test"
+    },
+    "image_path": "assets/images/catalogue/image.png"
+  }
+]
