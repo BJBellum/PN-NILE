@@ -95,11 +95,10 @@ html,body{height:100%;overflow:hidden;}
 
 /* Right: square image */
 .item-img-side{
-  width:220px;flex-shrink:0;align-self:stretch;
+  width:260px;flex-shrink:0;align-self:stretch;
   overflow:hidden;background:var(--bg2);
   border-left:1px solid var(--border);
   order:2;
-  min-height:160px;
 }
 .item-img-side img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 .item-img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
@@ -117,7 +116,7 @@ html,body{height:100%;overflow:hidden;}
 .item-dispo{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--teal-bright);}
 
 /* 3 key badges */
-.item-keys{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--border);}
+.item-keys{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);}
 .item-key{padding:8px 12px;text-align:center;border-right:1px solid var(--border);}
 .item-key:last-child{border-right:none;}
 .ik-lbl{font-family:'IBM Plex Mono',monospace;font-size:7px;color:rgba(255,255,255,.42);letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;}
@@ -349,7 +348,7 @@ function buildItemHTML(item){
   html+='<div class="item-keys">';
   html+='<div class="item-key"><div class="ik-lbl">Inspiration</div><div class="ik-val spice" title="'+(item.inspiration||'\u2014')+'">'+(item.inspiration||'\u2014')+'</div></div>';
   html+='<div class="item-key"><div class="ik-lbl">Cout unitaire</div><div class="ik-val gold">'+coutFmt+'</div></div>';
-  html+='<div class="item-key"><div class="ik-lbl">Disponibilite</div><div class="ik-val" style="color:var(--teal-bright);font-size:11px;">'+(item.disponibilite||'\u2014')+'</div></div>';
+
   html+='</div>';
 
   // Specs
