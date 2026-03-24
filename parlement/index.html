@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parlement du Nil · Royaume-Uni du Nil</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Parlement du Nil · Royaume-Uni du Nil">
+<meta property="og:description" content="Parlement bicaméral du Royaume-Uni du Nil — Chambre des Citoyens (180 sièges) et Haute-Chambre du Nil (18 sièges). Résultats électoraux 2305.">
+<meta property="og:url" content="https://BJBellum.github.io/UKN/parlement/">
+<meta property="og:image" content="https://BJBellum.github.io/UKN/assets/images/UKNSite.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2E5FA8">
+<link rel="icon" type="image/png" href="../assets/images/UKNSite.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/dune.css">
+<style>
+*{box-sizing:border-box;}
+.hero-parl{min-height:52vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(46,95,168,.12) 0%,transparent 58%);}
+.hero-title-parl{font-family:'Dune Rise',serif;font-size:clamp(24px,3.5vw,44px);color:var(--gold-pale);letter-spacing:.07em;line-height:1.05;margin-bottom:6px;}
+
+/* Chamber tabs */
+.chamber-tabs{display:flex;gap:0;border:1px solid var(--border);margin-bottom:0;width:fit-content;}
+.chamber-tab{padding:9px 24px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--text3);cursor:pointer;border-right:1px solid var(--border);transition:all .15s;user-select:none;}
+.chamber-tab:last-child{border-right:none;}
+.chamber-tab:hover{background:rgba(74,127,212,.06);color:#4A7FD4;}
+.chamber-tab.active{background:rgba(74,127,212,.14);color:#4A7FD4;border-bottom:2px solid #4A7FD4;}
+.chamber-panel{display:none;}
+.chamber-panel.active{display:block;}
+
+/* Hemicycle container */
+.hemicycle-wrap{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-top:2px solid #4A7FD4;
+  padding:24px 20px 16px;
+  margin-bottom:20px;
+  position:relative;
+}
+.hemicycle-title{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;color:#4A7FD4;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;}
+.hemicycle-canvas-wrap{display:flex;justify-content:center;overflow:hidden;}
+canvas.hemicycle{display:block;cursor:crosshair;}
+
+/* Tooltip */
+.h-tooltip{
+  position:fixed;z-index:200;
+  background:rgba(8,5,0,.97);border:1px solid rgba(74,127,212,.4);
+  padding:10px 14px;pointer-events:none;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;line-height:1.7;
+  min-width:190px;border-radius:2px;
+  transition:opacity .1s;
+}
+.h-tooltip-party{color:#4A7FD4;font-weight:500;font-size:11px;}
+.h-tooltip-detail{color:var(--text3);font-size:9px;}
+
+/* Legend */
+.legend-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.legend-item{display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text2);cursor:pointer;padding:4px 10px;border:1px solid var(--border);border-radius:2px;transition:all .15s;}
+.legend-item:hover{border-color:rgba(74,127,212,.4);}
+.legend-item.dimmed{opacity:.4;}
+.legend-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.legend-count{color:var(--text3);font-size:9px;margin-left:2px;}
+
+/* Stat bar */
+.stat-bar-wrap{height:14px;display:flex;gap:1px;border-radius:2px;overflow:hidden;margin-bottom:6px;}
+.stat-bar-seg{height:100%;transition:flex .4s;}
+.seat-totals{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px;}
+.seat-total-box{background:var(--card-bg);border:1px solid var(--border);padding:12px 18px;min-width:100px;}
+.seat-total-lbl{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+.seat-total-val{font-family:'Dune Rise',serif;font-size:20px;color:#4A7FD4;letter-spacing:.04em;}
+
+/* Party list */
+.party-list{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;}
+.party-row{
+  display:flex;align-items:center;gap:14px;
+  background:var(--card-bg);border:1px solid var(--border);
+  border-left:4px solid;padding:12px 16px;
+  transition:border-color .2s;
+}
+.party-row:hover{border-right-color:rgba(74,127,212,.3);}
+.party-color-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;}
+.party-info{flex:1;min-width:0;}
+.party-name{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text);font-weight:500;letter-spacing:.04em;}
+.party-name-ar{font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;color:var(--text3);margin-top:2px;}
+.party-chef{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.06em;}
+.party-seats{text-align:right;flex-shrink:0;}
+.party-seats-val{font-family:'Dune Rise',serif;font-size:22px;letter-spacing:.04em;}
+.party-seats-lbl{font-family:'IBM Plex Mono',monospace;font-size:7px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;}
+.party-pct{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);margin-top:2px;}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="nav-logo" style="border-color:rgba(46,95,168,.4);background:rgba(46,95,168,.06);">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5V10C3 15 6.5 18.5 10 19.5C13.5 18.5 17 15 17 10V5.5L10 2Z" stroke="#4A7FD4" stroke-width="1" fill="none"/><circle cx="10" cy="12" r="2.5" stroke="#4A7FD4" stroke-width=".8" fill="none"/></svg>
+    </div>
+    <span class="nav-brand" style="color:#4A7FD4;">Parlement du Nil</span>
+    <span class="nav-sub">البرلمان النيلي</span>
+  </div>
+  <div class="nav-right">
+    <a href="../politique/" class="nav-back">← Politique Interne</a>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <svg id="toggle-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"><path id="icon-path" d="M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z" fill="currentColor"/></svg>
+      <span id="toggle-lbl">NUIT</span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero hero-parl">
+  <div class="hero-desert"></div>
+  <div class="hero-content" style="padding-top:46px;padding-bottom:48px;">
+    <div class="hero-eyebrow" style="color:#4A7FD4;">PARL-NL-001 · Parlement Bicaméral · Exercice 2305</div>
+    <h1 class="hero-title-parl">Parlement du Nil</h1>
+    <div class="hero-arabic">البرلمان النيلي · مملكة النيل المتحدة</div>
+    <div class="hero-ornament" style="margin:12px 0 16px;">
+      <div class="hero-ornament-line" style="background:linear-gradient(90deg,transparent,#2E5FA8)"></div>
+      <div class="hero-ornament-diamond" style="background:#4A7FD4;"></div>
+      <div class="hero-ornament-line" style="background:linear-gradient(90deg,#2E5FA8,transparent)"></div>
+    </div>
+    <p class="hero-desc" style="max-width:560px;margin:0 auto;">Assemblée parlementaire nationale bicamérale du Royaume-Uni du Nil. Résultats des élections législatives de l'exercice 2305.</p>
+  </div>
+</section>
+
+<!-- Tooltip (global) -->
+<div class="h-tooltip" id="h-tooltip" style="opacity:0;display:none;"></div>
+
+<div class="page">
+  <!-- CHAMBER TABS -->
+  <div class="chamber-tabs" style="margin-bottom:24px;">
+    <div class="chamber-tab active" onclick="showChamber('citoyens')">Chambre des Citoyens</div>
+    <div class="chamber-tab" onclick="showChamber('haute')">Haute-Chambre du Nil</div>
+  </div>
+
+  <!-- CHAMBRE DES CITOYENS -->
+  <div class="chamber-panel active" id="panel-citoyens">
+    <div class="seat-totals">
+      <div class="seat-total-box">
+        <div class="seat-total-lbl">Total sièges</div>
+        <div class="seat-total-val" id="total-c">—</div>
+      </div>
+      <div class="seat-total-box">
+        <div class="seat-total-lbl">Majorité absolue</div>
+        <div class="seat-total-val" id="maj-c">—</div>
+      </div>
+      <div class="seat-total-box">
+        <div class="seat-total-lbl">Partis représentés</div>
+        <div class="seat-total-val" id="parties-c">—</div>
+      </div>
+    </div>
+
+    <!-- Bar -->
+    <div class="stat-bar-wrap" id="bar-c" style="height:18px;border-radius:2px;overflow:hidden;margin-bottom:16px;"></div>
+
+    <!-- Hemicycle -->
+    <div class="hemicycle-wrap">
+      <div class="hemicycle-title">
+        <span>Hemicycle · Chambre des Citoyens</span>
+        <span style="color:var(--text3);font-size:7px;">Survoler un siège pour les détails</span>
+      </div>
+      <div class="legend-wrap" id="legend-c"></div>
+      <div class="hemicycle-canvas-wrap">
+        <canvas class="hemicycle" id="canvas-c"></canvas>
+      </div>
+    </div>
+
+    <!-- Party list -->
+    <div class="section-header" style="margin-bottom:16px;">
+      <span class="section-eyebrow">Résultats · Chambre des Citoyens</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="party-list" id="plist-c"></div>
+  </div>
+
+  <!-- HAUTE-CHAMBRE -->
+  <div class="chamber-panel" id="panel-haute">
+    <div class="seat-totals">
+      <div class="seat-total-box">
+        <div class="seat-total-lbl">Total sièges</div>
+        <div class="seat-total-val" id="total-h">—</div>
+      </div>
+      <div class="seat-total-box">
+        <div class="seat-total-lbl">Majorité absolue</div>
+        <div class="seat-total-val" id="maj-h">—</div>
+      </div>
+      <div class="seat-total-box">
+        <div class="seat-total-lbl">Partis représentés</div>
+        <div class="seat-total-val" id="parties-h">—</div>
+      </div>
+    </div>
+
+    <div class="stat-bar-wrap" id="bar-h" style="height:18px;border-radius:2px;overflow:hidden;margin-bottom:16px;"></div>
+
+    <div class="hemicycle-wrap">
+      <div class="hemicycle-title">
+        <span>Hemicycle · Haute-Chambre du Nil</span>
+        <span style="color:var(--text3);font-size:7px;">Survoler un siège pour les détails</span>
+      </div>
+      <div class="legend-wrap" id="legend-h"></div>
+      <div class="hemicycle-canvas-wrap">
+        <canvas class="hemicycle" id="canvas-h"></canvas>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-bottom:16px;">
+      <span class="section-eyebrow">Résultats · Haute-Chambre du Nil</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="party-list" id="plist-h"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-left">PARLEMENT DU NIL · PARL-NL-001 · ROYAUME-UNI DU NIL<br>CHAMBRE DES CITOYENS & HAUTE-CHAMBRE · EXERCICE 2305</div>
+        <div class="footer-credit">Projet Résurgence © 2026 · Police: Dune Rise — Fontswan (SIL OFL 1.1)</div>
+      </div>
+      <div class="footer-right">البرلمان النيلي · مملكة النيل المتحدة</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+// ── DEFAULT DATA ──────────────────────────────────
+var DEFAULT_DATA = {
+  partis:[
+    {id:'us',nom:"Union Sociale",nom_ar:"الاتحاد الاجتماعي",chef:"Achraf Bazzi",couleur:"#CC1A1A",sieges_citoyens:136,sieges_haute:11},
+    {id:'pa',nom:"Parti Agraire",nom_ar:"الحزب الزراعي",chef:"Ahmed Handal",couleur:"#E87D00",sieges_citoyens:30,sieges_haute:3},
+    {id:'al',nom:"L'Action Liberale",nom_ar:"الحزب الليبرالي",chef:"Mustafa Srour",couleur:"#E8C800",sieges_citoyens:8,sieges_haute:2},
+    {id:'pi',nom:"Parti Islamique",nom_ar:"الحزب الاسلامي",chef:"Abdallah Haddad",couleur:"#228B22",sieges_citoyens:2,sieges_haute:1}
+  ],
+  independants_citoyens:4,
+  independants_haute:1
+};
+
+var data = DEFAULT_DATA;
+try{ var s=localStorage.getItem('parlement_data'); if(s)data=JSON.parse(s); }catch(e){}
+
+// ── HEMICYCLE ALGORITHM ───────────────────────────
+// Distribute N seats in concentric arcs (standard parliamentary chart)
+function computeHemicycle(total) {
+  // Determine number of rows
+  var rows = Math.max(2, Math.ceil(Math.sqrt(total / 3.5)));
+  // Calculate seats per row (outer rows have more seats)
+  // Method: each row arc has proportional capacity
+  var rowSeats = [];
+  var radInner = 0.35, radStep = 0.13;
+  for(var r=0;r<rows;r++){
+    var rad = radInner + r * radStep;
+    rowSeats.push({rad:rad, seats:0});
+  }
+  // Distribute proportional to circumference
+  var totalCirc = rowSeats.reduce(function(s,r){return s+r.rad;},0);
+  var remaining = total;
+  for(var r=0;r<rows;r++){
+    var n = r < rows-1 ? Math.round(total * rowSeats[r].rad / totalCirc) : remaining;
+    rowSeats[r].seats = Math.max(1, n);
+    remaining -= rowSeats[r].seats;
+  }
+  // Build seat positions (angle from left=PI to right=0, semicircle)
+  var seats = [];
+  for(var r=0;r<rows;r++){
+    var n = rowSeats[r].seats;
+    var rad = rowSeats[r].rad;
+    for(var i=0;i<n;i++){
+      // angle: from ~5° to ~175° (left to right of hemicycle)
+      var angle = Math.PI - (i / (n-1 || 1)) * Math.PI;
+      // Small padding
+      var pad = 0.05;
+      angle = Math.PI*(1-pad) - (i / (n-1 || 1)) * Math.PI*(1-2*pad);
+      seats.push({row:r, rad:rad, angle:angle, party:null});
+    }
+  }
+  return seats;
+}
+
+// Assign parties to seats (left = majority, right = opposition — classical)
+function assignParties(seats, partis, independants) {
+  var allGroups = [];
+  partis.forEach(function(p){ for(var i=0;i<p.count;i++) allGroups.push({party:p}); });
+  for(var i=0;i<independants;i++) allGroups.push({party:{nom:'Independants',couleur:'#888888',chef:'—'}});
+  // Fill seats left-to-right by row, inner to outer
+  var idx=0;
+  seats.forEach(function(s){
+    if(idx < allGroups.length){ s.party = allGroups[idx++].party; }
+    else s.party = {nom:'Independants',couleur:'#888888',chef:'—'};
+  });
+  return seats;
+}
+
+// ── DRAW ─────────────────────────────────────────
+function drawHemicycle(canvasId, partis, indep, dimmed) {
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
+  var total = partis.reduce(function(s,p){return s+p.count;},0) + indep;
+  var seats = computeHemicycle(total);
+
+  // Canvas sizing
+  var W = canvas.parentElement.clientWidth;
+  var H = Math.round(W * 0.56);
+  canvas.width = W; canvas.height = H;
+  canvas.style.width = W+'px'; canvas.style.height = H+'px';
+
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,W,H);
+
+  // Background
+  ctx.fillStyle = isDark ? '#0A0701' : '#F5F0E8';
+  ctx.fillRect(0,0,W,H);
+
+  // Center of hemicycle (bottom center)
+  var cx = W * 0.5, cy = H * 0.92;
+  var scale = Math.min(W,H) * 0.44;
+
+  // Seat radius based on total
+  var seatR = Math.max(3, Math.min(10, scale * 0.045));
+  if(total > 100) seatR = Math.max(3, scale * 0.032);
+  if(total > 150) seatR = Math.max(3, scale * 0.026);
+
+  // Build group list with counts
+  var allGroups = [];
+  partis.forEach(function(p){ for(var i=0;i<p.count;i++) allGroups.push(p); });
+  for(var i=0;i<indep;i++) allGroups.push({nom:'Independants',nom_ar:'المستقلون',couleur:'#888888',chef:'—',id:'ind'});
+
+  // Assign seats
+  var idx=0;
+  seats.forEach(function(s){
+    s.party = idx < allGroups.length ? allGroups[idx++] : {nom:'Independants',couleur:'#888888',chef:'—',id:'ind'};
+  });
+
+  // Draw each seat
+  seats.forEach(function(s){
+    var r = s.rad * scale;
+    var x = cx + Math.cos(s.angle) * r;
+    var y = cy - Math.sin(s.angle) * r;
+    s.cx = x; s.cy = y; s.r = seatR;
+
+    var col = s.party.couleur || '#888';
+    var dim = dimmed && dimmed.size > 0 && !dimmed.has(s.party.id || s.party.nom);
+
+    // Glow effect for large dots
+    if(!dim && seatR >= 5){
+      ctx.beginPath(); ctx.arc(x,y,seatR*1.7,0,Math.PI*2);
+      ctx.fillStyle = col + '22'; ctx.fill();
+    }
+    ctx.beginPath(); ctx.arc(x,y,seatR,0,Math.PI*2);
+    ctx.fillStyle = dim ? (isDark?'#222':'#ccc') : col;
+    ctx.globalAlpha = dim ? 0.25 : 1;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+
+    // Stroke
+    ctx.beginPath(); ctx.arc(x,y,seatR,0,Math.PI*2);
+    ctx.strokeStyle = isDark ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.4)';
+    ctx.lineWidth = 0.5; ctx.stroke();
+  });
+
+  // Store seats on canvas for hover
+  canvas._seats = seats;
+  canvas._total = total;
+  return seats;
+}
+
+// ── TOOLTIP & HOVER ───────────────────────────────
+var tooltip = document.getElementById('h-tooltip');
+var activeCanvas = null;
+
+function setupHover(canvasId) {
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+
+  canvas.addEventListener('mousemove', function(e){
+    var rect = canvas.getBoundingClientRect();
+    var mx = e.clientX - rect.left;
+    var my = e.clientY - rect.top;
+    var seats = canvas._seats;
+    if(!seats) return;
+    var hit = null;
+    for(var i=0;i<seats.length;i++){
+      var s = seats[i];
+      var dx = mx - s.cx, dy = my - s.cy;
+      if(dx*dx + dy*dy <= (s.r+3)*(s.r+3)){ hit=s; break; }
+    }
+    if(hit && hit.party){
+      tooltip.style.display='block';
+      tooltip.style.opacity='1';
+      tooltip.style.left = (e.clientX+14)+'px';
+      tooltip.style.top  = (e.clientY-30)+'px';
+      var p = hit.party;
+      tooltip.innerHTML =
+        '<div class="h-tooltip-party">'+p.nom+'</div>'+
+        (p.nom_ar?'<div class="h-tooltip-detail">'+p.nom_ar+'</div>':'')+
+        (p.chef&&p.chef!=='—'?'<div class="h-tooltip-detail">Chef : '+p.chef+'</div>':'')+
+        '<div style="color:#4A7FD4;font-size:11px;margin-top:4px;">Siège '+(hit.party.nom==='Independants'?'Independant':'')+'</div>';
+    } else {
+      tooltip.style.opacity='0';
+      setTimeout(function(){tooltip.style.display='none';},150);
+    }
+  });
+  canvas.addEventListener('mouseleave', function(){
+    tooltip.style.opacity='0';
+    setTimeout(function(){tooltip.style.display='none';},150);
+  });
+}
+
+// ── LEGEND ────────────────────────────────────────
+var dimmedC = new Set(), dimmedH = new Set();
+
+function buildLegend(containerId, partis, indep, total, dimmedSet, canvasId, chambre) {
+  var el = document.getElementById(containerId);
+  if(!el) return;
+  var html='';
+  partis.forEach(function(p){
+    var pct = ((p.count/total)*100).toFixed(1);
+    var isDim = dimmedSet.size > 0 && !dimmedSet.has(p.id||p.nom);
+    html+='<div class="legend-item'+(isDim?' dimmed':'')+'" onclick="toggleDim(\''+canvasId+'\',\''+chambre+'\','+(JSON.stringify(p.id||p.nom)).replace(/"/g,'&quot;')+')" style="border-left:3px solid '+p.couleur+';">';
+    html+='<div class="legend-dot" style="background:'+p.couleur+';"></div>';
+    html+='<span>'+p.nom+'</span>';
+    html+='<span class="legend-count">'+p.count+' ('+pct+'%)</span>';
+    html+='</div>';
+  });
+  if(indep > 0){
+    var pct=((indep/total)*100).toFixed(1);
+    var isDim=dimmedSet.size>0&&!dimmedSet.has('ind');
+    html+='<div class="legend-item'+(isDim?' dimmed':'')+'" onclick="toggleDim(\''+canvasId+'\',\''+chambre+'\',\'ind\')" style="border-left:3px solid #888;">';
+    html+='<div class="legend-dot" style="background:#888;"></div>';
+    html+='<span>Independants</span><span class="legend-count">'+indep+' ('+pct+'%)</span>';
+    html+='</div>';
+  }
+  el.innerHTML=html;
+}
+
+function toggleDim(canvasId, chambre, pid) {
+  var ds = chambre==='c' ? dimmedC : dimmedH;
+  if(ds.has(pid)) ds.delete(pid); else ds.add(pid);
+  // If all items in set = show all
+  renderChamber(chambre);
+}
+
+// ── PARTY LIST ────────────────────────────────────
+function buildPartyList(containerId, partis, indep, total) {
+  var el = document.getElementById(containerId);
+  if(!el) return;
+  var html='';
+  var items = partis.concat(indep>0?[{id:'ind',nom:'Independants',nom_ar:'المستقلون',chef:'—',couleur:'#888',count:indep}]:[]);
+  items.forEach(function(p){
+    var pct=((p.count/total)*100).toFixed(1);
+    html+='<div class="party-row" style="border-left-color:'+p.couleur+';">';
+    html+='<div class="party-color-dot" style="background:'+p.couleur+';box-shadow:0 0 8px '+p.couleur+'55;"></div>';
+    html+='<div class="party-info">';
+    html+='<div class="party-name">'+p.nom+'</div>';
+    if(p.nom_ar) html+='<div class="party-name-ar">'+p.nom_ar+'</div>';
+    if(p.chef&&p.chef!=='—') html+='<div class="party-chef">Chef de parti : '+p.chef+'</div>';
+    html+='</div>';
+    html+='<div class="party-seats">';
+    html+='<div class="party-seats-val" style="color:'+p.couleur+';">'+p.count+'</div>';
+    html+='<div class="party-seats-lbl">sieges</div>';
+    html+='<div class="party-pct">'+pct+'%</div>';
+    html+='</div></div>';
+  });
+  el.innerHTML=html;
+}
+
+// ── STAT BAR ──────────────────────────────────────
+function buildStatBar(containerId, partis, indep, total) {
+  var el = document.getElementById(containerId);
+  if(!el) return;
+  var html='';
+  partis.forEach(function(p){
+    var pct=(p.count/total*100);
+    html+='<div class="stat-bar-seg" title="'+p.nom+' — '+p.count+' sièges" style="flex:'+pct+';background:'+p.couleur+';"></div>';
+  });
+  if(indep>0){
+    html+='<div class="stat-bar-seg" title="Indépendants — '+indep+' sièges" style="flex:'+(indep/total*100)+';background:#888;"></div>';
+  }
+  el.innerHTML=html;
+}
+
+// ── RENDER ────────────────────────────────────────
+function renderChamber(chambre) {
+  var isCit = chambre==='c';
+  var partis = data.partis.map(function(p){
+    return {id:p.id,nom:p.nom,nom_ar:p.nom_ar,chef:p.chef,couleur:p.couleur,
+      count: isCit ? p.sieges_citoyens : p.sieges_haute};
+  }).filter(function(p){return p.count>0;});
+  var indep = isCit ? (data.independants_citoyens||0) : (data.independants_haute||0);
+  var total = partis.reduce(function(s,p){return s+p.count;},0) + indep;
+  var ds = isCit ? dimmedC : dimmedH;
+
+  // Stats
+  document.getElementById(isCit?'total-c':'total-h').textContent = total;
+  document.getElementById(isCit?'maj-c':'maj-h').textContent = Math.floor(total/2)+1;
+  document.getElementById(isCit?'parties-c':'parties-h').textContent = partis.length;
+
+  buildStatBar(isCit?'bar-c':'bar-h', partis, indep, total);
+  buildLegend(isCit?'legend-c':'legend-h', partis, indep, total, ds, isCit?'canvas-c':'canvas-h', chambre);
+  drawHemicycle(isCit?'canvas-c':'canvas-h', partis, indep, ds);
+  setupHover(isCit?'canvas-c':'canvas-h');
+  buildPartyList(isCit?'plist-c':'plist-h', partis, indep, total);
+}
+
+function renderAll() {
+  renderChamber('c');
+  renderChamber('h');
+}
+
+// ── CHAMBER TAB SWITCH ────────────────────────────
+function showChamber(id) {
+  document.querySelectorAll('.chamber-tab').forEach(function(t){
+    t.classList.toggle('active', t.textContent.trim().toLowerCase().includes(id==='citoyens'?'citoyen':'haute'));
+  });
+  document.getElementById('panel-citoyens').classList.toggle('active', id==='citoyens');
+  document.getElementById('panel-haute').classList.toggle('active', id==='haute');
+  // Redraw the newly visible chamber to fix sizing
+  setTimeout(function(){ renderChamber(id==='citoyens'?'c':'h'); }, 50);
+}
+
+// ── THEME ─────────────────────────────────────────
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  var lbl=document.getElementById('toggle-lbl'),path=document.getElementById('icon-path');
+  if(lbl)lbl.textContent=t==='dark'?'NUIT':'JOUR';
+  if(path)path.setAttribute('d',t==='dark'?'M21 12.79A9 9 0 0 1 12 21a9 9 0 0 1 0-18 7 7 0 0 0 9 9.79z':'M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 2a8 8 0 1 1 0 16A8 8 0 0 1 12 4z');
+  localStorage.setItem('run-theme',t);
+  renderAll();
+}
+function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
+(function(){var s=localStorage.getItem('run-theme'),mq=window.matchMedia('(prefers-color-scheme: dark)');applyTheme(s||(mq.matches?'dark':'light'));})();
+
+// ── INIT ──────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function(){
+  renderAll();
+});
+window.addEventListener('resize', function(){
+  clearTimeout(window._resizeT);
+  window._resizeT = setTimeout(renderAll, 200);
+});
+</script>
+<script src="../pharos-auth.js"></script>
+</body>
+</html>
