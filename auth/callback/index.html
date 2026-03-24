@@ -1,109 +1,78 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connexion · UKN</title>
+<title>Authentification · Royaume-Uni du Nil</title>
+<link rel="icon" type="image/png" href="../../assets/images/UKNSite.png">
+<link rel="stylesheet" href="../../assets/dune.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0a0c10; color: #e2e6f0;
-    font-family: 'IBM Plex Mono', monospace;
-    display: flex; align-items: center; justify-content: center;
-    min-height: 100vh; flex-direction: column; gap: 16px; text-align: center;
-    padding: 24px;
-  }
-  .spinner {
-    width: 36px; height: 36px;
-    border: 2px solid rgba(27,189,138,0.2); border-top-color: #1bbd8a;
-    border-radius: 50%; animation: spin .8s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .msg  { font-size: 13px; color: #8b93a8; letter-spacing: 0.06em; margin-top: 8px; }
-  .err  { color: #e84848; font-size: 12px; max-width: 420px; line-height: 1.7; margin-top: 16px; }
-  .back {
-    display: inline-block; margin-top: 20px;
-    font-size: 12px; color: #1bbd8a; text-decoration: none;
-    border: 1px solid rgba(27,189,138,0.4); border-radius: 6px; padding: 8px 18px;
-    transition: background .2s;
-  }
-  .back:hover { background: rgba(27,189,138,0.08); }
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:var(--bg);}
+.auth-box{text-align:center;padding:48px 32px;background:var(--card-bg);border:1px solid var(--border);border-top:2px solid #4A7FD4;max-width:380px;width:90%;}
+.auth-icon{margin-bottom:20px;opacity:.8;}
+.auth-title{font-family:'Dune Rise',serif;font-size:16px;color:var(--gold-pale);letter-spacing:.08em;margin-bottom:8px;}
+.auth-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.08em;line-height:1.8;}
+.auth-spinner{width:32px;height:32px;border:2px solid var(--border);border-top-color:#4A7FD4;border-radius:50%;animation:spin .8s linear infinite;margin:20px auto 0;}
+.auth-error{color:var(--spice);font-size:10px;font-family:'IBM Plex Mono',monospace;margin-top:16px;}
+@keyframes spin{to{transform:rotate(360deg);}}
 </style>
 </head>
 <body>
-
-<div class="spinner" id="spinner"></div>
-<div class="msg"  id="msg">Connexion Discord en cours…</div>
-<div class="err"  id="err"  style="display:none;"></div>
-<a   class="back" id="back" href="https://BJBellum.github.io/UKN/" style="display:none;">
-  ← Retour au portail
-</a>
+<div class="auth-box">
+  <div class="auth-icon">
+    <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
+      <path d="M20 4L5 11V20C5 29 11.5 37 20 39C28.5 37 35 29 35 20V11L20 4Z" stroke="#4A7FD4" stroke-width="1.5" fill="none"/>
+      <circle cx="20" cy="21" r="5" stroke="#4A7FD4" stroke-width="1.2" fill="none"/>
+      <line x1="20" y1="16" x2="20" y2="12" stroke="#4A7FD4" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="auth-title" id="auth-title">Authentification</div>
+  <div class="auth-sub" id="auth-sub">Vérification en cours…</div>
+  <div class="auth-spinner" id="auth-spinner"></div>
+  <div class="auth-error" id="auth-error" style="display:none;"></div>
+</div>
 
 <script>
-(function () {
-  const KEY_TOKEN = 'ukn_token';
-  const KEY_USER  = 'ukn_user';
-  const BASE      = 'https://BJBellum.github.io/UKN/';
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const code   = params.get('code');
+  const state  = params.get('state');
+  const error  = params.get('error');
 
-  function fail(msg) {
-    document.getElementById('spinner').style.display = 'none';
-    document.getElementById('msg').textContent = 'Échec de la connexion';
-    const e = document.getElementById('err');
-    e.textContent = msg; e.style.display = 'block';
-    document.getElementById('back').style.display = 'inline-block';
+  const titleEl   = document.getElementById('auth-title');
+  const subEl     = document.getElementById('auth-sub');
+  const spinnerEl = document.getElementById('auth-spinner');
+  const errorEl   = document.getElementById('auth-error');
+
+  function showError(msg) {
+    spinnerEl.style.display = 'none';
+    titleEl.textContent = 'Erreur';
+    subEl.textContent = 'Authentification échouée.';
+    errorEl.style.display = 'block';
+    errorEl.textContent = msg;
+    setTimeout(() => { window.location.href = '/'; }, 4000);
   }
 
-  function parseHash() {
-    const h = window.location.hash.replace(/^#/, '');
-    if (!h) return {};
-    return Object.fromEntries(new URLSearchParams(h));
+  // Handle Discord OAuth errors
+  if (error) {
+    showError(`Discord: ${error} — ${params.get('error_description') || ''}`);
+    return;
   }
 
-  function decodeState(state) {
-    if (!state || state === 'home') return BASE;
-    try {
-      const url = decodeURIComponent(atob(state));
-      if (url.startsWith(BASE) && !url.includes('/admin/')) return url;
-    } catch {}
-    // fallback: essaie l'ancien encodage sans encodeURIComponent
-    try {
-      const url = atob(state);
-      if (url.startsWith(BASE) && !url.includes('/admin/')) return url;
-    } catch {}
-    return BASE;
+  if (!code) {
+    showError('Aucun code reçu.');
+    return;
   }
 
-  async function run() {
-    const p = parseHash();
+  // Pass the code + state to our server-side handler
+  // The server will exchange code for token and set the session cookie
+  const callbackURL = `/api/auth/discord?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state || '')}`;
 
-    if (p.error) {
-      fail('Discord : ' + (p.error_description || p.error).replace(/\+/g, ' '));
-      return;
-    }
+  subEl.textContent = 'Connexion au serveur…';
 
-    if (!p.access_token) {
-      fail('Aucun token reçu. Vérifie que le Client ID et l\'URI de redirection sont corrects dans le Discord Developer Portal.');
-      return;
-    }
-
-    // Sauvegarder le token en localStorage avec son expiry
-    try {
-      const expires = Date.now() + (parseInt(p.expires_in, 10) || 604800) * 1000;
-      localStorage.setItem(KEY_TOKEN, JSON.stringify({ token: p.access_token, expires }));
-      localStorage.removeItem(KEY_USER); // forcer re-fetch du profil
-    } catch (e) {
-      fail('Impossible d\'accéder au stockage local (mode privé ?).');
-      return;
-    }
-
-    document.getElementById('msg').textContent = 'Connecté ! Redirection…';
-    document.getElementById('spinner').style.borderTopColor = '#1bbd8a';
-
-    const returnURL = decodeState(p.state);
-    setTimeout(() => window.location.replace(returnURL), 600);
-  }
-
-  run().catch(e => fail('Erreur inattendue : ' + e.message));
+  // Redirect to the API route which handles the code exchange
+  // It will then redirect back to the original page
+  window.location.href = callbackURL;
 })();
 </script>
 </body>

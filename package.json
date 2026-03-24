@@ -1,0 +1,20 @@
+{
+  "name": "ukn-portail-national",
+  "version": "1.0.0",
+  "description": "Portail National du Royaume-Uni du Nil — Serverless API layer",
+  "private": true,
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@vercel/kv": "^2.0.0",
+    "@vercel/blob": "^0.23.0"
+  },
+  "devDependencies": {
+    "vercel": "^37.0.0"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  }
+}
