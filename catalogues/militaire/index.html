@@ -96,9 +96,7 @@ html,body{height:100%;overflow:hidden;}
 /* Right: square image */
 .item-img-side{
   flex-shrink:0;align-self:stretch;
-  width:auto;
-  aspect-ratio:1/1;
-  min-width:180px;max-width:340px;
+  width:clamp(220px,28vw,420px);
   overflow:hidden;background:var(--bg2);
   border-left:1px solid var(--border);
   order:2;
