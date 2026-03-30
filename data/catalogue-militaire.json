@@ -122,5 +122,43 @@
       "Munitions": "500 cartouches de 12,7 mm / 2 000 cartouches de 7,5 mm"
     },
     "image_path": "assets/images/catalogue/vehicules-terrestres-6.png"
+  },
+  {
+    "id": "cat_1774889997602",
+    "nom": "DB-06 \"Muhafiz\"",
+    "categorie": "vehicules-terrestres",
+    "niveau": 5,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "239999",
+    "inspiration": "E.B.R (1954)",
+    "disponibilite": "Août 2306",
+    "specs": {
+      "Moteur": "1 moteur, 12 cylindres à plat, 200 ch",
+      "Carburant": "Essence",
+      "Transmission": "8x8 (4 roues intérieures relevables), 2 boîtes de vitesses (16 rapports)",
+      "Poids à vide": "14.9 tonnes",
+      "Vitesse max. (Route)": "105~115 km/h",
+      "Vitesse max. (Tout-terrain)": "30~45 km/h",
+      "Autonomie (Route)": "700 km",
+      "Autonomie (Tout-terrain)": "350~400 km",
+      "Type de suspensions": "Ressorts hélicoïdaux et amortisseurs hydrauliques",
+      "Longueur": "6.15m",
+      "Largeur": "2.42m",
+      "Hauteur": "2.32m",
+      "Membres d'équipage": "4 (Chef de char, Tireur, Pilote avant, Pilote arrière)",
+      "Passagers": "0",
+      "Cargaison": "N/A",
+      "Blindage Caisse : Arrière": "15 mm",
+      "Blindage Caisse : Côté": "16 mm",
+      "Blindage Caisse : Front": "40 mm (incliné)",
+      "Blindage Caisse : Plancher": "15 mm",
+      "Blindage Caisse : Toit": "15 mm",
+      "Blindage Tourelle : Arrière": "20 mm",
+      "Blindage Tourelle : Côté": "20 mm",
+      "Blindage Tourelle : Toit": "10 mm",
+      "Armement": "1 canon de 75 mm — 3 mitrailleuses de 7,5 mm",
+      "Munitions": "36 obus de 75 mm (dont 12 en barillet) / ~4 500 cartouches de 7,5 mm"
+    },
+    "image_path": "assets/images/catalogue/vehicules-terrestres-7.png"
   }
 ]
