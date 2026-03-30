@@ -703,7 +703,7 @@ var _origRenderAll=typeof renderContent!=='undefined'?renderContent:null;
 
 <!-- ── CALCULATEUR PANIER ── -->
 <button class="calc-toggle-btn" onclick="calcToggle()" id="calc-toggle-btn" title="Calculateur de panier">
-  <svg viewBox="0 0 14 14" fill="none" width="12" height="12" style="transform:none;">
+  <svg viewBox="0 0 14 14" fill="none" width="12" height="12">
     <rect x="1" y="2" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/>
     <line x1="5" y1="2" x2="5" y2="12" stroke="currentColor" stroke-width=".9" opacity=".6"/>
     <line x1="1" y1="6" x2="13" y2="6" stroke="currentColor" stroke-width=".9" opacity=".4"/>
@@ -714,45 +714,36 @@ var _origRenderAll=typeof renderContent!=='undefined'?renderContent:null;
 </button>
 
 <div class="calc-panel" id="calc-panel">
+
   <div class="calc-hdr">
-    <span class="calc-hdr-title">&#128722; Calculateur · Panier</span>
-    <button class="calc-close" onclick="calcToggle()">✕</button>
+    <span class="calc-hdr-title">&#128722; Calculateur &middot; Panier</span>
+    <button class="calc-close" onclick="calcToggle()">&#10005;</button>
   </div>
 
-  <!-- Select from catalogue -->
   <div class="calc-add-row">
-    <div class="calc-add-title">Séléctionner un équipement</div>
+    <div class="calc-add-title">S&eacute;lectionner un &eacute;quipement</div>
     <select class="calc-field" id="calc-select-item" onchange="calcOnSelectItem(this.value)" style="margin-bottom:6px;"></select>
     <div id="calc-item-preview" style="display:none;background:rgba(232,92,13,.06);border:1px solid rgba(232,92,13,.18);padding:7px 10px;margin-bottom:7px;border-radius:2px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:rgba(255,255,255,.92);" id="calc-preview-nom">—</div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);margin-top:3px;" id="calc-preview-prix">—</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:rgba(255,255,255,.92);" id="calc-preview-nom">&mdash;</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);margin-top:3px;" id="calc-preview-prix">&mdash;</div>
     </div>
-    <input type="number" class="calc-field" id="calc-add-qty" placeholder="Quantité" min="1" value="1" style="margin-bottom:6px;text-align:center;font-size:14px;">
+    <input type="number" class="calc-field" id="calc-add-qty" placeholder="Quantit&eacute;" min="1" value="1" style="margin-bottom:6px;text-align:center;font-size:14px;">
     <button class="calc-add-btn" onclick="calcAddFromSelect()">+ Ajouter au panier</button>
   </div>
-    </div>
-    <button class="calc-add-btn" onclick="calcAddManual()">+ Ajouter au panier</button>
 
-    <!-- Quick-add from catalogue -->
-    <div class="calc-quick-title">Depuis le catalogue</div>
-    <div class="calc-quick-list" id="calc-quick-list"></div>
-  </div>
-
-  <!-- Cart list -->
   <div class="calc-cart" id="calc-cart">
-    <div class="calc-cart-empty">Panier vide.<br>Ajoutez des équipements ci-dessus.</div>
+    <div class="calc-cart-empty">Panier vide.<br>S&eacute;lectionnez un &eacute;quipement ci-dessus.</div>
   </div>
 
-  <!-- Totals -->
   <div class="calc-footer">
     <div class="calc-total-row">
       <span class="calc-total-lbl">Total panier</span>
-      <span class="calc-total-val" id="calc-grand-total">0 N£</span>
+      <span class="calc-total-val" id="calc-grand-total">0 N&#163;</span>
     </div>
-    <div class="calc-total-count" id="calc-item-count">0 type(s) · 0 unité(s)</div>
+    <div class="calc-total-count" id="calc-item-count">0 type(s) &middot; 0 unit&eacute;(s)</div>
     <button class="calc-reset-btn" onclick="calcReset()">&#8635; Vider le panier</button>
   </div>
-</div>
 
+</div>
 </body>
 </html>
