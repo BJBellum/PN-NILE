@@ -160,5 +160,61 @@
       "Munitions": "36 obus de 75 mm (dont 12 en barillet) / ~4 500 cartouches de 7,5 mm"
     },
     "image_path": "assets/images/catalogue/vehicules-terrestres-7.png"
+  },
+  {
+    "id": "cat_1774890515127",
+    "nom": "MQ-06 \"Khaled\"",
+    "categorie": "aeronefs",
+    "niveau": 5,
+    "fabricant": "Royal Crown Aviation & Defense",
+    "cout_unite": "400000",
+    "inspiration": "Super Mystère B2",
+    "disponibilite": "Septembre 2306",
+    "specs": {
+      "Moteur": "1 turboréacteur",
+      "Carburant": "Kérosène",
+      "Cargaison et équipage": "1 pilote",
+      "Vitesse maximale": "1 220 km/h",
+      "Vitesse ascensionnelle": "89 m/s",
+      "Plafond": "17 000 m",
+      "Rayon d'action": "870 km (distance franchissable maximale d'environ 1 175 km avec réservoirs externes)",
+      "Poids à vide": "6 940 kg",
+      "Poids chargé maximal": "10 000 kg",
+      "Envergure": "14.04m",
+      "Longueur": "10.51m",
+      "Hauteur": "4.55m",
+      "Surface alaire": "32 m²",
+      "Armement": "2 canons de 30 mm, Un panier de 35 roquettes SNEB de 68 mm escamotable en soute ventrale, Points d'emport sous les ailes pour bombes (jusqu'à 900 kg) ou roquettes supplémentaires.",
+      "Équipement": "Radar de télémétrie, Collimateur de tir gyroscopique, Radio UHF et instruments de navigation standards."
+    },
+    "image_path": "assets/images/catalogue/armes-feu-8.png"
+  },
+  {
+    "id": "cat_1774891293731",
+    "nom": "MW-06 \"Al-Khamsin\"",
+    "categorie": "aeronefs",
+    "niveau": 5,
+    "fabricant": "Royal Crown Aviation & Defense",
+    "cout_unite": "299999",
+    "inspiration": "UH-1 \"Huey\"",
+    "disponibilite": "349999",
+    "specs": {
+      "Moteur": "1 turbomoteur",
+      "Carburant": "JP-4",
+      "Cargaison et équipage": "1 à 2 pilotes, et jusqu'à 6 passagers ou 2 brancards en configuration médicale.",
+      "Vitesse maximale": "198 km/h",
+      "Vitesse ascensionnelle": "11 m/s",
+      "Plafond": "3 600 m",
+      "Rayon d'action": "300 km",
+      "Poids à vide": "1 720 kg",
+      "Poids chargé maximal": "3 265 kg",
+      "Envergure": "13.41",
+      "Longueur": "12.10m",
+      "Hauteur": "3.84m",
+      "Surface alaire": "N/A",
+      "Armement": "1 mitrailleuse 12.7mm, 2 mitrailleuses 7.62mm et 2 points d'emport (roquettes/missiles)",
+      "Équipement": "Radio VHF/UHF pour les communications tactiques"
+    },
+    "image_path": "assets/images/catalogue/aeronefs-9.png"
   }
 ]
