@@ -181,7 +181,7 @@ html,body{height:100%;overflow:hidden;}
 
 .calc-panel{
   position:fixed;right:0;top:0;bottom:0;width:340px;
-  z-index:290;
+  z-index:400;
   background:rgba(8,5,0,.98);border-left:1px solid var(--border);
   display:flex;flex-direction:column;
   transform:translateX(100%);
@@ -223,7 +223,7 @@ html,body{height:100%;overflow:hidden;}
 .calc-quick-btn:hover{border-color:var(--spice);color:var(--spice);}
 
 /* Cart items */
-.calc-cart{flex:1;overflow-y:auto;padding:10px 12px;}
+.calc-cart{flex:1;overflow-y:auto;padding:10px 12px;min-height:80px;}
 .calc-cart-empty{text-align:center;padding:32px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.08em;}
 .calc-cart-item{
   background:var(--card-bg);border:1px solid var(--border);
@@ -380,7 +380,7 @@ function syncGH(){
       return copy;
     });
     localStorage.setItem('cat_militaire',JSON.stringify(toCache));
-    renderSidebar();renderContent();
+    renderSidebar();renderContent();if(calcOpen)calcRefreshQuick();
   }).catch(function(){});
 }
 
@@ -557,7 +557,7 @@ function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-th
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded',function(){
-  loadLocal();renderSidebar();renderContent();syncGH();
+  loadLocal();renderSidebar();renderContent();syncGH();calcRefreshQuick();
 });
 
 // ════════════════════════════════════════════════
@@ -611,9 +611,16 @@ function calcOnSelectItem(id){
 function calcAddFromSelect(){
   var sel=document.getElementById('calc-select-item');
   var id=sel?sel.value:'';
-  if(!id)return;
+  if(!id){
+    // Show feedback
+    var btn=document.querySelector('.calc-add-btn');
+    if(btn){var orig=btn.textContent;btn.textContent='← Sélectionner un équipement';btn.style.color='#E84848';setTimeout(function(){btn.textContent=orig;btn.style.color='';},1500);}
+    return;
+  }
+  // Refresh select in case catalogue updated
+  if(!catalogue.length){alert('Le catalogue est encore en cours de chargement. Attendez quelques secondes.');return;}
   var item=catalogue.find(function(x){return x.id===id;});
-  if(!item)return;
+  if(!item){calcRefreshQuick();return;}
   var qty=parseInt(document.getElementById('calc-add-qty')?.value)||1;
   var prix=item.cout_unite?Number(item.cout_unite):0;
   calcAddItem(item.nom||'—',prix,qty);
