@@ -29,7 +29,7 @@
     "categorie": "armes-feu",
     "niveau": 5,
     "fabricant": "Yassin Heavy Industries",
-    "cout_unite": "1100",
+    "cout_unite": "1099",
     "inspiration": "FN FAL",
     "disponibilite": "Mai 2306",
     "specs": {
@@ -84,5 +84,43 @@
       "Munitions": "Canon de 20mm : ~500 obus (Perforants et Explosifs), 7,5mm : ~3 000 cartouches, 12,7mm : 1 200 cartouches"
     },
     "image_path": "assets/images/catalogue/vehicules-terrestres-5.png"
+  },
+  {
+    "id": "cat_1774889430792",
+    "nom": "NQ-300 \"Al-Sadd\"",
+    "categorie": "vehicules-terrestres",
+    "niveau": 5,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "169999",
+    "inspiration": "AMX-13 VCI",
+    "disponibilite": "Juin 2306",
+    "specs": {
+      "Moteur": "2 moteurs, 6 cylindres en ligne, 90 ch chacun, soit 180 ch au total",
+      "Carburant": "Essence",
+      "Transmission": "8x8 (4 roues avant directrices), 4 rapports avant, 1 arrière",
+      "Poids à vide": "10.3 tonnes",
+      "Vitesse max. (Route)": "80 km/h",
+      "Vitesse max. (Tout-terrain)": "30~40 km/h",
+      "Autonomie (Route)": "~500 km",
+      "Autonomie (Tout-terrain)": "~300 km",
+      "Type de suspensions": "Barres de torsion avec amortisseurs hydrauliques",
+      "Longueur": "7.56m",
+      "Largeur": "2.83m",
+      "Hauteur": "2.31m",
+      "Membres d'équipage": "3 (Chef de bord, Tireur, Conducteur)",
+      "Passagers": "8 à 14 soldats",
+      "Cargaison": "Transport de troupes, de matériel militaire/médical. Amphibie",
+      "Blindage Caisse : Arrière": "5 mm",
+      "Blindage Caisse : Côté": "7 mm",
+      "Blindage Caisse : Front": "9 mm (incliné)",
+      "Blindage Caisse : Plancher": "5 mm",
+      "Blindage Caisse : Toit": "7 mm",
+      "Blindage Tourelle : Arrière": "7 mm",
+      "Blindage Tourelle : Côté": "7 mm",
+      "Blindage Tourelle : Toit": "7 mm",
+      "Armement": "1 mitrailleuse lourde de 12,7 mm — 1 mitrailleuse coaxiale de 7,5 mm",
+      "Munitions": "500 cartouches de 12,7 mm / 2 000 cartouches de 7,5 mm"
+    },
+    "image_path": "assets/images/catalogue/vehicules-terrestres-6.png"
   }
 ]
