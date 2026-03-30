@@ -24,30 +24,6 @@
     "image_path": "assets/images/catalogue/armes-feu-1.png"
   },
   {
-    "id": "cat_1774380705876",
-    "nom": "BN-05",
-    "categorie": "armes-feu",
-    "niveau": 3,
-    "fabricant": "Yassin Heavy Industries",
-    "cout_unite": "999",
-    "inspiration": "M1 Garand + SVT-38",
-    "disponibilite": "En service",
-    "specs": {
-      "Calibre": "7,62 × 63 mm",
-      "Masse (non chargé)": "4,2 kg",
-      "Longueur": "1 160 mm",
-      "Longueur du canon": "610 mm",
-      "Cadence de tir": "30 à 40 coups/min en tir soutenu",
-      "Vitesse initiale": "~840 m/s",
-      "Portée pratique": "500 m",
-      "Portée maximale": "1 100 m",
-      "Capacité": "15 coups",
-      "Type de munitions": "Cartouches à percussion centrale",
-      "Équipements possibles": "Baïonnette, Montage d'un rail latéral sur le boîtier de culasse pour lunette de précision, sangle"
-    },
-    "image_path": "assets/images/catalogue/armes-feu-2.png"
-  },
-  {
     "id": "cat_1774887885083",
     "nom": "BN-06",
     "categorie": "armes-feu",
@@ -70,5 +46,43 @@
       "Équipements possibles": "Baïonnette, Lunette de visée (pour le tir de précision), Bipied, Trépied"
     },
     "image_path": "assets/images/catalogue/armes-feu-4.png"
+  },
+  {
+    "id": "cat_1774888631486",
+    "nom": "MK-200 \"Al-Haris\"",
+    "categorie": "vehicules-terrestres",
+    "niveau": 1,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "199999",
+    "inspiration": "AMX-13 VCI",
+    "disponibilite": "Août 2306",
+    "specs": {
+      "Moteur": "8 cylindres à plat, 250 ch",
+      "Carburant": "Essence",
+      "Transmission": "Manuelle, 5 rapports avant, 1 rapport arrière",
+      "Poids à vide": "13.5 tonnes",
+      "Vitesse max. (Route)": "60 km/h",
+      "Vitesse max. (Tout-terrain)": "30-35 km/h",
+      "Autonomie (Route)": "~350 km",
+      "Autonomie (Tout-terrain)": "~200 km",
+      "Type de suspensions": "Barres de torsion avec amortisseurs hydrauliques",
+      "Longueur": "5,70 m",
+      "Largeur": "2,67 m",
+      "Hauteur": "2,41 m",
+      "Membres d'équipage": "3 (Chef de char, Conducteur, Radio-tireur)",
+      "Passagers": "10 soldats équipés",
+      "Cargaison": "Aucune",
+      "Blindage Caisse : Arrière": "15 mm",
+      "Blindage Caisse : Côté": "20 mm",
+      "Blindage Caisse : Front": "30 mm (incliné)",
+      "Blindage Caisse : Plancher": "15 mm",
+      "Blindage Caisse : Toit": "10 mm",
+      "Blindage Tourelle : Arrière": "15 mm",
+      "Blindage Tourelle : Côté": "15 mm",
+      "Blindage Tourelle : Toit": "10 mm",
+      "Armement": "Canon de 20 mm — 2 × Mitrailleuses 7,5 mm OU 1 Mitrailleuse 12,7 mm",
+      "Munitions": "Canon de 20mm : ~500 obus (Perforants et Explosifs), 7,5mm : ~3 000 cartouches, 12,7mm : 1 200 cartouches"
+    },
+    "image_path": "assets/images/catalogue/vehicules-terrestres-5.png"
   }
 ]
