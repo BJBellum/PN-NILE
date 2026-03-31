@@ -195,9 +195,9 @@
     "categorie": "aeronefs",
     "niveau": 5,
     "fabricant": "Royal Crown Aviation & Defense",
-    "cout_unite": "399999",
+    "cout_unite": "349999",
     "inspiration": "UH-1 \"Huey\"",
-    "disponibilite": "349999",
+    "disponibilite": "Août 2306",
     "specs": {
       "Moteur": "1 turbomoteur",
       "Carburant": "JP-4",
