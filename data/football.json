@@ -32087,6 +32087,8028 @@
         }
       ],
       "created": "2026-04-01T12:24:15.468Z"
+    },
+    {
+      "id": "team_1775047242462",
+      "nom": "Empire de Lotharingie",
+      "continent": "Europe",
+      "culture": "allemand",
+      "note_globale": 74,
+      "flag_filename": "assets/images/football/flags/flag_lot.png",
+      "coach": {
+        "nom": "Patrick Werner",
+        "notes": {
+          "tactique": 71,
+          "motivation": 70,
+          "defence": 78,
+          "attaque": 71,
+          "gestion": 69
+        },
+        "global": 72
+      },
+      "joueurs": [
+        {
+          "id": "p_1775047242460_5817",
+          "nom": "Christoph Wolf",
+          "poste": "DD",
+          "age": 18,
+          "notes": {
+            "off": 68,
+            "tec": 69,
+            "mouv": 73,
+            "pui": 87,
+            "ment": 73,
+            "def": 80,
+            "gk": 19
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242460_7528",
+          "nom": "Christoph Schulz",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 53,
+            "tec": 79,
+            "mouv": 69,
+            "pui": 86,
+            "ment": 71,
+            "def": 82,
+            "gk": 26
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_5538",
+          "nom": "Sebastian Schröder",
+          "poste": "DD",
+          "age": 32,
+          "notes": {
+            "off": 52,
+            "tec": 84,
+            "mouv": 78,
+            "pui": 89,
+            "ment": 83,
+            "def": 81,
+            "gk": 27
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_2064",
+          "nom": "Jan Mayer",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 55,
+            "tec": 72,
+            "mouv": 81,
+            "pui": 83,
+            "ment": 73,
+            "def": 84,
+            "gk": 31
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242460_4903",
+          "nom": "Patrick Hofmann",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 61,
+            "tec": 67,
+            "mouv": 78,
+            "pui": 72,
+            "ment": 73,
+            "def": 84,
+            "gk": 28
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_6519",
+          "nom": "Daniel Schmid",
+          "poste": "DG",
+          "age": 23,
+          "notes": {
+            "off": 67,
+            "tec": 69,
+            "mouv": 76,
+            "pui": 81,
+            "ment": 76,
+            "def": 87,
+            "gk": 35
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_2312",
+          "nom": "Maximilian Schmidt",
+          "poste": "DC",
+          "age": 22,
+          "notes": {
+            "off": 60,
+            "tec": 83,
+            "mouv": 81,
+            "pui": 72,
+            "ment": 74,
+            "def": 90,
+            "gk": 25
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_4531",
+          "nom": "Jan Hofmann",
+          "poste": "DG",
+          "age": 25,
+          "notes": {
+            "off": 57,
+            "tec": 71,
+            "mouv": 74,
+            "pui": 83,
+            "ment": 69,
+            "def": 79,
+            "gk": 23
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242460_2242",
+          "nom": "Daniel Schäfer",
+          "poste": "DD",
+          "age": 33,
+          "notes": {
+            "off": 59,
+            "tec": 68,
+            "mouv": 77,
+            "pui": 79,
+            "ment": 73,
+            "def": 91,
+            "gk": 40
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242460_1234",
+          "nom": "Jonas Schneider",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 66,
+            "tec": 82,
+            "mouv": 79,
+            "pui": 82,
+            "ment": 72,
+            "def": 87,
+            "gk": 18
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_2962",
+          "nom": "Markus Lehmann",
+          "poste": "DC",
+          "age": 29,
+          "notes": {
+            "off": 57,
+            "tec": 70,
+            "mouv": 78,
+            "pui": 82,
+            "ment": 82,
+            "def": 80,
+            "gk": 23
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242460_3353",
+          "nom": "Jan Schwarz",
+          "poste": "DD",
+          "age": 25,
+          "notes": {
+            "off": 66,
+            "tec": 84,
+            "mouv": 76,
+            "pui": 74,
+            "ment": 79,
+            "def": 86,
+            "gk": 29
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_2018",
+          "nom": "Leon Schwarz",
+          "poste": "DG",
+          "age": 19,
+          "notes": {
+            "off": 59,
+            "tec": 82,
+            "mouv": 79,
+            "pui": 73,
+            "ment": 74,
+            "def": 82,
+            "gk": 18
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242460_4687",
+          "nom": "Julian Weber",
+          "poste": "DD",
+          "age": 18,
+          "notes": {
+            "off": 53,
+            "tec": 68,
+            "mouv": 78,
+            "pui": 81,
+            "ment": 72,
+            "def": 83,
+            "gk": 39
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_4922",
+          "nom": "Dominik Neumann",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 69,
+            "tec": 74,
+            "mouv": 76,
+            "pui": 89,
+            "ment": 78,
+            "def": 84,
+            "gk": 18
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_5588",
+          "nom": "Luca Müller",
+          "poste": "DD",
+          "age": 28,
+          "notes": {
+            "off": 48,
+            "tec": 74,
+            "mouv": 74,
+            "pui": 76,
+            "ment": 74,
+            "def": 79,
+            "gk": 25
+          },
+          "global": 67
+        },
+        {
+          "id": "p_1775047242460_9388",
+          "nom": "Tobias Lehmann",
+          "poste": "DD",
+          "age": 23,
+          "notes": {
+            "off": 61,
+            "tec": 70,
+            "mouv": 84,
+            "pui": 80,
+            "ment": 79,
+            "def": 83,
+            "gk": 24
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_6253",
+          "nom": "Tobias Fischer",
+          "poste": "DC",
+          "age": 26,
+          "notes": {
+            "off": 65,
+            "tec": 77,
+            "mouv": 77,
+            "pui": 72,
+            "ment": 73,
+            "def": 86,
+            "gk": 33
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_6076",
+          "nom": "Christoph Fischer",
+          "poste": "DG",
+          "age": 26,
+          "notes": {
+            "off": 64,
+            "tec": 65,
+            "mouv": 79,
+            "pui": 73,
+            "ment": 71,
+            "def": 78,
+            "gk": 18
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242460_6108",
+          "nom": "Kai Schulz",
+          "poste": "DD",
+          "age": 25,
+          "notes": {
+            "off": 69,
+            "tec": 71,
+            "mouv": 83,
+            "pui": 77,
+            "ment": 72,
+            "def": 86,
+            "gk": 39
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_8469",
+          "nom": "Luca Mayer",
+          "poste": "DD",
+          "age": 23,
+          "notes": {
+            "off": 62,
+            "tec": 81,
+            "mouv": 77,
+            "pui": 82,
+            "ment": 81,
+            "def": 80,
+            "gk": 30
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_5337",
+          "nom": "Patrick Schneider",
+          "poste": "DC",
+          "age": 27,
+          "notes": {
+            "off": 65,
+            "tec": 71,
+            "mouv": 68,
+            "pui": 77,
+            "ment": 66,
+            "def": 85,
+            "gk": 18
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242460_6705",
+          "nom": "Simon Krüger",
+          "poste": "DG",
+          "age": 33,
+          "notes": {
+            "off": 68,
+            "tec": 77,
+            "mouv": 69,
+            "pui": 83,
+            "ment": 72,
+            "def": 81,
+            "gk": 38
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_1214",
+          "nom": "Nico Müller",
+          "poste": "DD",
+          "age": 29,
+          "notes": {
+            "off": 56,
+            "tec": 78,
+            "mouv": 77,
+            "pui": 83,
+            "ment": 68,
+            "def": 86,
+            "gk": 42
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242460_7611",
+          "nom": "Matthias Schäfer",
+          "poste": "DG",
+          "age": 18,
+          "notes": {
+            "off": 60,
+            "tec": 67,
+            "mouv": 71,
+            "pui": 78,
+            "ment": 72,
+            "def": 80,
+            "gk": 35
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242460_7612",
+          "nom": "Sebastian Mayer",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 64,
+            "tec": 68,
+            "mouv": 74,
+            "pui": 79,
+            "ment": 68,
+            "def": 78,
+            "gk": 39
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_3597",
+          "nom": "Lars Maier",
+          "poste": "DC",
+          "age": 19,
+          "notes": {
+            "off": 53,
+            "tec": 69,
+            "mouv": 74,
+            "pui": 88,
+            "ment": 70,
+            "def": 85,
+            "gk": 42
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_1182",
+          "nom": "Michael Meier",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 59,
+            "tec": 85,
+            "mouv": 72,
+            "pui": 88,
+            "ment": 71,
+            "def": 88,
+            "gk": 27
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_6735",
+          "nom": "Leon Becker",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 54,
+            "tec": 70,
+            "mouv": 76,
+            "pui": 75,
+            "ment": 78,
+            "def": 81,
+            "gk": 36
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_3653",
+          "nom": "Marco Becker",
+          "poste": "DD",
+          "age": 34,
+          "notes": {
+            "off": 54,
+            "tec": 68,
+            "mouv": 79,
+            "pui": 86,
+            "ment": 72,
+            "def": 84,
+            "gk": 36
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_9089",
+          "nom": "Andreas Schneider",
+          "poste": "DC",
+          "age": 28,
+          "notes": {
+            "off": 48,
+            "tec": 80,
+            "mouv": 77,
+            "pui": 78,
+            "ment": 66,
+            "def": 88,
+            "gk": 38
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_7375",
+          "nom": "Jan Walter",
+          "poste": "DG",
+          "age": 21,
+          "notes": {
+            "off": 68,
+            "tec": 81,
+            "mouv": 69,
+            "pui": 76,
+            "ment": 75,
+            "def": 83,
+            "gk": 19
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_6780",
+          "nom": "Dominik Lehmann",
+          "poste": "DC",
+          "age": 25,
+          "notes": {
+            "off": 55,
+            "tec": 70,
+            "mouv": 74,
+            "pui": 83,
+            "ment": 71,
+            "def": 82,
+            "gk": 37
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_6676",
+          "nom": "Fabian Klein",
+          "poste": "DG",
+          "age": 22,
+          "notes": {
+            "off": 60,
+            "tec": 79,
+            "mouv": 72,
+            "pui": 90,
+            "ment": 77,
+            "def": 93,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_6908",
+          "nom": "Luca Huber",
+          "poste": "DD",
+          "age": 35,
+          "notes": {
+            "off": 54,
+            "tec": 73,
+            "mouv": 77,
+            "pui": 76,
+            "ment": 77,
+            "def": 85,
+            "gk": 30
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_1910",
+          "nom": "Luca Meyer",
+          "poste": "DG",
+          "age": 22,
+          "notes": {
+            "off": 68,
+            "tec": 83,
+            "mouv": 83,
+            "pui": 84,
+            "ment": 76,
+            "def": 85,
+            "gk": 42
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_5241",
+          "nom": "Nico Schulze",
+          "poste": "DD",
+          "age": 18,
+          "notes": {
+            "off": 51,
+            "tec": 72,
+            "mouv": 79,
+            "pui": 74,
+            "ment": 77,
+            "def": 85,
+            "gk": 18
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_4906",
+          "nom": "Philipp Krüger",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 65,
+            "tec": 70,
+            "mouv": 72,
+            "pui": 79,
+            "ment": 82,
+            "def": 86,
+            "gk": 41
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_6271",
+          "nom": "Jonas Schwarz",
+          "poste": "DC",
+          "age": 33,
+          "notes": {
+            "off": 58,
+            "tec": 66,
+            "mouv": 66,
+            "pui": 71,
+            "ment": 71,
+            "def": 87,
+            "gk": 34
+          },
+          "global": 67
+        },
+        {
+          "id": "p_1775047242461_3865",
+          "nom": "Nico Schmid",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 62,
+            "tec": 85,
+            "mouv": 82,
+            "pui": 87,
+            "ment": 80,
+            "def": 90,
+            "gk": 34
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_2505",
+          "nom": "Sven Meier",
+          "poste": "DC",
+          "age": 22,
+          "notes": {
+            "off": 67,
+            "tec": 81,
+            "mouv": 83,
+            "pui": 77,
+            "ment": 77,
+            "def": 82,
+            "gk": 33
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7052",
+          "nom": "Christoph Weber",
+          "poste": "DG",
+          "age": 24,
+          "notes": {
+            "off": 54,
+            "tec": 75,
+            "mouv": 74,
+            "pui": 72,
+            "ment": 78,
+            "def": 83,
+            "gk": 35
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_4765",
+          "nom": "Jan Koch",
+          "poste": "DD",
+          "age": 23,
+          "notes": {
+            "off": 56,
+            "tec": 81,
+            "mouv": 68,
+            "pui": 78,
+            "ment": 70,
+            "def": 85,
+            "gk": 35
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_9360",
+          "nom": "Luca Schäfer",
+          "poste": "DC",
+          "age": 20,
+          "notes": {
+            "off": 66,
+            "tec": 71,
+            "mouv": 67,
+            "pui": 72,
+            "ment": 76,
+            "def": 79,
+            "gk": 20
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_8334",
+          "nom": "Sven Weber",
+          "poste": "DC",
+          "age": 18,
+          "notes": {
+            "off": 68,
+            "tec": 80,
+            "mouv": 75,
+            "pui": 77,
+            "ment": 69,
+            "def": 77,
+            "gk": 30
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_9995",
+          "nom": "Simon Schulze",
+          "poste": "DC",
+          "age": 22,
+          "notes": {
+            "off": 58,
+            "tec": 75,
+            "mouv": 76,
+            "pui": 73,
+            "ment": 72,
+            "def": 83,
+            "gk": 31
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_6052",
+          "nom": "Philipp Meyer",
+          "poste": "DC",
+          "age": 25,
+          "notes": {
+            "off": 51,
+            "tec": 69,
+            "mouv": 75,
+            "pui": 75,
+            "ment": 74,
+            "def": 88,
+            "gk": 20
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242461_5154",
+          "nom": "Simon Schneider",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 69,
+            "tec": 80,
+            "mouv": 72,
+            "pui": 88,
+            "ment": 83,
+            "def": 91,
+            "gk": 23
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_1529",
+          "nom": "Marco Fischer",
+          "poste": "DC",
+          "age": 31,
+          "notes": {
+            "off": 65,
+            "tec": 73,
+            "mouv": 71,
+            "pui": 75,
+            "ment": 79,
+            "def": 82,
+            "gk": 18
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_2418",
+          "nom": "Maximilian Krüger",
+          "poste": "DD",
+          "age": 33,
+          "notes": {
+            "off": 62,
+            "tec": 85,
+            "mouv": 71,
+            "pui": 79,
+            "ment": 77,
+            "def": 87,
+            "gk": 27
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1646",
+          "nom": "Lukas Krüger",
+          "poste": "DD",
+          "age": 36,
+          "notes": {
+            "off": 67,
+            "tec": 71,
+            "mouv": 78,
+            "pui": 70,
+            "ment": 78,
+            "def": 84,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_1537",
+          "nom": "Christoph Herrmann",
+          "poste": "DC",
+          "age": 25,
+          "notes": {
+            "off": 66,
+            "tec": 81,
+            "mouv": 72,
+            "pui": 77,
+            "ment": 75,
+            "def": 86,
+            "gk": 40
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_3170",
+          "nom": "Sven Bauer",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 54,
+            "tec": 79,
+            "mouv": 66,
+            "pui": 74,
+            "ment": 75,
+            "def": 77,
+            "gk": 23
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242461_9818",
+          "nom": "Christoph Klein",
+          "poste": "DG",
+          "age": 32,
+          "notes": {
+            "off": 62,
+            "tec": 72,
+            "mouv": 74,
+            "pui": 87,
+            "ment": 68,
+            "def": 81,
+            "gk": 36
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_9300",
+          "nom": "Thomas Richter",
+          "poste": "DC",
+          "age": 26,
+          "notes": {
+            "off": 52,
+            "tec": 76,
+            "mouv": 79,
+            "pui": 74,
+            "ment": 77,
+            "def": 82,
+            "gk": 42
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_4793",
+          "nom": "Markus Schmid",
+          "poste": "DD",
+          "age": 32,
+          "notes": {
+            "off": 68,
+            "tec": 77,
+            "mouv": 75,
+            "pui": 81,
+            "ment": 83,
+            "def": 82,
+            "gk": 31
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_6765",
+          "nom": "Fabian Schäfer",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 70,
+            "tec": 77,
+            "mouv": 72,
+            "pui": 89,
+            "ment": 77,
+            "def": 90,
+            "gk": 26
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_3513",
+          "nom": "Jonas Schulze",
+          "poste": "DC",
+          "age": 26,
+          "notes": {
+            "off": 55,
+            "tec": 81,
+            "mouv": 79,
+            "pui": 74,
+            "ment": 74,
+            "def": 85,
+            "gk": 21
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_8122",
+          "nom": "Lukas Werner",
+          "poste": "DG",
+          "age": 24,
+          "notes": {
+            "off": 68,
+            "tec": 66,
+            "mouv": 78,
+            "pui": 73,
+            "ment": 76,
+            "def": 87,
+            "gk": 18
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_9017",
+          "nom": "Maximilian Weber",
+          "poste": "DD",
+          "age": 27,
+          "notes": {
+            "off": 61,
+            "tec": 77,
+            "mouv": 74,
+            "pui": 81,
+            "ment": 81,
+            "def": 88,
+            "gk": 24
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_2218",
+          "nom": "Alexander Schröder",
+          "poste": "DD",
+          "age": 33,
+          "notes": {
+            "off": 58,
+            "tec": 73,
+            "mouv": 73,
+            "pui": 78,
+            "ment": 77,
+            "def": 89,
+            "gk": 25
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_3954",
+          "nom": "Jan Herrmann",
+          "poste": "DD",
+          "age": 29,
+          "notes": {
+            "off": 62,
+            "tec": 78,
+            "mouv": 74,
+            "pui": 74,
+            "ment": 81,
+            "def": 92,
+            "gk": 24
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8820",
+          "nom": "Tim Krüger",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 57,
+            "tec": 66,
+            "mouv": 78,
+            "pui": 75,
+            "ment": 74,
+            "def": 77,
+            "gk": 23
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242461_3371",
+          "nom": "David Krause",
+          "poste": "DC",
+          "age": 25,
+          "notes": {
+            "off": 63,
+            "tec": 74,
+            "mouv": 67,
+            "pui": 83,
+            "ment": 74,
+            "def": 78,
+            "gk": 37
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_9539",
+          "nom": "Matthias Wagner",
+          "poste": "DC",
+          "age": 31,
+          "notes": {
+            "off": 54,
+            "tec": 83,
+            "mouv": 71,
+            "pui": 84,
+            "ment": 81,
+            "def": 89,
+            "gk": 40
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_5063",
+          "nom": "Lukas Hofmann",
+          "poste": "DC",
+          "age": 31,
+          "notes": {
+            "off": 67,
+            "tec": 73,
+            "mouv": 73,
+            "pui": 84,
+            "ment": 81,
+            "def": 91,
+            "gk": 18
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_6541",
+          "nom": "Luca Schneider",
+          "poste": "DD",
+          "age": 20,
+          "notes": {
+            "off": 64,
+            "tec": 72,
+            "mouv": 76,
+            "pui": 85,
+            "ment": 74,
+            "def": 83,
+            "gk": 37
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_4590",
+          "nom": "Philipp Schmitz",
+          "poste": "DC",
+          "age": 20,
+          "notes": {
+            "off": 72,
+            "tec": 86,
+            "mouv": 83,
+            "pui": 81,
+            "ment": 74,
+            "def": 90,
+            "gk": 37
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_5823",
+          "nom": "Thomas Krüger",
+          "poste": "DC",
+          "age": 30,
+          "notes": {
+            "off": 66,
+            "tec": 71,
+            "mouv": 78,
+            "pui": 89,
+            "ment": 75,
+            "def": 87,
+            "gk": 32
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8355",
+          "nom": "Lars Walter",
+          "poste": "DC",
+          "age": 18,
+          "notes": {
+            "off": 69,
+            "tec": 78,
+            "mouv": 79,
+            "pui": 78,
+            "ment": 76,
+            "def": 83,
+            "gk": 35
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_6147",
+          "nom": "Markus Schmidt",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 63,
+            "tec": 81,
+            "mouv": 74,
+            "pui": 90,
+            "ment": 82,
+            "def": 92,
+            "gk": 18
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_6818",
+          "nom": "Tim Mayer",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 68,
+            "tec": 67,
+            "mouv": 78,
+            "pui": 82,
+            "ment": 75,
+            "def": 87,
+            "gk": 30
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_5339",
+          "nom": "Philipp Meyer",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 57,
+            "tec": 70,
+            "mouv": 72,
+            "pui": 72,
+            "ment": 74,
+            "def": 86,
+            "gk": 39
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_8979",
+          "nom": "Christoph Fischer",
+          "poste": "DG",
+          "age": 24,
+          "notes": {
+            "off": 47,
+            "tec": 65,
+            "mouv": 68,
+            "pui": 72,
+            "ment": 76,
+            "def": 87,
+            "gk": 29
+          },
+          "global": 66
+        },
+        {
+          "id": "p_1775047242461_5093",
+          "nom": "Alexander Schneider",
+          "poste": "DD",
+          "age": 35,
+          "notes": {
+            "off": 50,
+            "tec": 72,
+            "mouv": 72,
+            "pui": 72,
+            "ment": 71,
+            "def": 86,
+            "gk": 24
+          },
+          "global": 67
+        },
+        {
+          "id": "p_1775047242461_8736",
+          "nom": "Jan Lange",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 61,
+            "tec": 78,
+            "mouv": 65,
+            "pui": 75,
+            "ment": 66,
+            "def": 81,
+            "gk": 41
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_1859",
+          "nom": "Julian Neumann",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 65,
+            "tec": 70,
+            "mouv": 77,
+            "pui": 85,
+            "ment": 76,
+            "def": 92,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_7381",
+          "nom": "Florian König",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 68,
+            "tec": 81,
+            "mouv": 71,
+            "pui": 77,
+            "ment": 72,
+            "def": 87,
+            "gk": 28
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_3900",
+          "nom": "Daniel König",
+          "poste": "DC",
+          "age": 33,
+          "notes": {
+            "off": 67,
+            "tec": 70,
+            "mouv": 77,
+            "pui": 84,
+            "ment": 70,
+            "def": 89,
+            "gk": 36
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1796",
+          "nom": "Julian Schwarz",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 59,
+            "tec": 70,
+            "mouv": 78,
+            "pui": 82,
+            "ment": 79,
+            "def": 82,
+            "gk": 18
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_6375",
+          "nom": "Christian Neumann",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 56,
+            "tec": 70,
+            "mouv": 70,
+            "pui": 77,
+            "ment": 74,
+            "def": 85,
+            "gk": 26
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_8530",
+          "nom": "Michael Huber",
+          "poste": "DG",
+          "age": 29,
+          "notes": {
+            "off": 58,
+            "tec": 71,
+            "mouv": 74,
+            "pui": 82,
+            "ment": 72,
+            "def": 88,
+            "gk": 34
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_2209",
+          "nom": "Thomas Neumann",
+          "poste": "DD",
+          "age": 23,
+          "notes": {
+            "off": 61,
+            "tec": 74,
+            "mouv": 79,
+            "pui": 84,
+            "ment": 68,
+            "def": 80,
+            "gk": 37
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_7038",
+          "nom": "Kai Schwarz",
+          "poste": "DC",
+          "age": 33,
+          "notes": {
+            "off": 63,
+            "tec": 65,
+            "mouv": 77,
+            "pui": 83,
+            "ment": 78,
+            "def": 86,
+            "gk": 28
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_2237",
+          "nom": "Patrick Walter",
+          "poste": "DG",
+          "age": 32,
+          "notes": {
+            "off": 54,
+            "tec": 74,
+            "mouv": 77,
+            "pui": 84,
+            "ment": 76,
+            "def": 88,
+            "gk": 34
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_1390",
+          "nom": "Sebastian Huber",
+          "poste": "DG",
+          "age": 26,
+          "notes": {
+            "off": 64,
+            "tec": 82,
+            "mouv": 76,
+            "pui": 90,
+            "ment": 72,
+            "def": 91,
+            "gk": 39
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_7723",
+          "nom": "Andreas Braun",
+          "poste": "DC",
+          "age": 21,
+          "notes": {
+            "off": 59,
+            "tec": 80,
+            "mouv": 84,
+            "pui": 88,
+            "ment": 81,
+            "def": 94,
+            "gk": 24
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_6229",
+          "nom": "Julian Müller",
+          "poste": "DD",
+          "age": 24,
+          "notes": {
+            "off": 58,
+            "tec": 85,
+            "mouv": 80,
+            "pui": 84,
+            "ment": 83,
+            "def": 82,
+            "gk": 28
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_9756",
+          "nom": "Christoph Braun",
+          "poste": "DD",
+          "age": 17,
+          "notes": {
+            "off": 55,
+            "tec": 70,
+            "mouv": 84,
+            "pui": 81,
+            "ment": 82,
+            "def": 89,
+            "gk": 35
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_7254",
+          "nom": "Tim Zimmermann",
+          "poste": "DC",
+          "age": 27,
+          "notes": {
+            "off": 61,
+            "tec": 71,
+            "mouv": 82,
+            "pui": 79,
+            "ment": 71,
+            "def": 82,
+            "gk": 21
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_4144",
+          "nom": "Dennis Zimmermann",
+          "poste": "DG",
+          "age": 18,
+          "notes": {
+            "off": 58,
+            "tec": 83,
+            "mouv": 76,
+            "pui": 91,
+            "ment": 75,
+            "def": 91,
+            "gk": 20
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_9843",
+          "nom": "Dennis Meyer",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 59,
+            "tec": 69,
+            "mouv": 81,
+            "pui": 82,
+            "ment": 76,
+            "def": 90,
+            "gk": 19
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_5754",
+          "nom": "Lars Maier",
+          "poste": "DD",
+          "age": 36,
+          "notes": {
+            "off": 58,
+            "tec": 69,
+            "mouv": 72,
+            "pui": 74,
+            "ment": 76,
+            "def": 89,
+            "gk": 39
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_9301",
+          "nom": "Markus Zimmermann",
+          "poste": "DC",
+          "age": 33,
+          "notes": {
+            "off": 55,
+            "tec": 77,
+            "mouv": 65,
+            "pui": 83,
+            "ment": 77,
+            "def": 76,
+            "gk": 38
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_5617",
+          "nom": "Patrick Huber",
+          "poste": "DC",
+          "age": 28,
+          "notes": {
+            "off": 56,
+            "tec": 79,
+            "mouv": 72,
+            "pui": 75,
+            "ment": 73,
+            "def": 85,
+            "gk": 20
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_9061",
+          "nom": "Fabian Schwarz",
+          "poste": "DD",
+          "age": 19,
+          "notes": {
+            "off": 67,
+            "tec": 75,
+            "mouv": 68,
+            "pui": 80,
+            "ment": 79,
+            "def": 85,
+            "gk": 25
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_3403",
+          "nom": "Christoph Koch",
+          "poste": "DC",
+          "age": 30,
+          "notes": {
+            "off": 53,
+            "tec": 81,
+            "mouv": 79,
+            "pui": 80,
+            "ment": 71,
+            "def": 88,
+            "gk": 30
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_2302",
+          "nom": "Sebastian Schulz",
+          "poste": "DG",
+          "age": 19,
+          "notes": {
+            "off": 65,
+            "tec": 71,
+            "mouv": 84,
+            "pui": 91,
+            "ment": 73,
+            "def": 85,
+            "gk": 37
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3909",
+          "nom": "Lukas Hartmann",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 55,
+            "tec": 85,
+            "mouv": 84,
+            "pui": 82,
+            "ment": 76,
+            "def": 92,
+            "gk": 27
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_9162",
+          "nom": "Florian Braun",
+          "poste": "DC",
+          "age": 19,
+          "notes": {
+            "off": 70,
+            "tec": 77,
+            "mouv": 72,
+            "pui": 83,
+            "ment": 71,
+            "def": 81,
+            "gk": 33
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_7488",
+          "nom": "Kai Schwarz",
+          "poste": "DG",
+          "age": 25,
+          "notes": {
+            "off": 47,
+            "tec": 77,
+            "mouv": 74,
+            "pui": 79,
+            "ment": 72,
+            "def": 77,
+            "gk": 19
+          },
+          "global": 67
+        },
+        {
+          "id": "p_1775047242461_1298",
+          "nom": "Patrick Krüger",
+          "poste": "DG",
+          "age": 30,
+          "notes": {
+            "off": 58,
+            "tec": 82,
+            "mouv": 76,
+            "pui": 85,
+            "ment": 76,
+            "def": 85,
+            "gk": 25
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2602",
+          "nom": "Michael Schulze",
+          "poste": "DC",
+          "age": 33,
+          "notes": {
+            "off": 70,
+            "tec": 73,
+            "mouv": 84,
+            "pui": 86,
+            "ment": 75,
+            "def": 93,
+            "gk": 33
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_1691",
+          "nom": "Philipp Richter",
+          "poste": "DD",
+          "age": 23,
+          "notes": {
+            "off": 59,
+            "tec": 68,
+            "mouv": 75,
+            "pui": 74,
+            "ment": 76,
+            "def": 88,
+            "gk": 28
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_6907",
+          "nom": "Moritz Huber",
+          "poste": "DG",
+          "age": 25,
+          "notes": {
+            "off": 71,
+            "tec": 78,
+            "mouv": 75,
+            "pui": 90,
+            "ment": 72,
+            "def": 93,
+            "gk": 28
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_4213",
+          "nom": "Bastian Krause",
+          "poste": "DC",
+          "age": 22,
+          "notes": {
+            "off": 59,
+            "tec": 74,
+            "mouv": 80,
+            "pui": 80,
+            "ment": 71,
+            "def": 86,
+            "gk": 30
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_3677",
+          "nom": "Dominik Schwarz",
+          "poste": "DG",
+          "age": 22,
+          "notes": {
+            "off": 60,
+            "tec": 79,
+            "mouv": 81,
+            "pui": 76,
+            "ment": 76,
+            "def": 89,
+            "gk": 18
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8492",
+          "nom": "Luca Lange",
+          "poste": "DD",
+          "age": 28,
+          "notes": {
+            "off": 63,
+            "tec": 71,
+            "mouv": 76,
+            "pui": 74,
+            "ment": 80,
+            "def": 85,
+            "gk": 39
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_1441",
+          "nom": "Stefan Klein",
+          "poste": "DG",
+          "age": 33,
+          "notes": {
+            "off": 64,
+            "tec": 71,
+            "mouv": 68,
+            "pui": 73,
+            "ment": 76,
+            "def": 90,
+            "gk": 26
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_6675",
+          "nom": "David Hartmann",
+          "poste": "DC",
+          "age": 29,
+          "notes": {
+            "off": 71,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 89,
+            "ment": 77,
+            "def": 91,
+            "gk": 23
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_7886",
+          "nom": "Nico Schmidt",
+          "poste": "DG",
+          "age": 32,
+          "notes": {
+            "off": 65,
+            "tec": 83,
+            "mouv": 72,
+            "pui": 88,
+            "ment": 75,
+            "def": 82,
+            "gk": 36
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_5721",
+          "nom": "Markus Hofmann",
+          "poste": "DC",
+          "age": 29,
+          "notes": {
+            "off": 49,
+            "tec": 70,
+            "mouv": 79,
+            "pui": 73,
+            "ment": 74,
+            "def": 83,
+            "gk": 42
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_7787",
+          "nom": "Dennis Schneider",
+          "poste": "DC",
+          "age": 21,
+          "notes": {
+            "off": 65,
+            "tec": 75,
+            "mouv": 71,
+            "pui": 87,
+            "ment": 73,
+            "def": 89,
+            "gk": 22
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_6038",
+          "nom": "Patrick Hofmann",
+          "poste": "DD",
+          "age": 26,
+          "notes": {
+            "off": 57,
+            "tec": 74,
+            "mouv": 80,
+            "pui": 77,
+            "ment": 80,
+            "def": 87,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_3736",
+          "nom": "Julian Fischer",
+          "poste": "DG",
+          "age": 24,
+          "notes": {
+            "off": 56,
+            "tec": 71,
+            "mouv": 82,
+            "pui": 84,
+            "ment": 75,
+            "def": 86,
+            "gk": 24
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_2154",
+          "nom": "Marco Krause",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 62,
+            "tec": 77,
+            "mouv": 73,
+            "pui": 73,
+            "ment": 72,
+            "def": 79,
+            "gk": 19
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_4750",
+          "nom": "Marco Schröder",
+          "poste": "DG",
+          "age": 25,
+          "notes": {
+            "off": 67,
+            "tec": 85,
+            "mouv": 74,
+            "pui": 85,
+            "ment": 79,
+            "def": 87,
+            "gk": 32
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_3083",
+          "nom": "Niklas Krüger",
+          "poste": "DC",
+          "age": 31,
+          "notes": {
+            "off": 55,
+            "tec": 70,
+            "mouv": 71,
+            "pui": 76,
+            "ment": 72,
+            "def": 79,
+            "gk": 39
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242461_9384",
+          "nom": "Maximilian Klein",
+          "poste": "DD",
+          "age": 24,
+          "notes": {
+            "off": 59,
+            "tec": 84,
+            "mouv": 76,
+            "pui": 84,
+            "ment": 78,
+            "def": 91,
+            "gk": 30
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3377",
+          "nom": "Ole Köhler",
+          "poste": "DG",
+          "age": 26,
+          "notes": {
+            "off": 58,
+            "tec": 67,
+            "mouv": 74,
+            "pui": 75,
+            "ment": 70,
+            "def": 78,
+            "gk": 41
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242461_8942",
+          "nom": "Lars Fischer",
+          "poste": "DG",
+          "age": 29,
+          "notes": {
+            "off": 61,
+            "tec": 83,
+            "mouv": 80,
+            "pui": 80,
+            "ment": 82,
+            "def": 83,
+            "gk": 25
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_5862",
+          "nom": "Julian Müller",
+          "poste": "DG",
+          "age": 36,
+          "notes": {
+            "off": 61,
+            "tec": 84,
+            "mouv": 77,
+            "pui": 81,
+            "ment": 80,
+            "def": 92,
+            "gk": 24
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_6372",
+          "nom": "Thomas Schmitz",
+          "poste": "DC",
+          "age": 30,
+          "notes": {
+            "off": 57,
+            "tec": 72,
+            "mouv": 71,
+            "pui": 89,
+            "ment": 81,
+            "def": 87,
+            "gk": 22
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_6182",
+          "nom": "Andreas Schulze",
+          "poste": "DD",
+          "age": 20,
+          "notes": {
+            "off": 50,
+            "tec": 78,
+            "mouv": 70,
+            "pui": 84,
+            "ment": 69,
+            "def": 80,
+            "gk": 40
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_7961",
+          "nom": "Alexander Mayer",
+          "poste": "DG",
+          "age": 29,
+          "notes": {
+            "off": 66,
+            "tec": 71,
+            "mouv": 66,
+            "pui": 69,
+            "ment": 70,
+            "def": 83,
+            "gk": 33
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_3746",
+          "nom": "Jonas Schmid",
+          "poste": "DG",
+          "age": 19,
+          "notes": {
+            "off": 65,
+            "tec": 77,
+            "mouv": 75,
+            "pui": 76,
+            "ment": 70,
+            "def": 86,
+            "gk": 22
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_5894",
+          "nom": "Thomas Wagner",
+          "poste": "DC",
+          "age": 27,
+          "notes": {
+            "off": 54,
+            "tec": 76,
+            "mouv": 69,
+            "pui": 80,
+            "ment": 74,
+            "def": 84,
+            "gk": 40
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_5098",
+          "nom": "Moritz Neumann",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 53,
+            "tec": 85,
+            "mouv": 78,
+            "pui": 83,
+            "ment": 71,
+            "def": 87,
+            "gk": 33
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_5415",
+          "nom": "Jonas Neumann",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 62,
+            "tec": 85,
+            "mouv": 71,
+            "pui": 82,
+            "ment": 73,
+            "def": 94,
+            "gk": 41
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7649",
+          "nom": "Patrick Maier",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 50,
+            "tec": 65,
+            "mouv": 77,
+            "pui": 76,
+            "ment": 67,
+            "def": 88,
+            "gk": 19
+          },
+          "global": 67
+        },
+        {
+          "id": "p_1775047242461_8368",
+          "nom": "Alexander Koch",
+          "poste": "DG",
+          "age": 27,
+          "notes": {
+            "off": 61,
+            "tec": 78,
+            "mouv": 78,
+            "pui": 76,
+            "ment": 74,
+            "def": 78,
+            "gk": 19
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_7960",
+          "nom": "Michael Mayer",
+          "poste": "DG",
+          "age": 18,
+          "notes": {
+            "off": 55,
+            "tec": 67,
+            "mouv": 74,
+            "pui": 79,
+            "ment": 70,
+            "def": 87,
+            "gk": 27
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_5110",
+          "nom": "Michael Klein",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 68,
+            "tec": 77,
+            "mouv": 78,
+            "pui": 88,
+            "ment": 73,
+            "def": 87,
+            "gk": 33
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_6738",
+          "nom": "Tobias Lange",
+          "poste": "DD",
+          "age": 31,
+          "notes": {
+            "off": 52,
+            "tec": 76,
+            "mouv": 78,
+            "pui": 78,
+            "ment": 72,
+            "def": 86,
+            "gk": 35
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_3816",
+          "nom": "Maximilian Wagner",
+          "poste": "DD",
+          "age": 18,
+          "notes": {
+            "off": 68,
+            "tec": 80,
+            "mouv": 71,
+            "pui": 78,
+            "ment": 72,
+            "def": 92,
+            "gk": 42
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3571",
+          "nom": "Sven Hofmann",
+          "poste": "DG",
+          "age": 29,
+          "notes": {
+            "off": 71,
+            "tec": 77,
+            "mouv": 79,
+            "pui": 75,
+            "ment": 82,
+            "def": 93,
+            "gk": 29
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_5925",
+          "nom": "Fabian Schneider",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 55,
+            "tec": 83,
+            "mouv": 76,
+            "pui": 78,
+            "ment": 84,
+            "def": 88,
+            "gk": 39
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2917",
+          "nom": "Andreas Werner",
+          "poste": "DD",
+          "age": 35,
+          "notes": {
+            "off": 67,
+            "tec": 73,
+            "mouv": 83,
+            "pui": 79,
+            "ment": 77,
+            "def": 90,
+            "gk": 42
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_3658",
+          "nom": "Christoph Schulze",
+          "poste": "DG",
+          "age": 36,
+          "notes": {
+            "off": 54,
+            "tec": 82,
+            "mouv": 79,
+            "pui": 90,
+            "ment": 81,
+            "def": 93,
+            "gk": 35
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9688",
+          "nom": "Andreas Schmitt",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 56,
+            "tec": 74,
+            "mouv": 70,
+            "pui": 87,
+            "ment": 72,
+            "def": 86,
+            "gk": 36
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242460_1014",
+          "nom": "Kevin Lange",
+          "poste": "MOG",
+          "age": 20,
+          "notes": {
+            "off": 69,
+            "tec": 88,
+            "mouv": 75,
+            "pui": 78,
+            "ment": 77,
+            "def": 81,
+            "gk": 29
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_2668",
+          "nom": "Paul Schäfer",
+          "poste": "MOG",
+          "age": 28,
+          "notes": {
+            "off": 70,
+            "tec": 78,
+            "mouv": 80,
+            "pui": 76,
+            "ment": 83,
+            "def": 72,
+            "gk": 15
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_7261",
+          "nom": "Sven Müller",
+          "poste": "MOD",
+          "age": 34,
+          "notes": {
+            "off": 69,
+            "tec": 72,
+            "mouv": 71,
+            "pui": 75,
+            "ment": 76,
+            "def": 79,
+            "gk": 23
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242460_4625",
+          "nom": "Felix Zimmermann",
+          "poste": "MOD",
+          "age": 25,
+          "notes": {
+            "off": 72,
+            "tec": 82,
+            "mouv": 80,
+            "pui": 71,
+            "ment": 72,
+            "def": 81,
+            "gk": 18
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_7205",
+          "nom": "Jan Becker",
+          "poste": "MO",
+          "age": 18,
+          "notes": {
+            "off": 66,
+            "tec": 78,
+            "mouv": 71,
+            "pui": 65,
+            "ment": 76,
+            "def": 63,
+            "gk": 27
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242460_1049",
+          "nom": "Dennis Weber",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 76,
+            "tec": 81,
+            "mouv": 82,
+            "pui": 73,
+            "ment": 79,
+            "def": 69,
+            "gk": 27
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_8302",
+          "nom": "Dennis Herrmann",
+          "poste": "MO",
+          "age": 28,
+          "notes": {
+            "off": 76,
+            "tec": 80,
+            "mouv": 73,
+            "pui": 75,
+            "ment": 75,
+            "def": 70,
+            "gk": 33
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_2779",
+          "nom": "Fabian Hoffmann",
+          "poste": "MO",
+          "age": 30,
+          "notes": {
+            "off": 67,
+            "tec": 78,
+            "mouv": 80,
+            "pui": 81,
+            "ment": 68,
+            "def": 77,
+            "gk": 29
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_5663",
+          "nom": "Sven Lehmann",
+          "poste": "MDC",
+          "age": 22,
+          "notes": {
+            "off": 79,
+            "tec": 75,
+            "mouv": 84,
+            "pui": 81,
+            "ment": 67,
+            "def": 73,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_6534",
+          "nom": "Lukas Schmidt",
+          "poste": "MOG",
+          "age": 19,
+          "notes": {
+            "off": 71,
+            "tec": 85,
+            "mouv": 84,
+            "pui": 76,
+            "ment": 75,
+            "def": 70,
+            "gk": 33
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_8120",
+          "nom": "Kevin Herrmann",
+          "poste": "MOD",
+          "age": 36,
+          "notes": {
+            "off": 76,
+            "tec": 83,
+            "mouv": 85,
+            "pui": 66,
+            "ment": 79,
+            "def": 81,
+            "gk": 28
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_6729",
+          "nom": "Nico Hofmann",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 82,
+            "tec": 73,
+            "mouv": 87,
+            "pui": 83,
+            "ment": 80,
+            "def": 78,
+            "gk": 24
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242460_8015",
+          "nom": "Felix Hoffmann",
+          "poste": "MO",
+          "age": 23,
+          "notes": {
+            "off": 81,
+            "tec": 77,
+            "mouv": 84,
+            "pui": 71,
+            "ment": 78,
+            "def": 80,
+            "gk": 15
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_7955",
+          "nom": "Kevin Hartmann",
+          "poste": "MOG",
+          "age": 26,
+          "notes": {
+            "off": 70,
+            "tec": 76,
+            "mouv": 79,
+            "pui": 82,
+            "ment": 77,
+            "def": 80,
+            "gk": 29
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_8707",
+          "nom": "Jan Maier",
+          "poste": "MOD",
+          "age": 31,
+          "notes": {
+            "off": 75,
+            "tec": 78,
+            "mouv": 74,
+            "pui": 80,
+            "ment": 69,
+            "def": 83,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_4987",
+          "nom": "Luca Müller",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 66,
+            "tec": 71,
+            "mouv": 79,
+            "pui": 64,
+            "ment": 74,
+            "def": 79,
+            "gk": 21
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_6834",
+          "nom": "Sebastian König",
+          "poste": "MC",
+          "age": 23,
+          "notes": {
+            "off": 69,
+            "tec": 86,
+            "mouv": 81,
+            "pui": 82,
+            "ment": 77,
+            "def": 84,
+            "gk": 19
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242460_1072",
+          "nom": "Luca Koch",
+          "poste": "MOG",
+          "age": 27,
+          "notes": {
+            "off": 69,
+            "tec": 75,
+            "mouv": 74,
+            "pui": 78,
+            "ment": 70,
+            "def": 67,
+            "gk": 32
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_1363",
+          "nom": "Markus Lange",
+          "poste": "MOD",
+          "age": 23,
+          "notes": {
+            "off": 69,
+            "tec": 79,
+            "mouv": 73,
+            "pui": 72,
+            "ment": 73,
+            "def": 81,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242460_5579",
+          "nom": "Lukas König",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 75,
+            "tec": 76,
+            "mouv": 83,
+            "pui": 76,
+            "ment": 73,
+            "def": 75,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_2797",
+          "nom": "Nico Becker",
+          "poste": "MC",
+          "age": 19,
+          "notes": {
+            "off": 80,
+            "tec": 77,
+            "mouv": 79,
+            "pui": 70,
+            "ment": 67,
+            "def": 78,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_5333",
+          "nom": "Dominik Wagner",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 77,
+            "tec": 76,
+            "mouv": 81,
+            "pui": 71,
+            "ment": 77,
+            "def": 83,
+            "gk": 18
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_4833",
+          "nom": "Christoph Hartmann",
+          "poste": "MC",
+          "age": 20,
+          "notes": {
+            "off": 74,
+            "tec": 82,
+            "mouv": 82,
+            "pui": 72,
+            "ment": 71,
+            "def": 71,
+            "gk": 17
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_8030",
+          "nom": "Paul Köhler",
+          "poste": "MOD",
+          "age": 18,
+          "notes": {
+            "off": 77,
+            "tec": 81,
+            "mouv": 77,
+            "pui": 78,
+            "ment": 74,
+            "def": 67,
+            "gk": 34
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_5909",
+          "nom": "Daniel Krüger",
+          "poste": "MC",
+          "age": 31,
+          "notes": {
+            "off": 72,
+            "tec": 83,
+            "mouv": 85,
+            "pui": 77,
+            "ment": 74,
+            "def": 76,
+            "gk": 34
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_3528",
+          "nom": "Luca Maier",
+          "poste": "MOD",
+          "age": 26,
+          "notes": {
+            "off": 74,
+            "tec": 74,
+            "mouv": 85,
+            "pui": 75,
+            "ment": 67,
+            "def": 75,
+            "gk": 29
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_7247",
+          "nom": "Tim Wagner",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 75,
+            "tec": 81,
+            "mouv": 88,
+            "pui": 82,
+            "ment": 80,
+            "def": 84,
+            "gk": 25
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_1950",
+          "nom": "Matthias Weber",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 84,
+            "tec": 83,
+            "mouv": 89,
+            "pui": 78,
+            "ment": 76,
+            "def": 68,
+            "gk": 19
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242460_6107",
+          "nom": "Fabian Lehmann",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 69,
+            "tec": 85,
+            "mouv": 81,
+            "pui": 78,
+            "ment": 75,
+            "def": 78,
+            "gk": 26
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_9709",
+          "nom": "Christian Schäfer",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 74,
+            "tec": 77,
+            "mouv": 77,
+            "pui": 72,
+            "ment": 81,
+            "def": 85,
+            "gk": 23
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_3360",
+          "nom": "Jan Becker",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 68,
+            "tec": 73,
+            "mouv": 79,
+            "pui": 78,
+            "ment": 66,
+            "def": 63,
+            "gk": 28
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242460_2558",
+          "nom": "Philipp Schäfer",
+          "poste": "MOG",
+          "age": 35,
+          "notes": {
+            "off": 76,
+            "tec": 80,
+            "mouv": 78,
+            "pui": 73,
+            "ment": 75,
+            "def": 82,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_5818",
+          "nom": "Julian Schmidt",
+          "poste": "MOD",
+          "age": 26,
+          "notes": {
+            "off": 75,
+            "tec": 74,
+            "mouv": 80,
+            "pui": 73,
+            "ment": 80,
+            "def": 72,
+            "gk": 24
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_8322",
+          "nom": "David Lange",
+          "poste": "MDC",
+          "age": 24,
+          "notes": {
+            "off": 74,
+            "tec": 88,
+            "mouv": 77,
+            "pui": 76,
+            "ment": 82,
+            "def": 74,
+            "gk": 29
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_6842",
+          "nom": "Dominik Mayer",
+          "poste": "MO",
+          "age": 20,
+          "notes": {
+            "off": 74,
+            "tec": 79,
+            "mouv": 85,
+            "pui": 76,
+            "ment": 77,
+            "def": 68,
+            "gk": 24
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_4182",
+          "nom": "Jan Schmid",
+          "poste": "MO",
+          "age": 27,
+          "notes": {
+            "off": 78,
+            "tec": 85,
+            "mouv": 90,
+            "pui": 84,
+            "ment": 81,
+            "def": 74,
+            "gk": 19
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_6699",
+          "nom": "Lars Schulz",
+          "poste": "MOG",
+          "age": 19,
+          "notes": {
+            "off": 85,
+            "tec": 85,
+            "mouv": 82,
+            "pui": 73,
+            "ment": 73,
+            "def": 82,
+            "gk": 30
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242460_4960",
+          "nom": "Matthias Wagner",
+          "poste": "MO",
+          "age": 29,
+          "notes": {
+            "off": 81,
+            "tec": 74,
+            "mouv": 87,
+            "pui": 78,
+            "ment": 81,
+            "def": 81,
+            "gk": 19
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242460_4202",
+          "nom": "Fabian König",
+          "poste": "MC",
+          "age": 35,
+          "notes": {
+            "off": 73,
+            "tec": 81,
+            "mouv": 89,
+            "pui": 78,
+            "ment": 80,
+            "def": 75,
+            "gk": 15
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_5286",
+          "nom": "Christoph Zimmermann",
+          "poste": "MO",
+          "age": 32,
+          "notes": {
+            "off": 85,
+            "tec": 76,
+            "mouv": 81,
+            "pui": 71,
+            "ment": 82,
+            "def": 78,
+            "gk": 34
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242460_6323",
+          "nom": "Michael Schulz",
+          "poste": "MOG",
+          "age": 30,
+          "notes": {
+            "off": 66,
+            "tec": 84,
+            "mouv": 83,
+            "pui": 65,
+            "ment": 75,
+            "def": 77,
+            "gk": 32
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_1952",
+          "nom": "Christian Bauer",
+          "poste": "MOD",
+          "age": 24,
+          "notes": {
+            "off": 73,
+            "tec": 79,
+            "mouv": 79,
+            "pui": 73,
+            "ment": 84,
+            "def": 85,
+            "gk": 27
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_3073",
+          "nom": "Sven Schulz",
+          "poste": "MDC",
+          "age": 28,
+          "notes": {
+            "off": 86,
+            "tec": 79,
+            "mouv": 90,
+            "pui": 79,
+            "ment": 79,
+            "def": 70,
+            "gk": 18
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242460_7397",
+          "nom": "Niklas Becker",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 81,
+            "tec": 78,
+            "mouv": 83,
+            "pui": 76,
+            "ment": 71,
+            "def": 83,
+            "gk": 31
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242460_2199",
+          "nom": "Leon Schmitt",
+          "poste": "MOD",
+          "age": 29,
+          "notes": {
+            "off": 68,
+            "tec": 82,
+            "mouv": 84,
+            "pui": 75,
+            "ment": 79,
+            "def": 80,
+            "gk": 25
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_1844",
+          "nom": "Daniel Werner",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 69,
+            "tec": 73,
+            "mouv": 75,
+            "pui": 71,
+            "ment": 81,
+            "def": 66,
+            "gk": 27
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_6520",
+          "nom": "Simon Bauer",
+          "poste": "MC",
+          "age": 32,
+          "notes": {
+            "off": 65,
+            "tec": 78,
+            "mouv": 81,
+            "pui": 77,
+            "ment": 66,
+            "def": 76,
+            "gk": 22
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242460_3793",
+          "nom": "Andreas Müller",
+          "poste": "MOG",
+          "age": 27,
+          "notes": {
+            "off": 71,
+            "tec": 85,
+            "mouv": 85,
+            "pui": 67,
+            "ment": 80,
+            "def": 78,
+            "gk": 23
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_2279",
+          "nom": "Florian Krüger",
+          "poste": "MC",
+          "age": 19,
+          "notes": {
+            "off": 73,
+            "tec": 87,
+            "mouv": 88,
+            "pui": 75,
+            "ment": 77,
+            "def": 79,
+            "gk": 22
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242460_9951",
+          "nom": "Stefan Krause",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 78,
+            "tec": 88,
+            "mouv": 85,
+            "pui": 77,
+            "ment": 77,
+            "def": 74,
+            "gk": 18
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242460_3811",
+          "nom": "Sebastian Schmitt",
+          "poste": "MC",
+          "age": 27,
+          "notes": {
+            "off": 68,
+            "tec": 86,
+            "mouv": 75,
+            "pui": 77,
+            "ment": 81,
+            "def": 67,
+            "gk": 23
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_7075",
+          "nom": "Jan Schulz",
+          "poste": "MOD",
+          "age": 35,
+          "notes": {
+            "off": 80,
+            "tec": 77,
+            "mouv": 77,
+            "pui": 84,
+            "ment": 71,
+            "def": 72,
+            "gk": 20
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_3134",
+          "nom": "Luca Richter",
+          "poste": "MDC",
+          "age": 32,
+          "notes": {
+            "off": 74,
+            "tec": 84,
+            "mouv": 82,
+            "pui": 68,
+            "ment": 69,
+            "def": 67,
+            "gk": 35
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_9461",
+          "nom": "Leon Köhler",
+          "poste": "MC",
+          "age": 20,
+          "notes": {
+            "off": 84,
+            "tec": 89,
+            "mouv": 88,
+            "pui": 74,
+            "ment": 76,
+            "def": 73,
+            "gk": 26
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_8077",
+          "nom": "Simon Hoffmann",
+          "poste": "MO",
+          "age": 29,
+          "notes": {
+            "off": 75,
+            "tec": 78,
+            "mouv": 83,
+            "pui": 67,
+            "ment": 71,
+            "def": 79,
+            "gk": 27
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_5588",
+          "nom": "Marco Koch",
+          "poste": "MC",
+          "age": 34,
+          "notes": {
+            "off": 72,
+            "tec": 86,
+            "mouv": 81,
+            "pui": 71,
+            "ment": 78,
+            "def": 78,
+            "gk": 29
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_8919",
+          "nom": "Tobias Fischer",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 71,
+            "tec": 73,
+            "mouv": 79,
+            "pui": 68,
+            "ment": 70,
+            "def": 70,
+            "gk": 29
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_5934",
+          "nom": "Luca Weber",
+          "poste": "MO",
+          "age": 34,
+          "notes": {
+            "off": 78,
+            "tec": 74,
+            "mouv": 84,
+            "pui": 80,
+            "ment": 81,
+            "def": 73,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_1766",
+          "nom": "Julian Schmitt",
+          "poste": "MC",
+          "age": 23,
+          "notes": {
+            "off": 80,
+            "tec": 75,
+            "mouv": 83,
+            "pui": 82,
+            "ment": 73,
+            "def": 76,
+            "gk": 29
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_7270",
+          "nom": "Bastian Lange",
+          "poste": "MC",
+          "age": 24,
+          "notes": {
+            "off": 78,
+            "tec": 82,
+            "mouv": 75,
+            "pui": 76,
+            "ment": 75,
+            "def": 78,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_4507",
+          "nom": "Julian Richter",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 65,
+            "tec": 70,
+            "mouv": 83,
+            "pui": 79,
+            "ment": 73,
+            "def": 77,
+            "gk": 22
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_8658",
+          "nom": "Tim Lange",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 76,
+            "tec": 78,
+            "mouv": 80,
+            "pui": 73,
+            "ment": 79,
+            "def": 82,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_8894",
+          "nom": "Lukas Schulz",
+          "poste": "MO",
+          "age": 22,
+          "notes": {
+            "off": 79,
+            "tec": 84,
+            "mouv": 82,
+            "pui": 71,
+            "ment": 69,
+            "def": 84,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_5323",
+          "nom": "Matthias Richter",
+          "poste": "MOD",
+          "age": 27,
+          "notes": {
+            "off": 82,
+            "tec": 81,
+            "mouv": 84,
+            "pui": 68,
+            "ment": 73,
+            "def": 82,
+            "gk": 23
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9610",
+          "nom": "David Meier",
+          "poste": "MO",
+          "age": 19,
+          "notes": {
+            "off": 79,
+            "tec": 86,
+            "mouv": 87,
+            "pui": 84,
+            "ment": 74,
+            "def": 82,
+            "gk": 18
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_5462",
+          "nom": "Jan Schmidt",
+          "poste": "MC",
+          "age": 32,
+          "notes": {
+            "off": 75,
+            "tec": 81,
+            "mouv": 85,
+            "pui": 75,
+            "ment": 79,
+            "def": 74,
+            "gk": 24
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_4208",
+          "nom": "Michael Walter",
+          "poste": "MC",
+          "age": 31,
+          "notes": {
+            "off": 69,
+            "tec": 83,
+            "mouv": 77,
+            "pui": 79,
+            "ment": 71,
+            "def": 71,
+            "gk": 23
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_2025",
+          "nom": "Paul Schulz",
+          "poste": "MOD",
+          "age": 24,
+          "notes": {
+            "off": 83,
+            "tec": 79,
+            "mouv": 89,
+            "pui": 82,
+            "ment": 76,
+            "def": 85,
+            "gk": 24
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775047242461_4580",
+          "nom": "Sven Braun",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 70,
+            "tec": 87,
+            "mouv": 89,
+            "pui": 70,
+            "ment": 71,
+            "def": 75,
+            "gk": 15
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_9765",
+          "nom": "Kai Schwarz",
+          "poste": "MO",
+          "age": 32,
+          "notes": {
+            "off": 74,
+            "tec": 86,
+            "mouv": 77,
+            "pui": 82,
+            "ment": 81,
+            "def": 70,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_3807",
+          "nom": "Daniel Herrmann",
+          "poste": "MO",
+          "age": 17,
+          "notes": {
+            "off": 77,
+            "tec": 90,
+            "mouv": 76,
+            "pui": 70,
+            "ment": 74,
+            "def": 78,
+            "gk": 20
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_6181",
+          "nom": "Fabian Klein",
+          "poste": "MOG",
+          "age": 26,
+          "notes": {
+            "off": 65,
+            "tec": 80,
+            "mouv": 84,
+            "pui": 76,
+            "ment": 77,
+            "def": 70,
+            "gk": 24
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8831",
+          "nom": "Ole Klein",
+          "poste": "MO",
+          "age": 20,
+          "notes": {
+            "off": 84,
+            "tec": 79,
+            "mouv": 76,
+            "pui": 74,
+            "ment": 73,
+            "def": 71,
+            "gk": 22
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_9252",
+          "nom": "Dennis Lehmann",
+          "poste": "MDC",
+          "age": 25,
+          "notes": {
+            "off": 74,
+            "tec": 84,
+            "mouv": 76,
+            "pui": 73,
+            "ment": 71,
+            "def": 67,
+            "gk": 18
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_9572",
+          "nom": "Maximilian Richter",
+          "poste": "MDC",
+          "age": 30,
+          "notes": {
+            "off": 69,
+            "tec": 83,
+            "mouv": 81,
+            "pui": 76,
+            "ment": 71,
+            "def": 83,
+            "gk": 31
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7426",
+          "nom": "Jonas Schmitz",
+          "poste": "MO",
+          "age": 33,
+          "notes": {
+            "off": 80,
+            "tec": 78,
+            "mouv": 73,
+            "pui": 75,
+            "ment": 75,
+            "def": 77,
+            "gk": 31
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3487",
+          "nom": "Philipp Koch",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 71,
+            "tec": 82,
+            "mouv": 86,
+            "pui": 81,
+            "ment": 73,
+            "def": 71,
+            "gk": 28
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_5039",
+          "nom": "Nico Schmitt",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 73,
+            "tec": 86,
+            "mouv": 86,
+            "pui": 73,
+            "ment": 76,
+            "def": 74,
+            "gk": 28
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_1736",
+          "nom": "Jan Schmid",
+          "poste": "MDC",
+          "age": 24,
+          "notes": {
+            "off": 79,
+            "tec": 73,
+            "mouv": 73,
+            "pui": 67,
+            "ment": 67,
+            "def": 80,
+            "gk": 31
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_3445",
+          "nom": "Thomas Schmid",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 75,
+            "tec": 73,
+            "mouv": 75,
+            "pui": 69,
+            "ment": 72,
+            "def": 83,
+            "gk": 33
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8981",
+          "nom": "David Herrmann",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 70,
+            "tec": 90,
+            "mouv": 83,
+            "pui": 73,
+            "ment": 79,
+            "def": 86,
+            "gk": 22
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_1547",
+          "nom": "David Schulze",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 79,
+            "tec": 79,
+            "mouv": 82,
+            "pui": 75,
+            "ment": 76,
+            "def": 71,
+            "gk": 32
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8087",
+          "nom": "Felix Werner",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 77,
+            "tec": 82,
+            "mouv": 81,
+            "pui": 84,
+            "ment": 83,
+            "def": 75,
+            "gk": 18
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_7126",
+          "nom": "Tobias Müller",
+          "poste": "MDC",
+          "age": 34,
+          "notes": {
+            "off": 76,
+            "tec": 74,
+            "mouv": 75,
+            "pui": 75,
+            "ment": 69,
+            "def": 76,
+            "gk": 20
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_8634",
+          "nom": "David Huber",
+          "poste": "MDC",
+          "age": 22,
+          "notes": {
+            "off": 80,
+            "tec": 77,
+            "mouv": 79,
+            "pui": 73,
+            "ment": 74,
+            "def": 83,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_6276",
+          "nom": "Dominik Werner",
+          "poste": "MDC",
+          "age": 36,
+          "notes": {
+            "off": 72,
+            "tec": 77,
+            "mouv": 82,
+            "pui": 69,
+            "ment": 76,
+            "def": 73,
+            "gk": 31
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_6369",
+          "nom": "Kai Köhler",
+          "poste": "MOG",
+          "age": 17,
+          "notes": {
+            "off": 69,
+            "tec": 81,
+            "mouv": 82,
+            "pui": 70,
+            "ment": 78,
+            "def": 75,
+            "gk": 33
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_9624",
+          "nom": "Kevin Koch",
+          "poste": "MOD",
+          "age": 22,
+          "notes": {
+            "off": 81,
+            "tec": 86,
+            "mouv": 76,
+            "pui": 73,
+            "ment": 75,
+            "def": 78,
+            "gk": 30
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_6964",
+          "nom": "Alexander Klein",
+          "poste": "MC",
+          "age": 30,
+          "notes": {
+            "off": 75,
+            "tec": 85,
+            "mouv": 84,
+            "pui": 70,
+            "ment": 72,
+            "def": 71,
+            "gk": 17
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_8600",
+          "nom": "Dennis Koch",
+          "poste": "MOD",
+          "age": 29,
+          "notes": {
+            "off": 74,
+            "tec": 77,
+            "mouv": 79,
+            "pui": 71,
+            "ment": 68,
+            "def": 81,
+            "gk": 31
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8330",
+          "nom": "Jan Klein",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 80,
+            "tec": 74,
+            "mouv": 84,
+            "pui": 81,
+            "ment": 77,
+            "def": 67,
+            "gk": 16
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_6652",
+          "nom": "Ole Herrmann",
+          "poste": "MO",
+          "age": 19,
+          "notes": {
+            "off": 68,
+            "tec": 82,
+            "mouv": 82,
+            "pui": 79,
+            "ment": 73,
+            "def": 74,
+            "gk": 16
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_2390",
+          "nom": "Michael Weber",
+          "poste": "MDC",
+          "age": 22,
+          "notes": {
+            "off": 72,
+            "tec": 85,
+            "mouv": 76,
+            "pui": 73,
+            "ment": 75,
+            "def": 71,
+            "gk": 27
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_7271",
+          "nom": "Maximilian Krüger",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 84,
+            "tec": 79,
+            "mouv": 89,
+            "pui": 73,
+            "ment": 83,
+            "def": 73,
+            "gk": 23
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_9003",
+          "nom": "Niklas Fischer",
+          "poste": "MOD",
+          "age": 18,
+          "notes": {
+            "off": 77,
+            "tec": 78,
+            "mouv": 76,
+            "pui": 67,
+            "ment": 70,
+            "def": 76,
+            "gk": 35
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_9614",
+          "nom": "Patrick Werner",
+          "poste": "MDC",
+          "age": 34,
+          "notes": {
+            "off": 76,
+            "tec": 80,
+            "mouv": 80,
+            "pui": 73,
+            "ment": 77,
+            "def": 75,
+            "gk": 25
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_4091",
+          "nom": "Thomas Schwarz",
+          "poste": "MO",
+          "age": 17,
+          "notes": {
+            "off": 76,
+            "tec": 82,
+            "mouv": 86,
+            "pui": 76,
+            "ment": 73,
+            "def": 82,
+            "gk": 28
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_6579",
+          "nom": "Philipp Weber",
+          "poste": "MO",
+          "age": 26,
+          "notes": {
+            "off": 79,
+            "tec": 74,
+            "mouv": 86,
+            "pui": 73,
+            "ment": 77,
+            "def": 85,
+            "gk": 16
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9357",
+          "nom": "Paul Schmidt",
+          "poste": "MOD",
+          "age": 27,
+          "notes": {
+            "off": 71,
+            "tec": 76,
+            "mouv": 85,
+            "pui": 77,
+            "ment": 72,
+            "def": 82,
+            "gk": 26
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8183",
+          "nom": "Dominik Lehmann",
+          "poste": "GK",
+          "age": 35,
+          "notes": {
+            "off": 52,
+            "tec": 73,
+            "mouv": 62,
+            "pui": 65,
+            "ment": 83,
+            "def": 75,
+            "gk": 97
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242461_8611",
+          "nom": "Markus Schröder",
+          "poste": "MOG",
+          "age": 30,
+          "notes": {
+            "off": 74,
+            "tec": 85,
+            "mouv": 75,
+            "pui": 71,
+            "ment": 83,
+            "def": 79,
+            "gk": 16
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8124",
+          "nom": "Simon Neumann",
+          "poste": "MO",
+          "age": 21,
+          "notes": {
+            "off": 82,
+            "tec": 82,
+            "mouv": 81,
+            "pui": 76,
+            "ment": 81,
+            "def": 77,
+            "gk": 15
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_6033",
+          "nom": "Jonas Meyer",
+          "poste": "MC",
+          "age": 23,
+          "notes": {
+            "off": 70,
+            "tec": 89,
+            "mouv": 89,
+            "pui": 76,
+            "ment": 75,
+            "def": 75,
+            "gk": 24
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_4628",
+          "nom": "Lukas Hoffmann",
+          "poste": "MDC",
+          "age": 19,
+          "notes": {
+            "off": 76,
+            "tec": 84,
+            "mouv": 79,
+            "pui": 78,
+            "ment": 81,
+            "def": 72,
+            "gk": 30
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_8399",
+          "nom": "Bastian Werner",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 73,
+            "tec": 77,
+            "mouv": 85,
+            "pui": 73,
+            "ment": 71,
+            "def": 79,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_6107",
+          "nom": "Luca Braun",
+          "poste": "MDC",
+          "age": 36,
+          "notes": {
+            "off": 76,
+            "tec": 79,
+            "mouv": 84,
+            "pui": 83,
+            "ment": 75,
+            "def": 85,
+            "gk": 23
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_5663",
+          "nom": "Dominik Schwarz",
+          "poste": "MOG",
+          "age": 23,
+          "notes": {
+            "off": 78,
+            "tec": 86,
+            "mouv": 82,
+            "pui": 80,
+            "ment": 77,
+            "def": 82,
+            "gk": 27
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_2929",
+          "nom": "Thomas Braun",
+          "poste": "MO",
+          "age": 30,
+          "notes": {
+            "off": 81,
+            "tec": 72,
+            "mouv": 82,
+            "pui": 72,
+            "ment": 78,
+            "def": 65,
+            "gk": 24
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_6761",
+          "nom": "Philipp Fischer",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 77,
+            "tec": 86,
+            "mouv": 80,
+            "pui": 71,
+            "ment": 81,
+            "def": 77,
+            "gk": 24
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9544",
+          "nom": "Andreas Krüger",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 68,
+            "tec": 79,
+            "mouv": 78,
+            "pui": 77,
+            "ment": 71,
+            "def": 72,
+            "gk": 26
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_6097",
+          "nom": "Christoph Koch",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 70,
+            "tec": 80,
+            "mouv": 75,
+            "pui": 65,
+            "ment": 76,
+            "def": 66,
+            "gk": 23
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_6138",
+          "nom": "Stefan Hoffmann",
+          "poste": "MDC",
+          "age": 35,
+          "notes": {
+            "off": 84,
+            "tec": 75,
+            "mouv": 80,
+            "pui": 78,
+            "ment": 74,
+            "def": 71,
+            "gk": 28
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_4906",
+          "nom": "Kevin Schäfer",
+          "poste": "MC",
+          "age": 26,
+          "notes": {
+            "off": 69,
+            "tec": 83,
+            "mouv": 81,
+            "pui": 80,
+            "ment": 82,
+            "def": 74,
+            "gk": 27
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_4879",
+          "nom": "Patrick Müller",
+          "poste": "MOD",
+          "age": 19,
+          "notes": {
+            "off": 78,
+            "tec": 85,
+            "mouv": 77,
+            "pui": 76,
+            "ment": 79,
+            "def": 81,
+            "gk": 20
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_3277",
+          "nom": "Ole König",
+          "poste": "MOD",
+          "age": 17,
+          "notes": {
+            "off": 77,
+            "tec": 75,
+            "mouv": 75,
+            "pui": 74,
+            "ment": 78,
+            "def": 83,
+            "gk": 32
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8012",
+          "nom": "Lukas Schmid",
+          "poste": "MDC",
+          "age": 22,
+          "notes": {
+            "off": 78,
+            "tec": 84,
+            "mouv": 85,
+            "pui": 79,
+            "ment": 73,
+            "def": 69,
+            "gk": 22
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_6507",
+          "nom": "Tobias Wagner",
+          "poste": "MO",
+          "age": 29,
+          "notes": {
+            "off": 81,
+            "tec": 86,
+            "mouv": 89,
+            "pui": 83,
+            "ment": 71,
+            "def": 71,
+            "gk": 32
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_4151",
+          "nom": "Philipp Werner",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 74,
+            "tec": 83,
+            "mouv": 72,
+            "pui": 79,
+            "ment": 72,
+            "def": 83,
+            "gk": 33
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3903",
+          "nom": "Niklas Meyer",
+          "poste": "MDC",
+          "age": 24,
+          "notes": {
+            "off": 79,
+            "tec": 87,
+            "mouv": 76,
+            "pui": 74,
+            "ment": 78,
+            "def": 71,
+            "gk": 19
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8970",
+          "nom": "Bastian Krüger",
+          "poste": "MOG",
+          "age": 23,
+          "notes": {
+            "off": 80,
+            "tec": 78,
+            "mouv": 84,
+            "pui": 77,
+            "ment": 72,
+            "def": 81,
+            "gk": 15
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_8613",
+          "nom": "Bastian König",
+          "poste": "MC",
+          "age": 18,
+          "notes": {
+            "off": 68,
+            "tec": 75,
+            "mouv": 79,
+            "pui": 77,
+            "ment": 74,
+            "def": 69,
+            "gk": 22
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_6254",
+          "nom": "Nico Koch",
+          "poste": "MOG",
+          "age": 32,
+          "notes": {
+            "off": 69,
+            "tec": 73,
+            "mouv": 85,
+            "pui": 75,
+            "ment": 74,
+            "def": 72,
+            "gk": 35
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_4708",
+          "nom": "Simon Maier",
+          "poste": "MO",
+          "age": 33,
+          "notes": {
+            "off": 69,
+            "tec": 84,
+            "mouv": 83,
+            "pui": 80,
+            "ment": 78,
+            "def": 69,
+            "gk": 23
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3237",
+          "nom": "Fabian Weber",
+          "poste": "MO",
+          "age": 22,
+          "notes": {
+            "off": 80,
+            "tec": 78,
+            "mouv": 84,
+            "pui": 77,
+            "ment": 78,
+            "def": 67,
+            "gk": 25
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_6493",
+          "nom": "Tim Meier",
+          "poste": "MOG",
+          "age": 30,
+          "notes": {
+            "off": 81,
+            "tec": 77,
+            "mouv": 87,
+            "pui": 80,
+            "ment": 79,
+            "def": 71,
+            "gk": 23
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_7653",
+          "nom": "Tobias Krüger",
+          "poste": "MOG",
+          "age": 31,
+          "notes": {
+            "off": 73,
+            "tec": 75,
+            "mouv": 83,
+            "pui": 72,
+            "ment": 74,
+            "def": 85,
+            "gk": 29
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8917",
+          "nom": "Niklas Mayer",
+          "poste": "MOD",
+          "age": 25,
+          "notes": {
+            "off": 74,
+            "tec": 76,
+            "mouv": 81,
+            "pui": 67,
+            "ment": 71,
+            "def": 75,
+            "gk": 21
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_1344",
+          "nom": "Ole Richter",
+          "poste": "MOG",
+          "age": 28,
+          "notes": {
+            "off": 70,
+            "tec": 89,
+            "mouv": 80,
+            "pui": 74,
+            "ment": 72,
+            "def": 76,
+            "gk": 20
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2485",
+          "nom": "Leon Wolf",
+          "poste": "MOG",
+          "age": 32,
+          "notes": {
+            "off": 82,
+            "tec": 80,
+            "mouv": 79,
+            "pui": 76,
+            "ment": 78,
+            "def": 72,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_6089",
+          "nom": "Tobias Wagner",
+          "poste": "MC",
+          "age": 26,
+          "notes": {
+            "off": 67,
+            "tec": 73,
+            "mouv": 82,
+            "pui": 76,
+            "ment": 67,
+            "def": 74,
+            "gk": 23
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_3983",
+          "nom": "David Schulze",
+          "poste": "MOD",
+          "age": 23,
+          "notes": {
+            "off": 84,
+            "tec": 80,
+            "mouv": 90,
+            "pui": 78,
+            "ment": 82,
+            "def": 84,
+            "gk": 34
+          },
+          "global": 81
+        },
+        {
+          "id": "p_1775047242461_9959",
+          "nom": "Nico Lehmann",
+          "poste": "MC",
+          "age": 31,
+          "notes": {
+            "off": 70,
+            "tec": 83,
+            "mouv": 76,
+            "pui": 82,
+            "ment": 75,
+            "def": 74,
+            "gk": 21
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2962",
+          "nom": "Nico Neumann",
+          "poste": "MDC",
+          "age": 35,
+          "notes": {
+            "off": 86,
+            "tec": 87,
+            "mouv": 86,
+            "pui": 70,
+            "ment": 83,
+            "def": 82,
+            "gk": 20
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775047242461_9215",
+          "nom": "Kai Krüger",
+          "poste": "MC",
+          "age": 32,
+          "notes": {
+            "off": 75,
+            "tec": 71,
+            "mouv": 83,
+            "pui": 68,
+            "ment": 70,
+            "def": 67,
+            "gk": 30
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_2038",
+          "nom": "Nico Mayer",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 68,
+            "tec": 81,
+            "mouv": 76,
+            "pui": 68,
+            "ment": 75,
+            "def": 81,
+            "gk": 30
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_7625",
+          "nom": "Dennis Krause",
+          "poste": "MDC",
+          "age": 29,
+          "notes": {
+            "off": 68,
+            "tec": 76,
+            "mouv": 82,
+            "pui": 82,
+            "ment": 78,
+            "def": 78,
+            "gk": 25
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_9594",
+          "nom": "Jan Meyer",
+          "poste": "MO",
+          "age": 17,
+          "notes": {
+            "off": 78,
+            "tec": 76,
+            "mouv": 82,
+            "pui": 76,
+            "ment": 80,
+            "def": 70,
+            "gk": 34
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8644",
+          "nom": "Jonas Neumann",
+          "poste": "MOG",
+          "age": 35,
+          "notes": {
+            "off": 71,
+            "tec": 75,
+            "mouv": 85,
+            "pui": 67,
+            "ment": 69,
+            "def": 65,
+            "gk": 20
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_2924",
+          "nom": "Marco Klein",
+          "poste": "MDC",
+          "age": 25,
+          "notes": {
+            "off": 69,
+            "tec": 72,
+            "mouv": 82,
+            "pui": 72,
+            "ment": 78,
+            "def": 73,
+            "gk": 17
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_2482",
+          "nom": "Andreas Fischer",
+          "poste": "MOD",
+          "age": 21,
+          "notes": {
+            "off": 76,
+            "tec": 78,
+            "mouv": 76,
+            "pui": 71,
+            "ment": 78,
+            "def": 85,
+            "gk": 17
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_9862",
+          "nom": "Kai Werner",
+          "poste": "MC",
+          "age": 26,
+          "notes": {
+            "off": 81,
+            "tec": 83,
+            "mouv": 77,
+            "pui": 83,
+            "ment": 76,
+            "def": 81,
+            "gk": 23
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_4042",
+          "nom": "Andreas Schwarz",
+          "poste": "MDC",
+          "age": 24,
+          "notes": {
+            "off": 84,
+            "tec": 89,
+            "mouv": 83,
+            "pui": 85,
+            "ment": 79,
+            "def": 69,
+            "gk": 16
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_4631",
+          "nom": "Sven Hoffmann",
+          "poste": "GK",
+          "age": 32,
+          "notes": {
+            "off": 54,
+            "tec": 61,
+            "mouv": 55,
+            "pui": 61,
+            "ment": 73,
+            "def": 70,
+            "gk": 84
+          },
+          "global": 62
+        },
+        {
+          "id": "p_1775047242461_6331",
+          "nom": "Sven Schmitt",
+          "poste": "MC",
+          "age": 24,
+          "notes": {
+            "off": 68,
+            "tec": 77,
+            "mouv": 84,
+            "pui": 65,
+            "ment": 67,
+            "def": 67,
+            "gk": 16
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_7982",
+          "nom": "Nico Schneider",
+          "poste": "MDC",
+          "age": 31,
+          "notes": {
+            "off": 79,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 67,
+            "ment": 78,
+            "def": 77,
+            "gk": 24
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_7604",
+          "nom": "Fabian Schröder",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 68,
+            "tec": 77,
+            "mouv": 87,
+            "pui": 78,
+            "ment": 72,
+            "def": 75,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1023",
+          "nom": "Tim Lange",
+          "poste": "MOD",
+          "age": 19,
+          "notes": {
+            "off": 77,
+            "tec": 73,
+            "mouv": 79,
+            "pui": 82,
+            "ment": 71,
+            "def": 76,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1653",
+          "nom": "Felix Hoffmann",
+          "poste": "MOD",
+          "age": 36,
+          "notes": {
+            "off": 65,
+            "tec": 78,
+            "mouv": 79,
+            "pui": 72,
+            "ment": 67,
+            "def": 82,
+            "gk": 29
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_8457",
+          "nom": "Thomas Becker",
+          "poste": "MDC",
+          "age": 24,
+          "notes": {
+            "off": 77,
+            "tec": 75,
+            "mouv": 74,
+            "pui": 79,
+            "ment": 80,
+            "def": 75,
+            "gk": 31
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7641",
+          "nom": "Paul Schneider",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 69,
+            "tec": 87,
+            "mouv": 82,
+            "pui": 84,
+            "ment": 71,
+            "def": 79,
+            "gk": 15
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_1787",
+          "nom": "Kevin Neumann",
+          "poste": "MOD",
+          "age": 28,
+          "notes": {
+            "off": 76,
+            "tec": 84,
+            "mouv": 82,
+            "pui": 72,
+            "ment": 80,
+            "def": 72,
+            "gk": 18
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3201",
+          "nom": "Matthias Klein",
+          "poste": "MC",
+          "age": 18,
+          "notes": {
+            "off": 72,
+            "tec": 78,
+            "mouv": 73,
+            "pui": 77,
+            "ment": 77,
+            "def": 81,
+            "gk": 27
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1950",
+          "nom": "Lukas Schulze",
+          "poste": "MOD",
+          "age": 18,
+          "notes": {
+            "off": 76,
+            "tec": 73,
+            "mouv": 74,
+            "pui": 67,
+            "ment": 68,
+            "def": 77,
+            "gk": 17
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_8005",
+          "nom": "Sebastian Richter",
+          "poste": "MC",
+          "age": 23,
+          "notes": {
+            "off": 67,
+            "tec": 78,
+            "mouv": 72,
+            "pui": 76,
+            "ment": 80,
+            "def": 68,
+            "gk": 21
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_4257",
+          "nom": "Michael Schulze",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 75,
+            "tec": 75,
+            "mouv": 75,
+            "pui": 74,
+            "ment": 71,
+            "def": 84,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_8685",
+          "nom": "Daniel Maier",
+          "poste": "MC",
+          "age": 32,
+          "notes": {
+            "off": 74,
+            "tec": 72,
+            "mouv": 71,
+            "pui": 75,
+            "ment": 66,
+            "def": 80,
+            "gk": 34
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_2285",
+          "nom": "Tobias Zimmermann",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 83,
+            "tec": 86,
+            "mouv": 74,
+            "pui": 79,
+            "ment": 78,
+            "def": 83,
+            "gk": 25
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_2843",
+          "nom": "Simon Schröder",
+          "poste": "MOD",
+          "age": 23,
+          "notes": {
+            "off": 72,
+            "tec": 77,
+            "mouv": 80,
+            "pui": 71,
+            "ment": 76,
+            "def": 87,
+            "gk": 25
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_5608",
+          "nom": "Tobias Wolf",
+          "poste": "MOD",
+          "age": 19,
+          "notes": {
+            "off": 69,
+            "tec": 86,
+            "mouv": 80,
+            "pui": 81,
+            "ment": 81,
+            "def": 71,
+            "gk": 28
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_1445",
+          "nom": "Moritz Mayer",
+          "poste": "MO",
+          "age": 26,
+          "notes": {
+            "off": 71,
+            "tec": 77,
+            "mouv": 76,
+            "pui": 76,
+            "ment": 76,
+            "def": 82,
+            "gk": 16
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_5864",
+          "nom": "Jan Herrmann",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 78,
+            "tec": 84,
+            "mouv": 90,
+            "pui": 76,
+            "ment": 77,
+            "def": 80,
+            "gk": 17
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_7379",
+          "nom": "Daniel Wagner",
+          "poste": "MC",
+          "age": 19,
+          "notes": {
+            "off": 68,
+            "tec": 85,
+            "mouv": 80,
+            "pui": 78,
+            "ment": 73,
+            "def": 66,
+            "gk": 31
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8623",
+          "nom": "Simon Huber",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 69,
+            "tec": 80,
+            "mouv": 78,
+            "pui": 67,
+            "ment": 76,
+            "def": 66,
+            "gk": 24
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_6912",
+          "nom": "Andreas Schmidt",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 82,
+            "tec": 77,
+            "mouv": 81,
+            "pui": 71,
+            "ment": 84,
+            "def": 84,
+            "gk": 22
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_6447",
+          "nom": "Julian König",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 70,
+            "tec": 78,
+            "mouv": 85,
+            "pui": 80,
+            "ment": 71,
+            "def": 86,
+            "gk": 34
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9528",
+          "nom": "Julian Hartmann",
+          "poste": "MOG",
+          "age": 31,
+          "notes": {
+            "off": 78,
+            "tec": 78,
+            "mouv": 78,
+            "pui": 68,
+            "ment": 79,
+            "def": 68,
+            "gk": 19
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_4182",
+          "nom": "Jonas Hofmann",
+          "poste": "MOG",
+          "age": 25,
+          "notes": {
+            "off": 78,
+            "tec": 78,
+            "mouv": 80,
+            "pui": 77,
+            "ment": 77,
+            "def": 68,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1717",
+          "nom": "Julian Hofmann",
+          "poste": "MO",
+          "age": 23,
+          "notes": {
+            "off": 65,
+            "tec": 74,
+            "mouv": 76,
+            "pui": 69,
+            "ment": 72,
+            "def": 65,
+            "gk": 35
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242461_3159",
+          "nom": "Andreas Herrmann",
+          "poste": "MO",
+          "age": 21,
+          "notes": {
+            "off": 80,
+            "tec": 74,
+            "mouv": 85,
+            "pui": 75,
+            "ment": 77,
+            "def": 84,
+            "gk": 29
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_9932",
+          "nom": "Paul Schmitt",
+          "poste": "MDC",
+          "age": 24,
+          "notes": {
+            "off": 85,
+            "tec": 83,
+            "mouv": 81,
+            "pui": 71,
+            "ment": 79,
+            "def": 77,
+            "gk": 34
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_7013",
+          "nom": "Alexander König",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 81,
+            "tec": 76,
+            "mouv": 84,
+            "pui": 80,
+            "ment": 81,
+            "def": 77,
+            "gk": 15
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_6039",
+          "nom": "Simon Koch",
+          "poste": "MO",
+          "age": 25,
+          "notes": {
+            "off": 80,
+            "tec": 76,
+            "mouv": 82,
+            "pui": 77,
+            "ment": 78,
+            "def": 72,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7498",
+          "nom": "Christoph Hoffmann",
+          "poste": "MO",
+          "age": 22,
+          "notes": {
+            "off": 80,
+            "tec": 72,
+            "mouv": 75,
+            "pui": 72,
+            "ment": 74,
+            "def": 67,
+            "gk": 34
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_1515",
+          "nom": "Ole Zimmermann",
+          "poste": "MC",
+          "age": 30,
+          "notes": {
+            "off": 80,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 74,
+            "ment": 84,
+            "def": 73,
+            "gk": 15
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_8583",
+          "nom": "Thomas Schneider",
+          "poste": "MO",
+          "age": 22,
+          "notes": {
+            "off": 70,
+            "tec": 81,
+            "mouv": 86,
+            "pui": 68,
+            "ment": 73,
+            "def": 82,
+            "gk": 17
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_4701",
+          "nom": "Simon Walter",
+          "poste": "MOG",
+          "age": 32,
+          "notes": {
+            "off": 74,
+            "tec": 87,
+            "mouv": 86,
+            "pui": 75,
+            "ment": 76,
+            "def": 68,
+            "gk": 29
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9363",
+          "nom": "Julian Klein",
+          "poste": "MOD",
+          "age": 17,
+          "notes": {
+            "off": 74,
+            "tec": 72,
+            "mouv": 75,
+            "pui": 80,
+            "ment": 68,
+            "def": 77,
+            "gk": 28
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_6946",
+          "nom": "Tim Wolf",
+          "poste": "MDC",
+          "age": 34,
+          "notes": {
+            "off": 73,
+            "tec": 77,
+            "mouv": 73,
+            "pui": 70,
+            "ment": 75,
+            "def": 77,
+            "gk": 20
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_9369",
+          "nom": "Moritz Schwarz",
+          "poste": "MO",
+          "age": 33,
+          "notes": {
+            "off": 72,
+            "tec": 82,
+            "mouv": 88,
+            "pui": 78,
+            "ment": 74,
+            "def": 84,
+            "gk": 20
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_5957",
+          "nom": "Matthias Lange",
+          "poste": "MC",
+          "age": 24,
+          "notes": {
+            "off": 72,
+            "tec": 86,
+            "mouv": 89,
+            "pui": 71,
+            "ment": 74,
+            "def": 81,
+            "gk": 23
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_4969",
+          "nom": "Nico Meyer",
+          "poste": "MOG",
+          "age": 31,
+          "notes": {
+            "off": 80,
+            "tec": 82,
+            "mouv": 82,
+            "pui": 72,
+            "ment": 70,
+            "def": 81,
+            "gk": 34
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_5406",
+          "nom": "Felix Schneider",
+          "poste": "MDC",
+          "age": 24,
+          "notes": {
+            "off": 75,
+            "tec": 72,
+            "mouv": 76,
+            "pui": 75,
+            "ment": 74,
+            "def": 64,
+            "gk": 22
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_8101",
+          "nom": "Nico Weber",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 82,
+            "tec": 73,
+            "mouv": 80,
+            "pui": 70,
+            "ment": 79,
+            "def": 74,
+            "gk": 29
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_4769",
+          "nom": "Tim Herrmann",
+          "poste": "MO",
+          "age": 26,
+          "notes": {
+            "off": 70,
+            "tec": 88,
+            "mouv": 82,
+            "pui": 71,
+            "ment": 81,
+            "def": 71,
+            "gk": 22
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7219",
+          "nom": "Tobias Werner",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 83,
+            "tec": 77,
+            "mouv": 75,
+            "pui": 80,
+            "ment": 82,
+            "def": 68,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7146",
+          "nom": "Alexander Krause",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 77,
+            "tec": 77,
+            "mouv": 80,
+            "pui": 76,
+            "ment": 82,
+            "def": 78,
+            "gk": 22
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9248",
+          "nom": "Felix Mayer",
+          "poste": "MC",
+          "age": 35,
+          "notes": {
+            "off": 73,
+            "tec": 76,
+            "mouv": 75,
+            "pui": 80,
+            "ment": 75,
+            "def": 77,
+            "gk": 33
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1564",
+          "nom": "Nico Lange",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 69,
+            "tec": 85,
+            "mouv": 72,
+            "pui": 78,
+            "ment": 77,
+            "def": 82,
+            "gk": 27
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7172",
+          "nom": "Stefan Krüger",
+          "poste": "MOD",
+          "age": 17,
+          "notes": {
+            "off": 71,
+            "tec": 72,
+            "mouv": 86,
+            "pui": 69,
+            "ment": 75,
+            "def": 66,
+            "gk": 16
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_2894",
+          "nom": "Philipp Weber",
+          "poste": "MO",
+          "age": 18,
+          "notes": {
+            "off": 79,
+            "tec": 84,
+            "mouv": 87,
+            "pui": 84,
+            "ment": 80,
+            "def": 81,
+            "gk": 22
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775047242461_1850",
+          "nom": "Dominik Bauer",
+          "poste": "MOG",
+          "age": 18,
+          "notes": {
+            "off": 81,
+            "tec": 87,
+            "mouv": 76,
+            "pui": 83,
+            "ment": 75,
+            "def": 85,
+            "gk": 33
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_4076",
+          "nom": "Luca Koch",
+          "poste": "MOG",
+          "age": 17,
+          "notes": {
+            "off": 67,
+            "tec": 86,
+            "mouv": 73,
+            "pui": 72,
+            "ment": 74,
+            "def": 76,
+            "gk": 15
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_2499",
+          "nom": "Christian Schmitt",
+          "poste": "MOD",
+          "age": 17,
+          "notes": {
+            "off": 77,
+            "tec": 88,
+            "mouv": 90,
+            "pui": 80,
+            "ment": 75,
+            "def": 73,
+            "gk": 21
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_4225",
+          "nom": "Christoph Becker",
+          "poste": "MOD",
+          "age": 32,
+          "notes": {
+            "off": 79,
+            "tec": 71,
+            "mouv": 70,
+            "pui": 70,
+            "ment": 73,
+            "def": 70,
+            "gk": 22
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_8272",
+          "nom": "Tobias Schneider",
+          "poste": "MOD",
+          "age": 23,
+          "notes": {
+            "off": 80,
+            "tec": 81,
+            "mouv": 86,
+            "pui": 72,
+            "ment": 70,
+            "def": 69,
+            "gk": 29
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8745",
+          "nom": "Marco Fischer",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 69,
+            "tec": 83,
+            "mouv": 70,
+            "pui": 69,
+            "ment": 69,
+            "def": 75,
+            "gk": 28
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_5554",
+          "nom": "Dominik Schulz",
+          "poste": "MOD",
+          "age": 24,
+          "notes": {
+            "off": 67,
+            "tec": 79,
+            "mouv": 82,
+            "pui": 81,
+            "ment": 68,
+            "def": 70,
+            "gk": 34
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_9157",
+          "nom": "Florian Schäfer",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 75,
+            "tec": 76,
+            "mouv": 83,
+            "pui": 79,
+            "ment": 78,
+            "def": 80,
+            "gk": 35
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_6229",
+          "nom": "Kai Becker",
+          "poste": "MO",
+          "age": 17,
+          "notes": {
+            "off": 71,
+            "tec": 87,
+            "mouv": 76,
+            "pui": 85,
+            "ment": 71,
+            "def": 76,
+            "gk": 20
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8836",
+          "nom": "Stefan Lange",
+          "poste": "MO",
+          "age": 24,
+          "notes": {
+            "off": 72,
+            "tec": 86,
+            "mouv": 75,
+            "pui": 80,
+            "ment": 79,
+            "def": 74,
+            "gk": 15
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3295",
+          "nom": "Kai Schneider",
+          "poste": "MO",
+          "age": 18,
+          "notes": {
+            "off": 80,
+            "tec": 82,
+            "mouv": 74,
+            "pui": 70,
+            "ment": 76,
+            "def": 73,
+            "gk": 24
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_4484",
+          "nom": "Kevin Richter",
+          "poste": "MOG",
+          "age": 25,
+          "notes": {
+            "off": 77,
+            "tec": 75,
+            "mouv": 80,
+            "pui": 77,
+            "ment": 69,
+            "def": 78,
+            "gk": 23
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_6009",
+          "nom": "Kai Huber",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 72,
+            "tec": 81,
+            "mouv": 85,
+            "pui": 66,
+            "ment": 68,
+            "def": 65,
+            "gk": 19
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_9276",
+          "nom": "Simon Zimmermann",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 80,
+            "tec": 72,
+            "mouv": 78,
+            "pui": 73,
+            "ment": 69,
+            "def": 73,
+            "gk": 34
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8941",
+          "nom": "Andreas Schulz",
+          "poste": "MC",
+          "age": 19,
+          "notes": {
+            "off": 67,
+            "tec": 77,
+            "mouv": 76,
+            "pui": 73,
+            "ment": 77,
+            "def": 82,
+            "gk": 29
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8850",
+          "nom": "Fabian Fischer",
+          "poste": "MC",
+          "age": 29,
+          "notes": {
+            "off": 74,
+            "tec": 84,
+            "mouv": 83,
+            "pui": 78,
+            "ment": 75,
+            "def": 73,
+            "gk": 15
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_8933",
+          "nom": "Alexander Hofmann",
+          "poste": "MC",
+          "age": 18,
+          "notes": {
+            "off": 77,
+            "tec": 75,
+            "mouv": 75,
+            "pui": 77,
+            "ment": 75,
+            "def": 80,
+            "gk": 25
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_9561",
+          "nom": "Lars Lehmann",
+          "poste": "MC",
+          "age": 34,
+          "notes": {
+            "off": 86,
+            "tec": 81,
+            "mouv": 90,
+            "pui": 80,
+            "ment": 77,
+            "def": 70,
+            "gk": 33
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_9590",
+          "nom": "Jonas König",
+          "poste": "MOG",
+          "age": 35,
+          "notes": {
+            "off": 74,
+            "tec": 85,
+            "mouv": 80,
+            "pui": 80,
+            "ment": 79,
+            "def": 85,
+            "gk": 20
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_8775",
+          "nom": "Lukas Koch",
+          "poste": "MC",
+          "age": 29,
+          "notes": {
+            "off": 81,
+            "tec": 73,
+            "mouv": 82,
+            "pui": 76,
+            "ment": 69,
+            "def": 68,
+            "gk": 28
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_3168",
+          "nom": "Matthias Fischer",
+          "poste": "AC",
+          "age": 35,
+          "notes": {
+            "off": 92,
+            "tec": 83,
+            "mouv": 77,
+            "pui": 85,
+            "ment": 79,
+            "def": 68,
+            "gk": 20
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_8415",
+          "nom": "Paul König",
+          "poste": "AG",
+          "age": 35,
+          "notes": {
+            "off": 81,
+            "tec": 73,
+            "mouv": 89,
+            "pui": 80,
+            "ment": 75,
+            "def": 50,
+            "gk": 22
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_3881",
+          "nom": "Michael Lehmann",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 94,
+            "tec": 75,
+            "mouv": 84,
+            "pui": 80,
+            "ment": 75,
+            "def": 65,
+            "gk": 23
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242460_3425",
+          "nom": "Bastian Zimmermann",
+          "poste": "AC",
+          "age": 28,
+          "notes": {
+            "off": 82,
+            "tec": 84,
+            "mouv": 85,
+            "pui": 70,
+            "ment": 76,
+            "def": 51,
+            "gk": 12
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_6235",
+          "nom": "Bastian Bauer",
+          "poste": "AD",
+          "age": 28,
+          "notes": {
+            "off": 85,
+            "tec": 83,
+            "mouv": 77,
+            "pui": 69,
+            "ment": 77,
+            "def": 63,
+            "gk": 18
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_4942",
+          "nom": "Fabian Koch",
+          "poste": "AG",
+          "age": 17,
+          "notes": {
+            "off": 89,
+            "tec": 79,
+            "mouv": 80,
+            "pui": 66,
+            "ment": 70,
+            "def": 48,
+            "gk": 26
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242460_1284",
+          "nom": "Tobias Meier",
+          "poste": "AD",
+          "age": 21,
+          "notes": {
+            "off": 86,
+            "tec": 70,
+            "mouv": 83,
+            "pui": 74,
+            "ment": 70,
+            "def": 58,
+            "gk": 19
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242460_3891",
+          "nom": "Alexander Bauer",
+          "poste": "AG",
+          "age": 29,
+          "notes": {
+            "off": 80,
+            "tec": 85,
+            "mouv": 90,
+            "pui": 82,
+            "ment": 70,
+            "def": 57,
+            "gk": 20
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_4179",
+          "nom": "Nico Schulz",
+          "poste": "AD",
+          "age": 33,
+          "notes": {
+            "off": 93,
+            "tec": 88,
+            "mouv": 79,
+            "pui": 71,
+            "ment": 73,
+            "def": 69,
+            "gk": 22
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242460_1116",
+          "nom": "Christian Koch",
+          "poste": "AD",
+          "age": 24,
+          "notes": {
+            "off": 82,
+            "tec": 80,
+            "mouv": 85,
+            "pui": 75,
+            "ment": 82,
+            "def": 60,
+            "gk": 14
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_7329",
+          "nom": "Philipp Schmitt",
+          "poste": "AG",
+          "age": 24,
+          "notes": {
+            "off": 90,
+            "tec": 87,
+            "mouv": 84,
+            "pui": 74,
+            "ment": 79,
+            "def": 71,
+            "gk": 24
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_9592",
+          "nom": "Andreas Fischer",
+          "poste": "AD",
+          "age": 32,
+          "notes": {
+            "off": 85,
+            "tec": 76,
+            "mouv": 85,
+            "pui": 79,
+            "ment": 70,
+            "def": 54,
+            "gk": 30
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242460_5598",
+          "nom": "Jonas Richter",
+          "poste": "AC",
+          "age": 35,
+          "notes": {
+            "off": 92,
+            "tec": 77,
+            "mouv": 83,
+            "pui": 74,
+            "ment": 75,
+            "def": 64,
+            "gk": 28
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242460_7754",
+          "nom": "Bastian Krause",
+          "poste": "AD",
+          "age": 29,
+          "notes": {
+            "off": 85,
+            "tec": 80,
+            "mouv": 78,
+            "pui": 77,
+            "ment": 73,
+            "def": 53,
+            "gk": 17
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_1400",
+          "nom": "Christoph Herrmann",
+          "poste": "AC",
+          "age": 32,
+          "notes": {
+            "off": 88,
+            "tec": 80,
+            "mouv": 91,
+            "pui": 80,
+            "ment": 76,
+            "def": 67,
+            "gk": 23
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_5816",
+          "nom": "Niklas Schröder",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 86,
+            "tec": 85,
+            "mouv": 78,
+            "pui": 73,
+            "ment": 75,
+            "def": 65,
+            "gk": 21
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_8161",
+          "nom": "Philipp Maier",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 84,
+            "tec": 86,
+            "mouv": 83,
+            "pui": 82,
+            "ment": 83,
+            "def": 70,
+            "gk": 27
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_1343",
+          "nom": "Markus Huber",
+          "poste": "AG",
+          "age": 32,
+          "notes": {
+            "off": 89,
+            "tec": 79,
+            "mouv": 86,
+            "pui": 69,
+            "ment": 81,
+            "def": 59,
+            "gk": 14
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_2915",
+          "nom": "Bastian Hartmann",
+          "poste": "AC",
+          "age": 19,
+          "notes": {
+            "off": 91,
+            "tec": 76,
+            "mouv": 84,
+            "pui": 72,
+            "ment": 75,
+            "def": 65,
+            "gk": 12
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242460_5227",
+          "nom": "Kai Schneider",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 81,
+            "tec": 88,
+            "mouv": 92,
+            "pui": 86,
+            "ment": 81,
+            "def": 63,
+            "gk": 16
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_8700",
+          "nom": "Andreas Mayer",
+          "poste": "AC",
+          "age": 23,
+          "notes": {
+            "off": 89,
+            "tec": 75,
+            "mouv": 82,
+            "pui": 73,
+            "ment": 82,
+            "def": 69,
+            "gk": 29
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242460_9675",
+          "nom": "Jan Walter",
+          "poste": "AD",
+          "age": 21,
+          "notes": {
+            "off": 84,
+            "tec": 84,
+            "mouv": 90,
+            "pui": 74,
+            "ment": 75,
+            "def": 68,
+            "gk": 20
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242460_2624",
+          "nom": "Bastian Fischer",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 81,
+            "tec": 77,
+            "mouv": 80,
+            "pui": 69,
+            "ment": 70,
+            "def": 49,
+            "gk": 15
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242460_9850",
+          "nom": "Ole Hoffmann",
+          "poste": "AD",
+          "age": 25,
+          "notes": {
+            "off": 87,
+            "tec": 87,
+            "mouv": 89,
+            "pui": 83,
+            "ment": 77,
+            "def": 64,
+            "gk": 20
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242460_3151",
+          "nom": "Bastian König",
+          "poste": "AC",
+          "age": 19,
+          "notes": {
+            "off": 82,
+            "tec": 80,
+            "mouv": 78,
+            "pui": 65,
+            "ment": 70,
+            "def": 69,
+            "gk": 25
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_7527",
+          "nom": "Bastian Neumann",
+          "poste": "AC",
+          "age": 31,
+          "notes": {
+            "off": 80,
+            "tec": 87,
+            "mouv": 87,
+            "pui": 82,
+            "ment": 72,
+            "def": 58,
+            "gk": 20
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242460_7819",
+          "nom": "Bastian Herrmann",
+          "poste": "AG",
+          "age": 29,
+          "notes": {
+            "off": 76,
+            "tec": 85,
+            "mouv": 87,
+            "pui": 69,
+            "ment": 79,
+            "def": 50,
+            "gk": 32
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242460_5897",
+          "nom": "Lars Lehmann",
+          "poste": "AC",
+          "age": 26,
+          "notes": {
+            "off": 89,
+            "tec": 80,
+            "mouv": 78,
+            "pui": 67,
+            "ment": 73,
+            "def": 63,
+            "gk": 21
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2594",
+          "nom": "Matthias Richter",
+          "poste": "AC",
+          "age": 21,
+          "notes": {
+            "off": 78,
+            "tec": 72,
+            "mouv": 85,
+            "pui": 68,
+            "ment": 68,
+            "def": 50,
+            "gk": 23
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775047242461_5450",
+          "nom": "Bastian König",
+          "poste": "AD",
+          "age": 30,
+          "notes": {
+            "off": 94,
+            "tec": 83,
+            "mouv": 84,
+            "pui": 82,
+            "ment": 79,
+            "def": 73,
+            "gk": 31
+          },
+          "global": 81
+        },
+        {
+          "id": "p_1775047242461_3956",
+          "nom": "Markus Schulz",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 88,
+            "tec": 82,
+            "mouv": 92,
+            "pui": 75,
+            "ment": 84,
+            "def": 59,
+            "gk": 20
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_7990",
+          "nom": "Stefan Neumann",
+          "poste": "AC",
+          "age": 28,
+          "notes": {
+            "off": 90,
+            "tec": 80,
+            "mouv": 84,
+            "pui": 87,
+            "ment": 72,
+            "def": 62,
+            "gk": 24
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_2525",
+          "nom": "Maximilian Schmitt",
+          "poste": "AD",
+          "age": 17,
+          "notes": {
+            "off": 79,
+            "tec": 76,
+            "mouv": 79,
+            "pui": 77,
+            "ment": 71,
+            "def": 57,
+            "gk": 24
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_5522",
+          "nom": "Andreas Schmitz",
+          "poste": "AG",
+          "age": 34,
+          "notes": {
+            "off": 86,
+            "tec": 77,
+            "mouv": 75,
+            "pui": 64,
+            "ment": 79,
+            "def": 50,
+            "gk": 22
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_1593",
+          "nom": "Maximilian Schmid",
+          "poste": "AC",
+          "age": 34,
+          "notes": {
+            "off": 81,
+            "tec": 74,
+            "mouv": 80,
+            "pui": 65,
+            "ment": 69,
+            "def": 53,
+            "gk": 29
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_2219",
+          "nom": "Matthias Koch",
+          "poste": "AG",
+          "age": 31,
+          "notes": {
+            "off": 81,
+            "tec": 82,
+            "mouv": 90,
+            "pui": 74,
+            "ment": 80,
+            "def": 62,
+            "gk": 19
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_4511",
+          "nom": "Maximilian Hartmann",
+          "poste": "AG",
+          "age": 23,
+          "notes": {
+            "off": 81,
+            "tec": 84,
+            "mouv": 76,
+            "pui": 71,
+            "ment": 71,
+            "def": 47,
+            "gk": 21
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_9531",
+          "nom": "Jan Zimmermann",
+          "poste": "AC",
+          "age": 23,
+          "notes": {
+            "off": 88,
+            "tec": 80,
+            "mouv": 80,
+            "pui": 72,
+            "ment": 80,
+            "def": 53,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_5043",
+          "nom": "Julian Hartmann",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 88,
+            "tec": 80,
+            "mouv": 79,
+            "pui": 80,
+            "ment": 73,
+            "def": 60,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_9804",
+          "nom": "Luca Koch",
+          "poste": "AD",
+          "age": 31,
+          "notes": {
+            "off": 76,
+            "tec": 77,
+            "mouv": 86,
+            "pui": 76,
+            "ment": 70,
+            "def": 53,
+            "gk": 29
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_8337",
+          "nom": "Julian Köhler",
+          "poste": "AC",
+          "age": 32,
+          "notes": {
+            "off": 87,
+            "tec": 77,
+            "mouv": 82,
+            "pui": 77,
+            "ment": 76,
+            "def": 53,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1866",
+          "nom": "Matthias Schmitt",
+          "poste": "AG",
+          "age": 22,
+          "notes": {
+            "off": 81,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 82,
+            "ment": 83,
+            "def": 65,
+            "gk": 28
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_9133",
+          "nom": "Nico Zimmermann",
+          "poste": "AC",
+          "age": 32,
+          "notes": {
+            "off": 92,
+            "tec": 78,
+            "mouv": 84,
+            "pui": 70,
+            "ment": 71,
+            "def": 52,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_5613",
+          "nom": "Tim Braun",
+          "poste": "AG",
+          "age": 31,
+          "notes": {
+            "off": 87,
+            "tec": 88,
+            "mouv": 91,
+            "pui": 87,
+            "ment": 72,
+            "def": 65,
+            "gk": 25
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775047242461_5771",
+          "nom": "Lars Schwarz",
+          "poste": "AC",
+          "age": 34,
+          "notes": {
+            "off": 91,
+            "tec": 84,
+            "mouv": 76,
+            "pui": 73,
+            "ment": 72,
+            "def": 61,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3334",
+          "nom": "Florian Schulze",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 89,
+            "tec": 88,
+            "mouv": 90,
+            "pui": 69,
+            "ment": 77,
+            "def": 60,
+            "gk": 24
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_2067",
+          "nom": "Tobias Krause",
+          "poste": "AC",
+          "age": 25,
+          "notes": {
+            "off": 82,
+            "tec": 73,
+            "mouv": 86,
+            "pui": 73,
+            "ment": 73,
+            "def": 61,
+            "gk": 20
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_6034",
+          "nom": "Dennis Becker",
+          "poste": "AG",
+          "age": 25,
+          "notes": {
+            "off": 86,
+            "tec": 79,
+            "mouv": 86,
+            "pui": 75,
+            "ment": 75,
+            "def": 64,
+            "gk": 17
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_7128",
+          "nom": "Paul Richter",
+          "poste": "AG",
+          "age": 23,
+          "notes": {
+            "off": 86,
+            "tec": 87,
+            "mouv": 90,
+            "pui": 69,
+            "ment": 72,
+            "def": 55,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_2734",
+          "nom": "Lars Schneider",
+          "poste": "AD",
+          "age": 20,
+          "notes": {
+            "off": 78,
+            "tec": 83,
+            "mouv": 75,
+            "pui": 71,
+            "ment": 78,
+            "def": 53,
+            "gk": 22
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_1597",
+          "nom": "Alexander Schäfer",
+          "poste": "AC",
+          "age": 24,
+          "notes": {
+            "off": 81,
+            "tec": 77,
+            "mouv": 90,
+            "pui": 85,
+            "ment": 76,
+            "def": 69,
+            "gk": 24
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_9452",
+          "nom": "Alexander Krause",
+          "poste": "AG",
+          "age": 36,
+          "notes": {
+            "off": 77,
+            "tec": 83,
+            "mouv": 73,
+            "pui": 79,
+            "ment": 70,
+            "def": 64,
+            "gk": 29
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_5028",
+          "nom": "Stefan Krause",
+          "poste": "AG",
+          "age": 30,
+          "notes": {
+            "off": 76,
+            "tec": 75,
+            "mouv": 78,
+            "pui": 64,
+            "ment": 76,
+            "def": 62,
+            "gk": 22
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_2096",
+          "nom": "Jonas Wolf",
+          "poste": "AC",
+          "age": 34,
+          "notes": {
+            "off": 82,
+            "tec": 85,
+            "mouv": 84,
+            "pui": 87,
+            "ment": 78,
+            "def": 71,
+            "gk": 12
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_9045",
+          "nom": "Dennis König",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 75,
+            "tec": 83,
+            "mouv": 87,
+            "pui": 75,
+            "ment": 67,
+            "def": 53,
+            "gk": 17
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_8035",
+          "nom": "Julian Werner",
+          "poste": "AC",
+          "age": 23,
+          "notes": {
+            "off": 89,
+            "tec": 86,
+            "mouv": 90,
+            "pui": 81,
+            "ment": 77,
+            "def": 54,
+            "gk": 28
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_2051",
+          "nom": "Matthias König",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 89,
+            "tec": 83,
+            "mouv": 82,
+            "pui": 73,
+            "ment": 71,
+            "def": 55,
+            "gk": 13
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_1525",
+          "nom": "Luca König",
+          "poste": "AD",
+          "age": 22,
+          "notes": {
+            "off": 93,
+            "tec": 77,
+            "mouv": 90,
+            "pui": 80,
+            "ment": 78,
+            "def": 65,
+            "gk": 17
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_2147",
+          "nom": "Simon Schmidt",
+          "poste": "AD",
+          "age": 22,
+          "notes": {
+            "off": 79,
+            "tec": 78,
+            "mouv": 81,
+            "pui": 68,
+            "ment": 73,
+            "def": 63,
+            "gk": 23
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_1357",
+          "nom": "Jonas Hoffmann",
+          "poste": "AC",
+          "age": 34,
+          "notes": {
+            "off": 81,
+            "tec": 89,
+            "mouv": 80,
+            "pui": 74,
+            "ment": 80,
+            "def": 65,
+            "gk": 29
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_6245",
+          "nom": "Niklas Meier",
+          "poste": "AD",
+          "age": 28,
+          "notes": {
+            "off": 85,
+            "tec": 76,
+            "mouv": 88,
+            "pui": 76,
+            "ment": 75,
+            "def": 51,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2126",
+          "nom": "Alexander Maier",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 84,
+            "tec": 86,
+            "mouv": 82,
+            "pui": 69,
+            "ment": 79,
+            "def": 69,
+            "gk": 30
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_9688",
+          "nom": "Patrick Meyer",
+          "poste": "AC",
+          "age": 24,
+          "notes": {
+            "off": 79,
+            "tec": 71,
+            "mouv": 78,
+            "pui": 80,
+            "ment": 78,
+            "def": 59,
+            "gk": 32
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_1163",
+          "nom": "Jan Krüger",
+          "poste": "AG",
+          "age": 19,
+          "notes": {
+            "off": 87,
+            "tec": 87,
+            "mouv": 91,
+            "pui": 72,
+            "ment": 74,
+            "def": 73,
+            "gk": 12
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_6968",
+          "nom": "Alexander Schäfer",
+          "poste": "AD",
+          "age": 18,
+          "notes": {
+            "off": 84,
+            "tec": 79,
+            "mouv": 83,
+            "pui": 83,
+            "ment": 76,
+            "def": 72,
+            "gk": 25
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_7016",
+          "nom": "Patrick Köhler",
+          "poste": "AD",
+          "age": 17,
+          "notes": {
+            "off": 88,
+            "tec": 81,
+            "mouv": 79,
+            "pui": 86,
+            "ment": 77,
+            "def": 55,
+            "gk": 22
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_6801",
+          "nom": "Tim Werner",
+          "poste": "AC",
+          "age": 19,
+          "notes": {
+            "off": 86,
+            "tec": 76,
+            "mouv": 86,
+            "pui": 75,
+            "ment": 79,
+            "def": 53,
+            "gk": 28
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_9612",
+          "nom": "Maximilian Walter",
+          "poste": "AC",
+          "age": 28,
+          "notes": {
+            "off": 92,
+            "tec": 86,
+            "mouv": 82,
+            "pui": 79,
+            "ment": 80,
+            "def": 61,
+            "gk": 17
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_4432",
+          "nom": "Dennis Köhler",
+          "poste": "AC",
+          "age": 19,
+          "notes": {
+            "off": 86,
+            "tec": 72,
+            "mouv": 81,
+            "pui": 65,
+            "ment": 68,
+            "def": 55,
+            "gk": 19
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_7878",
+          "nom": "Lukas Schneider",
+          "poste": "AG",
+          "age": 22,
+          "notes": {
+            "off": 81,
+            "tec": 82,
+            "mouv": 84,
+            "pui": 67,
+            "ment": 72,
+            "def": 52,
+            "gk": 16
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_6257",
+          "nom": "Luca Weber",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 84,
+            "tec": 84,
+            "mouv": 89,
+            "pui": 78,
+            "ment": 77,
+            "def": 69,
+            "gk": 20
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_9213",
+          "nom": "Ole Fischer",
+          "poste": "AD",
+          "age": 28,
+          "notes": {
+            "off": 92,
+            "tec": 74,
+            "mouv": 85,
+            "pui": 84,
+            "ment": 79,
+            "def": 63,
+            "gk": 26
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_7004",
+          "nom": "Lukas Koch",
+          "poste": "AD",
+          "age": 20,
+          "notes": {
+            "off": 91,
+            "tec": 75,
+            "mouv": 81,
+            "pui": 67,
+            "ment": 75,
+            "def": 55,
+            "gk": 25
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_9177",
+          "nom": "Florian Schulze",
+          "poste": "AD",
+          "age": 21,
+          "notes": {
+            "off": 82,
+            "tec": 84,
+            "mouv": 88,
+            "pui": 77,
+            "ment": 74,
+            "def": 69,
+            "gk": 14
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_2329",
+          "nom": "Nico Hofmann",
+          "poste": "AD",
+          "age": 24,
+          "notes": {
+            "off": 83,
+            "tec": 86,
+            "mouv": 79,
+            "pui": 86,
+            "ment": 73,
+            "def": 57,
+            "gk": 28
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9756",
+          "nom": "Bastian Schmitt",
+          "poste": "AC",
+          "age": 26,
+          "notes": {
+            "off": 92,
+            "tec": 86,
+            "mouv": 84,
+            "pui": 67,
+            "ment": 75,
+            "def": 58,
+            "gk": 12
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_3729",
+          "nom": "Christian Herrmann",
+          "poste": "AG",
+          "age": 17,
+          "notes": {
+            "off": 92,
+            "tec": 88,
+            "mouv": 81,
+            "pui": 78,
+            "ment": 70,
+            "def": 63,
+            "gk": 28
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_9462",
+          "nom": "Alexander Hofmann",
+          "poste": "AG",
+          "age": 19,
+          "notes": {
+            "off": 80,
+            "tec": 79,
+            "mouv": 86,
+            "pui": 81,
+            "ment": 69,
+            "def": 62,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7913",
+          "nom": "Marco Meier",
+          "poste": "AG",
+          "age": 34,
+          "notes": {
+            "off": 90,
+            "tec": 77,
+            "mouv": 80,
+            "pui": 70,
+            "ment": 73,
+            "def": 64,
+            "gk": 31
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_2881",
+          "nom": "Markus Meier",
+          "poste": "AG",
+          "age": 31,
+          "notes": {
+            "off": 86,
+            "tec": 74,
+            "mouv": 82,
+            "pui": 84,
+            "ment": 70,
+            "def": 57,
+            "gk": 12
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2748",
+          "nom": "Alexander Krüger",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 78,
+            "tec": 71,
+            "mouv": 75,
+            "pui": 81,
+            "ment": 69,
+            "def": 68,
+            "gk": 19
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_9407",
+          "nom": "Michael Schäfer",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 83,
+            "tec": 81,
+            "mouv": 81,
+            "pui": 70,
+            "ment": 76,
+            "def": 50,
+            "gk": 12
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_7690",
+          "nom": "Nico Becker",
+          "poste": "AD",
+          "age": 24,
+          "notes": {
+            "off": 95,
+            "tec": 83,
+            "mouv": 81,
+            "pui": 76,
+            "ment": 75,
+            "def": 62,
+            "gk": 27
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_8869",
+          "nom": "Marco Schulze",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 89,
+            "tec": 79,
+            "mouv": 77,
+            "pui": 80,
+            "ment": 77,
+            "def": 59,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_1446",
+          "nom": "Lukas Schmitz",
+          "poste": "AC",
+          "age": 21,
+          "notes": {
+            "off": 80,
+            "tec": 75,
+            "mouv": 83,
+            "pui": 82,
+            "ment": 68,
+            "def": 57,
+            "gk": 20
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_9062",
+          "nom": "Andreas Weber",
+          "poste": "AG",
+          "age": 33,
+          "notes": {
+            "off": 84,
+            "tec": 74,
+            "mouv": 86,
+            "pui": 64,
+            "ment": 69,
+            "def": 59,
+            "gk": 21
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_3900",
+          "nom": "Kevin Meier",
+          "poste": "AG",
+          "age": 27,
+          "notes": {
+            "off": 88,
+            "tec": 73,
+            "mouv": 78,
+            "pui": 77,
+            "ment": 68,
+            "def": 67,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2899",
+          "nom": "Luca Becker",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 88,
+            "tec": 79,
+            "mouv": 87,
+            "pui": 71,
+            "ment": 79,
+            "def": 62,
+            "gk": 20
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_1448",
+          "nom": "Sven Braun",
+          "poste": "AG",
+          "age": 30,
+          "notes": {
+            "off": 82,
+            "tec": 76,
+            "mouv": 78,
+            "pui": 81,
+            "ment": 69,
+            "def": 62,
+            "gk": 19
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_9647",
+          "nom": "Matthias Krause",
+          "poste": "AC",
+          "age": 26,
+          "notes": {
+            "off": 85,
+            "tec": 72,
+            "mouv": 82,
+            "pui": 75,
+            "ment": 75,
+            "def": 61,
+            "gk": 21
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_1570",
+          "nom": "Philipp Maier",
+          "poste": "AC",
+          "age": 19,
+          "notes": {
+            "off": 88,
+            "tec": 89,
+            "mouv": 80,
+            "pui": 72,
+            "ment": 78,
+            "def": 55,
+            "gk": 26
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_8843",
+          "nom": "Stefan Fischer",
+          "poste": "AD",
+          "age": 22,
+          "notes": {
+            "off": 79,
+            "tec": 77,
+            "mouv": 88,
+            "pui": 71,
+            "ment": 77,
+            "def": 59,
+            "gk": 12
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_3865",
+          "nom": "Jan Lange",
+          "poste": "AC",
+          "age": 35,
+          "notes": {
+            "off": 85,
+            "tec": 74,
+            "mouv": 84,
+            "pui": 77,
+            "ment": 73,
+            "def": 55,
+            "gk": 27
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_5648",
+          "nom": "Christian Walter",
+          "poste": "AD",
+          "age": 18,
+          "notes": {
+            "off": 83,
+            "tec": 85,
+            "mouv": 87,
+            "pui": 83,
+            "ment": 82,
+            "def": 70,
+            "gk": 12
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_7758",
+          "nom": "Tim Schulz",
+          "poste": "AG",
+          "age": 28,
+          "notes": {
+            "off": 82,
+            "tec": 76,
+            "mouv": 78,
+            "pui": 64,
+            "ment": 74,
+            "def": 51,
+            "gk": 28
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775047242461_8822",
+          "nom": "Philipp Werner",
+          "poste": "AD",
+          "age": 23,
+          "notes": {
+            "off": 84,
+            "tec": 76,
+            "mouv": 90,
+            "pui": 71,
+            "ment": 70,
+            "def": 54,
+            "gk": 18
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_5315",
+          "nom": "Luca Krüger",
+          "poste": "AD",
+          "age": 33,
+          "notes": {
+            "off": 90,
+            "tec": 81,
+            "mouv": 88,
+            "pui": 71,
+            "ment": 79,
+            "def": 60,
+            "gk": 13
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_1364",
+          "nom": "Leon Wagner",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 80,
+            "tec": 82,
+            "mouv": 78,
+            "pui": 83,
+            "ment": 68,
+            "def": 49,
+            "gk": 23
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_1345",
+          "nom": "Marco Walter",
+          "poste": "AD",
+          "age": 19,
+          "notes": {
+            "off": 90,
+            "tec": 76,
+            "mouv": 89,
+            "pui": 80,
+            "ment": 71,
+            "def": 62,
+            "gk": 15
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9806",
+          "nom": "Lars Huber",
+          "poste": "AC",
+          "age": 32,
+          "notes": {
+            "off": 92,
+            "tec": 85,
+            "mouv": 82,
+            "pui": 83,
+            "ment": 80,
+            "def": 70,
+            "gk": 28
+          },
+          "global": 81
+        },
+        {
+          "id": "p_1775047242461_6303",
+          "nom": "Sebastian Werner",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 81,
+            "tec": 72,
+            "mouv": 83,
+            "pui": 73,
+            "ment": 66,
+            "def": 66,
+            "gk": 27
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_9467",
+          "nom": "Christoph Zimmermann",
+          "poste": "AG",
+          "age": 30,
+          "notes": {
+            "off": 95,
+            "tec": 87,
+            "mouv": 90,
+            "pui": 77,
+            "ment": 78,
+            "def": 72,
+            "gk": 21
+          },
+          "global": 82
+        },
+        {
+          "id": "p_1775047242461_7757",
+          "nom": "Dennis Bauer",
+          "poste": "AG",
+          "age": 35,
+          "notes": {
+            "off": 91,
+            "tec": 88,
+            "mouv": 89,
+            "pui": 73,
+            "ment": 80,
+            "def": 70,
+            "gk": 25
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775047242461_9543",
+          "nom": "Christian Schulze",
+          "poste": "AD",
+          "age": 31,
+          "notes": {
+            "off": 80,
+            "tec": 85,
+            "mouv": 84,
+            "pui": 67,
+            "ment": 71,
+            "def": 65,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_5526",
+          "nom": "Luca Koch",
+          "poste": "AC",
+          "age": 36,
+          "notes": {
+            "off": 82,
+            "tec": 89,
+            "mouv": 79,
+            "pui": 70,
+            "ment": 74,
+            "def": 57,
+            "gk": 13
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_1864",
+          "nom": "Maximilian Klein",
+          "poste": "AC",
+          "age": 23,
+          "notes": {
+            "off": 86,
+            "tec": 86,
+            "mouv": 91,
+            "pui": 85,
+            "ment": 78,
+            "def": 60,
+            "gk": 31
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775047242461_1535",
+          "nom": "Christian Müller",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 79,
+            "tec": 76,
+            "mouv": 90,
+            "pui": 81,
+            "ment": 81,
+            "def": 70,
+            "gk": 29
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_4108",
+          "nom": "Christoph Braun",
+          "poste": "AC",
+          "age": 31,
+          "notes": {
+            "off": 92,
+            "tec": 86,
+            "mouv": 82,
+            "pui": 68,
+            "ment": 82,
+            "def": 69,
+            "gk": 19
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_5942",
+          "nom": "David Bauer",
+          "poste": "AD",
+          "age": 22,
+          "notes": {
+            "off": 82,
+            "tec": 81,
+            "mouv": 80,
+            "pui": 71,
+            "ment": 78,
+            "def": 53,
+            "gk": 20
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_4062",
+          "nom": "Matthias Hartmann",
+          "poste": "AD",
+          "age": 27,
+          "notes": {
+            "off": 88,
+            "tec": 74,
+            "mouv": 87,
+            "pui": 73,
+            "ment": 79,
+            "def": 55,
+            "gk": 32
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_7385",
+          "nom": "Christoph Wagner",
+          "poste": "AG",
+          "age": 32,
+          "notes": {
+            "off": 83,
+            "tec": 80,
+            "mouv": 81,
+            "pui": 76,
+            "ment": 71,
+            "def": 56,
+            "gk": 17
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_6599",
+          "nom": "Thomas Schulze",
+          "poste": "AG",
+          "age": 20,
+          "notes": {
+            "off": 77,
+            "tec": 70,
+            "mouv": 79,
+            "pui": 67,
+            "ment": 66,
+            "def": 56,
+            "gk": 30
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775047242461_7867",
+          "nom": "Luca Lange",
+          "poste": "AC",
+          "age": 36,
+          "notes": {
+            "off": 78,
+            "tec": 78,
+            "mouv": 85,
+            "pui": 74,
+            "ment": 75,
+            "def": 51,
+            "gk": 13
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_9028",
+          "nom": "Nico Maier",
+          "poste": "AG",
+          "age": 23,
+          "notes": {
+            "off": 89,
+            "tec": 83,
+            "mouv": 77,
+            "pui": 83,
+            "ment": 77,
+            "def": 65,
+            "gk": 12
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_3811",
+          "nom": "Jan Maier",
+          "poste": "AD",
+          "age": 19,
+          "notes": {
+            "off": 87,
+            "tec": 79,
+            "mouv": 73,
+            "pui": 81,
+            "ment": 66,
+            "def": 67,
+            "gk": 21
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_3647",
+          "nom": "Ole Krüger",
+          "poste": "AC",
+          "age": 31,
+          "notes": {
+            "off": 82,
+            "tec": 84,
+            "mouv": 85,
+            "pui": 69,
+            "ment": 79,
+            "def": 55,
+            "gk": 29
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_2259",
+          "nom": "David Krüger",
+          "poste": "AG",
+          "age": 26,
+          "notes": {
+            "off": 81,
+            "tec": 74,
+            "mouv": 88,
+            "pui": 78,
+            "ment": 74,
+            "def": 64,
+            "gk": 14
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_3726",
+          "nom": "Lukas Werner",
+          "poste": "AC",
+          "age": 25,
+          "notes": {
+            "off": 84,
+            "tec": 84,
+            "mouv": 93,
+            "pui": 87,
+            "ment": 80,
+            "def": 58,
+            "gk": 24
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775047242461_2389",
+          "nom": "Christian Schröder",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 87,
+            "tec": 80,
+            "mouv": 87,
+            "pui": 82,
+            "ment": 76,
+            "def": 63,
+            "gk": 30
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_7171",
+          "nom": "Tobias Schäfer",
+          "poste": "AC",
+          "age": 25,
+          "notes": {
+            "off": 83,
+            "tec": 76,
+            "mouv": 86,
+            "pui": 86,
+            "ment": 74,
+            "def": 69,
+            "gk": 30
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_7240",
+          "nom": "Ole Meyer",
+          "poste": "AD",
+          "age": 31,
+          "notes": {
+            "off": 92,
+            "tec": 80,
+            "mouv": 79,
+            "pui": 76,
+            "ment": 84,
+            "def": 58,
+            "gk": 31
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_9533",
+          "nom": "Luca Klein",
+          "poste": "AC",
+          "age": 28,
+          "notes": {
+            "off": 85,
+            "tec": 81,
+            "mouv": 87,
+            "pui": 72,
+            "ment": 76,
+            "def": 67,
+            "gk": 12
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_5404",
+          "nom": "Daniel Müller",
+          "poste": "AG",
+          "age": 23,
+          "notes": {
+            "off": 95,
+            "tec": 89,
+            "mouv": 87,
+            "pui": 83,
+            "ment": 77,
+            "def": 53,
+            "gk": 21
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775047242461_4432",
+          "nom": "Tim Herrmann",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 77,
+            "tec": 75,
+            "mouv": 88,
+            "pui": 74,
+            "ment": 68,
+            "def": 53,
+            "gk": 19
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_2668",
+          "nom": "Maximilian Köhler",
+          "poste": "AG",
+          "age": 28,
+          "notes": {
+            "off": 93,
+            "tec": 76,
+            "mouv": 83,
+            "pui": 71,
+            "ment": 82,
+            "def": 63,
+            "gk": 21
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_5878",
+          "nom": "Simon Neumann",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 84,
+            "tec": 79,
+            "mouv": 87,
+            "pui": 67,
+            "ment": 78,
+            "def": 55,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_5259",
+          "nom": "Fabian Wagner",
+          "poste": "AC",
+          "age": 18,
+          "notes": {
+            "off": 80,
+            "tec": 76,
+            "mouv": 87,
+            "pui": 83,
+            "ment": 75,
+            "def": 51,
+            "gk": 25
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_8367",
+          "nom": "Alexander Becker",
+          "poste": "AC",
+          "age": 26,
+          "notes": {
+            "off": 89,
+            "tec": 76,
+            "mouv": 86,
+            "pui": 70,
+            "ment": 75,
+            "def": 68,
+            "gk": 29
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_3760",
+          "nom": "Philipp Schmitt",
+          "poste": "AG",
+          "age": 31,
+          "notes": {
+            "off": 82,
+            "tec": 88,
+            "mouv": 84,
+            "pui": 81,
+            "ment": 78,
+            "def": 53,
+            "gk": 30
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_9474",
+          "nom": "Kai Schulz",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 89,
+            "tec": 76,
+            "mouv": 82,
+            "pui": 84,
+            "ment": 80,
+            "def": 68,
+            "gk": 32
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_1611",
+          "nom": "Paul Wagner",
+          "poste": "AC",
+          "age": 20,
+          "notes": {
+            "off": 85,
+            "tec": 80,
+            "mouv": 86,
+            "pui": 69,
+            "ment": 82,
+            "def": 51,
+            "gk": 32
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_4073",
+          "nom": "Stefan Becker",
+          "poste": "AG",
+          "age": 34,
+          "notes": {
+            "off": 82,
+            "tec": 78,
+            "mouv": 86,
+            "pui": 77,
+            "ment": 72,
+            "def": 62,
+            "gk": 18
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_4963",
+          "nom": "Michael Krüger",
+          "poste": "AG",
+          "age": 23,
+          "notes": {
+            "off": 90,
+            "tec": 80,
+            "mouv": 82,
+            "pui": 80,
+            "ment": 77,
+            "def": 70,
+            "gk": 13
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_9558",
+          "nom": "Fabian Koch",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 78,
+            "tec": 73,
+            "mouv": 85,
+            "pui": 73,
+            "ment": 73,
+            "def": 54,
+            "gk": 24
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775047242461_3261",
+          "nom": "Lars Wolf",
+          "poste": "AG",
+          "age": 32,
+          "notes": {
+            "off": 85,
+            "tec": 83,
+            "mouv": 83,
+            "pui": 71,
+            "ment": 73,
+            "def": 66,
+            "gk": 22
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_3844",
+          "nom": "Simon Müller",
+          "poste": "AD",
+          "age": 24,
+          "notes": {
+            "off": 92,
+            "tec": 77,
+            "mouv": 87,
+            "pui": 80,
+            "ment": 71,
+            "def": 70,
+            "gk": 24
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_9692",
+          "nom": "Lars Hoffmann",
+          "poste": "AD",
+          "age": 22,
+          "notes": {
+            "off": 91,
+            "tec": 77,
+            "mouv": 82,
+            "pui": 76,
+            "ment": 81,
+            "def": 67,
+            "gk": 24
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_4509",
+          "nom": "Lars König",
+          "poste": "AD",
+          "age": 17,
+          "notes": {
+            "off": 94,
+            "tec": 86,
+            "mouv": 81,
+            "pui": 69,
+            "ment": 79,
+            "def": 65,
+            "gk": 15
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775047242461_9123",
+          "nom": "Marco Weber",
+          "poste": "AC",
+          "age": 31,
+          "notes": {
+            "off": 87,
+            "tec": 81,
+            "mouv": 82,
+            "pui": 69,
+            "ment": 72,
+            "def": 57,
+            "gk": 25
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_4881",
+          "nom": "Sven Lehmann",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 82,
+            "tec": 81,
+            "mouv": 80,
+            "pui": 84,
+            "ment": 74,
+            "def": 55,
+            "gk": 15
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_6073",
+          "nom": "David Wolf",
+          "poste": "AC",
+          "age": 36,
+          "notes": {
+            "off": 89,
+            "tec": 79,
+            "mouv": 85,
+            "pui": 72,
+            "ment": 78,
+            "def": 64,
+            "gk": 20
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_5698",
+          "nom": "Bastian Schneider",
+          "poste": "AD",
+          "age": 30,
+          "notes": {
+            "off": 91,
+            "tec": 87,
+            "mouv": 81,
+            "pui": 72,
+            "ment": 70,
+            "def": 62,
+            "gk": 32
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775047242461_2966",
+          "nom": "Jonas Schröder",
+          "poste": "AD",
+          "age": 24,
+          "notes": {
+            "off": 86,
+            "tec": 74,
+            "mouv": 85,
+            "pui": 77,
+            "ment": 73,
+            "def": 49,
+            "gk": 28
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_1190",
+          "nom": "Felix Schröder",
+          "poste": "AC",
+          "age": 19,
+          "notes": {
+            "off": 83,
+            "tec": 80,
+            "mouv": 79,
+            "pui": 68,
+            "ment": 81,
+            "def": 61,
+            "gk": 12
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775047242461_8082",
+          "nom": "Lukas Walter",
+          "poste": "AC",
+          "age": 18,
+          "notes": {
+            "off": 84,
+            "tec": 77,
+            "mouv": 75,
+            "pui": 75,
+            "ment": 69,
+            "def": 64,
+            "gk": 12
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775047242461_3457",
+          "nom": "Bastian Wolf",
+          "poste": "AC",
+          "age": 21,
+          "notes": {
+            "off": 81,
+            "tec": 77,
+            "mouv": 79,
+            "pui": 84,
+            "ment": 79,
+            "def": 65,
+            "gk": 14
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775047242461_9860",
+          "nom": "Lukas Schmid",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 84,
+            "tec": 81,
+            "mouv": 79,
+            "pui": 71,
+            "ment": 76,
+            "def": 66,
+            "gk": 14
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_4024",
+          "nom": "Kevin Hoffmann",
+          "poste": "AC",
+          "age": 21,
+          "notes": {
+            "off": 87,
+            "tec": 80,
+            "mouv": 82,
+            "pui": 81,
+            "ment": 77,
+            "def": 59,
+            "gk": 23
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775047242461_4614",
+          "nom": "Maximilian Schröder",
+          "poste": "AC",
+          "age": 21,
+          "notes": {
+            "off": 79,
+            "tec": 81,
+            "mouv": 79,
+            "pui": 79,
+            "ment": 78,
+            "def": 64,
+            "gk": 16
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775047242461_9440",
+          "nom": "Thomas Köhler",
+          "poste": "AC",
+          "age": 32,
+          "notes": {
+            "off": 90,
+            "tec": 71,
+            "mouv": 87,
+            "pui": 71,
+            "ment": 77,
+            "def": 63,
+            "gk": 18
+          },
+          "global": 75
+        }
+      ],
+      "created": "2026-04-01T12:40:42.462Z"
     }
   ],
   "competitions": [],
