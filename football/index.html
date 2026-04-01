@@ -4,49 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Football Simulation · Royaume-Uni du Nil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/dune.css">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;min-height:100vh;}
-
-    /* NAV */
+    #bg-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.6;}
     .f-nav{position:sticky;top:0;z-index:100;height:54px;background:rgba(12,8,4,.95);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;backdrop-filter:blur(8px);}
     .f-nav-brand{font-family:'Dune Rise',serif;font-size:11px;letter-spacing:.18em;color:var(--teal-bright);}
     .f-nav-right{display:flex;align-items:center;gap:12px;}
     .f-nav-back{font-size:9px;color:var(--text3);text-decoration:none;border:1px solid var(--border);padding:4px 10px;border-radius:2px;transition:all .15s;}
     .f-nav-back:hover{color:var(--text);border-color:var(--border2);}
-
-    /* HERO */
-    .f-hero{text-align:center;padding:72px 24px 48px;position:relative;overflow:hidden;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-    #f-hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
-    .f-hero-content{position:relative;z-index:2;}
+    .f-hero{position:relative;text-align:center;padding:80px 24px 56px;overflow:hidden;}
     .f-hero-eyebrow{font-size:8px;letter-spacing:.22em;color:var(--teal-bright);text-transform:uppercase;margin-bottom:14px;}
     .f-hero-title{font-family:'Dune Rise',serif;font-size:clamp(22px,4vw,38px);letter-spacing:.1em;color:var(--text);margin-bottom:10px;}
-    .f-hero-ornament{display:flex;align-items:center;gap:10px;margin:14px auto;width:160px;}
-    .f-hero-ornament-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--teal-bright),transparent);opacity:.5;}
-    .f-hero-ornament-diamond{width:6px;height:6px;background:var(--teal-bright);transform:rotate(45deg);flex-shrink:0;opacity:.7;}
+    .f-hero-ornament{display:flex;align-items:center;gap:12px;justify-content:center;margin:14px 0;}
+    .f-hero-ornament-line{flex:1;max-width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--teal-bright));}
+    .f-hero-ornament-line:last-child{background:linear-gradient(90deg,var(--teal-bright),transparent);}
+    .f-hero-ornament-diamond{width:6px;height:6px;background:var(--teal-bright);transform:rotate(45deg);}
     .f-hero-sub{font-size:10px;color:var(--text3);letter-spacing:.08em;margin-bottom:8px;}
     .f-hero-lock{display:inline-flex;align-items:center;gap:6px;font-size:9px;color:var(--spice);letter-spacing:.1em;border:1px solid rgba(232,92,13,.3);padding:4px 12px;border-radius:2px;margin-top:8px;}
-
-    /* ACCESS WALL */
     #f-wall{position:fixed;inset:0;z-index:200;background:rgba(8,4,0,.97);display:flex;align-items:center;justify-content:center;}
     .f-wall-box{text-align:center;padding:52px 40px;border:1px solid var(--border2);border-top:2px solid var(--spice);background:var(--card-bg);max-width:420px;width:90%;}
     .f-wall-ico{margin-bottom:20px;opacity:.5;}
     .f-wall-title{font-family:'Dune Rise',serif;font-size:14px;letter-spacing:.14em;color:var(--spice);margin-bottom:8px;}
     .f-wall-sub{font-size:10px;color:var(--text3);line-height:1.7;margin-bottom:24px;}
-    .f-wall-btn{display:inline-block;background:var(--spice);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;padding:10px 24px;border:none;cursor:pointer;border-radius:2px;}
-
-    /* MAIN CONTENT */
-    #f-content{display:none;}
+    .f-wall-btn{display:inline-flex;align-items:center;gap:8px;background:var(--spice);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;padding:10px 24px;border:none;cursor:pointer;border-radius:2px;text-decoration:none;transition:opacity .15s;}
+    .f-wall-btn:hover{opacity:.88;}
+    #f-content{display:none;position:relative;z-index:1;}
     .f-main{max-width:1100px;margin:0 auto;padding:0 24px 80px;}
-
-    /* MODULE GRID */
     .f-modules{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:40px;}
-    .f-module{background:var(--card-bg);border:1px solid var(--border);border-top:2px solid transparent;padding:28px 24px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:border-top-color .18s,box-shadow .18s;cursor:pointer;}
-    .f-module:hover{border-top-color:var(--teal-bright);box-shadow:0 4px 20px rgba(34,184,154,.07);}
-    .f-module.spice{border-top:2px solid transparent;}
-    .f-module.spice:hover{border-top-color:var(--spice);box-shadow:0 4px 20px rgba(232,92,13,.07);}
-    .f-module.gold:hover{border-top-color:var(--gold);box-shadow:0 4px 20px rgba(212,168,67,.07);}
+    .f-module{background:var(--card-bg);border:1px solid var(--border);border-top:2px solid transparent;padding:28px 24px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:border-top-color .18s,box-shadow .18s;position:relative;overflow:hidden;}
+    .f-module::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.025),transparent);transition:left .45s;}
+    .f-module:hover::after{left:150%;}
+    .f-module:hover{border-top-color:var(--teal-bright);box-shadow:0 4px 24px rgba(34,184,154,.1);}
+    .f-module.spice:hover{border-top-color:var(--spice);box-shadow:0 4px 24px rgba(232,92,13,.1);}
+    .f-module.gold:hover{border-top-color:var(--gold);box-shadow:0 4px 24px rgba(212,168,67,.1);}
     .f-module.disabled{opacity:.4;cursor:not-allowed;pointer-events:none;}
     .f-mod-ico{width:44px;height:44px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
     .f-mod-label{font-size:7px;letter-spacing:.18em;color:var(--text3);text-transform:uppercase;}
@@ -55,19 +50,17 @@
     .f-mod-badge{display:inline-block;font-size:7px;padding:2px 7px;border-radius:2px;letter-spacing:.1em;}
     .badge-soon{background:rgba(107,90,58,.3);color:var(--text3);border:1px solid rgba(107,90,58,.4);}
     .badge-new{background:rgba(34,184,154,.12);color:var(--teal-bright);border:1px solid rgba(34,184,154,.3);}
-
-    /* STATS BAR */
     .f-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:32px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
     .f-stat{text-align:center;}
     .f-stat-v{font-family:'Dune Rise',serif;font-size:18px;color:var(--teal-bright);letter-spacing:.04em;}
     .f-stat-l{font-size:7px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
-
-    /* SECTION TITLE */
     .f-sec-title{font-size:7px;letter-spacing:.22em;color:var(--text3);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
     .f-sec-title::after{content:'';flex:1;height:1px;background:var(--border);}
   </style>
 </head>
 <body>
+
+<canvas id="bg-canvas"></canvas>
 
 <!-- ACCESS WALL -->
 <div id="f-wall">
@@ -81,7 +74,10 @@
     </div>
     <div class="f-wall-title">ACCES RESTREINT</div>
     <div class="f-wall-sub">Le module Football Simulation est reserve aux administrateurs du Royaume-Uni du Nil.<br>Connectez-vous avec votre compte Discord autorise.</div>
-    <button class="f-wall-btn" id="f-login-btn">Connexion Discord</button>
+    <a class="f-wall-btn" id="f-login-btn" href="#">
+      <svg width="14" height="11" viewBox="0 0 71 55" fill="currentColor"><path d="M60.1 4.9A58.5 58.5 0 0 0 45.4.9a41 41 0 0 0-1.8 3.6 54 54 0 0 0-16.2 0A40 40 0 0 0 25.6.9 58.4 58.4 0 0 0 10.9 5C1.6 18.6-.9 31.8.3 44.8a58.9 58.9 0 0 0 17.9 9 42 42 0 0 0 3.7-6 38.3 38.3 0 0 1-6-2.9l1.5-1.1a41.9 41.9 0 0 0 36 0l1.5 1.1a38 38 0 0 1-6 2.9 42 42 0 0 0 3.7 6 58.7 58.7 0 0 0 17.9-9.1C72 29.7 67.9 16.6 60.1 4.9ZM23.8 37.1c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1 6.4 3.2 6.4 7.1-2.9 7.1-6.4 7.1Zm23.4 0c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1 6.4 3.2 6.4 7.1-2.9 7.1-6.4 7.1Z"/></svg>
+      Connexion Discord
+    </a>
   </div>
 </div>
 
@@ -90,32 +86,28 @@
   <div class="f-nav-brand">Football Simulation</div>
   <div class="f-nav-right">
     <div class="nav-right" id="nav-right-user"></div>
-    <a href="../" class="f-nav-back">&#8592; Portail</a>
+    <a href="../" class="f-nav-back">← Portail</a>
   </div>
 </nav>
 
-<!-- MAIN CONTENT (revealed after auth) -->
+<!-- MAIN CONTENT -->
 <div id="f-content">
   <div class="f-hero">
-    <canvas id="f-hero-canvas"></canvas>
-    <div class="f-hero-content">
-      <div class="f-hero-eyebrow">Simulation Sportive Nationale</div>
-      <div class="f-hero-title">Football Simulation</div>
-      <div class="f-hero-ornament">
-        <div class="f-hero-ornament-line"></div>
-        <div class="f-hero-ornament-diamond"></div>
-        <div class="f-hero-ornament-line"></div>
-      </div>
-      <div class="f-hero-sub">Royaume-Uni du Nil · &#1603;&#1585;&#1577; &#1575;&#1604;&#1602;&#1583;&#1605; &#1575;&#1604;&#1608;&#1591;&#1606;&#1610;&#1577;</div>
-      <div class="f-hero-lock">
-        <svg viewBox="0 0 12 12" fill="none" width="10" height="10"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M4 5V3.5A2 2 0 0 1 8 3.5V5" stroke="currentColor" stroke-width="1" fill="none"/></svg>
-        MODULE ADMIN &middot; ACCES RESTREINT
-      </div>
+    <div class="f-hero-eyebrow">Simulation Sportive Nationale</div>
+    <div class="f-hero-title">Football Simulation</div>
+    <div class="f-hero-ornament">
+      <div class="f-hero-ornament-line"></div>
+      <div class="f-hero-ornament-diamond"></div>
+      <div class="f-hero-ornament-line"></div>
+    </div>
+    <div class="f-hero-sub">Royaume-Uni du Nil &middot; &#1603;&#1585;&#1577; &#1575;&#1604;&#1602;&#1583;&#1605; &#1575;&#1604;&#1608;&#1591;&#1606;&#1610;&#1577;</div>
+    <div class="f-hero-lock">
+      <svg viewBox="0 0 12 12" fill="none" width="10" height="10"><rect x="2" y="5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M4 5V3.5A2 2 0 0 1 8 3.5V5" stroke="currentColor" stroke-width="1" fill="none"/></svg>
+      MODULE ADMIN &middot; ACCES RESTREINT
     </div>
   </div>
 
   <div class="f-main">
-    <!-- Stats -->
     <div class="f-stats">
       <div class="f-stat"><div class="f-stat-v" id="fs-pays">&#8212;</div><div class="f-stat-l">Pays enregistres</div></div>
       <div class="f-stat"><div class="f-stat-v" id="fs-joueurs">&#8212;</div><div class="f-stat-l">Joueurs generes</div></div>
@@ -123,7 +115,6 @@
       <div class="f-stat"><div class="f-stat-v" id="fs-matchs">&#8212;</div><div class="f-stat-l">Matchs simules</div></div>
     </div>
 
-    <!-- Module: Teams -->
     <div class="f-sec-title">Gestion</div>
     <div class="f-modules">
       <a href="./equipes/" class="f-module">
@@ -176,7 +167,6 @@
       </a>
     </div>
 
-    <!-- Module: Data -->
     <div class="f-sec-title">Donnees</div>
     <div class="f-modules">
       <div class="f-module disabled">
@@ -184,7 +174,6 @@
           <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
             <rect x="3" y="5" width="18" height="14" rx="1" stroke="#C8960C" stroke-width="1.2" fill="none"/>
             <line x1="3" y1="9" x2="21" y2="9" stroke="#C8960C" stroke-width=".9" opacity=".5"/>
-            <line x1="8" y1="5" x2="8" y2="19" stroke="#C8960C" stroke-width=".8" opacity=".3"/>
             <rect x="5" y="12" width="2" height="4" fill="#C8960C" opacity=".4"/>
             <rect x="10" y="11" width="2" height="5" fill="#C8960C" opacity=".6"/>
             <rect x="15" y="10" width="2" height="6" fill="#C8960C" opacity=".8"/>
@@ -202,101 +191,84 @@
 </div>
 
 <script>
-const ADMIN_IDS=['772821169664426025'];
 const FB_FILE='data/football.json';
 var fbData={pays:[],competitions:[],matchs:[]};
 
-function showContent(user){
+function showContent(){
   document.getElementById('f-wall').style.display='none';
   document.getElementById('f-content').style.display='block';
-  initHeroCanvas();
   fetch('https://api.github.com/repos/BJBellum/UKN/contents/'+FB_FILE,{headers:{'Accept':'application/vnd.github.v3.raw'},cache:'no-store'})
     .then(function(r){return r.ok?r.json():null;})
     .then(function(d){
-      if(!d)return;
-      fbData=d;
+      if(!d)return;fbData=d;
       var pays=d.pays||[];
-      var joueurs=pays.reduce(function(s,p){return s+(p.joueurs?p.joueurs.length:0);},0);
       document.getElementById('fs-pays').textContent=pays.length;
-      document.getElementById('fs-joueurs').textContent=joueurs;
+      document.getElementById('fs-joueurs').textContent=pays.reduce(function(s,p){return s+(p.joueurs?p.joueurs.length:0);},0);
       document.getElementById('fs-comps').textContent=(d.competitions||[]).length;
       document.getElementById('fs-matchs').textContent=(d.matchs||[]).length;
     }).catch(function(){});
 }
 
-// ── HERO CANVAS ANIMATION ──
-function initHeroCanvas(){
-  var canvas=document.getElementById('f-hero-canvas');
-  if(!canvas)return;
-  var ctx=canvas.getContext('2d');
-  var W,H;
-  var TEAL=[34,184,154],GOLD=[212,168,67],SAND=[107,90,58];
+// ── DISCORD AUTH ──
+document.getElementById('f-login-btn').addEventListener('click',function(e){
+  e.preventDefault();
+  // Attendre que pharos-auth soit charge
+  var pa=window.PharosAuth;
+  if(pa&&pa.CFG){
+    var cfg=pa.CFG;
+    var state='home';
+    try{state=btoa(encodeURIComponent(window.location.href));}catch(ex){}
+    var p=new URLSearchParams({client_id:cfg.DISCORD_CLIENT_ID,redirect_uri:cfg.REDIRECT_URI,response_type:'token',scope:'identify',state:state});
+    window.location.href='https://discord.com/oauth2/authorize?'+p.toString();
+  } else {
+    // Fallback si PharosAuth pas encore charge
+    var DISCORD_CLIENT_ID='1483200078092042300';
+    var REDIRECT_URI='https://BJBellum.github.io/UKN/auth/callback/';
+    var state='home';
+    try{state=btoa(encodeURIComponent(window.location.href));}catch(ex){}
+    var p=new URLSearchParams({client_id:DISCORD_CLIENT_ID,redirect_uri:REDIRECT_URI,response_type:'token',scope:'identify',state:state});
+    window.location.href='https://discord.com/oauth2/authorize?'+p.toString();
+  }
+});
+
+function tryAuth(){
+  var pa=window.PharosAuth;
+  if(!pa)return false;
+  var user=pa.getUser();
+  if(user&&pa.isAdmin()){showContent();return true;}
+  return false;
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  if(!tryAuth())window.addEventListener('load',function(){setTimeout(tryAuth,300);});
+});
+window.addEventListener('pharos_auth_ready',tryAuth);
+</script>
+<script src="../pharos-auth.js"></script>
+<script>
+(function(){
+  var canvas=document.getElementById('bg-canvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');var W,H;
+  var GOLD=[212,168,67],TEAL=[34,184,154],SAND=[107,90,58],SPICE=[232,92,13];
   function rgba(c,a){return'rgba('+c[0]+','+c[1]+','+c[2]+','+a+')';}
-  function resize(){W=canvas.offsetWidth;H=canvas.offsetHeight;canvas.width=W;canvas.height=H;}
-
-  // Floating particles
+  function resize(){W=canvas.offsetWidth||window.innerWidth;H=canvas.offsetHeight||window.innerHeight;canvas.width=W;canvas.height=H;}
+  resize();
   var parts=[];
-  function initParts(){
-    parts=[];
-    for(var i=0;i<20;i++){
-      parts.push({x:Math.random()*W,y:H*.2+Math.random()*H*.8,
-        r:.5+Math.random()*1.8,vx:(Math.random()-.5)*.25,vy:-(0.12+Math.random()*.35),
-        life:Math.random(),col:Math.random()<.6?TEAL:GOLD});
-    }
-  }
-  function stepParts(){
-    parts.forEach(function(p){
-      p.life+=.0025;if(p.life>1){p.life=0;p.x=Math.random()*W;p.y=H+4;}
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.y<-6){p.y=H+4;p.x=Math.random()*W;}
-      var a=Math.sin(p.life*Math.PI)*0.5;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle=rgba(p.col,a);ctx.fill();
-    });
-  }
-
-  // Dune wave
-  function drawDunes(t){
-    var bY=H*.78,amp=H*.055;
-    ctx.beginPath();ctx.moveTo(0,H);
-    for(var x=0;x<=W+2;x+=2){
-      var y=bY+Math.sin(x*.006+t*.00025)*amp*.6+Math.sin(x*.003+t*.00018+1.2)*amp*.4;
-      ctx.lineTo(x,y);
-    }
-    ctx.lineTo(W,H);ctx.closePath();
-    ctx.fillStyle=rgba(SAND,.065);ctx.fill();
-    // crest glow
-    ctx.beginPath();
-    for(var x2=0;x2<=W;x2+=4){
-      var y2=bY+Math.sin(x2*.006+t*.00025)*amp*.6+Math.sin(x2*.003+t*.00018+1.2)*amp*.4;
-      x2===0?ctx.moveTo(x2,y2):ctx.lineTo(x2,y2);
-    }
-    ctx.strokeStyle=rgba(GOLD,.07);ctx.lineWidth=1.2;
-    ctx.shadowColor=rgba(GOLD,.18);ctx.shadowBlur=4;ctx.stroke();ctx.shadowBlur=0;
-  }
-
-  // Rotating sport watermark
-  function drawWatermark(t){
-    var cx=W*.5,cy=H*.44,r=Math.min(W,H)*.17;
-    ctx.save();ctx.translate(cx,cy);ctx.rotate(t*.00002);ctx.globalAlpha=.028;
-    ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.strokeStyle=rgba(TEAL,1);ctx.lineWidth=.5;ctx.stroke();
-    ctx.beginPath();ctx.arc(0,0,r*.55,0,Math.PI*2);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(-r,0);ctx.lineTo(r,0);ctx.moveTo(0,-r);ctx.lineTo(0,r);ctx.stroke();
-    for(var i=0;i<6;i++){
-      var a=(i/6)*Math.PI*2;
-      ctx.beginPath();ctx.moveTo(Math.cos(a)*r*.55,Math.sin(a)*r*.55);
-      ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  // Shimmer
+  function initParts(){parts=[];for(var i=0;i<22;i++)parts.push({x:Math.random()*W,y:H*.2+Math.random()*H*.8,r:.5+Math.random()*1.8,vx:(Math.random()-.5)*.25,vy:-(0.1+Math.random()*.3),life:Math.random(),col:Math.random()<.6?TEAL:GOLD});}
+  function stepParts(){parts.forEach(function(p){p.life+=.0025;if(p.life>1){p.life=0;p.x=Math.random()*W;p.y=H+4;}p.x+=p.vx;p.y+=p.vy;if(p.y<-6){p.y=H+4;p.x=Math.random()*W;}var a=Math.sin(p.life*Math.PI)*0.5;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=rgba(p.col,a);ctx.fill();});}
   var shimmer=[];
-  function initShimmer(){
-    for(var i=0;i<3;i++)shimmer.push({y:.35+Math.random()*.5,h:.01+Math.random()*.012,a:.01+Math.random()*.016,sp:.0002+Math.random()*.0003,ph:Math.random()*Math.PI*2});
-  }
-  function drawShimmer(t){
-    shimmer.forEach(function(b){
-      var a=b.a*(0.3+0.7*Math.abs(Math.sin(t*b.sp+b.ph)));
-      var y=b.y*H;
-      var g=ctx.createLin
+  function initShimmer(){shimmer=[];for(var i=0;i<3;i++)shimmer.push({y:.35+Math.random()*.5,h:.01+Math.random()*.012,a:.01+Math.random()*.016,sp:.0002+Math.random()*.0003,ph:Math.random()*Math.PI*2});}
+  function drawShimmer(t){shimmer.forEach(function(b){var a=b.a*(0.3+0.7*Math.abs(Math.sin(t*b.sp+b.ph)));var y=b.y*H;var g=ctx.createLinearGradient(0,y,0,y+b.h*H);g.addColorStop(0,rgba(SAND,0));g.addColorStop(.5,rgba(SAND,a));g.addColorStop(1,rgba(SAND,0));ctx.fillStyle=g;ctx.fillRect(0,y,W,b.h*H);});}
+  function drawDunes(t){var bY=H*.78,amp=H*.055;ctx.beginPath();ctx.moveTo(0,H);for(var x=0;x<=W+2;x+=2){var y=bY+Math.sin(x*.006+t*.00025)*amp*.6+Math.sin(x*.003+t*.00018+1.2)*amp*.4;ctx.lineTo(x,y);}ctx.lineTo(W,H);ctx.closePath();ctx.fillStyle=rgba(SAND,.065);ctx.fill();ctx.beginPath();for(var x2=0;x2<=W;x2+=4){var y2=bY+Math.sin(x2*.006+t*.00025)*amp*.6+Math.sin(x2*.003+t*.00018+1.2)*amp*.4;x2===0?ctx.moveTo(x2,y2):ctx.lineTo(x2,y2);}ctx.strokeStyle=rgba(GOLD,.07);ctx.lineWidth=1.2;ctx.shadowColor=rgba(GOLD,.18);ctx.shadowBlur=4;ctx.stroke();ctx.shadowBlur=0;}
+  function drawWatermark(t){var cx=W*.5,cy=H*.44,r=Math.min(W,H)*.17;ctx.save();ctx.translate(cx,cy);ctx.rotate(t*.00002);ctx.globalAlpha=.028;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.strokeStyle=rgba(TEAL,1);ctx.lineWidth=.5;ctx.stroke();ctx.beginPath();ctx.arc(0,0,r*.55,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.moveTo(-r,0);ctx.lineTo(r,0);ctx.moveTo(0,-r);ctx.lineTo(0,r);ctx.stroke();for(var i=0;i<6;i++){var a=(i/6)*Math.PI*2;ctx.beginPath();ctx.moveTo(Math.cos(a)*r*.55,Math.sin(a)*r*.55);ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r);ctx.stroke();}ctx.restore();}
+  var bloom={active:false,x:0,y:0,maxR:0,t0:0};
+  function maybeBloom(t){if(!bloom.active&&Math.random()<.002){bloom={active:true,x:W*.2+Math.random()*W*.6,y:H*.4+Math.random()*H*.4,maxR:60+Math.random()*110,t0:t};}if(!bloom.active)return;var el=t-bloom.t0,dur=2200;if(el>dur){bloom.active=false;return;}var prog=el/dur,r2=bloom.maxR*Math.pow(prog,.4),al=(1-prog)*.16;var grd=ctx.createRadialGradient(bloom.x,bloom.y,0,bloom.x,bloom.y,r2);grd.addColorStop(0,rgba(SPICE,al*1.5));grd.addColorStop(.4,rgba(GOLD,al*.6));grd.addColorStop(1,rgba(GOLD,0));ctx.beginPath();ctx.arc(bloom.x,bloom.y,r2,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();}
+  var start=null,raf;initParts();initShimmer();
+  function draw(ts){if(!start)start=ts;var t=ts-start;ctx.clearRect(0,0,W,H);var vig=ctx.createRadialGradient(W*.5,H*.5,H*.08,W*.5,H*.5,H*1.1);vig.addColorStop(0,'rgba(0,0,0,0)');vig.addColorStop(1,'rgba(0,0,0,0.5)');ctx.fillStyle=vig;ctx.fillRect(0,0,W,H);drawShimmer(t);drawWatermark(t);drawDunes(t);stepParts();maybeBloom(t);raf=requestAnimationFrame(draw);}
+  window.addEventListener('resize',function(){cancelAnimationFrame(raf);resize();start=null;initParts();initShimmer();raf=requestAnimationFrame(draw);});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)cancelAnimationFrame(raf);else{start=null;raf=requestAnimationFrame(draw);}});
+  raf=requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
