@@ -140,6 +140,39 @@
     .tab-btn{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;padding:8px 16px;background:none;border:none;border-bottom:2px solid transparent;color:var(--text3);cursor:pointer;transition:all .15s;margin-bottom:-1px;}
     .tab-btn.active{color:var(--teal-bright);border-bottom-color:var(--teal-bright);}
 
+    /* ── TACTICS ── */
+    .tactic-shell{display:flex;gap:20px;flex-wrap:wrap;}
+    .tactic-pitch-wrap{flex:1;min-width:280px;}
+    .tactic-side{width:240px;flex-shrink:0;}
+    @media(max-width:700px){.tactic-side{width:100%;}}
+
+    .formation-btns{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
+    .formation-btn{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:4px 10px;background:var(--bg2);border:1px solid var(--border2);color:var(--text2);cursor:pointer;border-radius:2px;transition:all .12s;}
+    .formation-btn:hover,.formation-btn.active{background:rgba(34,184,154,.14);border-color:var(--teal-bright);color:var(--teal-bright);}
+
+    .pitch-svg{width:100%;display:block;cursor:default;}
+    .pitch-zone{fill:#0a2e0a;stroke:#1a4d1a;stroke-width:1;}
+    .pitch-line{stroke:rgba(255,255,255,.18);stroke-width:1;fill:none;}
+
+    .player-token{cursor:grab;}
+    .player-token:active{cursor:grabbing;}
+    .player-token circle.bg{transition:fill .15s;}
+    .player-token:hover circle.bg{fill-opacity:.9;}
+    .player-token.dragging{opacity:.7;}
+    .player-token.selected circle.bg{stroke:#fff;stroke-width:2;}
+
+    /* Substitutes */
+    .subs-list{background:var(--bg2);border:1px solid var(--border);padding:10px;border-radius:2px;max-height:320px;overflow-y:auto;}
+    .sub-item{display:flex;align-items:center;gap:8px;padding:5px 6px;border-bottom:1px solid var(--border);cursor:grab;transition:background .1s;}
+    .sub-item:hover{background:rgba(34,184,154,.05);}
+    .sub-item:last-child{border-bottom:none;}
+    .sub-pos{font-size:7px;padding:1px 5px;border-radius:2px;font-weight:600;flex-shrink:0;}
+    .sub-name{font-size:9px;color:var(--text);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .sub-note{font-family:'Dune Rise',serif;font-size:11px;color:var(--gold);flex-shrink:0;}
+
+    .tactic-save-bar{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center;}
+    .tactic-info{font-size:8px;color:var(--text3);letter-spacing:.06em;}
+
     /* SPINNER */
     .spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(34,184,154,.3);border-top-color:var(--teal-bright);border-radius:50%;animation:spin .7s linear infinite;}
     @keyframes spin{to{transform:rotate(360deg);}}
@@ -607,14 +640,22 @@ function renderTeamDetail(p){
   }
 
   // Tabs
-  html+='<div class="tab-btns"><button class="tab-btn active" id="tab-joueurs" onclick="showTab(\'joueurs\',this)">Joueurs ('+((p.joueurs||[]).length)+')</button></div>';
+  html+='<div class="tab-btns">';
+  html+='<button class="tab-btn active" id="tab-btn-joueurs" onclick="showTab(\'joueurs\',this)">Joueurs ('+((p.joueurs||[]).length)+')</button>';
+  html+='<button class="tab-btn" id="tab-btn-tactique" onclick="showTab(\'tactique\',this)">Tactique & Formation</button>';
+  html+='</div>';
 
   // Players
   html+='<div id="tab-joueurs-content">';
   html+=renderPlayersTable(p);
   html+='</div>';
+  html+='<div id="tab-tactique-content" style="display:none;">';
+  html+=renderTacticTab(p);
+  html+='</div>';
 
   el.innerHTML=html;
+  // Init drag after render
+  setTimeout(function(){initPitchDrag(p.id);},60);
 }
 
 function renderPlayersTable(p){
@@ -641,6 +682,11 @@ function renderPlayersTable(p){
 function showTab(tab,btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
   btn.classList.add('active');
+  var tabs=['joueurs','tactique'];
+  tabs.forEach(function(t){
+    var el=document.getElementById('tab-'+t+'-content');
+    if(el)el.style.display=(t===tab?'block':'none');
+  });
 }
 
 // ════════════════════════════════════════════════
@@ -810,6 +856,272 @@ function savePlayerEdit(){
   closePlayerModal();
   renderTeamDetail(p);
   toast('Joueur mis à jour.','ok');
+}
+
+// ════════════════════════════════════════════════
+//  TACTICS
+// ════════════════════════════════════════════════
+var FORMATIONS={
+  '4-3-3':{gk:[[50,88]],def:[[20,65],[38,65],[62,65],[80,65]],mil:[[28,42],[50,38],[72,42]],att:[[22,16],[50,12],[78,16]]},
+  '4-4-2':{gk:[[50,88]],def:[[18,65],[38,65],[62,65],[82,65]],mil:[[18,42],[40,42],[60,42],[82,42]],att:[[34,16],[66,16]]},
+  '4-2-3-1':{gk:[[50,88]],def:[[18,65],[38,65],[62,65],[82,65]],mil:[[34,55],[66,55],[20,35],[50,30],[80,35]],att:[[50,14]]},
+  '3-5-2':{gk:[[50,88]],def:[[28,65],[50,62],[72,65]],mil:[[14,48],[33,42],[50,38],[67,42],[86,48]],att:[[34,16],[66,16]]},
+  '3-4-3':{gk:[[50,88]],def:[[28,65],[50,62],[72,65]],mil:[[20,45],[40,42],[60,42],[80,45]],att:[[22,16],[50,12],[78,16]]},
+  '5-3-2':{gk:[[50,88]],def:[[10,72],[28,66],[50,63],[72,66],[90,72]],mil:[[28,42],[50,38],[72,42]],att:[[34,16],[66,16]]},
+  '4-1-4-1':{gk:[[50,88]],def:[[18,65],[38,65],[62,65],[82,65]],mil:[[50,55],[15,38],[36,35],[64,35],[85,38]],att:[[50,14]]},
+  '4-5-1':{gk:[[50,88]],def:[[18,65],[38,65],[62,65],[82,65]],mil:[[14,45],[33,40],[50,38],[67,40],[86,45]],att:[[50,14]]}
+};
+
+var tacticState={}; // keyed by teamId
+
+function getTactic(teamId){
+  if(!tacticState[teamId]){
+    var stored=localStorage.getItem('tactic_'+teamId);
+    if(stored){try{tacticState[teamId]=JSON.parse(stored);}catch(e){}}
+    if(!tacticState[teamId])tacticState[teamId]={formation:'4-3-3',lineup:[],subs:[]};
+  }
+  return tacticState[teamId];
+}
+
+function saveTacticLocal(teamId){
+  localStorage.setItem('tactic_'+teamId,JSON.stringify(tacticState[teamId]));
+}
+
+function buildDefaultLineup(p,formation){
+  var fml=FORMATIONS[formation]||FORMATIONS['4-3-3'];
+  var joueurs=p.joueurs||[];
+  var gks=joueurs.filter(function(j){return j.poste==='GK';});
+  var defs=joueurs.filter(function(j){return POSTES_CAT[j.poste]==='DEF';});
+  var mils=joueurs.filter(function(j){return POSTES_CAT[j.poste]==='MIL';});
+  var atts=joueurs.filter(function(j){return POSTES_CAT[j.poste]==='ATT';});
+
+  // Sort by global desc within each group
+  function sortDesc(arr){return arr.slice().sort(function(a,b){return b.global-a.global;});}
+  gks=sortDesc(gks);defs=sortDesc(defs);mils=sortDesc(mils);atts=sortDesc(atts);
+
+  var lineup=[];
+  var allPositions=[].concat(
+    fml.gk.map(function(xy,i){return{role:'GK',pool:gks,poolIdx:i,x:xy[0],y:xy[1]};}),
+    fml.def.map(function(xy,i){return{role:'DEF',pool:defs,poolIdx:i,x:xy[0],y:xy[1]};}),
+    fml.mil.map(function(xy,i){return{role:'MIL',pool:mils,poolIdx:i,x:xy[0],y:xy[1]};}),
+    fml.att.map(function(xy,i){return{role:'ATT',pool:atts,poolIdx:i,x:xy[0],y:xy[1]};})
+  );
+
+  // Fill lineup
+  var usedIds={};
+  allPositions.forEach(function(pos){
+    var player=pos.pool[pos.poolIdx];
+    if(!player){
+      // Fallback: pick unused from any group
+      player=joueurs.find(function(j){return !usedIds[j.id];});
+    }
+    if(player)usedIds[player.id]=true;
+    lineup.push({role:pos.role,x:pos.x,y:pos.y,playerId:player?player.id:null});
+  });
+
+  // Subs: remaining players sorted by global desc
+  var subs=sortDesc(joueurs.filter(function(j){return !usedIds[j.id];}));
+  return{formation:formation,lineup:lineup,subs:subs.map(function(j){return j.id;})};
+}
+
+function renderTacticTab(p){
+  var tac=getTactic(p.id);
+  var formation=tac.formation||'4-3-3';
+  if(!tac.lineup||!tac.lineup.length){
+    var built=buildDefaultLineup(p,formation);
+    tac.lineup=built.lineup;tac.subs=built.subs;
+    saveTacticLocal(p.id);
+  }
+
+  var pid=p.id;
+  var html='<div class="tactic-shell">';
+  html+='<div class="tactic-pitch-wrap">';
+
+  // Formation selector
+  html+='<div class="formation-btns">';
+  Object.keys(FORMATIONS).forEach(function(fKey){
+    var active=fKey===formation?' active':'';
+    html+='<button class="formation-btn'+active+'" data-team="'+pid+'" data-form="'+fKey+'" onclick="changeFormationClick(this)">'+fKey+'</button>';
+  });
+  html+='</div>';
+
+  // Pitch SVG
+  html+='<svg class="pitch-svg" id="pitch-'+pid+'" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="border:1px solid var(--border);border-radius:3px;">';
+  html+='<rect class="pitch-zone" width="100" height="100" rx="2"/>';
+  html+='<line class="pitch-line" x1="0" y1="50" x2="100" y2="50"/>';
+  html+='<circle class="pitch-line" cx="50" cy="50" r="10"/>';
+  html+='<circle cx="50" cy="50" r="0.8" fill="rgba(255,255,255,.25)"/>';
+  html+='<rect class="pitch-line" x="30" y="0" width="40" height="15"/>';
+  html+='<rect class="pitch-line" x="38" y="0" width="24" height="7"/>';
+  html+='<rect class="pitch-line" x="30" y="85" width="40" height="15"/>';
+  html+='<rect class="pitch-line" x="38" y="93" width="24" height="7"/>';
+  html+='<path class="pitch-line" d="M0,2 Q0,0 2,0"/>';
+  html+='<path class="pitch-line" d="M98,0 Q100,0 100,2"/>';
+  html+='<path class="pitch-line" d="M0,98 Q0,100 2,100"/>';
+  html+='<path class="pitch-line" d="M98,100 Q100,100 100,98"/>';
+
+  tac.lineup.forEach(function(slot,i){
+    var player=slot.playerId?(p.joueurs||[]).find(function(j){return j.id===slot.playerId;}):null;
+    var col=slot.role==='GK'?'#E85C0D':slot.role==='DEF'?'#22B89A':slot.role==='ATT'?'#E84848':'#D4A843';
+    var name=player?player.nom.split(' ')[0]:'?';
+    var note=player?player.global:'?';
+    html+='<g class="player-token" id="pt-'+pid+'-'+i+'" data-team="'+pid+'" data-idx="'+i+'" transform="translate('+slot.x+','+slot.y+')">';
+    html+='<circle class="bg" r="4.5" fill="'+col+'" fill-opacity=".85" stroke="rgba(0,0,0,.4)" stroke-width=".5"/>';
+    html+='<text text-anchor="middle" dominant-baseline="middle" y="0" font-size="2.2" font-family="IBM Plex Mono,monospace" fill="#fff" font-weight="bold">'+note+'</text>';
+    html+='<text text-anchor="middle" y="7" font-size="1.8" font-family="IBM Plex Mono,monospace" fill="rgba(255,255,255,.85)">'+name+'</text>';
+    html+='</g>';
+  });
+  html+='</svg>';
+
+  html+='<div class="tactic-save-bar">';
+  html+='<button class="btn-sm btn-teal" data-team="'+pid+'" onclick="saveTacticToGitHub(this.dataset.team)">&#8679; Sauvegarder tactic</button>';
+  html+='<span class="tactic-info">Glissez les joueurs · Clic sur remplaçant pour permuter</span>';
+  html+='</div></div>';
+
+  // Substitutes list
+  html+='<div class="tactic-side">';
+  html+='<div style="font-size:7px;letter-spacing:.18em;color:var(--text3);text-transform:uppercase;margin-bottom:8px;">Remplaçants</div>';
+  html+='<div class="subs-list" id="subs-'+pid+'">';
+  var subs=tac.subs||[];
+  subs.forEach(function(jid,si){
+    var j=(p.joueurs||[]).find(function(x){return x.id===jid;});
+    if(!j)return;
+    var cat=POSTES_CAT[j.poste]||'MIL';
+    var col={'GK':'pos-GK','DEF':'pos-DEF','MIL':'pos-MIL','ATT':'pos-ATT'}[cat]||'pos-MIL';
+    html+='<div class="sub-item" data-team="'+pid+'" data-jid="'+j.id+'" data-si="'+si+'">';
+    html+='<span class="sub-pos '+col+'">'+j.poste+'</span>';
+    html+='<span class="sub-name" title="'+j.nom+'">'+j.nom+'</span>';
+    html+='<span class="sub-note">'+j.global+'</span>';
+    html+='</div>';
+  });
+  if(!subs.length)html+='<div style="font-size:9px;color:var(--text3);padding:12px;text-align:center;">Tous alignés.</div>';
+  html+='</div></div>';
+  html+='</div>';
+  return html;
+}
+
+function changeFormationClick(btn){
+  var teamId=btn.dataset.team;
+  var formation=btn.dataset.form;
+  changeFormation(teamId,formation);
+}
+
+
+function changeFormation(teamId,formation){
+  var p=fbData.pays.find(function(x){return x.id===teamId;});if(!p)return;
+  if(!confirm('Changer la formation en '+formation+' ? La disposition sera recalculée.'))return;
+  var built=buildDefaultLineup(p,formation);
+  tacticState[teamId]={formation:formation,lineup:built.lineup,subs:built.subs};
+  saveTacticLocal(teamId);
+  // Re-render tactic tab
+  document.getElementById('tab-tactique-content').innerHTML=renderTacticTab(p);
+  setTimeout(function(){initPitchDrag(teamId);},60);
+}
+
+// ── DRAG on SVG pitch ──
+var dragState={active:false,ptIdx:-1,teamId:null,startX:0,startY:0,svg:null,g:null};
+
+function initPitchDrag(teamId){
+  var svg=document.getElementById('pitch-'+teamId);if(!svg)return;
+  var tokens=svg.querySelectorAll('.player-token');
+  tokens.forEach(function(g){
+    g.addEventListener('mousedown',onPTokenDown);
+    g.addEventListener('touchstart',onPTokenTouchStart,{passive:false});
+  });
+}
+
+function getSVGPoint(svg,clientX,clientY){
+  var rect=svg.getBoundingClientRect();
+  var scaleX=100/rect.width;
+  var scaleY=100/rect.height;
+  return{x:(clientX-rect.left)*scaleX,y:(clientY-rect.top)*scaleY};
+}
+
+function onPTokenDown(e){
+  e.preventDefault();
+  var g=e.currentTarget;
+  var teamId=g.dataset.team;
+  var idx=parseInt(g.dataset.idx);
+  var svg=document.getElementById('pitch-'+teamId);
+  dragState={active:true,ptIdx:idx,teamId:teamId,svg:svg,g:g};
+  g.classList.add('dragging');
+  document.addEventListener('mousemove',onPTokenMove);
+  document.addEventListener('mouseup',onPTokenUp);
+}
+function onPTokenTouchStart(e){
+  e.preventDefault();
+  var touch=e.touches[0];
+  var g=e.currentTarget;
+  var teamId=g.dataset.team;
+  var idx=parseInt(g.dataset.idx);
+  var svg=document.getElementById('pitch-'+teamId);
+  dragState={active:true,ptIdx:idx,teamId:teamId,svg:svg,g:g};
+  g.classList.add('dragging');
+  document.addEventListener('touchmove',onPTokenTouchMove,{passive:false});
+  document.addEventListener('touchend',onPTokenTouchEnd);
+}
+function onPTokenMove(e){
+  if(!dragState.active)return;
+  var pt=getSVGPoint(dragState.svg,e.clientX,e.clientY);
+  var x=Math.max(5,Math.min(95,pt.x));
+  var y=Math.max(5,Math.min(95,pt.y));
+  dragState.g.setAttribute('transform','translate('+x+','+y+')');
+  dragState.newX=x;dragState.newY=y;
+}
+function onPTokenTouchMove(e){
+  if(!dragState.active)return;
+  e.preventDefault();
+  var touch=e.touches[0];
+  var pt=getSVGPoint(dragState.svg,touch.clientX,touch.clientY);
+  var x=Math.max(5,Math.min(95,pt.x));
+  var y=Math.max(5,Math.min(95,pt.y));
+  dragState.g.setAttribute('transform','translate('+x+','+y+')');
+  dragState.newX=x;dragState.newY=y;
+}
+function onPTokenUp(e){
+  if(!dragState.active)return;
+  dragState.g.classList.remove('dragging');
+  if(dragState.newX!==undefined){
+    var tac=getTactic(dragState.teamId);
+    tac.lineup[dragState.ptIdx].x=Math.round(dragState.newX*10)/10;
+    tac.lineup[dragState.ptIdx].y=Math.round(dragState.newY*10)/10;
+    saveTacticLocal(dragState.teamId);
+  }
+  document.removeEventListener('mousemove',onPTokenMove);
+  document.removeEventListener('mouseup',onPTokenUp);
+  dragState={active:false};
+}
+function onPTokenTouchEnd(){
+  if(!dragState.active)return;
+  dragState.g.classList.remove('dragging');
+  if(dragState.newX!==undefined){
+    var tac=getTactic(dragState.teamId);
+    tac.lineup[dragState.ptIdx].x=Math.round(dragState.newX*10)/10;
+    tac.lineup[dragState.ptIdx].y=Math.round(dragState.newY*10)/10;
+    saveTacticLocal(dragState.teamId);
+  }
+  document.removeEventListener('touchmove',onPTokenTouchMove);
+  document.removeEventListener('touchend',onPTokenTouchEnd);
+  dragState={active:false};
+}
+
+async function saveTacticToGitHub(teamId){
+  var pat=getPat();
+  if(!pat||pat.length<10){toast('Configurez votre PAT GitHub.','err');return;}
+  var tac=getTactic(teamId);
+  var p=fbData.pays.find(function(x){return x.id===teamId;});
+  var filename='data/football_tactics_'+teamId+'.json';
+  var toSave={teamId:teamId,nom:p?p.nom:'',formation:tac.formation,lineup:tac.lineup,subs:tac.subs,updated:new Date().toISOString()};
+  try{
+    var sha=null;
+    var gr=await fetch('https://api.github.com/repos/'+REPO+'/contents/'+filename,{headers:{'Authorization':'token '+pat,'Accept':'application/vnd.github.v3+json'},cache:'no-store'});
+    if(gr.ok){var gd=await gr.json();sha=gd.sha||null;}
+    var encoded=btoa(unescape(encodeURIComponent(JSON.stringify(toSave,null,2))));
+    var body={message:'update tactics '+teamId,content:encoded};if(sha)body.sha=sha;
+    var pr=await fetch('https://api.github.com/repos/'+REPO+'/contents/'+filename,{method:'PUT',headers:{'Authorization':'token '+pat,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify(body)});
+    if(pr.ok)toast('Tactique sauvegardée sur GitHub.','ok');
+    else{var ed=await pr.json();toast('Erreur: '+(ed.message||pr.status),'err');}
+  }catch(e){toast('Erreur: '+e.message,'err');}
 }
 
 // ════════════════════════════════════════════════
