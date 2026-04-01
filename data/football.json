@@ -1,5 +1,8028 @@
 {
-  "pays": [],
+  "pays": [
+    {
+      "id": "team_1775045082249",
+      "nom": "Empire Hussein",
+      "continent": "Afrique",
+      "culture": "arabe",
+      "note_globale": 74,
+      "flag_filename": "assets/images/football/flags/flag_run_lag.png",
+      "coach": {
+        "nom": "Omar El-Masry",
+        "notes": {
+          "tactique": 80,
+          "motivation": 67,
+          "defence": 69,
+          "attaque": 73,
+          "gestion": 72
+        },
+        "global": 73
+      },
+      "joueurs": [
+        {
+          "id": "p_1775045082248_5918",
+          "nom": "Ayman El-Banna",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 51,
+            "tec": 70,
+            "mouv": 76,
+            "pui": 74,
+            "ment": 76,
+            "def": 79,
+            "gk": 24
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082248_7338",
+          "nom": "Galal Al-Khatib",
+          "poste": "DC",
+          "age": 27,
+          "notes": {
+            "off": 49,
+            "tec": 66,
+            "mouv": 78,
+            "pui": 75,
+            "ment": 73,
+            "def": 88,
+            "gk": 37
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082248_8751",
+          "nom": "Mostafa El-Banna",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 51,
+            "tec": 78,
+            "mouv": 74,
+            "pui": 70,
+            "ment": 73,
+            "def": 83,
+            "gk": 34
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_6799",
+          "nom": "Alaa El-Amin",
+          "poste": "DD",
+          "age": 31,
+          "notes": {
+            "off": 52,
+            "tec": 81,
+            "mouv": 76,
+            "pui": 85,
+            "ment": 79,
+            "def": 82,
+            "gk": 38
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_5898",
+          "nom": "Ziad Ben Hassan",
+          "poste": "DG",
+          "age": 33,
+          "notes": {
+            "off": 56,
+            "tec": 67,
+            "mouv": 69,
+            "pui": 72,
+            "ment": 81,
+            "def": 85,
+            "gk": 19
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082248_9716",
+          "nom": "Kareem Al-Khatib",
+          "poste": "DG",
+          "age": 35,
+          "notes": {
+            "off": 64,
+            "tec": 72,
+            "mouv": 74,
+            "pui": 78,
+            "ment": 80,
+            "def": 91,
+            "gk": 22
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_4135",
+          "nom": "Marwan Al-Rashid",
+          "poste": "DG",
+          "age": 34,
+          "notes": {
+            "off": 60,
+            "tec": 79,
+            "mouv": 81,
+            "pui": 74,
+            "ment": 74,
+            "def": 91,
+            "gk": 18
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_5280",
+          "nom": "Badr Ben Ibrahim",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 51,
+            "tec": 81,
+            "mouv": 75,
+            "pui": 75,
+            "ment": 78,
+            "def": 85,
+            "gk": 24
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_2303",
+          "nom": "Emad Ben Ahmed",
+          "poste": "DG",
+          "age": 30,
+          "notes": {
+            "off": 51,
+            "tec": 74,
+            "mouv": 68,
+            "pui": 76,
+            "ment": 73,
+            "def": 90,
+            "gk": 35
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_2056",
+          "nom": "Nabil El-Shazly",
+          "poste": "DG",
+          "age": 20,
+          "notes": {
+            "off": 65,
+            "tec": 68,
+            "mouv": 75,
+            "pui": 87,
+            "ment": 73,
+            "def": 87,
+            "gk": 41
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_4756",
+          "nom": "Ibrahim Ben Musa",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 71,
+            "tec": 69,
+            "mouv": 76,
+            "pui": 89,
+            "ment": 73,
+            "def": 92,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_2126",
+          "nom": "Ramzy El-Shazly",
+          "poste": "DC",
+          "age": 25,
+          "notes": {
+            "off": 53,
+            "tec": 69,
+            "mouv": 67,
+            "pui": 82,
+            "ment": 75,
+            "def": 83,
+            "gk": 41
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_4563",
+          "nom": "Amir Ben Ali",
+          "poste": "DC",
+          "age": 26,
+          "notes": {
+            "off": 63,
+            "tec": 73,
+            "mouv": 74,
+            "pui": 69,
+            "ment": 75,
+            "def": 85,
+            "gk": 20
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_8364",
+          "nom": "Tarek Al-Zahrani",
+          "poste": "DD",
+          "age": 32,
+          "notes": {
+            "off": 62,
+            "tec": 72,
+            "mouv": 79,
+            "pui": 83,
+            "ment": 68,
+            "def": 85,
+            "gk": 30
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_2484",
+          "nom": "Badr Al-Amin",
+          "poste": "DD",
+          "age": 24,
+          "notes": {
+            "off": 65,
+            "tec": 70,
+            "mouv": 81,
+            "pui": 88,
+            "ment": 74,
+            "def": 91,
+            "gk": 36
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_4366",
+          "nom": "Ahmed Al-Mansouri",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 55,
+            "tec": 78,
+            "mouv": 71,
+            "pui": 86,
+            "ment": 75,
+            "def": 90,
+            "gk": 28
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_9821",
+          "nom": "Kareem El-Masry",
+          "poste": "DG",
+          "age": 26,
+          "notes": {
+            "off": 55,
+            "tec": 78,
+            "mouv": 72,
+            "pui": 79,
+            "ment": 71,
+            "def": 83,
+            "gk": 38
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_3387",
+          "nom": "Hassan Al-Saad",
+          "poste": "DD",
+          "age": 27,
+          "notes": {
+            "off": 56,
+            "tec": 79,
+            "mouv": 69,
+            "pui": 71,
+            "ment": 79,
+            "def": 81,
+            "gk": 33
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_1554",
+          "nom": "Bassem Ben Musa",
+          "poste": "DG",
+          "age": 35,
+          "notes": {
+            "off": 67,
+            "tec": 66,
+            "mouv": 70,
+            "pui": 87,
+            "ment": 78,
+            "def": 86,
+            "gk": 34
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_3528",
+          "nom": "Osama El-Helal",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 71,
+            "tec": 69,
+            "mouv": 78,
+            "pui": 87,
+            "ment": 73,
+            "def": 92,
+            "gk": 33
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_9584",
+          "nom": "Ahmed Ben Ibrahim",
+          "poste": "DD",
+          "age": 20,
+          "notes": {
+            "off": 53,
+            "tec": 82,
+            "mouv": 80,
+            "pui": 78,
+            "ment": 78,
+            "def": 81,
+            "gk": 22
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_6400",
+          "nom": "Alaa Al-Amin",
+          "poste": "DC",
+          "age": 36,
+          "notes": {
+            "off": 64,
+            "tec": 82,
+            "mouv": 77,
+            "pui": 90,
+            "ment": 82,
+            "def": 93,
+            "gk": 29
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_8726",
+          "nom": "Ayman Ben Ali",
+          "poste": "DD",
+          "age": 32,
+          "notes": {
+            "off": 51,
+            "tec": 71,
+            "mouv": 69,
+            "pui": 85,
+            "ment": 70,
+            "def": 90,
+            "gk": 38
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_9679",
+          "nom": "Hussein Al-Amin",
+          "poste": "DC",
+          "age": 29,
+          "notes": {
+            "off": 62,
+            "tec": 69,
+            "mouv": 76,
+            "pui": 80,
+            "ment": 76,
+            "def": 85,
+            "gk": 42
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_8543",
+          "nom": "Ziad Al-Khatib",
+          "poste": "DC",
+          "age": 31,
+          "notes": {
+            "off": 53,
+            "tec": 74,
+            "mouv": 85,
+            "pui": 88,
+            "ment": 75,
+            "def": 87,
+            "gk": 21
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_3797",
+          "nom": "Karim Al-Hassan",
+          "poste": "DC",
+          "age": 18,
+          "notes": {
+            "off": 60,
+            "tec": 82,
+            "mouv": 71,
+            "pui": 86,
+            "ment": 79,
+            "def": 84,
+            "gk": 19
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_3723",
+          "nom": "Sherif Ben Ahmed",
+          "poste": "DC",
+          "age": 35,
+          "notes": {
+            "off": 60,
+            "tec": 71,
+            "mouv": 77,
+            "pui": 84,
+            "ment": 77,
+            "def": 88,
+            "gk": 29
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_8722",
+          "nom": "Mohamed El-Masry",
+          "poste": "DG",
+          "age": 23,
+          "notes": {
+            "off": 60,
+            "tec": 77,
+            "mouv": 79,
+            "pui": 81,
+            "ment": 75,
+            "def": 79,
+            "gk": 36
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_9834",
+          "nom": "Amir El-Sharif",
+          "poste": "DC",
+          "age": 27,
+          "notes": {
+            "off": 70,
+            "tec": 72,
+            "mouv": 78,
+            "pui": 77,
+            "ment": 83,
+            "def": 88,
+            "gk": 27
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_5600",
+          "nom": "Sofiane Al-Hassan",
+          "poste": "DG",
+          "age": 28,
+          "notes": {
+            "off": 57,
+            "tec": 74,
+            "mouv": 78,
+            "pui": 76,
+            "ment": 68,
+            "def": 79,
+            "gk": 36
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_9950",
+          "nom": "Badr Ben Ahmed",
+          "poste": "DG",
+          "age": 25,
+          "notes": {
+            "off": 58,
+            "tec": 82,
+            "mouv": 71,
+            "pui": 73,
+            "ment": 71,
+            "def": 79,
+            "gk": 35
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_7317",
+          "nom": "Hazem Ben Youssef",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 51,
+            "tec": 73,
+            "mouv": 68,
+            "pui": 85,
+            "ment": 74,
+            "def": 82,
+            "gk": 38
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_7487",
+          "nom": "Sami El-Masry",
+          "poste": "DC",
+          "age": 18,
+          "notes": {
+            "off": 62,
+            "tec": 74,
+            "mouv": 77,
+            "pui": 72,
+            "ment": 67,
+            "def": 87,
+            "gk": 32
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_5175",
+          "nom": "Badr Al-Amin",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 51,
+            "tec": 76,
+            "mouv": 79,
+            "pui": 72,
+            "ment": 79,
+            "def": 88,
+            "gk": 37
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_9483",
+          "nom": "Amine Al-Hassan",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 50,
+            "tec": 70,
+            "mouv": 72,
+            "pui": 85,
+            "ment": 68,
+            "def": 84,
+            "gk": 18
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082248_1610",
+          "nom": "Emad Ben Youssef",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 63,
+            "tec": 77,
+            "mouv": 81,
+            "pui": 82,
+            "ment": 76,
+            "def": 83,
+            "gk": 34
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_8071",
+          "nom": "Jamal Ben Ali",
+          "poste": "DC",
+          "age": 18,
+          "notes": {
+            "off": 54,
+            "tec": 82,
+            "mouv": 77,
+            "pui": 83,
+            "ment": 74,
+            "def": 89,
+            "gk": 39
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_1481",
+          "nom": "Sherif Ben Salah",
+          "poste": "DG",
+          "age": 23,
+          "notes": {
+            "off": 52,
+            "tec": 71,
+            "mouv": 67,
+            "pui": 70,
+            "ment": 70,
+            "def": 81,
+            "gk": 22
+          },
+          "global": 65
+        },
+        {
+          "id": "p_1775045082248_3146",
+          "nom": "Hicham Al-Nouri",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 60,
+            "tec": 70,
+            "mouv": 74,
+            "pui": 89,
+            "ment": 73,
+            "def": 85,
+            "gk": 38
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3811",
+          "nom": "Alaa El-Sharif",
+          "poste": "DC",
+          "age": 28,
+          "notes": {
+            "off": 61,
+            "tec": 69,
+            "mouv": 76,
+            "pui": 76,
+            "ment": 76,
+            "def": 80,
+            "gk": 32
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_7562",
+          "nom": "Rachid El-Shazly",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 53,
+            "tec": 75,
+            "mouv": 76,
+            "pui": 81,
+            "ment": 75,
+            "def": 90,
+            "gk": 38
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_8934",
+          "nom": "Emad Al-Amin",
+          "poste": "DG",
+          "age": 19,
+          "notes": {
+            "off": 65,
+            "tec": 75,
+            "mouv": 78,
+            "pui": 72,
+            "ment": 70,
+            "def": 87,
+            "gk": 40
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3914",
+          "nom": "Walid Al-Mansouri",
+          "poste": "DC",
+          "age": 29,
+          "notes": {
+            "off": 60,
+            "tec": 77,
+            "mouv": 74,
+            "pui": 82,
+            "ment": 78,
+            "def": 83,
+            "gk": 21
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3620",
+          "nom": "Nasser Al-Amin",
+          "poste": "DD",
+          "age": 23,
+          "notes": {
+            "off": 53,
+            "tec": 86,
+            "mouv": 75,
+            "pui": 76,
+            "ment": 73,
+            "def": 88,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_6642",
+          "nom": "Sherif Al-Mansouri",
+          "poste": "DC",
+          "age": 22,
+          "notes": {
+            "off": 65,
+            "tec": 72,
+            "mouv": 83,
+            "pui": 81,
+            "ment": 73,
+            "def": 89,
+            "gk": 30
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_7180",
+          "nom": "Jamal El-Khoury",
+          "poste": "DG",
+          "age": 29,
+          "notes": {
+            "off": 57,
+            "tec": 79,
+            "mouv": 82,
+            "pui": 78,
+            "ment": 77,
+            "def": 84,
+            "gk": 34
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_8285",
+          "nom": "Ziad Ben Ahmed",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 69,
+            "tec": 84,
+            "mouv": 81,
+            "pui": 74,
+            "ment": 76,
+            "def": 81,
+            "gk": 40
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_2751",
+          "nom": "Galal Al-Hassan",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 62,
+            "tec": 73,
+            "mouv": 73,
+            "pui": 83,
+            "ment": 81,
+            "def": 89,
+            "gk": 31
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_4370",
+          "nom": "Ayman Ben Musa",
+          "poste": "DD",
+          "age": 17,
+          "notes": {
+            "off": 68,
+            "tec": 81,
+            "mouv": 84,
+            "pui": 77,
+            "ment": 71,
+            "def": 93,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_9993",
+          "nom": "Walid Ben Salah",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 62,
+            "tec": 64,
+            "mouv": 72,
+            "pui": 75,
+            "ment": 75,
+            "def": 80,
+            "gk": 35
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_9875",
+          "nom": "Wael Al-Sayed",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 51,
+            "tec": 66,
+            "mouv": 68,
+            "pui": 82,
+            "ment": 76,
+            "def": 76,
+            "gk": 23
+          },
+          "global": 66
+        },
+        {
+          "id": "p_1775045082248_3022",
+          "nom": "Karim Al-Jaziri",
+          "poste": "DC",
+          "age": 30,
+          "notes": {
+            "off": 63,
+            "tec": 68,
+            "mouv": 74,
+            "pui": 80,
+            "ment": 71,
+            "def": 78,
+            "gk": 36
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_5179",
+          "nom": "Hossam El-Tayeb",
+          "poste": "DD",
+          "age": 34,
+          "notes": {
+            "off": 63,
+            "tec": 73,
+            "mouv": 78,
+            "pui": 82,
+            "ment": 74,
+            "def": 87,
+            "gk": 27
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_5494",
+          "nom": "Ismail Al-Mansouri",
+          "poste": "DD",
+          "age": 19,
+          "notes": {
+            "off": 54,
+            "tec": 72,
+            "mouv": 77,
+            "pui": 89,
+            "ment": 80,
+            "def": 84,
+            "gk": 40
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_7884",
+          "nom": "Magdy Ben Salah",
+          "poste": "DD",
+          "age": 35,
+          "notes": {
+            "off": 68,
+            "tec": 70,
+            "mouv": 83,
+            "pui": 88,
+            "ment": 80,
+            "def": 84,
+            "gk": 34
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_4688",
+          "nom": "Tarek Al-Zahrani",
+          "poste": "DD",
+          "age": 29,
+          "notes": {
+            "off": 65,
+            "tec": 71,
+            "mouv": 76,
+            "pui": 81,
+            "ment": 69,
+            "def": 91,
+            "gk": 19
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_4264",
+          "nom": "Samir Al-Khatib",
+          "poste": "DG",
+          "age": 25,
+          "notes": {
+            "off": 55,
+            "tec": 69,
+            "mouv": 68,
+            "pui": 75,
+            "ment": 73,
+            "def": 82,
+            "gk": 31
+          },
+          "global": 67
+        },
+        {
+          "id": "p_1775045082248_2681",
+          "nom": "Ali Ben Ali",
+          "poste": "DC",
+          "age": 19,
+          "notes": {
+            "off": 66,
+            "tec": 67,
+            "mouv": 72,
+            "pui": 78,
+            "ment": 73,
+            "def": 85,
+            "gk": 29
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_1937",
+          "nom": "Antar Al-Jaziri",
+          "poste": "DC",
+          "age": 36,
+          "notes": {
+            "off": 56,
+            "tec": 77,
+            "mouv": 70,
+            "pui": 84,
+            "ment": 76,
+            "def": 84,
+            "gk": 34
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_2837",
+          "nom": "Magdy Ben Ibrahim",
+          "poste": "DC",
+          "age": 29,
+          "notes": {
+            "off": 61,
+            "tec": 83,
+            "mouv": 85,
+            "pui": 89,
+            "ment": 78,
+            "def": 90,
+            "gk": 23
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_2815",
+          "nom": "Osama Ben Hassan",
+          "poste": "DC",
+          "age": 23,
+          "notes": {
+            "off": 65,
+            "tec": 75,
+            "mouv": 71,
+            "pui": 81,
+            "ment": 73,
+            "def": 80,
+            "gk": 30
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_4209",
+          "nom": "Alaa Al-Farsi",
+          "poste": "DC",
+          "age": 29,
+          "notes": {
+            "off": 53,
+            "tec": 66,
+            "mouv": 69,
+            "pui": 72,
+            "ment": 77,
+            "def": 80,
+            "gk": 36
+          },
+          "global": 67
+        },
+        {
+          "id": "p_1775045082248_3217",
+          "nom": "Amine Al-Amin",
+          "poste": "DG",
+          "age": 35,
+          "notes": {
+            "off": 47,
+            "tec": 67,
+            "mouv": 76,
+            "pui": 76,
+            "ment": 78,
+            "def": 78,
+            "gk": 23
+          },
+          "global": 67
+        },
+        {
+          "id": "p_1775045082248_3873",
+          "nom": "Hassan Ben Khalid",
+          "poste": "DG",
+          "age": 26,
+          "notes": {
+            "off": 50,
+            "tec": 75,
+            "mouv": 77,
+            "pui": 81,
+            "ment": 69,
+            "def": 88,
+            "gk": 23
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_3794",
+          "nom": "Nasser Al-Hassan",
+          "poste": "DC",
+          "age": 27,
+          "notes": {
+            "off": 58,
+            "tec": 76,
+            "mouv": 67,
+            "pui": 83,
+            "ment": 69,
+            "def": 79,
+            "gk": 31
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_4582",
+          "nom": "Osama Al-Amin",
+          "poste": "DC",
+          "age": 28,
+          "notes": {
+            "off": 67,
+            "tec": 70,
+            "mouv": 66,
+            "pui": 81,
+            "ment": 77,
+            "def": 81,
+            "gk": 42
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_7077",
+          "nom": "Bilal Ben Ahmed",
+          "poste": "DC",
+          "age": 27,
+          "notes": {
+            "off": 63,
+            "tec": 78,
+            "mouv": 75,
+            "pui": 80,
+            "ment": 67,
+            "def": 84,
+            "gk": 37
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_1269",
+          "nom": "Hicham Ben Tarek",
+          "poste": "DD",
+          "age": 22,
+          "notes": {
+            "off": 61,
+            "tec": 69,
+            "mouv": 74,
+            "pui": 82,
+            "ment": 73,
+            "def": 82,
+            "gk": 35
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_4467",
+          "nom": "Mohamed Al-Hassan",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 58,
+            "tec": 73,
+            "mouv": 66,
+            "pui": 76,
+            "ment": 75,
+            "def": 87,
+            "gk": 31
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_7097",
+          "nom": "Walid Ben Ibrahim",
+          "poste": "DC",
+          "age": 25,
+          "notes": {
+            "off": 70,
+            "tec": 77,
+            "mouv": 81,
+            "pui": 83,
+            "ment": 82,
+            "def": 90,
+            "gk": 42
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_2168",
+          "nom": "Rami Al-Nouri",
+          "poste": "DG",
+          "age": 35,
+          "notes": {
+            "off": 71,
+            "tec": 72,
+            "mouv": 81,
+            "pui": 87,
+            "ment": 73,
+            "def": 86,
+            "gk": 34
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_2968",
+          "nom": "Omar Ben Ali",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 65,
+            "tec": 76,
+            "mouv": 68,
+            "pui": 80,
+            "ment": 67,
+            "def": 76,
+            "gk": 25
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_2998",
+          "nom": "Hicham Al-Hassan",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 55,
+            "tec": 79,
+            "mouv": 69,
+            "pui": 82,
+            "ment": 72,
+            "def": 82,
+            "gk": 18
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_7919",
+          "nom": "Karim Al-Saad",
+          "poste": "DD",
+          "age": 19,
+          "notes": {
+            "off": 69,
+            "tec": 80,
+            "mouv": 74,
+            "pui": 73,
+            "ment": 74,
+            "def": 87,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_7141",
+          "nom": "Jamal El-Helal",
+          "poste": "DC",
+          "age": 33,
+          "notes": {
+            "off": 63,
+            "tec": 82,
+            "mouv": 84,
+            "pui": 90,
+            "ment": 79,
+            "def": 92,
+            "gk": 37
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_9134",
+          "nom": "Amir Al-Zahrani",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 65,
+            "tec": 78,
+            "mouv": 75,
+            "pui": 78,
+            "ment": 71,
+            "def": 81,
+            "gk": 21
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_8044",
+          "nom": "Marwan Ben Ahmed",
+          "poste": "DC",
+          "age": 22,
+          "notes": {
+            "off": 66,
+            "tec": 73,
+            "mouv": 68,
+            "pui": 85,
+            "ment": 69,
+            "def": 84,
+            "gk": 41
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_7110",
+          "nom": "Marwan Ben Ahmed",
+          "poste": "DG",
+          "age": 35,
+          "notes": {
+            "off": 65,
+            "tec": 81,
+            "mouv": 74,
+            "pui": 80,
+            "ment": 70,
+            "def": 79,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_5214",
+          "nom": "Galal Al-Saad",
+          "poste": "DC",
+          "age": 28,
+          "notes": {
+            "off": 67,
+            "tec": 70,
+            "mouv": 77,
+            "pui": 73,
+            "ment": 72,
+            "def": 77,
+            "gk": 20
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_3001",
+          "nom": "Marwan Ben Khalid",
+          "poste": "DG",
+          "age": 23,
+          "notes": {
+            "off": 63,
+            "tec": 79,
+            "mouv": 70,
+            "pui": 83,
+            "ment": 74,
+            "def": 84,
+            "gk": 24
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_8458",
+          "nom": "Tamer Ben Omar",
+          "poste": "DC",
+          "age": 32,
+          "notes": {
+            "off": 64,
+            "tec": 77,
+            "mouv": 69,
+            "pui": 74,
+            "ment": 75,
+            "def": 87,
+            "gk": 30
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_8367",
+          "nom": "Ahmed El-Shazly",
+          "poste": "DC",
+          "age": 17,
+          "notes": {
+            "off": 63,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 86,
+            "ment": 76,
+            "def": 94,
+            "gk": 30
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_8788",
+          "nom": "Youssef Ben Khalid",
+          "poste": "DG",
+          "age": 25,
+          "notes": {
+            "off": 58,
+            "tec": 67,
+            "mouv": 70,
+            "pui": 74,
+            "ment": 67,
+            "def": 80,
+            "gk": 18
+          },
+          "global": 66
+        },
+        {
+          "id": "p_1775045082248_9696",
+          "nom": "Walid Ben Khalid",
+          "poste": "DD",
+          "age": 25,
+          "notes": {
+            "off": 56,
+            "tec": 78,
+            "mouv": 77,
+            "pui": 73,
+            "ment": 78,
+            "def": 86,
+            "gk": 34
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_5961",
+          "nom": "Sami Al-Khatib",
+          "poste": "DD",
+          "age": 32,
+          "notes": {
+            "off": 61,
+            "tec": 68,
+            "mouv": 72,
+            "pui": 80,
+            "ment": 81,
+            "def": 91,
+            "gk": 29
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_7005",
+          "nom": "Badr Al-Hassan",
+          "poste": "DD",
+          "age": 28,
+          "notes": {
+            "off": 62,
+            "tec": 72,
+            "mouv": 83,
+            "pui": 81,
+            "ment": 74,
+            "def": 91,
+            "gk": 22
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_7745",
+          "nom": "Marwan Al-Khatib",
+          "poste": "DC",
+          "age": 19,
+          "notes": {
+            "off": 62,
+            "tec": 74,
+            "mouv": 73,
+            "pui": 72,
+            "ment": 77,
+            "def": 91,
+            "gk": 35
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_2540",
+          "nom": "Nasser El-Tayeb",
+          "poste": "DD",
+          "age": 26,
+          "notes": {
+            "off": 55,
+            "tec": 71,
+            "mouv": 81,
+            "pui": 81,
+            "ment": 80,
+            "def": 80,
+            "gk": 30
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_1850",
+          "nom": "Younes Ben Youssef",
+          "poste": "DC",
+          "age": 31,
+          "notes": {
+            "off": 63,
+            "tec": 71,
+            "mouv": 75,
+            "pui": 78,
+            "ment": 80,
+            "def": 90,
+            "gk": 31
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_6585",
+          "nom": "Marwan Ben Khalid",
+          "poste": "DG",
+          "age": 30,
+          "notes": {
+            "off": 69,
+            "tec": 72,
+            "mouv": 77,
+            "pui": 91,
+            "ment": 72,
+            "def": 89,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_1189",
+          "nom": "Sofiane El-Banna",
+          "poste": "DC",
+          "age": 20,
+          "notes": {
+            "off": 66,
+            "tec": 77,
+            "mouv": 65,
+            "pui": 73,
+            "ment": 77,
+            "def": 82,
+            "gk": 27
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_9818",
+          "nom": "Hatem El-Banna",
+          "poste": "DC",
+          "age": 26,
+          "notes": {
+            "off": 70,
+            "tec": 83,
+            "mouv": 82,
+            "pui": 74,
+            "ment": 74,
+            "def": 81,
+            "gk": 36
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_1871",
+          "nom": "Ali Al-Khatib",
+          "poste": "DC",
+          "age": 25,
+          "notes": {
+            "off": 58,
+            "tec": 76,
+            "mouv": 78,
+            "pui": 74,
+            "ment": 74,
+            "def": 78,
+            "gk": 18
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_1975",
+          "nom": "Mohamed Ben Ali",
+          "poste": "DD",
+          "age": 35,
+          "notes": {
+            "off": 64,
+            "tec": 77,
+            "mouv": 78,
+            "pui": 72,
+            "ment": 78,
+            "def": 89,
+            "gk": 32
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_5676",
+          "nom": "Hossam Ben Tarek",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 62,
+            "tec": 71,
+            "mouv": 70,
+            "pui": 87,
+            "ment": 78,
+            "def": 81,
+            "gk": 30
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3429",
+          "nom": "Amine El-Banna",
+          "poste": "DD",
+          "age": 17,
+          "notes": {
+            "off": 48,
+            "tec": 71,
+            "mouv": 75,
+            "pui": 81,
+            "ment": 67,
+            "def": 89,
+            "gk": 21
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082248_7943",
+          "nom": "Omar Ben Omar",
+          "poste": "DD",
+          "age": 17,
+          "notes": {
+            "off": 54,
+            "tec": 68,
+            "mouv": 75,
+            "pui": 79,
+            "ment": 77,
+            "def": 84,
+            "gk": 23
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_9230",
+          "nom": "Amine Al-Rashid",
+          "poste": "DG",
+          "age": 28,
+          "notes": {
+            "off": 65,
+            "tec": 76,
+            "mouv": 75,
+            "pui": 70,
+            "ment": 68,
+            "def": 80,
+            "gk": 35
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_6631",
+          "nom": "Ahmed Al-Khatib",
+          "poste": "DD",
+          "age": 36,
+          "notes": {
+            "off": 64,
+            "tec": 74,
+            "mouv": 84,
+            "pui": 77,
+            "ment": 79,
+            "def": 86,
+            "gk": 42
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_8424",
+          "nom": "Adel Ben Khalid",
+          "poste": "DC",
+          "age": 28,
+          "notes": {
+            "off": 64,
+            "tec": 72,
+            "mouv": 76,
+            "pui": 86,
+            "ment": 70,
+            "def": 90,
+            "gk": 39
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_7504",
+          "nom": "Antar Al-Amin",
+          "poste": "DG",
+          "age": 19,
+          "notes": {
+            "off": 65,
+            "tec": 81,
+            "mouv": 81,
+            "pui": 78,
+            "ment": 80,
+            "def": 84,
+            "gk": 31
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_3281",
+          "nom": "Magdy Ben Ahmed",
+          "poste": "DG",
+          "age": 18,
+          "notes": {
+            "off": 56,
+            "tec": 69,
+            "mouv": 73,
+            "pui": 87,
+            "ment": 70,
+            "def": 90,
+            "gk": 33
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_7575",
+          "nom": "Hatem Ben Tarek",
+          "poste": "DG",
+          "age": 34,
+          "notes": {
+            "off": 68,
+            "tec": 72,
+            "mouv": 71,
+            "pui": 81,
+            "ment": 77,
+            "def": 92,
+            "gk": 40
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_5171",
+          "nom": "Tamer Al-Rashid",
+          "poste": "DC",
+          "age": 30,
+          "notes": {
+            "off": 57,
+            "tec": 73,
+            "mouv": 81,
+            "pui": 73,
+            "ment": 81,
+            "def": 91,
+            "gk": 18
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_8714",
+          "nom": "Wael Ben Ibrahim",
+          "poste": "DC",
+          "age": 29,
+          "notes": {
+            "off": 51,
+            "tec": 81,
+            "mouv": 77,
+            "pui": 82,
+            "ment": 69,
+            "def": 87,
+            "gk": 36
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_3657",
+          "nom": "Hossam El-Shazly",
+          "poste": "DC",
+          "age": 28,
+          "notes": {
+            "off": 47,
+            "tec": 68,
+            "mouv": 70,
+            "pui": 75,
+            "ment": 70,
+            "def": 82,
+            "gk": 22
+          },
+          "global": 65
+        },
+        {
+          "id": "p_1775045082249_2649",
+          "nom": "Nabil Ben Tarek",
+          "poste": "DD",
+          "age": 25,
+          "notes": {
+            "off": 65,
+            "tec": 77,
+            "mouv": 75,
+            "pui": 88,
+            "ment": 80,
+            "def": 87,
+            "gk": 26
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_9342",
+          "nom": "Hassan Ben Youssef",
+          "poste": "DC",
+          "age": 20,
+          "notes": {
+            "off": 66,
+            "tec": 74,
+            "mouv": 75,
+            "pui": 81,
+            "ment": 76,
+            "def": 92,
+            "gk": 27
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_1043",
+          "nom": "Hatem Ben Musa",
+          "poste": "DG",
+          "age": 24,
+          "notes": {
+            "off": 55,
+            "tec": 76,
+            "mouv": 75,
+            "pui": 75,
+            "ment": 78,
+            "def": 91,
+            "gk": 21
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_7808",
+          "nom": "Mehdi El-Khoury",
+          "poste": "DC",
+          "age": 18,
+          "notes": {
+            "off": 59,
+            "tec": 76,
+            "mouv": 73,
+            "pui": 77,
+            "ment": 74,
+            "def": 77,
+            "gk": 42
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_1088",
+          "nom": "Samir Al-Farsi",
+          "poste": "DG",
+          "age": 21,
+          "notes": {
+            "off": 71,
+            "tec": 74,
+            "mouv": 81,
+            "pui": 89,
+            "ment": 74,
+            "def": 85,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_8367",
+          "nom": "Hossam Al-Rashid",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 65,
+            "tec": 81,
+            "mouv": 78,
+            "pui": 87,
+            "ment": 78,
+            "def": 93,
+            "gk": 34
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_7728",
+          "nom": "Omar Al-Zahrani",
+          "poste": "DD",
+          "age": 33,
+          "notes": {
+            "off": 61,
+            "tec": 77,
+            "mouv": 79,
+            "pui": 72,
+            "ment": 69,
+            "def": 82,
+            "gk": 32
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_3516",
+          "nom": "Omar Ben Omar",
+          "poste": "DC",
+          "age": 30,
+          "notes": {
+            "off": 71,
+            "tec": 77,
+            "mouv": 78,
+            "pui": 88,
+            "ment": 78,
+            "def": 83,
+            "gk": 30
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_6423",
+          "nom": "Tamer El-Banna",
+          "poste": "DC",
+          "age": 34,
+          "notes": {
+            "off": 69,
+            "tec": 77,
+            "mouv": 81,
+            "pui": 88,
+            "ment": 77,
+            "def": 92,
+            "gk": 33
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_4436",
+          "nom": "Antar El-Sharif",
+          "poste": "DD",
+          "age": 29,
+          "notes": {
+            "off": 59,
+            "tec": 80,
+            "mouv": 68,
+            "pui": 70,
+            "ment": 66,
+            "def": 88,
+            "gk": 34
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_7155",
+          "nom": "Galal Ben Omar",
+          "poste": "DD",
+          "age": 18,
+          "notes": {
+            "off": 50,
+            "tec": 70,
+            "mouv": 77,
+            "pui": 83,
+            "ment": 72,
+            "def": 77,
+            "gk": 26
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082249_8776",
+          "nom": "Badr El-Shazly",
+          "poste": "DD",
+          "age": 24,
+          "notes": {
+            "off": 55,
+            "tec": 75,
+            "mouv": 78,
+            "pui": 86,
+            "ment": 70,
+            "def": 82,
+            "gk": 31
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_6652",
+          "nom": "Rachid Al-Khatib",
+          "poste": "DD",
+          "age": 25,
+          "notes": {
+            "off": 62,
+            "tec": 70,
+            "mouv": 70,
+            "pui": 81,
+            "ment": 79,
+            "def": 89,
+            "gk": 23
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_7989",
+          "nom": "Antar Al-Rashid",
+          "poste": "DD",
+          "age": 23,
+          "notes": {
+            "off": 50,
+            "tec": 65,
+            "mouv": 65,
+            "pui": 75,
+            "ment": 69,
+            "def": 79,
+            "gk": 24
+          },
+          "global": 64
+        },
+        {
+          "id": "p_1775045082249_9863",
+          "nom": "Wael Al-Hassan",
+          "poste": "DD",
+          "age": 22,
+          "notes": {
+            "off": 58,
+            "tec": 65,
+            "mouv": 78,
+            "pui": 80,
+            "ment": 71,
+            "def": 81,
+            "gk": 30
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082249_5814",
+          "nom": "Omar Ben Ali",
+          "poste": "DC",
+          "age": 21,
+          "notes": {
+            "off": 64,
+            "tec": 78,
+            "mouv": 74,
+            "pui": 76,
+            "ment": 75,
+            "def": 93,
+            "gk": 23
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_9666",
+          "nom": "Walid Ben Musa",
+          "poste": "DC",
+          "age": 25,
+          "notes": {
+            "off": 49,
+            "tec": 79,
+            "mouv": 77,
+            "pui": 80,
+            "ment": 74,
+            "def": 88,
+            "gk": 31
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_4793",
+          "nom": "Nabil Al-Sayed",
+          "poste": "DG",
+          "age": 31,
+          "notes": {
+            "off": 67,
+            "tec": 69,
+            "mouv": 78,
+            "pui": 81,
+            "ment": 69,
+            "def": 81,
+            "gk": 24
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_4970",
+          "nom": "Mehdi Al-Khatib",
+          "poste": "DC",
+          "age": 30,
+          "notes": {
+            "off": 60,
+            "tec": 74,
+            "mouv": 74,
+            "pui": 82,
+            "ment": 66,
+            "def": 80,
+            "gk": 38
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_2783",
+          "nom": "Hussein El-Tayeb",
+          "poste": "DG",
+          "age": 17,
+          "notes": {
+            "off": 57,
+            "tec": 66,
+            "mouv": 75,
+            "pui": 71,
+            "ment": 72,
+            "def": 84,
+            "gk": 27
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082249_3737",
+          "nom": "Walid Ben Youssef",
+          "poste": "DG",
+          "age": 28,
+          "notes": {
+            "off": 69,
+            "tec": 76,
+            "mouv": 69,
+            "pui": 83,
+            "ment": 75,
+            "def": 87,
+            "gk": 36
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_1580",
+          "nom": "Ayman Ben Khalid",
+          "poste": "DG",
+          "age": 30,
+          "notes": {
+            "off": 65,
+            "tec": 77,
+            "mouv": 69,
+            "pui": 72,
+            "ment": 77,
+            "def": 83,
+            "gk": 28
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_9002",
+          "nom": "Ibrahim Al-Rashid",
+          "poste": "DD",
+          "age": 27,
+          "notes": {
+            "off": 65,
+            "tec": 65,
+            "mouv": 79,
+            "pui": 72,
+            "ment": 77,
+            "def": 84,
+            "gk": 37
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_3497",
+          "nom": "Younes Ben Ali",
+          "poste": "DD",
+          "age": 25,
+          "notes": {
+            "off": 64,
+            "tec": 77,
+            "mouv": 71,
+            "pui": 73,
+            "ment": 71,
+            "def": 88,
+            "gk": 27
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_9107",
+          "nom": "Walid Ben Ali",
+          "poste": "DD",
+          "age": 31,
+          "notes": {
+            "off": 66,
+            "tec": 77,
+            "mouv": 79,
+            "pui": 80,
+            "ment": 77,
+            "def": 82,
+            "gk": 23
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_1776",
+          "nom": "Antar Ben Ali",
+          "poste": "DD",
+          "age": 21,
+          "notes": {
+            "off": 70,
+            "tec": 85,
+            "mouv": 73,
+            "pui": 79,
+            "ment": 81,
+            "def": 89,
+            "gk": 20
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_1737",
+          "nom": "Nabil Ben Hassan",
+          "poste": "DD",
+          "age": 17,
+          "notes": {
+            "off": 61,
+            "tec": 75,
+            "mouv": 72,
+            "pui": 74,
+            "ment": 74,
+            "def": 81,
+            "gk": 34
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_6882",
+          "nom": "Magdy Ben Tarek",
+          "poste": "DG",
+          "age": 30,
+          "notes": {
+            "off": 55,
+            "tec": 77,
+            "mouv": 81,
+            "pui": 80,
+            "ment": 81,
+            "def": 93,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_6439",
+          "nom": "Omar El-Sharif",
+          "poste": "DC",
+          "age": 30,
+          "notes": {
+            "off": 57,
+            "tec": 78,
+            "mouv": 78,
+            "pui": 84,
+            "ment": 76,
+            "def": 81,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_9846",
+          "nom": "Bassem El-Qadi",
+          "poste": "DG",
+          "age": 33,
+          "notes": {
+            "off": 52,
+            "tec": 70,
+            "mouv": 77,
+            "pui": 82,
+            "ment": 75,
+            "def": 82,
+            "gk": 37
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_9388",
+          "nom": "Wael Ben Tarek",
+          "poste": "DC",
+          "age": 24,
+          "notes": {
+            "off": 68,
+            "tec": 75,
+            "mouv": 74,
+            "pui": 73,
+            "ment": 79,
+            "def": 86,
+            "gk": 25
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_3396",
+          "nom": "Magdy Ben Omar",
+          "poste": "DG",
+          "age": 34,
+          "notes": {
+            "off": 58,
+            "tec": 72,
+            "mouv": 72,
+            "pui": 88,
+            "ment": 71,
+            "def": 84,
+            "gk": 19
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_4423",
+          "nom": "Faris Ben Musa",
+          "poste": "DG",
+          "age": 21,
+          "notes": {
+            "off": 66,
+            "tec": 76,
+            "mouv": 68,
+            "pui": 85,
+            "ment": 73,
+            "def": 83,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_6755",
+          "nom": "Amine El-Khoury",
+          "poste": "DC",
+          "age": 21,
+          "notes": {
+            "off": 66,
+            "tec": 80,
+            "mouv": 75,
+            "pui": 75,
+            "ment": 80,
+            "def": 88,
+            "gk": 29
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_3413",
+          "nom": "Karim Al-Nouri",
+          "poste": "MC",
+          "age": 31,
+          "notes": {
+            "off": 82,
+            "tec": 76,
+            "mouv": 86,
+            "pui": 77,
+            "ment": 72,
+            "def": 81,
+            "gk": 18
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_4805",
+          "nom": "Walid Ben Youssef",
+          "poste": "MOG",
+          "age": 22,
+          "notes": {
+            "off": 75,
+            "tec": 81,
+            "mouv": 80,
+            "pui": 83,
+            "ment": 75,
+            "def": 74,
+            "gk": 16
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_9383",
+          "nom": "Faris Ben Ibrahim",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 70,
+            "tec": 80,
+            "mouv": 79,
+            "pui": 72,
+            "ment": 74,
+            "def": 68,
+            "gk": 24
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_4302",
+          "nom": "Sofiane Al-Zahrani",
+          "poste": "MOG",
+          "age": 36,
+          "notes": {
+            "off": 75,
+            "tec": 81,
+            "mouv": 83,
+            "pui": 67,
+            "ment": 79,
+            "def": 81,
+            "gk": 26
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_3115",
+          "nom": "Jamal Ben Salah",
+          "poste": "MDC",
+          "age": 27,
+          "notes": {
+            "off": 71,
+            "tec": 81,
+            "mouv": 85,
+            "pui": 72,
+            "ment": 79,
+            "def": 82,
+            "gk": 21
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_9215",
+          "nom": "Mostafa Ben Tarek",
+          "poste": "MDC",
+          "age": 27,
+          "notes": {
+            "off": 73,
+            "tec": 80,
+            "mouv": 77,
+            "pui": 68,
+            "ment": 74,
+            "def": 82,
+            "gk": 34
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_2943",
+          "nom": "Osama El-Shazly",
+          "poste": "MO",
+          "age": 33,
+          "notes": {
+            "off": 74,
+            "tec": 83,
+            "mouv": 83,
+            "pui": 80,
+            "ment": 72,
+            "def": 80,
+            "gk": 26
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_9383",
+          "nom": "Jamal Al-Khatib",
+          "poste": "MC",
+          "age": 20,
+          "notes": {
+            "off": 67,
+            "tec": 78,
+            "mouv": 80,
+            "pui": 81,
+            "ment": 80,
+            "def": 68,
+            "gk": 34
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_5473",
+          "nom": "Osama Ben Youssef",
+          "poste": "MC",
+          "age": 19,
+          "notes": {
+            "off": 65,
+            "tec": 72,
+            "mouv": 82,
+            "pui": 78,
+            "ment": 72,
+            "def": 69,
+            "gk": 20
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_3389",
+          "nom": "Osama Al-Farsi",
+          "poste": "MO",
+          "age": 30,
+          "notes": {
+            "off": 76,
+            "tec": 72,
+            "mouv": 72,
+            "pui": 80,
+            "ment": 71,
+            "def": 68,
+            "gk": 34
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_1512",
+          "nom": "Sherif Ben Ibrahim",
+          "poste": "MO",
+          "age": 28,
+          "notes": {
+            "off": 70,
+            "tec": 76,
+            "mouv": 78,
+            "pui": 75,
+            "ment": 77,
+            "def": 71,
+            "gk": 20
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_4340",
+          "nom": "Ramzy Ben Tarek",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 71,
+            "tec": 78,
+            "mouv": 83,
+            "pui": 70,
+            "ment": 75,
+            "def": 65,
+            "gk": 32
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_2332",
+          "nom": "Khaled El-Shazly",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 82,
+            "tec": 86,
+            "mouv": 88,
+            "pui": 80,
+            "ment": 70,
+            "def": 79,
+            "gk": 21
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_7547",
+          "nom": "Galal El-Qadi",
+          "poste": "GK",
+          "age": 29,
+          "notes": {
+            "off": 50,
+            "tec": 73,
+            "mouv": 58,
+            "pui": 71,
+            "ment": 71,
+            "def": 69,
+            "gk": 93
+          },
+          "global": 65
+        },
+        {
+          "id": "p_1775045082248_7699",
+          "nom": "Tarek El-Sharif",
+          "poste": "MOG",
+          "age": 17,
+          "notes": {
+            "off": 76,
+            "tec": 77,
+            "mouv": 89,
+            "pui": 71,
+            "ment": 72,
+            "def": 71,
+            "gk": 29
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_1833",
+          "nom": "Samir Al-Zahrani",
+          "poste": "MDC",
+          "age": 21,
+          "notes": {
+            "off": 76,
+            "tec": 72,
+            "mouv": 80,
+            "pui": 68,
+            "ment": 67,
+            "def": 82,
+            "gk": 24
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3968",
+          "nom": "Faris El-Helal",
+          "poste": "MO",
+          "age": 32,
+          "notes": {
+            "off": 68,
+            "tec": 85,
+            "mouv": 87,
+            "pui": 77,
+            "ment": 81,
+            "def": 78,
+            "gk": 26
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_9081",
+          "nom": "Bilal Ben Hassan",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 83,
+            "tec": 79,
+            "mouv": 82,
+            "pui": 72,
+            "ment": 71,
+            "def": 71,
+            "gk": 18
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_2450",
+          "nom": "Ahmed Ben Youssef",
+          "poste": "MC",
+          "age": 34,
+          "notes": {
+            "off": 68,
+            "tec": 79,
+            "mouv": 83,
+            "pui": 71,
+            "ment": 71,
+            "def": 72,
+            "gk": 17
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_4694",
+          "nom": "Ismail Al-Saad",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 65,
+            "tec": 82,
+            "mouv": 81,
+            "pui": 64,
+            "ment": 72,
+            "def": 73,
+            "gk": 21
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_8951",
+          "nom": "Amine Al-Mansouri",
+          "poste": "MDC",
+          "age": 32,
+          "notes": {
+            "off": 75,
+            "tec": 84,
+            "mouv": 85,
+            "pui": 75,
+            "ment": 70,
+            "def": 70,
+            "gk": 26
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_7454",
+          "nom": "Bassem Ben Salah",
+          "poste": "MOG",
+          "age": 28,
+          "notes": {
+            "off": 82,
+            "tec": 82,
+            "mouv": 78,
+            "pui": 83,
+            "ment": 76,
+            "def": 76,
+            "gk": 18
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_3563",
+          "nom": "Tarek Ben Ahmed",
+          "poste": "MOD",
+          "age": 22,
+          "notes": {
+            "off": 84,
+            "tec": 85,
+            "mouv": 80,
+            "pui": 83,
+            "ment": 78,
+            "def": 82,
+            "gk": 21
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_9812",
+          "nom": "Hossam Al-Zahrani",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 73,
+            "tec": 85,
+            "mouv": 75,
+            "pui": 78,
+            "ment": 72,
+            "def": 83,
+            "gk": 17
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_7212",
+          "nom": "Badr El-Shazly",
+          "poste": "MC",
+          "age": 23,
+          "notes": {
+            "off": 73,
+            "tec": 70,
+            "mouv": 76,
+            "pui": 69,
+            "ment": 72,
+            "def": 68,
+            "gk": 18
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_5436",
+          "nom": "Hicham El-Tayeb",
+          "poste": "MO",
+          "age": 23,
+          "notes": {
+            "off": 80,
+            "tec": 79,
+            "mouv": 76,
+            "pui": 85,
+            "ment": 80,
+            "def": 74,
+            "gk": 29
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_4474",
+          "nom": "Badr El-Khoury",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 71,
+            "tec": 81,
+            "mouv": 77,
+            "pui": 71,
+            "ment": 72,
+            "def": 81,
+            "gk": 31
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_8759",
+          "nom": "Mohamed Al-Saad",
+          "poste": "MO",
+          "age": 27,
+          "notes": {
+            "off": 68,
+            "tec": 74,
+            "mouv": 83,
+            "pui": 73,
+            "ment": 69,
+            "def": 70,
+            "gk": 34
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_1626",
+          "nom": "Samir Al-Khatib",
+          "poste": "MOD",
+          "age": 27,
+          "notes": {
+            "off": 82,
+            "tec": 89,
+            "mouv": 76,
+            "pui": 84,
+            "ment": 78,
+            "def": 86,
+            "gk": 17
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_8747",
+          "nom": "Hossam Al-Hassan",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 69,
+            "tec": 84,
+            "mouv": 72,
+            "pui": 80,
+            "ment": 76,
+            "def": 65,
+            "gk": 34
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_2276",
+          "nom": "Galal Ben Hassan",
+          "poste": "MOD",
+          "age": 32,
+          "notes": {
+            "off": 71,
+            "tec": 74,
+            "mouv": 85,
+            "pui": 76,
+            "ment": 74,
+            "def": 79,
+            "gk": 31
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_3556",
+          "nom": "Ramzy Ben Salah",
+          "poste": "MOD",
+          "age": 29,
+          "notes": {
+            "off": 71,
+            "tec": 80,
+            "mouv": 70,
+            "pui": 80,
+            "ment": 69,
+            "def": 78,
+            "gk": 34
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_2586",
+          "nom": "Marwan Al-Amin",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 79,
+            "tec": 89,
+            "mouv": 87,
+            "pui": 72,
+            "ment": 78,
+            "def": 78,
+            "gk": 34
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_8217",
+          "nom": "Nasser El-Qadi",
+          "poste": "MDC",
+          "age": 27,
+          "notes": {
+            "off": 86,
+            "tec": 79,
+            "mouv": 85,
+            "pui": 85,
+            "ment": 76,
+            "def": 80,
+            "gk": 22
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_9694",
+          "nom": "Mohamed Ben Hassan",
+          "poste": "MDC",
+          "age": 22,
+          "notes": {
+            "off": 80,
+            "tec": 88,
+            "mouv": 89,
+            "pui": 78,
+            "ment": 80,
+            "def": 83,
+            "gk": 27
+          },
+          "global": 81
+        },
+        {
+          "id": "p_1775045082248_7860",
+          "nom": "Amine Ben Ibrahim",
+          "poste": "MOG",
+          "age": 27,
+          "notes": {
+            "off": 83,
+            "tec": 87,
+            "mouv": 79,
+            "pui": 79,
+            "ment": 74,
+            "def": 68,
+            "gk": 32
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_8990",
+          "nom": "Hicham Al-Nouri",
+          "poste": "MOD",
+          "age": 21,
+          "notes": {
+            "off": 78,
+            "tec": 83,
+            "mouv": 78,
+            "pui": 79,
+            "ment": 78,
+            "def": 79,
+            "gk": 15
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_9611",
+          "nom": "Khaled Al-Rashid",
+          "poste": "MOG",
+          "age": 35,
+          "notes": {
+            "off": 84,
+            "tec": 80,
+            "mouv": 77,
+            "pui": 73,
+            "ment": 79,
+            "def": 84,
+            "gk": 25
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_7122",
+          "nom": "Galal Al-Jaziri",
+          "poste": "MDC",
+          "age": 23,
+          "notes": {
+            "off": 81,
+            "tec": 79,
+            "mouv": 81,
+            "pui": 71,
+            "ment": 78,
+            "def": 67,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_5007",
+          "nom": "Hussein Al-Zahrani",
+          "poste": "MO",
+          "age": 35,
+          "notes": {
+            "off": 67,
+            "tec": 87,
+            "mouv": 80,
+            "pui": 75,
+            "ment": 78,
+            "def": 68,
+            "gk": 18
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_4524",
+          "nom": "Samir Ben Omar",
+          "poste": "MC",
+          "age": 23,
+          "notes": {
+            "off": 74,
+            "tec": 77,
+            "mouv": 83,
+            "pui": 78,
+            "ment": 73,
+            "def": 77,
+            "gk": 35
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_6920",
+          "nom": "Hatem Al-Khatib",
+          "poste": "MC",
+          "age": 26,
+          "notes": {
+            "off": 76,
+            "tec": 74,
+            "mouv": 73,
+            "pui": 64,
+            "ment": 76,
+            "def": 68,
+            "gk": 21
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_1093",
+          "nom": "Tarek El-Khoury",
+          "poste": "MOD",
+          "age": 32,
+          "notes": {
+            "off": 79,
+            "tec": 77,
+            "mouv": 80,
+            "pui": 81,
+            "ment": 78,
+            "def": 79,
+            "gk": 31
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_8509",
+          "nom": "Sami El-Qadi",
+          "poste": "MOD",
+          "age": 30,
+          "notes": {
+            "off": 73,
+            "tec": 82,
+            "mouv": 81,
+            "pui": 82,
+            "ment": 70,
+            "def": 70,
+            "gk": 21
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_4628",
+          "nom": "Ayman El-Tayeb",
+          "poste": "MC",
+          "age": 34,
+          "notes": {
+            "off": 78,
+            "tec": 79,
+            "mouv": 74,
+            "pui": 67,
+            "ment": 70,
+            "def": 73,
+            "gk": 32
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_5020",
+          "nom": "Alaa Ben Salah",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 80,
+            "tec": 82,
+            "mouv": 89,
+            "pui": 83,
+            "ment": 78,
+            "def": 79,
+            "gk": 27
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_3309",
+          "nom": "Marwan El-Masry",
+          "poste": "MOG",
+          "age": 21,
+          "notes": {
+            "off": 72,
+            "tec": 82,
+            "mouv": 76,
+            "pui": 71,
+            "ment": 71,
+            "def": 75,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_5876",
+          "nom": "Alaa Al-Khatib",
+          "poste": "MC",
+          "age": 29,
+          "notes": {
+            "off": 71,
+            "tec": 78,
+            "mouv": 74,
+            "pui": 68,
+            "ment": 78,
+            "def": 80,
+            "gk": 21
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3972",
+          "nom": "Rami Ben Ibrahim",
+          "poste": "MDC",
+          "age": 25,
+          "notes": {
+            "off": 80,
+            "tec": 77,
+            "mouv": 83,
+            "pui": 73,
+            "ment": 82,
+            "def": 67,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_7964",
+          "nom": "Nabil Al-Jaziri",
+          "poste": "MOD",
+          "age": 25,
+          "notes": {
+            "off": 81,
+            "tec": 84,
+            "mouv": 87,
+            "pui": 84,
+            "ment": 81,
+            "def": 85,
+            "gk": 31
+          },
+          "global": 81
+        },
+        {
+          "id": "p_1775045082248_9715",
+          "nom": "Marwan El-Helal",
+          "poste": "MO",
+          "age": 31,
+          "notes": {
+            "off": 81,
+            "tec": 83,
+            "mouv": 77,
+            "pui": 73,
+            "ment": 79,
+            "def": 84,
+            "gk": 19
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_4112",
+          "nom": "Ismail Ben Tarek",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 80,
+            "tec": 77,
+            "mouv": 86,
+            "pui": 77,
+            "ment": 76,
+            "def": 73,
+            "gk": 26
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_8722",
+          "nom": "Kareem Ben Tarek",
+          "poste": "MO",
+          "age": 17,
+          "notes": {
+            "off": 75,
+            "tec": 74,
+            "mouv": 83,
+            "pui": 77,
+            "ment": 76,
+            "def": 70,
+            "gk": 15
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_5319",
+          "nom": "Walid El-Banna",
+          "poste": "MC",
+          "age": 27,
+          "notes": {
+            "off": 72,
+            "tec": 82,
+            "mouv": 79,
+            "pui": 69,
+            "ment": 82,
+            "def": 84,
+            "gk": 35
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_3725",
+          "nom": "Amir Ben Salah",
+          "poste": "MC",
+          "age": 26,
+          "notes": {
+            "off": 64,
+            "tec": 74,
+            "mouv": 83,
+            "pui": 70,
+            "ment": 68,
+            "def": 77,
+            "gk": 15
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_2277",
+          "nom": "Ibrahim El-Shazly",
+          "poste": "MOG",
+          "age": 33,
+          "notes": {
+            "off": 74,
+            "tec": 80,
+            "mouv": 73,
+            "pui": 80,
+            "ment": 68,
+            "def": 77,
+            "gk": 15
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_3009",
+          "nom": "Ali El-Tayeb",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 75,
+            "tec": 83,
+            "mouv": 73,
+            "pui": 82,
+            "ment": 77,
+            "def": 67,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_2599",
+          "nom": "Karim El-Banna",
+          "poste": "MDC",
+          "age": 17,
+          "notes": {
+            "off": 78,
+            "tec": 82,
+            "mouv": 85,
+            "pui": 78,
+            "ment": 81,
+            "def": 67,
+            "gk": 22
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_6436",
+          "nom": "Nasser Al-Zahrani",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 83,
+            "tec": 90,
+            "mouv": 89,
+            "pui": 86,
+            "ment": 73,
+            "def": 76,
+            "gk": 22
+          },
+          "global": 81
+        },
+        {
+          "id": "p_1775045082248_7481",
+          "nom": "Ziad Al-Jaziri",
+          "poste": "MC",
+          "age": 29,
+          "notes": {
+            "off": 85,
+            "tec": 77,
+            "mouv": 76,
+            "pui": 73,
+            "ment": 78,
+            "def": 84,
+            "gk": 32
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_5995",
+          "nom": "Wael El-Qadi",
+          "poste": "MOG",
+          "age": 30,
+          "notes": {
+            "off": 76,
+            "tec": 83,
+            "mouv": 82,
+            "pui": 81,
+            "ment": 83,
+            "def": 74,
+            "gk": 19
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_3847",
+          "nom": "Tarek Al-Khatib",
+          "poste": "MC",
+          "age": 35,
+          "notes": {
+            "off": 70,
+            "tec": 78,
+            "mouv": 71,
+            "pui": 66,
+            "ment": 78,
+            "def": 71,
+            "gk": 16
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_8201",
+          "nom": "Mehdi Al-Khatib",
+          "poste": "MDC",
+          "age": 29,
+          "notes": {
+            "off": 65,
+            "tec": 75,
+            "mouv": 74,
+            "pui": 80,
+            "ment": 69,
+            "def": 65,
+            "gk": 29
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_9187",
+          "nom": "Faris El-Helal",
+          "poste": "MC",
+          "age": 32,
+          "notes": {
+            "off": 69,
+            "tec": 83,
+            "mouv": 83,
+            "pui": 79,
+            "ment": 81,
+            "def": 75,
+            "gk": 15
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_3020",
+          "nom": "Mostafa Al-Jaziri",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 68,
+            "tec": 74,
+            "mouv": 71,
+            "pui": 74,
+            "ment": 73,
+            "def": 68,
+            "gk": 20
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_3300",
+          "nom": "Badr El-Masry",
+          "poste": "MC",
+          "age": 19,
+          "notes": {
+            "off": 82,
+            "tec": 80,
+            "mouv": 84,
+            "pui": 73,
+            "ment": 71,
+            "def": 81,
+            "gk": 18
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_9120",
+          "nom": "Hatem El-Qadi",
+          "poste": "MC",
+          "age": 29,
+          "notes": {
+            "off": 71,
+            "tec": 86,
+            "mouv": 73,
+            "pui": 72,
+            "ment": 75,
+            "def": 82,
+            "gk": 18
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_4298",
+          "nom": "Ramzy Ben Ibrahim",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 69,
+            "tec": 86,
+            "mouv": 75,
+            "pui": 69,
+            "ment": 73,
+            "def": 83,
+            "gk": 23
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_2178",
+          "nom": "Adel Ben Ali",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 77,
+            "tec": 85,
+            "mouv": 77,
+            "pui": 82,
+            "ment": 80,
+            "def": 72,
+            "gk": 31
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_9729",
+          "nom": "Ali Al-Khatib",
+          "poste": "MOD",
+          "age": 31,
+          "notes": {
+            "off": 83,
+            "tec": 83,
+            "mouv": 83,
+            "pui": 82,
+            "ment": 76,
+            "def": 82,
+            "gk": 28
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_3065",
+          "nom": "Youssef El-Shazly",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 77,
+            "tec": 87,
+            "mouv": 86,
+            "pui": 67,
+            "ment": 72,
+            "def": 83,
+            "gk": 19
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_7782",
+          "nom": "Magdy Ben Khalid",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 77,
+            "tec": 73,
+            "mouv": 70,
+            "pui": 80,
+            "ment": 71,
+            "def": 74,
+            "gk": 24
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_7041",
+          "nom": "Alaa Al-Saad",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 78,
+            "tec": 74,
+            "mouv": 73,
+            "pui": 79,
+            "ment": 75,
+            "def": 84,
+            "gk": 32
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_1527",
+          "nom": "Ahmed El-Amin",
+          "poste": "MOG",
+          "age": 29,
+          "notes": {
+            "off": 70,
+            "tec": 79,
+            "mouv": 84,
+            "pui": 72,
+            "ment": 71,
+            "def": 73,
+            "gk": 26
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_4435",
+          "nom": "Emad Ben Ali",
+          "poste": "MOD",
+          "age": 18,
+          "notes": {
+            "off": 69,
+            "tec": 76,
+            "mouv": 86,
+            "pui": 83,
+            "ment": 70,
+            "def": 85,
+            "gk": 29
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_9821",
+          "nom": "Ibrahim Al-Hassan",
+          "poste": "MOG",
+          "age": 35,
+          "notes": {
+            "off": 66,
+            "tec": 77,
+            "mouv": 73,
+            "pui": 75,
+            "ment": 66,
+            "def": 65,
+            "gk": 28
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082248_3232",
+          "nom": "Tarek El-Khoury",
+          "poste": "MO",
+          "age": 21,
+          "notes": {
+            "off": 74,
+            "tec": 88,
+            "mouv": 81,
+            "pui": 69,
+            "ment": 78,
+            "def": 78,
+            "gk": 23
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_3119",
+          "nom": "Alaa Al-Zahrani",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 78,
+            "tec": 89,
+            "mouv": 89,
+            "pui": 72,
+            "ment": 72,
+            "def": 86,
+            "gk": 15
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_7360",
+          "nom": "Emad Al-Jaziri",
+          "poste": "MOD",
+          "age": 23,
+          "notes": {
+            "off": 78,
+            "tec": 83,
+            "mouv": 84,
+            "pui": 74,
+            "ment": 74,
+            "def": 73,
+            "gk": 31
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_6103",
+          "nom": "Bilal El-Shazly",
+          "poste": "MOD",
+          "age": 31,
+          "notes": {
+            "off": 78,
+            "tec": 76,
+            "mouv": 79,
+            "pui": 71,
+            "ment": 80,
+            "def": 81,
+            "gk": 22
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_1265",
+          "nom": "Wael Ben Tarek",
+          "poste": "MO",
+          "age": 22,
+          "notes": {
+            "off": 82,
+            "tec": 81,
+            "mouv": 87,
+            "pui": 77,
+            "ment": 77,
+            "def": 70,
+            "gk": 15
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_7150",
+          "nom": "Mohamed Al-Farsi",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 76,
+            "tec": 82,
+            "mouv": 76,
+            "pui": 82,
+            "ment": 72,
+            "def": 75,
+            "gk": 20
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_8902",
+          "nom": "Badr Ben Tarek",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 76,
+            "tec": 80,
+            "mouv": 81,
+            "pui": 75,
+            "ment": 75,
+            "def": 82,
+            "gk": 18
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_5196",
+          "nom": "Emad Ben Khalid",
+          "poste": "MDC",
+          "age": 29,
+          "notes": {
+            "off": 80,
+            "tec": 79,
+            "mouv": 80,
+            "pui": 73,
+            "ment": 73,
+            "def": 67,
+            "gk": 31
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_5800",
+          "nom": "Youssef Al-Hassan",
+          "poste": "MDC",
+          "age": 26,
+          "notes": {
+            "off": 78,
+            "tec": 81,
+            "mouv": 80,
+            "pui": 74,
+            "ment": 72,
+            "def": 81,
+            "gk": 16
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_3142",
+          "nom": "Amir Al-Saad",
+          "poste": "MO",
+          "age": 25,
+          "notes": {
+            "off": 80,
+            "tec": 80,
+            "mouv": 71,
+            "pui": 71,
+            "ment": 74,
+            "def": 76,
+            "gk": 30
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_3632",
+          "nom": "Samir Al-Sayed",
+          "poste": "MDC",
+          "age": 26,
+          "notes": {
+            "off": 69,
+            "tec": 79,
+            "mouv": 83,
+            "pui": 69,
+            "ment": 83,
+            "def": 80,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_6344",
+          "nom": "Rachid Ben Salah",
+          "poste": "MDC",
+          "age": 35,
+          "notes": {
+            "off": 78,
+            "tec": 77,
+            "mouv": 81,
+            "pui": 79,
+            "ment": 74,
+            "def": 73,
+            "gk": 23
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_8836",
+          "nom": "Ziad El-Helal",
+          "poste": "MOG",
+          "age": 29,
+          "notes": {
+            "off": 76,
+            "tec": 83,
+            "mouv": 88,
+            "pui": 69,
+            "ment": 75,
+            "def": 82,
+            "gk": 34
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_6151",
+          "nom": "Younes Ben Youssef",
+          "poste": "MOG",
+          "age": 21,
+          "notes": {
+            "off": 72,
+            "tec": 83,
+            "mouv": 84,
+            "pui": 70,
+            "ment": 75,
+            "def": 73,
+            "gk": 22
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_7620",
+          "nom": "Adel Ben Ali",
+          "poste": "MO",
+          "age": 28,
+          "notes": {
+            "off": 67,
+            "tec": 71,
+            "mouv": 74,
+            "pui": 71,
+            "ment": 75,
+            "def": 72,
+            "gk": 18
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_7615",
+          "nom": "Faris El-Banna",
+          "poste": "MDC",
+          "age": 34,
+          "notes": {
+            "off": 77,
+            "tec": 82,
+            "mouv": 82,
+            "pui": 78,
+            "ment": 73,
+            "def": 83,
+            "gk": 26
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_4015",
+          "nom": "Tamer Al-Saad",
+          "poste": "MOG",
+          "age": 34,
+          "notes": {
+            "off": 84,
+            "tec": 74,
+            "mouv": 87,
+            "pui": 81,
+            "ment": 81,
+            "def": 84,
+            "gk": 24
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_5492",
+          "nom": "Tamer Al-Mansouri",
+          "poste": "MOD",
+          "age": 23,
+          "notes": {
+            "off": 85,
+            "tec": 83,
+            "mouv": 76,
+            "pui": 80,
+            "ment": 82,
+            "def": 83,
+            "gk": 22
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_6984",
+          "nom": "Hussein Al-Sayed",
+          "poste": "MDC",
+          "age": 35,
+          "notes": {
+            "off": 69,
+            "tec": 72,
+            "mouv": 71,
+            "pui": 81,
+            "ment": 73,
+            "def": 79,
+            "gk": 33
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_4964",
+          "nom": "Ziad El-Helal",
+          "poste": "MOG",
+          "age": 22,
+          "notes": {
+            "off": 82,
+            "tec": 77,
+            "mouv": 77,
+            "pui": 68,
+            "ment": 80,
+            "def": 72,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_2606",
+          "nom": "Alaa Al-Rashid",
+          "poste": "MC",
+          "age": 20,
+          "notes": {
+            "off": 73,
+            "tec": 75,
+            "mouv": 74,
+            "pui": 75,
+            "ment": 78,
+            "def": 63,
+            "gk": 21
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_2731",
+          "nom": "Marwan Al-Jaziri",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 74,
+            "tec": 79,
+            "mouv": 77,
+            "pui": 73,
+            "ment": 81,
+            "def": 70,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_2266",
+          "nom": "Hossam Ben Salah",
+          "poste": "MDC",
+          "age": 23,
+          "notes": {
+            "off": 82,
+            "tec": 79,
+            "mouv": 77,
+            "pui": 85,
+            "ment": 80,
+            "def": 78,
+            "gk": 28
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_4410",
+          "nom": "Walid El-Banna",
+          "poste": "MOG",
+          "age": 32,
+          "notes": {
+            "off": 69,
+            "tec": 85,
+            "mouv": 87,
+            "pui": 77,
+            "ment": 81,
+            "def": 80,
+            "gk": 16
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_9579",
+          "nom": "Adel Al-Farsi",
+          "poste": "MOG",
+          "age": 31,
+          "notes": {
+            "off": 78,
+            "tec": 88,
+            "mouv": 79,
+            "pui": 82,
+            "ment": 80,
+            "def": 84,
+            "gk": 34
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_6489",
+          "nom": "Hossam El-Helal",
+          "poste": "MO",
+          "age": 22,
+          "notes": {
+            "off": 75,
+            "tec": 81,
+            "mouv": 71,
+            "pui": 68,
+            "ment": 78,
+            "def": 64,
+            "gk": 35
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_6753",
+          "nom": "Wael Al-Zahrani",
+          "poste": "MOD",
+          "age": 36,
+          "notes": {
+            "off": 69,
+            "tec": 75,
+            "mouv": 79,
+            "pui": 74,
+            "ment": 78,
+            "def": 75,
+            "gk": 29
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_6957",
+          "nom": "Hossam Ben Tarek",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 72,
+            "tec": 79,
+            "mouv": 78,
+            "pui": 68,
+            "ment": 80,
+            "def": 82,
+            "gk": 29
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_5124",
+          "nom": "Amir El-Helal",
+          "poste": "MC",
+          "age": 19,
+          "notes": {
+            "off": 69,
+            "tec": 79,
+            "mouv": 76,
+            "pui": 78,
+            "ment": 79,
+            "def": 80,
+            "gk": 25
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_9566",
+          "nom": "Alaa Ben Youssef",
+          "poste": "MC",
+          "age": 33,
+          "notes": {
+            "off": 79,
+            "tec": 79,
+            "mouv": 73,
+            "pui": 69,
+            "ment": 73,
+            "def": 69,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_1696",
+          "nom": "Younes Ben Hassan",
+          "poste": "MOD",
+          "age": 34,
+          "notes": {
+            "off": 76,
+            "tec": 86,
+            "mouv": 84,
+            "pui": 74,
+            "ment": 73,
+            "def": 75,
+            "gk": 21
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_5745",
+          "nom": "Amine Ben Omar",
+          "poste": "MDC",
+          "age": 23,
+          "notes": {
+            "off": 79,
+            "tec": 79,
+            "mouv": 85,
+            "pui": 70,
+            "ment": 76,
+            "def": 73,
+            "gk": 18
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_4784",
+          "nom": "Hassan Ben Ibrahim",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 79,
+            "tec": 81,
+            "mouv": 80,
+            "pui": 79,
+            "ment": 81,
+            "def": 69,
+            "gk": 31
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_5675",
+          "nom": "Hatem El-Sharif",
+          "poste": "MDC",
+          "age": 31,
+          "notes": {
+            "off": 77,
+            "tec": 79,
+            "mouv": 84,
+            "pui": 78,
+            "ment": 79,
+            "def": 79,
+            "gk": 25
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_2408",
+          "nom": "Youssef El-Shazly",
+          "poste": "MC",
+          "age": 35,
+          "notes": {
+            "off": 76,
+            "tec": 88,
+            "mouv": 78,
+            "pui": 72,
+            "ment": 82,
+            "def": 79,
+            "gk": 21
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_9467",
+          "nom": "Badr El-Shazly",
+          "poste": "MC",
+          "age": 30,
+          "notes": {
+            "off": 64,
+            "tec": 72,
+            "mouv": 76,
+            "pui": 65,
+            "ment": 69,
+            "def": 75,
+            "gk": 33
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082248_4200",
+          "nom": "Omar El-Banna",
+          "poste": "MOD",
+          "age": 28,
+          "notes": {
+            "off": 69,
+            "tec": 75,
+            "mouv": 84,
+            "pui": 79,
+            "ment": 73,
+            "def": 66,
+            "gk": 23
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_4923",
+          "nom": "Ibrahim Al-Nouri",
+          "poste": "MOG",
+          "age": 21,
+          "notes": {
+            "off": 74,
+            "tec": 74,
+            "mouv": 81,
+            "pui": 77,
+            "ment": 78,
+            "def": 75,
+            "gk": 24
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_7052",
+          "nom": "Ramzy Al-Sayed",
+          "poste": "MC",
+          "age": 26,
+          "notes": {
+            "off": 74,
+            "tec": 84,
+            "mouv": 73,
+            "pui": 78,
+            "ment": 77,
+            "def": 70,
+            "gk": 33
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_1316",
+          "nom": "Hicham El-Amin",
+          "poste": "MOG",
+          "age": 33,
+          "notes": {
+            "off": 71,
+            "tec": 82,
+            "mouv": 80,
+            "pui": 69,
+            "ment": 71,
+            "def": 82,
+            "gk": 27
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_8801",
+          "nom": "Osama Al-Zahrani",
+          "poste": "MC",
+          "age": 30,
+          "notes": {
+            "off": 66,
+            "tec": 84,
+            "mouv": 76,
+            "pui": 77,
+            "ment": 72,
+            "def": 83,
+            "gk": 19
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_5132",
+          "nom": "Younes Ben Tarek",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 82,
+            "tec": 87,
+            "mouv": 84,
+            "pui": 73,
+            "ment": 78,
+            "def": 76,
+            "gk": 32
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_2733",
+          "nom": "Hassan El-Khoury",
+          "poste": "MOD",
+          "age": 23,
+          "notes": {
+            "off": 74,
+            "tec": 86,
+            "mouv": 82,
+            "pui": 79,
+            "ment": 83,
+            "def": 82,
+            "gk": 34
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_9651",
+          "nom": "Khaled Al-Jaziri",
+          "poste": "MDC",
+          "age": 20,
+          "notes": {
+            "off": 83,
+            "tec": 81,
+            "mouv": 83,
+            "pui": 71,
+            "ment": 75,
+            "def": 71,
+            "gk": 19
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_1490",
+          "nom": "Mohamed Ben Ibrahim",
+          "poste": "MC",
+          "age": 20,
+          "notes": {
+            "off": 84,
+            "tec": 78,
+            "mouv": 81,
+            "pui": 70,
+            "ment": 73,
+            "def": 68,
+            "gk": 20
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_9655",
+          "nom": "Galal Ben Khalid",
+          "poste": "MO",
+          "age": 33,
+          "notes": {
+            "off": 74,
+            "tec": 79,
+            "mouv": 73,
+            "pui": 65,
+            "ment": 69,
+            "def": 75,
+            "gk": 29
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_8431",
+          "nom": "Mostafa El-Helal",
+          "poste": "MO",
+          "age": 21,
+          "notes": {
+            "off": 70,
+            "tec": 81,
+            "mouv": 77,
+            "pui": 69,
+            "ment": 75,
+            "def": 81,
+            "gk": 32
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_7348",
+          "nom": "Galal El-Tayeb",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 75,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 80,
+            "ment": 72,
+            "def": 84,
+            "gk": 27
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_3971",
+          "nom": "Amir El-Shazly",
+          "poste": "MDC",
+          "age": 29,
+          "notes": {
+            "off": 78,
+            "tec": 72,
+            "mouv": 78,
+            "pui": 74,
+            "ment": 72,
+            "def": 78,
+            "gk": 34
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_3560",
+          "nom": "Nabil Al-Mansouri",
+          "poste": "MDC",
+          "age": 28,
+          "notes": {
+            "off": 83,
+            "tec": 75,
+            "mouv": 77,
+            "pui": 71,
+            "ment": 74,
+            "def": 77,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_4437",
+          "nom": "Galal Ben Tarek",
+          "poste": "MO",
+          "age": 33,
+          "notes": {
+            "off": 83,
+            "tec": 87,
+            "mouv": 76,
+            "pui": 82,
+            "ment": 76,
+            "def": 85,
+            "gk": 29
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_2512",
+          "nom": "Khaled El-Banna",
+          "poste": "MO",
+          "age": 29,
+          "notes": {
+            "off": 75,
+            "tec": 88,
+            "mouv": 84,
+            "pui": 78,
+            "ment": 83,
+            "def": 74,
+            "gk": 24
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_9666",
+          "nom": "Ali Al-Amin",
+          "poste": "MC",
+          "age": 31,
+          "notes": {
+            "off": 68,
+            "tec": 85,
+            "mouv": 82,
+            "pui": 80,
+            "ment": 70,
+            "def": 79,
+            "gk": 17
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_7363",
+          "nom": "Adel Ben Youssef",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 77,
+            "tec": 80,
+            "mouv": 70,
+            "pui": 77,
+            "ment": 72,
+            "def": 76,
+            "gk": 19
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_5517",
+          "nom": "Ziad Al-Saad",
+          "poste": "MC",
+          "age": 29,
+          "notes": {
+            "off": 66,
+            "tec": 75,
+            "mouv": 73,
+            "pui": 79,
+            "ment": 69,
+            "def": 66,
+            "gk": 20
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_2368",
+          "nom": "Magdy Al-Nouri",
+          "poste": "MOD",
+          "age": 20,
+          "notes": {
+            "off": 85,
+            "tec": 88,
+            "mouv": 89,
+            "pui": 84,
+            "ment": 77,
+            "def": 84,
+            "gk": 26
+          },
+          "global": 82
+        },
+        {
+          "id": "p_1775045082249_1810",
+          "nom": "Nabil Ben Ahmed",
+          "poste": "MOD",
+          "age": 36,
+          "notes": {
+            "off": 72,
+            "tec": 86,
+            "mouv": 89,
+            "pui": 86,
+            "ment": 73,
+            "def": 87,
+            "gk": 21
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082249_1168",
+          "nom": "Ayman Al-Khatib",
+          "poste": "MO",
+          "age": 24,
+          "notes": {
+            "off": 64,
+            "tec": 80,
+            "mouv": 78,
+            "pui": 68,
+            "ment": 66,
+            "def": 68,
+            "gk": 15
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082249_4299",
+          "nom": "Osama Al-Rashid",
+          "poste": "MOD",
+          "age": 29,
+          "notes": {
+            "off": 78,
+            "tec": 85,
+            "mouv": 86,
+            "pui": 73,
+            "ment": 71,
+            "def": 77,
+            "gk": 23
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_7717",
+          "nom": "Ismail Ben Ahmed",
+          "poste": "MDC",
+          "age": 25,
+          "notes": {
+            "off": 83,
+            "tec": 79,
+            "mouv": 85,
+            "pui": 74,
+            "ment": 78,
+            "def": 76,
+            "gk": 34
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_4495",
+          "nom": "Hassan Al-Saad",
+          "poste": "MO",
+          "age": 27,
+          "notes": {
+            "off": 72,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 72,
+            "ment": 70,
+            "def": 81,
+            "gk": 33
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_5295",
+          "nom": "Sami Ben Salah",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 81,
+            "tec": 79,
+            "mouv": 82,
+            "pui": 71,
+            "ment": 75,
+            "def": 69,
+            "gk": 20
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_7117",
+          "nom": "Ahmed Al-Nouri",
+          "poste": "MDC",
+          "age": 23,
+          "notes": {
+            "off": 83,
+            "tec": 86,
+            "mouv": 84,
+            "pui": 74,
+            "ment": 70,
+            "def": 75,
+            "gk": 32
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_7060",
+          "nom": "Sofiane El-Sharif",
+          "poste": "MOG",
+          "age": 19,
+          "notes": {
+            "off": 65,
+            "tec": 74,
+            "mouv": 79,
+            "pui": 65,
+            "ment": 69,
+            "def": 73,
+            "gk": 25
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082249_6085",
+          "nom": "Ramzy Al-Saad",
+          "poste": "MO",
+          "age": 29,
+          "notes": {
+            "off": 67,
+            "tec": 77,
+            "mouv": 80,
+            "pui": 70,
+            "ment": 81,
+            "def": 79,
+            "gk": 16
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_9504",
+          "nom": "Antar Al-Amin",
+          "poste": "MOG",
+          "age": 26,
+          "notes": {
+            "off": 64,
+            "tec": 70,
+            "mouv": 81,
+            "pui": 70,
+            "ment": 66,
+            "def": 75,
+            "gk": 15
+          },
+          "global": 68
+        },
+        {
+          "id": "p_1775045082249_5062",
+          "nom": "Hussein Ben Ali",
+          "poste": "MDC",
+          "age": 28,
+          "notes": {
+            "off": 75,
+            "tec": 87,
+            "mouv": 87,
+            "pui": 73,
+            "ment": 79,
+            "def": 81,
+            "gk": 22
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_7060",
+          "nom": "Alaa El-Masry",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 71,
+            "tec": 87,
+            "mouv": 89,
+            "pui": 82,
+            "ment": 82,
+            "def": 71,
+            "gk": 24
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_5193",
+          "nom": "Galal El-Banna",
+          "poste": "MDC",
+          "age": 33,
+          "notes": {
+            "off": 85,
+            "tec": 86,
+            "mouv": 80,
+            "pui": 70,
+            "ment": 77,
+            "def": 80,
+            "gk": 18
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_8994",
+          "nom": "Alaa El-Helal",
+          "poste": "MOD",
+          "age": 17,
+          "notes": {
+            "off": 70,
+            "tec": 74,
+            "mouv": 76,
+            "pui": 67,
+            "ment": 74,
+            "def": 78,
+            "gk": 15
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_5475",
+          "nom": "Hassan El-Shazly",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 75,
+            "tec": 80,
+            "mouv": 78,
+            "pui": 70,
+            "ment": 77,
+            "def": 74,
+            "gk": 34
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_8627",
+          "nom": "Hossam El-Tayeb",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 76,
+            "tec": 75,
+            "mouv": 80,
+            "pui": 84,
+            "ment": 74,
+            "def": 84,
+            "gk": 26
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_8167",
+          "nom": "Bassem Ben Salah",
+          "poste": "MOG",
+          "age": 21,
+          "notes": {
+            "off": 69,
+            "tec": 78,
+            "mouv": 86,
+            "pui": 84,
+            "ment": 82,
+            "def": 82,
+            "gk": 19
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_8982",
+          "nom": "Hossam Al-Amin",
+          "poste": "MO",
+          "age": 35,
+          "notes": {
+            "off": 71,
+            "tec": 76,
+            "mouv": 74,
+            "pui": 69,
+            "ment": 76,
+            "def": 66,
+            "gk": 29
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_8846",
+          "nom": "Emad Al-Saad",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 68,
+            "tec": 81,
+            "mouv": 78,
+            "pui": 83,
+            "ment": 70,
+            "def": 71,
+            "gk": 25
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_6727",
+          "nom": "Mohamed Ben Hassan",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 74,
+            "tec": 81,
+            "mouv": 79,
+            "pui": 84,
+            "ment": 78,
+            "def": 82,
+            "gk": 17
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_9137",
+          "nom": "Ramzy El-Masry",
+          "poste": "GK",
+          "age": 22,
+          "notes": {
+            "off": 49,
+            "tec": 58,
+            "mouv": 59,
+            "pui": 71,
+            "ment": 79,
+            "def": 67,
+            "gk": 86
+          },
+          "global": 63
+        },
+        {
+          "id": "p_1775045082249_7416",
+          "nom": "Ibrahim Ben Hassan",
+          "poste": "MDC",
+          "age": 18,
+          "notes": {
+            "off": 73,
+            "tec": 82,
+            "mouv": 72,
+            "pui": 65,
+            "ment": 73,
+            "def": 63,
+            "gk": 18
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082249_4823",
+          "nom": "Ahmed El-Masry",
+          "poste": "MOG",
+          "age": 20,
+          "notes": {
+            "off": 79,
+            "tec": 85,
+            "mouv": 81,
+            "pui": 73,
+            "ment": 80,
+            "def": 81,
+            "gk": 22
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_4738",
+          "nom": "Nasser Al-Amin",
+          "poste": "MC",
+          "age": 22,
+          "notes": {
+            "off": 67,
+            "tec": 76,
+            "mouv": 74,
+            "pui": 66,
+            "ment": 78,
+            "def": 75,
+            "gk": 21
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_6193",
+          "nom": "Jamal El-Tayeb",
+          "poste": "MDC",
+          "age": 29,
+          "notes": {
+            "off": 72,
+            "tec": 80,
+            "mouv": 73,
+            "pui": 68,
+            "ment": 67,
+            "def": 82,
+            "gk": 28
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_8816",
+          "nom": "Emad Ben Musa",
+          "poste": "MOG",
+          "age": 28,
+          "notes": {
+            "off": 75,
+            "tec": 80,
+            "mouv": 81,
+            "pui": 79,
+            "ment": 82,
+            "def": 73,
+            "gk": 16
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_8888",
+          "nom": "Sami El-Amin",
+          "poste": "MDC",
+          "age": 31,
+          "notes": {
+            "off": 71,
+            "tec": 81,
+            "mouv": 84,
+            "pui": 74,
+            "ment": 74,
+            "def": 79,
+            "gk": 33
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_1475",
+          "nom": "Hicham Al-Khatib",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 72,
+            "tec": 90,
+            "mouv": 88,
+            "pui": 73,
+            "ment": 79,
+            "def": 70,
+            "gk": 32
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_6029",
+          "nom": "Antar Ben Ahmed",
+          "poste": "MO",
+          "age": 24,
+          "notes": {
+            "off": 74,
+            "tec": 78,
+            "mouv": 79,
+            "pui": 68,
+            "ment": 72,
+            "def": 72,
+            "gk": 21
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_2451",
+          "nom": "Mostafa Ben Tarek",
+          "poste": "MDC",
+          "age": 25,
+          "notes": {
+            "off": 80,
+            "tec": 86,
+            "mouv": 82,
+            "pui": 79,
+            "ment": 81,
+            "def": 76,
+            "gk": 22
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_6061",
+          "nom": "Ismail El-Banna",
+          "poste": "MC",
+          "age": 34,
+          "notes": {
+            "off": 85,
+            "tec": 83,
+            "mouv": 83,
+            "pui": 83,
+            "ment": 72,
+            "def": 71,
+            "gk": 35
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_3224",
+          "nom": "Karim Ben Ibrahim",
+          "poste": "MC",
+          "age": 35,
+          "notes": {
+            "off": 73,
+            "tec": 79,
+            "mouv": 79,
+            "pui": 77,
+            "ment": 76,
+            "def": 86,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_6746",
+          "nom": "Hussein Al-Jaziri",
+          "poste": "MO",
+          "age": 18,
+          "notes": {
+            "off": 76,
+            "tec": 87,
+            "mouv": 82,
+            "pui": 85,
+            "ment": 77,
+            "def": 80,
+            "gk": 30
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082249_4802",
+          "nom": "Rachid Al-Zahrani",
+          "poste": "MOD",
+          "age": 29,
+          "notes": {
+            "off": 84,
+            "tec": 88,
+            "mouv": 79,
+            "pui": 84,
+            "ment": 77,
+            "def": 76,
+            "gk": 25
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082249_7578",
+          "nom": "Rachid Ben Musa",
+          "poste": "MOD",
+          "age": 21,
+          "notes": {
+            "off": 73,
+            "tec": 80,
+            "mouv": 83,
+            "pui": 74,
+            "ment": 74,
+            "def": 68,
+            "gk": 30
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_1607",
+          "nom": "Badr Al-Zahrani",
+          "poste": "MOD",
+          "age": 17,
+          "notes": {
+            "off": 72,
+            "tec": 78,
+            "mouv": 82,
+            "pui": 70,
+            "ment": 80,
+            "def": 84,
+            "gk": 32
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_8247",
+          "nom": "Samir El-Shazly",
+          "poste": "MOG",
+          "age": 31,
+          "notes": {
+            "off": 68,
+            "tec": 85,
+            "mouv": 85,
+            "pui": 73,
+            "ment": 79,
+            "def": 70,
+            "gk": 16
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_4024",
+          "nom": "Sami El-Amin",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 79,
+            "tec": 89,
+            "mouv": 88,
+            "pui": 69,
+            "ment": 74,
+            "def": 82,
+            "gk": 28
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_4856",
+          "nom": "Ahmed El-Sharif",
+          "poste": "MOD",
+          "age": 27,
+          "notes": {
+            "off": 69,
+            "tec": 83,
+            "mouv": 76,
+            "pui": 75,
+            "ment": 70,
+            "def": 67,
+            "gk": 18
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_2739",
+          "nom": "Youssef El-Helal",
+          "poste": "MC",
+          "age": 21,
+          "notes": {
+            "off": 82,
+            "tec": 89,
+            "mouv": 89,
+            "pui": 71,
+            "ment": 73,
+            "def": 71,
+            "gk": 18
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_3705",
+          "nom": "Hussein Al-Farsi",
+          "poste": "MOG",
+          "age": 18,
+          "notes": {
+            "off": 73,
+            "tec": 83,
+            "mouv": 79,
+            "pui": 68,
+            "ment": 71,
+            "def": 80,
+            "gk": 29
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_7817",
+          "nom": "Ali El-Tayeb",
+          "poste": "MO",
+          "age": 34,
+          "notes": {
+            "off": 72,
+            "tec": 72,
+            "mouv": 72,
+            "pui": 78,
+            "ment": 73,
+            "def": 77,
+            "gk": 32
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_9787",
+          "nom": "Adel Al-Zahrani",
+          "poste": "MOD",
+          "age": 18,
+          "notes": {
+            "off": 77,
+            "tec": 85,
+            "mouv": 72,
+            "pui": 79,
+            "ment": 79,
+            "def": 66,
+            "gk": 17
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_2946",
+          "nom": "Ahmed Al-Amin",
+          "poste": "MC",
+          "age": 20,
+          "notes": {
+            "off": 76,
+            "tec": 75,
+            "mouv": 85,
+            "pui": 85,
+            "ment": 75,
+            "def": 74,
+            "gk": 22
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_7466",
+          "nom": "Ziad El-Tayeb",
+          "poste": "MOG",
+          "age": 33,
+          "notes": {
+            "off": 73,
+            "tec": 82,
+            "mouv": 74,
+            "pui": 68,
+            "ment": 69,
+            "def": 72,
+            "gk": 26
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_1947",
+          "nom": "Badr Al-Amin",
+          "poste": "MC",
+          "age": 25,
+          "notes": {
+            "off": 78,
+            "tec": 73,
+            "mouv": 75,
+            "pui": 82,
+            "ment": 75,
+            "def": 67,
+            "gk": 27
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_7865",
+          "nom": "Tamer Ben Hassan",
+          "poste": "MOD",
+          "age": 24,
+          "notes": {
+            "off": 71,
+            "tec": 83,
+            "mouv": 84,
+            "pui": 79,
+            "ment": 77,
+            "def": 74,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_4311",
+          "nom": "Antar Ben Khalid",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 77,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 78,
+            "ment": 77,
+            "def": 83,
+            "gk": 33
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_7324",
+          "nom": "Tarek Al-Nouri",
+          "poste": "MC",
+          "age": 32,
+          "notes": {
+            "off": 83,
+            "tec": 82,
+            "mouv": 80,
+            "pui": 80,
+            "ment": 77,
+            "def": 77,
+            "gk": 17
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_1875",
+          "nom": "Magdy Ben Khalid",
+          "poste": "MOG",
+          "age": 32,
+          "notes": {
+            "off": 69,
+            "tec": 84,
+            "mouv": 81,
+            "pui": 73,
+            "ment": 72,
+            "def": 78,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_9491",
+          "nom": "Hicham Al-Mansouri",
+          "poste": "MOD",
+          "age": 17,
+          "notes": {
+            "off": 66,
+            "tec": 79,
+            "mouv": 75,
+            "pui": 78,
+            "ment": 71,
+            "def": 74,
+            "gk": 16
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_2500",
+          "nom": "Sofiane El-Masry",
+          "poste": "MO",
+          "age": 23,
+          "notes": {
+            "off": 82,
+            "tec": 85,
+            "mouv": 89,
+            "pui": 79,
+            "ment": 75,
+            "def": 71,
+            "gk": 28
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_9631",
+          "nom": "Bilal Al-Khatib",
+          "poste": "MOG",
+          "age": 27,
+          "notes": {
+            "off": 80,
+            "tec": 80,
+            "mouv": 72,
+            "pui": 69,
+            "ment": 79,
+            "def": 70,
+            "gk": 16
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_8819",
+          "nom": "Walid El-Sharif",
+          "poste": "MC",
+          "age": 26,
+          "notes": {
+            "off": 80,
+            "tec": 79,
+            "mouv": 86,
+            "pui": 77,
+            "ment": 75,
+            "def": 77,
+            "gk": 30
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_7403",
+          "nom": "Rami El-Khoury",
+          "poste": "MOD",
+          "age": 33,
+          "notes": {
+            "off": 80,
+            "tec": 85,
+            "mouv": 74,
+            "pui": 75,
+            "ment": 69,
+            "def": 76,
+            "gk": 20
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_1098",
+          "nom": "Hossam Al-Amin",
+          "poste": "MDC",
+          "age": 28,
+          "notes": {
+            "off": 79,
+            "tec": 84,
+            "mouv": 83,
+            "pui": 79,
+            "ment": 74,
+            "def": 69,
+            "gk": 28
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_4317",
+          "nom": "Bassem El-Sharif",
+          "poste": "MC",
+          "age": 36,
+          "notes": {
+            "off": 74,
+            "tec": 79,
+            "mouv": 74,
+            "pui": 68,
+            "ment": 76,
+            "def": 78,
+            "gk": 26
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_7718",
+          "nom": "Karim Ben Omar",
+          "poste": "MOD",
+          "age": 36,
+          "notes": {
+            "off": 76,
+            "tec": 82,
+            "mouv": 83,
+            "pui": 77,
+            "ment": 77,
+            "def": 67,
+            "gk": 16
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_7453",
+          "nom": "Mostafa El-Helal",
+          "poste": "MC",
+          "age": 20,
+          "notes": {
+            "off": 77,
+            "tec": 79,
+            "mouv": 89,
+            "pui": 82,
+            "ment": 74,
+            "def": 74,
+            "gk": 28
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_3776",
+          "nom": "Hazem Al-Hassan",
+          "poste": "MC",
+          "age": 19,
+          "notes": {
+            "off": 79,
+            "tec": 78,
+            "mouv": 77,
+            "pui": 84,
+            "ment": 70,
+            "def": 73,
+            "gk": 28
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_8173",
+          "nom": "Mohamed Ben Hassan",
+          "poste": "MO",
+          "age": 20,
+          "notes": {
+            "off": 75,
+            "tec": 74,
+            "mouv": 86,
+            "pui": 72,
+            "ment": 75,
+            "def": 80,
+            "gk": 26
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_1745",
+          "nom": "Rami Ben Tarek",
+          "poste": "MC",
+          "age": 28,
+          "notes": {
+            "off": 78,
+            "tec": 73,
+            "mouv": 79,
+            "pui": 74,
+            "ment": 78,
+            "def": 78,
+            "gk": 15
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_9429",
+          "nom": "Younes Al-Saad",
+          "poste": "MO",
+          "age": 29,
+          "notes": {
+            "off": 69,
+            "tec": 83,
+            "mouv": 84,
+            "pui": 71,
+            "ment": 75,
+            "def": 78,
+            "gk": 20
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_7751",
+          "nom": "Ayman El-Masry",
+          "poste": "MO",
+          "age": 23,
+          "notes": {
+            "off": 72,
+            "tec": 77,
+            "mouv": 84,
+            "pui": 83,
+            "ment": 72,
+            "def": 75,
+            "gk": 16
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_7540",
+          "nom": "Amir Al-Amin",
+          "poste": "MOG",
+          "age": 34,
+          "notes": {
+            "off": 82,
+            "tec": 79,
+            "mouv": 85,
+            "pui": 81,
+            "ment": 77,
+            "def": 66,
+            "gk": 35
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_2803",
+          "nom": "Nasser El-Shazly",
+          "poste": "MO",
+          "age": 36,
+          "notes": {
+            "off": 83,
+            "tec": 88,
+            "mouv": 84,
+            "pui": 86,
+            "ment": 84,
+            "def": 87,
+            "gk": 23
+          },
+          "global": 83
+        },
+        {
+          "id": "p_1775045082249_1870",
+          "nom": "Ibrahim El-Tayeb",
+          "poste": "MC",
+          "age": 27,
+          "notes": {
+            "off": 80,
+            "tec": 76,
+            "mouv": 72,
+            "pui": 71,
+            "ment": 70,
+            "def": 76,
+            "gk": 34
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_2256",
+          "nom": "Sherif El-Helal",
+          "poste": "MOD",
+          "age": 27,
+          "notes": {
+            "off": 72,
+            "tec": 86,
+            "mouv": 78,
+            "pui": 70,
+            "ment": 77,
+            "def": 66,
+            "gk": 29
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_5551",
+          "nom": "Tarek Ben Omar",
+          "poste": "MO",
+          "age": 36,
+          "notes": {
+            "off": 75,
+            "tec": 80,
+            "mouv": 84,
+            "pui": 81,
+            "ment": 73,
+            "def": 84,
+            "gk": 27
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_4114",
+          "nom": "Hassan Ben Ahmed",
+          "poste": "MOG",
+          "age": 24,
+          "notes": {
+            "off": 75,
+            "tec": 78,
+            "mouv": 77,
+            "pui": 73,
+            "ment": 71,
+            "def": 66,
+            "gk": 26
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_2017",
+          "nom": "Jamal El-Amin",
+          "poste": "MC",
+          "age": 30,
+          "notes": {
+            "off": 83,
+            "tec": 80,
+            "mouv": 80,
+            "pui": 81,
+            "ment": 74,
+            "def": 84,
+            "gk": 20
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_2568",
+          "nom": "Antar Al-Hassan",
+          "poste": "MO",
+          "age": 25,
+          "notes": {
+            "off": 85,
+            "tec": 79,
+            "mouv": 90,
+            "pui": 80,
+            "ment": 83,
+            "def": 83,
+            "gk": 32
+          },
+          "global": 81
+        },
+        {
+          "id": "p_1775045082249_7975",
+          "nom": "Amine Al-Saad",
+          "poste": "MC",
+          "age": 17,
+          "notes": {
+            "off": 82,
+            "tec": 83,
+            "mouv": 80,
+            "pui": 76,
+            "ment": 80,
+            "def": 85,
+            "gk": 25
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082249_2239",
+          "nom": "Magdy Al-Jaziri",
+          "poste": "MDC",
+          "age": 17,
+          "notes": {
+            "off": 69,
+            "tec": 83,
+            "mouv": 80,
+            "pui": 73,
+            "ment": 74,
+            "def": 83,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_8117",
+          "nom": "Ramzy Ben Ahmed",
+          "poste": "MO",
+          "age": 22,
+          "notes": {
+            "off": 81,
+            "tec": 74,
+            "mouv": 86,
+            "pui": 82,
+            "ment": 80,
+            "def": 84,
+            "gk": 30
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082249_1343",
+          "nom": "Marwan Ben Tarek",
+          "poste": "MOG",
+          "age": 28,
+          "notes": {
+            "off": 78,
+            "tec": 82,
+            "mouv": 89,
+            "pui": 82,
+            "ment": 82,
+            "def": 82,
+            "gk": 33
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082249_1539",
+          "nom": "Osama Al-Jaziri",
+          "poste": "MDC",
+          "age": 35,
+          "notes": {
+            "off": 64,
+            "tec": 71,
+            "mouv": 82,
+            "pui": 70,
+            "ment": 66,
+            "def": 71,
+            "gk": 34
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082249_2567",
+          "nom": "Walid Al-Farsi",
+          "poste": "MOD",
+          "age": 35,
+          "notes": {
+            "off": 79,
+            "tec": 71,
+            "mouv": 74,
+            "pui": 74,
+            "ment": 71,
+            "def": 71,
+            "gk": 20
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_6915",
+          "nom": "Magdy Al-Zahrani",
+          "poste": "AG",
+          "age": 28,
+          "notes": {
+            "off": 80,
+            "tec": 76,
+            "mouv": 79,
+            "pui": 83,
+            "ment": 74,
+            "def": 69,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_3031",
+          "nom": "Rachid Ben Salah",
+          "poste": "AC",
+          "age": 35,
+          "notes": {
+            "off": 89,
+            "tec": 79,
+            "mouv": 93,
+            "pui": 78,
+            "ment": 73,
+            "def": 70,
+            "gk": 17
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_6542",
+          "nom": "Hussein Ben Omar",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 78,
+            "tec": 81,
+            "mouv": 78,
+            "pui": 68,
+            "ment": 69,
+            "def": 66,
+            "gk": 14
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_6624",
+          "nom": "Youssef Al-Jaziri",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 90,
+            "tec": 77,
+            "mouv": 85,
+            "pui": 64,
+            "ment": 75,
+            "def": 63,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_2301",
+          "nom": "Antar Ben Omar",
+          "poste": "AG",
+          "age": 29,
+          "notes": {
+            "off": 76,
+            "tec": 85,
+            "mouv": 84,
+            "pui": 68,
+            "ment": 70,
+            "def": 49,
+            "gk": 29
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_8234",
+          "nom": "Hatem Ben Khalid",
+          "poste": "AC",
+          "age": 34,
+          "notes": {
+            "off": 75,
+            "tec": 72,
+            "mouv": 83,
+            "pui": 70,
+            "ment": 70,
+            "def": 59,
+            "gk": 28
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_4842",
+          "nom": "Ismail El-Shazly",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 95,
+            "tec": 86,
+            "mouv": 81,
+            "pui": 83,
+            "ment": 78,
+            "def": 59,
+            "gk": 20
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_1994",
+          "nom": "Ayman Ben Musa",
+          "poste": "AD",
+          "age": 28,
+          "notes": {
+            "off": 79,
+            "tec": 85,
+            "mouv": 75,
+            "pui": 70,
+            "ment": 67,
+            "def": 67,
+            "gk": 27
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_6129",
+          "nom": "Wael Al-Mansouri",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 80,
+            "tec": 73,
+            "mouv": 85,
+            "pui": 83,
+            "ment": 73,
+            "def": 54,
+            "gk": 15
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_4611",
+          "nom": "Karim Ben Omar",
+          "poste": "AG",
+          "age": 36,
+          "notes": {
+            "off": 77,
+            "tec": 78,
+            "mouv": 78,
+            "pui": 80,
+            "ment": 67,
+            "def": 65,
+            "gk": 12
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_1152",
+          "nom": "Jamal El-Sharif",
+          "poste": "AD",
+          "age": 25,
+          "notes": {
+            "off": 86,
+            "tec": 74,
+            "mouv": 84,
+            "pui": 70,
+            "ment": 69,
+            "def": 55,
+            "gk": 27
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_1744",
+          "nom": "Ziad Al-Zahrani",
+          "poste": "AD",
+          "age": 31,
+          "notes": {
+            "off": 87,
+            "tec": 82,
+            "mouv": 79,
+            "pui": 78,
+            "ment": 71,
+            "def": 62,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_5280",
+          "nom": "Saber Al-Sayed",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 89,
+            "tec": 76,
+            "mouv": 91,
+            "pui": 69,
+            "ment": 78,
+            "def": 62,
+            "gk": 20
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_1201",
+          "nom": "Tarek El-Banna",
+          "poste": "AC",
+          "age": 24,
+          "notes": {
+            "off": 75,
+            "tec": 79,
+            "mouv": 87,
+            "pui": 81,
+            "ment": 70,
+            "def": 55,
+            "gk": 15
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_9683",
+          "nom": "Alaa Al-Mansouri",
+          "poste": "AC",
+          "age": 32,
+          "notes": {
+            "off": 76,
+            "tec": 83,
+            "mouv": 73,
+            "pui": 79,
+            "ment": 67,
+            "def": 51,
+            "gk": 14
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_5484",
+          "nom": "Osama Al-Amin",
+          "poste": "AC",
+          "age": 23,
+          "notes": {
+            "off": 85,
+            "tec": 77,
+            "mouv": 78,
+            "pui": 75,
+            "ment": 72,
+            "def": 63,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_4291",
+          "nom": "Marwan El-Helal",
+          "poste": "AC",
+          "age": 23,
+          "notes": {
+            "off": 92,
+            "tec": 82,
+            "mouv": 77,
+            "pui": 84,
+            "ment": 76,
+            "def": 64,
+            "gk": 12
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_9627",
+          "nom": "Magdy Ben Ali",
+          "poste": "AC",
+          "age": 26,
+          "notes": {
+            "off": 94,
+            "tec": 85,
+            "mouv": 80,
+            "pui": 76,
+            "ment": 73,
+            "def": 62,
+            "gk": 26
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_4964",
+          "nom": "Emad Al-Rashid",
+          "poste": "AC",
+          "age": 20,
+          "notes": {
+            "off": 85,
+            "tec": 83,
+            "mouv": 83,
+            "pui": 76,
+            "ment": 77,
+            "def": 57,
+            "gk": 14
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_7422",
+          "nom": "Rachid Al-Saad",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 89,
+            "tec": 73,
+            "mouv": 88,
+            "pui": 73,
+            "ment": 78,
+            "def": 52,
+            "gk": 15
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_8894",
+          "nom": "Samir El-Sharif",
+          "poste": "AD",
+          "age": 26,
+          "notes": {
+            "off": 80,
+            "tec": 73,
+            "mouv": 88,
+            "pui": 76,
+            "ment": 67,
+            "def": 65,
+            "gk": 27
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_3651",
+          "nom": "Youssef Ben Omar",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 77,
+            "tec": 79,
+            "mouv": 75,
+            "pui": 71,
+            "ment": 76,
+            "def": 63,
+            "gk": 18
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_6458",
+          "nom": "Samir El-Amin",
+          "poste": "AC",
+          "age": 20,
+          "notes": {
+            "off": 90,
+            "tec": 80,
+            "mouv": 82,
+            "pui": 79,
+            "ment": 75,
+            "def": 57,
+            "gk": 23
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_7557",
+          "nom": "Hicham Ben Ibrahim",
+          "poste": "AD",
+          "age": 33,
+          "notes": {
+            "off": 83,
+            "tec": 75,
+            "mouv": 79,
+            "pui": 69,
+            "ment": 75,
+            "def": 60,
+            "gk": 13
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3484",
+          "nom": "Samir El-Sharif",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 85,
+            "tec": 81,
+            "mouv": 76,
+            "pui": 80,
+            "ment": 77,
+            "def": 54,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_6314",
+          "nom": "Marwan Al-Sayed",
+          "poste": "AG",
+          "age": 27,
+          "notes": {
+            "off": 88,
+            "tec": 80,
+            "mouv": 90,
+            "pui": 79,
+            "ment": 74,
+            "def": 54,
+            "gk": 14
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_7622",
+          "nom": "Magdy Al-Mansouri",
+          "poste": "AG",
+          "age": 35,
+          "notes": {
+            "off": 90,
+            "tec": 78,
+            "mouv": 92,
+            "pui": 83,
+            "ment": 78,
+            "def": 61,
+            "gk": 16
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_2094",
+          "nom": "Badr Al-Hassan",
+          "poste": "AD",
+          "age": 20,
+          "notes": {
+            "off": 88,
+            "tec": 85,
+            "mouv": 85,
+            "pui": 84,
+            "ment": 81,
+            "def": 67,
+            "gk": 21
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_6905",
+          "nom": "Youssef El-Tayeb",
+          "poste": "AG",
+          "age": 22,
+          "notes": {
+            "off": 82,
+            "tec": 80,
+            "mouv": 89,
+            "pui": 79,
+            "ment": 76,
+            "def": 62,
+            "gk": 32
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_4618",
+          "nom": "Emad Ben Salah",
+          "poste": "AC",
+          "age": 19,
+          "notes": {
+            "off": 82,
+            "tec": 85,
+            "mouv": 80,
+            "pui": 67,
+            "ment": 70,
+            "def": 53,
+            "gk": 31
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3220",
+          "nom": "Badr El-Banna",
+          "poste": "AG",
+          "age": 24,
+          "notes": {
+            "off": 83,
+            "tec": 80,
+            "mouv": 80,
+            "pui": 78,
+            "ment": 79,
+            "def": 49,
+            "gk": 32
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_4219",
+          "nom": "Jamal Al-Nouri",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 87,
+            "tec": 83,
+            "mouv": 75,
+            "pui": 80,
+            "ment": 69,
+            "def": 67,
+            "gk": 22
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_7422",
+          "nom": "Ahmed Al-Sayed",
+          "poste": "AC",
+          "age": 34,
+          "notes": {
+            "off": 75,
+            "tec": 71,
+            "mouv": 75,
+            "pui": 63,
+            "ment": 66,
+            "def": 47,
+            "gk": 17
+          },
+          "global": 65
+        },
+        {
+          "id": "p_1775045082248_4812",
+          "nom": "Tarek Al-Sayed",
+          "poste": "AC",
+          "age": 36,
+          "notes": {
+            "off": 84,
+            "tec": 84,
+            "mouv": 80,
+            "pui": 74,
+            "ment": 72,
+            "def": 66,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_5734",
+          "nom": "Antar Ben Youssef",
+          "poste": "AC",
+          "age": 30,
+          "notes": {
+            "off": 94,
+            "tec": 82,
+            "mouv": 80,
+            "pui": 71,
+            "ment": 84,
+            "def": 63,
+            "gk": 18
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_3772",
+          "nom": "Galal El-Banna",
+          "poste": "AC",
+          "age": 26,
+          "notes": {
+            "off": 79,
+            "tec": 82,
+            "mouv": 84,
+            "pui": 76,
+            "ment": 76,
+            "def": 48,
+            "gk": 19
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_5855",
+          "nom": "Amir El-Shazly",
+          "poste": "AC",
+          "age": 32,
+          "notes": {
+            "off": 79,
+            "tec": 77,
+            "mouv": 84,
+            "pui": 76,
+            "ment": 77,
+            "def": 61,
+            "gk": 16
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_1540",
+          "nom": "Sofiane El-Sharif",
+          "poste": "AC",
+          "age": 35,
+          "notes": {
+            "off": 79,
+            "tec": 83,
+            "mouv": 73,
+            "pui": 80,
+            "ment": 77,
+            "def": 60,
+            "gk": 13
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_4091",
+          "nom": "Nasser El-Sharif",
+          "poste": "AG",
+          "age": 26,
+          "notes": {
+            "off": 81,
+            "tec": 73,
+            "mouv": 90,
+            "pui": 73,
+            "ment": 73,
+            "def": 52,
+            "gk": 23
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_3341",
+          "nom": "Samir Ben Ibrahim",
+          "poste": "AC",
+          "age": 20,
+          "notes": {
+            "off": 84,
+            "tec": 80,
+            "mouv": 93,
+            "pui": 74,
+            "ment": 83,
+            "def": 62,
+            "gk": 20
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_7775",
+          "nom": "Hussein Ben Ibrahim",
+          "poste": "AC",
+          "age": 30,
+          "notes": {
+            "off": 79,
+            "tec": 86,
+            "mouv": 84,
+            "pui": 78,
+            "ment": 70,
+            "def": 61,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_8163",
+          "nom": "Younes El-Shazly",
+          "poste": "AD",
+          "age": 30,
+          "notes": {
+            "off": 83,
+            "tec": 88,
+            "mouv": 91,
+            "pui": 87,
+            "ment": 75,
+            "def": 65,
+            "gk": 32
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_9017",
+          "nom": "Badr Al-Sayed",
+          "poste": "AD",
+          "age": 20,
+          "notes": {
+            "off": 86,
+            "tec": 80,
+            "mouv": 88,
+            "pui": 79,
+            "ment": 74,
+            "def": 69,
+            "gk": 27
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_8099",
+          "nom": "Wael Ben Khalid",
+          "poste": "AD",
+          "age": 18,
+          "notes": {
+            "off": 87,
+            "tec": 75,
+            "mouv": 87,
+            "pui": 80,
+            "ment": 77,
+            "def": 59,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_3922",
+          "nom": "Ayman El-Shazly",
+          "poste": "AC",
+          "age": 31,
+          "notes": {
+            "off": 83,
+            "tec": 83,
+            "mouv": 88,
+            "pui": 74,
+            "ment": 81,
+            "def": 66,
+            "gk": 30
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_4525",
+          "nom": "Walid El-Khoury",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 93,
+            "tec": 90,
+            "mouv": 87,
+            "pui": 79,
+            "ment": 84,
+            "def": 60,
+            "gk": 17
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082248_9607",
+          "nom": "Samir Al-Sayed",
+          "poste": "AD",
+          "age": 29,
+          "notes": {
+            "off": 90,
+            "tec": 77,
+            "mouv": 85,
+            "pui": 67,
+            "ment": 82,
+            "def": 65,
+            "gk": 16
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_1351",
+          "nom": "Hassan Al-Nouri",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 87,
+            "tec": 74,
+            "mouv": 82,
+            "pui": 69,
+            "ment": 78,
+            "def": 55,
+            "gk": 18
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_2502",
+          "nom": "Antar Ben Ahmed",
+          "poste": "AD",
+          "age": 21,
+          "notes": {
+            "off": 80,
+            "tec": 88,
+            "mouv": 87,
+            "pui": 75,
+            "ment": 74,
+            "def": 56,
+            "gk": 23
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_2816",
+          "nom": "Hatem El-Qadi",
+          "poste": "AG",
+          "age": 18,
+          "notes": {
+            "off": 86,
+            "tec": 79,
+            "mouv": 87,
+            "pui": 76,
+            "ment": 73,
+            "def": 65,
+            "gk": 28
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_8304",
+          "nom": "Marwan Ben Youssef",
+          "poste": "AD",
+          "age": 21,
+          "notes": {
+            "off": 87,
+            "tec": 71,
+            "mouv": 74,
+            "pui": 67,
+            "ment": 77,
+            "def": 49,
+            "gk": 30
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_6729",
+          "nom": "Hussein Al-Hassan",
+          "poste": "AC",
+          "age": 35,
+          "notes": {
+            "off": 84,
+            "tec": 81,
+            "mouv": 83,
+            "pui": 68,
+            "ment": 73,
+            "def": 53,
+            "gk": 14
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_4115",
+          "nom": "Saber Al-Mansouri",
+          "poste": "AC",
+          "age": 34,
+          "notes": {
+            "off": 84,
+            "tec": 77,
+            "mouv": 86,
+            "pui": 68,
+            "ment": 78,
+            "def": 48,
+            "gk": 30
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_2821",
+          "nom": "Badr Ben Musa",
+          "poste": "AD",
+          "age": 34,
+          "notes": {
+            "off": 88,
+            "tec": 76,
+            "mouv": 90,
+            "pui": 79,
+            "ment": 82,
+            "def": 72,
+            "gk": 22
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_4107",
+          "nom": "Amine Ben Ali",
+          "poste": "AG",
+          "age": 34,
+          "notes": {
+            "off": 84,
+            "tec": 82,
+            "mouv": 81,
+            "pui": 78,
+            "ment": 80,
+            "def": 68,
+            "gk": 29
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_8365",
+          "nom": "Ziad Ben Youssef",
+          "poste": "AD",
+          "age": 32,
+          "notes": {
+            "off": 90,
+            "tec": 83,
+            "mouv": 92,
+            "pui": 82,
+            "ment": 72,
+            "def": 55,
+            "gk": 20
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_3338",
+          "nom": "Magdy El-Tayeb",
+          "poste": "AG",
+          "age": 20,
+          "notes": {
+            "off": 89,
+            "tec": 81,
+            "mouv": 92,
+            "pui": 82,
+            "ment": 72,
+            "def": 66,
+            "gk": 27
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082248_7273",
+          "nom": "Walid Ben Khalid",
+          "poste": "AG",
+          "age": 34,
+          "notes": {
+            "off": 86,
+            "tec": 86,
+            "mouv": 90,
+            "pui": 69,
+            "ment": 81,
+            "def": 61,
+            "gk": 24
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_2487",
+          "nom": "Antar Ben Khalid",
+          "poste": "AC",
+          "age": 19,
+          "notes": {
+            "off": 84,
+            "tec": 78,
+            "mouv": 85,
+            "pui": 66,
+            "ment": 70,
+            "def": 64,
+            "gk": 13
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_7512",
+          "nom": "Bassem Ben Tarek",
+          "poste": "AC",
+          "age": 18,
+          "notes": {
+            "off": 83,
+            "tec": 79,
+            "mouv": 82,
+            "pui": 68,
+            "ment": 80,
+            "def": 66,
+            "gk": 15
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_2481",
+          "nom": "Rachid Al-Sayed",
+          "poste": "AG",
+          "age": 25,
+          "notes": {
+            "off": 89,
+            "tec": 83,
+            "mouv": 76,
+            "pui": 67,
+            "ment": 79,
+            "def": 59,
+            "gk": 31
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_3554",
+          "nom": "Amine Al-Amin",
+          "poste": "AD",
+          "age": 28,
+          "notes": {
+            "off": 85,
+            "tec": 80,
+            "mouv": 84,
+            "pui": 75,
+            "ment": 73,
+            "def": 61,
+            "gk": 19
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_9376",
+          "nom": "Walid Al-Nouri",
+          "poste": "AC",
+          "age": 34,
+          "notes": {
+            "off": 89,
+            "tec": 82,
+            "mouv": 78,
+            "pui": 78,
+            "ment": 72,
+            "def": 69,
+            "gk": 20
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_1141",
+          "nom": "Mehdi El-Helal",
+          "poste": "AC",
+          "age": 18,
+          "notes": {
+            "off": 83,
+            "tec": 86,
+            "mouv": 84,
+            "pui": 77,
+            "ment": 71,
+            "def": 65,
+            "gk": 12
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_8542",
+          "nom": "Faris Al-Zahrani",
+          "poste": "AC",
+          "age": 28,
+          "notes": {
+            "off": 81,
+            "tec": 87,
+            "mouv": 79,
+            "pui": 78,
+            "ment": 71,
+            "def": 70,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_6941",
+          "nom": "Ismail Al-Farsi",
+          "poste": "AG",
+          "age": 32,
+          "notes": {
+            "off": 91,
+            "tec": 74,
+            "mouv": 88,
+            "pui": 70,
+            "ment": 82,
+            "def": 70,
+            "gk": 24
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_5702",
+          "nom": "Ayman Al-Zahrani",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 81,
+            "tec": 82,
+            "mouv": 82,
+            "pui": 72,
+            "ment": 72,
+            "def": 63,
+            "gk": 20
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_2174",
+          "nom": "Ibrahim Al-Jaziri",
+          "poste": "AC",
+          "age": 31,
+          "notes": {
+            "off": 88,
+            "tec": 83,
+            "mouv": 81,
+            "pui": 79,
+            "ment": 78,
+            "def": 62,
+            "gk": 29
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_9235",
+          "nom": "Ayman Ben Ahmed",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 92,
+            "tec": 85,
+            "mouv": 76,
+            "pui": 73,
+            "ment": 75,
+            "def": 58,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_1012",
+          "nom": "Osama El-Banna",
+          "poste": "AG",
+          "age": 30,
+          "notes": {
+            "off": 89,
+            "tec": 80,
+            "mouv": 76,
+            "pui": 81,
+            "ment": 72,
+            "def": 68,
+            "gk": 22
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_4300",
+          "nom": "Rami Ben Salah",
+          "poste": "AC",
+          "age": 31,
+          "notes": {
+            "off": 80,
+            "tec": 80,
+            "mouv": 85,
+            "pui": 76,
+            "ment": 75,
+            "def": 57,
+            "gk": 27
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_6915",
+          "nom": "Amine El-Amin",
+          "poste": "AG",
+          "age": 36,
+          "notes": {
+            "off": 83,
+            "tec": 81,
+            "mouv": 79,
+            "pui": 74,
+            "ment": 72,
+            "def": 51,
+            "gk": 23
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_6393",
+          "nom": "Hazem Al-Nouri",
+          "poste": "AD",
+          "age": 33,
+          "notes": {
+            "off": 88,
+            "tec": 80,
+            "mouv": 86,
+            "pui": 73,
+            "ment": 70,
+            "def": 61,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_6057",
+          "nom": "Omar Ben Youssef",
+          "poste": "AD",
+          "age": 31,
+          "notes": {
+            "off": 89,
+            "tec": 78,
+            "mouv": 76,
+            "pui": 65,
+            "ment": 75,
+            "def": 56,
+            "gk": 25
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_5257",
+          "nom": "Ahmed Al-Farsi",
+          "poste": "AC",
+          "age": 20,
+          "notes": {
+            "off": 87,
+            "tec": 80,
+            "mouv": 81,
+            "pui": 65,
+            "ment": 70,
+            "def": 54,
+            "gk": 15
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_5872",
+          "nom": "Hazem El-Tayeb",
+          "poste": "AG",
+          "age": 34,
+          "notes": {
+            "off": 82,
+            "tec": 88,
+            "mouv": 83,
+            "pui": 80,
+            "ment": 74,
+            "def": 55,
+            "gk": 20
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_4301",
+          "nom": "Bilal Ben Salah",
+          "poste": "AC",
+          "age": 28,
+          "notes": {
+            "off": 92,
+            "tec": 87,
+            "mouv": 87,
+            "pui": 76,
+            "ment": 74,
+            "def": 58,
+            "gk": 23
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082248_7951",
+          "nom": "Ahmed El-Shazly",
+          "poste": "AG",
+          "age": 31,
+          "notes": {
+            "off": 82,
+            "tec": 80,
+            "mouv": 80,
+            "pui": 82,
+            "ment": 69,
+            "def": 63,
+            "gk": 18
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_2456",
+          "nom": "Kareem El-Shazly",
+          "poste": "AG",
+          "age": 23,
+          "notes": {
+            "off": 86,
+            "tec": 78,
+            "mouv": 88,
+            "pui": 68,
+            "ment": 74,
+            "def": 60,
+            "gk": 29
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_9068",
+          "nom": "Ali Ben Khalid",
+          "poste": "AC",
+          "age": 25,
+          "notes": {
+            "off": 79,
+            "tec": 71,
+            "mouv": 87,
+            "pui": 73,
+            "ment": 70,
+            "def": 52,
+            "gk": 30
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082248_9415",
+          "nom": "Khaled El-Khoury",
+          "poste": "AG",
+          "age": 20,
+          "notes": {
+            "off": 83,
+            "tec": 77,
+            "mouv": 90,
+            "pui": 74,
+            "ment": 78,
+            "def": 56,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_6567",
+          "nom": "Younes Ben Hassan",
+          "poste": "AD",
+          "age": 23,
+          "notes": {
+            "off": 78,
+            "tec": 72,
+            "mouv": 74,
+            "pui": 63,
+            "ment": 73,
+            "def": 64,
+            "gk": 31
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082248_4808",
+          "nom": "Ibrahim Ben Omar",
+          "poste": "AD",
+          "age": 21,
+          "notes": {
+            "off": 83,
+            "tec": 88,
+            "mouv": 89,
+            "pui": 76,
+            "ment": 74,
+            "def": 64,
+            "gk": 17
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_1529",
+          "nom": "Mehdi Al-Rashid",
+          "poste": "AC",
+          "age": 30,
+          "notes": {
+            "off": 88,
+            "tec": 73,
+            "mouv": 81,
+            "pui": 78,
+            "ment": 75,
+            "def": 67,
+            "gk": 20
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_9671",
+          "nom": "Ramzy Al-Khatib",
+          "poste": "AC",
+          "age": 36,
+          "notes": {
+            "off": 89,
+            "tec": 78,
+            "mouv": 86,
+            "pui": 80,
+            "ment": 73,
+            "def": 57,
+            "gk": 32
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_7801",
+          "nom": "Khaled Ben Ali",
+          "poste": "AG",
+          "age": 19,
+          "notes": {
+            "off": 78,
+            "tec": 76,
+            "mouv": 83,
+            "pui": 71,
+            "ment": 75,
+            "def": 56,
+            "gk": 26
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082248_7189",
+          "nom": "Walid Al-Farsi",
+          "poste": "AD",
+          "age": 17,
+          "notes": {
+            "off": 80,
+            "tec": 85,
+            "mouv": 80,
+            "pui": 71,
+            "ment": 72,
+            "def": 59,
+            "gk": 19
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082248_4116",
+          "nom": "Emad El-Khoury",
+          "poste": "AG",
+          "age": 20,
+          "notes": {
+            "off": 91,
+            "tec": 85,
+            "mouv": 92,
+            "pui": 83,
+            "ment": 72,
+            "def": 73,
+            "gk": 25
+          },
+          "global": 81
+        },
+        {
+          "id": "p_1775045082248_9886",
+          "nom": "Ali Al-Rashid",
+          "poste": "AC",
+          "age": 21,
+          "notes": {
+            "off": 82,
+            "tec": 77,
+            "mouv": 83,
+            "pui": 76,
+            "ment": 78,
+            "def": 61,
+            "gk": 15
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082248_8966",
+          "nom": "Antar Al-Farsi",
+          "poste": "AC",
+          "age": 28,
+          "notes": {
+            "off": 84,
+            "tec": 81,
+            "mouv": 89,
+            "pui": 77,
+            "ment": 73,
+            "def": 49,
+            "gk": 30
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_9177",
+          "nom": "Nabil Al-Mansouri",
+          "poste": "AC",
+          "age": 18,
+          "notes": {
+            "off": 83,
+            "tec": 79,
+            "mouv": 80,
+            "pui": 82,
+            "ment": 83,
+            "def": 53,
+            "gk": 21
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082248_6997",
+          "nom": "Badr Ben Youssef",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 88,
+            "tec": 88,
+            "mouv": 80,
+            "pui": 75,
+            "ment": 84,
+            "def": 60,
+            "gk": 14
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082248_3953",
+          "nom": "Hossam Al-Hassan",
+          "poste": "AD",
+          "age": 21,
+          "notes": {
+            "off": 80,
+            "tec": 82,
+            "mouv": 81,
+            "pui": 83,
+            "ment": 77,
+            "def": 61,
+            "gk": 28
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082248_2972",
+          "nom": "Khaled Ben Hassan",
+          "poste": "AD",
+          "age": 17,
+          "notes": {
+            "off": 85,
+            "tec": 75,
+            "mouv": 77,
+            "pui": 66,
+            "ment": 66,
+            "def": 49,
+            "gk": 30
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082248_7762",
+          "nom": "Faris Al-Jaziri",
+          "poste": "AD",
+          "age": 27,
+          "notes": {
+            "off": 85,
+            "tec": 76,
+            "mouv": 87,
+            "pui": 66,
+            "ment": 67,
+            "def": 60,
+            "gk": 26
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_8404",
+          "nom": "Youssef Al-Saad",
+          "poste": "AC",
+          "age": 20,
+          "notes": {
+            "off": 90,
+            "tec": 88,
+            "mouv": 78,
+            "pui": 74,
+            "ment": 73,
+            "def": 54,
+            "gk": 22
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_4830",
+          "nom": "Faris Al-Saad",
+          "poste": "AG",
+          "age": 28,
+          "notes": {
+            "off": 81,
+            "tec": 86,
+            "mouv": 91,
+            "pui": 70,
+            "ment": 76,
+            "def": 69,
+            "gk": 30
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_3109",
+          "nom": "Hazem Al-Jaziri",
+          "poste": "AG",
+          "age": 31,
+          "notes": {
+            "off": 92,
+            "tec": 85,
+            "mouv": 79,
+            "pui": 70,
+            "ment": 70,
+            "def": 67,
+            "gk": 31
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_2035",
+          "nom": "Hassan El-Tayeb",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 87,
+            "tec": 87,
+            "mouv": 86,
+            "pui": 74,
+            "ment": 76,
+            "def": 66,
+            "gk": 15
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_4400",
+          "nom": "Amine Ben Musa",
+          "poste": "AC",
+          "age": 31,
+          "notes": {
+            "off": 92,
+            "tec": 74,
+            "mouv": 78,
+            "pui": 78,
+            "ment": 77,
+            "def": 60,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_5168",
+          "nom": "Ali El-Tayeb",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 83,
+            "tec": 73,
+            "mouv": 76,
+            "pui": 81,
+            "ment": 78,
+            "def": 52,
+            "gk": 19
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_4915",
+          "nom": "Rami Al-Rashid",
+          "poste": "AG",
+          "age": 19,
+          "notes": {
+            "off": 84,
+            "tec": 73,
+            "mouv": 76,
+            "pui": 79,
+            "ment": 81,
+            "def": 69,
+            "gk": 22
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_8949",
+          "nom": "Saber Al-Sayed",
+          "poste": "AC",
+          "age": 20,
+          "notes": {
+            "off": 87,
+            "tec": 82,
+            "mouv": 84,
+            "pui": 86,
+            "ment": 77,
+            "def": 64,
+            "gk": 19
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_2038",
+          "nom": "Ramzy El-Masry",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 77,
+            "tec": 74,
+            "mouv": 74,
+            "pui": 72,
+            "ment": 77,
+            "def": 51,
+            "gk": 20
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082249_4880",
+          "nom": "Amir Ben Hassan",
+          "poste": "AD",
+          "age": 18,
+          "notes": {
+            "off": 94,
+            "tec": 86,
+            "mouv": 84,
+            "pui": 74,
+            "ment": 76,
+            "def": 54,
+            "gk": 19
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_6626",
+          "nom": "Saber El-Masry",
+          "poste": "AC",
+          "age": 23,
+          "notes": {
+            "off": 80,
+            "tec": 84,
+            "mouv": 81,
+            "pui": 76,
+            "ment": 79,
+            "def": 55,
+            "gk": 13
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_7303",
+          "nom": "Youssef Al-Hassan",
+          "poste": "AC",
+          "age": 32,
+          "notes": {
+            "off": 92,
+            "tec": 76,
+            "mouv": 86,
+            "pui": 69,
+            "ment": 77,
+            "def": 60,
+            "gk": 31
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_9573",
+          "nom": "Hossam Al-Mansouri",
+          "poste": "AC",
+          "age": 33,
+          "notes": {
+            "off": 92,
+            "tec": 77,
+            "mouv": 81,
+            "pui": 78,
+            "ment": 77,
+            "def": 53,
+            "gk": 26
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_3905",
+          "nom": "Adel Al-Sayed",
+          "poste": "AC",
+          "age": 24,
+          "notes": {
+            "off": 91,
+            "tec": 83,
+            "mouv": 79,
+            "pui": 82,
+            "ment": 73,
+            "def": 69,
+            "gk": 28
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_3902",
+          "nom": "Saber El-Qadi",
+          "poste": "AD",
+          "age": 35,
+          "notes": {
+            "off": 77,
+            "tec": 80,
+            "mouv": 83,
+            "pui": 69,
+            "ment": 67,
+            "def": 56,
+            "gk": 16
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_9919",
+          "nom": "Youssef El-Banna",
+          "poste": "AG",
+          "age": 30,
+          "notes": {
+            "off": 81,
+            "tec": 84,
+            "mouv": 79,
+            "pui": 78,
+            "ment": 73,
+            "def": 49,
+            "gk": 16
+          },
+          "global": 72
+        },
+        {
+          "id": "p_1775045082249_9821",
+          "nom": "Magdy Al-Khatib",
+          "poste": "AG",
+          "age": 28,
+          "notes": {
+            "off": 87,
+            "tec": 75,
+            "mouv": 77,
+            "pui": 84,
+            "ment": 74,
+            "def": 51,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_1090",
+          "nom": "Osama Ben Hassan",
+          "poste": "AC",
+          "age": 25,
+          "notes": {
+            "off": 86,
+            "tec": 89,
+            "mouv": 87,
+            "pui": 69,
+            "ment": 79,
+            "def": 56,
+            "gk": 27
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_2018",
+          "nom": "Rachid El-Banna",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 86,
+            "tec": 81,
+            "mouv": 76,
+            "pui": 81,
+            "ment": 69,
+            "def": 57,
+            "gk": 26
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_1169",
+          "nom": "Ahmed El-Sharif",
+          "poste": "AG",
+          "age": 19,
+          "notes": {
+            "off": 79,
+            "tec": 79,
+            "mouv": 84,
+            "pui": 75,
+            "ment": 76,
+            "def": 57,
+            "gk": 30
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_2605",
+          "nom": "Magdy Al-Sayed",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 83,
+            "tec": 83,
+            "mouv": 75,
+            "pui": 77,
+            "ment": 79,
+            "def": 52,
+            "gk": 31
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_8428",
+          "nom": "Rachid El-Amin",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 82,
+            "tec": 83,
+            "mouv": 87,
+            "pui": 83,
+            "ment": 79,
+            "def": 52,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_6537",
+          "nom": "Rachid Ben Khalid",
+          "poste": "AC",
+          "age": 25,
+          "notes": {
+            "off": 82,
+            "tec": 78,
+            "mouv": 86,
+            "pui": 71,
+            "ment": 78,
+            "def": 60,
+            "gk": 19
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_7631",
+          "nom": "Adel Ben Salah",
+          "poste": "AD",
+          "age": 30,
+          "notes": {
+            "off": 88,
+            "tec": 78,
+            "mouv": 86,
+            "pui": 80,
+            "ment": 82,
+            "def": 54,
+            "gk": 14
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_7730",
+          "nom": "Ayman Al-Saad",
+          "poste": "AC",
+          "age": 24,
+          "notes": {
+            "off": 87,
+            "tec": 85,
+            "mouv": 84,
+            "pui": 72,
+            "ment": 73,
+            "def": 56,
+            "gk": 28
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_8199",
+          "nom": "Bassem Ben Omar",
+          "poste": "AD",
+          "age": 24,
+          "notes": {
+            "off": 86,
+            "tec": 76,
+            "mouv": 76,
+            "pui": 74,
+            "ment": 78,
+            "def": 67,
+            "gk": 32
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_4666",
+          "nom": "Wael Al-Amin",
+          "poste": "AD",
+          "age": 22,
+          "notes": {
+            "off": 81,
+            "tec": 83,
+            "mouv": 80,
+            "pui": 78,
+            "ment": 78,
+            "def": 58,
+            "gk": 24
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_5479",
+          "nom": "Walid El-Khoury",
+          "poste": "AC",
+          "age": 28,
+          "notes": {
+            "off": 82,
+            "tec": 79,
+            "mouv": 83,
+            "pui": 76,
+            "ment": 75,
+            "def": 62,
+            "gk": 13
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_4043",
+          "nom": "Rachid El-Sharif",
+          "poste": "AD",
+          "age": 21,
+          "notes": {
+            "off": 82,
+            "tec": 78,
+            "mouv": 90,
+            "pui": 87,
+            "ment": 80,
+            "def": 55,
+            "gk": 15
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_3171",
+          "nom": "Tarek Al-Hassan",
+          "poste": "AD",
+          "age": 35,
+          "notes": {
+            "off": 84,
+            "tec": 75,
+            "mouv": 82,
+            "pui": 72,
+            "ment": 74,
+            "def": 55,
+            "gk": 26
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_6752",
+          "nom": "Magdy Ben Ibrahim",
+          "poste": "AD",
+          "age": 18,
+          "notes": {
+            "off": 88,
+            "tec": 85,
+            "mouv": 81,
+            "pui": 83,
+            "ment": 83,
+            "def": 69,
+            "gk": 14
+          },
+          "global": 79
+        },
+        {
+          "id": "p_1775045082249_9975",
+          "nom": "Khaled Ben Hassan",
+          "poste": "AD",
+          "age": 17,
+          "notes": {
+            "off": 88,
+            "tec": 87,
+            "mouv": 84,
+            "pui": 69,
+            "ment": 73,
+            "def": 66,
+            "gk": 18
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_7424",
+          "nom": "Osama El-Sharif",
+          "poste": "AG",
+          "age": 33,
+          "notes": {
+            "off": 83,
+            "tec": 83,
+            "mouv": 78,
+            "pui": 82,
+            "ment": 77,
+            "def": 56,
+            "gk": 31
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_1398",
+          "nom": "Rami Ben Khalid",
+          "poste": "AD",
+          "age": 30,
+          "notes": {
+            "off": 79,
+            "tec": 70,
+            "mouv": 80,
+            "pui": 70,
+            "ment": 78,
+            "def": 59,
+            "gk": 15
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_9202",
+          "nom": "Ahmed Ben Musa",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 78,
+            "tec": 72,
+            "mouv": 75,
+            "pui": 80,
+            "ment": 69,
+            "def": 49,
+            "gk": 16
+          },
+          "global": 69
+        },
+        {
+          "id": "p_1775045082249_9659",
+          "nom": "Hicham El-Shazly",
+          "poste": "AC",
+          "age": 21,
+          "notes": {
+            "off": 79,
+            "tec": 77,
+            "mouv": 83,
+            "pui": 85,
+            "ment": 74,
+            "def": 55,
+            "gk": 22
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_3028",
+          "nom": "Faris El-Banna",
+          "poste": "AG",
+          "age": 19,
+          "notes": {
+            "off": 90,
+            "tec": 81,
+            "mouv": 79,
+            "pui": 86,
+            "ment": 76,
+            "def": 67,
+            "gk": 19
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_6713",
+          "nom": "Faris Ben Ibrahim",
+          "poste": "AG",
+          "age": 34,
+          "notes": {
+            "off": 78,
+            "tec": 76,
+            "mouv": 81,
+            "pui": 69,
+            "ment": 72,
+            "def": 59,
+            "gk": 25
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_5623",
+          "nom": "Bilal El-Masry",
+          "poste": "AD",
+          "age": 25,
+          "notes": {
+            "off": 93,
+            "tec": 77,
+            "mouv": 78,
+            "pui": 72,
+            "ment": 76,
+            "def": 65,
+            "gk": 25
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_5676",
+          "nom": "Galal Al-Amin",
+          "poste": "AC",
+          "age": 22,
+          "notes": {
+            "off": 90,
+            "tec": 83,
+            "mouv": 85,
+            "pui": 67,
+            "ment": 75,
+            "def": 68,
+            "gk": 12
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_9177",
+          "nom": "Mostafa Al-Farsi",
+          "poste": "AC",
+          "age": 27,
+          "notes": {
+            "off": 85,
+            "tec": 89,
+            "mouv": 83,
+            "pui": 72,
+            "ment": 79,
+            "def": 54,
+            "gk": 27
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_7317",
+          "nom": "Badr Ben Omar",
+          "poste": "AG",
+          "age": 29,
+          "notes": {
+            "off": 79,
+            "tec": 74,
+            "mouv": 81,
+            "pui": 79,
+            "ment": 71,
+            "def": 53,
+            "gk": 21
+          },
+          "global": 71
+        },
+        {
+          "id": "p_1775045082249_9249",
+          "nom": "Walid Al-Zahrani",
+          "poste": "AD",
+          "age": 32,
+          "notes": {
+            "off": 88,
+            "tec": 81,
+            "mouv": 83,
+            "pui": 81,
+            "ment": 74,
+            "def": 64,
+            "gk": 26
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_7937",
+          "nom": "Faris Ben Omar",
+          "poste": "AG",
+          "age": 18,
+          "notes": {
+            "off": 88,
+            "tec": 83,
+            "mouv": 81,
+            "pui": 70,
+            "ment": 78,
+            "def": 66,
+            "gk": 19
+          },
+          "global": 76
+        },
+        {
+          "id": "p_1775045082249_3179",
+          "nom": "Rami Ben Musa",
+          "poste": "AC",
+          "age": 35,
+          "notes": {
+            "off": 93,
+            "tec": 85,
+            "mouv": 88,
+            "pui": 73,
+            "ment": 80,
+            "def": 61,
+            "gk": 17
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_2428",
+          "nom": "Hazem Ben Ahmed",
+          "poste": "AC",
+          "age": 17,
+          "notes": {
+            "off": 84,
+            "tec": 81,
+            "mouv": 80,
+            "pui": 80,
+            "ment": 76,
+            "def": 70,
+            "gk": 20
+          },
+          "global": 77
+        },
+        {
+          "id": "p_1775045082249_2035",
+          "nom": "Tamer El-Banna",
+          "poste": "AC",
+          "age": 20,
+          "notes": {
+            "off": 89,
+            "tec": 85,
+            "mouv": 92,
+            "pui": 82,
+            "ment": 82,
+            "def": 60,
+            "gk": 19
+          },
+          "global": 80
+        },
+        {
+          "id": "p_1775045082249_6509",
+          "nom": "Mostafa El-Shazly",
+          "poste": "AG",
+          "age": 29,
+          "notes": {
+            "off": 90,
+            "tec": 76,
+            "mouv": 81,
+            "pui": 74,
+            "ment": 68,
+            "def": 68,
+            "gk": 32
+          },
+          "global": 75
+        },
+        {
+          "id": "p_1775045082249_1138",
+          "nom": "Khaled Al-Rashid",
+          "poste": "AG",
+          "age": 24,
+          "notes": {
+            "off": 89,
+            "tec": 88,
+            "mouv": 80,
+            "pui": 86,
+            "ment": 72,
+            "def": 59,
+            "gk": 20
+          },
+          "global": 78
+        },
+        {
+          "id": "p_1775045082249_5384",
+          "nom": "Rachid Al-Farsi",
+          "poste": "AG",
+          "age": 29,
+          "notes": {
+            "off": 80,
+            "tec": 76,
+            "mouv": 80,
+            "pui": 74,
+            "ment": 74,
+            "def": 48,
+            "gk": 13
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_7175",
+          "nom": "Wael Al-Hassan",
+          "poste": "AD",
+          "age": 17,
+          "notes": {
+            "off": 78,
+            "tec": 75,
+            "mouv": 85,
+            "pui": 77,
+            "ment": 75,
+            "def": 61,
+            "gk": 15
+          },
+          "global": 73
+        },
+        {
+          "id": "p_1775045082249_7223",
+          "nom": "Ismail Al-Nouri",
+          "poste": "AG",
+          "age": 31,
+          "notes": {
+            "off": 89,
+            "tec": 81,
+            "mouv": 77,
+            "pui": 73,
+            "ment": 69,
+            "def": 57,
+            "gk": 25
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_8134",
+          "nom": "Hatem Al-Sayed",
+          "poste": "AC",
+          "age": 29,
+          "notes": {
+            "off": 75,
+            "tec": 79,
+            "mouv": 73,
+            "pui": 71,
+            "ment": 71,
+            "def": 56,
+            "gk": 31
+          },
+          "global": 70
+        },
+        {
+          "id": "p_1775045082249_7079",
+          "nom": "Hazem Al-Sayed",
+          "poste": "AD",
+          "age": 23,
+          "notes": {
+            "off": 80,
+            "tec": 81,
+            "mouv": 85,
+            "pui": 72,
+            "ment": 81,
+            "def": 52,
+            "gk": 28
+          },
+          "global": 74
+        },
+        {
+          "id": "p_1775045082249_5124",
+          "nom": "Mehdi El-Sharif",
+          "poste": "AC",
+          "age": 25,
+          "notes": {
+            "off": 84,
+            "tec": 73,
+            "mouv": 85,
+            "pui": 71,
+            "ment": 80,
+            "def": 50,
+            "gk": 21
+          },
+          "global": 72
+        }
+      ],
+      "created": "2026-04-01T12:04:42.249Z"
+    }
+  ],
   "competitions": [],
   "matchs": []
 }
