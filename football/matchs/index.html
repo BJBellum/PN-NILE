@@ -360,6 +360,46 @@ function getPlayerName(team){
   return pick(joueurs).nom;
 }
 
+function calcAddTime(scoreA, scoreB, minute){
+  // More time if close score, less if big difference
+  var diff=Math.abs(scoreA-scoreB);
+  var base;
+  if(minute<=45)base=rand(1,4);
+  else if(minute<=90)base=rand(2,5);
+  else base=rand(0,3);
+  // Reduce for big leads
+  if(diff>=4)base=Math.max(0,base-3);
+  else if(diff>=3)base=Math.max(0,base-2);
+  else if(diff>=2)base=Math.max(0,base-1);
+  return Math.min(5,Math.max(0,base));
+}
+
+function showHalfTimeBanner(){
+  var banner=document.getElementById('half-time-banner');
+  if(!banner){
+    banner=document.createElement('div');
+    banner.id='half-time-banner';
+    banner.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:600;display:flex;align-items:center;justify-content:center;';
+    banner.innerHTML='<div style="background:var(--card-bg);border:1px solid var(--border2);border-top:3px solid var(--spice);padding:32px 40px;text-align:center;max-width:400px;">'
+      +'<div style="font-family:\'Dune Rise\',serif;font-size:14px;letter-spacing:.14em;color:var(--spice);margin-bottom:8px;">MI-TEMPS</div>'
+      +'<div style="font-family:\'Dune Rise\',serif;font-size:40px;color:var(--gold);margin-bottom:6px;" id="ht-score">'+Math.floor(MS.scoreA)+' — '+Math.floor(MS.scoreB)+'</div>'
+      +'<div style="font-size:9px;color:var(--text3);letter-spacing:.1em;margin-bottom:20px;">'+document.getElementById('sb-team-a-name').textContent+' · '+document.getElementById('sb-team-b-name').textContent+'</div>'
+      +'<button onclick="resumeMatch()" style="background:var(--spice);color:#fff;font-family:\'IBM Plex Mono\',monospace;font-size:10px;letter-spacing:.12em;padding:10px 24px;border:none;cursor:pointer;border-radius:2px;">▶ REPRENDRE LE JEU</button>'
+      +'</div>';
+    document.body.appendChild(banner);
+  }
+  banner.style.display='flex';
+}
+
+function resumeMatch(){
+  var banner=document.getElementById('half-time-banner');
+  if(banner)banner.style.display='none';
+  matchRunning=true;
+  document.getElementById('sb-status').textContent='EN COURS';
+  addEvent(45,'▶','REPRISE','Coup d\'envoi de la seconde mi-temps.','ko');
+  scheduleNext();
+}
+
 function startMatch(){
   if(!teamA||!teamB)return;
   var strA=calcTeamStrength(teamA);
@@ -368,7 +408,7 @@ function startMatch(){
   MS={minute:0,scoreA:0,scoreB:0,events:[],
     statsA:{tirs:0,tirsC:0,fautes:0,corners:0,cartsJ:0,cartsR:0,possPts:0},
     statsB:{tirs:0,tirsC:0,fautes:0,corners:0,cartsJ:0,cartsR:0,possPts:0},
-    extraTime:false,finished:false,penaltyShootout:false,
+    extraTime:false,finished:false,penaltyShootout:false,halfTimeDone:false,extraTimeDone:false,extraTimeEndDone:false,
     strA:strA,strB:strB,
     optType:document.getElementById('opt-type').value,
     optEvents:document.getElementById('opt-events').value,
@@ -431,19 +471,68 @@ function tickMinute(){
   // Generate events for this minute
   simulateMinute(MS.minute);
 
+  // Half-time at 45
+  if(MS.minute===45&&!MS.halfTimeDone&&!MS.extraTime){
+    MS.halfTimeDone=true;
+    matchRunning=false;
+    clearTimeout(matchInterval);
+    var addT=calcAddTime(MS.scoreA,MS.scoreB,45);
+    addEvent(45,'⏸️','MI-TEMPS','Coup de sifflet de mi-temps. Temps additionnel : '+addT+' min.','ko');
+    if(addT>0){
+      MS.addTimeLeft=addT;
+      MS.inAddTime=true;
+      // Play additional minutes
+      for(var extra=0;extra<addT;extra++){
+        MS.minute++;
+        simulateMinute(MS.minute);
+      }
+    }
+    // Show half-time banner
+    document.getElementById('sb-status').textContent='MI-TEMPS';
+    showHalfTimeBanner();
+    return;
+  }
+
+  // End of additional time at 90
+  if(MS.minute===90&&!MS.extraTimeDone&&!MS.extraTime){
+    var addT90=calcAddTime(MS.scoreA,MS.scoreB,90);
+    if(addT90>0){
+      addEvent(90,'⏱️','TEMPS ADDITIONNEL',''+addT90+' minutes de temps additionnel.','');
+      for(var extra90=0;extra90<addT90;extra90++){
+        MS.minute++;
+        simulateMinute(MS.minute);
+      }
+    }
+    MS.extraTimeDone=true;
+  }
+
   // Check end
   if(MS.minute>=maxMin){
     if(MS.extraTime||MS.optType==='normal'||(MS.optType!=='prolongation'&&MS.optType!=='golden')){
       endMatch();return;
-    } else if(MS.minute===90&&(MS.optType==='prolongation'||MS.optType==='golden')){
+    } else if(MS.optType==='prolongation'||MS.optType==='golden'){
       if(MS.scoreA===MS.scoreB){
         MS.extraTime=true;
-        addEvent(90,'⏱️','PROLONGATIONS','Égalité après 90 minutes — départ des prolongations (30 minutes supplémentaires).','ko');
+        addEvent(90,'⏱️','PROLONGATIONS','Égalité après 90 minutes — départ des prolongations.','ko');
         scheduleNext();return;
       } else {endMatch();return;}
     } else {
       endMatch();return;
     }
+  }
+
+  // End of extra time at 120
+  if(MS.extraTime&&MS.minute>=120&&!MS.extraTimeEndDone){
+    MS.extraTimeEndDone=true;
+    var addT120=calcAddTime(MS.scoreA,MS.scoreB,120);
+    if(addT120>0){
+      addEvent(120,'⏱️','TEMPS ADDITIONNEL',''+addT120+' minutes supplémentaires.','');
+      for(var extra120=0;extra120<addT120;extra120++){
+        MS.minute++;
+        simulateMinute(MS.minute);
+      }
+    }
+    endMatch();return;
   }
 
   // Golden goal check
@@ -732,10 +821,9 @@ function showApp(){
 }
 
 document.getElementById('m-login-btn').onclick=function(){var pa=window.PharosAuth;if(pa&&pa.login)pa.login();};
-document.addEventListener('DOMContentLoaded',function(){
-  var pa=window.PharosAuth;
-  if(pa){var user=pa.getUser();if(user&&pa.isAdmin())showApp();}
-});
+function tryAuth(){var pa=window.PharosAuth;if(pa){var user=pa.getUser();if(user&&pa.isAdmin()){showApp();return true;}}return false;}
+document.addEventListener('DOMContentLoaded',function(){if(!tryAuth()){window.addEventListener('load',function(){setTimeout(tryAuth,200);});}});
+window.addEventListener('pharos_auth_ready',tryAuth);
 </script>
 <script src="../../pharos-auth.js"></script>
 </body>

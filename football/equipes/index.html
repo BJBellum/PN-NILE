@@ -765,7 +765,7 @@ function renderTeamDetail(p){
 
   // Coach
   if(p.coach){
-    html+='<div style="font-size:7px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;border-bottom:1px solid rgba(212,168,67,.2);padding-bottom:6px;">Entraîneur</div>';
+    html+='<div style="font-size:7px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;border-bottom:1px solid rgba(212,168,67,.2);padding-bottom:6px;display:flex;align-items:center;justify-content:space-between;">Entraîneur<button onclick="openCoachEdit(\''+p.id+'\')" style="background:rgba(200,150,12,.08);border:1px solid rgba(200,150,12,.25);color:var(--gold);font-family:\'IBM Plex Mono\',monospace;font-size:7px;padding:2px 8px;cursor:pointer;border-radius:2px;">✎ Modifier</button></div>';
     html+='<div class="coach-card">';
     html+='<div><div class="coach-name">'+p.coach.nom+'</div><div style="font-size:8px;color:var(--text3);margin-top:2px;">Note globale · <span style="color:var(--gold);font-family:\'Dune Rise\',serif;">'+p.coach.global+'</span></div></div>';
     html+='<div class="coach-notes">';
@@ -1264,6 +1264,56 @@ async function saveTacticToGitHub(teamId){
 }
 
 // ════════════════════════════════════════════════
+//  COACH EDIT
+// ════════════════════════════════════════════════
+var editCoachTeamId=null;
+
+function openCoachEdit(teamId){
+  var p=fbData.pays.find(function(x){return x.id===teamId;});
+  if(!p||!p.coach)return;
+  editCoachTeamId=teamId;
+  var coach=p.coach;
+  document.getElementById('ce-nom').value=coach.nom||'';
+  var notes=coach.notes||{};
+  ['tactique','attaque','defence','preparation','gestion'].forEach(function(k){
+    var el=document.getElementById('ce-'+k);
+    var val=notes[k]||60;
+    if(el){el.value=val;document.getElementById('cev-'+k).textContent=val;}
+  });
+  calcCoachGlobal();
+  document.getElementById('coach-modal').classList.add('open');
+}
+
+function closeCoachEdit(){document.getElementById('coach-modal').classList.remove('open');editCoachTeamId=null;}
+
+function calcCoachGlobal(){
+  var t=parseInt(document.getElementById('ce-tactique').value)||60;
+  var a=parseInt(document.getElementById('ce-attaque').value)||60;
+  var d=parseInt(document.getElementById('ce-defence').value)||60;
+  var pr=parseInt(document.getElementById('ce-preparation').value)||60;
+  var g=parseInt(document.getElementById('ce-gestion').value)||60;
+  var global=Math.round((t*1.5+a*1.1+d*1.1+pr*1.0+g*0.9)/5.6);
+  document.getElementById('cev-global').textContent=global;
+}
+
+function saveCoachEdit(){
+  if(!editCoachTeamId)return;
+  var p=fbData.pays.find(function(x){return x.id===editCoachTeamId;});
+  if(!p||!p.coach)return;
+  p.coach.nom=document.getElementById('ce-nom').value.trim()||p.coach.nom;
+  p.coach.notes={};
+  ['tactique','attaque','defence','preparation','gestion'].forEach(function(k){
+    p.coach.notes[k]=parseInt(document.getElementById('ce-'+k).value)||60;
+  });
+  p.coach.global=parseInt(document.getElementById('cev-global').textContent)||60;
+  saveFbLocal();
+  closeCoachEdit();
+  var current=fbData.pays.find(function(x){return x.id===currentTeamId;});
+  if(current)renderTeamDetail(current);
+  toast('Entraîneur mis à jour.','ok');
+}
+
+// ════════════════════════════════════════════════
 //  GITHUB SAVE
 // ════════════════════════════════════════════════
 async function saveToGitHub(){
@@ -1355,11 +1405,38 @@ function showApp(){
 }
 
 document.getElementById('eq-login-btn').onclick=function(){var pa=window.PharosAuth;if(pa&&pa.login)pa.login();};
-document.addEventListener('DOMContentLoaded',function(){
-  var pa=window.PharosAuth;
-  if(pa){var user=pa.getUser();if(user&&pa.isAdmin())showApp();}
-});
+function tryAuth(){var pa=window.PharosAuth;if(pa){var user=pa.getUser();if(user&&pa.isAdmin()){showApp();return true;}}return false;}
+document.addEventListener('DOMContentLoaded',function(){if(!tryAuth()){window.addEventListener('load',function(){setTimeout(tryAuth,200);});}});
+window.addEventListener('pharos_auth_ready',tryAuth);
 </script>
 <script src="../../pharos-auth.js"></script>
+
+<!-- COACH EDIT MODAL -->
+<div class="modal-ov" id="coach-modal">
+  <div class="modal-box" style="max-width:480px;">
+    <div class="modal-hdr">
+      <div class="modal-ttl" style="color:var(--gold);">Modifier l'entraîneur</div>
+      <button class="modal-cls" onclick="closeCoachEdit()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid" style="margin-bottom:16px;">
+        <div class="fg full"><label class="fl">Nom</label><input type="text" class="fi" id="ce-nom"></div>
+      </div>
+      <div class="form-sec-title" style="font-size:7px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid rgba(212,168,67,.2);">Notes (0–99)</div>
+      <div class="rating-grid">
+        <div class="rating-item"><div class="rating-lbl">Tactique</div><div class="rating-row"><input type="range" id="ce-tactique" min="1" max="99" oninput="document.getElementById('cev-tactique').textContent=this.value;calcCoachGlobal()"><span class="rating-num" id="cev-tactique" style="color:var(--gold);">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">Attaque</div><div class="rating-row"><input type="range" id="ce-attaque" min="1" max="99" oninput="document.getElementById('cev-attaque').textContent=this.value;calcCoachGlobal()"><span class="rating-num" id="cev-attaque" style="color:var(--gold);">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">Défense</div><div class="rating-row"><input type="range" id="ce-defence" min="1" max="99" oninput="document.getElementById('cev-defence').textContent=this.value;calcCoachGlobal()"><span class="rating-num" id="cev-defence" style="color:var(--gold);">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">Préparation</div><div class="rating-row"><input type="range" id="ce-preparation" min="1" max="99" oninput="document.getElementById('cev-preparation').textContent=this.value;calcCoachGlobal()"><span class="rating-num" id="cev-preparation" style="color:var(--gold);">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">Gestion</div><div class="rating-row"><input type="range" id="ce-gestion" min="1" max="99" oninput="document.getElementById('cev-gestion').textContent=this.value;calcCoachGlobal()"><span class="rating-num" id="cev-gestion" style="color:var(--gold);">—</span></div></div>
+        <div class="rating-item" style="background:rgba(212,168,67,.05);border-color:rgba(212,168,67,.2);"><div class="rating-lbl">Note globale (calculée)</div><div class="rating-row"><span class="rating-num" id="cev-global" style="color:var(--gold);font-size:20px;">—</span></div></div>
+      </div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn-sm" onclick="closeCoachEdit()">Annuler</button>
+      <button class="btn-sm btn-gold" onclick="saveCoachEdit()">✓ Enregistrer</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

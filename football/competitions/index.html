@@ -450,7 +450,7 @@ function autoHats(){
       var div=document.createElement('div');
       div.className='hat-team';div.draggable=true;div.id='htm-'+p.id;div.dataset.id=p.id;
       div.ondragstart=function(e){dragHatTeam(e,p.id);};
-      div.innerHTML=(p.flag_data?'<img style="width:18px;height:12px;object-fit:cover;border-radius:1px;" src="'+p.flag_data+'">'+'')+'&nbsp;'+p.nom;
+      div.innerHTML=(p.flag_data?'<img style="width:18px;height:12px;object-fit:cover;border-radius:1px;" src="'+p.flag_data+'">'+ '' :'')+'&nbsp;'+p.nom;
       container.appendChild(div);
     }
   });
@@ -941,13 +941,21 @@ function simKOMatchInstant(m,comp){
   m.winner=m.scoreH>m.scoreA?m.homeId:m.awayId;
 }
 
+function calcAddTimeComp(scoreH,scoreA,minute){
+  var diff=Math.abs(scoreH-scoreA);
+  var base=minute<=45?rand(1,4):minute<=90?rand(2,5):rand(0,3);
+  if(diff>=4)base=Math.max(0,base-3);
+  else if(diff>=3)base=Math.max(0,base-2);
+  else if(diff>=2)base=Math.max(0,base-1);
+  return Math.min(5,Math.max(0,base));
+}
+
 function runMatchEngine(homeId,awayId,opts){
   var strH=calcStr(homeId),strA=calcStr(awayId);
   var scoreH=0,scoreA=0;
-  var maxMin=opts.golden?120:90;
-  for(var min=1;min<=maxMin;min++){
-    var freq={low:0.12,normal:0.22,high:0.34,chaos:0.5}[opts.events]||0.22;
-    if(!prob(freq))continue;
+  var freq={low:0.12,normal:0.22,high:0.34,chaos:0.5}[opts.events]||0.22;
+  function simMin(min){
+    if(!prob(freq))return;
     var possH=strH.pass/(strH.pass+strA.pass);
     var att=prob(possH)?'H':'A';
     var attStr=att==='H'?strH:strA;
@@ -955,11 +963,24 @@ function runMatchEngine(homeId,awayId,opts){
     var shotProb=(attStr.att*0.6+attStr.dri*0.4)/100*0.4;
     if(prob(shotProb)){
       var goalP=Math.max(0.04,(attStr.att-defStr.gk*0.8)/100*0.5);
-      if(prob(goalP)){
-        if(att==='H')scoreH++;else scoreA++;
-        if(opts.golden&&min>90&&scoreH!==scoreA)break;
-      }
+      if(prob(goalP)){if(att==='H')scoreH++;else scoreA++;}
     }
+  }
+  // 45 min
+  for(var min=1;min<=45;min++)simMin(min);
+  // Add time HT
+  var addHT=calcAddTimeComp(scoreH,scoreA,45);
+  for(var x=0;x<addHT;x++)simMin(45+x);
+  // 2nd half
+  for(var min2=46;min2<=90;min2++)simMin(min2);
+  // Add time FT
+  var addFT=calcAddTimeComp(scoreH,scoreA,90);
+  for(var x2=0;x2<addFT;x2++)simMin(90+x2);
+  // Extra time if needed
+  if(opts.golden&&scoreH===scoreA){
+    for(var et=91;et<=120;et++){simMin(et);if(scoreH!==scoreA&&opts.golden)break;}
+    var addET=calcAddTimeComp(scoreH,scoreA,120);
+    for(var xe=0;xe<addET;xe++)simMin(120+xe);
   }
   return{scoreH:scoreH,scoreA:scoreA};
 }
@@ -1140,7 +1161,9 @@ function showApp(){
 }
 
 document.getElementById('c-login-btn').onclick=function(){var pa=window.PharosAuth;if(pa&&pa.login)pa.login();};
-document.addEventListener('DOMContentLoaded',function(){var pa=window.PharosAuth;if(pa){var user=pa.getUser();if(user&&pa.isAdmin())showApp();}});
+function tryAuth(){var pa=window.PharosAuth;if(pa){var user=pa.getUser();if(user&&pa.isAdmin()){showApp();return true;}}return false;}
+document.addEventListener('DOMContentLoaded',function(){if(!tryAuth()){window.addEventListener('load',function(){setTimeout(tryAuth,200);});}});
+window.addEventListener('pharos_auth_ready',tryAuth);
 </script>
 <script src="../../pharos-auth.js"></script>
 </body>
