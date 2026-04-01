@@ -255,23 +255,14 @@
               <option value="Océanie">Océanie</option>
             </select>
           </div>
-          <div class="fg"><label class="fl">Culture des noms</label>
-            <select class="fs" id="f-culture">
-              <option value="arabe">Arabe / Moyen-Orient</option>
-              <option value="francais">Français</option>
-              <option value="anglais">Anglais / Britannique</option>
-              <option value="americain">Américain</option>
-              <option value="allemand">Allemand</option>
-              <option value="espagnol">Espagnol / Portugais</option>
-              <option value="russe">Russe / Slave</option>
-              <option value="japonais">Japonais</option>
-              <option value="chinois">Chinois</option>
-              <option value="indien">Indien / Hindi</option>
-              <option value="africain">Africain subsaharien</option>
-              <option value="turc">Turc / Caucasien</option>
-              <option value="scandinave">Scandinave</option>
-              <option value="mixte">Mixte (aléatoire)</option>
+          <div class="fg full">
+            <label class="fl">Cultures des noms (plusieurs possibles)</label>
+            <div id="culture-picks" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;"></div>
+            <select class="fs" id="f-culture-add" onchange="addCulture(this.value);this.value='';" style="margin-bottom:6px;">
+              <option value="">+ Ajouter une culture…</option>
             </select>
+            <div id="culture-sliders" style="display:flex;flex-direction:column;gap:5px;"></div>
+            <div style="font-size:8px;color:var(--text3);margin-top:5px;letter-spacing:.06em;">Ajustez le curseur pour pondérer chaque culture</div>
           </div>
         </div>
       </div>
@@ -378,15 +369,15 @@
         </div>
         <div class="fg"><label class="fl">Âge</label><input type="number" class="fi" id="pe-age" min="16" max="40"></div>
       </div>
-      <div class="form-sec-title" style="font-size:7px;letter-spacing:.2em;color:var(--spice);text-transform:uppercase;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid rgba(232,92,13,.2);">Notes (0–99)</div>
+      <div class="form-sec-title" style="font-size:7px;letter-spacing:.2em;color:var(--spice);text-transform:uppercase;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid rgba(232,92,13,.2);">Notes FIFA (0–99)</div>
       <div class="rating-grid">
-        <div class="rating-item"><div class="rating-lbl">Offensive</div><div class="rating-row"><input type="range" id="pe-off" min="1" max="99" oninput="document.getElementById('pev-off').textContent=this.value"><span class="rating-num" id="pev-off">—</span></div></div>
-        <div class="rating-item"><div class="rating-lbl">Technique</div><div class="rating-row"><input type="range" id="pe-tec" min="1" max="99" oninput="document.getElementById('pev-tec').textContent=this.value"><span class="rating-num" id="pev-tec">—</span></div></div>
-        <div class="rating-item"><div class="rating-lbl">Mouvement</div><div class="rating-row"><input type="range" id="pe-mouv" min="1" max="99" oninput="document.getElementById('pev-mouv').textContent=this.value"><span class="rating-num" id="pev-mouv">—</span></div></div>
-        <div class="rating-item"><div class="rating-lbl">Puissance</div><div class="rating-row"><input type="range" id="pe-pui" min="1" max="99" oninput="document.getElementById('pev-pui').textContent=this.value"><span class="rating-num" id="pev-pui">—</span></div></div>
-        <div class="rating-item"><div class="rating-lbl">État d'Esprit</div><div class="rating-row"><input type="range" id="pe-ment" min="1" max="99" oninput="document.getElementById('pev-ment').textContent=this.value"><span class="rating-num" id="pev-ment">—</span></div></div>
-        <div class="rating-item"><div class="rating-lbl">Défense</div><div class="rating-row"><input type="range" id="pe-def" min="1" max="99" oninput="document.getElementById('pev-def').textContent=this.value"><span class="rating-num" id="pev-def">—</span></div></div>
-        <div class="rating-item"><div class="rating-lbl">Gardien</div><div class="rating-row"><input type="range" id="pe-gk" min="1" max="99" oninput="document.getElementById('pev-gk').textContent=this.value"><span class="rating-num" id="pev-gk">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">⚡ Vitesse (PAC)</div><div class="rating-row"><input type="range" id="pe-pac" min="1" max="99" oninput="document.getElementById('pev-pac').textContent=this.value"><span class="rating-num" id="pev-pac">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">🎯 Tir (SHO)</div><div class="rating-row"><input type="range" id="pe-sho" min="1" max="99" oninput="document.getElementById('pev-sho').textContent=this.value"><span class="rating-num" id="pev-sho">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">🔀 Passe (PAS)</div><div class="rating-row"><input type="range" id="pe-pas" min="1" max="99" oninput="document.getElementById('pev-pas').textContent=this.value"><span class="rating-num" id="pev-pas">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">🕺 Dribble (DRI)</div><div class="rating-row"><input type="range" id="pe-dri" min="1" max="99" oninput="document.getElementById('pev-dri').textContent=this.value"><span class="rating-num" id="pev-dri">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">🛡️ Défense (DEF)</div><div class="rating-row"><input type="range" id="pe-def" min="1" max="99" oninput="document.getElementById('pev-def').textContent=this.value"><span class="rating-num" id="pev-def">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">💪 Physique (PHY)</div><div class="rating-row"><input type="range" id="pe-phy" min="1" max="99" oninput="document.getElementById('pev-phy').textContent=this.value"><span class="rating-num" id="pev-phy">—</span></div></div>
+        <div class="rating-item"><div class="rating-lbl">🧤 Gardien (GKS)</div><div class="rating-row"><input type="range" id="pe-gks" min="1" max="99" oninput="document.getElementById('pev-gks').textContent=this.value"><span class="rating-num" id="pev-gks">—</span></div></div>
       </div>
     </div>
     <div class="modal-ftr">
@@ -412,62 +403,141 @@ var editPlayerIdx=null;
 var editTeamIdx=null;
 
 // ════════════════════════════════════════════════
-//  NAME DATABASES by culture
+//  NAME DATABASES (extended)
 // ════════════════════════════════════════════════
 var NAMES={
-  arabe:{
-    prenoms:['Ahmed','Mohamed','Youssef','Omar','Ali','Hassan','Hussein','Ibrahim','Khaled','Tarek','Bilal','Kareem','Nasser','Sami','Rami','Adel','Jamal','Walid','Faris','Ziad','Amir','Samir','Ismail','Marwan','Badr','Younes','Amine','Hicham','Rachid','Mehdi','Sofiane','Karim','Nabil','Antar','Hatem','Wael','Bassem','Tamer','Sherif','Ayman','Hazem','Magdy','Mostafa','Osama','Saber','Galal','Hossam','Emad','Ramzy','Alaa'],
-    noms:['Al-Rashid','Ben Omar','Al-Hassan','El-Amin','Ben Ali','Al-Sayed','El-Sharif','Ben Youssef','Al-Khatib','El-Masry','Ben Hassan','Al-Zahrani','El-Tayeb','Ben Salah','Al-Mansouri','El-Khoury','Ben Musa','Al-Farsi','El-Qadi','Ben Ahmed','Al-Nouri','El-Banna','Ben Tarek','Al-Saad','El-Shazly','Ben Ibrahim','Al-Amin','El-Helal','Ben Khalid','Al-Jaziri']
-  },
-  francais:{
-    prenoms:['Lucas','Thomas','Hugo','Théo','Antoine','Maxime','Romain','Julien','Nicolas','Alexandre','Pierre','Paul','Baptiste','Guillaume','François','Mathieu','Sébastien','Clément','Adrien','Raphaël','Léo','Enzo','Dylan','Kevin','Alexis','Tristan','Morgan','Florian','Ethan','Matteo','Corentin','Valentin','Axel','Noé','Thibault','Gauthier','Arnaud','Xavier','Yann','Olivier'],
-    noms:['Martin','Bernard','Dubois','Thomas','Robert','Richard','Petit','Durand','Leroy','Moreau','Simon','Laurent','Lefebvre','Michel','Garcia','David','Bertrand','Roux','Vincent','Fournier','Morel','Girard','André','Lefèvre','Mercier','Dupont','Lambert','Bonnet','François','Martinez','Legrand','Garnier','Faure','Robin','Rousseau','Blanc','Guerin','Muller','Henry','Roussel']
-  },
-  anglais:{
-    prenoms:['James','William','George','Harry','Oliver','Jack','Charlie','Alfie','Thomas','Ethan','Archie','Joshua','Noah','Henry','Freddie','Oscar','Edward','Dylan','Leo','Liam','Benjamin','Daniel','Samuel','Ryan','Luke','Callum','Adam','Jamie','Aaron','Connor','Kieran','Ross','Luca','Cameron','Nathan','Ben','Joe','Scott','Owen','Marcus'],
-    noms:['Smith','Jones','Williams','Taylor','Brown','Davies','Evans','Wilson','Thomas','Roberts','Johnson','Walker','Wright','Robinson','Thompson','White','Hughes','Edwards','Green','Hall','Lewis','Harris','Clarke','Patel','Jackson','Wood','Turner','Martin','Cooper','Hill','Ward','Morris','Moore','Clark','Lee','King','Baker','Harrison','Young','Mitchell']
-  },
-  americain:{
-    prenoms:['Tyler','Brandon','Marcus','Darius','DeShawn','Malik','Jaylen','Jordan','Kyler','Zach','Cole','Tanner','Blake','Chase','Cody','Derek','Dustin','Garrett','Hunter','Jason','Justin','Kyle','Landon','Logan','Mason','Parker','Preston','Tate','Zane','Caleb','Elijah','Isaiah','Jamal','Jalen','Kendrick','Lamar','Rashad','Terrell','Xavier','Devon'],
-    noms:['Johnson','Williams','Brown','Jones','Miller','Davis','Garcia','Rodriguez','Wilson','Martinez','Anderson','Taylor','Thomas','Hernandez','Moore','Jackson','Martin','Lee','Thompson','White','Harris','Sanchez','Clark','Ramirez','Lewis','Robinson','Walker','Young','Allen','King','Wright','Scott','Torres','Nguyen','Hill','Green','Adams','Baker','Nelson','Carter']
-  },
-  allemand:{
-    prenoms:['Lukas','Jonas','Leon','Niklas','Tim','Jan','Maximilian','Felix','Florian','Julian','Tobias','Sebastian','Philipp','Kevin','Luca','Marco','Paul','Moritz','Simon','Lars','Christian','Patrick','Thomas','Michael','Stefan','Andreas','Dominik','Alexander','Dennis','Sven','Kai','Fabian','Markus','David','Matthias','Bastian','Christoph','Daniel','Nico','Ole'],
-    noms:['Müller','Schmidt','Schneider','Fischer','Weber','Meyer','Wagner','Becker','Schulz','Hoffmann','Schäfer','Koch','Bauer','Richter','Klein','Wolf','Schröder','Neumann','Schwarz','Zimmermann','Braun','Krüger','Hofmann','Hartmann','Lange','Schmitt','Werner','Schmitz','Krause','Meier','Lehmann','Schmid','Schulze','Maier','Köhler','Herrmann','König','Walter','Mayer','Huber']
-  },
-  espagnol:{
-    prenoms:['Carlos','David','Pablo','Alejandro','Diego','Marco','Sergio','Andrés','Javier','Miguel','Raúl','Fernando','Roberto','Rodrigo','Adrián','Álvaro','Iker','Marcos','Nacho','Borja','Aitor','Unai','Mikel','Xavi','Cesc','Dani','Toni','Jordi','Gerard','Thiago','Luis','Pedro','Neymar','Felipe','Bruno','João','Renato','Vitinho','Gabriel','Wendell'],
-    noms:['García','Martínez','López','Sánchez','González','Pérez','Rodríguez','Fernández','Jiménez','Álvarez','Romero','Díaz','Moreno','Alonso','Gutiérrez','Navarro','Torres','Domínguez','Vázquez','Ramos','Gil','Serrano','Blanco','Molina','Morales','Suárez','Ortega','Delgado','Castro','Ortiz','Rubio','Marín','Sanz','Iglesias','Nuñez','Medina','Garrido','Cortés','Castillo','Santos']
-  },
-  russe:{
-    prenoms:['Alexei','Dmitri','Ivan','Pavel','Andrei','Nikolai','Sergei','Vladimir','Mikhail','Artem','Evgeni','Maxim','Roman','Anton','Kirill','Ilya','Georgi','Viktor','Oleg','Boris','Denis','Ruslan','Timur','Danil','Artur','Vitaly','Stanislav','Yaroslav','Vadim','Gleb'],
-    noms:['Ivanov','Smirnov','Kuznetsov','Popov','Vasiliev','Petrov','Sokolov','Mikhailov','Novikov','Fedorov','Morozov','Volkov','Alekseev','Lebedev','Semyonov','Egorov','Pavlov','Kozlov','Stepanov','Nikolaev','Orlov','Andreev','Makarov','Nikitin','Zakharov','Zайцев','Solovyov','Borisov','Yakovlev','Grigoriev']
-  },
-  japonais:{
-    prenoms:['Hiroshi','Takeshi','Kenji','Yuki','Ryota','Shoichi','Naoki','Tatsuya','Koji','Daisuke','Yuji','Masaki','Kenta','Shota','Ren','Haruki','Sota','Daiki','Ryo','Kaito','Tsubasa','Yuto','Hayato','Itsuki','Sora','Taichi','Koki','Yusei','Tomoya','Shun'],
-    noms:['Sato','Suzuki','Tanaka','Watanabe','Ito','Yamamoto','Nakamura','Kobayashi','Kato','Yoshida','Yamada','Sasaki','Yamaguchi','Saito','Matsumoto','Inoue','Kimura','Hayashi','Shimizu','Yamazaki','Mori','Abe','Ikeda','Hashimoto','Yamashita','Ishikawa','Ogawa','Maeda','Okamoto','Fujita']
-  },
-  chinois:{
-    prenoms:['Wei','Fang','Xiao','Jian','Ming','Hao','Peng','Lei','Tao','Yang','Bo','Kai','Jun','Chen','Zhi','Long','Bin','Feng','Qiang','Hui','Yong','Gang','Chao','Jie','Rui','Liang','Xin','Zhong','Dong','Zhen'],
-    noms:['Wang','Li','Zhang','Liu','Chen','Yang','Huang','Zhao','Wu','Zhou','Xu','Sun','Ma','Zhu','Hu','Guo','He','Lin','Gao','Luo','Zheng','Liang','Xie','Tang','Han','Cao','Xu','Deng','Feng','Ceng']
-  },
-  indien:{
-    prenoms:['Aarav','Arjun','Vihaan','Sai','Advik','Vivaan','Rohan','Aditya','Dhruv','Kabir','Ritvik','Darsh','Arnav','Ishaan','Laksh','Mayank','Nikhil','Pranav','Shivam','Yash','Karan','Dev','Rajan','Sunil','Ajay','Rajesh','Vijay','Amit','Rahul','Gaurav'],
-    noms:['Sharma','Patel','Singh','Gupta','Kumar','Mehta','Shah','Jain','Agarwal','Verma','Yadav','Sinha','Mishra','Tiwari','Pandey','Chauhan','Chaudhary','Dubey','Nair','Pillai','Reddy','Rao','Iyer','Menon','Krishnamurthy','Venkataraman','Subramanian','Murthy','Bose','Chatterjee']
-  },
-  africain:{
-    prenoms:['Kofi','Kwame','Yaw','Yusuf','Amara','Oumar','Mamadou','Ibrahima','Seydou','Moussa','Abdoulaye','Cheikh','Lamine','Babacar','Idrissa','Aliou','Modou','Omar','Serigne','Ndiaye','Mbaye','Diallo','Traore','Coulibaly','Diarra','Camara','Keita','Bah','Barry','Doumbouya'],
-    noms:['Diallo','Traore','Coulibaly','Diarra','Camara','Keita','Sy','Balde','Sow','Barry','Cissé','Touré','Koné','Konaté','Sanogo','Dembélé','Sissoko','Maïga','Dao','Samaké','Bamba','Gbané','Doré','Guilavogui','Soumah','Cherif','Baldé','Fofana','Kourouma','Condé']
-  },
-  turc:{
-    prenoms:['Burak','Cengiz','Hakan','Emre','Arda','Mehmet','Serdar','Cenk','Kerem','Yunus','Ferdi','Zeki','Ozan','Umut','Dorukhan','Halil','Yusuf','Baris','Okay','Mert'],
-    noms:['Yilmaz','Kaya','Demir','Sahin','Celik','Yildiz','Ozdemir','Arslan','Dogan','Aydin','Ozturk','Kilic','Kurt','Çetin','Unlu','Polat','Aslan','Karadag','Tekin','Erdem']
-  },
-  scandinave:{
-    prenoms:['Erik','Lars','Bjorn','Sven','Magnus','Henrik','Johan','Andreas','Mikael','Joakim','Nicklas','Viktor','Patrik','Jonas','Daniel','Marcus','Christoffer','Sebastian','Alexander','Emil','Oscar','Felix','Elias','Hugo','Axel','Ludvig','Alfred','Isak','Oliver','William'],
-    noms:['Johansson','Andersson','Karlsson','Nilsson','Eriksson','Larsson','Olsson','Persson','Svensson','Gustafsson','Pettersson','Jonsson','Jansson','Hansson','Bengtsson','Lindqvist','Lindberg','Lindström','Bergström','Bergman','Holm','Lind','Lindgren','Hansen','Christensen','Jensen','Nielsen','Pedersen','Andersen','Møller']
-  }
+  arabe:{prenoms:['Ahmed','Mohamed','Youssef','Omar','Ali','Hassan','Hussein','Ibrahim','Khaled','Tarek','Bilal','Kareem','Nasser','Sami','Rami','Adel','Jamal','Walid','Faris','Ziad','Amir','Samir','Ismail','Marwan','Badr','Younes','Amine','Hicham','Rachid','Mehdi','Sofiane','Karim','Nabil','Hatem','Wael','Bassem','Tamer','Sherif','Ayman','Hazem'],noms:['Al-Rashid','Ben Omar','Al-Hassan','El-Amin','Ben Ali','Al-Sayed','El-Sharif','Ben Youssef','Al-Khatib','El-Masry','Ben Hassan','Al-Zahrani','El-Tayeb','Ben Salah','Al-Mansouri','El-Khoury','Ben Musa','Al-Farsi','El-Qadi','Ben Ahmed','Al-Nouri','El-Banna','Ben Tarek','Al-Saad','El-Shazly']},
+  francais:{prenoms:['Lucas','Thomas','Hugo','Théo','Antoine','Maxime','Romain','Julien','Nicolas','Alexandre','Pierre','Paul','Baptiste','Guillaume','François','Mathieu','Sébastien','Clément','Adrien','Raphaël','Léo','Enzo','Dylan','Kevin','Alexis','Tristan','Morgan','Florian','Ethan','Matteo','Corentin','Valentin','Axel','Noé','Thibault','Gauthier','Arnaud','Xavier','Yann','Olivier'],noms:['Martin','Bernard','Dubois','Thomas','Robert','Richard','Petit','Durand','Leroy','Moreau','Simon','Laurent','Lefebvre','Michel','Garcia','David','Bertrand','Roux','Vincent','Fournier','Morel','Girard','André','Mercier','Dupont','Lambert','Bonnet','Legrand','Garnier','Robin','Rousseau','Blanc','Guerin','Muller']},
+  anglais:{prenoms:['James','William','George','Harry','Oliver','Jack','Charlie','Alfie','Thomas','Ethan','Archie','Joshua','Noah','Henry','Freddie','Oscar','Edward','Dylan','Leo','Liam','Benjamin','Daniel','Samuel','Ryan','Luke','Callum','Adam','Jamie','Aaron','Connor','Kieran','Ross','Luca','Cameron','Nathan','Ben'],noms:['Smith','Jones','Williams','Taylor','Brown','Davies','Evans','Wilson','Thomas','Roberts','Johnson','Walker','Wright','Robinson','Thompson','White','Hughes','Edwards','Green','Hall','Lewis','Harris','Clarke','Jackson','Wood','Turner','Martin','Cooper','Hill','Ward','Morris','Moore','Clark','Lee','King']},
+  americain:{prenoms:['Tyler','Brandon','Marcus','Darius','DeShawn','Malik','Jaylen','Jordan','Kyler','Zach','Cole','Tanner','Blake','Chase','Cody','Derek','Dustin','Garrett','Hunter','Jason','Justin','Kyle','Landon','Logan','Mason','Parker','Preston','Tate','Zane','Caleb','Elijah','Isaiah','Jamal','Jalen','Kendrick','Lamar','Rashad','Terrell','Xavier','Devon'],noms:['Johnson','Williams','Brown','Jones','Miller','Davis','Garcia','Rodriguez','Wilson','Martinez','Anderson','Taylor','Thomas','Hernandez','Moore','Jackson','Martin','Lee','Thompson','White','Harris','Sanchez','Clark','Ramirez','Lewis','Robinson','Walker','Young','Allen','King','Wright','Scott','Torres','Nguyen']},
+  allemand:{prenoms:['Lukas','Jonas','Leon','Niklas','Tim','Jan','Maximilian','Felix','Florian','Julian','Tobias','Sebastian','Philipp','Kevin','Luca','Marco','Paul','Moritz','Simon','Lars','Christian','Patrick','Thomas','Michael','Stefan','Andreas','Dominik','Alexander','Dennis','Sven','Kai','Fabian','Markus','David','Matthias','Bastian','Christoph','Daniel','Nico','Ole'],noms:['Müller','Schmidt','Schneider','Fischer','Weber','Meyer','Wagner','Becker','Schulz','Hoffmann','Schäfer','Koch','Bauer','Richter','Klein','Wolf','Schröder','Neumann','Schwarz','Zimmermann','Braun','Krüger','Hofmann','Hartmann','Lange','Schmitt','Werner','Schmitz','Krause','Meier']},
+  espagnol:{prenoms:['Carlos','David','Pablo','Alejandro','Diego','Marco','Sergio','Andrés','Javier','Miguel','Raúl','Fernando','Roberto','Rodrigo','Adrián','Álvaro','Iker','Marcos','Nacho','Borja','Aitor','Unai','Mikel','Xavi','Cesc','Dani','Toni','Jordi','Gerard','Thiago','Luis','Pedro','Felipe','Bruno','João','Renato','Vitinho','Gabriel','Wendell'],noms:['García','Martínez','López','Sánchez','González','Pérez','Rodríguez','Fernández','Jiménez','Álvarez','Romero','Díaz','Moreno','Alonso','Gutiérrez','Navarro','Torres','Domínguez','Vázquez','Ramos','Gil','Serrano','Blanco','Molina','Morales','Suárez','Ortega','Delgado','Castro','Ortiz']},
+  russe:{prenoms:['Alexei','Dmitri','Ivan','Pavel','Andrei','Nikolai','Sergei','Vladimir','Mikhail','Artem','Evgeni','Maxim','Roman','Anton','Kirill','Ilya','Georgi','Viktor','Oleg','Boris','Denis','Ruslan','Timur','Danil','Artur','Vitaly','Stanislav','Yaroslav','Vadim','Gleb'],noms:['Ivanov','Smirnov','Kuznetsov','Popov','Vasiliev','Petrov','Sokolov','Mikhailov','Novikov','Fedorov','Morozov','Volkov','Alekseev','Lebedev','Semyonov','Egorov','Pavlov','Kozlov','Stepanov','Nikolaev','Orlov','Andreev','Makarov','Nikitin','Zakharov','Solovyov','Borisov','Yakovlev','Grigoriev']},
+  ukrainien:{prenoms:['Andriy','Dmytro','Oleksiy','Vasyl','Mykola','Bohdan','Taras','Oleh','Yuriy','Pavlo','Serhiy','Vitaliy','Maksym','Mykhailo','Ruslan','Denys','Yaroslav','Volodymyr','Roman','Oles'],noms:['Kovalenko','Bondarenko','Tkachenko','Kravchenko','Melnyk','Semenko','Petrenko','Savchenko','Ponomarenko','Lysenko','Marchenko','Gryshchenko','Koval','Shevchenko','Morozenko','Popov','Moroz','Kryvoruchko','Boyko','Fedorenko']},
+  serbe:{prenoms:['Aleksandar','Nikola','Stefan','Luka','Nemanja','Miloš','Milan','Marko','Danilo','Dejan','Bojan','Vuk','Dragan','Đorđe','Branko','Filip','Ognjen','Ivan','Miroslav','Srđan'],noms:['Jović','Milić','Petković','Nikolić','Stojanović','Đorđević','Marković','Stanković','Janković','Savić','Lazić','Ilić','Antić','Knežević','Todorović','Filipović','Radović','Vuković','Đukić','Lukić']},
+  bulgare:{prenoms:['Georgi','Ivan','Nikolay','Dimitar','Alexander','Hristo','Petar','Todor','Rumen','Boyan','Stanimir','Valentin','Blagovest','Plamen','Miroslav','Kaloyan','Desislav','Dobromir','Slavcho','Milen'],noms:['Ivanov','Georgiev','Nikolov','Todorov','Dimitrov','Petrov','Angelov','Stoyanov','Manchev','Kovachev','Penev','Kolev','Minchev','Slavov','Rashev','Tsenov','Popov','Tsvetkov','Neykov','Mitov']},
+  japonais:{prenoms:['Hiroshi','Takeshi','Kenji','Yuki','Ryota','Shoichi','Naoki','Tatsuya','Koji','Daisuke','Yuji','Masaki','Kenta','Shota','Ren','Haruki','Sota','Daiki','Ryo','Kaito','Tsubasa','Yuto','Hayato','Itsuki','Sora','Taichi','Koki','Yusei','Tomoya','Shun'],noms:['Sato','Suzuki','Tanaka','Watanabe','Ito','Yamamoto','Nakamura','Kobayashi','Kato','Yoshida','Yamada','Sasaki','Yamaguchi','Saito','Matsumoto','Inoue','Kimura','Hayashi','Shimizu','Yamazaki']},
+  chinois:{prenoms:['Wei','Fang','Xiao','Jian','Ming','Hao','Peng','Lei','Tao','Yang','Bo','Kai','Jun','Chen','Zhi','Long','Bin','Feng','Qiang','Hui','Yong','Gang','Chao','Jie','Rui','Liang','Xin','Zhong','Dong','Zhen'],noms:['Wang','Li','Zhang','Liu','Chen','Yang','Huang','Zhao','Wu','Zhou','Xu','Sun','Ma','Zhu','Hu','Guo','He','Lin','Gao','Luo','Zheng','Liang','Xie','Tang','Han','Cao','Xu','Deng','Feng']},
+  indien:{prenoms:['Aarav','Arjun','Vihaan','Sai','Advik','Vivaan','Rohan','Aditya','Dhruv','Kabir','Ritvik','Darsh','Arnav','Ishaan','Laksh','Mayank','Nikhil','Pranav','Shivam','Yash','Karan','Dev','Rajan','Sunil','Ajay','Rajesh','Vijay','Amit','Rahul','Gaurav'],noms:['Sharma','Patel','Singh','Gupta','Kumar','Mehta','Shah','Jain','Agarwal','Verma','Yadav','Sinha','Mishra','Tiwari','Pandey','Chauhan','Chaudhary','Dubey','Nair','Pillai','Reddy','Rao','Iyer','Menon','Krishnamurthy','Subramanian','Murthy','Bose','Chatterjee']},
+  africain:{prenoms:['Kofi','Kwame','Yaw','Yusuf','Amara','Oumar','Mamadou','Ibrahima','Seydou','Moussa','Abdoulaye','Cheikh','Lamine','Babacar','Idrissa','Aliou','Modou','Omar','Serigne','Mbaye','Diallo','Traore','Coulibaly','Diarra','Camara','Keita','Bah','Barry','Doumbouya'],noms:['Diallo','Traore','Coulibaly','Diarra','Camara','Keita','Sy','Balde','Sow','Barry','Cissé','Touré','Koné','Konaté','Sanogo','Dembélé','Sissoko','Maïga','Dao','Samaké','Bamba','Fofana','Guilavogui','Soumah','Cherif','Fofana','Condé']},
+  turc:{prenoms:['Burak','Cengiz','Hakan','Emre','Arda','Mehmet','Serdar','Cenk','Kerem','Yunus','Ferdi','Zeki','Ozan','Umut','Dorukhan','Halil','Yusuf','Baris','Okay','Mert','Enes','Alpay','Oguzhan','Gokhan','Tolgay'],noms:['Yilmaz','Kaya','Demir','Sahin','Celik','Yildiz','Ozdemir','Arslan','Dogan','Aydin','Ozturk','Kilic','Kurt','Çetin','Polat','Aslan','Karadag','Tekin','Erdem','Akin']},
+  georgien:{prenoms:['Giorgi','Lasha','Levan','Davit','Nika','Tornike','Sandro','Irakli','Mikheil','Vakhtang','Goga','Nugzar','Revaz','Tamaz','Zurab','Kakha','Beka','Kote','Lado','Otar'],noms:['Kvaratskhelia','Chikviladze','Beridze','Jikia','Lomaia','Mchedlishvili','Khomasuridze','Tsurtsumia','Tkeshelashvili','Gvalia','Chitaia','Jorjikia','Tsintsadze','Grigalava','Kobakhidze','Mamardashvili','Sanaia','Lochoshvili','Kashia','Kiteishvili']},
+  armenien:{prenoms:['Aram','Tigran','Vardan','Armen','Hayk','Davit','Artur','Narek','Edvin','Sargis','Artak','Vahan','Gevorg','Samvel','Gor','Rafik','Levon','Karen','Ashot','Khachik'],noms:['Petrosyan','Grigoryan','Sargsyan','Hovhannisyan','Harutyunyan','Mkrtchyan','Karapetyan','Ghazaryan','Simonyan','Danielyan','Abrahamyan','Avagyan','Hakobyan','Mikaelyan','Muradyan','Nalbandyan','Stepanyan','Tonoyan','Vardanyan','Zakharyan']},
+  scandinave:{prenoms:['Erik','Lars','Bjorn','Sven','Magnus','Henrik','Johan','Andreas','Mikael','Joakim','Nicklas','Viktor','Patrik','Jonas','Daniel','Marcus','Christoffer','Sebastian','Alexander','Emil','Oscar','Felix','Elias','Hugo','Axel','Ludvig','Alfred','Isak','Oliver','William'],noms:['Johansson','Andersson','Karlsson','Nilsson','Eriksson','Larsson','Olsson','Persson','Svensson','Gustafsson','Pettersson','Jonsson','Jansson','Hansson','Bengtsson','Lindqvist','Lindberg','Lindström','Bergström','Bergman','Hansen','Christensen','Jensen','Nielsen','Pedersen']},
+  neerlandais:{prenoms:['Daan','Sem','Finn','Luuk','Lars','Sander','Joris','Niels','Bram','Pieter','Ruud','Mark','Frank','Robin','Tom','Kevin','Davy','Barry','Jordy','Tim','Patrick','Dennis','Arjen','Wesley','Virgil','Frenkie','Memphis','Cody','Nathan','Ryan'],noms:['de Jong','van Dijk','Berghuis','Depay','Dumfries','Gakpo','Klaassen','Blind','Timber','Malacia','Wijnaldum','Sneijder','Robben','Kuyt','van Persie','Huntelaar','de Bruyne','Koeman','Bergkamp','Zenden','van der Sar','Stam','Bouma','Heitinga','van Bommel']},
+  islandais:{prenoms:['Sigurdur','Gudmundur','Gunnar','Magnus','Kristján','Björn','Einar','Aron','Birkir','Eidur','Gylfi','Jóhann','Kari','Olafur','Ragnar','Runar','Siggi','Stefan','Thor','Vidar'],noms:['Sigurdsson','Gudmundsson','Bjarnason','Finnbogason','Gunnarsson','Halldorsson','Ingason','Jonsson','Kristinsson','Magnusson','Ólafsson','Palsson','Ragnarsson','Sigurjonsson','Skulason','Smarason','Stefansson','Thordarson','Valgardsson']},
+  italien:{prenoms:['Alessandro','Lorenzo','Marco','Davide','Giacomo','Riccardo','Federico','Simone','Andrea','Matteo','Luca','Francesco','Gabriele','Leonardo','Tommaso','Giorgio','Emanuele','Stefano','Roberto','Daniele','Ciro','Gennaro','Salvatore','Domenico','Antonio','Giuseppe','Vincenzo','Luigi','Mario'],noms:['Rossi','Ferrari','Esposito','Bianchi','Romano','Colombo','Ricci','Marino','Greco','Bruno','Gallo','Conti','De Luca','Mancini','Costa','Giordano','Rizzo','Lombardi','Moretti','Barbieri','Fontana','Santoro','Marini','Caputo','Ferrara']},
+  grec:{prenoms:['Alexandros','Nikos','Giorgos','Kostas','Panagiotis','Dimitris','Vasilis','Christos','Yannis','Stavros','Petros','Apostolos','Theo','Manolis','Leonidas','Kyriakos','Spyros','Fotis','Evangelos','Dimos'],noms:['Papadopoulos','Nikolaou','Georgiou','Konstantinou','Alexiou','Andreou','Papas','Dimas','Karas','Liakopoulos','Samaras','Gekas','Zorbas','Karagounis','Charisteas','Dellas','Kapetanos','Torosidis','Amanatidis','Fetfatzidis']},
+  hebreu:{prenoms:['Yoav','Noa','Omer','Itay','Roi','Tomer','Tal','Dan','Eran','Eyal','Lior','Nir','Gal','Bar','Gavi','Arnon','Kfir','Paz','Shay','Matan'],noms:['Cohen','Levi','Mizrahi','Peretz','Katz','Friedman','Shapiro','Goldberg','Levy','Rosenberg','Greenberg','Blum','Weiss','Schwartz','Berger','Stern','Horowitz','Biton','Abitbol','Ohayon']},
+  perse:{prenoms:['Ali','Reza','Mohammad','Hossein','Amir','Mehdi','Milad','Farzad','Arash','Kamran','Kaveh','Dariush','Cyrus','Siavash','Babak','Shahram','Behrouz','Maziar','Navid','Saeed'],noms:['Hosseini','Ahmadi','Karimi','Mohammadi','Asghari','Rezaei','Moradi','Rahimi','Jafari','Ghasemi','Abbasi','Sadeghi','Bagheri','Nouri','Shirazi','Tehrani','Isfahani','Shafiei','Zamani','Tavakoli']},
+  thai:{prenoms:['Somchai','Chaiwat','Nathapong','Teerasak','Kroekrit','Supachok','Chanathip','Thitipan','Sanrawat','Sarach','Tristan','Sumanya','Jakkit','Teeradet','Mongkol'],noms:['Rattanakorn','Singthong','Chanathip','Dolah','Elamue','Khemarin','Raksakaew','Srisakda','Srithong','Buspakom','Chitawong','Panwong','Thianthong','Kaewwong']},
+  vietnamien:{prenoms:['Minh','Quang','Tuan','Long','Duc','Hoang','Thanh','Hung','Van','Duy','Dinh','Tran','Ngo','Bui','Huu','Cong','Xuan','Diep','Vu','Nguyen'],noms:['Nguyen','Tran','Le','Pham','Hoang','Vu','Dang','Bui','Do','Ho','Ngo','Duong','Ly','Truong','Dinh','Phan','Trinh','Dao','Luong','Cao']},
+  cambodgien:{prenoms:['Sokha','Dara','Chenda','Panha','Virak','Piseth','Rathana','Mony','Vanna','Sothea','Chan','Bora','Kosal','Samnang','Bunna'],noms:['Chea','Ek','Hay','Keo','Kim','Kong','Lay','Mao','Neak','Nou','Pen','Prak','Sam','Sok','Sor']},
+  laotien:{prenoms:['Somporn','Khamphanh','Vilaysack','Bounthong','Daovone','Soukanh','Phommasith','Phouthone','Bounlap','Chansavath'],noms:['Phommasith','Chanthavong','Vongphachan','Sengmany','Bouphavanh','Khamphanh','Phetsouvanh','Vongsamphanh','Chanthalath','Douangmala']},
+  malaisien:{prenoms:['Ahmad','Mohd','Muhammad','Khairul','Farizal','Safuwan','Shahrul','Zaquan','Akram','Irfan','Razip','Fitri','Farhan','Dion','Syafiq'],noms:['Bin Ahmad','Bin Abdullah','Bin Mohamed','Bin Hassan','Bin Ibrahim','Bin Ismail','Bin Yusof','Bin Razali','Bin Kamaruddin','Bin Hamid','Bin Zainal','Bin Wahid','Bin Othman','Bin Talib']},
+  finlandais:{prenoms:['Mikko','Jari','Teemu','Pekka','Ville','Antti','Matti','Juha','Sami','Toni','Ari','Kari','Petri','Jukka','Heikki','Risto','Timo','Juuso','Lauri','Eetu'],noms:['Mäkinen','Korhonen','Virtanen','Mäkinen','Leinonen','Heikkinen','Räty','Litmanen','Paatelainen','Forssell','Kolkka','Hyypiä','Tihinen','Kuqi','Johansson','Sparv','Pukki','Pohjanpalo','Lod','Tuominen']},
+  kazakh:{prenoms:['Nurlan','Bauyrzhan','Zhassulan','Bakyt','Serikzhan','Adil','Talgat','Daniyar','Abat','Yerzhan','Bekzat','Kairat','Aibek','Ruslan','Timur'],noms:['Akhmetov','Beysenov','Zhukov','Khizhnichenko','Logvinenko','Nurgaliev','Shomko','Tazhimbetov','Vorogovskiy','Bakaev','Moldakaraev','Nurmagambetov','Suyumbayev']},
+  croate:{prenoms:['Luka','Ivan','Mateo','Mario','Ante','Domagoj','Marcelo','Ivan','Tin','Joško','Borna','Josip','Lovro','Nikola','Bruno','Andrej','Filip','Luka','Dario','Vedran'],noms:['Modrić','Perišić','Mandžukić','Kovačić','Gvardiol','Vida','Subašić','Vrsaljko','Caleta-Car','Sosa','Pjaca','Brekalo','Livaja','Budimir','Benković','Erlić','Barisic','Oršić','Vlašić','Rebić']}
 };
+
+// ── MULTI-CULTURE SYSTEM ──
+var selectedCultures=[]; // [{key,weight}]
+
+var ALL_CULTURES=[
+  {key:'arabe',label:'Arabe / Moyen-Orient'},
+  {key:'francais',label:'Français'},
+  {key:'anglais',label:'Anglais'},
+  {key:'americain',label:'Américain'},
+  {key:'allemand',label:'Allemand'},
+  {key:'espagnol',label:'Espagnol / Portugais'},
+  {key:'russe',label:'Russe'},
+  {key:'ukrainien',label:'Ukrainien'},
+  {key:'serbe',label:'Serbe'},
+  {key:'bulgare',label:'Bulgare'},
+  {key:'japonais',label:'Japonais'},
+  {key:'chinois',label:'Chinois'},
+  {key:'indien',label:'Indien'},
+  {key:'africain',label:'Africain subsaharien'},
+  {key:'turc',label:'Turc'},
+  {key:'georgien',label:'Géorgien'},
+  {key:'armenien',label:'Arménien'},
+  {key:'scandinave',label:'Scandinave'},
+  {key:'neerlandais',label:'Néerlandais'},
+  {key:'islandais',label:'Islandais'},
+  {key:'italien',label:'Italien'},
+  {key:'grec',label:'Grec'},
+  {key:'hebreu',label:'Hébreu'},
+  {key:'perse',label:'Perse / Iranien'},
+  {key:'thai',label:'Thaï'},
+  {key:'vietnamien',label:'Vietnamien'},
+  {key:'cambodgien',label:'Cambodgien'},
+  {key:'laotien',label:'Laotien'},
+  {key:'malaisien',label:'Malaisien'},
+  {key:'finlandais',label:'Finlandais'},
+  {key:'kazakh',label:'Kazakh'},
+  {key:'croate',label:'Croate'}
+];
+
+function initCultureUI(){
+  var sel=document.getElementById('f-culture-add');
+  if(!sel)return;
+  sel.innerHTML='<option value="">+ Ajouter une culture…</option>';
+  ALL_CULTURES.forEach(function(c){
+    sel.innerHTML+='<option value="'+c.key+'">'+c.label+'</option>';
+  });
+}
+
+function addCulture(key){
+  if(!key)return;
+  if(selectedCultures.find(function(c){return c.key===key;}))return;
+  var label=ALL_CULTURES.find(function(c){return c.key===key;});
+  selectedCultures.push({key:key,weight:50});
+  renderCulturePicks();
+}
+
+function removeCulture(key){
+  selectedCultures=selectedCultures.filter(function(c){return c.key!==key;});
+  renderCulturePicks();
+}
+
+function renderCulturePicks(){
+  var picks=document.getElementById('culture-picks');
+  var sliders=document.getElementById('culture-sliders');
+  if(!picks||!sliders)return;
+  picks.innerHTML=selectedCultures.map(function(c){
+    var label=ALL_CULTURES.find(function(x){return x.key===c.key;});
+    return '<div style="display:flex;align-items:center;gap:4px;background:rgba(34,184,154,.1);border:1px solid rgba(34,184,154,.25);border-radius:3px;padding:3px 8px;font-size:9px;color:var(--teal-bright);">'
+      +(label?label.label:c.key)
+      +'<button onclick="removeCulture(\''+c.key+'\')" style="background:none;border:none;color:var(--spice);cursor:pointer;font-size:11px;padding:0 2px;line-height:1;">✕</button>'
+      +'</div>';
+  }).join('');
+  if(selectedCultures.length>1){
+    sliders.innerHTML=selectedCultures.map(function(c,i){
+      var label=ALL_CULTURES.find(function(x){return x.key===c.key;});
+      return '<div style="display:flex;align-items:center;gap:8px;">'
+        +'<span style="font-size:8px;color:var(--text3);width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+(label?label.label:c.key)+'</span>'
+        +'<input type="range" min="0" max="100" value="'+c.weight+'" style="flex:1;accent-color:var(--teal-bright);" oninput="selectedCultures['+i+'].weight=parseInt(this.value);document.getElementById(\'w-'+c.key+'\').textContent=this.value+\'%\'">'
+        +'<span id="w-'+c.key+'" style="font-size:9px;color:var(--teal-bright);min-width:30px;text-align:right;">'+c.weight+'%</span>'
+        +'</div>';
+    }).join('');
+  } else {
+    sliders.innerHTML='';
+  }
+}
+
+function genNameFromCultures(){
+  var cultures=selectedCultures.length>0?selectedCultures:[{key:'anglais',weight:100}];
+  if(cultures.length===1)return genName(cultures[0].key);
+  var totalW=cultures.reduce(function(s,c){return s+c.weight;},0);
+  if(totalW===0)return genName(cultures[0].key);
+  var r=Math.random()*totalW,acc=0;
+  for(var i=0;i<cultures.length;i++){
+    acc+=cultures[i].weight;
+    if(r<=acc)return genName(cultures[i].key);
+  }
+  return genName(cultures[cultures.length-1].key);
+}
+
 
 var POSTES=['GK','DC','DC','DD','DG','MDC','MC','MC','MO','MOD','MOG','AC','AD','AG'];
 var POSTES_LABELS={GK:'Gardien',DC:'Défenseur central',DD:'Défenseur droit',DG:'Défenseur gauche',MDC:'Milieu défensif',MC:'Milieu central',MO:'Milieu offensif',MOD:'Milieu offensif droit',MOG:'Milieu offensif gauche',AC:'Attaquant central',AD:'Ailier droit',AG:'Ailier gauche'};
@@ -497,25 +567,49 @@ function genName(culture){
 
 function genId(){return 'p_'+Date.now()+'_'+rand(1000,9999);}
 
-function calcGlobalNote(p){
-  var keys=['off','tec','mouv','pui','ment','def','gk'];
-  var w={off:1.5,tec:1.2,mouv:1.1,pui:1.0,ment:0.9,def:1.0,gk:0.3};
-  if(p.poste==='GK')w={off:0.2,tec:0.8,mouv:0.8,pui:0.9,ment:1.0,def:0.8,gk:2.5};
-  var total=0,wsum=0;
-  keys.forEach(function(k){total+=p[k]*w[k];wsum+=w[k];});
-  return Math.round(total/wsum);
+function calcGlobalNote(player){
+  // FIFA-style: PAC SHO PAS DRI DEF PHY (+ GKS for GK)
+  var n=player.notes||player; // support both formats
+  var pac=n.pac||50,sho=n.sho||50,pas=n.pas||50,dri=n.dri||50,def=n.def||50,phy=n.phy||50,gks=n.gks||30;
+  if(player.poste==='GK'){
+    // GK: GKS heavily weighted + phy, def
+    return Math.round((gks*2.5+phy*0.8+def*0.7+pac*0.5+pas*0.4+dri*0.1)/5.0);
+  }
+  var POSTES_CAT_L=POSTES_CAT||{};
+  var cat=POSTES_CAT_L[player.poste]||'MIL';
+  if(cat==='ATT') return Math.round((pac*1.0+sho*1.8+pas*0.8+dri*1.4+def*0.3+phy*0.7)/6.0);
+  if(cat==='DEF') return Math.round((pac*0.7+sho*0.3+pas*0.8+dri*0.6+def*1.8+phy*1.3)/5.5);
+  // MIL
+  return Math.round((pac*0.8+sho*0.9+pas*1.5+dri*1.2+def*0.9+phy*0.7)/6.0);
 }
 
 // ════════════════════════════════════════════════
-//  PLAYER GENERATION
+//  PLAYER GENERATION (FIFA-style notes)
 // ════════════════════════════════════════════════
-function generatePlayers(nb, baseNote, culture, adjAtt, adjDef, adjMil, adjGk){
+function generatePlayers(nb, baseNote, cultures, adjAtt, adjDef, adjMil, adjGk){
+  // cultures: can be array [{key,weight}] or legacy string
+  var genNameFn;
+  if(typeof cultures==='string'){
+    genNameFn=function(){return genName(cultures);};
+  } else if(Array.isArray(cultures)&&cultures.length>0){
+    var totalW=cultures.reduce(function(s,c){return s+c.weight;},0)||1;
+    genNameFn=function(){
+      var r=Math.random()*totalW,acc=0;
+      for(var i=0;i<cultures.length;i++){
+        acc+=cultures[i].weight;
+        if(r<=acc)return genName(cultures[i].key);
+      }
+      return genName(cultures[cultures.length-1].key);
+    };
+  } else {
+    genNameFn=function(){return genName('anglais');};
+  }
+
   var players=[];
-  var spread=10;
 
   // Position distribution
   var positions=[];
-  positions.push('GK','GK'); // 2 GK
+  positions.push('GK','GK');
   var nbDef=Math.round(nb*0.28);
   var nbMil=Math.round(nb*0.35);
   var nbAtt=Math.round(nb*0.30);
@@ -526,7 +620,6 @@ function generatePlayers(nb, baseNote, culture, adjAtt, adjDef, adjMil, adjGk){
   for(var i=0;i<nbMil;i++)positions.push(milPosts[i%milPosts.length]);
   for(var i=0;i<nbAtt;i++)positions.push(attPosts[i%attPosts.length]);
   while(positions.length<nb)positions.push(milPosts[rand(0,milPosts.length-1)]);
-  // Shuffle positions
   for(var i=positions.length-1;i>0;i--){var j=rand(0,i);var t=positions[i];positions[i]=positions[j];positions[j]=t;}
 
   for(var i=0;i<nb;i++){
@@ -534,34 +627,79 @@ function generatePlayers(nb, baseNote, culture, adjAtt, adjDef, adjMil, adjGk){
     var cat=POSTES_CAT[poste]||'MIL';
     var adj=(cat==='ATT'?adjAtt:cat==='DEF'?adjDef:cat==='GK'?adjGk:adjMil);
     var center=clamp(baseNote+adj+rand(-3,3),50,98);
-
     var notes;
+
     if(poste==='GK'){
-      notes={off:rng(clamp(center-25,20,60),8),tec:rng(clamp(center-10,40,80),8),mouv:rng(clamp(center-15,30,70),7),pui:rng(clamp(center-5,45,85),8),ment:rng(center,6),def:rng(clamp(center-10,40,80),8),gk:rng(clamp(center+15,55,99),6)};
+      notes={
+        pac:rng(clamp(center-10,40,80),8),
+        sho:rng(clamp(center-30,10,45),8),
+        pas:rng(clamp(center-10,40,80),7),
+        dri:rng(clamp(center-15,30,70),7),
+        def:rng(clamp(center-5,45,85),7),
+        phy:rng(clamp(center-5,50,90),7),
+        gks:rng(clamp(center+12,55,99),5)
+      };
     } else if(cat==='DEF'){
-      notes={off:rng(clamp(center-15,25,75),10),tec:rng(center,8),mouv:rng(center,7),pui:rng(clamp(center+5,45,95),8),ment:rng(center,6),def:rng(clamp(center+10,55,99),6),gk:rng(30,12)};
+      notes={
+        pac:rng(center,9),
+        sho:rng(clamp(center-20,25,65),10),
+        pas:rng(clamp(center-5,45,85),8),
+        dri:rng(clamp(center-10,40,75),9),
+        def:rng(clamp(center+10,60,99),5),
+        phy:rng(clamp(center+8,55,99),6),
+        gks:rng(20,8)
+      };
     } else if(cat==='MIL'){
-      notes={off:rng(center,8),tec:rng(clamp(center+5,50,99),7),mouv:rng(clamp(center+5,50,99),7),pui:rng(center,8),ment:rng(center,6),def:rng(center,9),gk:rng(25,10)};
+      notes={
+        pac:rng(center,8),
+        sho:rng(clamp(center-5,45,88),8),
+        pas:rng(clamp(center+8,55,99),5),
+        dri:rng(clamp(center+5,50,95),6),
+        def:rng(clamp(center-5,45,85),8),
+        phy:rng(center,8),
+        gks:rng(18,7)
+      };
     } else { // ATT
-      notes={off:rng(clamp(center+10,55,99),7),tec:rng(clamp(center+5,50,99),7),mouv:rng(clamp(center+8,55,99),7),pui:rng(center,9),ment:rng(center,6),def:rng(clamp(center-15,25,70),10),gk:rng(22,10)};
+      notes={
+        pac:rng(clamp(center+8,55,99),7),
+        sho:rng(clamp(center+12,60,99),5),
+        pas:rng(clamp(center-5,45,88),8),
+        dri:rng(clamp(center+8,55,99),6),
+        def:rng(clamp(center-20,25,65),10),
+        phy:rng(center,9),
+        gks:rng(15,6)
+      };
     }
 
     var age=poste==='GK'?rand(22,38):rand(17,36);
-    players.push({id:genId(),nom:genName(culture),poste:poste,age:age,notes:notes,global:0});
-    players[players.length-1].global=calcGlobalNote(players[players.length-1].notes);
+    var player={id:genId(),nom:genNameFn(),poste:poste,age:age,notes:notes,global:0};
+    player.global=calcGlobalNote(player);
+    players.push(player);
   }
-  // Sort: GK first, then DEF, MIL, ATT
   var order={GK:0,DEF:1,MIL:2,ATT:3};
   players.sort(function(a,b){return (order[POSTES_CAT[a.poste]]||2)-(order[POSTES_CAT[b.poste]]||2);});
   return players;
 }
 
-function generateCoach(baseNote, culture){
+function generateCoach(baseNote, cultures){
+  var genNameFn;
+  if(typeof cultures==='string'){genNameFn=function(){return genName(cultures);};}
+  else if(Array.isArray(cultures)&&cultures.length){
+    var totalW=cultures.reduce(function(s,c){return s+c.weight;},0)||1;
+    genNameFn=function(){var r=Math.random()*totalW,acc=0;for(var i=0;i<cultures.length;i++){acc+=cultures[i].weight;if(r<=acc)return genName(cultures[i].key);}return genName(cultures[0].key);};
+  } else {genNameFn=function(){return genName('anglais');};}
   var spread=8;
-  var notes={tactique:rng(baseNote,spread),motivation:rng(baseNote,spread),defence:rng(baseNote,spread),attaque:rng(baseNote,spread),gestion:rng(baseNote,spread)};
-  var global=Math.round((notes.tactique*1.4+notes.motivation*1.1+notes.defence*1.1+notes.attaque*1.1+notes.gestion*0.9)/5.6);
-  return {nom:genName(culture),notes:notes,global:global};
+  var notes={
+    tactique:rng(baseNote,spread),
+    attaque:rng(baseNote,spread),
+    defence:rng(baseNote,spread),
+    preparation:rng(baseNote,spread),
+    gestion:rng(baseNote,spread)
+  };
+  var global=Math.round((notes.tactique*1.5+notes.attaque*1.1+notes.defence*1.1+notes.preparation*1.0+notes.gestion*0.9)/5.6);
+  return{nom:genNameFn(),notes:notes,global:global};
 }
+
 
 // ════════════════════════════════════════════════
 //  STATE
@@ -661,7 +799,7 @@ function renderTeamDetail(p){
 function renderPlayersTable(p){
   var joueurs=p.joueurs||[];
   if(!joueurs.length)return '<div style="padding:32px;text-align:center;font-size:10px;color:var(--text3);">Aucun joueur.</div>';
-  var html='<div class="player-list-hdr"><div>#</div><div>Nom</div><div>Poste</div><div>OFF</div><div>TEC</div><div>MOUV</div><div>PUI</div><div>MENT</div><div>DEF</div><div>GLOBAL</div><div></div></div>';
+  var html='<div class="player-list-hdr"><div>#</div><div>Nom</div><div>Poste</div><div>PAC</div><div>SHO</div><div>PAS</div><div>DRI</div><div>DEF</div><div>PHY</div><div>GLOBAL</div><div></div></div>';
   joueurs.forEach(function(j,i){
     var cat=POSTES_CAT[j.poste]||'MIL';
     var g=j.global;
@@ -671,7 +809,7 @@ function renderPlayersTable(p){
     html+='<div class="p-name">'+j.nom+'</div>';
     html+='<div><span class="p-pos pos-'+cat+'">'+j.poste+'</span></div>';
     var n=j.notes||{};
-    ['off','tec','mouv','pui','ment','def'].forEach(function(k){html+='<div class="p-note">'+( n[k]||'—')+'</div>';});
+    ['pac','sho','pas','dri','def','phy'].forEach(function(k){html+='<div class="p-note">'+( n[k]||'—')+'</div>';});
     html+='<div class="p-note '+gcls+'">'+g+'</div>';
     html+='<div><button class="p-edit" onclick="openPlayerEdit(\''+p.id+'\','+i+')">✎</button></div>';
     html+='</div>';
@@ -830,8 +968,9 @@ function openPlayerEdit(teamId,idx){
   document.getElementById('pe-poste').value=j.poste;
   document.getElementById('pe-age').value=j.age||22;
   var notes=j.notes||{};
-  ['off','tec','mouv','pui','ment','def','gk'].forEach(function(k){
+  ['pac','sho','pas','dri','def','phy','gks'].forEach(function(k){
     var el=document.getElementById('pe-'+k);
+    if(!el)return;
     var val=notes[k]||50;
     el.value=val;
     document.getElementById('pev-'+k).textContent=val;
@@ -850,7 +989,7 @@ function savePlayerEdit(){
   j.poste=document.getElementById('pe-poste').value;
   j.age=parseInt(document.getElementById('pe-age').value)||j.age;
   j.notes={};
-  ['off','tec','mouv','pui','ment','def','gk'].forEach(function(k){j.notes[k]=parseInt(document.getElementById('pe-'+k).value)||50;});
+  ['pac','sho','pas','dri','def','phy','gks'].forEach(function(k){j.notes[k]=parseInt(document.getElementById('pe-'+k).value)||50;});
   j.global=calcGlobalNote(j.notes);
   saveFbLocal();
   closePlayerModal();
