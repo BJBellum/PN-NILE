@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated": "2026-03-22",
+  "updated": "2026-04-02",
   "bataillons": [
     {
       "id": "bat_01",
@@ -19,7 +19,9 @@
         "Grenades Fragmentation": 1800,
         "Grenades Fumigène": 1800,
         "Véh. Blindés": 25,
-        "Camions (Transport)": 50
+        "Camions (Transport)": 50,
+        "Char moyen": 0,
+        "Missile surface-air": 0
       }
     },
     {
@@ -270,19 +272,22 @@
         "id": "terrestre",
         "nom": "Usine Terrestre",
         "categorie": "Terrestre",
-        "niveau": 7
+        "niveau": 7,
+        "niv_tech_coef": 2
       },
       {
         "id": "maritime",
         "nom": "Chantier Naval",
         "categorie": "Maritime",
-        "niveau": 7
+        "niveau": 7,
+        "niv_tech_coef": 2
       },
       {
         "id": "aerospatiale",
         "nom": "Usine Aérospatiale",
         "categorie": "Aerospatiale",
-        "niveau": 7
+        "niveau": 7,
+        "niv_tech_coef": 2
       }
     ],
     "equipements": [
@@ -438,6 +443,15 @@
         "cout_slots": 4400,
         "cout_prod": 329000,
         "cout_vente": 1499999
+      },
+      {
+        "nom": "Aichi D1A \"Ryusei\"",
+        "categorie": "Aerospatiale",
+        "niveau_requis": 4,
+        "cout_slots": 4650,
+        "cout_prod": 203666,
+        "cout_vente": 203666,
+        "id": "eq_1775140176828"
       }
     ]
   },
@@ -470,5 +484,27 @@
       "nom": "Mortier",
       "groupe": "Artillerie"
     }
+  ],
+  "equip_fields_base": [
+    "Hommes",
+    "Fusils",
+    "Fusils (Rechange)",
+    "Pistolets",
+    "Pistolets (Rechange)",
+    "Mit. Moyennes",
+    "Mit. Moy. (Rechange)",
+    "Mit. Lourdes",
+    "Mit. Lourdes (Rechange)",
+    "Grenades Fragmentation",
+    "Grenades Fumigène",
+    "Chars Légers",
+    "Motos",
+    "Camions (Transport)",
+    "Camions (Logistique)",
+    "Camions (Utilitaires)",
+    "Canons (Campagne)",
+    "Canons (Obusier)",
+    "Canons (AA)",
+    "Canons Antichar"
   ]
 }
