@@ -1097,11 +1097,36 @@ function buildKO(){
   var comp=competitions.find(function(c){return c.id===currentCompId;});
   if(!comp||!allGroupsDone(comp))return;
   var nbQ=Math.floor(comp.eqParPoule/2)||1;
-  var qualifiers=[];
+
+  // Collecter les premiers et les deuxièmes de chaque poule séparément
+  var firsts=[];  // 1ers de chaque poule dans l'ordre
+  var seconds=[]; // 2èmes de chaque poule dans l'ordre
   comp.poules.forEach(function(poule){
     var standings=calcStandings(poule,comp);
-    standings.slice(0,nbQ).forEach(function(row){qualifiers.push(row.id);});
+    if(standings.length>0)firsts.push(standings[0].id);
+    if(nbQ>=2&&standings.length>1)seconds.push(standings[1].id);
+    // Si nbQ > 2, ajouter les autres qualifiés dans seconds
+    for(var qi=2;qi<nbQ;qi++){if(standings[qi])seconds.push(standings[qi].id);}
   });
+
+  // Construire le bracket croisé : 1er poule i affronte 2ème poule (i+1) % nbPoules
+  var qualifiers=[];
+  var nbPoules=comp.poules.length;
+  if(seconds.length>0){
+    // Croisement classique : 1erA vs 2eB, 1erB vs 2eA, 1erC vs 2eD, 1erD vs 2eC...
+    for(var i=0;i<nbPoules;i++){
+      if(firsts[i])qualifiers.push(firsts[i]);
+      // Le 2ème opposé est celui de la poule "miroir"
+      var oppositeIdx=(i%2===0)?i+1:i-1;
+      if(oppositeIdx<nbPoules&&seconds[oppositeIdx])qualifiers.push(seconds[oppositeIdx]);
+    }
+    // Ajouter les qualifiés restants non encore inclus
+    firsts.concat(seconds).forEach(function(id){if(!qualifiers.includes(id))qualifiers.push(id);});
+  } else {
+    // Seulement des premiers (pas de deuxièmes) : ordre simple
+    qualifiers=firsts;
+  }
+
   comp.koRounds=buildKORounds(qualifiers,comp);
   comp.phase='poules_done';
   saveLocal();renderCompDetail(comp);
@@ -1295,7 +1320,8 @@ function calcStr(teamId,comp){
 
 function simMatchInstant(m,comp){
   if(!m.weather)m.weather=genWeather();
-  var opts={events:comp.events||'normal',offsides:comp.offsides,penalty:comp.penalty,golden:comp.golden};
+  // En phase de poules, pas de prolongations ni de golden goal — le nul est un nul
+  var opts={events:comp.events||'normal',offsides:comp.offsides,penalty:false,golden:false};
   var res=runMatchEngine(m.homeId,m.awayId,opts,comp,m.weather);
   m.scoreH=res.scoreH;m.scoreA=res.scoreA;m.played=true;
   m.events=res.events;
@@ -1413,10 +1439,11 @@ function openMatchModal(pouleId,matchId){
   if(!comp)return;
   var poule=comp.poules.find(function(p){return p.id===pouleId;});
   var m=poule.matches.find(function(x){return x.id===matchId;});
-  openMatchModalData(m,comp,function(){poule.matches[poule.matches.indexOf(m)]=m;saveLocal();renderCompDetail(comp);});
+  // isGroupMatch=true : pas de prolongations ni de vainqueur forcé en poule
+  openMatchModalData(m,comp,function(){poule.matches[poule.matches.indexOf(m)]=m;saveLocal();renderCompDetail(comp);},true);
 }
 
-function openMatchModalData(m,comp,callback){
+function openMatchModalData(m,comp,callback,isGroupMatch){
   mmComp=comp;mmMatch=m;mmCallback=callback;
   mmCardEvents=[];
 
@@ -1454,8 +1481,11 @@ function openMatchModalData(m,comp,callback){
   document.getElementById('match-modal').classList.add('open');
 
   // Pre-compute all events for this match
+  // En phase de poules : pas de prolongations ni de golden goal (le nul reste un nul)
   var w=m.weather;
-  var opts={events:comp.events||'normal',offsides:comp.offsides,penalty:comp.penalty,golden:comp.golden};
+  var opts=isGroupMatch
+    ?{events:comp.events||'normal',offsides:comp.offsides,penalty:false,golden:false}
+    :{events:comp.events||'normal',offsides:comp.offsides,penalty:comp.penalty,golden:comp.golden};
   var res=runMatchEngine(m.homeId,m.awayId,opts,comp,w);
   mmEvents=res.events;mmEventIdx=0;mmCardEvents=res.cardEvents;
   mmScoreH=0;mmScoreA=0;mmMinute=0;mmHalfShown=false;mmExtraShown=false;mmRunning=true;
