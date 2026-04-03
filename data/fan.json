@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated": "2026-04-02",
+  "updated": "2026-04-03",
   "bataillons": [
     {
       "id": "bat_01",
@@ -452,6 +452,60 @@
         "cout_prod": 203666,
         "cout_vente": 203666,
         "id": "eq_1775140176828"
+      },
+      {
+        "nom": "BN-06",
+        "categorie": "Terrestre",
+        "niveau_requis": 5,
+        "cout_slots": 4,
+        "cout_prod": 734,
+        "cout_vente": 1499,
+        "id": "eq_1775232678651"
+      },
+      {
+        "nom": "RS-500",
+        "categorie": "Aerospatiale",
+        "niveau_requis": 5,
+        "cout_slots": 6240,
+        "cout_prod": 309332,
+        "cout_vente": 500000,
+        "id": "eq_1775232755647"
+      },
+      {
+        "nom": "MD-T-120",
+        "categorie": "Terrestre",
+        "niveau_requis": 5,
+        "cout_slots": 320,
+        "cout_prod": 16188,
+        "cout_vente": 24999,
+        "id": "eq_1775232828847"
+      },
+      {
+        "nom": "MD-130",
+        "categorie": "Terrestre",
+        "niveau_requis": 5,
+        "cout_slots": 200,
+        "cout_prod": 19977,
+        "cout_vente": 31999,
+        "id": "eq_1775232918814"
+      },
+      {
+        "nom": "DB-06 \"Muhafiz\"",
+        "categorie": "Terrestre",
+        "niveau_requis": 5,
+        "cout_slots": 2140,
+        "cout_prod": 177866,
+        "cout_vente": 449999,
+        "id": "eq_1775233063493"
+      },
+      {
+        "nom": "DB-110 \"Al-Mansour\"",
+        "categorie": "Terrestre",
+        "niveau_requis": 5,
+        "cout_slots": 7200,
+        "cout_prod": 502666,
+        "cout_vente": 899999,
+        "id": "eq_1775233138231"
       }
     ]
   },
