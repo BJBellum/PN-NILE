@@ -292,12 +292,6 @@
     Nouveau Bataillon
   </a>
 
-  <div class="sb-sep"></div>
-  <div class="sb-sec"><svg viewBox="0 0 12 12" fill="none" width="10" height="10" style="opacity:.6;margin-right:4px;vertical-align:middle;"><path d="M6 1L1 4V9H11V4L6 1Z" stroke="currentColor" stroke-width=".9" fill="none" stroke-linejoin="round"/><line x1="3" y1="9" x2="3" y2="6" stroke="currentColor" stroke-width=".9"/><line x1="5.5" y1="9" x2="5.5" y2="6" stroke="currentColor" stroke-width=".9"/><line x1="8" y1="9" x2="8" y2="6" stroke="currentColor" stroke-width=".9"/></svg>Parlement</div>
-  <a class="sb-item" id="nav-parlement" onclick="showSection('parlement')">
-    <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M7 2L2 4.5V8C2 11 4.5 13 7 13.5C9.5 13 12 11 12 8V4.5L7 2Z" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="7" cy="9" r="1.5" stroke="currentColor" stroke-width=".8" fill="none"/></svg>
-    Parlement du Nil
-  </a>
 
   <div class="sb-sep"></div>
   <div class="sb-sec"><svg viewBox="0 0 12 12" fill="none" width="10" height="10" style="opacity:.6;margin-right:4px;vertical-align:middle;"><rect x="1.5" y="1" width="7" height="10" rx=".8" stroke="currentColor" stroke-width=".9" fill="none"/><rect x="3" y="1" width="7.5" height="10" rx=".8" stroke="currentColor" stroke-width=".6" fill="none" opacity=".45"/><line x1="3" y1="4" x2="7.5" y2="4" stroke="currentColor" stroke-width=".7"/><line x1="3" y1="6" x2="7.5" y2="6" stroke="currentColor" stroke-width=".7"/><line x1="3" y1="8" x2="5.5" y2="8" stroke="currentColor" stroke-width=".7"/></svg>Catalogue</div>
@@ -704,78 +698,6 @@
   </div>
 
 
-  <!-- ══════════════════════════════════
-       SECTION: PARLEMENT DU NIL
-  ══════════════════════════════════ -->
-  <div class="sec-pane" id="sec-parlement">
-    <div class="dash-hdr">
-      <div class="dash-title">🏛 Parlement du Nil</div>
-      <div class="dash-sub">Gérer les partis et la composition des deux chambres parlementaires.</div>
-    </div>
-
-    <!-- Totaux des chambres -->
-    <div class="form-grid" style="max-width:600px;margin-bottom:20px;">
-      <div class="fg">
-        <label class="fl">Sièges totaux · Chambre des Citoyens</label>
-        <div style="display:flex;gap:8px;align-items:center;">
-          <input type="number" class="fi" id="parl-total-c" min="1" value="180" style="width:100px;">
-          <button class="btn btn-fan btn-sm" onclick="parlUpdateChamber('c')">Actualiser</button>
-        </div>
-      </div>
-      <div class="fg">
-        <label class="fl">Sièges totaux · Haute-Chambre du Nil</label>
-        <div style="display:flex;gap:8px;align-items:center;">
-          <input type="number" class="fi" id="parl-total-h" min="1" value="18" style="width:100px;">
-          <button class="btn btn-fan btn-sm" onclick="parlUpdateChamber('h')">Actualiser</button>
-        </div>
-      </div>
-    </div>
-    <div id="parl-chamber-msg" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--teal-bright);margin-bottom:16px;"></div>
-
-    <!-- Add/Edit party form -->
-    <div class="cat-form-sec" style="border-top-color:#4A7FD4;max-width:680px;margin-bottom:20px;">
-      <div class="cat-form-sec-title" id="parl-form-title" style="color:#4A7FD4;">+ Ajouter un parti</div>
-      <div class="form-grid">
-        <div class="fg"><label class="fl">Nom du parti (français)</label><input type="text" class="fi" id="parl-f-nom" placeholder="Ex : Union Sociale…"></div>
-        <div class="fg"><label class="fl">Nom en arabe</label><input type="text" class="fi" id="parl-f-nom-ar" placeholder="الاتحاد الاجتماعي…" dir="auto"></div>
-        <div class="fg"><label class="fl">Chef de parti</label><input type="text" class="fi" id="parl-f-chef" placeholder="Prénom Nom…"></div>
-        <div class="fg"><label class="fl">Couleur (hex)</label>
-          <div style="display:flex;gap:8px;align-items:center;">
-            <input type="color" id="parl-f-couleur-picker" value="#CC1A1A" oninput="document.getElementById('parl-f-couleur').value=this.value" style="width:36px;height:32px;border:1px solid var(--border2);background:none;cursor:pointer;border-radius:2px;">
-            <input type="text" class="fi" id="parl-f-couleur" value="#CC1A1A" placeholder="#CC1A1A" oninput="document.getElementById('parl-f-couleur-picker').value=this.value||'#CC1A1A'" style="flex:1;">
-          </div>
-        </div>
-        <div class="fg"><label class="fl">Sièges · Chambre des Citoyens</label><input type="number" class="fi" id="parl-f-sc" min="0" value="0"></div>
-        <div class="fg"><label class="fl">Sièges · Haute-Chambre</label><input type="number" class="fi" id="parl-f-sh" min="0" value="0"></div>
-      </div>
-      <input type="hidden" id="parl-edit-id">
-      <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
-        <button class="btn btn-fan" onclick="parlSaveParti()" style="border-color:#4A7FD4;background:rgba(74,127,212,.1);color:#4A7FD4;">✓ Enregistrer</button>
-        <button class="btn btn-ghost" onclick="parlCancelEdit()">✕ Annuler</button>
-        <button class="btn btn-gh btn-sm" onclick="parlSaveToGH()" style="margin-left:auto;">⬆ Sauvegarder sur GitHub</button>
-      </div>
-    </div>
-
-    <!-- Independants -->
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;background:var(--card-bg);border:1px solid var(--border);padding:14px 16px;max-width:680px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;width:100%;margin-bottom:6px;">Independants (sièges gris)</div>
-      <div class="fg" style="flex:1;">
-        <label class="fl">Independants · Chambre des Citoyens</label>
-        <input type="number" class="fi" id="parl-indep-c" min="0" value="4" oninput="parlSaveState()">
-      </div>
-      <div class="fg" style="flex:1;">
-        <label class="fl">Independants · Haute-Chambre</label>
-        <input type="number" class="fi" id="parl-indep-h" min="0" value="1" oninput="parlSaveState()">
-      </div>
-    </div>
-
-    <!-- Party list -->
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;max-width:680px;flex-wrap:wrap;gap:8px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#4A7FD4;letter-spacing:.1em;text-transform:uppercase;" id="parl-count-lbl">— partis</div>
-      <button class="btn btn-ghost btn-sm" onclick="parlLoadFromGH()">↺ Sync GitHub</button>
-    </div>
-    <div id="parl-admin-list" style="max-width:680px;"></div>
-  </div>
 
   <!-- ══════════════════════════════════
        SECTION: ESPACE D'ECRITURE
@@ -1052,7 +974,6 @@ const SECTION_TITLES={
   'fan-new':'⚔ NOUVEAU BATAILLON',
   'fan-sync':'⚔ SYNC · GITHUB',
   'catalogue':'📖 CATALOGUE MILITAIRE',
-  'parlement':'🏛 PARLEMENT DU NIL',
   'ecriture':'✍ ESPACE D\'ECRITURE',
   'docs':'📄 MES DOCUMENTS'
 };
@@ -1071,7 +992,6 @@ function showSection(key){
   // Lazy renders
   if(key==='fan-bat')renderBatAdmin();
   if(key==='catalogue')renderCatalogueAdmin();
-  if(key==='parlement')renderParlementAdmin();
   if(key==='ecriture')initEcriture();
   if(key==='docs')renderDocsList();
   if(key==='fan-prod')renderProdAdmin();
@@ -1199,10 +1119,18 @@ function addPays(){
 
 function renamePays(idx){
   const p=paysList[idx];
+  const oldNom=p.nom;
   const nom=prompt('Nouveau nom :',p.nom);if(!nom||!nom.trim())return;
   const code=prompt('Nouveau code (2-5 lettres) :',p.code);if(!code||!code.trim())return;
-  paysList[idx]={nom:nom.trim(),code:code.trim().toUpperCase().substring(0,5)};
-  savePays();renderPaysList();toast('Pays modifié.');
+  const newNom=nom.trim();
+  const newCode=code.trim().toUpperCase().substring(0,5);
+  paysList[idx]={nom:newNom,code:newCode};
+  savePays();
+  // Mettre à jour toutes les sociétés qui référençaient l'ancien nom
+  companies=companies.map(c=>c.nat===oldNom?{...c,nat:newNom}:c);
+  renderPaysList();
+  renderAdminTable();
+  toast('Pays modifié — sociétés mises à jour.');
 }
 
 function deletePays(idx){
@@ -1919,7 +1847,6 @@ function updateSpecFields(){
 
 function renderCatalogueAdmin(){
   loadCatState();
-  parlLoadState();
   updateSpecFields();
   renderCatalogueList();
 }
@@ -2152,192 +2079,6 @@ async function fanLoadCatalogue(){
   }catch(e){toast('Erreur chargement catalogue: '+e.message,'err');}
 }
 
-
-// ════════════════════════════════════════════════
-//  PARLEMENT DU NIL
-// ════════════════════════════════════════════════
-var PARL_FILE = 'data/parlement.json';
-var PARL_DEFAULT = {
-  partis:[
-    {id:'us',nom:"Union Sociale",nom_ar:"الاتحاد الاجتماعي",chef:"Achraf Bazzi",couleur:"#CC1A1A",sieges_citoyens:136,sieges_haute:11},
-    {id:'pa',nom:"Parti Agraire",nom_ar:"الحزب الزراعي",chef:"Ahmed Handal",couleur:"#E87D00",sieges_citoyens:30,sieges_haute:3},
-    {id:'al',nom:"L'Action Liberale",nom_ar:"الحزب الليبرالي",chef:"Mustafa Srour",couleur:"#E8C800",sieges_citoyens:8,sieges_haute:2},
-    {id:'pi',nom:"Parti Islamique",nom_ar:"الحزب الاسلامي",chef:"Abdallah Haddad",couleur:"#228B22",sieges_citoyens:2,sieges_haute:1}
-  ],
-  independants_citoyens:4,
-  independants_haute:1
-};
-var parlData = JSON.parse(JSON.stringify(PARL_DEFAULT));
-var parlEditId = null;
-
-function parlLoadState(){
-  try{
-    var s=localStorage.getItem('parlement_data');
-    if(s)parlData=JSON.parse(s);
-  }catch(e){}
-}
-function parlSaveState(){
-  // Also read independants from inputs
-  var ic=parseInt(document.getElementById('parl-indep-c')?.value)||0;
-  var ih=parseInt(document.getElementById('parl-indep-h')?.value)||0;
-  parlData.independants_citoyens=ic;
-  parlData.independants_haute=ih;
-  localStorage.setItem('parlement_data',JSON.stringify(parlData));
-}
-
-function renderParlementAdmin(){
-  parlLoadState();
-  // Fill fields
-  var tc=document.getElementById('parl-total-c');
-  var th=document.getElementById('parl-total-h');
-  var totalC=parlData.partis.reduce(function(s,p){return s+(p.sieges_citoyens||0);},0)+(parlData.independants_citoyens||0);
-  var totalH=parlData.partis.reduce(function(s,p){return s+(p.sieges_haute||0);},0)+(parlData.independants_haute||0);
-  if(tc)tc.value=totalC;
-  if(th)th.value=totalH;
-  var ic=document.getElementById('parl-indep-c');
-  var ih=document.getElementById('parl-indep-h');
-  if(ic)ic.value=parlData.independants_citoyens||0;
-  if(ih)ih.value=parlData.independants_haute||0;
-  renderParlList();
-}
-
-function renderParlList(){
-  var el=document.getElementById('parl-admin-list');
-  var lbl=document.getElementById('parl-count-lbl');
-  if(!el)return;
-  if(lbl)lbl.textContent=parlData.partis.length+' parti'+(parlData.partis.length!==1?'s':'');
-  if(!parlData.partis.length){
-    el.innerHTML='<div style="font-family:monospace;font-size:10px;color:var(--text3);padding:20px;border:1px solid var(--border);text-align:center;">Aucun parti. Utilisez le formulaire pour en ajouter.</div>';
-    return;
-  }
-  var html='';
-  parlData.partis.forEach(function(p){
-    html+='<div class="cat-item-row" data-pid="'+encodeURIComponent(p.id)+'">';
-    html+='<div style="width:18px;height:18px;border-radius:50%;background:'+p.couleur+';flex-shrink:0;box-shadow:0 0 8px '+p.couleur+'55;"></div>';
-    html+='<div style="flex:1;min-width:0;">';
-    html+='<div style="font-family:monospace;font-size:11px;color:var(--text);font-weight:500;">'+p.nom+'</div>';
-    html+='<div style="font-family:monospace;font-size:9px;color:var(--text3);margin-top:2px;">'+p.nom_ar+' · Chef : '+(p.chef||'—')+'</div>';
-    html+='</div>';
-    html+='<div style="text-align:right;font-family:monospace;font-size:10px;color:var(--text3);margin:0 10px;">';
-    html+='<div style="color:#4A7FD4;font-weight:500;">C: '+(p.sieges_citoyens||0)+'</div>';
-    html+='<div>H: '+(p.sieges_haute||0)+'</div>';
-    html+='</div>';
-    html+='<div style="display:flex;gap:5px;flex-shrink:0;"><button class="btn btn-ghost btn-sm" onclick="parlEditParti(this.closest(&quot;[data-pid]&quot;).dataset.pid)">Modifier</button><button class="btn btn-danger btn-xs" onclick="parlDeleteParti(this.closest(&quot;[data-pid]&quot;).dataset.pid)">&#10005;</button></div>';
-    html+='</div>';
-  });
-  el.innerHTML=html;
-}
-
-function parlUpdateChamber(chambre){
-  var isCit=chambre==='c';
-  var inputEl=document.getElementById(isCit?'parl-total-c':'parl-total-h');
-  var newTotal=parseInt(inputEl?.value)||0;
-  // Calculate current named seats
-  var named=parlData.partis.reduce(function(s,p){return s+(isCit?p.sieges_citoyens:p.sieges_haute)||0;},0);
-  var indep=Math.max(0,newTotal-named);
-  if(isCit)parlData.independants_citoyens=indep;
-  else parlData.independants_haute=indep;
-  var iEl=document.getElementById(isCit?'parl-indep-c':'parl-indep-h');
-  if(iEl)iEl.value=indep;
-  parlSaveState();
-  renderParlList();
-  var msg=document.getElementById('parl-chamber-msg');
-  if(msg)msg.textContent='Total '+(isCit?'Chambre des Citoyens':'Haute-Chambre')+' mis à jour : '+newTotal+' sièges ('+indep+' indépendants).';
-  toast('Chambre actualisée — '+indep+' indépendants.');
-}
-
-function parlSaveParti(){
-  var nom=document.getElementById('parl-f-nom')?.value.trim();
-  if(!nom){toast('Nom obligatoire.','err');return;}
-  var obj={
-    id:parlEditId||'p_'+Date.now(),
-    nom:nom,
-    nom_ar:document.getElementById('parl-f-nom-ar')?.value.trim()||'',
-    chef:document.getElementById('parl-f-chef')?.value.trim()||'',
-    couleur:document.getElementById('parl-f-couleur')?.value.trim()||'#888',
-    sieges_citoyens:parseInt(document.getElementById('parl-f-sc')?.value)||0,
-    sieges_haute:parseInt(document.getElementById('parl-f-sh')?.value)||0,
-  };
-  if(parlEditId){
-    var idx=parlData.partis.findIndex(function(p){return p.id===parlEditId;});
-    if(idx>=0)parlData.partis[idx]=obj;
-  } else {
-    parlData.partis.push(obj);
-  }
-  parlSaveState();
-  parlCancelEdit();
-  renderParlList();
-  toast(parlEditId?'Parti modifié.':'Parti ajouté.');
-}
-
-function parlEditParti(id){
-  id=decodeURIComponent(id);
-  var p=parlData.partis.find(function(x){return x.id===id;});
-  if(!p)return;
-  parlEditId=id;
-  document.getElementById('parl-form-title').textContent='✎ Modifier — '+p.nom;
-  document.getElementById('parl-f-nom').value=p.nom||'';
-  document.getElementById('parl-f-nom-ar').value=p.nom_ar||'';
-  document.getElementById('parl-f-chef').value=p.chef||'';
-  document.getElementById('parl-f-couleur').value=p.couleur||'#888';
-  document.getElementById('parl-f-couleur-picker').value=p.couleur||'#888';
-  document.getElementById('parl-f-sc').value=p.sieges_citoyens||0;
-  document.getElementById('parl-f-sh').value=p.sieges_haute||0;
-  document.getElementById('parl-f-nom').focus();
-}
-
-function parlDeleteParti(id){
-  id=decodeURIComponent(id);
-  var p=parlData.partis.find(function(x){return x.id===id;});
-  if(!confirm('Supprimer « '+(p?.nom||id)+' » ?'))return;
-  parlData.partis=parlData.partis.filter(function(x){return x.id!==id;});
-  parlSaveState();renderParlList();toast('Parti supprimé.');
-}
-
-function parlCancelEdit(){
-  parlEditId=null;
-  document.getElementById('parl-form-title').textContent='+ Ajouter un parti';
-  ['parl-f-nom','parl-f-nom-ar','parl-f-chef'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
-  document.getElementById('parl-f-couleur').value='#CC1A1A';
-  document.getElementById('parl-f-couleur-picker').value='#CC1A1A';
-  document.getElementById('parl-f-sc').value='0';
-  document.getElementById('parl-f-sh').value='0';
-  document.getElementById('parl-edit-id').value='';
-}
-
-async function parlSaveToGH(){
-  const pat=getPat();if(!pat||pat.length<10){toast('Configurez votre PAT.','err');return;}
-  toast('Sauvegarde parlement…','ok');
-  try{
-    let sha=null;
-    const sr=await fetch('https://api.github.com/repos/'+REPO+'/contents/'+PARL_FILE,{
-      headers:{'Authorization':'token '+pat,'Accept':'application/vnd.github.v3+json'},cache:'no-store'
-    });
-    if(sr.ok){const sd=await sr.json();sha=sd.sha||null;}
-    else if(sr.status!==404){toast('Erreur SHA: '+sr.status,'err');return;}
-    const encoded=btoa(unescape(encodeURIComponent(JSON.stringify(parlData,null,2))));
-    const body={message:'update parlement.json — '+parlData.partis.length+' partis',content:encoded};
-    if(sha)body.sha=sha;
-    const pr=await fetch('https://api.github.com/repos/'+REPO+'/contents/'+PARL_FILE,{
-      method:'PUT',
-      headers:{'Authorization':'token '+pat,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
-      body:JSON.stringify(body)
-    });
-    if(pr.ok)toast('Parlement sauvegardé sur GitHub !','ok');
-    else{const ed=await pr.json();toast('Erreur: '+pr.status+' — '+(ed.message||''),'err');}
-  }catch(e){toast('Erreur: '+e.message,'err');}
-}
-
-async function parlLoadFromGH(){
-  try{
-    const r=await fetch('https://api.github.com/repos/'+REPO+'/contents/'+PARL_FILE,{
-      headers:{'Accept':'application/vnd.github.v3.raw'},cache:'no-store'
-    });
-    if(!r.ok)throw new Error('HTTP '+r.status);
-    const d=await r.json();
-    if(d&&d.partis){parlData=d;localStorage.setItem('parlement_data',JSON.stringify(d));renderParlementAdmin();toast('Parlement chargé depuis GitHub.');}
-  }catch(e){toast('Erreur chargement: '+e.message,'err');}
-}
 
 
 // ════════════════════════════════════════════════
