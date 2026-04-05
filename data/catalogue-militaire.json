@@ -278,5 +278,28 @@
       "Équipements possibles": "Lunette de visée optique, Bipied amovible"
     },
     "image_path": "assets/images/catalogue/image_arme__8_.png"
+  },
+  {
+    "id": "cat_1775347983961",
+    "nom": "MD-130",
+    "categorie": "artillerie",
+    "niveau": 5,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "31999",
+    "inspiration": "M-46",
+    "disponibilite": "Mai 2306",
+    "specs": {
+      "Calibre": "130 mm",
+      "Équipage": "8 servants",
+      "Masse (non chargé)": "7,7 tonnes",
+      "Longueur": "11,73 m",
+      "Longueur du canon": "7,15 m",
+      "Cadence de tir": "8 coups/minute (soutenu)",
+      "Vitesse initiale": "930 m/s",
+      "Système de visée": "Visée optique",
+      "Portée maximale": "35 à 44 km",
+      "Munitions": "HE, Fumigène, APCBC, APHE, Éclairant"
+    },
+    "image_path": "assets/images/catalogue/image_-_2026-03-31t031403.803.png"
   }
 ]
