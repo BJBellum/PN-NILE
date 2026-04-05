@@ -585,7 +585,7 @@
       <!-- BASE FIELDS -->
       <div class="form-grid" style="margin-bottom:14px;">
         <div class="fg"><label class="fl">Catégorie</label>
-          <select class="fs" id="cat-f-categorie" onchange="updateSpecFields()">
+          <select class="fs" id="cat-f-categorie" onchange="updateSpecFields();updateSousType()">
             <optgroup label="─── Terrestre ───">
               <option value="armes-feu">Armes à Feu</option>
               <option value="explosifs">Explosifs &amp; Grenades</option>
@@ -621,6 +621,7 @@
             <option value="12">NIV 12 · 2020-∞</option>
           </select>
         </div>
+        <div class="fg fg-full"><label class="fl">Type / Sous-catégorie</label><select class="fs" id="cat-f-soustype"><option value="N/A">N/A</option></select></div>
         <div class="fg"><label class="fl">Nom</label><input type="text" class="fi fan" id="cat-f-nom" placeholder="Ex : BAT-303…"></div>
         <div class="fg"><label class="fl">Fabricant</label><input type="text" class="fi fan" id="cat-f-fabricant" placeholder="Ex : YASSIN Heavy Industries…"></div>
         <div class="fg"><label class="fl">Coût unitaire (Crédits)</label><input type="number" class="fi fan" id="cat-f-cout" min="0" placeholder="0"></div>
@@ -1795,6 +1796,26 @@ async function fanLoadFromGH(){
 //  CATALOGUE MILITAIRE
 // ════════════════════════════════════════════════
 
+const CAT_SUBTYPES={
+  'armes-feu':['Pistolet carabine semi-auto','Pistolet mitrailleur','Mitrailleuse','Fusil à Verrou','Fusil d\'assaut','Fusil à pompe','Fusil de précision','Lance-roquette','Lance-missile','Lance-grenade','Lance-flammes'],
+  'explosifs':['Grenade','Mines (AP/AT/Autre)','Explosifs'],
+  'vehicules-terrestres':['Véhicule de Combat d\'infanterie (IFV)','Camion Transport Militaire (MTT)','Char Lourd (HT)','Char Moyen (MT)','Char léger (LT)','Transport de troupes blindé (APC)','Chasseur de Char (TD)','Canon automoteur Blindé (SPAG)','Lance roquette multiple (LRM)','Canon Automoteur Anti-Aérien (SPAA)','Canon Automoteur (SPG)','Char de Combat Principal (MBT)','Char Super Lourd (SHT)','Canon Automoteur Super Lourd (SPSHG)'],
+  'artillerie':['Artillerie de Campagne (7-16 cm)','Artillerie Lourde (+ 16 cm)','Artillerie légère (-7 cm)','Mortier d\'infanterie (-7 cm)','Mortier de Campagne (7-12 cm)','Mortier Lourd (+12 cm)','Canon Anti-Aérien (-8 cm)','Canon Anti-Aérien Lourd (+ 8cm)','Canon Anti-Char (-8 cm)','Canon Anti-Char Lourd (+ 8cm)','Canon sur rail'],
+  'aeronefs':['Avion à Réaction (AR) - Chasse','AR - Bombardier','Avion à Hélices (AH) - Chasse','AH - Bombardier','AH - Bombardier Lourd','AR - Bombardier Lourd','Gyrocoptère/Hélicoptère','AH - Transport','AR - Transport','AR - Aile-Volante','AH - Aile-Volante','Avion de reconnaissance / patrouille','Avion radar (AWACS)','Avion de reconnaissance en Titane','AR - Bombardier Furtif','AR - Chasse Furtif','Petit UAV (- de 5m d\'envergure)','Moyen UAV (5 à 10m d\'envergure)','Grand UAV (+ de 10m d\'envergure)'],
+  'navires':['Frégate','Porte Aéronef Léger','Destroyer','Cuirassé','Croiseur Lourd','Croiseur Léger','Patrouilleur','Corvette','Barge de Débarquement','Torpilleur','Porte Avion','Super Porte Avion','Porte Avion Nucléaire','Super Porte Avion Nucléaire','Patrouilleur ou navire léger à missile','Navire de débarquement','Navire Aéroglisseur de débarquement','Navire d\'Assaut Amphibie'],
+  'sous-marins':['Petit Sous Marin Diesel-Électrique (-60m)','Sous Marin Moyen Diesel-Élec (60-120m)','Grand Sous Marin Diesel-Élec (+120m)','SNLE','SNA'],
+  'missiles':['Missile Air-Air','ATGM','Missile de Croisière (Anti-Navire)','SAM (Missile sol-air)'],
+  'missiles-strategiques':['SRBM (300-1000 km)','MRBM (1000-3500 km)','ICBM (+ de 5500 km)','IRBM (3500-5500 km)','SLBM (sous marins)','BRBM (- de 300 km)'],
+};
+
+function updateSousType(selectedVal){
+  const cat=document.getElementById('cat-f-categorie')?.value||'armes-feu';
+  const sel=document.getElementById('cat-f-soustype');
+  if(!sel)return;
+  const opts=['N/A',...(CAT_SUBTYPES[cat]||[])];
+  sel.innerHTML=opts.map(v=>`<option value="${v}"${v===(selectedVal||'N/A')?' selected':''}>${v}</option>`).join('');
+}
+
 const CAT_PRESETS={
   "armes-feu":["Calibre","Masse (non chargé)","Longueur","Longueur du canon","Cadence de tir","Vitesse initiale","Portée pratique","Portée maximale","Capacité","Type de munitions","Équipements possibles"],
   "explosifs":["Délai","Portée de lancer","Poids","Longueur","Largeur/Diamètre","Portée létale","Type d'explosif"],
@@ -1829,6 +1850,7 @@ function saveCatState(){
 }
 
 function updateSpecFields(){
+  updateSousType();
   const cat=document.getElementById('cat-f-categorie')?.value||'armes-feu';
   const fields=CAT_PRESETS[cat]||[];
   const grid=document.getElementById('cat-spec-fields');
@@ -1873,7 +1895,7 @@ function renderCatalogueList(){
       }
       <div style="flex:1;min-width:0;">
         <div style="font-family:monospace;font-size:11px;color:var(--text);font-weight:500;">${item.nom}</div>
-        <div style="font-family:monospace;font-size:9px;color:var(--text3);margin-top:2px;">${catLabels[item.categorie]||item.categorie} · ${item.fabricant||'—'}</div>
+        <div style="font-family:monospace;font-size:9px;color:var(--text3);margin-top:2px;">${catLabels[item.categorie]||item.categorie}${item.soustype&&item.soustype!=='N/A'?` · <span style="color:rgba(200,150,12,.7);">${item.soustype}</span>`:''} · ${item.fabricant||'—'}</div>
         <div style="font-family:monospace;font-size:8px;color:var(--spice);margin-top:3px;">NIV ${niv} · ${TECH_MAP_ADM[niv]||''}</div>
       </div>
       <div style="font-family:monospace;font-size:10px;color:var(--gold);white-space:nowrap;padding:0 10px;">${item.cout_unite?Number(item.cout_unite).toLocaleString('fr')+' Cr.':''}</div>
@@ -1901,6 +1923,7 @@ function saveCatalogueItem(){
     id:catEditId||'cat_'+Date.now(),
     nom,
     categorie:cat,
+    soustype:document.getElementById('cat-f-soustype')?.value||'N/A',
     niveau:parseInt(document.getElementById('cat-f-niveau')?.value)||1,
     fabricant:document.getElementById('cat-f-fabricant')?.value?.trim()||'',
     cout_unite:document.getElementById('cat-f-cout')?.value||'',
@@ -1925,6 +1948,7 @@ function editCatalogueItem(id){
   document.getElementById('cat-f-nom').value=item.nom||'';
   document.getElementById('cat-f-categorie').value=item.categorie||'armes-feu';
   document.getElementById('cat-f-niveau').value=item.niveau||1;
+  updateSousType(item.soustype||'N/A');
   document.getElementById('cat-f-fabricant').value=item.fabricant||'';
   document.getElementById('cat-f-cout').value=item.cout_unite||'';
   document.getElementById('cat-f-inspiration').value=item.inspiration||'';
@@ -1952,6 +1976,7 @@ function cancelCatalogueEdit(){
   ['cat-f-nom','cat-f-fabricant','cat-f-cout','cat-f-inspiration','cat-f-disponibilite','cat-img-data','cat-img-path'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   document.getElementById('cat-f-categorie').value='armes-feu';
   document.getElementById('cat-f-niveau').value='1';
+  updateSousType('N/A');
   const preview=document.getElementById('cat-img-preview');
   if(preview)preview.innerHTML='<div class="img-preview-ph">Cliquer pour<br>sélectionner une image</div>';
   const fn=document.getElementById('cat-img-filename');if(fn)fn.textContent='Aucune image sélectionnée';
