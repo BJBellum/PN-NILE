@@ -254,5 +254,29 @@
       "Munitions": "63 obus de 105 mm / 900 cartouches de 12,7 mm / 6 000 cartouches de 7,5 mm"
     },
     "image_path": "assets/images/catalogue/armes-feu-11.png"
+  },
+  {
+    "id": "cat_1775347772803",
+    "nom": "RJ-6 \"Al-Zilzal\"",
+    "categorie": "armes-feu",
+    "niveau": 4,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "1999",
+    "inspiration": "Carl Gustaf",
+    "disponibilite": "Mai 2306",
+    "specs": {
+      "Calibre": "84 mm (canon rayé)",
+      "Masse (non chargé)": "14,2 kg",
+      "Longueur": "113mm",
+      "Longueur du canon": "85mm",
+      "Cadence de tir": "6 coups par minute",
+      "Vitesse initiale": "230 à 310 m/s",
+      "Portée pratique": "300 à 400 m",
+      "Portée maximale": "1 000 m",
+      "Capacité": "Monocoup",
+      "Type de munitions": "HEAT, HE, Fumigène, Éclairant",
+      "Équipements possibles": "Lunette de visée optique, Bipied amovible"
+    },
+    "image_path": "assets/images/catalogue/image_arme__8_.png"
   }
 ]
