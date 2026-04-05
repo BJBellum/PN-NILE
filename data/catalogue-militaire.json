@@ -129,7 +129,7 @@
     "categorie": "vehicules-terrestres",
     "niveau": 5,
     "fabricant": "Yassin Heavy Industries",
-    "cout_unite": "449999",
+    "cout_unite": "649999",
     "inspiration": "E.B.R (1954)",
     "disponibilite": "Août 2306",
     "specs": {
@@ -223,7 +223,7 @@
     "categorie": "vehicules-terrestres",
     "niveau": 5,
     "fabricant": "Yassin Heavy Industries",
-    "cout_unite": "899999",
+    "cout_unite": "999999",
     "inspiration": "M60",
     "disponibilite": "Novembre 2306",
     "specs": {
@@ -427,5 +427,43 @@
       "Équipement": "Système de navigation et de bombardement radar AN/ASB-4, Systèmes de contre-mesures électroniques, Capacité de ravitaillement en vol (système de perche rigide), Radar de queue pour le contrôle de tir des mitrailleuses."
     },
     "image_path": "assets/images/catalogue/image_arme__3_.png"
+  },
+  {
+    "id": "cat_1775350688165",
+    "nom": "RAS-40",
+    "categorie": "vehicules-terrestres",
+    "niveau": 5,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "399999",
+    "inspiration": "BM-14, sur un châssis de REO M45.",
+    "disponibilite": "Septembre 2306",
+    "specs": {
+      "Moteur": "6 cylindres en ligne, polycarburant, 140 ch",
+      "Carburant": "Polycarburant (Diesel, Essence ou Kérosène)",
+      "Transmission": "6x6, boîte manuelle à 5 rapports, boîte de transfert à 2 vitesses",
+      "Poids à vide": "8 500 kg (avec le système de lancement)",
+      "Vitesse max. (Route)": "90 km/h",
+      "Vitesse max. (Tout-terrain)": "30 km/h",
+      "Autonomie (Route)": "500 km",
+      "Autonomie (Tout-terrain)": "250 km",
+      "Type de suspensions": "Essieux rigides avec ressorts à lames semi-elliptiques",
+      "Longueur": "7 m",
+      "Largeur": "2.4 m",
+      "Hauteur": "2.9 m",
+      "Membres d'équipage": "3 (Chef de pièce, Conducteur, Opérateur)",
+      "Passagers": "N/A",
+      "Cargaison": "N/A",
+      "Blindage Caisse : Arrière": "Aucun",
+      "Blindage Caisse : Côté": "Aucun",
+      "Blindage Caisse : Front": "Aucun",
+      "Blindage Caisse : Plancher": "Aucun",
+      "Blindage Caisse : Toit": "Aucun",
+      "Blindage Tourelle : Arrière": "Aucun",
+      "Blindage Tourelle : Côté": "Aucun",
+      "Blindage Tourelle : Toit": "Aucun",
+      "Armement": "Lance-roquettes multiple : 16 tubes de 140 mm",
+      "Munitions": "16 roquettes de 140 mm (à fragmentation ou fumigène)"
+    },
+    "image_path": "assets/images/catalogue/image_arme__9_.png"
   }
 ]
