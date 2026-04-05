@@ -301,5 +301,28 @@
       "Munitions": "HE, Fumigène, APCBC, APHE, Éclairant"
     },
     "image_path": "assets/images/catalogue/image_-_2026-03-31t031403.803.png"
+  },
+  {
+    "id": "cat_1775348390355",
+    "nom": "MD-T-120",
+    "categorie": "artillerie",
+    "niveau": 5,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "24999",
+    "inspiration": "120 mm gun M1",
+    "disponibilite": "Mai 2306",
+    "specs": {
+      "Calibre": "120mm",
+      "Équipage": "13 personnes",
+      "Masse (non chargé)": "29 000 kg",
+      "Longueur": "7.39 m",
+      "Longueur du canon": "7.16 m",
+      "Cadence de tir": "12 coups par minute",
+      "Vitesse initiale": "945 m/s",
+      "Système de visée": "Guidé par radar, avec un prédicteur et un ordinateur de données de tir",
+      "Portée maximale": "25 000 m (distance horizontale) ; plafond maximal d'environ 18 000 m",
+      "Munitions": "Obus de 120 × 775 mm R"
+    },
+    "image_path": "assets/images/catalogue/image_arme__12_.png"
   }
 ]
