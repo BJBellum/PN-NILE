@@ -376,5 +376,28 @@
       "Équipements possibles": "Crosse rétractable en fil d'acier, puits de chargeur repliable, silencieux, crosse fixe en bois."
     },
     "image_path": "assets/images/catalogue/image_arme__11_.png"
+  },
+  {
+    "id": "cat_1775349790588",
+    "nom": "MD-155",
+    "categorie": "artillerie",
+    "niveau": 5,
+    "fabricant": "Yassin Heavy Industries",
+    "cout_unite": "34999",
+    "inspiration": "Obusier de 155 mm Modèle 50",
+    "disponibilite": "Avril 2306",
+    "specs": {
+      "Calibre": "155 mm",
+      "Équipage": "11 personnes",
+      "Masse (non chargé)": "8 155 kg (en ordre de combat) / 8 500 kg (en position de route)",
+      "Longueur": "7.8 m",
+      "Longueur du canon": "3.473 m (seul) / 4.41 m (avec le frein de bouche)",
+      "Cadence de tir": "3 coups/min (normale), jusqu'à 4 coups/min au maximum",
+      "Vitesse initiale": "650 m/s",
+      "Système de visée": "Appareil de mise à feu",
+      "Portée maximale": "20 km (avec obus à culot creux), 17,7 km avec munitions standards",
+      "Munitions": "Obus explosif, obus à culot creux"
+    },
+    "image_path": "assets/images/catalogue/image_-_2026-04-05t023927.332.png"
   }
 ]
